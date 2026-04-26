@@ -41,6 +41,7 @@ export default function CielWebDesignLandingPage() {
       points: ["トップページ", "メニュー・料金", "スタッフ紹介", "予約導線"],
       gradient: "from-pink-100 via-rose-50 to-white",
       accent: "bg-pink-500",
+      link: "/works/salon",
     },
     {
       category: "居酒屋サイト",
@@ -49,6 +50,7 @@ export default function CielWebDesignLandingPage() {
       points: ["店舗紹介", "おすすめ料理", "宴会プラン", "Googleマップ導線"],
       gradient: "from-orange-100 via-amber-50 to-white",
       accent: "bg-orange-500",
+      link: "/works/izakaya",
     },
     {
       category: "整体・サロンサイト",
@@ -57,6 +59,7 @@ export default function CielWebDesignLandingPage() {
       points: ["悩み別訴求", "施術の流れ", "料金", "LINE予約導線"],
       gradient: "from-emerald-100 via-teal-50 to-white",
       accent: "bg-emerald-500",
+      link: "/works/seitai",
     },
     {
       category: "士業・個人事務所サイト",
@@ -184,10 +187,14 @@ export default function CielWebDesignLandingPage() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {works.map((work) => (
-            <article key={work.title} className={`group rounded-[1.75rem] bg-gradient-to-br ${work.gradient} p-5 text-slate-950 shadow-xl transition hover:-translate-y-1`}>
+            <article key={work.title} className={`group rounded-[1.75rem] bg-gradient-to-br ${work.gradient} p-5 text-slate-950 shadow-xl transition hover:-translate-y-1 ${work.link ? "cursor-pointer" : ""}`}
+              onClick={() => work.link && window.open(work.link, "_blank")}>
               <div className="flex items-center justify-between">
                 <span className="rounded-full bg-white/70 px-3 py-1 text-xs font-semibold">{work.category}</span>
-                <ExternalLink className="h-4 w-4 opacity-50 transition group-hover:opacity-100" />
+                {work.link
+                  ? <span className="flex items-center gap-1 text-xs font-semibold text-slate-500 group-hover:text-slate-800 transition"><ExternalLink className="h-3.5 w-3.5" />サイトを見る</span>
+                  : <ExternalLink className="h-4 w-4 opacity-50 transition group-hover:opacity-100" />
+                }
               </div>
               <div className="mt-10 h-32 rounded-3xl bg-white/65 p-4 shadow-inner">
                 <div className={`h-3 w-20 rounded-full ${work.accent}`} />
