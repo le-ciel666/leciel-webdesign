@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to Lolipop via FTP
+      - name: Deploy to root (leciel.cutegirl.jp)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.leciel.cutegirl.jp
@@ -31,4 +31,12 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: /
-          dangerous-clean-slate: true
+
+      - name: Deploy to leciel subfolder (leciel-webdesign.com)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.leciel.cutegirl.jp
+          username: cutegirl.jp-leciel
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: /leciel/
