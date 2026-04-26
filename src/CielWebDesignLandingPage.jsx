@@ -147,7 +147,7 @@ export default function CielWebDesignLandingPage() {
           </nav>
         </header>
 
-        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-28 pt-16 md:grid-cols-[1.05fr_0.95fr] md:pt-24">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-28 pt-16 text-center md:pt-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/80 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-cyan-300" />
@@ -159,48 +159,17 @@ export default function CielWebDesignLandingPage() {
                 人とサービスをつなぐWebデザイン。
               </span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
               ル・シエルウェブデザインは、美容室・飲食店・整体サロンなどの小規模ビジネス向けに、見た目の美しさと問い合わせ導線を両立したホームページを制作します。
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#contact" className="group inline-flex items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
+            <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <a href="#contact" className="group inline-flex items-center justify-center rounded-2xl bg-white px-8 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-200">
                 無料で相談する
                 <ArrowRight className="ml-2 h-4 w-4 transition group-hover:translate-x-1" />
               </a>
-              <a href="#works" className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15">
+              <a href="#works" className="inline-flex items-center justify-center rounded-2xl border border-white/15 bg-white/10 px-8 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15">
                 制作実績を見る
               </a>
-            </div>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }} className="relative">
-            <div className="rounded-[2rem] border border-white/15 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
-              <div className="rounded-[1.5rem] bg-slate-950/70 p-5 ring-1 ring-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-red-400" />
-                  <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                  <span className="h-3 w-3 rounded-full bg-green-400" />
-                </div>
-                <div className="mt-6 grid gap-4">
-                  <div className="rounded-3xl bg-gradient-to-br from-cyan-300 via-fuchsia-300 to-amber-200 p-[1px]">
-                    <div className="rounded-3xl bg-slate-950 p-5">
-                      <p className="text-xs text-slate-400">Concept</p>
-                      <p className="mt-2 text-2xl font-semibold">LE CIEL connects people.</p>
-                      <p className="mt-3 text-sm leading-6 text-slate-300">空、光、虹をモチーフに、清潔感・信頼感・親しみやすさを表現。</p>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    {['美容室', '居酒屋', '整体', 'LP'].map((item) => (
-                      <div key={item} className="rounded-2xl bg-white/8 p-4 ring-1 ring-white/10">
-                        <p className="text-sm font-medium">{item}</p>
-                        <div className="mt-3 h-2 rounded-full bg-white/10">
-                          <div className="h-2 w-2/3 rounded-full bg-gradient-to-r from-cyan-300 to-fuchsia-300" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>
