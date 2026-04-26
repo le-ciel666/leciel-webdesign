@@ -117,7 +117,7 @@ export default function CielWebDesignLandingPage() {
     { icon: <User className="h-4 w-4" />, label: "代表者", value: "相川" },
     { label: "事業内容", value: "ホームページ制作・LP制作・Webデザイン" },
     { label: "対応エリア", value: "全国（オンライン対応）" },
-    { label: "お問い合わせ", value: "noriyoshi.aikawa@gmail.com" },
+    { label: "お問い合わせ", button: true },
   ];
 
   return (
@@ -269,7 +269,13 @@ export default function CielWebDesignLandingPage() {
                   {icon && <span className="text-cyan-300">{icon}</span>}
                   {label}
                 </dt>
-                <dd className="text-base font-medium">{value}</dd>
+                <dd className="text-base font-medium">
+                  {button ? (
+                    <a href="#contact" className="inline-block rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-white hover:bg-cyan-400 transition-colors">
+                      相談フォームへ →
+                    </a>
+                  ) : value}
+                </dd>
               </div>
             ))}
           </div>
