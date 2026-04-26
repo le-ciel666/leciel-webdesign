@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ExternalLink, Sparkles, Palette, MonitorSmartphone, MessageCircle, Clock, Layers, PenTool } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Sparkles, Palette, MonitorSmartphone, MessageCircle, Clock, Layers, PenTool, User, Building2 } from "lucide-react";
 
 export default function CielWebDesignLandingPage() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const data = new FormData();
+      data.append("name", form.name);
+      data.append("email", form.email);
+      data.append("message", form.message);
+      const res = await fetch("/mail.php", { method: "POST", body: data });
+      const json = await res.json();
+      if (json.success) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+        setErrorMsg(json.message);
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("通信エラーが発生しました。時間をおいて再度お試しください。");
+    }
+  };
+
   const works = [
     {
       category: "美容室サイト",
@@ -79,8 +109,17 @@ export default function CielWebDesignLandingPage() {
 
   const flow = ["ヒアリング", "構成案作成", "デザイン制作", "確認・修正", "公開サポート"];
 
+  const companyInfo = [
+    { icon: <Building2 className="h-4 w-4" />, label: "屋号", value: "LE CIEL WEB DESIGN" },
+    { icon: <User className="h-4 w-4" />, label: "代表者", value: "相川" },
+    { label: "事業内容", value: "ホームページ制作・LP制作・Webデザイン" },
+    { label: "対応エリア", value: "全国（オンライン対応）" },
+    { label: "お問い合わせ", value: "noriyoshi.aikawa@gmail.com" },
+  ];
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 opacity-70">
           <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500 blur-3xl" />
@@ -103,6 +142,7 @@ export default function CielWebDesignLandingPage() {
             <a href="#works" className="hover:text-white">実績</a>
             <a href="#service" className="hover:text-white">サービス</a>
             <a href="#flow" className="hover:text-white">進め方</a>
+            <a href="#company" className="hover:text-white">運営情報</a>
             <a href="#contact" className="hover:text-white">相談する</a>
           </nav>
         </header>
@@ -166,6 +206,7 @@ export default function CielWebDesignLandingPage() {
         </div>
       </section>
 
+      {/* Works */}
       <section className="mx-auto max-w-7xl px-6 py-20" id="works">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold tracking-[0.25em] text-cyan-300">WORKS</p>
@@ -204,6 +245,7 @@ export default function CielWebDesignLandingPage() {
         </div>
       </section>
 
+      {/* Service */}
       <section className="border-y border-white/10 bg-white/[0.03]" id="service">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
@@ -225,6 +267,7 @@ export default function CielWebDesignLandingPage() {
         </div>
       </section>
 
+      {/* Flow */}
       <section className="mx-auto max-w-7xl px-6 py-20" id="flow">
         <p className="text-sm font-semibold tracking-[0.25em] text-amber-200">FLOW</p>
         <h2 className="mt-3 text-3xl font-semibold md:text-4xl">制作の進め方</h2>
@@ -238,7 +281,27 @@ export default function CielWebDesignLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24" id="contact">
+      {/* Company */}
+      <section className="border-y border-white/10 bg-white/[0.03]" id="company">
+        <div className="mx-auto max-w-7xl px-6 py-20">
+          <p className="text-sm font-semibold tracking-[0.25em] text-cyan-300">COMPANY</p>
+          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">運営情報</h2>
+          <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
+            {companyInfo.map(({ icon, label, value }) => (
+              <div key={label} className="flex flex-col gap-1 border-b border-white/10 px-8 py-5 last:border-b-0 sm:flex-row sm:items-center sm:gap-0">
+                <dt className="flex items-center gap-2 min-w-[10rem] text-sm text-slate-400">
+                  {icon && <span className="text-cyan-300">{icon}</span>}
+                  {label}
+                </dt>
+                <dd className="text-base font-medium">{value}</dd>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="mx-auto max-w-7xl px-6 py-24" id="contact">
         <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white text-slate-950 shadow-2xl">
           <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
             <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 p-8 text-white md:p-10">
@@ -251,16 +314,72 @@ export default function CielWebDesignLandingPage() {
               </div>
             </div>
             <div className="p-8 md:p-10">
-              <div className="grid gap-4">
-                <label className="grid gap-2 text-sm font-medium">お名前<input className="rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500" placeholder="山田 太郎" /></label>
-                <label className="grid gap-2 text-sm font-medium">メールアドレス<input className="rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500" placeholder="example@mail.com" /></label>
-                <label className="grid gap-2 text-sm font-medium">相談内容<textarea className="min-h-32 rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500" placeholder="美容室のホームページを作りたい、既存サイトをきれいにしたい、など" /></label>
-                <button className="mt-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">相談内容を送信する</button>
-              </div>
+              {status === "success" ? (
+                <div className="flex h-full flex-col items-center justify-center gap-4 py-8 text-center">
+                  <CheckCircle2 className="h-12 w-12 text-emerald-500" />
+                  <p className="text-lg font-semibold">お問い合わせを受け付けました</p>
+                  <p className="text-sm text-slate-500">2〜3営業日以内にご連絡いたします。</p>
+                  <button onClick={() => setStatus("idle")} className="mt-4 rounded-2xl border border-slate-200 px-6 py-2 text-sm transition hover:bg-slate-50">
+                    別のお問い合わせをする
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="grid gap-4">
+                  <label className="grid gap-2 text-sm font-medium">
+                    お名前 <span className="text-red-500 text-xs">*必須</span>
+                    <input
+                      name="name"
+                      value={form.name}
+                      onChange={handleChange}
+                      required
+                      className="rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500"
+                      placeholder="山田 太郎"
+                    />
+                  </label>
+                  <label className="grid gap-2 text-sm font-medium">
+                    メールアドレス <span className="text-red-500 text-xs">*必須</span>
+                    <input
+                      name="email"
+                      type="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      required
+                      className="rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500"
+                      placeholder="example@mail.com"
+                    />
+                  </label>
+                  <label className="grid gap-2 text-sm font-medium">
+                    相談内容 <span className="text-red-500 text-xs">*必須</span>
+                    <textarea
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                      className="min-h-32 rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-slate-500"
+                      placeholder="美容室のホームページを作りたい、既存サイトをきれいにしたい、など"
+                    />
+                  </label>
+                  {status === "error" && (
+                    <p className="rounded-2xl bg-red-50 px-4 py-3 text-sm text-red-600">{errorMsg}</p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="mt-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
+                  >
+                    {status === "sending" ? "送信中..." : "相談内容を送信する"}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8 text-center text-xs text-slate-500">
+        <p>© {new Date().getFullYear()} LE CIEL WEB DESIGN. All rights reserved.</p>
+      </footer>
     </main>
   );
 }
