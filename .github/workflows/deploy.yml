@@ -26,8 +26,8 @@ jobs:
       - name: Deploy to Lolipop via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.lolipop.jp
-          username: leciel.cutegirl.jp
+          server: ftp.leciel.cutegirl.jp
+          username: cutegirl.jp-leciel
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /leciel-webdesign.com/
+          server-dir: /
