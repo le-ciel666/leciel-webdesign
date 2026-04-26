@@ -30,4 +30,4 @@ jobs:
           username: cutegirl.jp-leciel
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: /
+          server-dir: /leciel/
