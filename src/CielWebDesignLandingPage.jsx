@@ -263,7 +263,7 @@ export default function CielWebDesignLandingPage() {
           <p className="text-sm font-semibold tracking-[0.25em] text-cyan-300">COMPANY</p>
           <h2 className="mt-3 text-3xl font-semibold md:text-4xl">運営情報</h2>
           <div className="mt-10 overflow-hidden rounded-3xl border border-white/10">
-            {companyInfo.map(({ icon, label, value }) => (
+            {companyInfo.map(({ icon, label, value, button }) => (
               <div key={label} className="flex flex-col gap-1 border-b border-white/10 px-8 py-5 last:border-b-0 sm:flex-row sm:items-center sm:gap-0">
                 <dt className="flex items-center gap-2 min-w-[10rem] text-sm text-slate-400">
                   {icon && <span className="text-cyan-300">{icon}</span>}
