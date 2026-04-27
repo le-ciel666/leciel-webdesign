@@ -145,6 +145,7 @@ export default function CielWebDesignLandingPage() {
             <a href="#works" className="hover:text-white">実績</a>
             <a href="#service" className="hover:text-white">サービス</a>
             <a href="#flow" className="hover:text-white">進め方</a>
+            <a href="/plan" className="hover:text-white">料金プラン</a>
             <a href="#company" className="hover:text-white">運営情報</a>
             <a href="#contact" className="hover:text-white">相談する</a>
           </nav>

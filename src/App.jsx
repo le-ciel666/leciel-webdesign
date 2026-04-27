@@ -3,6 +3,7 @@ import CielWebDesignLandingPage from './CielWebDesignLandingPage'
 import HairSalon from './pages/works/HairSalon'
 import Izakaya from './pages/works/Izakaya'
 import Seitai from './pages/works/Seitai'
+import Plan from './pages/Plan'
 import './index.css'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<CielWebDesignLandingPage />} />
+        <Route path="/plan" element={<Plan />} />
         <Route path="/works/salon" element={<HairSalon />} />
         <Route path="/works/izakaya" element={<Izakaya />} />
         <Route path="/works/seitai" element={<Seitai />} />
