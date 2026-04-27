@@ -1,4 +1,4 @@
-import { Check, ArrowRight, MessageCircle, HelpCircle, ChevronDown } from 'lucide-react'
+import { Check, ArrowRight, MessageCircle, HelpCircle, ChevronDown, Sparkles } from 'lucide-react'
 import { useState } from 'react'
 
 const faqs = [
@@ -53,25 +53,24 @@ export default function Plan() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
       {/* Nav */}
-      <header className="border-b border-white/10 bg-slate-950/80 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="/" className="text-xl font-bold tracking-wider">
-            <span className="text-cyan-400 text-xs font-semibold tracking-[0.2em] block leading-none">LE CIEL</span>
-            WEB DESIGN
-          </a>
-          <nav className="hidden gap-8 text-sm text-slate-300 md:flex">
-            <a href="/#works" className="hover:text-white transition-colors">制作実績</a>
-            <a href="/#flow" className="hover:text-white transition-colors">制作の流れ</a>
-            <a href="/plan" className="text-cyan-400 font-semibold">料金プラン</a>
-            <a href="/#company" className="hover:text-white transition-colors">運営情報</a>
-          </nav>
-          <a
-            href="/#contact"
-            className="rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-white hover:bg-cyan-400 transition-colors"
-          >
-            無料相談
+      <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/20 backdrop-blur">
+            <Sparkles className="h-5 w-5" />
+          </div>
+          <a href="/" className="block">
+            <p className="text-sm font-semibold tracking-[0.22em] text-white/70">LE CIEL WEB DESIGN</p>
+            <p className="text-xs text-white/45">ル・シエルウェブデザイン</p>
           </a>
         </div>
+        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
+          <a href="/#works" className="hover:text-white transition-colors">実績</a>
+          <a href="/#service" className="hover:text-white transition-colors">サービス</a>
+          <a href="/#flow" className="hover:text-white transition-colors">進め方</a>
+          <a href="/plan" className="text-white font-semibold">料金プラン</a>
+          <a href="/#company" className="hover:text-white transition-colors">運営情報</a>
+          <a href="/#contact" className="hover:text-white transition-colors">相談する</a>
+        </nav>
       </header>
 
       {/* Hero */}
