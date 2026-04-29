@@ -11,25 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
       - name: Deploy to root (leciel.cutegirl.jp)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.leciel.cutegirl.jp
           username: cutegirl.jp-leciel
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
+          local-dir: ./static/
           server-dir: /
 
       - name: Deploy to leciel subfolder (leciel-webdesign.com)
@@ -38,5 +26,5 @@ jobs:
           server: ftp.leciel.cutegirl.jp
           username: cutegirl.jp-leciel
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
+          local-dir: ./static/
           server-dir: /leciel/
