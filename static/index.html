@@ -38,6 +38,14 @@
     /* Smooth anchor offset for fixed header */
     section[id], footer[id] { scroll-margin-top: 88px; }
 
+    /* Logo responsive */
+    @media (max-width: 700px) {
+      .logo-ring  { width: 38px !important; height: 38px !important; }
+      .logo-ring-inner { inset: 4px !important; }
+      .logo-text-main { font-size: 15px !important; letter-spacing: 0.07em !important; }
+      .logo-text-sub  { display: none !important; }
+    }
+
     /* Focus ring */
     a:focus-visible, button:focus-visible {
       outline: 2px solid #2d5be3;

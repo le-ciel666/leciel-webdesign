@@ -48,16 +48,16 @@ function Header({ menuOpen, setMenuOpen }) {
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', height: 80, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 16, textDecoration: 'none' }}>
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none' }}>
           {/* Rainbow ring icon */}
-          <div style={{ width: 56, height: 56, position: 'relative', flexShrink: 0 }}>
+          <div className="logo-ring" style={{ width: 44, height: 44, position: 'relative', flexShrink: 0 }}>
             <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%' }} />
-            <div style={{ position: 'absolute', inset: 6, background: '#fff', borderRadius: '50%' }} />
+            <div className="logo-ring-inner" style={{ position: 'absolute', inset: 5, background: '#fff', borderRadius: '50%' }} />
           </div>
           {/* Text block */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-            <div style={{ fontSize: 24, fontWeight: 800, color: '#1a2744', letterSpacing: '0.14em', lineHeight: 1, whiteSpace: 'nowrap' }}>LE CIEL WEB DESIGN</div>
-            <div style={{ fontSize: 11, color: '#8896b3', letterSpacing: '0.12em', fontWeight: 500 }}>ル・シエルウェブデザイン</div>
+            <div className="logo-text-main" style={{ fontSize: 22, fontWeight: 800, color: '#1a2744', letterSpacing: '0.12em', lineHeight: 1, whiteSpace: 'nowrap' }}>LE CIEL WEB DESIGN</div>
+            <div className="logo-text-sub" style={{ fontSize: 11, color: '#8896b3', letterSpacing: '0.12em', fontWeight: 500 }}>ル・シエルウェブデザイン</div>
           </div>
         </a>
 
