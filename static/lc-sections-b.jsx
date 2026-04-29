@@ -30,9 +30,10 @@ function Pricing() {
       price: '200,000',
       target: '集客・問い合わせ導線まで整えたい方',
       desc: 'ホームページの構成から問い合わせ導線まで、集客を意識して整えたい方向けのプランです。',
-      items: ['10ページまで', '構成提案', '文章整理', 'デザイン制作', 'スマホ対応', '問い合わせフォーム', '基本SEO設定', '公開後サポート'],
+      items: ['10ページまで', '構成提案', '文章整理', 'デザイン制作', 'スマホ対応', '問い合わせフォーム', '基本SEO設定', '公開後1年間サポート込み'],
       recommended: false,
       cta: '相談する',
+      includeMaintenance: true,
     },
   ];
 
@@ -70,7 +71,12 @@ function Pricing() {
               )}
               <div style={{ padding: '24px' }}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: '#1a2744', marginBottom: 4 }}>{plan.name}</h3>
-                <p style={{ fontSize: 12, color: '#6b7a99', marginBottom: 16 }}>{plan.target}</p>
+                <p style={{ fontSize: 12, color: '#6b7a99', marginBottom: plan.includeMaintenance ? 8 : 16 }}>{plan.target}</p>
+                {plan.includeMaintenance && (
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: '#e6faf4', border: '1px solid #5dbfa0', borderRadius: 20, padding: '3px 10px', marginBottom: 14 }}>
+                    <span style={{ fontSize: 11, color: '#1a8a68', fontWeight: 700 }}>✓ 公開後1年間の保守メンテナンス込み</span>
+                  </div>
+                )}
                 <div style={{ marginBottom: 16, display: 'flex', alignItems: 'baseline', gap: 2 }}>
                   <span style={{ fontSize: 'clamp(28px, 5vw, 36px)', fontWeight: 800, color: '#1a2744' }}>¥</span>
                   <span style={{ fontSize: 'clamp(28px, 5vw, 36px)', fontWeight: 800, color: '#1a2744' }}>{plan.price}</span>
@@ -99,6 +105,34 @@ function Pricing() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Maintenance option card */}
+        <div style={{ marginTop: 32, borderRadius: 14, border: '1.5px solid #b2e4d4', background: '#f4fdf9', overflow: 'hidden' }}>
+          <div style={{ padding: '24px 28px', display: 'grid', gridTemplateColumns: 'auto 1fr', gap: '20px 40px', alignItems: 'center' }}>
+            <div>
+              <p style={{ fontSize: 11, fontWeight: 700, color: '#1a8a68', letterSpacing: '0.12em', marginBottom: 6, textTransform: 'uppercase' }}>Maintenance</p>
+              <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a2744', marginBottom: 12 }}>保守メンテナンス</h3>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 4, marginBottom: 4 }}>
+                <span style={{ fontSize: 36, fontWeight: 800, color: '#1a2744' }}>¥3,000</span>
+                <span style={{ fontSize: 14, color: '#4a5568', fontWeight: 600 }}>税込 / 月</span>
+              </div>
+              <p style={{ fontSize: 12, color: '#6b7a99' }}>月額・オプション</p>
+            </div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '10px 24px' }}>
+              {['サーバー・ドメイン更新管理', 'セキュリティアップデート対応', '表示崩れ・不具合の対応', '簡単な文言・画像の差し替え', 'メール相談サポート'].map((item, i) => (
+                <li key={i} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#2d3748' }}>
+                  <span style={{ color: '#1a8a68', fontWeight: 700, flexShrink: 0 }}>✓</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ background: '#d4f0e6', padding: '10px 28px' }}>
+            <p style={{ fontSize: 12, color: '#1a6b50', margin: 0 }}>
+              ※ プレミアムプランには公開後1年間の保守メンテナンスが含まれています。2年目以降は月額¥3,000でご継続いただけます。
+            </p>
+          </div>
         </div>
 
         <p style={{ textAlign: 'center', fontSize: 12, color: '#8896b3', marginTop: 24, lineHeight: 1.8 }}>
