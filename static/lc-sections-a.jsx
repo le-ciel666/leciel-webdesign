@@ -48,23 +48,25 @@ function Header({ menuOpen, setMenuOpen }) {
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none' }}>
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 16, textDecoration: 'none' }}>
           {/* Icon mark */}
-          <div style={{ width: 40, height: 40, position: 'relative', flexShrink: 0 }}>
-            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%', opacity: 0.22 }} />
+          <div style={{ width: 44, height: 44, position: 'relative', flexShrink: 0 }}>
+            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%', opacity: 0.25 }} />
             <div style={{ position: 'absolute', inset: 3, background: '#1a2744', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: '#fff', fontSize: 12, fontWeight: 800, letterSpacing: '-0.5px' }}>LC</span>
+              <span style={{ color: '#fff', fontSize: 13, fontWeight: 800, letterSpacing: '-0.5px' }}>LC</span>
             </div>
           </div>
           {/* Divider */}
-          <div style={{ width: 1, height: 32, background: '#dde3ef', flexShrink: 0 }} />
-          {/* Text */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-            <div style={{ fontSize: 17, fontWeight: 800, color: '#1a2744', letterSpacing: '0.1em', lineHeight: 1 }}>LE CIEL</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-              <div style={{ width: 18, height: 2, background: RAINBOW, borderRadius: 99 }} />
-              <span style={{ fontSize: 9, color: '#6b7a99', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>Web Design</span>
+          <div style={{ width: 1, height: 36, background: '#dde3ef', flexShrink: 0 }} />
+          {/* Text block */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+            {/* Main name */}
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
+              <span style={{ fontSize: 22, fontWeight: 800, color: '#1a2744', letterSpacing: '0.12em', lineHeight: 1 }}>LE CIEL</span>
+              <span style={{ fontSize: 12, fontWeight: 600, color: '#2d5be3', letterSpacing: '0.18em', lineHeight: 1 }}>WEB DESIGN</span>
             </div>
+            {/* Rainbow underline */}
+            <div style={{ height: 3, background: RAINBOW, borderRadius: 99, width: '100%' }} />
           </div>
         </a>
 
