@@ -46,27 +46,18 @@ function Header({ menuOpen, setMenuOpen }) {
       background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(8px)',
       borderBottom: '1px solid #e8ecf4',
     }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', height: 72, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', height: 80, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 18, textDecoration: 'none' }}>
-          {/* Icon mark */}
-          <div style={{ width: 52, height: 52, position: 'relative', flexShrink: 0 }}>
-            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%', opacity: 0.25 }} />
-            <div style={{ position: 'absolute', inset: 4, background: '#1a2744', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: '#fff', fontSize: 15, fontWeight: 800, letterSpacing: '-0.5px' }}>LC</span>
-            </div>
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 16, textDecoration: 'none' }}>
+          {/* Rainbow ring icon */}
+          <div style={{ width: 56, height: 56, position: 'relative', flexShrink: 0 }}>
+            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%' }} />
+            <div style={{ position: 'absolute', inset: 6, background: '#fff', borderRadius: '50%' }} />
           </div>
-          {/* Divider */}
-          <div style={{ width: 1, height: 42, background: '#dde3ef', flexShrink: 0 }} />
           {/* Text block */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {/* Main name row */}
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10 }}>
-              <span style={{ fontSize: 26, fontWeight: 800, color: '#1a2744', letterSpacing: '0.12em', lineHeight: 1 }}>LE CIEL</span>
-              <span style={{ fontSize: 13, fontWeight: 700, color: '#2d5be3', letterSpacing: '0.2em', lineHeight: 1 }}>WEB DESIGN</span>
-            </div>
-            {/* Rainbow underline */}
-            <div style={{ height: 3, background: RAINBOW, borderRadius: 99, width: '100%' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+            <div style={{ fontSize: 24, fontWeight: 800, color: '#1a2744', letterSpacing: '0.14em', lineHeight: 1, whiteSpace: 'nowrap' }}>LE CIEL WEB DESIGN</div>
+            <div style={{ fontSize: 11, color: '#8896b3', letterSpacing: '0.12em', fontWeight: 500 }}>ル・シエルウェブデザイン</div>
           </div>
         </a>
 
@@ -120,7 +111,7 @@ function Hero() {
     <section id="top" style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center',
       background: 'linear-gradient(160deg, #f8faff 0%, #eef3ff 100%)',
-      paddingTop: 72,
+      paddingTop: 80,
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '60px 20px', width: '100%' }}>
         <div style={{ maxWidth: 680 }}>
