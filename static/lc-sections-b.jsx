@@ -71,10 +71,11 @@ function Pricing() {
               <div style={{ padding: '24px' }}>
                 <h3 style={{ fontSize: 15, fontWeight: 700, color: '#1a2744', marginBottom: 4 }}>{plan.name}</h3>
                 <p style={{ fontSize: 12, color: '#6b7a99', marginBottom: 16 }}>{plan.target}</p>
-                <div style={{ marginBottom: 16 }}>
-                  <span style={{ fontSize: 11, color: '#6b7a99', verticalAlign: 'super' }}>¥</span>
+                <div style={{ marginBottom: 16, display: 'flex', alignItems: 'baseline', gap: 2 }}>
+                  <span style={{ fontSize: 'clamp(28px, 5vw, 36px)', fontWeight: 800, color: '#1a2744' }}>¥</span>
                   <span style={{ fontSize: 'clamp(28px, 5vw, 36px)', fontWeight: 800, color: '#1a2744' }}>{plan.price}</span>
-                  <span style={{ fontSize: 12, color: '#6b7a99' }}>円〜（税別）</span>
+                  <span style={{ fontSize: 'clamp(28px, 5vw, 36px)', fontWeight: 800, color: '#1a2744' }}>円</span>
+                  <span style={{ fontSize: 12, color: '#6b7a99', marginLeft: 4 }}>（税別）</span>
                 </div>
                 <p style={{ fontSize: 13, color: '#4a5568', lineHeight: 1.7, marginBottom: 20 }}>{plan.desc}</p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: 8 }}>
