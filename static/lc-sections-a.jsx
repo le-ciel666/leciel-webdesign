@@ -48,18 +48,25 @@ function Header({ menuOpen, setMenuOpen }) {
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ width: 28, height: 28, position: 'relative' }}>
-            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%', opacity: 0.15 }} />
+        <a href="#top" style={{ display: 'flex', alignItems: 'center', gap: 14, textDecoration: 'none' }}>
+          {/* Icon mark */}
+          <div style={{ width: 40, height: 40, position: 'relative', flexShrink: 0 }}>
+            <div style={{ position: 'absolute', inset: 0, background: RAINBOW, borderRadius: '50%', opacity: 0.22 }} />
             <div style={{ position: 'absolute', inset: 3, background: '#1a2744', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ color: '#fff', fontSize: 9, fontWeight: 700, letterSpacing: '-0.5px' }}>LC</span>
+              <span style={{ color: '#fff', fontSize: 12, fontWeight: 800, letterSpacing: '-0.5px' }}>LC</span>
             </div>
           </div>
-          <div>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a2744', letterSpacing: '0.04em', lineHeight: 1.2 }}>LE CIEL</div>
-            <div style={{ fontSize: 9, color: '#6b7a99', letterSpacing: '0.06em', lineHeight: 1 }}>WEB DESIGN</div>
+          {/* Divider */}
+          <div style={{ width: 1, height: 32, background: '#dde3ef', flexShrink: 0 }} />
+          {/* Text */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+            <div style={{ fontSize: 17, fontWeight: 800, color: '#1a2744', letterSpacing: '0.1em', lineHeight: 1 }}>LE CIEL</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <div style={{ width: 18, height: 2, background: RAINBOW, borderRadius: 99 }} />
+              <span style={{ fontSize: 9, color: '#6b7a99', letterSpacing: '0.2em', fontWeight: 600, textTransform: 'uppercase' }}>Web Design</span>
+            </div>
           </div>
-        </div>
+        </a>
 
         {/* Desktop Nav */}
         <nav style={{ display: 'flex', gap: 20, alignItems: 'center' }} className="desktop-nav">
