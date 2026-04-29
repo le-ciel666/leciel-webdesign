@@ -2,6 +2,9 @@
 header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Origin: *');
 
+mb_language('ja');
+mb_internal_encoding('UTF-8');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'message' => 'Method not allowed']);
@@ -28,20 +31,23 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+$fromAddress = 'no-reply@leciel-webdesign.com';
+$fromName    = 'LE CIEL WEB DESIGN';
+
 // 管理者宛メール
 $adminTo      = 'noriyoshi.aikawa@gmail.com';
 $adminSubject = mb_encode_mimeheader('【LE CIEL WEB DESIGN】お問い合わせ：' . $name . '様', 'UTF-8', 'B');
 $adminBody    = "お名前: {$name}\nメールアドレス: {$email}\n事業内容: {$business}\n作りたいサイト: {$siteType}\nご予算: {$budget}\n希望納期: {$deadline}\n\n相談内容:\n{$message}";
 $adminHeaders = implode("\r\n", [
-    'From: LE CIEL WEB DESIGN <no-reply@leciel-webdesign.com>',
-    'Reply-To: ' . $email,
+    "From: {$fromName} <{$fromAddress}>",
+    "Reply-To: {$email}",
+    'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: base64',
 ]);
-mail($adminTo, $adminSubject, base64_encode($adminBody), $adminHeaders);
+mail($adminTo, $adminSubject, chunk_split(base64_encode($adminBody)), $adminHeaders, "-f{$fromAddress}");
 
 // 自動返信メール（お客様宛）
-$replyTo      = $email;
 $replySubject = mb_encode_mimeheader('【LE CIEL WEB DESIGN】お問い合わせを承りました', 'UTF-8', 'B');
 $replyBody    = <<<EOT
 {$name} 様
@@ -58,6 +64,18 @@ $replyBody    = <<<EOT
 ■ メールアドレス
 {$email}
 
+■ 事業内容
+{$business}
+
+■ 作りたいサイト
+{$siteType}
+
+■ ご予算
+{$budget}
+
+■ 希望納期
+{$deadline}
+
 ■ 相談内容
 {$message}
 ──────────────────────────
@@ -67,12 +85,14 @@ $replyBody    = <<<EOT
 LE CIEL WEB DESIGN
 https://leciel-webdesign.com
 EOT;
+
 $replyHeaders = implode("\r\n", [
-    'From: LE CIEL WEB DESIGN <no-reply@leciel-webdesign.com>',
+    "From: {$fromName} <{$fromAddress}>",
+    'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: base64',
 ]);
-$replyResult = mail($replyTo, $replySubject, base64_encode($replyBody), $replyHeaders);
+$replyResult = mail($email, $replySubject, chunk_split(base64_encode($replyBody)), $replyHeaders, "-f{$fromAddress}");
 
 if ($replyResult) {
     echo json_encode(['success' => true, 'message' => 'お問い合わせを受け付けました。確認メールをお送りしましたのでご確認ください。']);
