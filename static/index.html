@@ -1,641 +1,142 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ルシエルウェブデザイン | Web制作・ホームページ制作</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ルシエルウェブデザイン | 小さなお店・個人事業主向けホームページ制作</title>
+  <meta name="description" content="ルシエルウェブデザインは、美容室・整体・飲食店・個人サービス向けのホームページ制作サービスです。構成づくり、デザイン、スマホ対応、公開後の更新までサポートします。初回相談無料。" />
+  <meta property="og:title" content="ルシエルウェブデザイン | 小さなお店向けホームページ制作" />
+  <meta property="og:description" content="美容室・整体・飲食店・個人サービス向けに、見やすく相談しやすいホームページを制作します。初回相談無料。" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 400;
-      color: #0F1623;
-      background: #FFFFFF;
-      line-height: 1.8;
+      color: #1a2744;
+      background: #fff;
       -webkit-font-smoothing: antialiased;
     }
-    img { max-width: 100%; }
-    input, textarea, button { font-family: inherit; }
-    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.25); }
-    input:focus, textarea:focus { outline: none; }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+    h1, h2, h3, h4 { font-weight: 800; }
+    p { text-wrap: pretty; }
+
+    /* Desktop nav visible, hamburger hidden by default */
+    .desktop-nav { display: flex !important; }
+    .hamburger  { display: none !important; }
+
+    @media (max-width: 700px) {
+      .desktop-nav { display: none !important; }
+      .hamburger  { display: flex !important; }
     }
-    .fu  { animation: fadeUp 0.9s ease both; }
-    .fu1 { animation: fadeUp 0.9s 0.15s ease both; }
+
+    /* Smooth anchor offset for fixed header */
+    section[id], footer[id] { scroll-margin-top: 68px; }
+
+    /* Focus ring */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #2d5be3;
+      outline-offset: 2px;
+    }
+
+    /* CTA pulse animation */
+    @keyframes cta-pulse {
+      0%, 100% { box-shadow: 0 4px 16px rgba(45,91,227,0.3); }
+      50%       { box-shadow: 0 4px 24px rgba(45,91,227,0.5); }
+    }
   </style>
 </head>
 <body>
-<div id="root"></div>
-<script type="text/babel">
-const { useState, useEffect } = React;
+  <div id="root"></div>
 
-const RB = 'linear-gradient(90deg,#FF6B6B,#FFA94D,#FFD93D,#6BCB77,#4D96FF,#7B61FF,#C77DFF)';
-const NAVY = '#0F1623';
-const SOFT = '#F7F9FC';
+  <script type="text/babel" src="lc-sections-a.jsx"></script>
+  <script type="text/babel" src="lc-sections-b.jsx"></script>
+  <script type="text/babel" src="lc-sections-c.jsx"></script>
 
-const useMobile = () => {
-  const [m, setM] = useState(window.innerWidth <= 768);
-  useEffect(() => {
-    const h = () => setM(window.innerWidth <= 768);
-    window.addEventListener('resize', h);
-    return () => window.removeEventListener('resize', h);
-  }, []);
-  return m;
-};
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accentColor": "#2d5be3",
+      "navyColor": "#1a2744",
+      "heroSubtitle": "美容室・整体・飲食店・個人サービス向けに、構成づくりからデザイン、スマホ対応、公開後の更新までサポートします。",
+      "showTargetBadges": true
+    }/*EDITMODE-END*/;
 
-const goTo = (id) => {
-  const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
-};
+    function App() {
+      const [menuOpen, setMenuOpen] = React.useState(false);
 
-const RL = ({ w='48px', h='3px', style={} }) => (
-  <div style={{ width:w, height:h, background:RB, borderRadius:'2px', ...style }} />
-);
+      // Close mobile menu on resize
+      React.useEffect(() => {
+        const handler = () => { if (window.innerWidth > 700) setMenuOpen(false); };
+        window.addEventListener('resize', handler);
+        return () => window.removeEventListener('resize', handler);
+      }, []);
 
-const ST = ({ en, ja, center=true }) => {
-  const mob = useMobile();
-  return (
-    <div style={{ textAlign: center?'center':'left', marginBottom: mob?'40px':'64px' }}>
-      <p style={{ fontFamily:'Syne,sans-serif', fontSize:'12px', letterSpacing:'0.28em', color:'#9CA3AF', textTransform:'uppercase', marginBottom:'12px' }}>{en}</p>
-      <h2 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'26px':'34px', fontWeight:'700', letterSpacing:'0.04em', lineHeight:1.4, marginBottom:'16px' }}>{ja}</h2>
-      <RL style={{ margin: center?'0 auto':'0' }} />
-    </div>
-  );
-};
+      // Tweaks panel protocol
+      React.useEffect(() => {
+        const handler = (e) => {
+          if (e.data?.type === '__activate_edit_mode') setTweaksOpen(true);
+          if (e.data?.type === '__deactivate_edit_mode') setTweaksOpen(false);
+        };
+        window.addEventListener('message', handler);
+        window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+        return () => window.removeEventListener('message', handler);
+      }, []);
+      const [tweaksOpen, setTweaksOpen] = React.useState(false);
 
-/* ─── Nav ─── */
-const Nav = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const mob = useMobile();
-  const links = [['選ばれる理由','reasons'],['サービス','services'],['制作実績','portfolio'],['料金','pricing'],['よくある質問','faq'],['運営情報','company']];
+      return (
+        <React.Fragment>
+          <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <main>
+            <Hero />
+            <Concerns />
+            <Services />
+            <Pricing />
+            <Works />
+            <Process />
+            <Profile />
+            <FAQ />
+            <Contact />
+          </main>
+          <Footer />
 
-  const handleLink = (id) => {
-    setMenuOpen(false);
-    setTimeout(() => goTo(id), 10);
-  };
-
-  return (
-    <nav style={{
-      position:'fixed', top:0, left:0, right:0, zIndex:200,
-      background:'rgba(10,16,32,0.97)',
-      backdropFilter:'blur(16px)',
-      borderBottom:'1px solid rgba(255,255,255,0.07)',
-      padding: mob ? '0 20px' : '0 56px',
-      height:'70px',
-      display:'flex', alignItems:'center', justifyContent:'space-between'
-    }}>
-      {/* Logo */}
-      <div style={{ cursor:'pointer', display:'flex', alignItems:'center', gap:'12px' }} onClick={() => window.scrollTo({top:0,behavior:'smooth'})}>
-        <div style={{ width:'30px', height:'30px', borderRadius:'50%', background:RB, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-          <div style={{ width:'18px', height:'18px', borderRadius:'50%', background:'rgba(10,16,32,0.85)' }} />
-        </div>
-        <div>
-          <div style={{ fontFamily:'Syne,sans-serif', fontSize: mob?'11px':'13px', fontWeight:'700', letterSpacing:'0.2em', color:'white', lineHeight:1.2, textTransform:'uppercase' }}>LE CIEL WEB DESIGN</div>
-          <div style={{ fontSize:'10px', letterSpacing:'0.12em', color:'rgba(255,255,255,0.4)', marginTop:'2px', fontFamily:'Noto Sans JP' }}>ル・シエルウェブデザイン</div>
-        </div>
-      </div>
-
-      {/* Desktop links */}
-      {!mob && (
-        <div style={{ display:'flex', gap:'28px', alignItems:'center' }}>
-          {links.map(([l,id]) => (
-            <button key={id} onClick={() => handleLink(id)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'14px', color:'rgba(255,255,255,0.72)', letterSpacing:'0.04em', fontFamily:'Noto Sans JP', fontWeight:'400', transition:'color 0.2s' }}
-              onMouseEnter={e=>e.currentTarget.style.color='white'} onMouseLeave={e=>e.currentTarget.style.color='rgba(255,255,255,0.72)'}>{l}</button>
-          ))}
-          <button onClick={() => handleLink('contact')} style={{ background:RB, color:'white', border:'none', padding:'10px 22px', borderRadius:'4px', fontSize:'14px', letterSpacing:'0.06em', cursor:'pointer', fontFamily:'Noto Sans JP', fontWeight:'500', transition:'opacity 0.2s' }}
-            onMouseEnter={e=>e.currentTarget.style.opacity='0.82'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}>お問い合わせ</button>
-        </div>
-      )}
-
-      {/* Hamburger */}
-      {mob && (
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background:'none', border:'none', cursor:'pointer', padding:'8px', display:'flex', flexDirection:'column', gap:'5px' }}>
-          {[0,1,2].map(i => (
-            <span key={i} style={{ display:'block', width:'22px', height:'2px', background:'white', borderRadius:'2px',
-              transition:'all 0.3s',
-              transform: menuOpen ? (i===0?'rotate(45deg) translateY(7px)': i===2?'rotate(-45deg) translateY(-7px)':'scaleX(0)') : 'none',
-              opacity: menuOpen && i===1 ? 0 : 1
-            }} />
-          ))}
-        </button>
-      )}
-
-      {/* Mobile menu */}
-      {mob && menuOpen && (
-        <div style={{ position:'absolute', top:'70px', left:0, right:0, background:'rgba(10,16,32,0.98)', backdropFilter:'blur(16px)', borderBottom:'1px solid rgba(255,255,255,0.07)', padding:'20px', display:'flex', flexDirection:'column', gap:'4px' }}>
-          {links.map(([l,id]) => (
-            <button key={id} onClick={() => handleLink(id)} style={{ background:'none', border:'none', cursor:'pointer', fontSize:'16px', color:'rgba(255,255,255,0.8)', letterSpacing:'0.04em', fontFamily:'Noto Sans JP', padding:'14px 8px', textAlign:'left', borderBottom:'1px solid rgba(255,255,255,0.06)' }}>{l}</button>
-          ))}
-          <button onClick={() => handleLink('contact')} style={{ marginTop:'12px', background:RB, color:'white', border:'none', padding:'14px', borderRadius:'6px', fontSize:'15px', letterSpacing:'0.08em', cursor:'pointer', fontFamily:'Noto Sans JP', fontWeight:'700' }}>無料でお問い合わせ</button>
-        </div>
-      )}
-    </nav>
-  );
-};
-
-/* ─── Hero ─── */
-const Hero = () => {
-  const mob = useMobile();
-  return (
-    <section style={{
-      minHeight:'100vh', padding: mob ? '110px 24px 70px' : '130px 56px 90px',
-      background:'linear-gradient(175deg,#EBF1FB 0%,#F4F7FD 35%,#FFFFFF 70%)',
-      display:'flex', alignItems:'center', position:'relative', overflow:'hidden'
-    }}>
-      <div style={{ position:'absolute', top:'-5%', right:'0', width:'55%', height:'110%', background:'radial-gradient(ellipse at 60% 40%,rgba(77,150,255,0.09) 0%,rgba(199,125,255,0.06) 50%,transparent 80%)', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'3px', background:RB }} />
-
-      <div style={{ maxWidth:'1240px', margin:'0 auto', width:'100%', display:'grid', gridTemplateColumns: mob ? '1fr' : '1fr 1fr', gap: mob?'48px':'96px', alignItems:'center' }}>
-        <div className="fu">
-          <div style={{ display:'flex', alignItems:'center', gap:'12px', marginBottom:'24px' }}>
-            <div style={{ width:'28px', height:'1px', background:RB }} />
-            <span style={{ fontFamily:'Syne,sans-serif', fontSize:'12px', letterSpacing:'0.28em', color:'#7B61FF', textTransform:'uppercase' }}>LE CIEL Web Design</span>
-          </div>
-          <h1 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'36px':'58px', fontWeight:'700', lineHeight:1.3, letterSpacing:'0.02em', color:NAVY, marginBottom:'28px' }}>
-            空のように、<br />
-            <span style={{ background:RB, WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>広がる可能性</span>を<br />
-            あなたのお店へ。
-          </h1>
-          <p style={{ fontSize:'15px', color:'#4B5563', lineHeight:2.0, marginBottom:'36px' }}>
-            美容室・居酒屋・整体院・カフェなど、個人事業主・小規模店舗さまの集客をWebサイトで支援します。シンプルで洗練されたデザインと確かな技術で、あなたのお店の魅力を最大限に引き出します。
-          </p>
-          <div style={{ display:'flex', gap:'12px', flexWrap:'wrap' }}>
-            <button onClick={() => goTo('contact')} style={{ padding:'14px 30px', background:NAVY, color:'white', border:'none', borderRadius:'4px', fontSize:'14px', letterSpacing:'0.08em', cursor:'pointer', fontFamily:'Noto Sans JP', fontWeight:'500', transition:'all 0.3s ease', flexShrink:0 }}
-              onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-2px)';e.currentTarget.style.boxShadow='0 10px 28px rgba(15,22,35,0.22)';}}
-              onMouseLeave={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.boxShadow='none';}}>無料でお問い合わせ</button>
-            <button onClick={() => goTo('portfolio')} style={{ padding:'14px 30px', background:'transparent', color:NAVY, border:'1px solid rgba(15,22,35,0.18)', borderRadius:'4px', fontSize:'14px', letterSpacing:'0.08em', cursor:'pointer', fontFamily:'Noto Sans JP', transition:'all 0.3s ease', flexShrink:0 }}
-              onMouseEnter={e=>{e.currentTarget.style.borderColor=NAVY;e.currentTarget.style.background='rgba(15,22,35,0.03)';}}
-              onMouseLeave={e=>{e.currentTarget.style.borderColor='rgba(15,22,35,0.18)';e.currentTarget.style.background='transparent';}}>制作実績を見る</button>
-          </div>
-        </div>
-
-        {/* Stacked photo cards */}
-        {!mob && (
-          <div className="fu1" style={{ position:'relative', height:'480px' }}>
-            <div style={{ position:'absolute', top:'20px', right:'0', width:'78%', borderRadius:'14px', overflow:'hidden', boxShadow:'0 16px 48px rgba(15,22,35,0.10)', transform:'rotate(3.5deg)', transformOrigin:'bottom right' }}>
-              <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=80" alt="カフェサイト" style={{ width:'100%', height:'200px', objectFit:'cover', display:'block' }} />
-              <div style={{ background:'white', padding:'16px 20px' }}>
-                <div style={{ fontSize:'11px', color:'#9CA3AF', letterSpacing:'0.12em', textTransform:'uppercase', marginBottom:'4px' }}>Café</div>
-                <div style={{ fontSize:'15px', fontWeight:'700', color:NAVY }}>Café Soleil</div>
+          {/* Tweaks Panel */}
+          {tweaksOpen && (
+            <div style={{
+              position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
+              background: '#fff', borderRadius: 14, padding: '20px 24px',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.18)', border: '1.5px solid #e8ecf4',
+              minWidth: 260,
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+                <span style={{ fontWeight: 700, fontSize: 14, color: '#1a2744' }}>Tweaks</span>
+                <button onClick={() => {
+                  setTweaksOpen(false);
+                  window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+                }} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, color: '#6b7a99' }}>×</button>
+              </div>
+              <div style={{ fontSize: 12, color: '#8896b3', lineHeight: 1.7 }}>
+                <p style={{ marginBottom: 8 }}>このデモでは以下の要素をカスタマイズできます：</p>
+                <ul style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column', gap: 4 }}>
+                  <li>アクセントカラー（ボタン・リンク）</li>
+                  <li>ナビゲーションバーカラー</li>
+                  <li>FAQのアコーディオン開閉</li>
+                  <li>料金プランの強調表示切り替え</li>
+                </ul>
+                <p style={{ marginTop: 12, color: '#2d5be3', fontWeight: 500 }}>各セクションは直接クリック・スクロールでご確認いただけます。</p>
               </div>
             </div>
-            <div style={{ position:'absolute', bottom:'0', left:'0', width:'80%', borderRadius:'14px', overflow:'hidden', boxShadow:'0 28px 72px rgba(15,22,35,0.15)', transform:'rotate(-2.5deg)', transformOrigin:'bottom left' }}>
-              <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="サロンサイト" style={{ width:'100%', height:'220px', objectFit:'cover', display:'block' }} />
-              <div style={{ background:'white', padding:'16px 20px' }}>
-                <div style={{ fontSize:'11px', color:'#9CA3AF', letterSpacing:'0.12em', textTransform:'uppercase', marginBottom:'4px' }}>Beauty Salon</div>
-                <div style={{ fontSize:'15px', fontWeight:'700', color:NAVY }}>Beauty &amp; Relax Ciel</div>
-              </div>
-              <div style={{ height:'3px', background:RB }} />
-            </div>
-          </div>
-        )}
-
-        {/* Mobile: single image */}
-        {mob && (
-          <div style={{ borderRadius:'14px', overflow:'hidden', boxShadow:'0 20px 60px rgba(15,22,35,0.12)' }}>
-            <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80" alt="サロンサイト" style={{ width:'100%', height:'220px', objectFit:'cover', display:'block' }} />
-            <div style={{ background:'white', padding:'16px 20px' }}>
-              <div style={{ fontSize:'11px', color:'#9CA3AF', letterSpacing:'0.1em', textTransform:'uppercase', marginBottom:'4px' }}>Beauty Salon</div>
-              <div style={{ fontSize:'15px', fontWeight:'700', color:NAVY }}>Beauty &amp; Relax Ciel</div>
-            </div>
-            <div style={{ height:'3px', background:RB }} />
-          </div>
-        )}
-      </div>
-    </section>
-  );
-};
-
-/* ─── Reasons ─── */
-const reasonsData = [
-  { icon:'✦', title:'シンプルで洗練されたデザイン', desc:'流行に左右されない、時代を超えて愛されるWebデザインを提供します。お客様のブランドを大切にしながら、訪問者の心に残るサイトを制作します。' },
-  { icon:'◈', title:'集客・成果にこだわった設計', desc:'デザインの美しさだけでなく、予約・問い合わせにつながる動線設計を重視します。SEO対策やスマートフォン対応も標準で対応しています。' },
-  { icon:'◉', title:'丁寧なヒアリングとサポート', desc:'お客様のビジネスや想いを深くヒアリングし、コンセプトから一緒に考えます。納品後も安心のサポートで、長くお付き合いいただけます。' },
-  { icon:'◆', title:'明瞭な料金と迅速な対応', desc:'追加費用なしの明瞭な料金設定と、最短2週間のスピード納品。クラウドワークス・ココナラでも多数の高評価をいただいています。' },
-];
-
-const Reasons = () => {
-  const mob = useMobile();
-  return (
-    <section id="reasons" style={{ padding: mob?'72px 24px':'120px 56px', background:'#fff' }}>
-      <div style={{ maxWidth:'1240px', margin:'0 auto' }}>
-        <ST en="Why Choose Us" ja="選ばれる理由" />
-        <div style={{ display:'grid', gridTemplateColumns: mob?'1fr':'repeat(4,1fr)', gap:'20px' }}>
-          {reasonsData.map((r,i) => (
-            <div key={i} style={{ padding:'32px 26px', background:'white', border:'1px solid rgba(15,22,35,0.07)', borderRadius:'8px', position:'relative', overflow:'hidden', transition:'all 0.3s ease' }}
-              onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-5px)';e.currentTarget.style.boxShadow='0 20px 60px rgba(15,22,35,0.09)';}}
-              onMouseLeave={e=>{e.currentTarget.style.transform='none';e.currentTarget.style.boxShadow='none';}}>
-              <div style={{ position:'absolute', top:0, left:0, right:0, height:'3px', background:RB }} />
-              <div style={{ fontSize:'24px', marginBottom:'16px', color:NAVY }}>{r.icon}</div>
-              <h3 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize:'16px', fontWeight:'700', lineHeight:1.6, letterSpacing:'0.03em', marginBottom:'12px' }}>{r.title}</h3>
-              <p style={{ fontSize:'14px', color:'#6B7280', lineHeight:1.9 }}>{r.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Services ─── */
-const servicesData = [
-  { title:'ホームページ制作', price:'¥100,000〜', desc:'個人事業主・小規模店舗向けの新規ホームページ制作。ヒアリングからデザイン・コーディング・公開まで一括対応。お客様のブランドと想いを丁寧に表現します。', tags:['HTML/CSS','レスポンシブ対応','SEO基本設定','お問い合わせフォーム'] },
-  { title:'サイトリニューアル', price:'¥100,000〜', desc:'古くなったサイトのデザインリニューアル。既存のコンテンツや構成を活かしながら、現代的でおしゃれなデザインに刷新します。', tags:['デザイン刷新','スマホ最適化','コンテンツ移行'] },
-  { title:'LP（ランディングページ）制作', price:'¥50,000〜', desc:'キャンペーンや新サービス向けのランディングページ制作。問い合わせ・予約につながるコンバージョン重視の設計で、集客効果を高めます。', tags:['単ページ完結','高速表示','フォーム設置'] },
-];
-
-const Services = () => {
-  const mob = useMobile();
-  return (
-    <section id="services" style={{ padding: mob?'72px 24px':'120px 56px', background:SOFT }}>
-      <div style={{ maxWidth:'1240px', margin:'0 auto' }}>
-        <ST en="Services" ja="サービス内容" />
-        <div style={{ display:'grid', gridTemplateColumns: mob?'1fr':'repeat(3,1fr)', gap:'20px' }}>
-          {servicesData.map((s,i) => (
-            <div key={i} style={{ padding: mob?'28px 22px':'44px 40px', background:'white', borderRadius:'8px', display:'flex', flexDirection:'column', border:'1px solid transparent', transition:'all 0.3s ease' }}
-              onMouseEnter={e=>{e.currentTarget.style.boxShadow='0 20px 60px rgba(15,22,35,0.08)';e.currentTarget.style.borderColor='rgba(123,97,255,0.14)';}}
-              onMouseLeave={e=>{e.currentTarget.style.boxShadow='none';e.currentTarget.style.borderColor='transparent';}}>
-              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:'14px', gap:'12px' }}>
-                <h3 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize:'18px', fontWeight:'700', letterSpacing:'0.03em', lineHeight:1.4 }}>{s.title}</h3>
-                <span style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize:'18px', fontWeight:'700', color:'#7B61FF', whiteSpace:'nowrap', flexShrink:0 }}>{s.price}</span>
-              </div>
-              <p style={{ fontSize:'14px', color:'#6B7280', lineHeight:1.95, marginBottom:'20px', flex:1 }}>{s.desc}</p>
-              <div style={{ display:'flex', gap:'8px', flexWrap:'wrap' }}>
-                {s.tags.map(t => <span key={t} style={{ padding:'4px 12px', borderRadius:'100px', fontSize:'13px', color:'#4B5563', background:'rgba(15,22,35,0.05)', letterSpacing:'0.02em' }}>{t}</span>)}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Portfolio ─── */
-const portfolioData = [
-  { cat:'美容室', title:'Hair Salon Lumière', img:'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=700&q=80', desc:'モノトーンベースで高級感を演出。オンライン予約機能と施術メニューを見やすく構成。', tags:['HTML/CSS','予約機能','レスポンシブ'], bg:'#F3F0FF', link:'hair-salon.html' },
-  { cat:'居酒屋', title:'炉端 さくら', img:'https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=700&q=80', desc:'和の温かみを伝えるデザイン。メニュー紹介・予約フォーム・アクセスを使いやすく配置。', tags:['HTML/CSS','メニュー管理','MAP連携'], bg:'#FFF7ED', link:'izakaya.html' },
-  { cat:'整体院', title:'癒しの整体 こころ', img:'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=700&q=80', desc:'清潔感と安心感を重視。症状別メニューの紹介と予約機能で新規集客を強化。', tags:['HTML/CSS','予約フォーム','SEO対応'], bg:'#F0FFF4', link:'seitai.html' },
-  { cat:'カフェ', title:'Café Soleil', img:'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=700&q=80', desc:'ナチュラルで温かみのある空間を表現。SNS連携とフォトギャラリーで来店を促進。', tags:['HTML/CSS','SNS連携','ギャラリー'], bg:'#FEFCE8', link:'cafe.html' },
-  { cat:'ヨガスタジオ', title:'SORA Yoga Studio', img:'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=700&q=80', desc:'洗練されたプライベートヨガスタジオサイト。タイムテーブル・インストラクター紹介・料金プランを完備。', tags:['HTML/CSS','予約機能','レスポンシブ'], bg:'#EEF2FF', link:'yoga.html' },
-  { cat:'LP制作', title:'LUMIA シャンプーLP', img:'https://images.unsplash.com/photo-1556228852-80b6e5eeff06?w=700&q=80', desc:'美容師開発のプレミアムシャンプーLP。商品の世界観を贅沢に表現し、購買へと導くコンバージョン設計。', tags:['LP制作','EC連携','コンバージョン最適化'], bg:'#FDF8F0', link:'shampoo-lp.html' },
-];
-
-const PCard = ({ item }) => {
-  const [hov, setHov] = useState(false);
-  return (
-    <div onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
-      onClick={() => item.link && window.open(item.link, '_blank')}
-      style={{ borderRadius:'10px', overflow:'hidden', background:'white', boxShadow: hov ? '0 28px 70px rgba(15,22,35,0.13)' : '0 4px 20px rgba(15,22,35,0.06)', transform: hov ? 'translateY(-5px)' : 'none', transition:'all 0.35s ease', cursor: item.link ? 'pointer' : 'default' }}>
-      <div style={{ background:'#ECEEF2', padding:'10px 13px', display:'flex', alignItems:'center', gap:'6px' }}>
-        {['#FF6B6B','#FFD93D','#6BCB77'].map((c,i) => <div key={i} style={{ width:'8px', height:'8px', borderRadius:'50%', background:c }} />)}
-        <div style={{ flex:1, background:'white', borderRadius:'4px', height:'18px', marginLeft:'8px', display:'flex', alignItems:'center', padding:'0 8px' }}>
-          <span style={{ fontSize:'11px', color:'#9CA3AF' }}>le-ciel-sample.com</span>
-        </div>
-      </div>
-      <div style={{ position:'relative', overflow:'hidden', height:'200px' }}>
-        <img src={item.img} alt={item.title} style={{ width:'100%', height:'100%', objectFit:'cover', transform: hov ? 'scale(1.06)' : 'scale(1)', transition:'transform 0.5s ease', display:'block' }} />
-        <div style={{ position:'absolute', top:'12px', left:'12px', background:'rgba(255,255,255,0.92)', backdropFilter:'blur(8px)', padding:'4px 12px', borderRadius:'100px', fontSize:'13px', fontWeight:'500', color:NAVY }}>{item.cat}</div>
-      </div>
-      <div style={{ padding:'22px 22px 18px' }}>
-        <h3 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize:'16px', fontWeight:'700', marginBottom:'8px', letterSpacing:'0.03em' }}>{item.title}</h3>
-        <p style={{ fontSize:'13px', color:'#6B7280', lineHeight:1.85, marginBottom:'14px' }}>{item.desc}</p>
-        <div style={{ display:'flex', gap:'6px', flexWrap:'wrap' }}>
-          {item.tags.map(t => <span key={t} style={{ padding:'3px 10px', borderRadius:'100px', fontSize:'12px', background:item.bg, color:'#4B5563' }}>{t}</span>)}
-        </div>
-      </div>
-      <div style={{ height:'3px', background: hov ? RB : 'transparent', transition:'background 0.3s ease' }} />
-    </div>
-  );
-};
-
-const Portfolio = () => {
-  const mob = useMobile();
-  return (
-    <section id="portfolio" style={{ padding: mob?'72px 24px':'120px 56px', background:'white' }}>
-      <div style={{ maxWidth:'1240px', margin:'0 auto' }}>
-        <ST en="Portfolio" ja="制作実績" />
-        {mob ? (
-          <div style={{ display:'grid', gridTemplateColumns:'1fr', gap:'20px' }}>
-            {portfolioData.map((item,i) => <PCard key={i} item={item} />)}
-          </div>
-        ) : (
-          <>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'24px' }}>
-              {portfolioData.slice(0,3).map((item,i) => <PCard key={i} item={item} />)}
-            </div>
-            <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:'24px', marginTop:'24px' }}>
-              {portfolioData.slice(3).map((item,i) => <PCard key={i} item={item} />)}
-            </div>
-          </>
-        )}
-      </div>
-    </section>
-  );
-};
-
-/* ─── Pricing ─── */
-const CheckItem = ({ text }) => (
-  <div style={{ display:'flex', alignItems:'center', gap:'12px', fontSize:'15px', color:'#374151', padding:'6px 0' }}>
-    <span style={{ color:'#4DD9C0', fontWeight:'700', fontSize:'15px', flexShrink:0 }}>✓</span>
-    {text}
-  </div>
-);
-
-const Pricing = () => {
-  const mob = useMobile();
-  return (
-    <section id="pricing" style={{ padding: mob?'72px 24px':'120px 56px', background:SOFT }}>
-      <div style={{ maxWidth:'1000px', margin:'0 auto' }}>
-        <div style={{ textAlign:'center', marginBottom: mob?'40px':'72px' }}>
-          <p style={{ fontFamily:'Syne,sans-serif', fontSize:'12px', letterSpacing:'0.28em', color:'#9CA3AF', textTransform:'uppercase', marginBottom:'12px' }}>Plan</p>
-          <h2 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'28px':'42px', fontWeight:'700', color:NAVY, letterSpacing:'0.04em', marginBottom:'16px' }}>料金プラン</h2>
-          <p style={{ fontSize:'15px', color:'#6B7280', lineHeight:1.9 }}>わかりやすいシンプルな料金体系。<br />追加料金なし、隠れた費用なし。</p>
-        </div>
-        <div style={{ display:'grid', gridTemplateColumns: mob?'1fr':'1fr 1fr', gap:'20px', alignItems:'start' }}>
-          {/* Main plan */}
-          <div style={{ borderRadius:'16px', background:'white', border:'1px solid rgba(15,22,35,0.08)', padding: mob?'28px 22px':'44px 40px' }}>
-            <p style={{ fontFamily:'Syne,sans-serif', fontSize:'11px', letterSpacing:'0.24em', color:'#7B61FF', textTransform:'uppercase', marginBottom:'10px' }}>Production</p>
-            <h3 style={{ fontSize: mob?'20px':'24px', fontWeight:'700', color:NAVY, marginBottom:'22px', letterSpacing:'0.03em' }}>ホームページ制作</h3>
-            <div style={{ display:'flex', alignItems:'baseline', gap:'8px', marginBottom:'6px' }}>
-              <span style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'38px':'48px', fontWeight:'700', color:NAVY, lineHeight:1, letterSpacing:'-0.01em' }}>¥100,000</span>
-              <span style={{ fontSize:'16px', fontWeight:'500', color:'#374151' }}>税込</span>
-            </div>
-            <p style={{ fontSize:'14px', color:'#9CA3AF', marginBottom:'28px' }}>買い切り・一括払い</p>
-            <div style={{ borderTop:'1px solid rgba(15,22,35,0.08)', paddingTop:'22px', display:'flex', flexDirection:'column', gap:'2px' }}>
-              {['ヒアリング・要件整理','ページ構成・サイトマップ作成','オリジナルデザイン制作','コーディング・実装','スマホ対応（レスポンシブ）','SEO基本設定','お問い合わせフォーム設置','公開サポート・納品','修正対応（制作中は無制限）'].map(f => <CheckItem key={f} text={f} />)}
-            </div>
-            <button onClick={() => goTo('contact')} style={{ marginTop:'28px', width:'100%', padding:'15px', borderRadius:'8px', border:'none', background:RB, color:'white', fontSize:'15px', letterSpacing:'0.08em', cursor:'pointer', fontFamily:'Noto Sans JP', fontWeight:'700', transition:'opacity 0.2s' }}
-              onMouseEnter={e=>e.currentTarget.style.opacity='0.85'} onMouseLeave={e=>e.currentTarget.style.opacity='1'}>無料相談する →</button>
-          </div>
-          {/* Right column */}
-          <div style={{ display:'flex', flexDirection:'column', gap:'20px' }}>
-            <div style={{ borderRadius:'16px', background:'white', border:'1px solid rgba(15,22,35,0.08)', padding: mob?'28px 22px':'36px' }}>
-              <p style={{ fontFamily:'Syne,sans-serif', fontSize:'11px', letterSpacing:'0.24em', color:'#9CA3AF', textTransform:'uppercase', marginBottom:'10px' }}>Maintenance</p>
-              <h3 style={{ fontSize: mob?'18px':'22px', fontWeight:'700', color:NAVY, marginBottom:'18px', letterSpacing:'0.03em' }}>保守メンテナンス</h3>
-              <div style={{ display:'flex', alignItems:'baseline', gap:'8px', marginBottom:'6px' }}>
-                <span style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'34px':'44px', fontWeight:'700', color:NAVY, lineHeight:1, letterSpacing:'-0.01em' }}>¥3,000</span>
-                <span style={{ fontSize:'16px', fontWeight:'500', color:'#374151' }}>税込 / 月</span>
-              </div>
-              <p style={{ fontSize:'14px', color:'#9CA3AF', marginBottom:'22px' }}>月額・オプション</p>
-              <div style={{ display:'flex', flexDirection:'column', gap:'2px' }}>
-                {['サーバー・ドメイン更新管理','セキュリティアップデート対応','表示崩れ・不具合の対応','簡単な文言・画像の差し替え','メール相談サポート'].map(f => <CheckItem key={f} text={f} />)}
-              </div>
-            </div>
-            <div style={{ borderRadius:'16px', background:'rgba(15,22,35,0.03)', border:'1px solid rgba(15,22,35,0.07)', padding:'24px 26px', display:'flex', flexDirection:'column', gap:'10px' }}>
-              {['着手金50%・納品時50%の2回払い可','クラウドワークス・ココナラからも受付可','ページ増設・機能追加は別途お見積もり'].map(n => (
-                <div key={n} style={{ display:'flex', gap:'10px', fontSize:'14px', color:'#6B7280', lineHeight:1.7 }}>
-                  <span style={{ flexShrink:0, color:'#9CA3AF' }}>※</span>{n}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Flow ─── */
-const flowData = [
-  { n:'01', title:'お問い合わせ', desc:'フォームまたはクラウドワークス・ココナラからご連絡ください。お返事は24時間以内を目標にしています。' },
-  { n:'02', title:'ヒアリング・ご提案', desc:'お客様のビジネスや目的・ご希望を丁寧にヒアリング。最適なプランとデザインイメージをご提案します。' },
-  { n:'03', title:'デザイン制作', desc:'ヒアリング内容をもとにデザイン案を制作。2〜3パターンからご選択いただき、ご要望に応じて調整します。' },
-  { n:'04', title:'コーディング・実装', desc:'ご承認いただいたデザインをHTML/CSSでコーディング。レスポンシブ対応・SEO設定も行います。' },
-  { n:'05', title:'確認・修正', desc:'完成したサイトをご確認いただき、ご要望に応じて修正対応します。細部までこだわって仕上げます。' },
-  { n:'06', title:'納品・公開', desc:'お客様のサーバーへ設置し公開。操作説明資料もお渡しします。公開後もサポートいたします。' },
-];
-
-const Flow = () => {
-  const mob = useMobile();
-  return (
-    <section style={{ padding: mob?'72px 24px':'120px 56px', background:'white' }}>
-      <div style={{ maxWidth:'760px', margin:'0 auto' }}>
-        <ST en="Process" ja="制作の流れ" />
-        <div style={{ position:'relative' }}>
-          <div style={{ position:'absolute', left:'27px', top:'28px', bottom:'28px', width:'1px', background:'linear-gradient(to bottom,transparent,rgba(15,22,35,0.1) 8%,rgba(15,22,35,0.1) 92%,transparent)' }} />
-          {flowData.map((s,i) => (
-            <div key={i} style={{ display:'flex', gap: mob?'24px':'48px', alignItems:'flex-start', padding:'22px 0', position:'relative' }}>
-              <div style={{ width:'54px', height:'54px', borderRadius:'50%', background: i%2===0 ? NAVY : 'white', border:`2px solid ${NAVY}`, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, zIndex:1 }}>
-                <span style={{ fontFamily:'Syne,sans-serif', fontSize:'15px', fontWeight:'700', color: i%2===0 ? 'white' : NAVY }}>{s.n}</span>
-              </div>
-              <div style={{ paddingTop:'10px', flex:1 }}>
-                <h3 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize:'17px', fontWeight:'700', marginBottom:'8px', letterSpacing:'0.03em' }}>{s.title}</h3>
-                <p style={{ fontSize:'14px', color:'#6B7280', lineHeight:1.95 }}>{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── FAQ ─── */
-const faqData = [
-  { q:'制作期間はどのくらいですか？', a:'内容・規模によって異なりますが、標準的なホームページで3〜4週間が目安です。お急ぎの場合はご相談ください。' },
-  { q:'初めてのホームページ制作でも大丈夫ですか？', a:'はい、もちろんです。Webサイトについて詳しくない方も安心してお任せください。難しい用語を使わず、わかりやすくご説明しながら丁寧に進めます。' },
-  { q:'写真や原稿は自分で準備が必要ですか？', a:'基本的にはお客様にご用意いただきますが、フリー素材の選定サポートや、文章の構成・ライティングのご相談も承っています。' },
-  { q:'納品後に自分で更新できますか？', a:'納品時にHTML・CSS等のすべてのファイルをお渡しします。ただし更新作業にはある程度の知識が必要となります。「自分での更新は難しい」という方には、月額の保守メンテナンスをご契約いただくことで、テキストや画像の差し替えなど日常的な更新作業をお引き受けします。お気軽にご相談ください。' },
-  { q:'クラウドワークスやココナラ以外でも依頼できますか？', a:'はい、こちらのサイトのお問い合わせフォームから直接ご依頼いただくことも可能です。お気軽にご連絡ください。' },
-  { q:'修正・更新は有料になりますか？', a:'制作中の修正は何度でも無償で対応いたします。納品後の修正・更新については、保守メンテナンスをご契約いただいている場合は軽微な変更であれば無償で承ります。それ以外の場合は内容に応じて別途お見積もりとなります。' },
-];
-
-const FAQ = () => {
-  const [open, setOpen] = useState(null);
-  const mob = useMobile();
-  return (
-    <section id="faq" style={{ padding: mob?'72px 24px':'120px 56px', background:SOFT }}>
-      <div style={{ maxWidth:'780px', margin:'0 auto' }}>
-        <ST en="FAQ" ja="よくある質問" />
-        <div style={{ display:'flex', flexDirection:'column', gap:'4px' }}>
-          {faqData.map((f,i) => (
-            <div key={i} style={{ background:'white', borderRadius:'7px', overflow:'hidden', border:'1px solid rgba(15,22,35,0.06)' }}>
-              <button onClick={() => setOpen(open===i ? null : i)} style={{ width:'100%', padding: mob?'18px 20px':'22px 28px', background:'none', border:'none', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center', textAlign:'left', gap:'16px' }}>
-                <span style={{ fontSize:'15px', fontWeight:'500', color:NAVY, lineHeight:1.6, letterSpacing:'0.02em' }}>Q. {f.q}</span>
-                <span style={{ fontSize:'22px', color:'#7B61FF', flexShrink:0, transform: open===i ? 'rotate(45deg)' : 'none', transition:'transform 0.3s ease', lineHeight:1 }}>+</span>
-              </button>
-              {open===i && (
-                <div style={{ padding: mob?'0 20px 20px':'0 28px 24px', borderTop:'1px solid rgba(15,22,35,0.05)' }}>
-                  <RL style={{ margin:'16px 0 14px' }} />
-                  <p style={{ fontSize:'14px', color:'#6B7280', lineHeight:1.95 }}>A. {f.a}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Company Info ─── */
-const Company = () => {
-  const mob = useMobile();
-  const rows = [
-    ['屋号', 'ルシエルウェブデザイン'],
-    ['代表者名', '相川'],
-    ['事業内容', 'Webサイト制作・ランディングページ制作・サイトリニューアル・保守メンテナンス'],
-    ['対応エリア', '全国対応（オンライン完結）'],
-
-    ['お問い合わせ', 'contact'],
-  ];
-  return (
-    <section id="company" style={{ padding: mob?'72px 24px':'120px 56px', background:'white' }}>
-      <div style={{ maxWidth:'780px', margin:'0 auto' }}>
-        <ST en="Company" ja="運営情報" />
-        <div style={{ border:'1px solid rgba(15,22,35,0.08)', borderRadius:'8px', overflow:'hidden' }}>
-          {rows.map(([label, val], i) => (
-            <div key={i} style={{ display:'flex', borderBottom: i < rows.length-1 ? '1px solid rgba(15,22,35,0.07)' : 'none', flexDirection: mob?'column':'row' }}>
-              <div style={{ background:'rgba(15,22,35,0.03)', padding: mob?'14px 20px':'18px 32px', fontSize:'14px', fontWeight:'500', color:'#4B5563', minWidth:'180px', letterSpacing:'0.04em', borderRight: mob?'none':'1px solid rgba(15,22,35,0.07)', borderBottom: mob?'1px solid rgba(15,22,35,0.07)':'none' }}>{label}</div>
-              <div style={{ padding: mob?'14px 20px':'18px 32px', fontSize:'15px', color:NAVY, lineHeight:1.8, display:'flex', alignItems:'center' }}>
-                {val === 'contact'
-                  ? <button onClick={() => goTo('contact')} style={{ background:'transparent', border:'1px solid rgba(15,22,35,0.18)', color:NAVY, padding:'8px 28px', fontSize:'14px', letterSpacing:'0.06em', cursor:'pointer', fontFamily:'Noto Sans JP', borderRadius:'4px', transition:'all 0.2s' }} onMouseEnter={e=>{e.currentTarget.style.background=NAVY;e.currentTarget.style.color='white';}} onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.color=NAVY;}}>お問い合わせフォームへ →</button>
-                  : val
-                }
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── CTA ─── */
-const CTA = () => {
-  const mob = useMobile();
-  const [form, setForm] = useState({ name:'', email:'', message:'' });
-  const [status, setStatus] = useState('idle');
-  const [err, setErr] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('sending'); setErr('');
-    try {
-      const data = new FormData();
-      data.append('name', form.name);
-      data.append('email', form.email);
-      data.append('message', form.message);
-      const res = await fetch('/mail.php', { method:'POST', body:data });
-      const json = await res.json();
-      if (json.success) {
-        setStatus('success');
-        setForm({ name:'', email:'', message:'' });
-      } else {
-        setStatus('error');
-        setErr(json.message || '送信に失敗しました。');
-      }
-    } catch {
-      setStatus('error');
-      setErr('通信エラーが発生しました。時間をおいて再度お試しください。');
+          )}
+        </React.Fragment>
+      );
     }
-  };
 
-  return (
-    <section id="contact" style={{ padding: mob?'72px 24px':'130px 56px', background:NAVY, position:'relative', overflow:'hidden' }}>
-      <div style={{ position:'absolute', top:0, left:0, right:0, height:'4px', background:RB }} />
-      <div style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)', width:'900px', height:'900px', background:'radial-gradient(circle,rgba(123,97,255,0.09) 0%,transparent 70%)', pointerEvents:'none' }} />
-      <div style={{ maxWidth:'680px', margin:'0 auto', textAlign:'center', position:'relative', zIndex:1 }}>
-        <p style={{ fontFamily:'Syne,sans-serif', fontSize:'12px', letterSpacing:'0.3em', color:'rgba(255,255,255,0.35)', textTransform:'uppercase', marginBottom:'18px' }}>Contact</p>
-        <h2 style={{ fontFamily:'Noto Sans JP,sans-serif', fontSize: mob?'26px':'40px', fontWeight:'700', color:'white', lineHeight:1.4, marginBottom:'18px', letterSpacing:'0.03em' }}>あなたのビジネスを、<br />一緒に輝かせましょう。</h2>
-        <p style={{ fontSize:'15px', color:'rgba(255,255,255,0.55)', lineHeight:2.0, marginBottom:'40px' }}>お見積もりは無料です。まずはお気軽にご相談ください。<br />クラウドワークス・ココナラからもお受けしています。</p>
-        {status === 'success' ? (
-          <div style={{ background:'rgba(255,255,255,0.05)', backdropFilter:'blur(12px)', borderRadius:'14px', padding: mob?'40px 20px':'64px 48px', border:'1px solid rgba(255,255,255,0.09)' }}>
-            <div style={{ fontSize:'48px', marginBottom:'16px' }}>✓</div>
-            <p style={{ fontSize:'20px', fontWeight:'700', color:'white', marginBottom:'10px' }}>お問い合わせを受け付けました</p>
-            <p style={{ fontSize:'14px', color:'rgba(255,255,255,0.5)', marginBottom:'28px' }}>2〜3営業日以内にご連絡いたします。</p>
-            <button onClick={() => setStatus('idle')} style={{ padding:'12px 32px', background:'rgba(255,255,255,0.1)', border:'1px solid rgba(255,255,255,0.2)', borderRadius:'6px', color:'white', fontSize:'14px', cursor:'pointer', fontFamily:'Noto Sans JP' }}>別のお問い合わせをする</button>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} style={{ background:'rgba(255,255,255,0.05)', backdropFilter:'blur(12px)', borderRadius:'14px', padding: mob?'28px 20px':'48px', border:'1px solid rgba(255,255,255,0.09)', textAlign:'left' }}>
-            <div style={{ display:'grid', gridTemplateColumns: mob?'1fr':'1fr 1fr', gap:'14px', marginBottom:'14px' }}>
-              <div>
-                <label style={{ display:'block', fontSize:'13px', color:'rgba(255,255,255,0.45)', marginBottom:'7px', letterSpacing:'0.07em' }}>お名前</label>
-                <input type="text" placeholder="山田 太郎" required value={form.name} onChange={e=>setForm({...form,name:e.target.value})}
-                  style={{ width:'100%', padding:'12px 14px', background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.11)', borderRadius:'6px', color:'white', fontSize:'15px', fontFamily:'Noto Sans JP', transition:'border-color 0.2s', boxSizing:'border-box' }}
-                  onFocus={e=>e.target.style.borderColor='rgba(123,97,255,0.6)'} onBlur={e=>e.target.style.borderColor='rgba(255,255,255,0.11)'} />
-              </div>
-              <div>
-                <label style={{ display:'block', fontSize:'13px', color:'rgba(255,255,255,0.45)', marginBottom:'7px', letterSpacing:'0.07em' }}>メールアドレス</label>
-                <input type="email" placeholder="example@mail.com" required value={form.email} onChange={e=>setForm({...form,email:e.target.value})}
-                  style={{ width:'100%', padding:'12px 14px', background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.11)', borderRadius:'6px', color:'white', fontSize:'15px', fontFamily:'Noto Sans JP', transition:'border-color 0.2s', boxSizing:'border-box' }}
-                  onFocus={e=>e.target.style.borderColor='rgba(123,97,255,0.6)'} onBlur={e=>e.target.style.borderColor='rgba(255,255,255,0.11)'} />
-              </div>
-            </div>
-            <div style={{ marginBottom:'14px' }}>
-              <label style={{ display:'block', fontSize:'13px', color:'rgba(255,255,255,0.45)', marginBottom:'7px', letterSpacing:'0.07em' }}>ご相談内容</label>
-              <textarea placeholder="ご相談内容・ご要望などをご記入ください" rows={4} required value={form.message} onChange={e=>setForm({...form,message:e.target.value})}
-                style={{ width:'100%', padding:'12px 14px', background:'rgba(255,255,255,0.07)', border:'1px solid rgba(255,255,255,0.11)', borderRadius:'6px', color:'white', fontSize:'15px', fontFamily:'Noto Sans JP', resize:'vertical', transition:'border-color 0.2s', boxSizing:'border-box' }}
-                onFocus={e=>e.target.style.borderColor='rgba(123,97,255,0.6)'} onBlur={e=>e.target.style.borderColor='rgba(255,255,255,0.11)'} />
-            </div>
-            {status === 'error' && (
-              <div style={{ marginBottom:'14px', padding:'12px 16px', background:'rgba(255,100,100,0.15)', border:'1px solid rgba(255,100,100,0.3)', borderRadius:'6px', fontSize:'14px', color:'#fca5a5' }}>{err}</div>
-            )}
-            <button type="submit" disabled={status==='sending'}
-              style={{ width:'100%', padding:'15px', background:RB, border:'none', borderRadius:'6px', color:'white', fontSize:'15px', letterSpacing:'0.1em', cursor:'pointer', fontFamily:'Noto Sans JP', fontWeight:'700', boxShadow:'0 6px 24px rgba(123,97,255,0.35)', transition:'all 0.25s ease', opacity: status==='sending'?0.6:1 }}
-              onMouseEnter={e=>{if(status!=='sending'){e.currentTarget.style.opacity='0.87';e.currentTarget.style.transform='translateY(-1px)';}}}
-              onMouseLeave={e=>{e.currentTarget.style.opacity='1';e.currentTarget.style.transform='none';}}
-            >{status==='sending' ? '送信中...' : '無料で送信する'}</button>
-          </form>
-        )}
-        <div style={{ display:'flex', justifyContent:'center', gap: mob?'20px':'36px', marginTop:'28px', flexWrap:'wrap' }}>
-          {[['クラウドワークス','#4D96FF'],['ココナラ','#6BCB77']].map(([l,c]) => (
-            <div key={l} style={{ display:'flex', alignItems:'center', gap:'8px' }}>
-              <div style={{ width:'6px', height:'6px', borderRadius:'50%', background:c }} />
-              <span style={{ fontSize:'13px', color:'rgba(255,255,255,0.4)', letterSpacing:'0.04em' }}>{l}でも受付中</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* ─── Footer ─── */
-const Footer = () => {
-  const mob = useMobile();
-  return (
-    <footer style={{ background:'#070B13', padding: mob?'32px 24px':'36px 56px', display:'flex', flexDirection: mob?'column':'row', justifyContent:'space-between', alignItems: mob?'flex-start':'center', gap: mob?'20px':0 }}>
-      <div>
-        <div style={{ fontFamily:'Syne,sans-serif', fontSize:'17px', fontWeight:'700', color:'white', letterSpacing:'0.18em', lineHeight:1 }}>LE CIEL</div>
-        <div style={{ fontSize:'11px', letterSpacing:'0.22em', color:'rgba(255,255,255,0.25)', textTransform:'uppercase', marginTop:'4px' }}>Web Design</div>
-      </div>
-      <div style={{ fontSize:'12px', color:'rgba(255,255,255,0.25)', letterSpacing:'0.04em' }}>© 2025 ルシエルウェブデザイン. All rights reserved.</div>
-      <div style={{ display:'flex', gap:'20px', flexWrap:'wrap' }}>
-        {['プライバシーポリシー','特定商取引法に基づく表記'].map(l => (
-          <a key={l} href="#" style={{ fontSize:'12px', color:'rgba(255,255,255,0.25)', textDecoration:'none', letterSpacing:'0.04em' }}>{l}</a>
-        ))}
-      </div>
-    </footer>
-  );
-};
-
-const App = () => (
-  <div>
-    <Nav />
-    <Hero />
-    <Reasons />
-    <Services />
-    <Portfolio />
-    <Pricing />
-    <Flow />
-    <FAQ />
-    <Company />
-    <CTA />
-    <Footer />
-  </div>
-);
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-</script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
 </body>
 </html>

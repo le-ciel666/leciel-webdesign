@@ -8,9 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$name    = htmlspecialchars(trim($_POST['name'] ?? ''), ENT_QUOTES, 'UTF-8');
-$email   = htmlspecialchars(trim($_POST['email'] ?? ''), ENT_QUOTES, 'UTF-8');
-$message = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
+$name     = htmlspecialchars(trim($_POST['name']     ?? ''), ENT_QUOTES, 'UTF-8');
+$email    = htmlspecialchars(trim($_POST['email']    ?? ''), ENT_QUOTES, 'UTF-8');
+$message  = htmlspecialchars(trim($_POST['message']  ?? ''), ENT_QUOTES, 'UTF-8');
+$business = htmlspecialchars(trim($_POST['business'] ?? ''), ENT_QUOTES, 'UTF-8');
+$siteType = htmlspecialchars(trim($_POST['siteType'] ?? ''), ENT_QUOTES, 'UTF-8');
+$budget   = htmlspecialchars(trim($_POST['budget']   ?? ''), ENT_QUOTES, 'UTF-8');
+$deadline = htmlspecialchars(trim($_POST['deadline'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 if (empty($name) || empty($email) || empty($message)) {
     http_response_code(400);
@@ -27,7 +31,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // 管理者宛メール
 $adminTo      = 'noriyoshi.aikawa@gmail.com';
 $adminSubject = mb_encode_mimeheader('【LE CIEL WEB DESIGN】お問い合わせ：' . $name . '様', 'UTF-8', 'B');
-$adminBody    = "お名前: {$name}\nメールアドレス: {$email}\n\n相談内容:\n{$message}";
+$adminBody    = "お名前: {$name}\nメールアドレス: {$email}\n事業内容: {$business}\n作りたいサイト: {$siteType}\nご予算: {$budget}\n希望納期: {$deadline}\n\n相談内容:\n{$message}";
 $adminHeaders = implode("\r\n", [
     'From: LE CIEL WEB DESIGN <no-reply@leciel-webdesign.com>',
     'Reply-To: ' . $email,
