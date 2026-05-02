@@ -657,36 +657,6 @@
   /* ===== WORKS ===== */
   #works { background: var(--bg); }
 
-  .works-tabs {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
-
-  .works-tab {
-    padding: 10px 22px;
-    border-radius: 100px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 2px solid var(--border);
-    background: var(--white);
-    color: var(--text-muted);
-    transition: all 0.2s;
-  }
-
-  .works-tab.active {
-    background: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-  }
-
-  .works-tab:hover:not(.active) {
-    border-color: var(--primary);
-    color: var(--primary);
-  }
-
   .works-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -704,64 +674,6 @@
   }
 
   .work-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-3px); }
-
-  .work-browser {
-    background: #f1f5f9;
-    padding: 10px 12px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .work-browser-bar {
-    background: var(--white);
-    border-radius: 6px 6px 0 0;
-    padding: 7px 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .browser-dots {
-    display: flex;
-    gap: 4px;
-  }
-
-  .browser-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-
-  .dot-red { background: #ef4444; }
-  .dot-yellow { background: #f59e0b; }
-  .dot-green { background: #10b981; }
-
-  .browser-url {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-family: monospace;
-  }
-
-  .work-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
-    display: block;
-    position: relative;
-  }
-
-  .work-img-placeholder {
-    width: 100%;
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    color: #94a3b8;
-    font-family: monospace;
-    text-align: center;
-    line-height: 1.6;
-  }
 
   .work-demo-badge {
     position: absolute;
@@ -781,7 +693,7 @@
   }
 
   .work-body {
-    padding: 22px 20px;
+    padding: 18px 16px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -795,52 +707,26 @@
     font-weight: 600;
     padding: 3px 10px;
     border-radius: 4px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
 
-  .work-title {
-    font-size: 19px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 8px;
-  }
-
-  .work-desc {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 16px;
-    flex: 1;
-  }
-
-  .work-tags {
+  .work-btns {
     display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-  }
-
-  .work-tag {
-    background: var(--bg);
-    color: var(--text-muted);
-    font-size: 12px;
-    padding: 3px 10px;
-    border-radius: 4px;
-    border: 1px solid var(--border);
+    flex-direction: column;
+    gap: 8px;
   }
 
   .work-btn {
     display: block;
     text-align: center;
-    padding: 12px;
+    padding: 10px 12px;
     border-radius: 8px;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     text-decoration: none;
     background: var(--navy);
     color: var(--white);
     transition: background 0.2s;
-    margin-top: auto;
   }
 
   .work-btn:hover { background: var(--primary); }
@@ -1151,7 +1037,7 @@
     .flow-steps::before { display: none; }
     .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
     .plan-card.featured { padding-top: 48px; }
-    .works-grid { grid-template-columns: 1fr 1fr; }
+    .works-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .maintenance-items { grid-template-columns: 1fr 1fr; }
     .profile-top { grid-template-columns: 1fr; gap: 32px; }
   }
@@ -1288,20 +1174,107 @@
     <div class="section-header">
       <p class="section-label">WORKS</p>
       <h2 class="section-title">デモサイト</h2>
-      <p class="section-desc">業種・規模を問わず幅広く対応しています。下のタブから業種を選んでご覧ください。</p>
+      <p class="section-desc">業種ごとに3つのデモサイトをご覧いただけます。</p>
     </div>
 
-    <div class="works-tabs" id="worksTabs">
-      <button class="works-tab active" data-category="beauty">美容・サロン</button>
-      <button class="works-tab" data-category="food">居酒屋</button>
-      <button class="works-tab" data-category="cafe">カフェ</button>
-      <button class="works-tab" data-category="health">整体・ヘルスケア</button>
-      <button class="works-tab" data-category="fitness">フィットネス・スポーツ</button>
-      <button class="works-tab" data-category="corporate">LP制作</button>
-    </div>
+    <div class="works-grid">
 
-    <div class="works-grid" id="worksGrid">
-      <!-- JS で描画 -->
+      <!-- 美容サロン -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="assets/hair-salon/model.png" alt="美容サロン デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">美容サロン</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/hair-salon.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="works/hair-salon.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="https://leciel-webdesign.com/hair-salon-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 居酒屋 -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="https://leciel-webdesign.com/assets-v2/izakaya/hero.png" alt="居酒屋 デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">居酒屋</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/izakaya.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="https://leciel-webdesign.com/izakaya-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="https://leciel-webdesign.com/izakaya-v3.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- カフェ -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="https://leciel-webdesign.com/assets/cafe/barista.png" alt="カフェ デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">カフェ</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/cafe.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="https://leciel-webdesign.com/cafe-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="works/cafe.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 整体・ヘルスケア -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&h=540&fit=crop&q=80" alt="整体・ヘルスケア デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">整体・ヘルスケア</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/seitai.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="https://leciel-webdesign.com/seitai-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="https://leciel-webdesign.com/seitai-v3.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- フィットネス・スポーツ -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="https://leciel-webdesign.com/assets/yoga/hero.png" alt="フィットネス・スポーツ デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">フィットネス・スポーツ</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/yoga.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="https://leciel-webdesign.com/yoga-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="https://leciel-webdesign.com/yoga-v3.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- LP制作 -->
+      <div class="work-card">
+        <div class="work-img-wrap">
+          <img src="https://leciel-webdesign.com/assets-v2/lp/hero.png" alt="LP制作 デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <span class="work-demo-badge">自主制作デモ</span>
+        </div>
+        <div class="work-body">
+          <span class="work-genre">LP制作</span>
+          <div class="work-btns">
+            <a href="https://leciel-webdesign.com/shampoo-lp.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
+            <a href="https://leciel-webdesign.com/shampoo-lp-v2.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
+            <a href="https://leciel-webdesign.com/shampoo-lp-v3.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1577,205 +1550,6 @@ navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// ========== WORKS DATA ==========
-const worksData = {
-  beauty: [
-    {
-      title: 'Lumina Hair',
-      genre: '美容室',
-      desc: '上品で清潔感のある世界観を、予約につながる導線で設計。',
-      tags: ['ネット予約対応', 'スマホ対応', '予約導線設計'],
-      img: 'assets/hair-salon/model.png',
-      url: 'https://leciel-webdesign.com/hair-salon.html'
-    },
-    {
-      title: 'Hair Atelier Souffle',
-      genre: '美容室',
-      desc: '表参道のプライベートヘアサロンを想定したデモ。世界観・メニュー・予約導線まで丁寧に設計。',
-      tags: ['ネット予約', 'ギャラリー', 'スマホ対応'],
-      img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&h=540&fit=crop&q=80',
-      url: 'works/hair-salon.html'
-    },
-    {
-      title: 'ATELIER NIKA',
-      genre: '美容室',
-      desc: '都会的なショートボブを軸に、高単価メニューと指名予約導線を設計したVer2デモ。',
-      tags: ['指名予約特化', '高単価サロン対応', 'Google検索対策'],
-      img: 'https://leciel-webdesign.com/assets-v2/hair-salon/hero.png',
-      url: 'https://leciel-webdesign.com/hair-salon-v2.html'
-    }
-  ],
-  food: [
-    {
-      title: '炉端 さくら',
-      genre: '居酒屋',
-      desc: '和の温かみを伝えるデザイン。メニュー紹介・予約フォーム・アクセスを使いやすく配置。',
-      tags: ['HTML/CSS', 'メニュー管理', 'MAP連携'],
-      img: 'https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&h=360&fit=crop',
-      url: 'https://leciel-webdesign.com/izakaya.html'
-    },
-    {
-      title: 'KIKKA 炭と旬',
-      genre: 'モダン居酒屋',
-      desc: '炭火と旬の料理を主役にしたモダン居酒屋Ver2デモ。デート・接待・記念日など利用シーン別の導線で予約を最大化。',
-      tags: ['LP制作', 'コース予約', '個室訴求'],
-      img: 'https://leciel-webdesign.com/assets-v2/izakaya/hero.png',
-      url: 'https://leciel-webdesign.com/izakaya-v2.html'
-    },
-    {
-      title: '宵ノ蔵',
-      genre: '路地裏居酒屋',
-      desc: '路地裏の静けさと炭火の香りを伝える大人の居酒屋Ver3デモ。一人飲み・会食・宴会まで使い分けやすい予約導線。',
-      tags: ['LP制作', 'シーン別導線', '個室・宴会対応'],
-      img: 'https://leciel-webdesign.com/assets-v3/izakaya/hero.png',
-      url: 'https://leciel-webdesign.com/izakaya-v3.html'
-    }
-  ],
-  cafe: [
-    {
-      title: 'Café Soleil',
-      genre: 'スペシャルティカフェ',
-      desc: '自家焙煎コーヒーと季節のスイーツが主役の代官山カフェデモ。来店とテイクアウト両方の導線を最適化。',
-      tags: ['HTML/CSS', 'メニュー設計', 'テイクアウト導線'],
-      img: 'https://leciel-webdesign.com/assets/cafe/barista.png',
-      url: 'https://leciel-webdesign.com/cafe.html'
-    },
-    {
-      title: 'HINATA TERRACE',
-      genre: 'テラスカフェ',
-      desc: '"過ごし方"を売るテラスカフェのVer2デモ。時間帯別メニューとライフスタイル訴求でファン化を促進。',
-      tags: ['LP制作', 'ブランディング', 'SNS連携'],
-      img: 'https://leciel-webdesign.com/assets-v2/cafe/hero.png',
-      url: 'https://leciel-webdesign.com/cafe-v2.html'
-    },
-    {
-      title: 'Café Lentement',
-      genre: 'カフェ',
-      desc: 'スペシャルティコーヒーと焼き菓子のブランドサイト。世界観・メニュー・来店導線まで丁寧に設計。',
-      tags: ['HTML/CSS', 'メニュー設計', 'ギャラリー', 'レスポンシブ'],
-      img: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=900&h=540&fit=crop&q=80',
-      url: 'works/cafe.html'
-    }
-  ],
-  health: [
-    {
-      title: '整体こころ',
-      genre: '整体・サロン',
-      desc: '初めての方の不安に寄り添う温かみのあるデザイン。お悩み別の導線と予約フォームで初回予約までを最短化。',
-      tags: ['HTML/CSS', '予約フォーム', 'SEO対応'],
-      img: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&h=540&fit=crop&q=80',
-      url: 'https://leciel-webdesign.com/seitai.html'
-    },
-    {
-      title: 'madoromi body care',
-      genre: '整体・ボディケア',
-      desc: '都会的で洗練された整体サロンVer2。ケア内容・メニュー・店舗情報を一気通貫で表現したブランドサイト。',
-      tags: ['LP制作', 'ブランディング', 'レスポンシブ'],
-      img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&h=540&fit=crop&q=80',
-      url: 'https://leciel-webdesign.com/seitai-v2.html'
-    },
-    {
-      title: '姿勢ラボ 澄',
-      genre: '姿勢改善・整体',
-      desc: '姿勢分析を軸にした専門性訴求のVer3デモ。原因分析→施術→初回の流れを明快に設計し、信頼感を醸成。',
-      tags: ['LP制作', '専門特化型', '予約導線'],
-      img: 'https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=900&h=540&fit=crop&q=80',
-      url: 'https://leciel-webdesign.com/seitai-v3.html'
-    }
-  ],
-  fitness: [
-    {
-      title: 'SORA Yoga Studio',
-      genre: 'ヨガスタジオ',
-      desc: '初心者でも安心して通える少人数制ヨガスタジオ。クラス紹介・料金・体験予約までを迷わず案内する設計。',
-      tags: ['HTML/CSS', '予約機能', 'レスポンシブ'],
-      img: 'https://leciel-webdesign.com/assets/yoga/hero.png',
-      url: 'https://leciel-webdesign.com/yoga.html'
-    },
-    {
-      title: 'AO Rooftop Yoga',
-      genre: '朝ヨガ・ルーフトップ',
-      desc: '都会的ウェルネスを打ち出した屋上朝ヨガのVer2デモ。爽やかな世界観で体験レッスンの申し込みを促進。',
-      tags: ['LP制作', 'ブランディング', '体験予約導線'],
-      img: 'https://leciel-webdesign.com/assets-v2/yoga/hero.png',
-      url: 'https://leciel-webdesign.com/yoga-v2.html'
-    },
-    {
-      title: '季ノ呼吸 Yoga',
-      genre: 'リストラティブヨガ',
-      desc: '静けさと余白を大切にしたVer3デモ。呼吸・瞑想・少人数制を軸に、初心者の心理的ハードルを下げる構成。',
-      tags: ['LP制作', '世界観設計', '初心者特化'],
-      img: 'https://leciel-webdesign.com/assets-v3/yoga/hero.png',
-      url: 'https://leciel-webdesign.com/yoga-v3.html'
-    }
-  ],
-  corporate: [
-    {
-      title: 'LUMIA Hair Serum',
-      genre: '美容商品LP',
-      desc: '夜の集中ヘアセラムLP。悩み・特徴・レビュー・限定オファーを購入動線に沿って配置した王道型LP。',
-      tags: ['LP制作', 'コンバージョン最適化', '広告流入対応'],
-      img: 'https://leciel-webdesign.com/assets/lp/model.png',
-      url: 'https://leciel-webdesign.com/shampoo-lp.html'
-    },
-    {
-      title: 'mellune serum',
-      genre: '美容商品LP',
-      desc: '世界観と購入導線を両立したVer2デモ。ファーストビューでベネフィット・信頼・限定オファーを強く訴求。',
-      tags: ['LP制作', 'ブランディング', 'スマホ最適化'],
-      img: 'https://leciel-webdesign.com/assets-v2/lp/hero.png',
-      url: 'https://leciel-webdesign.com/shampoo-lp-v2.html'
-    },
-    {
-      title: 'RINNÉ Serum',
-      genre: '美容商品LP',
-      desc: '光で塗り替える肌印象を打ち出したVer3デモ。成分訴求とトライアル導線で迷わせず購入まで導く構成。',
-      tags: ['LP制作', '成分訴求', 'CVR改善'],
-      img: 'https://leciel-webdesign.com/assets-v3/lp/hero.png',
-      url: 'https://leciel-webdesign.com/shampoo-lp-v3.html'
-    }
-  ]
-};
-
-function renderWorks(category) {
-  const grid = document.getElementById('worksGrid');
-  const items = worksData[category] || [];
-  grid.innerHTML = items.map(item => `
-    <div class="work-card">
-      <div class="work-browser">
-        <div class="work-browser-bar">
-          <div class="browser-dots">
-            <span class="browser-dot dot-red"></span>
-            <span class="browser-dot dot-yellow"></span>
-            <span class="browser-dot dot-green"></span>
-          </div>
-          <span class="browser-url">leciel-webdesign.com/demo</span>
-        </div>
-      </div>
-      <div class="work-img-wrap" style="position:relative;">
-        <img src="${item.img}" alt="${item.title}" style="width:100%;height:180px;object-fit:cover;display:block;">
-        <span class="work-demo-badge">自主制作デモ</span>
-      </div>
-      <div class="work-body">
-        <span class="work-genre">${item.genre}</span>
-        <h3 class="work-title">${item.title}</h3>
-        <p class="work-desc">${item.desc}</p>
-        <a href="${item.url || '#contact'}" class="work-btn" ${item.url ? 'target="_blank" rel="noopener"' : ''}>${item.url ? 'デモサイトを見る →' : '同様のサイトを相談する →'}</a>
-      </div>
-    </div>
-  `).join('');
-}
-
-// Tab switching
-document.getElementById('worksTabs').addEventListener('click', e => {
-  const btn = e.target.closest('.works-tab');
-  if (!btn) return;
-  document.querySelectorAll('.works-tab').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderWorks(btn.dataset.category);
-});
-
-renderWorks('beauty');
 
 // ========== FAQ DATA ==========
 const faqs = [
