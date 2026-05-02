@@ -1757,7 +1757,7 @@ function renderWorks(category) {
         <div class="work-tags">
           ${item.tags.map(t => `<span class="work-tag">${t}</span>`).join('')}
         </div>
-        <a href="${item.url || '#contact'}" class="work-btn">${item.url ? 'デモサイトを見る →' : '同様のサイトを相談する →'}</a>
+        <a href="${item.url || '#contact'}" class="work-btn" ${item.url ? 'target="_blank" rel="noopener"' : ''}>${item.url ? 'デモサイトを見る →' : '同様のサイトを相談する →'}</a>
       </div>
     </div>
   `).join('');
