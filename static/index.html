@@ -1493,29 +1493,32 @@
     <p class="section-label">CONTACT</p>
     <h2 class="section-title">まずはお気軽にご相談ください</h2>
     <p class="section-desc">「ホームページを作りたいけど何から始めればいいか分からない」という段階でも大歓迎です。個人店舗から法人様まで、どんなご相談もお受けします。</p>
-    <div class="contact-form">
+    <form class="contact-form" action="https://formsubmit.co/noriyoshi.aikawa@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="【ルシエルウェブデザイン】お問い合わせ">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
       <div class="form-row">
         <label class="form-label">お名前 / 会社名</label>
-        <input type="text" class="form-input" placeholder="例）相川 太郎 / 株式会社〇〇">
+        <input type="text" name="お名前" class="form-input" placeholder="例）アイカワ タロウ / 株式会社〇〇" required>
       </div>
       <div class="form-row">
         <label class="form-label">メールアドレス</label>
-        <input type="email" class="form-input" placeholder="例）info@example.com">
+        <input type="email" name="メールアドレス" class="form-input" placeholder="例）info@example.com" required>
       </div>
       <div class="form-row">
         <label class="form-label">業種・業態</label>
-        <input type="text" class="form-input" placeholder="例）美容室 / 飲食店 / 株式会社〇〇（小売業）">
+        <input type="text" name="業種・業態" class="form-input" placeholder="例）美容室 / 飲食店 / 株式会社〇〇（小売業）">
       </div>
       <div class="form-row">
         <label class="form-label">ご相談内容</label>
-        <textarea class="form-input" placeholder="ご予算・ご希望・お悩みなど、お気軽にどうぞ。"></textarea>
+        <textarea name="ご相談内容" class="form-input" placeholder="ご予算・ご希望・お悩みなど、お気軽にどうぞ。" required></textarea>
       </div>
       <div class="form-row">
         <label class="form-label">参考にしたいサイトのURLがあれば（任意）</label>
-        <input type="url" class="form-input" placeholder="https://...">
+        <input type="url" name="参考URL" class="form-input" placeholder="https://...">
       </div>
-      <button class="form-submit">送信する</button>
-    </div>
+      <button type="submit" class="form-submit">送信する</button>
+    </form>
   </div>
 </section>
 
