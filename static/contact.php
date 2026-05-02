@@ -30,7 +30,7 @@ $body .= "\nご相談内容：\n{$message}\n";
 if (!empty($url)) {
     $body .= "\n参考URL：{$url}\n";
 }
-$body .= "\n---\nLE CIEL WEB DESIGN - Contact Form\nhttps://leciel-webdesign.com/\n";
+$body .= "\n---\nLE CIEL WEB DESIGN\nhttps://leciel-webdesign.com/\n";
 
 $body = to_jis($body);
 
