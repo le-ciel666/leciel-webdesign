@@ -287,7 +287,6 @@
     transition: box-shadow 0.2s, transform 0.2s;
   }
 
-  .feature-card:hover { box-shadow: 0 8px 32px rgba(37,99,235,0.1); transform: translateY(-3px); }
 
   .feature-icon {
     width: 52px;
@@ -1206,9 +1205,9 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#features">特長</a></li>
+      <li><a href="#works">デモサイト</a></li>
       <li><a href="#pricing">料金</a></li>
-      <li><a href="#works">制作実績</a></li>
-      <li><a href="#profile">プロフィール</a></li>
+      <li><a href="#profile">運営者情報</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -1231,7 +1230,10 @@
   </p>
   <div class="hero-buttons">
     <a href="#contact" class="btn-primary">無料で相談する</a>
-    <a href="#pricing" class="btn-outline">料金を見る</a>
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:6px;">
+      <div style="background:#fff;border:1.5px solid #2563eb;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;color:#2563eb;letter-spacing:0.04em;white-space:nowrap;">5万 / 10万 / 20万円〜のプランあり</div>
+      <a href="#pricing" class="btn-outline">料金を見る</a>
+    </div>
   </div>
 </section>
 
@@ -1280,35 +1282,26 @@
   </div>
 </section>
 
-<!-- FLOW -->
-<section id="flow">
+<!-- WORKS -->
+<section id="works">
   <div class="section-inner">
     <div class="section-header">
-      <p class="section-label">FLOW</p>
-      <h2 class="section-title">制作の流れ</h2>
-      <p class="section-desc">お問い合わせから公開まで、すべてオンラインで完結します。全国どこからでもご相談いただけます。</p>
+      <p class="section-label">WORKS</p>
+      <h2 class="section-title">デモサイト</h2>
+      <p class="section-desc">業種・規模を問わず幅広く対応しています。下のタブから業種を選んでご覧ください。</p>
     </div>
-    <div class="flow-steps">
-      <div class="flow-step">
-        <div class="flow-num">1</div>
-        <h3>お問い合わせ・ご相談</h3>
-        <p>フォームまたはメールでお気軽にご連絡ください。目的・ご予算・スケジュールをヒアリングします。</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">2</div>
-        <h3>お見積もり・ご提案</h3>
-        <p>ヒアリング内容をもとに、プランと概算お見積もりをご提示します。納得いただいてからご契約。</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">3</div>
-        <h3>デザイン・制作</h3>
-        <p>進捗は適宜ご報告。修正のやり取りもオンラインで完結するため、全国どこでも対応できます。</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">4</div>
-        <h3>公開・アフターサポート</h3>
-        <p>公開作業まで一括サポート。公開後も必要に応じてメンテナンスや更新作業をお手伝いします。</p>
-      </div>
+
+    <div class="works-tabs" id="worksTabs">
+      <button class="works-tab active" data-category="beauty">美容・サロン</button>
+      <button class="works-tab" data-category="food">居酒屋</button>
+      <button class="works-tab" data-category="cafe">カフェ</button>
+      <button class="works-tab" data-category="health">整体・ヘルスケア</button>
+      <button class="works-tab" data-category="fitness">フィットネス・スポーツ</button>
+      <button class="works-tab" data-category="corporate">LP制作</button>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+      <!-- JS で描画 -->
     </div>
   </div>
 </section>
@@ -1422,26 +1415,35 @@
   </div>
 </section>
 
-<!-- WORKS -->
-<section id="works">
+<!-- FLOW -->
+<section id="flow">
   <div class="section-inner">
     <div class="section-header">
-      <p class="section-label">WORKS</p>
-      <h2 class="section-title">制作実績</h2>
-      <p class="section-desc">業種・規模を問わず幅広く対応しています。下のタブから業種を選んでご覧ください。</p>
+      <p class="section-label">FLOW</p>
+      <h2 class="section-title">制作の流れ</h2>
+      <p class="section-desc">お問い合わせから公開まで、すべてオンラインで完結します。全国どこからでもご相談いただけます。</p>
     </div>
-
-    <div class="works-tabs" id="worksTabs">
-      <button class="works-tab active" data-category="beauty">美容・サロン</button>
-      <button class="works-tab" data-category="food">居酒屋</button>
-      <button class="works-tab" data-category="cafe">カフェ</button>
-      <button class="works-tab" data-category="health">整体・ヘルスケア</button>
-      <button class="works-tab" data-category="fitness">フィットネス・スポーツ</button>
-      <button class="works-tab" data-category="corporate">LP制作</button>
-    </div>
-
-    <div class="works-grid" id="worksGrid">
-      <!-- JS で描画 -->
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h3>お問い合わせ・ご相談</h3>
+        <p>フォームまたはメールでお気軽にご連絡ください。目的・ご予算・スケジュールをヒアリングします。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h3>お見積もり・ご提案</h3>
+        <p>ヒアリング内容をもとに、プランと概算お見積もりをご提示します。納得いただいてからご契約。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h3>デザイン・制作</h3>
+        <p>進捗は適宜ご報告。修正のやり取りもオンラインで完結するため、全国どこでも対応できます。</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h3>公開・アフターサポート</h3>
+        <p>公開作業まで一括サポート。公開後も必要に応じてメンテナンスや更新作業をお手伝いします。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1450,8 +1452,8 @@
 <section id="profile">
   <div class="section-inner">
     <div class="section-header">
-      <p class="section-label">PROFILE</p>
-      <h2 class="section-title">プロフィール</h2>
+      <p class="section-label">ABOUT</p>
+      <h2 class="section-title">運営者情報 / About Us</h2>
     </div>
     <div class="profile-card">
       <div class="profile-top">
@@ -1535,6 +1537,10 @@
         <label class="form-label">ご相談内容</label>
         <textarea class="form-input" placeholder="ご予算・ご希望・お悩みなど、お気軽にどうぞ。"></textarea>
       </div>
+      <div class="form-row">
+        <label class="form-label">参考にしたいサイトのURLがあれば（任意）</label>
+        <input type="url" class="form-input" placeholder="https://...">
+      </div>
       <button class="form-submit">送信する</button>
     </div>
   </div>
@@ -1551,9 +1557,9 @@
   </div>
   <div class="footer-links">
     <a href="#features">特長</a>
+    <a href="#works">デモサイト</a>
     <a href="#pricing">料金</a>
-    <a href="#works">制作実績</a>
-    <a href="#profile">プロフィール</a>
+    <a href="#profile">運営者情報</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">お問い合わせ</a>
   </div>
@@ -1578,7 +1584,7 @@ const worksData = {
       title: 'Lumina Hair',
       genre: '美容室',
       desc: '上品で清潔感のある世界観を、予約につながる導線で設計。',
-      tags: ['HTML/CSS', '予約機能', 'レスポンシブ'],
+      tags: ['ネット予約対応', 'スマホ対応', '予約導線設計'],
       img: 'assets/hair-salon/model.png',
       url: 'https://leciel-webdesign.com/hair-salon.html'
     },
@@ -1586,7 +1592,7 @@ const worksData = {
       title: 'Hair Atelier Souffle',
       genre: '美容室',
       desc: '表参道のプライベートヘアサロンを想定したデモ。世界観・メニュー・予約導線まで丁寧に設計。',
-      tags: ['HTML/CSS', '予約フォーム', 'ギャラリー', 'レスポンシブ'],
+      tags: ['ネット予約', 'ギャラリー', 'スマホ対応'],
       img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=900&h=540&fit=crop&q=80',
       url: 'works/hair-salon.html'
     },
@@ -1594,7 +1600,7 @@ const worksData = {
       title: 'ATELIER NIKA',
       genre: '美容室',
       desc: '都会的なショートボブを軸に、高単価メニューと指名予約導線を設計したVer2デモ。',
-      tags: ['LP制作', '指名予約導線', 'SEO対応'],
+      tags: ['指名予約特化', '高単価サロン対応', 'Google検索対策'],
       img: 'https://leciel-webdesign.com/assets-v2/hair-salon/hero.png',
       url: 'https://leciel-webdesign.com/hair-salon-v2.html'
     }
