@@ -1493,19 +1493,14 @@
     <p class="section-label">CONTACT</p>
     <h2 class="section-title">まずはお気軽にご相談ください</h2>
     <p class="section-desc">「ホームページを作りたいけど何から始めればいいか分からない」という段階でも大歓迎です。個人店舗から法人様まで、どんなご相談もお受けします。</p>
-    <form class="contact-form" action="https://formsubmit.co/aikawa@leciel-webdesign.com" method="POST">
-      <input type="hidden" name="_subject" value="【ルシエルウェブデザイン】お問い合わせ">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://leciel-webdesign.com/thanks.html">
-      <input type="hidden" name="_replyto" id="replyto">
+    <form class="contact-form" action="/contact.php" method="POST">
       <div class="form-row">
         <label class="form-label">お名前 / 会社名</label>
         <input type="text" name="お名前" class="form-input" placeholder="例）山田太郎 / 株式会社〇〇" required>
       </div>
       <div class="form-row">
         <label class="form-label">メールアドレス</label>
-        <input type="email" name="メールアドレス" id="emailInput" class="form-input" placeholder="例）info@example.com" required>
+        <input type="email" name="メールアドレス" class="form-input" placeholder="例）info@example.com" required>
       </div>
       <div class="form-row">
         <label class="form-label">業種・業態</label>
@@ -1604,9 +1599,6 @@ function toggleFaq(i) {
   item.classList.toggle('open');
 }
 
-document.querySelector('.contact-form').addEventListener('submit', function() {
-  document.getElementById('replyto').value = document.getElementById('emailInput').value;
-});
 </script>
 </body>
 </html>
