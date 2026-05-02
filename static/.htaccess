@@ -1,4 +1,5 @@
 Options -MultiViews
 RewriteEngine On
+RewriteRule ^leciel(/.*)?$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [L]
