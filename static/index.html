@@ -1,152 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ルシエルウェブデザイン | 小さなお店・個人事業主向けホームページ制作</title>
-  <meta name="description" content="ルシエルウェブデザインは、美容室・整体・飲食店・個人サービス向けのホームページ制作サービスです。構成づくり、デザイン、スマホ対応、公開後の更新までサポートします。初回相談無料。" />
-  <meta property="og:title" content="ルシエルウェブデザイン | 小さなお店向けホームページ制作" />
-  <meta property="og:description" content="美容室・整体・飲食店・個人サービス向けに、見やすく相談しやすいホームページを制作します。初回相談無料。" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body {
-      font-family: 'Noto Sans JP', sans-serif;
-      color: #1a2744;
-      background: #fff;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-      max-width: 100vw;
-    }
-    h1, h2, h3, h4 { font-weight: 800; }
-    p { text-wrap: pretty; }
-
-    /* Desktop nav visible, hamburger hidden by default */
-    .desktop-nav { display: flex !important; }
-    .hamburger  { display: none !important; }
-
-    @media (max-width: 700px) {
-      .desktop-nav { display: none !important; }
-      .hamburger  { display: flex !important; }
-    }
-
-    /* Smooth anchor offset for fixed header */
-    section[id], footer[id] { scroll-margin-top: 88px; }
-
-    /* Logo responsive */
-    @media (max-width: 700px) {
-      .logo-ring  { width: 38px !important; height: 38px !important; }
-      .logo-ring-inner { inset: 4px !important; }
-      .logo-text-main { font-size: 15px !important; letter-spacing: 0.07em !important; }
-      .logo-text-sub  { font-size: 9px !important; letter-spacing: 0.06em !important; }
-    }
-
-    /* Focus ring */
-    a:focus-visible, button:focus-visible {
-      outline: 2px solid #2d5be3;
-      outline-offset: 2px;
-    }
-
-    /* CTA pulse animation */
-    @keyframes cta-pulse {
-      0%, 100% { box-shadow: 0 4px 16px rgba(45,91,227,0.3); }
-      50%       { box-shadow: 0 4px 24px rgba(45,91,227,0.5); }
-    }
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-
-  <script type="text/babel" src="lc-sections-a.jsx"></script>
-  <script type="text/babel" src="lc-sections-b.jsx"></script>
-  <script type="text/babel" src="lc-sections-c.jsx"></script>
-
-  <script type="text/babel">
-    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-      "accentColor": "#2d5be3",
-      "navyColor": "#1a2744",
-      "heroSubtitle": "美容室・整体・飲食店・個人サービス向けに、構成づくりからデザイン、スマホ対応、公開後の更新までサポートします。",
-      "showTargetBadges": true
-    }/*EDITMODE-END*/;
-
-    function App() {
-      const [menuOpen, setMenuOpen] = React.useState(false);
-
-      // Close mobile menu on resize
-      React.useEffect(() => {
-        const handler = () => { if (window.innerWidth > 700) setMenuOpen(false); };
-        window.addEventListener('resize', handler);
-        return () => window.removeEventListener('resize', handler);
-      }, []);
-
-      // Tweaks panel protocol
-      React.useEffect(() => {
-        const handler = (e) => {
-          if (e.data?.type === '__activate_edit_mode') setTweaksOpen(true);
-          if (e.data?.type === '__deactivate_edit_mode') setTweaksOpen(false);
-        };
-        window.addEventListener('message', handler);
-        window.parent.postMessage({ type: '__edit_mode_available' }, '*');
-        return () => window.removeEventListener('message', handler);
-      }, []);
-      const [tweaksOpen, setTweaksOpen] = React.useState(false);
-
-      return (
-        <React.Fragment>
-          <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          <main>
-            <Hero />
-            <Concerns />
-            <Services />
-            <Pricing />
-            <Works />
-            <Process />
-            <Profile />
-            <FAQ />
-            <Contact />
-          </main>
-          <Footer />
-
-          {/* Tweaks Panel */}
-          {tweaksOpen && (
-            <div style={{
-              position: 'fixed', bottom: 24, right: 24, zIndex: 9999,
-              background: '#fff', borderRadius: 14, padding: '20px 24px',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.18)', border: '1.5px solid #e8ecf4',
-              minWidth: 260,
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
-                <span style={{ fontWeight: 700, fontSize: 14, color: '#1a2744' }}>Tweaks</span>
-                <button onClick={() => {
-                  setTweaksOpen(false);
-                  window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
-                }} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18, color: '#6b7a99' }}>×</button>
-              </div>
-              <div style={{ fontSize: 12, color: '#8896b3', lineHeight: 1.7 }}>
-                <p style={{ marginBottom: 8 }}>このデモでは以下の要素をカスタマイズできます：</p>
-                <ul style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column', gap: 4 }}>
-                  <li>アクセントカラー（ボタン・リンク）</li>
-                  <li>ナビゲーションバーカラー</li>
-                  <li>FAQのアコーディオン開閉</li>
-                  <li>料金プランの強調表示切り替え</li>
-                </ul>
-                <p style={{ marginTop: 12, color: '#2d5be3', fontWeight: 500 }}>各セクションは直接クリック・スクロールでご確認いただけます。</p>
-              </div>
-            </div>
-          )}
-        </React.Fragment>
-      );
-    }
-
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App />);
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>業種別サンプルサイト一覧 | LE CIEL WEB DESIGN</title>
+    <meta name="description" content="美容室、居酒屋、整体、カフェ、ヨガ、LP制作の業種別サンプルサイト一覧です。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Noto Sans JP", sans-serif; color: #1a2744; background: #f6f8fc; }
+      header { padding: 72px 22px 32px; text-align: center; }
+      h1 { margin: 0 0 16px; font-size: clamp(30px, 5vw, 54px); line-height: 1.35; }
+      p { margin: 0; color: #5f6b80; line-height: 1.9; }
+      main { max-width: 1120px; margin: 0 auto; padding: 32px 22px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+      a { display: block; min-height: 210px; padding: 28px; color: inherit; text-decoration: none; background: #fff; border: 1px solid #e6ebf4; border-radius: 14px; box-shadow: 0 12px 34px rgba(26,39,68,.06); transition: transform .2s, box-shadow .2s; }
+      a:hover { transform: translateY(-4px); box-shadow: 0 18px 42px rgba(26,39,68,.12); }
+      small { color: #2d5be3; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      h2 { margin: 18px 0 12px; font-size: 24px; }
+      span { display: inline-flex; margin-top: 22px; color: #fff; background: #1a2744; border-radius: 8px; padding: 10px 16px; font-size: 13px; font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>業種別サンプルサイト一覧</h1>
+      <p>各業種1つずつ、発注後の完成イメージとして見せられる単体サイトに作り直しました。</p>
+    </header>
+    <main>
+      <a href="hair-salon.html"><small>Hair Salon / Ver1</small><h2>美容室サイト</h2><p>上質感、メニュー、予約導線を整えた美容室向けデザイン。</p><span>開く</span></a>
+      <a href="hair-salon-v2.html"><small>Hair Salon / Ver2</small><h2>美容室サイト Ver2</h2><p>都会的で高単価なヘアサロン向けのブランドサイト。</p><span>開く</span></a>
+      <a href="hair-salon-v3.html"><small>Hair Salon / Ver3</small><h2>美容室サイト Ver3</h2><p>完全予約制の上質感を打ち出す、編集記事風の美容室デザイン。</p><span>開く</span></a>
+      <a href="izakaya.html"><small>Izakaya / Ver1</small><h2>居酒屋サイト</h2><p>料理、席、宴会予約が伝わる居酒屋向けデザイン。</p><span>開く</span></a>
+      <a href="izakaya-v2.html"><small>Izakaya / Ver2</small><h2>居酒屋サイト Ver2</h2><p>大人の食事会に選ばれるモダン居酒屋デザイン。</p><span>開く</span></a>
+      <a href="izakaya-v3.html"><small>Izakaya / Ver3</small><h2>居酒屋サイト Ver3</h2><p>路地裏の隠れ家感と予約導線を見せる大人向けデザイン。</p><span>開く</span></a>
+      <a href="seitai.html"><small>Seitai / Ver1</small><h2>整体・サロンサイト</h2><p>症状、施術、初回予約がわかりやすい整体院向けデザイン。</p><span>開く</span></a>
+      <a href="seitai-v2.html"><small>Seitai / Ver2</small><h2>整体・サロンサイト Ver2</h2><p>癒しと安心感を前面に出した女性向けサロンデザイン。</p><span>開く</span></a>
+      <a href="seitai-v3.html"><small>Seitai / Ver3</small><h2>整体・サロンサイト Ver3</h2><p>姿勢分析と安心感を伝える、清潔感のある整体デザイン。</p><span>開く</span></a>
+      <a href="cafe.html"><small>Cafe / Ver1</small><h2>カフェサイト</h2><p>空間、メニュー、テイクアウト導線を整えたカフェ向けデザイン。</p><span>開く</span></a>
+      <a href="cafe-v2.html"><small>Cafe / Ver2</small><h2>カフェサイト Ver2</h2><p>テラス利用とライフスタイルを打ち出すカフェデザイン。</p><span>開く</span></a>
+      <a href="cafe-v3.html"><small>Cafe / Ver3</small><h2>カフェサイト Ver3</h2><p>スイーツ、ギフト、注文導線を魅力的に見せるカフェデザイン。</p><span>開く</span></a>
+      <a href="yoga.html"><small>Yoga / Ver1</small><h2>ヨガスタジオサイト</h2><p>体験予約、クラス、料金が伝わるヨガスタジオ向けデザイン。</p><span>開く</span></a>
+      <a href="yoga-v2.html"><small>Yoga / Ver2</small><h2>ヨガスタジオサイト Ver2</h2><p>朝ヨガと都会的ウェルネスを打ち出すスタジオサイト。</p><span>開く</span></a>
+      <a href="yoga-v3.html"><small>Yoga / Ver3</small><h2>ヨガスタジオサイト Ver3</h2><p>静かなリトリート感と体験予約をつなぐヨガサイト。</p><span>開く</span></a>
+      <a href="shampoo-lp.html"><small>Landing Page / Ver1</small><h2>LP制作サンプル</h2><p>商品価値、レビュー、購入導線を整理したLPデザイン。</p><span>開く</span></a>
+      <a href="shampoo-lp-v2.html"><small>Landing Page / Ver2</small><h2>LP制作サンプル Ver2</h2><p>美容商品のCVを意識した広告向けランディングページ。</p><span>開く</span></a>
+      <a href="shampoo-lp-v3.html"><small>Landing Page / Ver3</small><h2>LP制作サンプル Ver3</h2><p>美容商品の広告流入から購入までを設計したLPデザイン。</p><span>開く</span></a>
+    </main>
+  </body>
 </html>
