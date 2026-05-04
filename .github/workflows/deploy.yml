@@ -25,8 +25,6 @@ jobs:
             **/.git*/**
             .github/**
             .claude/**
-            demo-sites/_archive/assets-v2/**
-            demo-sites/_archive/assets-v3/**
 
       - name: Deploy to leciel subfolder (leciel-webdesign.com)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -42,5 +40,3 @@ jobs:
             **/.git*/**
             .github/**
             .claude/**
-            demo-sites/_archive/assets-v2/**
-            demo-sites/_archive/assets-v3/**
