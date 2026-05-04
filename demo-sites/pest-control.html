@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>害虫駆除・衛生防除のSECT PLAN｜ゴキブリ・シロアリ・ハチ・トコジラミ</title>
+<meta name="description" content="住まい・店舗・事業所の害虫駆除と再発予防。ゴキブリ、シロアリ、ハチ、トコジラミ、ムカデ、ネズミ防除まで、調査・駆除・封鎖・報告を行うSECT PLAN。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Archivo:wght@500;600;700;800;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #172119;
+    --deep: #263729;
+    --olive: #53683d;
+    --leaf: #7aa34c;
+    --lime: #d9e86f;
+    --clay: #b47746;
+    --paper: #fbfaf4;
+    --white: #ffffff;
+    --mist: #eef2e7;
+    --line: #d9ddcc;
+    --muted: #687162;
+    --danger: #c85b3e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .en { font-family: 'Archivo', sans-serif; letter-spacing: 0; }
+  .serif { font-family: 'Noto Serif JP', serif; }
+
+  .topbar {
+    background: var(--ink);
+    color: rgba(255,255,255,0.78);
+    font-size: 12px;
+  }
+  .topbar-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .topbar b { color: var(--lime); }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(251,250,244,0.94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+  }
+  .nav-inner {
+    max-width: 1320px;
+    height: 78px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    background: var(--deep);
+    color: var(--lime);
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    border-radius: 4px;
+    position: relative;
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(217,232,111,0.5);
+  }
+  .brand-name {
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 900;
+  }
+  .brand-sub {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--deep);
+  }
+  .nav-links a:hover { color: var(--olive); }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .tel {
+    text-decoration: none;
+    text-align: right;
+    line-height: 1.1;
+  }
+  .tel small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+  }
+  .tel strong {
+    color: var(--danger);
+    font-size: 25px;
+    font-weight: 900;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 4px;
+    border: 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 900;
+    line-height: 1.35;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--deep);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(23,33,25,0.18);
+  }
+  .btn-lime {
+    background: var(--lime);
+    color: var(--ink);
+    box-shadow: 0 14px 30px rgba(122,163,76,0.18);
+  }
+  .btn-line {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+
+  .hero {
+    position: relative;
+    min-height: 760px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+    background: var(--paper);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    left: -10%;
+    bottom: -28%;
+    width: 58%;
+    height: 70%;
+    background:
+      repeating-linear-gradient(45deg, rgba(83,104,61,0.11) 0 2px, transparent 2px 16px);
+    transform: rotate(-5deg);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 110px 7vw 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .eyebrow {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 11px;
+    background: var(--mist);
+    border: 1px solid var(--line);
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 2px;
+    background: var(--leaf);
+  }
+  h1 {
+    font-size: clamp(40px, 5.6vw, 78px);
+    line-height: 1.08;
+    font-weight: 900;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  h1 span {
+    color: var(--olive);
+    text-decoration: underline;
+    text-decoration-color: var(--lime);
+    text-decoration-thickness: 0.18em;
+    text-underline-offset: -0.08em;
+  }
+  .hero-lead {
+    max-width: 670px;
+    color: var(--deep);
+    line-height: 2.06;
+    font-size: 17px;
+    margin-bottom: 34px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .hero-checks {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 720px;
+  }
+  .hero-checks span {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 12px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+  }
+  .hero-media {
+    position: relative;
+    background: url('../assets/pest/hero.png') center/cover no-repeat;
+    min-height: 650px;
+  }
+  .hero-media::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(251,250,244,0.96), rgba(251,250,244,0.08) 34%, rgba(23,33,25,0.06));
+  }
+  .inspection-note {
+    position: absolute;
+    right: 38px;
+    bottom: 44px;
+    width: min(390px, calc(100% - 64px));
+    background: rgba(23,33,25,0.94);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(23,33,25,0.28);
+    padding: 24px;
+  }
+  .inspection-note h3 {
+    color: var(--lime);
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .inspection-row {
+    display: grid;
+    grid-template-columns: 98px 1fr;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 13px;
+  }
+  .inspection-row span {
+    color: rgba(255,255,255,0.58);
+    font-weight: 800;
+  }
+
+  .band {
+    background: var(--deep);
+    color: #fff;
+    padding: 20px 24px;
+  }
+  .band-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .band-title {
+    color: var(--lime);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+  .band-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+  }
+  .band-list span {
+    border: 1px solid rgba(255,255,255,0.14);
+    padding: 8px 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    background: rgba(255,255,255,0.05);
+  }
+
+  section { padding: 108px 24px; }
+  .wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 54px;
+  }
+  .label {
+    display: block;
+    color: var(--olive);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+  .h2 {
+    font-size: clamp(31px, 4vw, 54px);
+    line-height: 1.26;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+  .lead {
+    color: var(--deep);
+    line-height: 2.05;
+    max-width: 780px;
+  }
+
+  .pest-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .pest-card {
+    background: #fff;
+    padding: 32px 26px;
+    min-height: 284px;
+    position: relative;
+  }
+  .pest-card .num {
+    color: rgba(83,104,61,0.14);
+    font-size: 54px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .pest-card h3 {
+    font-size: 21px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .pest-card p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.95;
+  }
+
+  #method {
+    background: var(--mist);
+  }
+  .method-layout {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .method-photo {
+    min-height: 590px;
+    background: url('../assets/pest/report.png') center/cover no-repeat;
+    border-radius: 4px;
+    box-shadow: 0 24px 60px rgba(23,33,25,0.14);
+  }
+  .method-panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 40px;
+  }
+  .method-steps {
+    margin-top: 30px;
+    display: grid;
+    gap: 12px;
+  }
+  .method-step {
+    display: grid;
+    grid-template-columns: 116px 1fr;
+    gap: 18px;
+    padding: 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .method-step span {
+    color: var(--olive);
+    font-weight: 900;
+  }
+  .method-step b {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .method-step p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .price-layout {
+    display: grid;
+    grid-template-columns: 1fr 370px;
+    gap: 24px;
+    align-items: start;
+  }
+  .price-table {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.04fr 1fr 180px;
+    gap: 1px;
+    background: var(--line);
+  }
+  .price-row > div {
+    background: #fff;
+    padding: 20px 22px;
+  }
+  .price-row.head > div {
+    background: var(--deep);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .price-name b {
+    display: block;
+    font-size: 18px;
+  }
+  .price-name span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .yen {
+    color: var(--danger);
+    font-size: 29px;
+    font-weight: 900;
+    line-height: 1.15;
+  }
+  .yen small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .price-note {
+    position: sticky;
+    top: 98px;
+    background: var(--deep);
+    color: #fff;
+    border-radius: 4px;
+    padding: 30px;
+  }
+  .price-note h3 {
+    color: var(--lime);
+    font-size: 23px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .price-note p {
+    color: rgba(255,255,255,0.72);
+    font-size: 13.5px;
+    line-height: 1.95;
+  }
+  .price-note ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .price-note li::before {
+    content: '✓ ';
+    color: var(--lime);
+  }
+
+  #business {
+    background: var(--deep);
+    color: #fff;
+  }
+  #business .label { color: var(--lime); }
+  #business .lead { color: rgba(255,255,255,0.72); }
+  .business-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+  }
+  .contract-panel {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .contract-panel h3 {
+    font-size: 28px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+  .contract-panel p {
+    color: rgba(255,255,255,0.72);
+    line-height: 2;
+  }
+  .contract-list {
+    display: grid;
+    gap: 12px;
+  }
+  .contract-item {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 22px;
+  }
+  .contract-item b {
+    display: block;
+    margin-bottom: 7px;
+  }
+  .contract-item p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+  .flow {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 26px 20px;
+    min-height: 254px;
+  }
+  .flow .step {
+    color: var(--olive);
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .flow h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .flow p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  #voices {
+    background: var(--mist);
+  }
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .voice {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 30px;
+  }
+  .voice .stars {
+    color: var(--clay);
+    letter-spacing: 0.08em;
+    font-weight: 900;
+    margin-bottom: 14px;
+  }
+  .voice h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .voice p {
+    color: var(--deep);
+    font-size: 13.5px;
+    line-height: 2;
+  }
+  .voice small {
+    display: block;
+    margin-top: 18px;
+    color: var(--muted);
+    font-weight: 900;
+  }
+
+  .faq-list {
+    max-width: 980px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+  }
+  .faq {
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .faq h3, .faq p {
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+  }
+  .faq h3 {
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .faq h3 span, .faq p span:first-child {
+    color: var(--olive);
+    font-weight: 900;
+  }
+  .faq p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .cta {
+    padding: 0;
+    background:
+      linear-gradient(90deg, rgba(23,33,25,0.96), rgba(38,55,41,0.78)),
+      url('../assets/pest/hero.png') center/cover no-repeat;
+    color: #fff;
+  }
+  .cta-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 88px 24px;
+    display: grid;
+    grid-template-columns: 1fr 430px;
+    gap: 48px;
+    align-items: center;
+  }
+  .cta h2 {
+    font-size: clamp(34px, 4.4vw, 60px);
+    line-height: 1.18;
+    margin-bottom: 20px;
+  }
+  .cta p {
+    color: rgba(255,255,255,0.75);
+    line-height: 2;
+    max-width: 780px;
+  }
+  .cta-panel {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 30px;
+  }
+  .cta-panel small {
+    display: block;
+    color: var(--muted);
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .cta-panel a.tel-big {
+    display: block;
+    color: var(--danger);
+    text-decoration: none;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 18px;
+  }
+  .cta-panel .btn { width: 100%; }
+
+  footer {
+    background: #111811;
+    color: rgba(255,255,255,0.65);
+    padding: 34px 24px 40px;
+    font-size: 12px;
+  }
+  .footer-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .mobile-fixed {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(23,33,25,0.2);
+  }
+  .mobile-fixed a {
+    min-height: 58px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--lime);
+    font-weight: 900;
+  }
+  .mobile-fixed a:last-child {
+    background: var(--danger);
+    color: #fff;
+  }
+
+  @media (max-width: 1080px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-media { order: -1; min-height: 480px; }
+    .hero-content { padding-top: 56px; }
+    .band-inner, .section-head, .method-layout, .price-layout, .business-grid, .cta-inner { grid-template-columns: 1fr; }
+    .pest-grid { grid-template-columns: repeat(2, 1fr); }
+    .flow-grid { grid-template-columns: repeat(3, 1fr); }
+    .price-note { position: static; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .topbar-inner span:last-child, .nav-actions { display: none; }
+    .nav-inner { height: 68px; padding: 0 16px; }
+    .brand-name { font-size: 17px; }
+    .brand-sub { display: none; }
+    .hero-media { min-height: 360px; }
+    .inspection-note { position: static; width: auto; margin: -54px 18px 30px; }
+    .hero-content { padding: 40px 18px 64px; }
+    .hero-checks, .band-list, .pest-grid, .flow-grid, .voice-grid { grid-template-columns: 1fr; }
+    section { padding: 72px 18px; }
+    .section-head { gap: 24px; margin-bottom: 34px; }
+    .method-panel, .contract-panel { padding: 26px; }
+    .method-photo { min-height: 360px; }
+    .method-step { grid-template-columns: 1fr; }
+    .price-row { grid-template-columns: 1fr; }
+    .price-row.head { display: none; }
+    .cta-panel a.tel-big { font-size: 33px; }
+    .mobile-fixed { display: grid; }
+    footer { padding-bottom: 86px; }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span><b>調査・駆除・侵入口対策・報告書</b> 住まいと店舗の衛生防除</span>
+      <span>ゴキブリ / シロアリ / ハチ / トコジラミ / ムカデ / ネズミ防除</span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark en">SP</span>
+        <span><span class="brand-name en">SECT PLAN</span><span class="brand-sub en">SANITARY PEST CONTROL</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#pests">対象害虫</a></li>
+        <li><a href="#method">防除方法</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#business">店舗管理</a></li>
+        <li><a href="#flow">流れ</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="tel en" href="tel:0120-000-000"><small>受付 8:00-21:00</small><strong>0120-000-000</strong></a>
+        <a class="btn btn-primary" href="#contact">無料相談</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow en">INSPECTION FIRST</p>
+      <h1>見える虫だけでなく、<br><span>発生する理由</span>を止める。</h1>
+      <p class="hero-lead">害虫駆除は、薬剤を撒いて終わりではありません。SECT PLANは、発生源・侵入口・水分・餌場・隠れ場所を調査し、駆除と再発予防を同時に設計します。住まいには安心を、店舗には衛生管理の記録を残す防除サービスです。</p>
+      <div class="hero-actions">
+        <a class="btn btn-lime" href="tel:0120-000-000">今すぐ相談する</a>
+        <a class="btn btn-line" href="#price">料金目安を見る</a>
+      </div>
+      <div class="hero-checks">
+        <span>現地調査</span>
+        <span>作業前見積</span>
+        <span>写真報告</span>
+        <span>再発予防</span>
+      </div>
+    </div>
+    <div>
+      <div class="hero-media"></div>
+      <aside class="inspection-note">
+        <h3>発生原因を残さないための点検</h3>
+        <div class="inspection-row"><span>厨房・水回り</span><b>餌場、水分、隙間、排水まわりを確認</b></div>
+        <div class="inspection-row"><span>外周・玄関</span><b>侵入口、配管貫通部、植栽、基礎周辺を確認</b></div>
+        <div class="inspection-row"><span>記録</span><b>調査写真、施工箇所、再点検目安を共有</b></div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="band">
+    <div class="band-inner">
+      <div class="band-title en">TARGET & CONTROL</div>
+      <div class="band-list">
+        <span>ゴキブリ</span><span>シロアリ</span><span>ハチ</span><span>トコジラミ</span><span>ムカデ</span><span>ネズミ</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="pests">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">PEST INDEX</span>
+          <h2 class="h2">害虫ごとに、駆除より先に見るべき場所があります。</h2>
+        </div>
+        <p class="lead">同じ害虫でも、戸建、マンション、飲食店、倉庫では発生要因が変わります。目撃場所、時間帯、季節、建物の構造を確認し、必要な施工範囲を絞り込みます。</p>
+      </div>
+      <div class="pest-grid">
+        <article class="pest-card"><div class="num en">01</div><h3>ゴキブリ駆除</h3><p>厨房、排水、冷蔵庫裏、配管まわりを調査。ベイト剤、モニタリングトラップ、侵入口対策を組み合わせます。</p></article>
+        <article class="pest-card"><div class="num en">02</div><h3>シロアリ調査・予防</h3><p>床下、基礎、浴室まわり、玄関框、ウッドデッキを確認。被害範囲と薬剤処理の必要性を説明します。</p></article>
+        <article class="pest-card"><div class="num en">03</div><h3>ハチの巣駆除</h3><p>巣の場所、種類、高さ、周辺環境を確認。戻りバチへの注意と再営巣しやすい場所も案内します。</p></article>
+        <article class="pest-card"><div class="num en">04</div><h3>トコジラミ対策</h3><p>寝具、家具、巾木、コンセント周辺の潜伏箇所を調査。熱・薬剤・養生・再点検計画を組みます。</p></article>
+        <article class="pest-card"><div class="num en">05</div><h3>ムカデ・ヤスデ予防</h3><p>外周、基礎、湿気、植栽、侵入口を確認。屋外処理と室内侵入経路の封鎖で予防します。</p></article>
+        <article class="pest-card"><div class="num en">06</div><h3>ネズミ防除</h3><p>天井裏、外壁穴、配管貫通部、糞跡、足跡、かじり跡を確認。捕獲だけでなく侵入口封鎖を重視します。</p></article>
+        <article class="pest-card"><div class="num en">07</div><h3>店舗の定期管理</h3><p>食品を扱う施設向けに、点検・施工・モニタリング・報告を定期化。監査時に説明しやすい記録を残します。</p></article>
+        <article class="pest-card"><div class="num en">08</div><h3>引越し前後の予防</h3><p>入居前、退去後、空室、リフォーム前後の予防施工。家具搬入前の対策で初期侵入を抑えます。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="wrap">
+      <div class="method-layout">
+        <div class="method-photo" aria-label="害虫駆除の調査報告を説明するスタッフ"></div>
+        <div class="method-panel">
+          <span class="label en">CONTROL DESIGN</span>
+          <h2 class="h2">薬剤量を増やすのではなく、効く場所に絞って施工します。</h2>
+          <p class="lead" style="margin-top:18px;">人やペットが過ごす空間、食材を扱う厨房、営業中の店舗では、薬剤の選び方と施工場所が重要です。SECT PLANは、必要最小限の薬剤処理、物理的封鎖、清掃・保管アドバイスを組み合わせます。</p>
+          <div class="method-steps">
+            <div class="method-step"><span>調査</span><div><b>生息・侵入・発生源を確認</b><p>目撃箇所だけでなく、配管、床下、外周、排水、食品保管、湿気を確認します。</p></div></div>
+            <div class="method-step"><span>駆除</span><div><b>対象に合わせた施工</b><p>ベイト、液剤、粉剤、トラップ、捕獲器、巣の除去など、対象害虫ごとに選定します。</p></div></div>
+            <div class="method-step"><span>封鎖</span><div><b>侵入口と隠れ場所を減らす</b><p>配管貫通部、巾木、外壁穴、ドア下、換気口まわりなどを必要に応じて対策します。</p></div></div>
+            <div class="method-step"><span>報告</span><div><b>写真つきで再発予防を共有</b><p>施工箇所、薬剤、注意点、再点検目安を残し、店舗では衛生管理記録として使えます。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">PRICE GUIDE</span>
+          <h2 class="h2">現地調査後に、施工範囲と総額を提示します。</h2>
+        </div>
+        <p class="lead">害虫駆除の料金は、対象害虫、面積、被害状況、巣の場所、施工回数、再点検の有無で変わります。作業前に見積を提示し、了承後に施工します。</p>
+      </div>
+      <div class="price-layout">
+        <div class="price-table">
+          <div class="price-row head"><div>サービス</div><div>内容</div><div>料金目安</div></div>
+          <div class="price-row"><div class="price-name"><b>ゴキブリ スポット駆除</b><span>住居・小規模店舗</span></div><div>調査、ベイト施工、トラップ設置、発生源アドバイス。面積と生息状況で変動。</div><div class="yen">16,500<small>円(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>シロアリ調査・予防施工</b><span>床下・木部・基礎まわり</span></div><div>被害調査、床下面積確認、防除薬剤処理。施工範囲により個別見積。</div><div class="yen">1,320<small>円/㎡(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>ハチの巣駆除</b><span>軒下・庭木・換気口周辺</span></div><div>種類、巣の高さ、作業環境、戻りバチ対策を確認して施工。</div><div class="yen">8,800<small>円(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>店舗 定期モニタリング</b><span>飲食店・食品施設・事業所</span></div><div>定期点検、ベイト交換、トラップ確認、報告書提出、改善提案。</div><div class="yen">5,500<small>円/月(税込)〜</small></div></div>
+        </div>
+        <aside class="price-note">
+          <h3>安さだけで選ぶ前に、確認してほしいこと。</h3>
+          <p>害虫駆除は、表面だけ施工すると再発しやすくなります。見積では「どこを調査したか」「何を使うか」「再発時の対応」「侵入口対策の有無」を確認してください。</p>
+          <ul>
+            <li>作業前見積</li>
+            <li>薬剤と施工箇所の説明</li>
+            <li>写真報告</li>
+            <li>再点検・定期管理相談</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="business">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">BUSINESS HYGIENE</span>
+          <h2 class="h2">飲食店・施設には、駆除より「記録に残る衛生管理」を。</h2>
+        </div>
+        <p class="lead">店舗や事業所では、発生後の駆除だけでなく、監査やクレーム予防のための定期点検が重要です。営業に支障が出にくい時間帯、少量施工、報告書の運用まで相談できます。</p>
+      </div>
+      <div class="business-grid">
+        <article class="contract-panel">
+          <h3>月次管理で、発生前の変化を拾います。</h3>
+          <p>トラップの捕獲数、発生場所、厨房動線、排水まわり、外部侵入リスクを継続的に記録。虫を見つけてから動くのではなく、発生しやすい変化を早めに見つけます。</p>
+        </article>
+        <div class="contract-list">
+          <div class="contract-item"><b>食品を扱う場所に配慮</b><p>食材、食器、調理器具、客席への影響を考え、施工場所と時間を調整します。</p></div>
+          <div class="contract-item"><b>報告書・改善提案</b><p>点検結果、捕獲状況、施工箇所、清掃・保管改善を店舗内で共有しやすくまとめます。</p></div>
+          <div class="contract-item"><b>クレーム発生時の緊急点検</b><p>目撃場所と時間、客席・厨房・搬入口の関係を確認し、原因の切り分けを行います。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">WORK FLOW</span>
+          <h2 class="h2">見つけた場所だけで判断せず、建物全体から原因を追います。</h2>
+        </div>
+        <p class="lead">害虫の種類が分からなくても大丈夫です。写真があれば受付時に確認し、現地では生息痕、侵入口、発生条件を順番に見ていきます。</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow"><div class="step en">01</div><h3>相談・写真確認</h3><p>目撃場所、時間帯、数、建物種別、写真の有無を確認します。</p></article>
+        <article class="flow"><div class="step en">02</div><h3>現地調査</h3><p>生息痕、侵入口、水分、餌場、隠れ場所、外周環境を確認します。</p></article>
+        <article class="flow"><div class="step en">03</div><h3>見積提示</h3><p>施工範囲、薬剤、封鎖、再点検の必要性を説明して総額を提示します。</p></article>
+        <article class="flow"><div class="step en">04</div><h3>駆除・予防施工</h3><p>対象害虫に合わせて、薬剤処理、トラップ、巣の除去、侵入口対策を行います。</p></article>
+        <article class="flow"><div class="step en">05</div><h3>報告・再発予防</h3><p>写真報告と改善点を共有し、必要に応じて定期管理を提案します。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="voices">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">CLIENT VOICE</span>
+          <h2 class="h2">発注後に安心できるのは、原因まで説明が残るから。</h2>
+        </div>
+        <p class="lead">害虫駆除は人に相談しづらいトラブルです。だからこそ、訪問時の配慮、説明、記録を丁寧にしています。</p>
+      </div>
+      <div class="voice-grid">
+        <article class="voice"><div class="stars">★★★★★</div><h3>飲食店の営業前に点検してもらえました。</h3><p>厨房内のどこを改善すべきか、写真つきで説明してくれました。薬剤を撒くだけではなく、保管方法まで教えてもらえたのが良かったです。</p><small>飲食店 / 渋谷区</small></article>
+        <article class="voice"><div class="stars">★★★★★</div><h3>子どもとペットがいるので薬剤説明が安心でした。</h3><p>使う場所、触らない方がよい時間、換気の目安を丁寧に説明してくれました。再発予防の隙間対策も助かりました。</p><small>戸建住宅 / 世田谷区</small></article>
+        <article class="voice"><div class="stars">★★★★★</div><h3>虫の種類が分からない状態でも相談できました。</h3><p>写真を送った段階で可能性を教えてもらい、現地調査で発生源を確認。作業後の報告が分かりやすかったです。</p><small>マンション / 江東区</small></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">FAQ</span>
+          <h2 class="h2">依頼前の不安を、先に解消します。</h2>
+        </div>
+        <p class="lead">害虫駆除は、状況によって必要な施工が大きく変わります。分からないことが多い段階でもご相談ください。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq"><h3><span>Q</span><b>害虫の種類が分からなくても依頼できますか？</b></h3><p><span>A</span><span>可能です。写真があれば受付時に確認し、現地で生息痕や発生場所を調べます。種類が分からないまま強い薬剤を使うことはありません。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>小さな子どもやペットがいても大丈夫ですか？</b></h3><p><span>A</span><span>施工場所、薬剤の種類、換気、触れない時間を事前に説明します。必要に応じてベイト剤や物理対策を中心に組み立てます。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>一度の駆除で完全にいなくなりますか？</b></h3><p><span>A</span><span>対象害虫や発生状況によります。卵、巣、外部侵入、隣接環境が関係する場合は、再点検や定期管理が必要です。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>店舗の営業中でも施工できますか？</b></h3><p><span>A</span><span>内容によります。食材や客席への影響を避けるため、閉店後・開店前の調査や、薬剤量を抑えた管理方法を提案します。</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="cta-inner">
+      <div>
+        <span class="label en" style="color:var(--lime)">CONTACT</span>
+        <h2>見つけた場所、時間、写真。<br>分かる範囲だけで相談できます。</h2>
+        <p>虫そのものを見せたくない、近所に知られたくない、店舗営業に影響を出したくない。そうした不安も含めてご相談ください。状況に合わせて、調査と施工の進め方を提案します。</p>
+      </div>
+      <div class="cta-panel">
+        <small>受付時間 8:00-21:00 / 通話無料</small>
+        <a class="tel-big en" href="tel:0120-000-000">0120-000-000</a>
+        <a class="btn btn-lime" href="mailto:contact@sectplan.example">写真を送って相談する</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><b class="en">SECT PLAN</b><br>住まい・店舗・事業所の害虫駆除、衛生防除、定期管理</div>
+      <div>受付 8:00-21:00 / 東京・神奈川・埼玉・千葉の一部エリア</div>
+    </div>
+  </footer>
+
+  <div class="mobile-fixed">
+    <a href="#price">料金を見る</a>
+    <a href="tel:0120-000-000">電話する</a>
+  </div>
+</body>
+</html>
