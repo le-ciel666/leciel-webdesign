@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エアコン修理・診断のAIR NOTE｜冷えない・水漏れ・ランプ点滅</title>
+<meta name="description" content="家庭用エアコンの冷えない、水漏れ、異音、エラーコード、室外機不調を診断。修理か買い替えかまで正直に案内する空調修理サービス AIR NOTE。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17242c;
+    --ink-soft: #344853;
+    --muted: #6f818a;
+    --line: #dfe8eb;
+    --paper: #ffffff;
+    --mist: #f4f9fa;
+    --mint: #63d6c5;
+    --mint-soft: #e6fbf7;
+    --sky: #5db7e8;
+    --blue: #1f74d1;
+    --night: #102735;
+    --sun: #ffd36a;
+    --coral: #ff6b57;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .en { font-family: 'Inter', sans-serif; letter-spacing: 0; }
+  .serif { font-family: 'Noto Serif JP', serif; }
+
+  .topline {
+    background: var(--night);
+    color: rgba(255,255,255,0.82);
+    font-size: 12px;
+  }
+  .topline-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .topline b { color: var(--mint); }
+
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(223,232,235,0.86);
+  }
+  .nav-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 76px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .brand {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    background:
+      linear-gradient(135deg, var(--mint), var(--sky));
+    display: grid;
+    place-items: center;
+    color: var(--night);
+    font-weight: 900;
+    box-shadow: 0 10px 26px rgba(99,214,197,0.28);
+  }
+  .brand-name {
+    display: block;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: 900;
+  }
+  .brand-sub {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .tel {
+    text-decoration: none;
+    text-align: right;
+    line-height: 1.1;
+  }
+  .tel small {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 800;
+  }
+  .tel strong {
+    color: var(--blue);
+    font-size: 26px;
+    font-weight: 900;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 0;
+    text-decoration: none;
+    font-weight: 900;
+    line-height: 1.35;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    background: var(--night);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(16,39,53,0.18);
+  }
+  .btn-mint {
+    background: var(--mint);
+    color: var(--night);
+    box-shadow: 0 14px 30px rgba(99,214,197,0.28);
+  }
+  .btn-line {
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+
+  .hero {
+    position: relative;
+    min-height: 740px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.04fr);
+    background:
+      linear-gradient(90deg, rgba(244,249,250,1), rgba(244,249,250,0.82) 48%, rgba(244,249,250,0.1)),
+      url('../assets/aircon/hero.png') right center/cover no-repeat;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(31,116,209,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31,116,209,0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, #000 0 47%, transparent 80%);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 112px 7vw 92px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .chip {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+    margin-bottom: 24px;
+  }
+  .chip::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+    box-shadow: 0 0 0 5px rgba(99,214,197,0.2);
+  }
+  h1 {
+    font-size: clamp(38px, 5.8vw, 78px);
+    line-height: 1.07;
+    font-weight: 900;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  h1 span {
+    color: var(--blue);
+  }
+  .hero-lead {
+    max-width: 660px;
+    color: var(--ink-soft);
+    line-height: 2.05;
+    font-size: 17px;
+    margin-bottom: 34px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+  }
+  .hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    max-width: 680px;
+  }
+  .metric {
+    background: rgba(255,255,255,0.82);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px;
+  }
+  .metric b {
+    display: block;
+    color: var(--night);
+    font-size: 28px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .metric span {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .diagnosis-card {
+    position: absolute;
+    right: 5vw;
+    bottom: 46px;
+    z-index: 2;
+    width: min(380px, 34vw);
+    background: rgba(16,39,53,0.92);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 26px;
+    padding: 24px;
+    box-shadow: 0 26px 70px rgba(16,39,53,0.28);
+  }
+  .diagnosis-card h3 {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+  .signal {
+    display: grid;
+    gap: 12px;
+  }
+  .signal-row {
+    display: grid;
+    grid-template-columns: 86px 1fr 48px;
+    gap: 12px;
+    align-items: center;
+    font-size: 12px;
+  }
+  .bar {
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.13);
+    overflow: hidden;
+  }
+  .bar i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--mint), var(--sky));
+  }
+
+  .quick {
+    background: var(--night);
+    color: #fff;
+    padding: 22px 24px;
+  }
+  .quick-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 26px;
+    align-items: center;
+  }
+  .quick-title {
+    color: var(--mint);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+  .quick-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .quick-list a {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 999px;
+    padding: 9px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  section {
+    padding: 106px 24px;
+  }
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 58px;
+    align-items: end;
+    margin-bottom: 54px;
+  }
+  .label {
+    display: block;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+  .h2 {
+    font-size: clamp(30px, 4.1vw, 54px);
+    line-height: 1.25;
+    font-weight: 900;
+    letter-spacing: 0;
+  }
+  .lead {
+    color: var(--ink-soft);
+    line-height: 2.05;
+    max-width: 760px;
+  }
+
+  .symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .symptom {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+  }
+  .symptom::after {
+    content: attr(data-code);
+    position: absolute;
+    right: 22px;
+    top: 18px;
+    color: rgba(31,116,209,0.08);
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 1;
+  }
+  .symptom .icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: var(--mint-soft);
+    color: var(--blue);
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 24px;
+  }
+  .symptom h3 {
+    font-size: 22px;
+    line-height: 1.42;
+    margin-bottom: 12px;
+  }
+  .symptom p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.95;
+  }
+
+  #judge {
+    background: var(--mist);
+  }
+  .judge-board {
+    display: grid;
+    grid-template-columns: 0.96fr 1.04fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .judge-photo {
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 560px;
+    background: url('../assets/aircon/diagnosis.png') center/cover no-repeat;
+  }
+  .judge-panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 38px;
+  }
+  .judge-list {
+    margin-top: 28px;
+    display: grid;
+    gap: 14px;
+  }
+  .judge-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 18px;
+    background: var(--mist);
+    border: 1px solid var(--line);
+  }
+  .judge-item span {
+    color: var(--blue);
+    font-weight: 900;
+  }
+  .judge-item b {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .judge-item p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .price-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+    align-items: start;
+  }
+  .price-table {
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    overflow: hidden;
+  }
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 170px;
+    gap: 1px;
+    background: var(--line);
+  }
+  .price-row > div {
+    background: #fff;
+    padding: 20px 22px;
+  }
+  .price-row.head > div {
+    background: var(--night);
+    color: #fff;
+    font-weight: 900;
+    font-size: 13px;
+  }
+  .price-name b {
+    display: block;
+    font-size: 18px;
+  }
+  .price-name span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .yen {
+    color: var(--blue);
+    font-size: 29px;
+    font-weight: 900;
+    line-height: 1.15;
+  }
+  .yen small {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 800;
+  }
+  .price-side {
+    position: sticky;
+    top: 96px;
+    background: var(--mint-soft);
+    border: 1px solid #bfeee7;
+    border-radius: 26px;
+    padding: 28px;
+  }
+  .price-side h3 {
+    font-size: 22px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .price-side p {
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    line-height: 1.95;
+  }
+  .price-side ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .price-side li::before {
+    content: '✓ ';
+    color: var(--blue);
+  }
+
+  #process {
+    background: var(--night);
+    color: #fff;
+  }
+  #process .label { color: var(--mint); }
+  #process .lead { color: rgba(255,255,255,0.72); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .process {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px;
+    padding: 28px;
+    min-height: 280px;
+  }
+  .process .step {
+    color: var(--mint);
+    font-size: 42px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 22px;
+  }
+  .process h3 {
+    font-size: 20px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .process p {
+    color: rgba(255,255,255,0.68);
+    font-size: 13.5px;
+    line-height: 1.95;
+  }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .case {
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .case-top {
+    background: var(--mist);
+    padding: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .case-top span {
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 900;
+  }
+  .case-top h3 {
+    margin-top: 8px;
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  .case-body {
+    padding: 24px;
+  }
+  .case-body p {
+    color: var(--muted);
+    font-size: 13.5px;
+    line-height: 1.95;
+    margin-bottom: 18px;
+  }
+  .case-result {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .case-result b { color: var(--blue); }
+
+  #maker {
+    background: var(--mist);
+  }
+  .maker-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .maker-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    padding: 34px;
+  }
+  .maker-card h3 {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+  .maker-card p {
+    color: var(--muted);
+    line-height: 2;
+  }
+  .brand-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .brand-strip span {
+    padding: 12px 8px;
+    border-radius: 999px;
+    background: var(--mist);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--ink-soft);
+  }
+
+  .faq-list {
+    max-width: 980px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+  }
+  .faq {
+    border-bottom: 1px solid var(--line);
+    padding: 26px 0;
+  }
+  .faq h3 {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
+    font-size: 17px;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .faq h3 span, .faq p span {
+    color: var(--blue);
+    font-weight: 900;
+  }
+  .faq p {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .cta {
+    padding: 0;
+    background:
+      linear-gradient(135deg, rgba(16,39,53,0.94), rgba(31,116,209,0.78)),
+      url('../assets/aircon/hero.png') center/cover no-repeat;
+    color: #fff;
+  }
+  .cta-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 88px 24px;
+    display: grid;
+    grid-template-columns: 1fr 410px;
+    gap: 48px;
+    align-items: center;
+  }
+  .cta h2 {
+    font-size: clamp(34px, 4.5vw, 60px);
+    line-height: 1.18;
+    margin-bottom: 20px;
+  }
+  .cta p {
+    color: rgba(255,255,255,0.78);
+    line-height: 2;
+    max-width: 740px;
+  }
+  .cta-panel {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 28px;
+    padding: 30px;
+  }
+  .cta-panel small {
+    display: block;
+    color: var(--muted);
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .cta-panel a.tel-big {
+    display: block;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .cta-panel .btn { width: 100%; }
+
+  footer {
+    background: #07151d;
+    color: rgba(255,255,255,0.68);
+    padding: 34px 24px 40px;
+    font-size: 12px;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .mobile-fixed {
+    display: none;
+    position: fixed;
+    z-index: 80;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(16,39,53,0.2);
+  }
+  .mobile-fixed a {
+    min-height: 58px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: var(--night);
+    background: var(--mint);
+    font-weight: 900;
+  }
+  .mobile-fixed a:last-child {
+    color: #fff;
+    background: var(--blue);
+  }
+
+  @media (max-width: 1080px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; background-position: center top; padding-top: 380px; }
+    .hero::before { mask-image: none; }
+    .diagnosis-card { position: static; width: auto; margin: -50px 24px 40px; }
+    .quick-inner, .section-head, .judge-board, .price-layout, .cta-inner { grid-template-columns: 1fr; }
+    .symptom-grid, .case-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .price-side { position: static; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 15px; }
+    .topline-inner span:last-child, .nav-actions { display: none; }
+    .nav-inner { height: 68px; padding: 0 16px; }
+    .brand-name { font-size: 18px; }
+    .brand-sub { display: none; }
+    .hero { min-height: auto; padding-top: 310px; }
+    .hero-content { padding: 42px 18px 64px; }
+    .hero-metrics, .quick-list, .symptom-grid, .process-grid, .case-grid, .maker-grid, .brand-strip { grid-template-columns: 1fr; }
+    .quick { padding: 20px 18px; }
+    section { padding: 72px 18px; }
+    .section-head { gap: 24px; margin-bottom: 34px; }
+    .judge-photo { min-height: 360px; }
+    .judge-panel, .maker-card { padding: 26px; }
+    .judge-item { grid-template-columns: 1fr; }
+    .price-row { grid-template-columns: 1fr; }
+    .price-row.head { display: none; }
+    .cta-panel a.tel-big { font-size: 32px; }
+    .mobile-fixed { display: grid; }
+    footer { padding-bottom: 86px; }
+  }
+</style>
+</head>
+<body>
+  <div class="topline">
+    <div class="topline-inner">
+      <span><b>家庭用エアコン修理・診断</b> 冷えない / 水漏れ / ランプ点滅 / 室外機不調</span>
+      <span>東京・神奈川・埼玉・千葉の一部エリア対応</span>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark en">A</span>
+        <span><span class="brand-name en">AIR NOTE</span><span class="brand-sub en">AIR CONDITIONER REPAIR LAB</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#symptom">症状診断</a></li>
+        <li><a href="#judge">修理判断</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#process">流れ</a></li>
+        <li><a href="#maker">対応メーカー</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="tel en" href="tel:0120-000-000"><small>受付 8:00-22:00</small><strong>0120-000-000</strong></a>
+        <a class="btn btn-primary" href="#contact">診断を依頼</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="chip">エラーコード・型番から故障箇所を絞り込む空調診断</p>
+      <h1>冷えない理由を、<br><span>勘ではなく診断で。</span></h1>
+      <p class="hero-lead">エアコンの不調は、ガス不足に見えても、室外機、基板、センサー、ドレン排水、施工状態が原因のことがあります。AIR NOTEは訪問前ヒアリングと現地点検で原因を切り分け、修理・部品交換・買い替えのどれが合理的かを明確に案内します。</p>
+      <div class="hero-actions">
+        <a class="btn btn-mint" href="tel:0120-000-000">電話で症状を伝える</a>
+        <a class="btn btn-line" href="#price">料金の考え方を見る</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric"><b class="en">8-22</b><span>当日相談受付</span></div>
+        <div class="metric"><b class="en">All</b><span>主要メーカー対応</span></div>
+        <div class="metric"><b class="en">Report</b><span>診断メモ発行</span></div>
+      </div>
+    </div>
+    <aside class="diagnosis-card">
+      <h3>現地点検で確認する主な項目</h3>
+      <div class="signal">
+        <div class="signal-row"><span>吹出温度</span><div class="bar"><i style="width:82%"></i></div><b>測定</b></div>
+        <div class="signal-row"><span>冷媒圧力</span><div class="bar"><i style="width:66%"></i></div><b>確認</b></div>
+        <div class="signal-row"><span>ドレン排水</span><div class="bar"><i style="width:74%"></i></div><b>通水</b></div>
+        <div class="signal-row"><span>エラー履歴</span><div class="bar"><i style="width:91%"></i></div><b>照合</b></div>
+      </div>
+    </aside>
+  </header>
+
+  <div class="quick">
+    <div class="quick-inner">
+      <div class="quick-title en">START FROM SYMPTOM</div>
+      <div class="quick-list">
+        <a href="#symptom">冷えない</a>
+        <a href="#symptom">水漏れ</a>
+        <a href="#symptom">異音</a>
+        <a href="#symptom">ランプ点滅</a>
+        <a href="#symptom">室外機停止</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="symptom">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">SYMPTOM INDEX</span>
+          <h2 class="h2">症状から、最初に疑うべき故障箇所を整理します。</h2>
+        </div>
+        <p class="lead">エアコン修理で多い失敗は「とりあえずガス補充」「とりあえず清掃」で終わらせてしまうこと。AIR NOTEでは、温度差、運転音、ランプ点滅、室外機の動作、ドレン排水を組み合わせて、再発しにくい判断を行います。</p>
+      </div>
+      <div class="symptom-grid">
+        <article class="symptom" data-code="COOL"><div class="icon">冷</div><h3>冷えない・暖まらない</h3><p>フィルター汚れ、冷媒漏れ、室外機ファン、コンプレッサー、温度センサー、基板不良を確認。ガス補充だけで済ませてよい状態かを見極めます。</p></article>
+        <article class="symptom" data-code="DRAIN"><div class="icon">滴</div><h3>室内機から水が落ちる</h3><p>ドレンホース詰まり、勾配不良、結露、熱交換器汚れ、室内機の傾きなどを点検。賃貸物件では壁や床への二次被害も確認します。</p></article>
+        <article class="symptom" data-code="ERR"><div class="icon">点</div><h3>ランプ点滅・エラー表示</h3><p>メーカーごとのエラーコード、リモコン表示、本体ランプの点滅パターンを確認。部品供給の可否や修理費の目安まで案内します。</p></article>
+        <article class="symptom" data-code="NOISE"><div class="icon">音</div><h3>異音・振動・焦げた匂い</h3><p>ファン接触、モーター、ルーバー、電装部、室外機固定状態を確認。発熱や焦げ臭い症状は使用を止めてからご相談ください。</p></article>
+        <article class="symptom" data-code="OUT"><div class="icon">外</div><h3>室外機が動かない</h3><p>電源、ブレーカー、制御基板、ファンモーター、コンプレッサー保護停止を点検。設置環境による熱こもりも確認します。</p></article>
+        <article class="symptom" data-code="OLD"><div class="icon">替</div><h3>古い機種の修理相談</h3><p>製造年、部品供給、消費電力、修理費を比較し、修理より買い替えが妥当な場合は正直にお伝えします。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="judge">
+    <div class="wrap">
+      <div class="judge-board">
+        <div class="judge-photo" aria-label="エアコン修理の診断結果を説明するスタッフ"></div>
+        <div class="judge-panel">
+          <span class="label en">REPAIR OR REPLACE</span>
+          <h2 class="h2">修理するか、買い替えるか。迷うところまで一緒に判断します。</h2>
+          <p class="lead" style="margin-top:18px;">メーカー修理、街の修理業者、買い替え。どれが正解かは、年式・故障箇所・部品供給・設置状態で変わります。高額修理になりそうな場合は、無理に修理へ誘導しません。</p>
+          <div class="judge-list">
+            <div class="judge-item"><span>5年以内</span><div><b>保証確認を優先</b><p>メーカー保証、延長保証、施工保証の可能性を確認。保証内ならメーカー窓口が有利な場合があります。</p></div></div>
+            <div class="judge-item"><span>6-9年</span><div><b>部品交換と買い替えを比較</b><p>基板、モーター、冷媒系統など、修理額と残寿命のバランスを見て判断します。</p></div></div>
+            <div class="judge-item"><span>10年以上</span><div><b>修理可否を慎重に確認</b><p>部品生産終了、電気代、再故障リスクを踏まえ、応急修理か交換かを提案します。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">PRICE MAP</span>
+          <h2 class="h2">料金は、点検で原因を確定してから提示します。</h2>
+        </div>
+        <p class="lead">メーカー修理と同じく、エアコン修理は「出張料・点検診断料・技術料・部品代」で構成されるのが基本です。AIR NOTEでは、作業前に修理総額と、修理後に再発する可能性がある範囲を説明します。</p>
+      </div>
+      <div class="price-layout">
+        <div class="price-table">
+          <div class="price-row head"><div>メニュー</div><div>作業内容</div><div>料金目安</div></div>
+          <div class="price-row"><div class="price-name"><b>点検診断</b><span>冷えない・エラー・異音など</span></div><div>型番確認、運転測定、室内外機チェック、修理可否の判断。</div><div class="yen">4,400<small>円(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>水漏れ修理</b><span>ドレン詰まり・排水不良</span></div><div>ドレンホース通水、詰まり除去、室内機勾配と結露状態の確認。</div><div class="yen">9,900<small>円(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>冷媒漏れ点検・補充</b><span>冷えない・霜つき</span></div><div>ガス圧確認、接続部確認、必要に応じて冷媒補充。漏れ箇所の状態で見積。</div><div class="yen">18,700<small>円(税込)〜</small></div></div>
+          <div class="price-row"><div class="price-name"><b>部品交換修理</b><span>基板・センサー・モーター等</span></div><div>メーカー部品の供給確認後、技術料と部品代を含めて提示。</div><div class="yen">別途<small>見積</small></div></div>
+        </div>
+        <aside class="price-side">
+          <h3>見積の前に、無理な作業は行いません。</h3>
+          <p>点検の結果、修理より買い替えが妥当な場合、部品供給がない場合、施工不良の是正が必要な場合は、理由を添えて説明します。</p>
+          <ul>
+            <li>作業前に総額提示</li>
+            <li>部品供給の可否を確認</li>
+            <li>エラーコードと型番を記録</li>
+            <li>修理後の動作確認まで実施</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">SERVICE FLOW</span>
+          <h2 class="h2">訪問前から、故障の仮説を立てて向かいます。</h2>
+        </div>
+        <p class="lead">「冷えないです」だけでも大丈夫です。受付時に、メーカー、型番、年式、エラー表示、室外機の動き、いつから発生したかを順番に確認します。</p>
+      </div>
+      <div class="process-grid">
+        <article class="process"><div class="step en">01</div><h3>症状ヒアリング</h3><p>型番、エラーコード、ランプ点滅、運転時間、ブレーカー状態などを確認します。</p></article>
+        <article class="process"><div class="step en">02</div><h3>訪問・測定</h3><p>吹出温度、吸込温度、室外機動作、排水、電装部、設置環境を点検します。</p></article>
+        <article class="process"><div class="step en">03</div><h3>診断結果の説明</h3><p>故障箇所、必要部品、修理可能性、買い替え比較を画面や写真で説明します。</p></article>
+        <article class="process"><div class="step en">04</div><h3>修理・試運転</h3><p>了承後に作業し、冷暖房の動作、排水、異音、エラー再発の有無を確認します。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">CASE LOG</span>
+          <h2 class="h2">よくある修理事例を、判断理由まで残します。</h2>
+        </div>
+        <p class="lead">お客様があとから家族や管理会社に説明できるよう、診断内容と判断理由をできるだけ分かりやすくまとめます。</p>
+      </div>
+      <div class="case-grid">
+        <article class="case"><div class="case-top"><span>CASE 01 / 冷えない</span><h3>冷媒不足ではなく、室外機まわりの熱こもりが原因</h3></div><div class="case-body"><p>ガス補充前に吹出温度と室外機吸込状態を確認。ベランダの設置環境を改善し、再測定で正常範囲へ。</p><div class="case-result"><span>作業</span><b>点検診断＋環境調整</b></div></div></article>
+        <article class="case"><div class="case-top"><span>CASE 02 / 水漏れ</span><h3>ドレンホース詰まりと室内機内部汚れを同時に確認</h3></div><div class="case-body"><p>排水通水で詰まりを除去。熱交換器の汚れによる結露偏りもあり、後日クリーニングを提案。</p><div class="case-result"><span>作業</span><b>排水経路復旧</b></div></div></article>
+        <article class="case"><div class="case-top"><span>CASE 03 / ランプ点滅</span><h3>製造12年で基板部品の供給終了、買い替え判断</h3></div><div class="case-body"><p>メーカー部品供給を確認し、修理不能を説明。応急運転のリスクと交換目安を整理しました。</p><div class="case-result"><span>作業</span><b>診断レポート発行</b></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="maker">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">MAKER SUPPORT</span>
+          <h2 class="h2">主要メーカーの型番・エラー表示を確認して対応します。</h2>
+        </div>
+        <p class="lead">メーカー公式修理が適しているケースもあります。保証期間内、特殊機種、部品供給の都合がある場合は、メーカー窓口の利用も含めて案内します。</p>
+      </div>
+      <div class="maker-grid">
+        <article class="maker-card"><h3>対応可能な相談</h3><p>冷えない、水漏れ、エラーコード、リモコン不良、室外機停止、異音、異臭、ブレーカーが落ちる、ガス漏れ疑い、古い機種の修理可否など。</p></article>
+        <article class="maker-card"><h3>事前に分かると早い情報</h3><p>室内機底面や側面にある型番、製造年、エラーコード、保証書の有無、最後にクリーニングした時期、室外機の設置場所をお知らせください。</p></article>
+      </div>
+      <div class="brand-strip">
+        <span>DAIKIN</span><span>Panasonic</span><span>Mitsubishi</span><span>HITACHI</span><span>SHARP</span><span>TOSHIBA</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="label en">FAQ</span>
+          <h2 class="h2">修理依頼前によく聞かれること。</h2>
+        </div>
+        <p class="lead">エアコン修理は、点検しないと断定できないことが多い分、事前説明の丁寧さが大切です。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq"><h3><span>Q</span><b>ガス補充だけお願いできますか？</b></h3><p><span>A</span><span>可能な場合もありますが、漏れ箇所が残っていると再発します。まず冷媒圧力や接続部を確認し、補充だけでよい状態かを判断します。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>メーカー修理とどちらがよいですか？</b></h3><p><span>A</span><span>保証期間内、特殊部品、メーカー専用診断が必要な故障はメーカー修理が有利です。保証外の水漏れや設置環境起因の不調は、当日対応しやすいケースがあります。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>古いエアコンでも修理できますか？</b></h3><p><span>A</span><span>点検は可能です。ただし部品供給が終了している場合や修理費が高額になる場合は、買い替えをおすすめすることがあります。</span></p></div>
+        <div class="faq"><h3><span>Q</span><b>水漏れしている時は使い続けても大丈夫ですか？</b></h3><p><span>A</span><span>床や壁、電装部に影響が出ることがあります。漏れがある場合はいったん停止し、可能であれば写真を撮ってからご相談ください。</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="cta-inner">
+      <div>
+        <span class="label en" style="color:var(--mint)">CONTACT</span>
+        <h2>型番が分からなくても、症状から相談できます。</h2>
+        <p>「冷えない」「水が落ちる」「ランプが点滅する」だけでも大丈夫です。使ってよい状態か、止めた方がよい状態かも含めて、受付時に確認します。</p>
+      </div>
+      <div class="cta-panel">
+        <small>受付時間 8:00-22:00 / 通話無料</small>
+        <a class="tel-big en" href="tel:0120-000-000">0120-000-000</a>
+        <a class="btn btn-mint" href="mailto:repair@airnote.example">症状をWEBで送る</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><b class="en">AIR NOTE</b><br>家庭用エアコン修理・診断 / 冷えない・水漏れ・ランプ点滅・室外機不調</div>
+      <div>受付 8:00-22:00 / 東京・神奈川・埼玉・千葉の一部エリア</div>
+    </div>
+  </footer>
+
+  <div class="mobile-fixed">
+    <a href="tel:0120-000-000">電話する</a>
+    <a href="#price">料金を見る</a>
+  </div>
+</body>
+</html>

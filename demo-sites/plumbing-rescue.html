@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>水まわり救急サービス みずのわ東京｜水漏れ・つまり・水道修理</title>
+<meta name="description" content="東京都内の水漏れ・つまり・トイレ修理・蛇口交換に24時間365日対応。水道局指定工事店ネットワーク、出張見積無料、作業前見積で安心の水まわり救急サービスです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Noto+Serif+JP:wght@500;600;700&family=Barlow+Condensed:wght@500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #071724;
+    --ink-2: #102b3c;
+    --blue: #006eb8;
+    --blue-2: #004a86;
+    --cyan: #00a6c8;
+    --aqua: #e7f8fb;
+    --yellow: #ffc247;
+    --red: #d94135;
+    --paper: #ffffff;
+    --soft: #f3f7f9;
+    --line: #d9e5eb;
+    --muted: #617684;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .serif { font-family: 'Noto Serif JP', serif; }
+  .num { font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.02em; }
+  .mono { font-family: 'DM Mono', monospace; letter-spacing: 0.1em; }
+
+  .notice {
+    background: var(--ink);
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+  .notice-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 8px 28px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .notice b { color: var(--yellow); }
+
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    height: 82px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    min-width: 238px;
+  }
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 900;
+    font-size: 22px;
+    box-shadow: 0 8px 18px rgba(0,110,184,0.18);
+  }
+  .brand-name {
+    display: block;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+  .brand-sub {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-2);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-tel {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+  .nav-tel small { font-size: 10px; color: var(--muted); letter-spacing: 0.08em; }
+  .nav-tel strong { font-size: 27px; color: var(--red); }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 13px 22px;
+    border-radius: 6px;
+    border: 0;
+    text-decoration: none;
+    font-family: inherit;
+    font-weight: 800;
+    line-height: 1.35;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(217,65,53,0.22);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 30px rgba(217,65,53,0.28); }
+  .btn-blue {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(0,110,184,0.18);
+  }
+  .btn-ghost {
+    background: #fff;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+
+  .hero {
+    position: relative;
+    min-height: 760px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+    overflow: hidden;
+    background: var(--soft);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 12px;
+    background: repeating-linear-gradient(135deg, var(--yellow) 0 18px, var(--ink) 18px 36px);
+  }
+  .hero-content {
+    padding: 92px 7vw 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 8px 12px;
+    background: var(--aqua);
+    color: var(--blue-2);
+    border: 1px solid #b9edf5;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin-bottom: 24px;
+  }
+  .hero-kicker::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--cyan);
+  }
+  h1 {
+    font-size: clamp(38px, 5.2vw, 76px);
+    line-height: 1.08;
+    letter-spacing: 0;
+    font-weight: 900;
+    margin-bottom: 28px;
+  }
+  h1 .mark {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+    text-decoration-thickness: 0.18em;
+    text-underline-offset: -0.08em;
+  }
+  .hero-lead {
+    max-width: 650px;
+    font-size: 17px;
+    line-height: 2.05;
+    color: var(--ink-2);
+    margin-bottom: 34px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .hero-tel {
+    min-width: 300px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--red);
+    color: #fff;
+    padding: 13px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 16px 32px rgba(217,65,53,0.24);
+  }
+  .hero-tel small { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; }
+  .hero-tel strong { font-size: clamp(34px, 4vw, 48px); line-height: 1; }
+  .hero-note {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 680px;
+  }
+  .hero-note span {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--ink-2);
+  }
+  .hero-media {
+    position: relative;
+    min-height: 640px;
+    background: url('../assets/plumbing/hero.png') center/cover no-repeat;
+  }
+  .hero-media::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(243,247,249,0.95), rgba(243,247,249,0.08) 38%, rgba(7,23,36,0.08));
+  }
+  .dispatch-card {
+    position: absolute;
+    right: 36px;
+    bottom: 48px;
+    width: min(360px, calc(100% - 56px));
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 22px 50px rgba(7,23,36,0.24);
+    overflow: hidden;
+  }
+  .dispatch-head {
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .status-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--yellow);
+  }
+  .status-dot::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--yellow);
+  }
+  .dispatch-body { padding: 18px; }
+  .dispatch-row {
+    display: grid;
+    grid-template-columns: 82px 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .dispatch-row:last-child { border-bottom: 0; }
+  .dispatch-row b { color: var(--blue-2); }
+  .dispatch-row span { color: var(--muted); font-weight: 700; }
+
+  .ticker {
+    background: var(--blue-2);
+    color: #fff;
+    padding: 20px 28px;
+  }
+  .ticker-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 26px;
+    align-items: center;
+  }
+  .ticker-title {
+    color: var(--yellow);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+  }
+  .ticker-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .ticker-list span {
+    font-size: 13px;
+    font-weight: 700;
+    border-left: 1px solid rgba(255,255,255,0.28);
+    padding-left: 14px;
+  }
+
+  section { padding: 108px 28px; }
+  .section-inner { max-width: 1320px; margin: 0 auto; }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+    gap: 58px;
+    align-items: end;
+    margin-bottom: 54px;
+  }
+  .label {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    margin-bottom: 18px;
+  }
+  .label::before {
+    content: '';
+    width: 34px;
+    height: 2px;
+    background: var(--yellow);
+  }
+  .h2 {
+    font-size: clamp(30px, 4vw, 52px);
+    line-height: 1.28;
+    letter-spacing: 0;
+    font-weight: 900;
+  }
+  .lead {
+    color: var(--ink-2);
+    line-height: 2.05;
+    max-width: 690px;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line);
+    background: var(--line);
+    gap: 1px;
+  }
+  .problem-card {
+    background: #fff;
+    padding: 34px 26px;
+    min-height: 255px;
+  }
+  .problem-card .icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: var(--aqua);
+    color: var(--blue);
+    border-radius: 8px;
+    font-size: 26px;
+    font-weight: 900;
+    margin-bottom: 20px;
+  }
+  .problem-card h3 {
+    font-size: 20px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .problem-card p {
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  #trust { background: var(--soft); }
+  .trust-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 420px;
+    gap: 34px;
+    align-items: stretch;
+  }
+  .trust-panel {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 40px;
+  }
+  .trust-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 34px;
+  }
+  .trust-item {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px;
+    background: #fbfdfe;
+  }
+  .trust-item b {
+    display: block;
+    color: var(--blue-2);
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  .trust-item p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .certificate {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 8px;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 520px;
+  }
+  .certificate .seal {
+    width: 132px;
+    height: 132px;
+    border: 2px solid var(--yellow);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--yellow);
+    font-weight: 900;
+    line-height: 1.45;
+    margin-bottom: 28px;
+  }
+  .certificate h3 {
+    font-size: 30px;
+    line-height: 1.38;
+    margin-bottom: 18px;
+  }
+  .certificate p { color: rgba(255,255,255,0.76); line-height: 2; }
+  .certificate-table {
+    margin-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.16);
+  }
+  .certificate-table div {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.16);
+    font-size: 13px;
+  }
+  .certificate-table span { color: rgba(255,255,255,0.58); }
+
+  .price-tabs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .price-tabs button {
+    min-height: 54px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .price-tabs button.active {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+  .price-board {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+    align-items: start;
+  }
+  .price-table {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .price-row {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 180px;
+    gap: 1px;
+    background: var(--line);
+  }
+  .price-row > div {
+    background: #fff;
+    padding: 18px 20px;
+  }
+  .price-row.head > div {
+    background: var(--ink);
+    color: #fff;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  .price-name b {
+    display: block;
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+  .price-name span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .price-yen {
+    color: var(--red);
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+  }
+  .price-yen small {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .price-note {
+    background: var(--aqua);
+    border: 1px solid #b9edf5;
+    border-radius: 8px;
+    padding: 28px;
+    position: sticky;
+    top: 104px;
+  }
+  .price-note h3 {
+    font-size: 22px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+  .price-note p {
+    color: var(--ink-2);
+    font-size: 13.5px;
+    line-height: 1.95;
+    margin-bottom: 16px;
+  }
+  .price-note ul {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .price-note li::before { content: '✓ '; color: var(--blue); }
+
+  #flow { background: var(--soft); }
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+  .flow-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 28px 22px;
+    position: relative;
+    min-height: 260px;
+  }
+  .flow-card .step {
+    color: var(--blue);
+    font-size: 42px;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+  .flow-card h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .flow-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.9;
+  }
+
+  .case-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 46px;
+    align-items: center;
+  }
+  .case-photo {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 24px 50px rgba(7,23,36,0.16);
+  }
+  .case-list {
+    display: grid;
+    gap: 16px;
+  }
+  .case-item {
+    display: grid;
+    grid-template-columns: 128px 1fr 140px;
+    gap: 18px;
+    align-items: center;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    background: #fff;
+  }
+  .case-item .tag {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 4px;
+    padding: 7px 10px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 800;
+  }
+  .case-item b { font-size: 16px; }
+  .case-item p { color: var(--muted); font-size: 12.5px; line-height: 1.75; }
+  .case-item .amount {
+    color: var(--red);
+    font-size: 25px;
+    font-weight: 900;
+    text-align: right;
+  }
+  .case-item .amount small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+  }
+
+  #area { background: var(--ink); color: #fff; }
+  #area .label { color: var(--yellow); }
+  #area .lead { color: rgba(255,255,255,0.78); }
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .map-panel {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 32px;
+  }
+  .ward-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .ward-grid span {
+    background: var(--soft);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 8px 7px;
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+  }
+  .area-side {
+    display: grid;
+    gap: 18px;
+  }
+  .area-side article {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 26px;
+  }
+  .area-side h3 { color: var(--yellow); margin-bottom: 10px; }
+  .area-side p { color: rgba(255,255,255,0.72); font-size: 13.5px; line-height: 1.9; }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .voice-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 30px;
+    background: #fff;
+  }
+  .voice-card .stars {
+    color: var(--yellow);
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    font-weight: 900;
+  }
+  .voice-card h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .voice-card p {
+    color: var(--ink-2);
+    font-size: 13.5px;
+    line-height: 2;
+  }
+  .voice-card small {
+    display: block;
+    margin-top: 20px;
+    color: var(--muted);
+    font-weight: 800;
+  }
+
+  #faq { background: var(--soft); }
+  .faq-list {
+    max-width: 980px;
+    margin: 0 auto;
+    border-top: 1px solid var(--line);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+  }
+  .faq-q {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    align-items: start;
+    font-weight: 900;
+    line-height: 1.7;
+  }
+  .faq-q span, .faq-a span { color: var(--blue); }
+  .faq-a {
+    padding: 0 28px 26px;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .final-cta {
+    padding: 0;
+    background: var(--blue-2);
+    color: #fff;
+  }
+  .cta-box {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 78px 28px;
+    display: grid;
+    grid-template-columns: 1fr 440px;
+    gap: 42px;
+    align-items: center;
+  }
+  .cta-box h2 {
+    font-size: clamp(34px, 4.2vw, 58px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.8);
+    max-width: 740px;
+    line-height: 2;
+  }
+  .cta-contact {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 8px;
+    padding: 30px;
+  }
+  .cta-contact small {
+    display: block;
+    color: var(--muted);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .cta-contact a {
+    display: block;
+    color: var(--red);
+    text-decoration: none;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  .cta-contact .btn { width: 100%; }
+
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.7);
+    padding: 34px 28px 92px;
+    font-size: 12px;
+  }
+  .footer-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .mobile-sticky {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: rgba(7,23,36,0.35);
+  }
+  .mobile-sticky a {
+    min-height: 58px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 900;
+  }
+  .mobile-sticky a:first-child { background: var(--red); }
+  .mobile-sticky a:last-child { background: var(--blue); }
+
+  @media (max-width: 1100px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-media { min-height: 520px; order: -1; }
+    .hero-media::before { background: linear-gradient(180deg, rgba(7,23,36,0.05), rgba(243,247,249,0.88)); }
+    .ticker-inner, .section-head, .trust-layout, .price-board, .case-layout, .area-grid, .cta-box { grid-template-columns: 1fr; }
+    .problem-grid { grid-template-columns: repeat(2, 1fr); }
+    .flow-grid { grid-template-columns: repeat(3, 1fr); }
+    .price-note { position: static; }
+  }
+  @media (max-width: 760px) {
+    body { font-size: 15px; }
+    .notice-inner { display: block; text-align: center; }
+    .notice-inner span + span { display: none; }
+    .nav-inner { height: 68px; padding: 0 16px; }
+    .brand { min-width: auto; }
+    .brand-mark { width: 38px; height: 38px; font-size: 18px; }
+    .brand-name { font-size: 14px; }
+    .brand-sub { display: none; }
+    .nav-action { display: none; }
+    .hero-content { padding: 48px 18px 66px; }
+    .hero-media { min-height: 380px; }
+    .dispatch-card { position: static; width: auto; margin: -82px 18px 26px; }
+    .hero-note { grid-template-columns: repeat(2, 1fr); }
+    .hero-tel { min-width: 100%; }
+    .ticker { padding: 18px; }
+    .ticker-list { grid-template-columns: 1fr 1fr; }
+    section { padding: 72px 18px; }
+    .section-head { gap: 24px; margin-bottom: 34px; }
+    .problem-grid, .trust-list, .flow-grid, .voice-grid, .price-tabs { grid-template-columns: 1fr; }
+    .price-row { grid-template-columns: 1fr; }
+    .price-row.head { display: none; }
+    .case-item { grid-template-columns: 1fr; }
+    .case-item .amount { text-align: left; }
+    .ward-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-contact a { font-size: 34px; }
+    .mobile-sticky { display: grid; }
+  }
+</style>
+</head>
+<body>
+  <div class="notice">
+    <div class="notice-inner">
+      <span><b>24時間365日受付</b> 東京都内・近郊の水漏れ、つまり、故障に緊急対応</span>
+      <span>出張見積無料 / 作業前見積 / クレジット・QR決済対応</span>
+    </div>
+  </div>
+
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">水</span>
+        <span>
+          <span class="brand-name">みずのわ東京</span>
+          <span class="brand-sub mono">WATER RESCUE SERVICE</span>
+        </span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#service">対応内容</a></li>
+        <li><a href="#trust">安心体制</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#flow">流れ</a></li>
+        <li><a href="#area">対応エリア</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-action">
+        <a class="nav-tel" href="tel:0120-000-000"><small>通話無料・受付中</small><strong class="num">0120-000-000</strong></a>
+        <a class="btn btn-blue" href="#contact">WEB相談</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-kicker">水道局指定工事店ネットワーク / 東京23区最短30分</div>
+      <h1>水漏れ・つまりを<br><span class="mark">今夜中に止める。</span></h1>
+      <p class="hero-lead">床に広がる水、止まらないトイレ、急に使えなくなったキッチン。みずのわ東京は、電話口で状況を整理し、現場到着後に原因・作業範囲・総額を必ず説明してから修理します。焦っている時ほど、料金と作業を曖昧にしない。それが私たちの水まわり救急です。</p>
+      <div class="hero-actions">
+        <a class="hero-tel" href="tel:0120-000-000"><small>水が止まらない・床が濡れている方</small><strong class="num">0120-000-000</strong></a>
+        <a class="btn btn-ghost" href="#price">料金目安を見る</a>
+      </div>
+      <div class="hero-note">
+        <span>見積後キャンセル0円</span>
+        <span>深夜早朝も受付</span>
+        <span>到着前に担当連絡</span>
+        <span>作業保証あり</span>
+      </div>
+    </div>
+    <div>
+      <div class="hero-media"></div>
+      <div class="dispatch-card">
+        <div class="dispatch-head"><span>現在の受付状況</span><span class="status-dot">作業員待機中</span></div>
+        <div class="dispatch-body">
+          <div class="dispatch-row"><span>新宿区</span><b>蛇口根元の水漏れ / 30分前後</b></div>
+          <div class="dispatch-row"><span>世田谷区</span><b>トイレつまり / 40分前後</b></div>
+          <div class="dispatch-row"><span>江東区</span><b>洗面下配管漏水 / 35分前後</b></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <div class="ticker-title mono">EMERGENCY MENU</div>
+      <div class="ticker-list">
+        <span>トイレつまり・水漏れ</span>
+        <span>蛇口・水栓の交換修理</span>
+        <span>排水口・排水管つまり</span>
+        <span>漏水調査・給水管補修</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="service">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">SERVICE</p>
+          <h2 class="h2">水まわりの「困った」を、場所別ではなく症状から切り分けます。</h2>
+        </div>
+        <p class="lead">同じ「水漏れ」でも、パッキンの劣化、カートリッジ不良、排水管の緩み、給水管の腐食では必要な作業がまったく違います。電話では応急処置を案内し、現場では原因を確認したうえで、修理・交換・経過観察の選択肢を提示します。</p>
+      </div>
+      <div class="problem-grid">
+        <article class="problem-card">
+          <div class="icon">漏</div>
+          <h3>蛇口・配管の水漏れ</h3>
+          <p>キッチン、洗面、浴室、洗濯機まわりのポタポタ漏れから床下へ広がる漏水まで対応。止水栓の場所が分からない場合も、電話で一緒に確認します。</p>
+        </article>
+        <article class="problem-card">
+          <div class="icon">詰</div>
+          <h3>トイレ・排水口つまり</h3>
+          <p>紙づまり、異物落下、尿石、屋外桝の閉塞など原因に合わせて除去。無理な高圧作業を避け、便器脱着が必要な場合は事前に理由を説明します。</p>
+        </article>
+        <article class="problem-card">
+          <div class="icon">換</div>
+          <h3>水栓・部品交換</h3>
+          <p>レバーが固い、水が止まらない、温度調整が効かないなどの症状に、メーカー互換部品または本体交換で対応。賃貸物件の原状回復にも配慮します。</p>
+        </article>
+        <article class="problem-card">
+          <div class="icon">調</div>
+          <h3>漏水調査・予防点検</h3>
+          <p>水道料金の急な上昇、壁内や床下の湿り、屋外配管のにじみを確認。目視、音聴、通水確認を組み合わせ、必要な補修範囲を絞り込みます。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="trust">
+    <div class="section-inner">
+      <div class="trust-layout">
+        <div class="trust-panel">
+          <p class="label mono">PROMISE</p>
+          <h2 class="h2">発注前の不安を、現場でひとつずつ消していく。</h2>
+          <p class="lead">水道修理で一番怖いのは、緊急性につけ込まれて総額が分からないまま作業が進むこと。みずのわ東京では、作業前に「原因」「作業内容」「部品代」「追加の可能性」「作業後保証」を書面または画面で確認いただきます。</p>
+          <div class="trust-list">
+            <div class="trust-item"><b>作業前見積の徹底</b><p>点検後に総額を提示。了承前に工具を入れることはありません。</p></div>
+            <div class="trust-item"><b>出張見積・相談無料</b><p>見積後にキャンセルしても費用はかかりません。</p></div>
+            <div class="trust-item"><b>写真つき作業報告</b><p>見えない配管部や交換部品も、作業前後で確認できます。</p></div>
+            <div class="trust-item"><b>賃貸・管理会社対応</b><p>管理会社への説明に必要な症状メモや見積書も発行します。</p></div>
+          </div>
+        </div>
+        <aside class="certificate">
+          <div>
+            <div class="seal">指定店<br>確認済</div>
+            <h3>水道局指定工事店ネットワークによる対応</h3>
+            <p>給水装置・排水設備に関わる作業は、地域の指定工事店基準に沿って対応。緊急修理だけでなく、再発を防ぐための部材選定と施工説明を重視しています。</p>
+          </div>
+          <div class="certificate-table">
+            <div><span>受付</span><b>24時間365日</b></div>
+            <div><span>対象</span><b>戸建・マンション・店舗</b></div>
+            <div><span>支払</span><b>現金 / カード / QR / 後日請求</b></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="price">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">PRICE</p>
+          <h2 class="h2">料金は「基本作業費＋部品代＋必要作業」だけ。</h2>
+        </div>
+        <p class="lead">表示価格は目安です。最終金額は現場確認後に確定します。深夜・早朝も受付し、緊急度が高い場合でも、作業前に金額を確認いただいてから着手します。</p>
+      </div>
+      <div class="price-tabs">
+        <button class="active" type="button">トイレ</button>
+        <button type="button">キッチン</button>
+        <button type="button">浴室</button>
+        <button type="button">洗面</button>
+        <button type="button">排水管</button>
+        <button type="button">漏水調査</button>
+      </div>
+      <div class="price-board">
+        <div class="price-table">
+          <div class="price-row head"><div>症状・作業</div><div>内容</div><div>料金目安</div></div>
+          <div class="price-row">
+            <div class="price-name"><b>軽度つまり除去</b><span>紙づまり・流れが悪い・ラバーカップ相当</span></div>
+            <div>薬剤、ローポンプ、簡易器具での除去。異物混入がない場合の基本対応です。</div>
+            <div class="price-yen">5,500<small>円(税込)〜</small></div>
+          </div>
+          <div class="price-row">
+            <div class="price-name"><b>水漏れ修理</b><span>止水栓、給水管、タンク内部品</span></div>
+            <div>パッキン、ボールタップ、フロートバルブなど症状に応じて部品交換します。</div>
+            <div class="price-yen">6,600<small>円(税込)〜</small></div>
+          </div>
+          <div class="price-row">
+            <div class="price-name"><b>便器脱着作業</b><span>異物落下・奥で詰まっている場合</span></div>
+            <div>玩具、清掃用品、固形物など、便器奥や排水接続部の異物を確認します。</div>
+            <div class="price-yen">22,000<small>円(税込)〜</small></div>
+          </div>
+          <div class="price-row">
+            <div class="price-name"><b>高圧洗浄</b><span>屋外桝・排水管の閉塞、逆流</span></div>
+            <div>油脂、尿石、木の根、汚泥など、排水管側の詰まりに対応します。</div>
+            <div class="price-yen">27,500<small>円(税込)〜</small></div>
+          </div>
+        </div>
+        <aside class="price-note">
+          <h3>見積時に確認できること</h3>
+          <p>「最安値」だけではなく、何が含まれて何が別料金になるのかを明確にします。必要のない交換や、再発リスクを残す応急作業はおすすめしません。</p>
+          <ul>
+            <li>出張見積 0円</li>
+            <li>見積後キャンセル 0円</li>
+            <li>作業保証つき</li>
+            <li>領収書・明細発行</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="flow">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">FLOW</p>
+          <h2 class="h2">電話から修理完了まで、迷う場面を作りません。</h2>
+        </div>
+        <p class="lead">緊急時は、何を伝えればよいか分からなくて当然です。受付スタッフが「止水できているか」「集合住宅か」「床に水が広がっているか」を順番に確認し、到着までの応急処置を案内します。</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-card"><div class="step num">01</div><h3>電話・WEB受付</h3><p>症状、住所、建物種別、緊急度を確認。水が止まらない場合は止水方法を案内します。</p></article>
+        <article class="flow-card"><div class="step num">02</div><h3>担当者を手配</h3><p>近隣待機スタッフを確認し、到着目安と担当者名を事前にお知らせします。</p></article>
+        <article class="flow-card"><div class="step num">03</div><h3>現地点検</h3><p>原因を切り分け、写真や実物を見せながら必要な作業範囲を説明します。</p></article>
+        <article class="flow-card"><div class="step num">04</div><h3>見積確認</h3><p>総額、追加可能性、保証範囲を確認。了承後に作業を開始します。</p></article>
+        <article class="flow-card"><div class="step num">05</div><h3>作業・報告</h3><p>通水確認、清掃、再発防止の説明まで行い、明細を発行して完了です。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="case-layout">
+        <div class="case-photo"><img src="../assets/plumbing/estimate.png" alt="水道修理の作業前見積を説明するスタッフ"></div>
+        <div>
+          <p class="label mono">CASE STUDY</p>
+          <h2 class="h2">よくある修理事例と、実際の判断ポイント。</h2>
+          <p class="lead" style="margin: 18px 0 28px;">安く済む修理と、放置すると床材や階下漏水につながる修理を見極めることが大切です。現場では、今すぐ直すべき箇所と後日でもよい箇所を分けて説明します。</p>
+          <div class="case-list">
+            <div class="case-item"><span class="tag">築12年マンション</span><div><b>洗面台下の給水ホースから水漏れ</b><p>止水栓を閉め、劣化した接続部品を交換。床への浸水前に復旧。</p></div><div class="amount">9,900<small>円(税込)</small></div></div>
+            <div class="case-item"><span class="tag">戸建住宅</span><div><b>屋外桝の詰まりでキッチン排水が逆流</b><p>桝内の油脂固着を除去し、高圧洗浄で排水管を通水確認。</p></div><div class="amount">33,000<small>円(税込)</small></div></div>
+            <div class="case-item"><span class="tag">賃貸アパート</span><div><b>トイレタンク内の水が止まらない</b><p>ボールタップとフロート弁を交換。管理会社提出用の明細を発行。</p></div><div class="amount">14,300<small>円(税込)</small></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="area">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">AREA</p>
+          <h2 class="h2">東京23区を中心に、生活圏ごとの待機拠点から急行。</h2>
+        </div>
+        <p class="lead">新宿、品川、世田谷、杉並、江東、足立、練馬など、主要エリアに巡回スタッフを配置。戸建住宅、マンション、飲食店、オフィス、管理物件まで対応します。</p>
+      </div>
+      <div class="area-grid">
+        <div class="map-panel">
+          <div class="ward-grid">
+            <span>千代田</span><span>中央</span><span>港</span><span>新宿</span>
+            <span>文京</span><span>台東</span><span>墨田</span><span>江東</span>
+            <span>品川</span><span>目黒</span><span>大田</span><span>世田谷</span>
+            <span>渋谷</span><span>中野</span><span>杉並</span><span>豊島</span>
+            <span>北</span><span>荒川</span><span>板橋</span><span>練馬</span>
+            <span>足立</span><span>葛飾</span><span>江戸川</span><span>近郊相談</span>
+          </div>
+        </div>
+        <div class="area-side">
+          <article><h3>マンションの階下漏水</h3><p>管理会社・管理組合への連絡が必要な場合も、状況説明に使える作業報告を整理します。共用部と専有部の切り分けも現場で確認します。</p></article>
+          <article><h3>飲食店・事業所の緊急復旧</h3><p>営業停止を避けたい店舗には、応急復旧と恒久修理を分けて提案。厨房排水やグリストラップ周辺の詰まりにも対応します。</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">VOICE</p>
+          <h2 class="h2">選ばれる理由は、速さよりも「説明が残る」こと。</h2>
+        </div>
+        <p class="lead">緊急サービスにこそ、落ち着いた説明と記録が必要です。作業後に家族や管理会社へ説明しやすいよう、症状、原因、交換部品、注意点を明細に残します。</p>
+      </div>
+      <div class="voice-grid">
+        <article class="voice-card"><div class="stars">★★★★★</div><h3>夜中のトイレつまりでも、金額が先に分かって安心でした。</h3><p>焦って電話しましたが、まず止水と使わない方がよいことを教えてくれました。到着後も見積を見せてから作業してくれたので納得できました。</p><small>世田谷区 / 40代 / マンション</small></article>
+        <article class="voice-card"><div class="stars">★★★★★</div><h3>管理会社への説明まで考えてくれました。</h3><p>洗面台下の水漏れで床が濡れてしまい不安でした。写真つきで交換箇所を説明してくれ、管理会社にもそのまま共有できました。</p><small>江東区 / 30代 / 賃貸住宅</small></article>
+        <article class="voice-card"><div class="stars">★★★★★</div><h3>高圧洗浄を無理にすすめられなかったのが信頼できました。</h3><p>排水の流れが悪く相談しました。必要な範囲と、今回は簡易清掃でよい理由を説明してくれて、次の点検目安も分かりました。</p><small>杉並区 / 50代 / 戸建住宅</small></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="label mono">FAQ</p>
+          <h2 class="h2">電話の前に、よくある不安を確認できます。</h2>
+        </div>
+        <p class="lead">分からないことが多いまま依頼して大丈夫です。状況を一緒に整理し、必要であれば応急処置だけでもご案内します。</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item"><div class="faq-q"><span>Q</span><div>見積だけで断っても本当に費用はかかりませんか？</div></div><div class="faq-a"><span>A</span><div>はい。出張見積後、金額や作業内容に納得いただけない場合はキャンセル可能です。作業開始前に費用が発生することはありません。</div></div></div>
+        <div class="faq-item"><div class="faq-q"><span>Q</span><div>水が止まらない時、到着までに何をすればよいですか？</div></div><div class="faq-a"><span>A</span><div>まず止水栓または水道メーター横の元栓を閉めてください。場所が分からない場合は電話で案内します。電気機器や床材への浸水がある場合は、安全を優先して離れてください。</div></div></div>
+        <div class="faq-item"><div class="faq-q"><span>Q</span><div>深夜でも料金は大きく変わりますか？</div></div><div class="faq-a"><span>A</span><div>受付は24時間です。時間帯やエリアによって対応条件が変わる場合は、訪問前に必ずお伝えします。現地で突然高額になることがないよう、作業前見積を徹底しています。</div></div></div>
+        <div class="faq-item"><div class="faq-q"><span>Q</span><div>古い蛇口や海外メーカーの部品も修理できますか？</div></div><div class="faq-a"><span>A</span><div>部品在庫やメーカー供給状況によります。現場で型番や寸法を確認し、修理、代替部品、本体交換の選択肢を提示します。</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="final-cta">
+    <div class="cta-box">
+      <div>
+        <p class="label mono">CALL NOW</p>
+        <h2>水を止めたい。原因を知りたい。<br>その段階でご連絡ください。</h2>
+        <p>緊急修理は、早く来るだけでは足りません。到着までの応急処置、現地での原因説明、作業前の総額提示、作業後の報告まで、落ち着いて進めます。</p>
+      </div>
+      <div class="cta-contact">
+        <small>通話無料 / 24時間365日受付</small>
+        <a class="num" href="tel:0120-000-000">0120-000-000</a>
+        <a class="btn btn-primary" href="mailto:repair@mizunowa.example">WEBで状況を送る</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div><b>水まわり救急サービス みずのわ東京</b><br>東京都内・近郊の水漏れ、つまり、水道修理、漏水調査</div>
+      <div>受付時間 24時間365日 / 出張見積無料 / 作業前見積</div>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky">
+    <a href="tel:0120-000-000">電話する</a>
+    <a href="#price">料金を見る</a>
+  </div>
+</body>
+</html>
