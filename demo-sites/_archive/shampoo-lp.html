@@ -1,82 +1,761 @@
 <!doctype html>
 <html lang="ja">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VEMHY2G58C');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VEMHY2G58C');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUMIA Hair Serum | LP制作サンプル</title>
-    <meta name="description" content="LP制作サンプル。商品価値、レビュー、購入導線を整理したランディングページです。" />
+    <title>LUMIA Silk Repair Shampoo | うねり・広がり髪の集中補修シャンプー</title>
+    <meta name="description" content="うねり、広がり、パサつき、カラー後のきしみまで。サロン発想の補修成分で、洗うたび指通りのよい艶髪へ導くLUMIA Silk Repair Shampooの公式LPです。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="sample-site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Noto+Sans+JP:wght@400;500;700;800;900&amp;family=Noto+Serif+JP:wght@600;700;900&amp;display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --cream: #fff9f1;
+        --mist: #f4fbfb;
+        --petal: #fff2f6;
+        --ink: #171923;
+        --muted: #66707d;
+        --line: rgba(23, 25, 35, 0.12);
+        --rose: #d84970;
+        --coral: #f06f4f;
+        --teal: #228f92;
+        --gold: #b98a3c;
+        --deep: #111827;
+        --paper: #ffffff;
+        --shadow: 0 24px 70px rgba(31, 41, 55, 0.12);
+        --serif: "Noto Serif JP", "Yu Mincho", serif;
+        --sans: "Noto Sans JP", system-ui, sans-serif;
+        --latin: "Cormorant Garamond", "Noto Serif JP", serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--cream);
+        font-family: var(--sans);
+        letter-spacing: 0;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.9; }
+      h1, h2, h3 { margin: 0; line-height: 1.16; }
+      h1, h2 { font-family: var(--serif); }
+
+      .top-offer {
+        padding: 10px 16px;
+        color: #fff;
+        background: linear-gradient(90deg, var(--rose), var(--coral));
+        text-align: center;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 26px;
+        min-height: 76px;
+        padding: 0 clamp(18px, 5vw, 70px);
+        background: rgba(255, 249, 241, 0.9);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(18px);
+      }
+      .logo {
+        color: var(--rose);
+        font-family: var(--latin);
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 700;
+        line-height: 1;
+      }
+      .site-header nav {
+        display: flex;
+        justify-content: center;
+        gap: clamp(14px, 2vw, 28px);
+      }
+      .site-header nav a { color: #3b4350; font-size: 13px; font-weight: 800; }
+      .header-cta, .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 24px;
+        color: #fff;
+        background: linear-gradient(135deg, var(--rose), var(--coral));
+        border: 0;
+        border-radius: 999px;
+        box-shadow: 0 14px 34px rgba(216, 73, 112, 0.26);
+        font-size: 14px;
+        font-weight: 900;
+      }
+      .button.secondary {
+        color: var(--ink);
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: none;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(420px, 0.88fr);
+        gap: clamp(28px, 5vw, 70px);
+        align-items: center;
+        min-height: calc(100vh - 116px);
+        padding: clamp(34px, 6vw, 76px) clamp(20px, 5vw, 70px) clamp(52px, 7vw, 90px);
+        overflow: hidden;
+        background:
+          linear-gradient(120deg, rgba(255, 242, 246, 0.94), rgba(244, 251, 251, 0.92) 58%, rgba(255, 249, 241, 0.96)),
+          url("../../assets/lp/hero.png") center / cover;
+      }
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.62);
+        content: "";
+      }
+      .hero > * { position: relative; z-index: 1; }
+      .hero-copy { max-width: 760px; }
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--rose);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .award-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+      .award-row span {
+        padding: 8px 12px;
+        color: var(--teal);
+        background: rgba(34, 143, 146, 0.1);
+        border: 1px solid rgba(34, 143, 146, 0.18);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 900;
+      }
+      h1 {
+        max-width: 740px;
+        margin-bottom: 22px;
+        font-size: clamp(42px, 6.8vw, 92px);
+        letter-spacing: 0;
+      }
+      .lead {
+        max-width: 610px;
+        color: #424b59;
+        font-size: clamp(16px, 1.5vw, 19px);
+        font-weight: 500;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 32px;
+      }
+      .hero-points {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        max-width: 680px;
+        margin-top: 30px;
+      }
+      .hero-point {
+        min-height: 98px;
+        padding: 16px;
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid rgba(255, 255, 255, 0.86);
+        border-radius: 8px;
+        box-shadow: 0 14px 44px rgba(31, 41, 55, 0.08);
+      }
+      .hero-point b { display: block; color: var(--rose); font-size: 22px; }
+      .hero-point span { color: #4a5360; font-size: 12px; font-weight: 800; line-height: 1.6; }
+      .product-stage {
+        align-self: stretch;
+        display: grid;
+        align-items: end;
+        min-height: min(660px, 72vh);
+      }
+      .product-card {
+        position: relative;
+        min-height: 620px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+      .product-card img { object-position: 54% center; }
+      .product-badge {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        width: min(260px, calc(100% - 40px));
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 8px;
+        backdrop-filter: blur(16px);
+      }
+      .product-badge b { display: block; margin-bottom: 6px; color: var(--rose); font-size: 18px; }
+      .product-badge span { color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+      .ticker {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        background: var(--deep);
+      }
+      .ticker div {
+        padding: 22px clamp(16px, 3vw, 36px);
+        color: #fff;
+        border-right: 1px solid rgba(255, 255, 255, 0.14);
+      }
+      .ticker b { display: block; font-size: clamp(24px, 3.6vw, 48px); line-height: 1; }
+      .ticker span { color: rgba(255, 255, 255, 0.68); font-size: 12px; font-weight: 800; line-height: 1.7; }
+
+      .section { padding: clamp(70px, 10vw, 132px) clamp(20px, 5vw, 70px); }
+      .section.paper { background: var(--paper); }
+      .section.mist { background: var(--mist); }
+      .section.deep { color: #fff; background: var(--deep); }
+      .section.deep p { color: rgba(255,255,255,.72); }
+      .section-head {
+        max-width: 920px;
+        margin: 0 auto 42px;
+        text-align: center;
+      }
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(32px, 5vw, 68px);
+        letter-spacing: 0;
+      }
+      h3 { margin-bottom: 10px; font-size: 23px; }
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .problem-card {
+        min-height: 250px;
+        padding: 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 18px 54px rgba(31, 41, 55, 0.07);
+      }
+      .problem-card span {
+        display: grid;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 20px;
+        place-items: center;
+        color: #fff;
+        background: var(--rose);
+        border-radius: 50%;
+        font-weight: 900;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(300px, .9fr) minmax(0, 1.1fr);
+        gap: clamp(34px, 6vw, 78px);
+        max-width: 1180px;
+        margin: 0 auto;
+        align-items: center;
+      }
+      .image-panel {
+        min-height: 560px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+      .copy-list { display: grid; gap: 14px; }
+      .copy-item {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        gap: 18px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .copy-item strong {
+        color: var(--rose);
+        font-family: var(--latin);
+        font-size: 34px;
+        line-height: 1;
+      }
+      .copy-item b { display: block; margin-bottom: 6px; font-size: 18px; }
+
+      .ingredient-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .ingredient {
+        min-height: 300px;
+        padding: 28px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 8px;
+      }
+      .ingredient small {
+        color: #ffd7e2;
+        font-weight: 900;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+      }
+      .ingredient h3 { margin-top: 18px; color: #fff; }
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .pill-list span {
+        padding: 8px 10px;
+        color: rgba(255,255,255,.84);
+        background: rgba(255,255,255,.09);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .benefit {
+        padding: 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .benefit b { color: var(--teal); font-size: 15px; }
+
+      .compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        max-width: 1040px;
+        margin: 0 auto;
+      }
+      .compare-box {
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .compare-box h3 {
+        padding: 18px 22px;
+        color: #fff;
+        background: #6b7280;
+      }
+      .compare-box.recommended h3 { background: linear-gradient(135deg, var(--rose), var(--coral)); }
+      .compare-box ul {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 24px;
+        list-style: none;
+      }
+      .compare-box li { color: #4b5563; line-height: 1.75; }
+      .compare-box li::before {
+        margin-right: 8px;
+        color: var(--rose);
+        content: "✓";
+        font-weight: 900;
+      }
+
+      .review-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+      .review-card {
+        padding: 26px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: 0 18px 54px rgba(31, 41, 55, 0.07);
+      }
+      .stars { margin-bottom: 14px; color: var(--gold); letter-spacing: .08em; }
+      .review-card b { display: block; margin-bottom: 10px; font-size: 18px; }
+      .review-card small { display: block; margin-top: 18px; color: var(--muted); font-weight: 800; }
+
+      .routine {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        max-width: 1180px;
+        margin: 0 auto;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .routine-step {
+        min-height: 260px;
+        padding: 26px;
+        background: #fff;
+      }
+      .routine-step span {
+        color: var(--rose);
+        font-family: var(--latin);
+        font-size: 42px;
+        font-weight: 700;
+      }
+
+      .offer {
+        display: grid;
+        grid-template-columns: .95fr 1.05fr;
+        gap: clamp(28px, 5vw, 66px);
+        max-width: 1160px;
+        margin: 0 auto;
+        align-items: center;
+      }
+      .offer-card {
+        padding: clamp(28px, 5vw, 48px);
+        color: var(--ink);
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+      .price-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 12px;
+        margin: 20px 0;
+      }
+      .price-row .old { color: var(--muted); text-decoration: line-through; font-size: 18px; }
+      .price-row .new { color: var(--rose); font-size: clamp(44px, 6vw, 72px); font-weight: 900; line-height: 1; }
+      .offer-list {
+        display: grid;
+        gap: 10px;
+        margin: 24px 0 28px;
+        padding: 0;
+        list-style: none;
+      }
+      .offer-list li {
+        padding: 12px 14px;
+        background: var(--petal);
+        border-radius: 6px;
+        color: #3f4652;
+        font-weight: 800;
+      }
+      .offer-list li::before { margin-right: 8px; color: var(--rose); content: "✓"; }
+      .guarantee {
+        display: grid;
+        gap: 14px;
+      }
+      .guarantee div {
+        padding: 20px;
+        background: rgba(255,255,255,.08);
+        border: 1px solid rgba(255,255,255,.16);
+        border-radius: 8px;
+      }
+      .guarantee b { display: block; margin-bottom: 6px; color: #fff; }
+
+      .faq {
+        display: grid;
+        gap: 12px;
+        max-width: 940px;
+        margin: 0 auto;
+      }
+      details {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      summary {
+        cursor: pointer;
+        padding: 20px 22px;
+        color: var(--ink);
+        font-weight: 900;
+      }
+      details p { padding: 0 22px 22px; }
+
+      .final-cta {
+        padding: clamp(76px, 10vw, 126px) 20px 110px;
+        text-align: center;
+        background:
+          linear-gradient(rgba(17, 24, 39, 0.58), rgba(17, 24, 39, 0.62)),
+          url("../../assets/lp/model.png") center / cover;
+      }
+      .final-cta h2 { color: #fff; }
+      .final-cta p { max-width: 720px; margin: 0 auto 30px; color: rgba(255,255,255,.78); }
+      .sticky-buy {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        display: none;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        background: rgba(255, 255, 255, 0.95);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -12px 34px rgba(31, 41, 55, 0.12);
+        backdrop-filter: blur(16px);
+      }
+      .sticky-buy b { display: block; font-size: 13px; }
+      .sticky-buy span { color: var(--rose); font-size: 12px; font-weight: 900; }
+      .sticky-buy .button { min-height: 44px; padding: 0 18px; }
+
+      @media (max-width: 980px) {
+        .site-header { grid-template-columns: 1fr; padding-block: 16px; }
+        .site-header nav { justify-content: flex-start; flex-wrap: wrap; }
+        .header-cta { display: none; }
+        .hero, .split, .offer { grid-template-columns: 1fr; }
+        .product-card { min-height: 520px; }
+        .ticker, .problem-grid, .ingredient-grid, .benefit-grid, .review-grid, .routine { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 620px) {
+        .top-offer { font-size: 12px; }
+        .site-header nav a { font-size: 12px; }
+        h1 { font-size: 40px; }
+        h2 { font-size: 31px; }
+        .actions { flex-direction: column; }
+        .button { width: 100%; }
+        .hero-points, .ticker, .problem-grid, .ingredient-grid, .benefit-grid, .compare, .review-grid, .routine { grid-template-columns: 1fr; }
+        .product-card, .image-panel { min-height: 420px; }
+        .copy-item { grid-template-columns: 1fr; }
+        .sticky-buy { display: grid; }
+      }
+    </style>
   </head>
-  <body class="lp">
+  <body>
+    <div class="top-offer">初回限定 67%OFF / 送料無料 / 30日間返金保証 / 本日23:59までヘアマスク1包プレゼント</div>
     <header class="site-header">
       <a class="logo" href="#">LUMIA</a>
       <nav>
-        <a href="#problem">悩み</a>
-        <a href="#feature">特徴</a>
-        <a href="#review">レビュー</a>
-        <a href="#offer">特典</a>
-        <a class="nav-cta" href="#buy">購入する</a>
+        <a href="#worry">髪悩み</a>
+        <a href="#repair">補修処方</a>
+        <a href="#voice">口コミ</a>
+        <a href="#routine">使い方</a>
+        <a href="#faq">FAQ</a>
       </nav>
+      <a class="header-cta" href="#buy">初回限定で購入</a>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Conversion Landing Page</p>
-          <h1>うねり髪に、<br />夜の集中美容液。</h1>
-          <p>悩みの共感、商品の強み、レビュー、限定オファーを自然な順番で見せる、購入につながるLPサンプルです。</p>
-          <div class="actions"><a class="button" href="#buy">初回限定で購入</a><a class="button secondary" href="#feature">特徴を見る</a></div>
+          <div class="award-row">
+            <span>サロン専売発想</span>
+            <span>アミノ酸系洗浄成分</span>
+            <span>シリコン・鉱物油フリー</span>
+          </div>
+          <p class="eyebrow">Silk repair shampoo</p>
+          <h1>洗うたび、毛先まで<br />するんと落ちる艶。</h1>
+          <p class="lead">湿気で広がる、カラー後にきしむ、朝のアイロンが効かない。LUMIA Silk Repair Shampooは、傷んだキューティクルの隙間まで美容成分を届け、指通りのよい「まとまる髪」へ導きます。</p>
+          <div class="actions">
+            <a class="button" href="#buy">67%OFFで試してみる</a>
+            <a class="button secondary" href="#repair">補修メカニズムを見る</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point"><b>96.1%</b><span>指通りの変化を実感</span></div>
+            <div class="hero-point"><b>24h</b><span>うるおい感が続く処方設計</span></div>
+            <div class="hero-point"><b>7成分</b><span>うねり・乾燥・摩擦を集中ケア</span></div>
+          </div>
         </div>
-        <div class="hero-art has-image"><img src="../../assets/lp/model.png" alt="ヘアセラムを持つ艶髪の日本人女性モデル" /><div class="art-label"><b>First Offer</b><span>初回限定・送料無料・定期停止OKなど、購入前の不安を先に解消。</span></div></div>
-      </section>
-
-      <section class="stats">
-        <div class="stat"><b>92%</b><p>使用感満足度を大きく見せて信頼を作る</p></div>
-        <div class="stat"><b>30日</b><p>返金保証など不安を減らす情報を配置</p></div>
-        <div class="stat"><b>CV</b><p>各セクションから購入ボタンへ誘導</p></div>
-      </section>
-
-      <section id="problem" class="section two-col">
-        <div class="visual-panel"></div>
-        <div><p class="eyebrow">Problem</p><h2>買う理由を、最初に明確にする。</h2><p>LPはきれいなだけでは成果につながりません。悩み、原因、解決策、証拠、購入理由を順番に見せることで、読み進めたくなる構成にします。</p></div>
-      </section>
-
-      <section id="feature" class="section band">
-        <div class="section-title"><p class="eyebrow">Feature</p><h2>納得して購入できる情報設計</h2></div>
-        <div class="cards">
-          <article class="card"><small>Benefit</small><h3>翌朝まとまる</h3><p>使った後の変化を具体的な言葉で伝えます。</p><div class="price">01</div></article>
-          <article class="card"><small>Proof</small><h3>美容成分を配合</h3><p>専門用語を読みやすく整理し、信頼感を作ります。</p><div class="price">02</div></article>
-          <article class="card"><small>Offer</small><h3>初回限定セット</h3><p>今申し込む理由を明確にしてCVへつなげます。</p><div class="price">03</div></article>
+        <div class="product-stage">
+          <div class="product-card">
+            <img src="../../assets/lp/model.png" alt="LUMIAシャンプーを使った艶髪の女性" />
+            <div class="product-badge"><b>髪の空洞化に着目</b><span>洗浄しながら補修する、濃密シルクリペア処方。毎日のシャンプーをサロン帰りのホームケアへ。</span></div>
+          </div>
         </div>
       </section>
 
-      <section id="review" class="section">
-        <div class="section-title"><p class="eyebrow">Review</p><h2>不安を減らすレビューとFAQ</h2></div>
-        <div class="gallery">
-          <div class="tile"><img src="../../assets/lp/before-after.png" alt="ヘアセラムと美しい髪の質感" /><span>Before</span></div>
-          <div class="tile"><img src="../../assets/lp/model.png" alt="ヘアセラムを持つ艶髪の日本人女性モデル" /><span>After</span></div>
-          <div class="tile"><img src="../../assets/lp/review.png" alt="美容商品のレビュー訴求" /><span>Voice</span></div>
-          <div class="tile"><img src="../../assets/lp/hero.png" alt="美容商品LPのFAQ導線" /><span>FAQ</span></div>
-          <div class="tile"><img src="../../assets/lp/review.png" alt="美容商品LPの保証訴求" /><span>Guarantee</span></div>
+      <div class="ticker">
+        <div><b>4.82</b><span>レビュー平均評価</span></div>
+        <div><b>No.1</b><span>美容師が使いたいホームケア</span></div>
+        <div><b>30日</b><span>返金保証つき</span></div>
+        <div><b>0円</b><span>初回送料無料</span></div>
+      </div>
+
+      <section id="worry" class="section paper">
+        <div class="section-head">
+          <p class="eyebrow">Hair stress</p>
+          <h2>その広がり、髪質だけのせいではありません。</h2>
+          <p>カラー、熱、紫外線、摩擦で髪内部の水分バランスが崩れると、湿気を吸いやすくなり、うねり・パサつき・枝毛・トップの浮きが同時に起こります。</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card"><span>01</span><h3>朝まとまらない</h3><p>寝ぐせを直しても昼には毛先が広がり、清潔感のあるツヤが出にくい。</p></article>
+          <article class="problem-card"><span>02</span><h3>カラー後にきしむ</h3><p>染めた直後はきれいでも、洗うたび手触りが硬くなり色落ちが気になる。</p></article>
+          <article class="problem-card"><span>03</span><h3>湿気でうねる</h3><p>梅雨や汗ばむ季節は表面の短い毛が浮き、スタイリングが長持ちしない。</p></article>
+          <article class="problem-card"><span>04</span><h3>頭皮は重くしたくない</h3><p>しっとり系はベタつく、さっぱり系は毛先が乾く。ちょうどいい洗い上がりがない。</p></article>
         </div>
       </section>
 
-      <section id="offer" class="section dark">
-        <div class="info-grid"><div class="map-box">LP FLOW</div><div><p class="eyebrow">Structure</p><h2>広告流入から購入まで迷わせない</h2><p>ファーストビュー、悩み訴求、商品特徴、レビュー、FAQ、オファーの順で、自然に購入へ進むLPを制作します。</p><dl><dt>目的</dt><dd>購入・資料請求・LINE登録など</dd><dt>対応</dt><dd>商品LP、講座LP、サービスLP</dd><dt>改善</dt><dd>CTA、見出し、導線、スマホ表示を最適化</dd></dl></div></div>
+      <section id="repair" class="section mist">
+        <div class="split">
+          <div class="image-panel"><img src="../../assets/lp/before-after.png" alt="うねり髪からまとまる艶髪への変化" /></div>
+          <div>
+            <p class="eyebrow">Triple repair system</p>
+            <h2>落とす、満たす、守る。洗う時間を補修時間へ。</h2>
+            <div class="copy-list">
+              <div class="copy-item"><strong>01</strong><div><b>アミノ酸系洗浄で、うるおいを残す</b><p>ヤシ由来のマイルドな洗浄成分が、皮脂やスタイリング剤を落としながら必要な水分を守ります。</p></div></div>
+              <div class="copy-item"><strong>02</strong><div><b>加水分解シルクとケラチンが毛髪内部を補修</b><p>ダメージで空洞化した髪にタンパク質由来の補修成分を届け、しなやかなハリと弾力をサポート。</p></div></div>
+              <div class="copy-item"><strong>03</strong><div><b>18-MEA類似成分が表面をなめらかにコート</b><p>キューティクルのめくれを整え、光を均一に反射する艶のある仕上がりへ導きます。</p></div></div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="buy" class="final-cta"><p class="eyebrow">Landing Page</p><h2>成果につながるLPを制作します。</h2><p>商品やサービスの魅力を整理し、広告・SNSからの流入を申し込みへつなげます。</p><a class="button" href="https://leciel-webdesign.com/#contact">無料で相談する</a></section>
+      <section class="section deep">
+        <div class="section-head">
+          <p class="eyebrow">Beauty ingredients</p>
+          <h2>髪と頭皮を考えた、濃密美容液級の処方。</h2>
+          <p>毎日使うものだから、洗浄力だけで選ばない。ダメージ補修、保湿、頭皮環境、香りの余韻まで一本で設計しました。</p>
+        </div>
+        <div class="ingredient-grid">
+          <article class="ingredient"><small>repair</small><h3>加水分解シルク</h3><p>細く絡まりやすい髪に自然なツヤを与え、なめらかな指通りをサポート。</p><div class="pill-list"><span>ツヤ</span><span>指通り</span><span>摩擦ケア</span></div></article>
+          <article class="ingredient"><small>strength</small><h3>羊毛ケラチン</h3><p>カラーや熱で傷んだ髪の内部にアプローチし、ハリコシのある印象へ。</p><div class="pill-list"><span>補修</span><span>ハリ</span><span>枝毛予防</span></div></article>
+          <article class="ingredient"><small>moisture</small><h3>ナノセラミド</h3><p>水分を抱え込み、乾燥によるパサつきや静電気を防ぎやすい髪へ整えます。</p><div class="pill-list"><span>保湿</span><span>広がり対策</span><span>静電気ケア</span></div></article>
+        </div>
+      </section>
+
+      <section class="section paper">
+        <div class="section-head">
+          <p class="eyebrow">7 benefits</p>
+          <h2>一本で、髪の印象はここまで変えられる。</h2>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit"><b>01 うねり補整</b><p>水分バランスを整え、湿気に揺らぎにくいまとまり感へ。</p></article>
+          <article class="benefit"><b>02 カラーケア</b><p>退色を防ぐ弱酸性設計で、染めたての透明感をキープ。</p></article>
+          <article class="benefit"><b>03 熱ダメージケア</b><p>ドライヤーやアイロン前後の摩擦を抑え、毛先までなめらかに。</p></article>
+          <article class="benefit"><b>04 頭皮環境ケア</b><p>グリチルリチン酸2Kと植物エキスで、健やかな地肌を保ちます。</p></article>
+          <article class="benefit"><b>05 ふんわり感</b><p>根元は軽く、毛先はしっとり。重さの出にくいバランス処方。</p></article>
+          <article class="benefit"><b>06 香り</b><p>ホワイトティー、ピオニー、ムスクが重なる清潔感のある余韻。</p></article>
+        </div>
+      </section>
+
+      <section class="section mist">
+        <div class="section-head">
+          <p class="eyebrow">Comparison</p>
+          <h2>しっとりなのに、根元は重くならない。</h2>
+        </div>
+        <div class="compare">
+          <div class="compare-box">
+            <h3>一般的な高洗浄シャンプー</h3>
+            <ul>
+              <li>洗い上がりはさっぱりするが毛先がきしみやすい</li>
+              <li>カラー後の乾燥や退色が気になりやすい</li>
+              <li>補修はトリートメント頼みになりやすい</li>
+              <li>湿気の日の広がりにアプローチしにくい</li>
+            </ul>
+          </div>
+          <div class="compare-box recommended">
+            <h3>LUMIA Silk Repair</h3>
+            <ul>
+              <li>アミノ酸系洗浄で、うるおいを残して洗える</li>
+              <li>シルク、ケラチン、セラミドを同時配合</li>
+              <li>洗うたび摩擦を抑え、指通りのよい髪へ</li>
+              <li>根元は軽く、毛先はまとまる仕上がり</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="voice" class="section paper">
+        <div class="section-head">
+          <p class="eyebrow">Real voice</p>
+          <h2>翌朝のまとまりで、違いがわかる。</h2>
+          <p>年齢、髪質、カラー履歴が違っても、共通して多いのは「乾かした後の手触り」と「朝の支度の短さ」への声でした。</p>
+        </div>
+        <div class="review-grid">
+          <article class="review-card"><div class="stars">★★★★★</div><b>雨の日でも表面が浮きにくい</b><p>広がりやすいロングですが、乾かしただけで毛先が落ち着きます。香りも強すぎず、仕事前でも使いやすいです。</p><small>32歳 / カラー月1回 / くせ毛</small></article>
+          <article class="review-card"><div class="stars">★★★★★</div><b>ブリーチ毛のきしみが気にならない</b><p>泡立ちがよく、すすいだ時の指通りが違いました。トリートメント前から髪が柔らかくなる感じがあります。</p><small>27歳 / ブリーチ履歴あり / 細毛</small></article>
+          <article class="review-card"><div class="stars">★★★★☆</div><b>根元がぺたんとしないのが嬉しい</b><p>しっとり系は重くなるイメージでしたが、これはトップがふんわりします。毛先だけまとまる感じがちょうどいい。</p><small>41歳 / 乾燥毛 / ボブ</small></article>
+        </div>
+      </section>
+
+      <section id="routine" class="section mist">
+        <div class="section-head">
+          <p class="eyebrow">How to use</p>
+          <h2>3分の泡パックで、美容成分を行き渡らせる。</h2>
+        </div>
+        <div class="routine">
+          <article class="routine-step"><span>01</span><h3>予洗い</h3><p>38度前後のお湯で1分以上。頭皮と髪の汚れを先に浮かせます。</p></article>
+          <article class="routine-step"><span>02</span><h3>泡立て</h3><p>手のひらで軽く泡立て、地肌を揉み込むように洗います。</p></article>
+          <article class="routine-step"><span>03</span><h3>泡パック</h3><p>毛先まで泡をなじませ、1分置いてから丁寧にすすぎます。</p></article>
+          <article class="routine-step"><span>04</span><h3>乾かす</h3><p>根元から乾かし、最後に冷風でキューティクルを整えます。</p></article>
+        </div>
+      </section>
+
+      <section id="buy" class="section deep">
+        <div class="offer">
+          <div class="offer-card">
+            <p class="eyebrow">First trial set</p>
+            <h2>初回限定<br />集中補修セット</h2>
+            <p>シャンプー本品、トリートメントミニ、泡立てネット、30日間返金保証つき。</p>
+            <div class="price-row"><span class="old">通常価格 ¥5,940</span><span class="new">¥1,980</span><span>税込</span></div>
+            <ul class="offer-list">
+              <li>初回67%OFF</li>
+              <li>全国送料無料</li>
+              <li>定期回数の縛りなし</li>
+              <li>次回お届け10日前まで変更・休止OK</li>
+            </ul>
+            <a class="button" href="https://leciel-webdesign.com/#contact">今すぐ初回価格で申し込む</a>
+          </div>
+          <div class="guarantee">
+            <div><b>30日間返金保証</b><p>髪や頭皮に合わない場合は、商品到着から30日以内にご連絡ください。開封後でも初回分に限り返金対象です。</p></div>
+            <div><b>最短翌営業日発送</b><p>午前11時までの注文は最短で翌営業日に発送。追跡番号つきでお届け状況を確認できます。</p></div>
+            <div><b>敏感肌パッチテスト済み</b><p>シリコン、鉱物油、合成着色料、サルフェートを不使用。すべての方に刺激が起こらないわけではありません。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section paper">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>購入前の不安を、ここで解消。</h2>
+        </div>
+        <div class="faq">
+          <details open><summary>くせ毛でも使えますか？</summary><p>はい。髪の水分バランスと表面の摩擦に着目した処方のため、うねりや広がりが気になる方にもおすすめです。</p></details>
+          <details><summary>カラーやブリーチをしていても大丈夫ですか？</summary><p>弱酸性のアミノ酸系洗浄成分を採用しています。カラー直後の髪にも使いやすく、乾燥による色落ち印象を防ぎます。</p></details>
+          <details><summary>頭皮がベタつきやすくても重くなりませんか？</summary><p>根元は軽く、毛先はしっとり仕上がるよう油分量を調整しています。すすぎ残しがないよう、地肌を中心に丁寧に流してください。</p></details>
+          <details><summary>定期コースはすぐに停止できますか？</summary><p>次回お届け予定日の10日前まで、マイページまたはお問い合わせから変更、休止、解約が可能です。</p></details>
+          <details><summary>どれくらいで変化を感じますか？</summary><p>洗い上がりの指通りは初回から感じる方が多く、まとまりやすさは髪の状態により1週間から1か月ほどで実感される声があります。</p></details>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <p class="eyebrow">Limited offer</p>
+        <h2>今日のシャンプーから、髪は変えられる。</h2>
+        <p>広がりを隠す朝から、艶を見せたくなる朝へ。初回限定セットは、送料無料・返金保証つきです。</p>
+        <a class="button" href="#buy">初回67%OFFで始める</a>
+      </section>
     </main>
+
+    <div class="sticky-buy">
+      <div><b>LUMIA 初回限定セット</b><span>¥1,980 / 送料無料 / 返金保証</span></div>
+      <a class="button" href="#buy">購入</a>
+    </div>
   </body>
 </html>
