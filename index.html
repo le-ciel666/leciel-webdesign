@@ -856,6 +856,24 @@
 
   .work-img-wrap {
     position: relative;
+    height: 200px;
+    background: var(--primary-light);
+    overflow: hidden;
+  }
+
+  .work-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .work-img-wrap.plumbing {
+    background: url('./assets/plumbing/hero.png') center/cover no-repeat, var(--primary-light);
+  }
+
+  .work-img-wrap.plumbing img {
+    opacity: 0;
   }
 
   .work-body {
@@ -1440,7 +1458,7 @@
       <!-- 美容サロン・LP制作 -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="assets/hair-salon/model.png" alt="美容サロン・LP制作 デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <img src="assets/hair-salon/model.png" alt="美容サロン・LP制作 デモサイト">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
@@ -1456,7 +1474,7 @@
       <!-- 居酒屋・カフェ -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="assets/izakaya/hero.png" alt="居酒屋・カフェ デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <img src="assets/izakaya/hero.png" alt="居酒屋・カフェ デモサイト">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
@@ -1472,7 +1490,7 @@
       <!-- 整体・フィットネス -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="assets/yoga/hero.png" alt="整体・フィットネス デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <img src="assets/yoga/hero.png" alt="整体・フィットネス デモサイト">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
@@ -1487,12 +1505,12 @@
 
       <!-- 生活トラブル対応 -->
       <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="assets/plumbing/hero.png" alt="生活トラブル対応・水道修理 デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+        <div class="work-img-wrap plumbing">
+          <img src="./assets/plumbing/hero.png" alt="生活トラブル対応 デモサイト">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
-          <span class="work-genre">生活トラブル対応・水道修理</span>
+          <span class="work-genre">生活トラブル対応</span>
           <div class="work-btns">
             <a href="demo-sites/plumbing-rescue.html" class="work-btn" target="_blank" rel="noopener">デモサイトを見る →</a>
           </div>
@@ -1509,7 +1527,7 @@
       <!-- 建設・製造・会計事務所 -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=540&fit=crop&q=80" alt="建設・製造・会計事務所 デモサイト" style="width:100%;height:200px;object-fit:cover;display:block;">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=540&fit=crop&q=80" alt="建設・製造・会計事務所 デモサイト">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
