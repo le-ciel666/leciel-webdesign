@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUMIERE SKIN CLINIC｜銀座の美容皮膚科・肌診断・レーザー治療</title>
+<meta name="description" content="銀座駅徒歩2分。しみ、肝斑、毛穴、ニキビ跡、たるみ、医療脱毛まで。医師の診察と肌画像解析をもとに治療計画を提案する美容皮膚科 LUMIERE SKIN CLINIC のデモサイトです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b2024;
+    --ink-2: #343c42;
+    --muted: #6d777c;
+    --line: #dfe5e3;
+    --paper: #ffffff;
+    --veil: #f7f9f7;
+    --sage: #6f8e82;
+    --sage-dark: #3f6659;
+    --coral: #d98172;
+    --coral-soft: #f7ded9;
+    --rose: #b95f68;
+    --chart: #27322f;
+    --gold: #b99a5f;
+    --aqua: #80c6c2;
+    --shadow: 0 26px 76px rgba(27,32,36,0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    font-size: 16px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .en { font-family: 'Inter', sans-serif; letter-spacing: 0; }
+  .brand-font { font-family: 'Marcellus', serif; letter-spacing: 0.04em; }
+
+  .demo-ribbon {
+    background: var(--chart);
+    color: rgba(255,255,255,0.84);
+    text-align: center;
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+  .demo-ribbon a {
+    color: #f5c6bd;
+    text-decoration: none;
+    font-weight: 900;
+    margin-left: 12px;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 38px;
+    z-index: 60;
+    color: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
+  .header-inner {
+    max-width: 1400px;
+    height: 78px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: grid;
+    grid-template-columns: 300px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    pointer-events: auto;
+  }
+  .brand {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+  }
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+    border: 1px solid currentColor;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .brand-mark::before,
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+  }
+  .brand-mark::before { width: 22px; height: 1px; }
+  .brand-mark::after { width: 1px; height: 22px; }
+  .brand-name {
+    display: block;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .brand-sub {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+  }
+  .nav a { text-decoration: none; }
+  .header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .header-phone {
+    text-decoration: none;
+    text-align: right;
+    line-height: 1.15;
+  }
+  .header-phone small {
+    display: block;
+    font-size: 10px;
+    font-weight: 900;
+  }
+  .header-phone strong {
+    display: block;
+    font-size: 23px;
+    font-weight: 900;
+  }
+  .btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: 900;
+    line-height: 1.35;
+    transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-dark {
+    background: var(--chart);
+    color: #fff;
+    box-shadow: 0 18px 36px rgba(39,50,47,0.22);
+  }
+  .btn-coral {
+    background: var(--coral);
+    color: #fff;
+    box-shadow: 0 18px 36px rgba(217,129,114,0.26);
+  }
+  .btn-line {
+    background: transparent;
+    color: inherit;
+    border-color: currentColor;
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--ink);
+  }
+
+  .hero {
+    min-height: 920px;
+    position: relative;
+    color: #fff;
+    background:
+      linear-gradient(90deg, rgba(27,32,36,0.74), rgba(27,32,36,0.18) 48%, rgba(27,32,36,0.62)),
+      url('../assets/beauty-dermatology/hero.png') center/cover no-repeat;
+    display: grid;
+    align-items: end;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: 'LUMIERE';
+    position: absolute;
+    right: -3vw;
+    top: 118px;
+    font-family: 'Marcellus', serif;
+    font-size: clamp(82px, 14vw, 230px);
+    line-height: 0.8;
+    color: rgba(255,255,255,0.14);
+    letter-spacing: 0.04em;
+  }
+  .hero-inner {
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    padding: 150px 28px 76px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.42fr);
+    gap: 56px;
+    align-items: end;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-kicker {
+    display: inline-flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f7ded9;
+    margin-bottom: 24px;
+  }
+  .hero-kicker::before {
+    content: '';
+    width: 52px;
+    height: 1px;
+    background: currentColor;
+  }
+  .hero h1 {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(58px, 8.2vw, 132px);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+  .hero-ja {
+    margin-top: 24px;
+    max-width: 720px;
+    font-size: clamp(22px, 3vw, 38px);
+    line-height: 1.45;
+    font-weight: 800;
+  }
+  .hero-lead {
+    max-width: 660px;
+    margin-top: 22px;
+    color: rgba(255,255,255,0.84);
+    font-weight: 600;
+  }
+  .hero-actions {
+    margin-top: 34px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-panel {
+    background: rgba(255,255,255,0.92);
+    color: var(--ink);
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .hero-panel .panel-label {
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .hero-panel h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    line-height: 1.45;
+  }
+  .panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 22px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .panel-grid div {
+    background: #fff;
+    padding: 14px;
+  }
+  .panel-grid small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+  }
+  .panel-grid b {
+    display: block;
+    margin-top: 3px;
+    font-size: 15px;
+  }
+  .hero-panel p {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .marquee {
+    display: flex;
+    overflow: hidden;
+    background: var(--chart);
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .marquee-track {
+    display: flex;
+    min-width: max-content;
+    animation: marquee 34s linear infinite;
+  }
+  .marquee span {
+    padding: 18px 24px;
+    font-family: 'Marcellus', serif;
+    font-size: 18px;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.78);
+  }
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+
+  section { padding: 108px 28px; }
+  .section-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 50px;
+  }
+  .eyebrow {
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-size: clamp(34px, 4.8vw, 64px);
+    line-height: 1.15;
+    letter-spacing: 0;
+    font-weight: 900;
+  }
+  .headline {
+    font-family: 'Marcellus', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .section-head p {
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+
+  .concern {
+    background: var(--veil);
+  }
+  .concern-map {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .concern-card {
+    background: #fff;
+    min-height: 230px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .concern-card.large {
+    grid-row: span 2;
+    min-height: 461px;
+    background: var(--chart);
+    color: #fff;
+  }
+  .concern-card.large p,
+  .concern-card.large .chips span {
+    color: rgba(255,255,255,0.78);
+  }
+  .concern-card b {
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+  }
+  .concern-card h3 {
+    margin-top: 18px;
+    font-size: 27px;
+    line-height: 1.35;
+  }
+  .concern-card p {
+    margin-top: 12px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .chips span {
+    border: 1px solid currentColor;
+    color: var(--sage-dark);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .method-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 430px) minmax(0, 1fr);
+    gap: 54px;
+    align-items: start;
+  }
+  .sticky-copy {
+    position: sticky;
+    top: 120px;
+  }
+  .sticky-copy p {
+    margin-top: 18px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .method-list {
+    display: grid;
+    border-top: 1px solid var(--line);
+  }
+  .method-row {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) 210px;
+    gap: 28px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .method-row .num {
+    color: var(--coral);
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .method-row h3 {
+    font-size: 25px;
+    line-height: 1.35;
+  }
+  .method-row p {
+    margin-top: 8px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .method-meta {
+    display: grid;
+    gap: 8px;
+  }
+  .method-meta span {
+    background: var(--veil);
+    border-left: 3px solid var(--sage);
+    padding: 8px 10px;
+    color: var(--ink-2);
+    font-size: 12px;
+    font-weight: 900;
+  }
+
+  .visual-story {
+    background: var(--chart);
+    color: #fff;
+    padding: 0;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    min-height: 720px;
+  }
+  .story-image {
+    background: url('../assets/beauty-dermatology/consultation.png') center/cover no-repeat;
+  }
+  .story-copy {
+    padding: 90px 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .story-copy .eyebrow { color: #f5c6bd; }
+  .story-copy p {
+    margin-top: 20px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 600;
+  }
+  .diagnosis-points {
+    display: grid;
+    gap: 1px;
+    margin-top: 36px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .diagnosis-points div {
+    background: rgba(255,255,255,0.08);
+    padding: 18px;
+  }
+  .diagnosis-points b {
+    display: block;
+    color: #f5c6bd;
+  }
+  .diagnosis-points span {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,0.76);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .treatment-menu {
+    background: var(--paper);
+  }
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .menu-card {
+    min-height: 334px;
+    background: #fff;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu-card.featured {
+    background: var(--coral-soft);
+  }
+  .menu-card small {
+    color: var(--coral);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+  }
+  .menu-card h3 {
+    margin-top: 16px;
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .menu-card p {
+    margin-top: 10px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .menu-card ul {
+    margin-top: auto;
+    padding-top: 22px;
+    list-style: none;
+    display: grid;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 800;
+  }
+  .menu-card li::before {
+    content: '+';
+    color: var(--sage-dark);
+    margin-right: 8px;
+  }
+
+  .treatment-scene {
+    padding-top: 0;
+  }
+  .scene-panel {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    background: var(--veil);
+  }
+  .scene-copy {
+    padding: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .scene-copy p {
+    margin-top: 18px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .scene-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 460px;
+    object-fit: cover;
+  }
+
+  .price {
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.94), rgba(255,255,255,0.88)),
+      linear-gradient(135deg, var(--veil), #fff);
+  }
+  .price-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 410px) minmax(0, 1fr);
+    gap: 46px;
+    align-items: start;
+  }
+  .price-note {
+    background: var(--chart);
+    color: #fff;
+    padding: 30px;
+    position: sticky;
+    top: 120px;
+  }
+  .price-note h3 {
+    font-size: 27px;
+    line-height: 1.4;
+  }
+  .price-note p {
+    margin-top: 16px;
+    color: rgba(255,255,255,0.78);
+    font-weight: 600;
+  }
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .price-table th,
+  .price-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  .price-table th {
+    color: var(--sage-dark);
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    background: var(--veil);
+  }
+  .price-table td:first-child {
+    font-weight: 900;
+    width: 34%;
+  }
+  .price-table td:nth-child(2) {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .price-table td:last-child {
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  .risk-box {
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    padding: 20px;
+    background: #fff;
+  }
+  .risk-box b {
+    color: var(--rose);
+  }
+  .risk-box p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .cases {
+    background: var(--chart);
+    color: #fff;
+  }
+  .cases .eyebrow { color: #f5c6bd; }
+  .cases .section-head p { color: rgba(255,255,255,0.78); }
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .case-card {
+    background: rgba(255,255,255,0.08);
+    padding: 26px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+  }
+  .case-before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+  .case-before-after span {
+    min-height: 96px;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 38% 44%, rgba(217,129,114,0.68), transparent 7%),
+      radial-gradient(circle at 61% 57%, rgba(111,142,130,0.7), transparent 6%),
+      linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+    color: rgba(255,255,255,0.74);
+    font-size: 12px;
+    font-weight: 900;
+  }
+  .case-card b {
+    color: #f5c6bd;
+    font-size: 13px;
+  }
+  .case-card h3 {
+    margin-top: 10px;
+    font-size: 23px;
+    line-height: 1.35;
+  }
+  .case-card p {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.76);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .case-meta {
+    margin-top: auto;
+    padding-top: 20px;
+    color: rgba(255,255,255,0.66);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .doctor {
+    padding-bottom: 0;
+  }
+  .doctor-layout {
+    display: grid;
+    grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+    gap: 70px;
+    align-items: end;
+  }
+  .doctor-photo {
+    align-self: stretch;
+    background: var(--veil);
+  }
+  .doctor-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    object-fit: cover;
+    object-position: center top;
+  }
+  .doctor-copy {
+    padding: 96px 0;
+  }
+  .doctor-copy p {
+    margin-top: 18px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+  .profile-list {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px 20px;
+    margin-top: 30px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .profile-list dt {
+    color: var(--muted);
+    font-weight: 900;
+  }
+  .profile-list dd {
+    font-weight: 800;
+  }
+
+  .flow {
+    background: var(--veil);
+  }
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .flow-step {
+    background: #fff;
+    min-height: 250px;
+    padding: 24px;
+  }
+  .flow-step small {
+    color: var(--coral);
+    font-weight: 900;
+  }
+  .flow-step h3 {
+    margin-top: 18px;
+    font-size: 20px;
+    line-height: 1.35;
+  }
+  .flow-step p {
+    margin-top: 10px;
+    color: var(--ink-2);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .info {
+    padding-bottom: 0;
+  }
+  .info-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.94fr) minmax(320px, 0.72fr);
+    gap: 34px;
+  }
+  .schedule-panel,
+  .access-panel {
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 34px;
+  }
+  .panel-title {
+    font-size: 28px;
+    margin-bottom: 22px;
+  }
+  .schedule {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .schedule th,
+  .schedule td {
+    padding: 13px 8px;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    font-weight: 900;
+  }
+  .schedule th:first-child,
+  .schedule td:first-child {
+    text-align: left;
+    color: var(--ink-2);
+  }
+  .schedule thead th {
+    background: var(--veil);
+    color: var(--muted);
+    font-size: 12px;
+  }
+  .open { color: var(--sage-dark); }
+  .closed { color: var(--rose); }
+  .note {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .access-list {
+    display: grid;
+    gap: 16px;
+  }
+  .access-list div {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 16px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--line);
+  }
+  .access-list b {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 900;
+  }
+  .access-list span {
+    font-weight: 700;
+  }
+  .map {
+    margin-top: 22px;
+    min-height: 180px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(90deg, rgba(111,142,130,0.18) 1px, transparent 1px),
+      linear-gradient(rgba(217,129,114,0.18) 1px, transparent 1px),
+      linear-gradient(135deg, #fff, var(--veil));
+    background-size: 36px 36px;
+    color: var(--sage-dark);
+    font-weight: 900;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  details {
+    background: #fff;
+    padding: 22px 24px;
+  }
+  summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 900;
+  }
+  summary::-webkit-details-marker { display: none; }
+  details p {
+    margin-top: 12px;
+    color: var(--ink-2);
+    font-weight: 600;
+  }
+
+  .final-cta {
+    margin-top: 108px;
+    padding: 96px 28px;
+    color: #fff;
+    text-align: center;
+    background:
+      linear-gradient(90deg, rgba(39,50,47,0.95), rgba(39,50,47,0.72)),
+      url('../assets/beauty-dermatology/hero.png') center/cover no-repeat;
+  }
+  .final-cta h2 {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  .final-cta p {
+    max-width: 740px;
+    margin: 20px auto 0;
+    color: rgba(255,255,255,0.78);
+    font-weight: 600;
+  }
+  .final-cta .hero-actions {
+    justify-content: center;
+  }
+
+  footer {
+    background: var(--chart);
+    color: rgba(255,255,255,0.72);
+    padding: 34px 28px;
+    font-size: 13px;
+  }
+  .footer-inner {
+    max-width: 1220px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .mobile-cta { display: none; }
+
+  @media (max-width: 1180px) {
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--chart);
+      mix-blend-mode: normal;
+    }
+    .header-inner {
+      grid-template-columns: 1fr auto;
+      height: 72px;
+    }
+    .nav,
+    .header-phone {
+      display: none;
+    }
+    .hero {
+      min-height: auto;
+    }
+    .hero-inner,
+    .section-head,
+    .method-layout,
+    .story-grid,
+    .scene-panel,
+    .price-layout,
+    .doctor-layout,
+    .info-layout {
+      grid-template-columns: 1fr;
+    }
+    .hero-inner {
+      padding-top: 110px;
+    }
+    .story-image {
+      min-height: 520px;
+    }
+    .sticky-copy,
+    .price-note {
+      position: static;
+    }
+    .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .flow-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 760px) {
+    body { font-size: 15px; }
+    .demo-ribbon { font-size: 12px; }
+    .header-inner {
+      height: 66px;
+      padding: 0 16px;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+    }
+    .brand-name { font-size: 16px; }
+    .brand-sub { font-size: 9px; }
+    .header-actions .btn { display: none; }
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(27,32,36,0.72), rgba(27,32,36,0.38), rgba(27,32,36,0.88)),
+        url('../assets/beauty-dermatology/hero.png') center/cover no-repeat;
+    }
+    .hero::after {
+      top: 96px;
+      font-size: 80px;
+      right: -36px;
+    }
+    .hero-inner {
+      padding: 82px 18px 54px;
+      gap: 34px;
+    }
+    .hero h1 {
+      font-size: 54px;
+    }
+    .hero-ja {
+      font-size: 23px;
+    }
+    .hero-panel {
+      padding: 22px;
+    }
+    .panel-grid,
+    .concern-map,
+    .menu-grid,
+    .case-grid,
+    .flow-grid,
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+    section {
+      padding: 68px 18px;
+    }
+    .section-head {
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .concern-card,
+    .concern-card.large {
+      min-height: auto;
+    }
+    .method-row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 26px 0;
+    }
+    .story-image {
+      min-height: 380px;
+    }
+    .story-copy,
+    .scene-copy {
+      padding: 34px 22px;
+    }
+    .scene-image img {
+      min-height: 340px;
+    }
+    .price-table {
+      min-width: 720px;
+    }
+    .price-table-wrap,
+    .schedule-wrap {
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .doctor-photo img {
+      min-height: 460px;
+    }
+    .doctor-copy {
+      padding: 36px 0 68px;
+    }
+    .profile-list,
+    .access-list div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    .schedule-panel,
+    .access-panel {
+      padding: 22px;
+    }
+    .schedule {
+      min-width: 560px;
+      font-size: 12px;
+    }
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 70;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 10px;
+      background: #fff;
+      border-top: 1px solid var(--line);
+      box-shadow: 0 -16px 38px rgba(27,32,36,0.16);
+    }
+    .mobile-cta .btn {
+      min-height: 46px;
+      padding: 10px;
+      font-size: 13px;
+    }
+    footer { padding-bottom: 88px; }
+  }
+</style>
+</head>
+<body>
+  <div class="demo-ribbon">LE CIEL WEB DESIGN 自主制作デモサイト <a href="../index.html#works">制作実績一覧へ</a></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <span class="brand-name brand-font">LUMIERE SKIN</span>
+          <span class="brand-sub">GINZA BEAUTY DERMATOLOGY</span>
+        </span>
+      </a>
+      <ul class="nav">
+        <li><a href="#concern">悩みから探す</a></li>
+        <li><a href="#menu">施術メニュー</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#cases">症例</a></li>
+        <li><a href="#doctor">医師紹介</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+      <div class="header-actions">
+        <a class="header-phone" href="tel:03-0000-1122">
+          <small>予約専用</small>
+          <strong class="en">03-0000-1122</strong>
+        </a>
+        <a class="btn btn-coral" href="#reserve">無料カウンセリング</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-kicker en">MEDICAL SKIN DESIGN</p>
+        <h1>Quiet<br>Confidence.</h1>
+        <p class="hero-ja">肌を変える前に、<br>肌を正しく知る美容皮膚科。</p>
+        <p class="hero-lead">銀座駅徒歩2分。肌画像解析と医師の診察をもとに、しみ・肝斑・毛穴・ニキビ跡・たるみ・医療脱毛まで、治療とホームケアを組み合わせて設計します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-coral" href="#reserve">カウンセリング予約</a>
+          <a class="btn btn-line" href="#concern">悩みから施術を探す</a>
+        </div>
+      </div>
+      <aside class="hero-panel" id="reserve">
+        <p class="panel-label en">FIRST COUNSELING</p>
+        <h2>初回は肌診断・医師診察・治療プラン作成まで。</h2>
+        <div class="panel-grid">
+          <div><small>SKIN ANALYSIS</small><b>肌画像解析</b></div>
+          <div><small>DOCTOR</small><b>医師診察</b></div>
+          <div><small>PRICE</small><b>事前見積り</b></div>
+          <div><small>CARE</small><b>ホームケア提案</b></div>
+        </div>
+        <p>未成年の方は親権者同意書が必要です。施術内容により当日施術できない場合があります。</p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>SPOT CARE</span><span>ACNE SCAR</span><span>PORE</span><span>MELASMA</span><span>LASER TONING</span><span>HIFU</span><span>MEDICAL PEELING</span><span>HOME CARE</span>
+      <span>SPOT CARE</span><span>ACNE SCAR</span><span>PORE</span><span>MELASMA</span><span>LASER TONING</span><span>HIFU</span><span>MEDICAL PEELING</span><span>HOME CARE</span>
+    </div>
+  </div>
+
+  <section class="concern" id="concern">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">CONCERN ATLAS</p>
+          <h2>悩みから選べる、<br>美容皮膚科の導線。</h2>
+        </div>
+        <p>人気クリニックサイトでは、施術名よりも先に「しみ」「肝斑」「毛穴」「ニキビ跡」などの悩み別導線が強く設計されています。予約前の迷いを減らすため、症状の言葉から治療へつなげます。</p>
+      </div>
+      <div class="concern-map">
+        <article class="concern-card large">
+          <div>
+            <b class="en">MELASMA / SPOTS</b>
+            <h3>しみ・肝斑・くすみ</h3>
+            <p>肌画像解析で色素の分布を確認し、レーザートーニング、内服、外用、ピーリングを組み合わせます。</p>
+          </div>
+          <div class="chips"><span>レーザートーニング</span><span>IPL</span><span>内服</span><span>外用</span></div>
+        </article>
+        <article class="concern-card">
+          <div>
+            <b class="en">PORE</b>
+            <h3>毛穴・ざらつき</h3>
+            <p>開き、黒ずみ、詰まりのタイプを分けて治療します。</p>
+          </div>
+          <div class="chips"><span>ピーリング</span><span>ポテンツァ</span></div>
+        </article>
+        <article class="concern-card">
+          <div>
+            <b class="en">ACNE SCAR</b>
+            <h3>ニキビ跡・凹凸</h3>
+            <p>炎症後色素沈着と凹みを分け、段階的に治療します。</p>
+          </div>
+          <div class="chips"><span>ダーマペン</span><span>RF</span></div>
+        </article>
+        <article class="concern-card">
+          <div>
+            <b class="en">LIFTING</b>
+            <h3>たるみ・小じわ</h3>
+            <p>肌質、脂肪、筋膜層の状態を見て適応を判断します。</p>
+          </div>
+          <div class="chips"><span>HIFU</span><span>注入相談</span></div>
+        </article>
+        <article class="concern-card">
+          <div>
+            <b class="en">HAIR REMOVAL</b>
+            <h3>医療脱毛</h3>
+            <p>肌質・毛質に合わせて照射設定を調整します。</p>
+          </div>
+          <div class="chips"><span>全身</span><span>顔</span><span>VIO</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="method">
+    <div class="section-inner">
+      <div class="method-layout">
+        <div class="sticky-copy">
+          <p class="eyebrow en">DESIGN METHOD</p>
+          <h2>美容医療を、<br>衝動ではなく計画に。</h2>
+          <p>「今すぐこの施術」ではなく、肌状態・生活・予算・ダウンタイム許容度から逆算して治療を組み立てる見せ方です。高単価施術も、理由が伝わると予約につながります。</p>
+        </div>
+        <div class="method-list">
+          <article class="method-row">
+            <span class="num en">01</span>
+            <div>
+              <h3>肌診断で現在地を可視化</h3>
+              <p>肉眼では判断しづらい色素、赤み、毛穴、皮脂、水分量を撮影・解析し、治療前の基準を作ります。</p>
+            </div>
+            <div class="method-meta"><span>VISIA相当の肌解析</span><span>写真記録</span></div>
+          </article>
+          <article class="method-row">
+            <span class="num en">02</span>
+            <div>
+              <h3>施術単体ではなくプログラムで提案</h3>
+              <p>レーザー、ピーリング、内服、外用、ホームケアを症状に合わせて組み合わせます。</p>
+            </div>
+            <div class="method-meta"><span>3カ月設計</span><span>回数目安</span></div>
+          </article>
+          <article class="method-row">
+            <span class="num en">03</span>
+            <div>
+              <h3>リスク・副作用・費用を事前共有</h3>
+              <p>赤み、乾燥、色素沈着、内出血など、施術ごとに起こり得ることをカウンセリング時に説明します。</p>
+            </div>
+            <div class="method-meta"><span>見積り提示</span><span>同意書</span></div>
+          </article>
+          <article class="method-row">
+            <span class="num en">04</span>
+            <div>
+              <h3>治療後の写真管理と再設計</h3>
+              <p>経過写真を比較し、反応を見ながら施術間隔やホームケアを調整します。</p>
+            </div>
+            <div class="method-meta"><span>経過観察</span><span>次回提案</span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visual-story">
+    <div class="story-grid">
+      <div class="story-image" aria-label="肌診断カウンセリング"></div>
+      <div class="story-copy">
+        <p class="eyebrow en">COUNSELING EXPERIENCE</p>
+        <h2 class="headline">From feeling to finding.</h2>
+        <p>「なんとなく老けて見える」「ファンデーションで隠れない」などの曖昧な悩みを、肌診断と医師の診察で具体化します。患者さまが納得して選べるよう、施術名ではなく原因と優先順位から説明します。</p>
+        <div class="diagnosis-points">
+          <div><b>01 肌画像解析</b><span>しみ、赤み、毛穴、肌年齢の傾向を撮影データで確認。</span></div>
+          <div><b>02 医師診察</b><span>肝斑、炎症、色素沈着など、施術選択に関わる状態を評価。</span></div>
+          <div><b>03 治療計画</b><span>施術回数、費用、ダウンタイム、ホームケアをまとめて提示。</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="treatment-menu" id="menu">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">TREATMENT MENU</p>
+          <h2>施術メニューを、<br>比較しやすく整理。</h2>
+        </div>
+        <p>美容皮膚科ではメニュー数が多くなりがちです。目的・適応・注意点をそろえて表示することで、ユーザーが自分に合う施術を比較できます。</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card featured">
+          <small class="en">SPOT / MELASMA</small>
+          <h3>レーザートーニング</h3>
+          <p>肝斑やくすみが気になる方に。低出力レーザーを継続照射し、内服・外用と併用します。</p>
+          <ul><li>目安: 5-10回</li><li>赤み: 当日程度</li><li>メイク: 当日可</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">TONE / TEXTURE</small>
+          <h3>IPLフォト治療</h3>
+          <p>しみ、赤み、肌全体のトーンに。複数波長の光で肌質改善を目指します。</p>
+          <ul><li>目安: 3-5回</li><li>薄いかさぶた</li><li>日焼け注意</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">PORE / ACNE SCAR</small>
+          <h3>ポテンツァ RF</h3>
+          <p>毛穴、ニキビ跡、小じわに。針と高周波で肌の再構築を促します。</p>
+          <ul><li>目安: 3回-</li><li>赤み数日</li><li>麻酔あり</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">PEEL / GLOW</small>
+          <h3>マッサージピール</h3>
+          <p>ハリ、つや、ざらつきに。肌表面への負担を抑えたピーリング治療です。</p>
+          <ul><li>目安: 5回</li><li>皮むけ少なめ</li><li>保湿推奨</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">LIFTING</small>
+          <h3>HIFUリフト</h3>
+          <p>フェイスラインや頬のもたつきに。照射層を分けて引き締めを狙います。</p>
+          <ul><li>目安: 3-6カ月ごと</li><li>筋肉痛様の違和感</li><li>適応診断あり</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">INJECTION</small>
+          <h3>ボトックス相談</h3>
+          <p>表情じわやエラ、汗に。自然な表情を残す量と部位を医師が判断します。</p>
+          <ul><li>効果目安: 数カ月</li><li>内出血リスク</li><li>妊娠中不可</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">HAIR REMOVAL</small>
+          <h3>医療脱毛</h3>
+          <p>全身、顔、VIOに対応。肌質・毛質に合わせて照射設定を調整します。</p>
+          <ul><li>目安: 5回-</li><li>剃毛が必要</li><li>日焼け注意</li></ul>
+        </article>
+        <article class="menu-card">
+          <small class="en">HOME CARE</small>
+          <h3>ドクターズコスメ</h3>
+          <p>治療効果を支える毎日のケア。レチノール、ビタミンC、UVケアを設計します。</p>
+          <ul><li>肌状態で選定</li><li>刺激確認</li><li>継続プラン</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="treatment-scene">
+    <div class="scene-panel">
+      <div class="scene-copy">
+        <p class="eyebrow en">TREATMENT ROOM</p>
+        <h2>医療らしい清潔感と、美容らしい期待感。</h2>
+        <p>人気美容皮膚科のサイトは「ラグジュアリー」だけではなく、施術室・機器・医療者の手元が見える安心感を大切にしています。写真素材も、抽象的なモデル写真ではなく実際の施術体験に近いものを使います。</p>
+      </div>
+      <div class="scene-image">
+        <img src="../assets/beauty-dermatology/treatment.png" alt="美容皮膚科のレーザー施術イメージ">
+      </div>
+    </div>
+  </section>
+
+  <section class="price" id="price">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">PRICE TRANSPARENCY</p>
+          <h2>価格と注意事項を、<br>予約前に見える化。</h2>
+        </div>
+        <p>美容医療では料金の見通しが予約の心理的ハードルを大きく左右します。単発料金、コース、初回カウンセリングの扱いを明確に整理します。</p>
+      </div>
+      <div class="price-layout">
+        <aside class="price-note">
+          <h3>無理な当日契約を前提にしない、相談しやすい価格表示。</h3>
+          <p>表示価格は税込のデモ表記です。実際の医療広告では、自由診療、リスク、副作用、未承認機器の有無などの表記確認が必要です。</p>
+        </aside>
+        <div>
+          <div class="price-table-wrap">
+            <table class="price-table">
+              <thead>
+                <tr><th>施術</th><th>内容</th><th>料金</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>初回肌診断カウンセリング</td><td>肌画像解析、医師診察、治療プラン作成</td><td>¥3,300</td></tr>
+                <tr><td>レーザートーニング</td><td>全顔1回 / 肝斑・くすみ相談</td><td>¥18,700</td></tr>
+                <tr><td>IPLフォト治療</td><td>全顔1回 / しみ・赤み・肌質</td><td>¥24,200</td></tr>
+                <tr><td>ポテンツァ RF</td><td>毛穴・ニキビ跡 / 麻酔代別</td><td>¥55,000</td></tr>
+                <tr><td>マッサージピール</td><td>全顔1回 / ハリ・つや</td><td>¥16,500</td></tr>
+                <tr><td>HIFUリフト</td><td>全顔 / 照射数は診察で決定</td><td>¥88,000</td></tr>
+                <tr><td>医療脱毛</td><td>全身ライト1回 / 顔・VIO除く</td><td>¥49,500</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="risk-box">
+            <b>リスク・副作用の表記例</b>
+            <p>赤み、腫れ、乾燥、かさぶた、色素沈着、内出血、熱感、痛みなどが生じる場合があります。施術の適応は医師の診察により判断します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cases" id="cases">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">CASE LIBRARY</p>
+          <h2>症例は、期待値を整えるために見せる。</h2>
+        </div>
+        <p>症例コンテンツは強い集客要素ですが、誇張せず、施術内容・回数・費用・リスクを併記することで信頼感を作ります。</p>
+      </div>
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="case-before-after"><span>BEFORE</span><span>AFTER</span></div>
+          <b>しみ・くすみ治療</b>
+          <h3>レーザートーニング 6回</h3>
+          <p>肝斑傾向を確認し、内服・外用を併用。肌全体のトーン改善を目指しました。</p>
+          <div class="case-meta">費用目安: ¥112,200 / リスク: 赤み・乾燥・色素沈着</div>
+        </article>
+        <article class="case-card">
+          <div class="case-before-after"><span>BEFORE</span><span>AFTER</span></div>
+          <b>毛穴・ニキビ跡</b>
+          <h3>ポテンツァ RF 3回</h3>
+          <p>凹凸と皮脂傾向を確認し、RF治療とホームケアを組み合わせました。</p>
+          <div class="case-meta">費用目安: ¥165,000 / リスク: 赤み・腫れ・点状出血</div>
+        </article>
+        <article class="case-card">
+          <div class="case-before-after"><span>BEFORE</span><span>AFTER</span></div>
+          <b>ハリ・小じわ</b>
+          <h3>ピーリング 5回</h3>
+          <p>乾燥しやすい肌質に配慮しながら、ハリとつやを目指した治療計画です。</p>
+          <div class="case-meta">費用目安: ¥82,500 / リスク: 乾燥・刺激感・皮むけ</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="doctor" id="doctor">
+    <div class="section-inner">
+      <div class="doctor-layout">
+        <div class="doctor-photo">
+          <img src="../assets/beauty-dermatology/doctor.png" alt="LUMIERE SKIN CLINIC 院長">
+        </div>
+        <div class="doctor-copy">
+          <p class="eyebrow en">MEDICAL SUPERVISION</p>
+          <h2>美しさを、医学的に説明できること。</h2>
+          <p>はじめまして。LUMIERE SKIN CLINIC院長の神崎 玲奈です。美容医療は、流行の施術を選ぶ前に、肌の状態を正しく診ることが大切です。当院では診察と画像解析をもとに、必要な治療、まだ必要ではない治療、ホームケアで整えられることを分けてお伝えします。</p>
+          <p>変わることを急がせるのではなく、肌への理解が深まるカウンセリングを大切にしています。</p>
+          <dl class="profile-list">
+            <dt>院長</dt><dd>神崎 玲奈</dd>
+            <dt>所属</dt><dd>日本皮膚科学会 / 日本美容皮膚科学会</dd>
+            <dt>専門</dt><dd>しみ・肝斑治療、ニキビ跡、レーザー治療、スキンケア指導</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">VISIT FLOW</p>
+          <h2>予約から施術後まで、<br>迷わない体験設計。</h2>
+        </div>
+        <p>人気サイトほど、初回来院の流れが丁寧です。ユーザーの不安が減るほど、予約フォームへの移動が自然になります。</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step"><small class="en">STEP 01</small><h3>WEB予約</h3><p>悩み、希望日時、カウンセリングのみか当日施術希望かを選択。</p></article>
+        <article class="flow-step"><small class="en">STEP 02</small><h3>事前問診</h3><p>既往歴、服薬、妊娠、過去施術、アレルギーを確認。</p></article>
+        <article class="flow-step"><small class="en">STEP 03</small><h3>肌診断</h3><p>肌画像解析で状態を記録し、治療前の基準を作成。</p></article>
+        <article class="flow-step"><small class="en">STEP 04</small><h3>医師診察</h3><p>適応、禁忌、費用、リスク、副作用を説明。</p></article>
+        <article class="flow-step"><small class="en">STEP 05</small><h3>施術・経過確認</h3><p>施術後の注意事項を共有し、必要に応じて再診で調整。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="access">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">ACCESS / HOURS</p>
+          <h2>銀座駅徒歩2分。<br>仕事帰りにも通いやすく。</h2>
+        </div>
+        <p>美容皮膚科は継続通院が前提になりやすいため、診療時間、駅からの近さ、予約方法をわかりやすく配置しています。</p>
+      </div>
+      <div class="info-layout">
+        <div class="schedule-panel">
+          <h3 class="panel-title">診療時間</h3>
+          <div class="schedule-wrap">
+            <table class="schedule">
+              <thead>
+                <tr><th>時間</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>10:00-14:00</td><td class="open">●</td><td class="open">●</td><td class="closed">休</td><td class="open">●</td><td class="open">●</td><td class="open">●</td><td class="open">●</td></tr>
+                <tr><td>15:00-20:00</td><td class="open">●</td><td class="open">●</td><td class="closed">休</td><td class="open">●</td><td class="open">●</td><td>18:00</td><td>18:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">休診日: 水曜・祝日 / 最終受付は施術内容により異なります。</p>
+        </div>
+        <div class="access-panel">
+          <h3 class="panel-title">アクセス</h3>
+          <div class="access-list">
+            <div><b>住所</b><span>東京都中央区銀座4-00-00 Lumiere Ginza 8F</span></div>
+            <div><b>最寄駅</b><span>東京メトロ 銀座駅 A12出口 徒歩2分</span></div>
+            <div><b>予約</b><span>WEB予約、LINE相談、電話予約に対応しています。</span></div>
+          </div>
+          <div class="map">LUMIERE SKIN CLINIC MAP</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="section-inner">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow en">FAQ</p>
+          <h2>美容皮膚科の不安に、先回りするFAQ。</h2>
+        </div>
+        <p>施術前後の制限、痛み、ダウンタイム、当日施術の可否など、予約前に知りたいことを整理します。</p>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>カウンセリング当日に施術できますか？</summary>
+          <p>診察で適応があり、禁忌事項がなく、予約枠に余裕がある場合は当日施術も可能です。施術内容により後日のご案内となる場合があります。</p>
+        </details>
+        <details>
+          <summary>メイクをしたまま来院できますか？</summary>
+          <p>来院可能です。肌診断や施術前に洗顔をお願いする場合があります。施術後のメイク可否は施術内容により異なります。</p>
+        </details>
+        <details>
+          <summary>肝斑がある場合もレーザーできますか？</summary>
+          <p>肝斑の状態により、強いレーザーが悪化要因になることがあります。医師が診察し、内服・外用・低出力照射などを検討します。</p>
+        </details>
+        <details>
+          <summary>ダウンタイムが取れない場合は？</summary>
+          <p>赤みや皮むけが少ない施術から始める選択肢があります。予定や仕事の都合を伺い、無理のない治療計画を提案します。</p>
+        </details>
+        <details>
+          <summary>未成年でも施術できますか？</summary>
+          <p>施術により親権者の同意が必要です。カウンセリング時に同意書や同伴の有無をご案内します。</p>
+        </details>
+        <details>
+          <summary>支払い方法は何がありますか？</summary>
+          <p>現金、各種クレジットカード、医療ローンに対応しています。コース契約前に総額を提示します。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="section-inner">
+      <h2 class="headline">Start with knowing your skin.</h2>
+      <p>肌診断カウンセリング、しみ治療、毛穴・ニキビ跡、医療脱毛まで、WEB予約で空き枠を確認できます。</p>
+      <div class="hero-actions">
+        <a class="btn btn-coral" href="#reserve">カウンセリング予約</a>
+        <a class="btn btn-white" href="tel:03-0000-1122">03-0000-1122</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="brand-font">LUMIERE SKIN CLINIC</span>
+      <span>Demo website by LE CIEL WEB DESIGN</span>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="スマートフォン固定予約導線">
+    <a class="btn btn-line" href="tel:03-0000-1122">電話する</a>
+    <a class="btn btn-coral" href="#reserve">WEB予約</a>
+  </div>
+</body>
+</html>
