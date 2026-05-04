@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>炉端 さくら | 新宿の本格炉端焼き</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; color: #1a1008; background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; height: 70px; display: flex; align-items: center; justify-content: space-between; background: rgba(18,10,4,0.95); backdrop-filter: blur(12px); }
+    .logo { font-family: 'Noto Serif JP', serif; font-size: 22px; letter-spacing: 0.12em; color: #fff; display: flex; align-items: baseline; gap: 10px; }
+    .logo span { font-size: 10px; letter-spacing: 0.22em; color: rgba(255,255,255,0.4); font-family: 'Noto Sans JP'; font-weight: 300; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 13px; color: rgba(255,255,255,0.65); transition: color 0.2s; text-decoration: none; letter-spacing: 0.06em; }
+    .nav-links a:hover { color: #e8b96a; }
+    .nav-reserve { background: #c8762a; color: #fff; padding: 10px 22px; font-size: 13px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; transition: background 0.2s; }
+    .nav-reserve:hover { background: #a85e1e; }
+
+    /* HERO */
+    .hero { height: 100vh; position: relative; overflow: hidden; }
+    .hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.55); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%); }
+    .hero-content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #fff; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.32em; color: #e8b96a; text-transform: uppercase; margin-bottom: 24px; }
+    .hero-content h1 { font-family: 'Noto Serif JP', serif; font-size: 72px; font-weight: 700; letter-spacing: 0.12em; line-height: 1.25; margin-bottom: 20px; text-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+    .hero-content p { font-size: 15px; color: rgba(255,255,255,0.8); letter-spacing: 0.06em; margin-bottom: 44px; }
+    .hero-divider { width: 1px; height: 48px; background: rgba(255,255,255,0.3); margin: 0 auto 28px; }
+    .hero-btn { background: #c8762a; color: #fff; padding: 16px 48px; font-size: 14px; letter-spacing: 0.14em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; transition: background 0.2s; }
+    .hero-btn:hover { background: #a85e1e; }
+    .hero-info { position: absolute; bottom: 32px; left: 0; right: 0; display: flex; justify-content: center; gap: 48px; }
+    .hero-info-item { text-align: center; color: rgba(255,255,255,0.7); font-size: 12px; letter-spacing: 0.1em; }
+    .hero-info-item strong { display: block; font-size: 15px; color: #fff; margin-bottom: 4px; }
+
+    /* ABOUT */
+    .about { display: grid; grid-template-columns: 1fr 1fr; }
+    .about-img { overflow: hidden; height: 560px; }
+    .about-img img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text { background: #120a04; padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+    .about-text .en { font-size: 11px; letter-spacing: 0.3em; color: #c8762a; text-transform: uppercase; margin-bottom: 16px; }
+    .about-text h2 { font-family: 'Noto Serif JP', serif; font-size: 40px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 28px; letter-spacing: 0.06em; }
+    .about-text p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 2.1; margin-bottom: 18px; }
+    .about-divider { width: 32px; height: 2px; background: #c8762a; margin: 28px 0; }
+
+    /* MENU */
+    .menu-sec { padding: 100px 48px; background: #faf7f2; }
+    .menu-sec .inner { max-width: 1100px; margin: 0 auto; }
+    .sec-header { text-align: center; margin-bottom: 64px; }
+    .sec-header .en { font-size: 11px; letter-spacing: 0.3em; color: #c8762a; text-transform: uppercase; margin-bottom: 14px; }
+    .sec-header h2 { font-family: 'Noto Serif JP', serif; font-size: 38px; font-weight: 700; letter-spacing: 0.08em; }
+    .menu-tabs { display: flex; justify-content: center; gap: 0; margin-bottom: 48px; border-bottom: 1px solid #e0d6c8; }
+    .menu-tab { padding: 12px 28px; font-size: 13px; letter-spacing: 0.08em; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; color: #888; background: none; border-top: none; border-left: none; border-right: none; font-family: 'Noto Sans JP'; }
+    .menu-tab.active { color: #1a1008; border-bottom-color: #c8762a; }
+    .menu-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .menu-item { display: flex; justify-content: space-between; align-items: flex-start; padding: 22px 0; border-bottom: 1px solid #ede7dc; gap: 16px; }
+    .menu-item-info h4 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+    .menu-item-info p { font-size: 12px; color: #888; line-height: 1.7; }
+    .menu-item-price { font-family: 'Noto Serif JP', serif; font-size: 20px; color: #c8762a; white-space: nowrap; }
+    .menu-item-price span { font-family: 'Noto Sans JP'; font-size: 11px; color: #aaa; }
+
+    /* PHOTO ROW */
+    .photo-row { display: grid; grid-template-columns: repeat(5, 1fr); height: 280px; }
+    .photo-row div { overflow: hidden; }
+    .photo-row div img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .photo-row div:hover img { transform: scale(1.08); }
+
+    /* INFO */
+    .info-section { display: grid; grid-template-columns: 1fr 1fr; }
+    .info-map { background: #1a0e06; min-height: 420px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.25); font-size: 13px; letter-spacing: 0.1em; }
+    .info-detail { background: #120a04; padding: 72px 64px; }
+    .info-detail .en { font-size: 11px; letter-spacing: 0.3em; color: #c8762a; text-transform: uppercase; margin-bottom: 16px; }
+    .info-detail h2 { font-family: 'Noto Serif JP', serif; font-size: 34px; color: #fff; margin-bottom: 36px; letter-spacing: 0.06em; }
+    .info-row { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 14px; }
+    .info-row .lbl { font-size: 11px; color: rgba(255,255,255,0.35); letter-spacing: 0.12em; min-width: 64px; padding-top: 3px; }
+    .info-row .val { color: rgba(255,255,255,0.75); }
+
+    /* RESERVE CTA */
+    .reserve-cta { background: #c8762a; padding: 80px 48px; text-align: center; }
+    .reserve-cta h2 { font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: 0.08em; }
+    .reserve-cta p { font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 36px; }
+    .reserve-cta-btn { display: inline-block; background: #fff; color: #c8762a; padding: 16px 52px; font-size: 14px; letter-spacing: 0.14em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 700; transition: all 0.2s; }
+    .reserve-cta-btn:hover { background: #1a1008; color: #fff; }
+
+    footer { background: #0d0703; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; }
+    footer .foot-logo { font-family: 'Noto Serif JP', serif; font-size: 18px; color: #fff; letter-spacing: 0.1em; }
+    footer .foot-copy { font-size: 11px; color: #444; letter-spacing: 0.06em; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero-content h1 { font-size: 44px; }
+      .hero-info { gap: 24px; }
+      .about { grid-template-columns: 1fr; }
+      .about-img { height: 280px; }
+      .about-text { padding: 52px 24px; }
+      .menu-sec { padding: 72px 24px; }
+      .menu-list { grid-template-columns: 1fr; }
+      .photo-row { grid-template-columns: repeat(2, 1fr); height: auto; }
+      .photo-row div { height: 180px; }
+      .info-section { grid-template-columns: 1fr; }
+      .info-detail { padding: 48px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  
+    /* ── Hamburger ── */
+    .ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 201; }
+    .ham-btn span { display: block; width: 22px; height: 2px; border-radius: 2px; transition: all 0.3s; }
+    .mob-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+    .mob-menu a, .mob-menu button.mob-link { font-size: 18px; letter-spacing: 0.1em; padding: 14px 32px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; width: 100%; text-align: center; transition: opacity 0.2s; text-decoration: none; display: block; }
+    .mob-menu a:hover, .mob-menu button.mob-link:hover { opacity: 0.6; }
+    .mob-cta { margin-top: 16px; padding: 16px 48px !important; font-weight: 700; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .ham-btn { display: flex; }
+      .nav-links { display: none !important; }
+      .mob-menu.open { display: flex; }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">炉端 さくら <span>ROBATA SAKURA</span></div>
+  <div class="nav-links">
+    <a href="#about">こだわり</a>
+    <a href="#menu">メニュー</a>
+    <a href="#access">アクセス</a>
+    <button class="nav-reserve">ご予約</button>
+  </div>
+<button class="ham-btn" aria-label="メニュー">
+    <span style="background:#fff;"></span>
+    <span style="background:#fff;"></span>
+    <span style="background:#fff;"></span>
+  </button>
+</nav>
+<div class="mob-menu" style="background:rgba(12,6,2,0.98);">
+    <a href="#about" style="color:rgba(255,255,255,0.85);">こだわり</a>
+    <a href="#menu" style="color:rgba(255,255,255,0.85);">メニュー</a>
+    <a href="#access" style="color:rgba(255,255,255,0.85);">アクセス</a>
+  <a href="#" class="mob-cta" style="background:#c8762a;color:#fff;margin-top:12px;">ご予約</a>
+</div>
+
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1580822184713-fc5400e7fe10?w=1800&q=80" alt="炉端さくら" />
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Robata · Shinjuku · Since 2008</div>
+    <div class="hero-divider"></div>
+    <h1>炉端 さくら</h1>
+    <p>炭火の香り、旬の素材、職人の技。<br />心あたたまる一夜をお過ごしください。</p>
+    <button class="hero-btn">ご予約・お問い合わせ</button>
+  </div>
+  <div class="hero-info">
+    <div class="hero-info-item"><strong>17:00〜23:30</strong>営業時間</div>
+    <div class="hero-info-item"><strong>月曜定休</strong>定休日</div>
+    <div class="hero-info-item"><strong>新宿駅 徒歩5分</strong>アクセス</div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-img">
+    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80" alt="炉端料理" />
+  </div>
+  <div class="about-text">
+    <div class="en">Our Story</div>
+    <h2>炭火で焼く、<br />本物の旨さ。</h2>
+    <p>新宿の路地裏に店を構えて17年。厳選した産地直送の食材を、熟練の職人が丁寧に炭火で焼き上げます。</p>
+    <p>旬の野菜、鮮魚、地鶏——素材本来の味を最大限に引き出した炉端料理と、全国各地から厳選した日本酒をご用意しています。</p>
+    <div class="about-divider"></div>
+    <p style="font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em;">— 新宿区歌舞伎町 / 完全個室あり / 2〜30名様対応</p>
+  </div>
+</section>
+
+<section class="menu-sec" id="menu">
+  <div class="inner">
+    <div class="sec-header">
+      <div class="en">Menu</div>
+      <h2>お品書き</h2>
+    </div>
+    <div class="menu-list" style="gap: 0 48px;">
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>本日の刺身盛り合わせ</h4><p>豊洲直送の鮮魚を厳選。季節によってラインナップが変わります</p></div>
+          <div class="menu-item-price">1,980<span>円〜</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>地鶏の炉端焼き</h4><p>宮崎産地鶏を炭火でじっくり。皮はパリッと、中はジューシーに</p></div>
+          <div class="menu-item-price">1,380<span>円〜</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>旬の野菜焼き盛り合わせ</h4><p>農家直送の季節野菜を塩・みそ・しょうゆで。素材の甘みを楽しむ一皿</p></div>
+          <div class="menu-item-price">880<span>円</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>さくら特製だし巻き玉子</h4><p>昆布と鰹のあわせだしを使った自家製。ふわとろ食感をお楽しみください</p></div>
+          <div class="menu-item-price">680<span>円</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>炙り〆さば</h4><p>新鮮な鯖をその日に〆た一品。炭火で炙ることでさらに旨みが凝縮</p></div>
+          <div class="menu-item-price">980<span>円</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>牛タン塩焼き</h4><p>厚切り牛タンを特製塩ダレで。コリコリした食感とジューシーな脂が絶品</p></div>
+          <div class="menu-item-price">1,580<span>円</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>鮎の塩焼き</h4><p>清流育ちの天然鮎をシンプルに塩焼きで。香ばしい香りと独特の苦みが旬の味</p></div>
+          <div class="menu-item-price">1,280<span>円</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-item-info"><h4>飲み放題コース</h4><p>生ビール・日本酒・焼酎・サワー等100種以上。2時間飲み放題</p></div>
+          <div class="menu-item-price">1,980<span>円/人</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-row">
+  <div><img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&q=80" alt="料理1" /></div>
+  <div><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80" alt="料理2" /></div>
+  <div><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&q=80" alt="料理3" /></div>
+  <div><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="内装" /></div>
+  <div><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=80" alt="食材" /></div>
+</div>
+
+<section class="info-section" id="access">
+  <div class="info-map">[ Google Map ]</div>
+  <div class="info-detail">
+    <div class="en">Access</div>
+    <h2>店舗情報</h2>
+    <div class="info-row"><span class="lbl">店名</span><span class="val">炉端 さくら</span></div>
+    <div class="info-row"><span class="lbl">住所</span><span class="val">東京都新宿区歌舞伎町1-XX-XX<br />さくらビル B1F</span></div>
+    <div class="info-row"><span class="lbl">電話</span><span class="val">03-XXXX-XXXX</span></div>
+    <div class="info-row"><span class="lbl">営業時間</span><span class="val">17:00〜23:30（L.O. 23:00）</span></div>
+    <div class="info-row"><span class="lbl">定休日</span><span class="val">毎週月曜日（祝日の場合は翌火曜）</span></div>
+    <div class="info-row"><span class="lbl">アクセス</span><span class="val">JR新宿駅 東口より徒歩5分</span></div>
+  </div>
+</section>
+
+<section class="reserve-cta">
+  <h2>ご予約はお気軽に</h2>
+  <p>2名様〜30名様まで対応。完全個室もございます。<br />宴会・接待・記念日のご利用もお任せください。</p>
+  <button class="reserve-cta-btn">ネット予約はこちら</button>
+</section>
+
+<footer>
+  <div class="foot-logo">炉端 さくら</div>
+  <div class="foot-copy">© 2025 炉端さくら. All rights reserved.</div>
+</footer>
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.ham-btn');
+  var menu = document.querySelector('.mob-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+    var spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'rotate(45deg) translateY(7px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a, .mob-link').forEach(function(el){
+    el.addEventListener('click', function(){
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+      var spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

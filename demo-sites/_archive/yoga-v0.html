@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SORA Yoga Studio | 中目黒のヨガスタジオ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; color: #1a1e2a; background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(26,30,42,0.07); }
+    .logo { display: flex; flex-direction: column; }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 26px; letter-spacing: 0.22em; color: #1a1e2a; font-weight: 300; line-height: 1; }
+    .logo-sub { font-size: 9px; letter-spacing: 0.32em; color: #8a9ab0; text-transform: uppercase; margin-top: 3px; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 13px; color: #5a6a7a; letter-spacing: 0.06em; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #1a1e2a; }
+    .nav-trial { background: linear-gradient(135deg, #6b8cba, #4a6fa5); color: #fff; padding: 10px 24px; font-size: 13px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; border-radius: 2px; transition: opacity 0.2s; }
+    .nav-trial:hover { opacity: 0.85; }
+
+    /* HERO */
+    .hero { height: 100vh; position: relative; overflow: hidden; display: grid; grid-template-columns: 45% 55%; padding-top: 72px; }
+    .hero-left { background: #f0f4f8; display: flex; flex-direction: column; justify-content: center; padding: 80px 72px; position: relative; z-index: 2; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.34em; color: #6b8cba; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
+    .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: #6b8cba; }
+    .hero-left h1 { font-family: 'Cormorant Garamond', serif; font-size: 72px; font-weight: 300; line-height: 1.15; color: #1a1e2a; margin-bottom: 28px; }
+    .hero-left h1 em { font-style: italic; color: #6b8cba; }
+    .hero-left p { font-size: 15px; color: #5a6a7a; line-height: 2.1; margin-bottom: 44px; max-width: 380px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-blue { background: linear-gradient(135deg, #6b8cba, #4a6fa5); color: #fff; padding: 15px 36px; font-size: 13px; letter-spacing: 0.12em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; border-radius: 2px; transition: all 0.3s; }
+    .btn-blue:hover { opacity: 0.88; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(74,111,165,0.3); }
+    .btn-outline { background: transparent; color: #1a1e2a; padding: 14px 36px; font-size: 13px; letter-spacing: 0.12em; border: 1px solid rgba(26,30,42,0.2); cursor: pointer; font-family: 'Noto Sans JP'; border-radius: 2px; transition: all 0.2s; }
+    .btn-outline:hover { background: #1a1e2a; color: #fff; }
+    .hero-stat { display: flex; gap: 44px; margin-top: 52px; padding-top: 40px; border-top: 1px solid rgba(26,30,42,0.08); }
+    .stat-item .num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 400; color: #1a1e2a; line-height: 1; }
+    .stat-item .lbl { font-size: 11px; color: #8a9ab0; margin-top: 6px; letter-spacing: 0.06em; }
+    .hero-right { overflow: hidden; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* CONCEPT */
+    .concept { display: grid; grid-template-columns: 1fr 1fr; background: #1a1e2a; }
+    .concept-text { padding: 96px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .concept-text .en { font-size: 11px; letter-spacing: 0.34em; color: #6b8cba; text-transform: uppercase; margin-bottom: 16px; }
+    .concept-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: #fff; line-height: 1.3; margin-bottom: 28px; }
+    .concept-text h2 em { font-style: italic; color: #6b8cba; }
+    .concept-text p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 2.1; margin-bottom: 18px; }
+    .concept-divider { width: 36px; height: 1px; background: #6b8cba; margin: 32px 0; }
+    .concept-img { overflow: hidden; }
+    .concept-img img { width: 100%; height: 100%; object-fit: cover; min-height: 540px; }
+
+    /* CLASS */
+    .class-sec { padding: 100px 52px; background: #fff; }
+    .class-sec .inner { max-width: 1160px; margin: 0 auto; }
+    .sec-hd { text-align: center; margin-bottom: 64px; }
+    .sec-hd .en { font-size: 11px; letter-spacing: 0.34em; color: #6b8cba; text-transform: uppercase; margin-bottom: 14px; }
+    .sec-hd h2 { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 300; }
+    .class-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .class-card { overflow: hidden; border: 1px solid rgba(26,30,42,0.07); transition: all 0.3s; }
+    .class-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(26,30,42,0.1); border-color: transparent; }
+    .class-card img { width: 100%; height: 240px; object-fit: cover; }
+    .class-card-body { padding: 28px; }
+    .class-card-body .level { display: inline-block; padding: 3px 12px; background: #f0f4f8; font-size: 10px; letter-spacing: 0.18em; color: #6b8cba; border-radius: 100px; margin-bottom: 12px; }
+    .class-card-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; margin-bottom: 10px; }
+    .class-card-body p { font-size: 13px; color: #6a7a8a; line-height: 1.9; margin-bottom: 18px; }
+    .class-meta { display: flex; gap: 16px; font-size: 12px; color: #8a9ab0; }
+    .class-meta span { display: flex; align-items: center; gap: 5px; }
+
+    /* TIMETABLE */
+    .timetable { padding: 80px 52px; background: #f0f4f8; }
+    .timetable .inner { max-width: 960px; margin: 0 auto; }
+    .tt-grid { display: grid; grid-template-columns: 80px repeat(5,1fr); gap: 4px; margin-top: 44px; }
+    .tt-header { background: #1a1e2a; color: rgba(255,255,255,0.75); font-size: 12px; letter-spacing: 0.1em; padding: 12px 8px; text-align: center; }
+    .tt-time { background: #e4eaf0; font-size: 12px; color: #8a9ab0; padding: 12px 8px; display: flex; align-items: center; justify-content: center; }
+    .tt-class { background: #fff; padding: 12px 10px; font-size: 11px; color: #1a1e2a; text-align: center; line-height: 1.5; border-left: 3px solid #6b8cba; }
+    .tt-class .name { font-weight: 500; display: block; }
+    .tt-class .instructor { color: #8a9ab0; font-size: 10px; display: block; margin-top: 3px; }
+    .tt-empty { background: rgba(255,255,255,0.4); }
+
+    /* INSTRUCTOR */
+    .instructor { padding: 100px 52px; background: #fff; }
+    .instructor .inner { max-width: 1160px; margin: 0 auto; }
+    .inst-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 36px; margin-top: 0; }
+    .inst-card { position: relative; overflow: hidden; }
+    .inst-card img { width: 100%; height: 380px; object-fit: cover; filter: grayscale(10%); transition: all 0.4s; }
+    .inst-card:hover img { filter: grayscale(0%); transform: scale(1.02); }
+    .inst-info { padding: 24px 0; }
+    .inst-info .cert { font-size: 10px; letter-spacing: 0.2em; color: #6b8cba; text-transform: uppercase; margin-bottom: 8px; }
+    .inst-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; margin-bottom: 10px; }
+    .inst-info p { font-size: 13px; color: #6a7a8a; line-height: 1.9; }
+
+    /* PLAN */
+    .plan { padding: 100px 52px; background: #1a1e2a; }
+    .plan .inner { max-width: 960px; margin: 0 auto; }
+    .plan .sec-hd .en { color: #6b8cba; }
+    .plan .sec-hd h2 { color: #fff; }
+    .plan-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .plan-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); padding: 40px 32px; transition: all 0.3s; }
+    .plan-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(107,140,186,0.4); }
+    .plan-card.popular { border-color: #6b8cba; position: relative; }
+    .plan-popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg,#6b8cba,#4a6fa5); color: #fff; padding: 4px 18px; font-size: 11px; letter-spacing: 0.12em; white-space: nowrap; }
+    .plan-card .plan-name { font-size: 11px; letter-spacing: 0.24em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-bottom: 12px; }
+    .plan-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #fff; margin-bottom: 20px; }
+    .plan-card .price { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: #fff; line-height: 1; margin-bottom: 6px; }
+    .plan-card .price-unit { font-family: 'Noto Sans JP'; font-size: 14px; color: rgba(255,255,255,0.45); }
+    .plan-card .price-note { font-size: 13px; color: rgba(255,255,255,0.35); margin-bottom: 28px; }
+    .plan-divider { height: 1px; background: rgba(255,255,255,0.08); margin: 24px 0; }
+    .plan-feature { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.7); padding: 6px 0; }
+    .plan-feature::before { content: '✓'; color: #6b8cba; font-weight: 700; flex-shrink: 0; }
+    .plan-btn { margin-top: 28px; width: 100%; padding: 14px; background: linear-gradient(135deg,#6b8cba,#4a6fa5); color: #fff; border: none; font-size: 13px; letter-spacing: 0.1em; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; border-radius: 2px; transition: opacity 0.2s; }
+    .plan-btn:hover { opacity: 0.85; }
+    .plan-btn.outline { background: transparent; border: 1px solid rgba(255,255,255,0.2); }
+
+    /* VOICE */
+    .voice { padding: 100px 52px; background: #f0f4f8; }
+    .voice .inner { max-width: 1100px; margin: 0 auto; }
+    .voice-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .v-card { background: #fff; padding: 36px 30px; }
+    .v-card .stars { color: #6b8cba; font-size: 14px; letter-spacing: 3px; margin-bottom: 16px; }
+    .v-card p { font-size: 14px; color: #4a5a6a; line-height: 2.0; margin-bottom: 22px; }
+    .v-card .profile { display: flex; align-items: center; gap: 14px; border-top: 1px solid rgba(26,30,42,0.06); padding-top: 18px; }
+    .v-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+    .v-name { font-size: 13px; font-weight: 500; }
+    .v-meta { font-size: 11px; color: #8a9ab0; }
+
+    /* ACCESS */
+    .access { display: grid; grid-template-columns: 1fr 1fr; }
+    .access-map { background: #dde4ed; min-height: 460px; display: flex; align-items: center; justify-content: center; color: #8a9ab0; font-size: 13px; letter-spacing: 0.1em; }
+    .access-detail { background: #1a1e2a; padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+    .access-detail .en { font-size: 11px; letter-spacing: 0.34em; color: #6b8cba; text-transform: uppercase; margin-bottom: 16px; }
+    .access-detail h2 { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 300; color: #fff; margin-bottom: 40px; }
+    .a-row { display: flex; gap: 24px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 14px; }
+    .a-row .lbl { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; min-width: 60px; padding-top: 3px; }
+    .a-row .val { color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+    /* CTA */
+    .cta { background: linear-gradient(135deg, #4a6fa5, #6b8cba); padding: 100px 52px; text-align: center; }
+    .cta h2 { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: #fff; margin-bottom: 16px; }
+    .cta h2 em { font-style: italic; }
+    .cta p { font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 44px; line-height: 2; }
+    .cta-btn { background: #fff; color: #4a6fa5; padding: 18px 60px; font-size: 14px; letter-spacing: 0.16em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 700; transition: all 0.3s; }
+    .cta-btn:hover { background: #1a1e2a; color: #fff; transform: translateY(-2px); }
+
+    footer { background: #111520; padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; }
+    .foot-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #fff; font-weight: 300; letter-spacing: 0.2em; }
+    .foot-links { display: flex; gap: 24px; }
+    .foot-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; }
+    .foot-copy { font-size: 11px; color: rgba(255,255,255,0.25); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; height: auto; }
+      .hero-left { padding: 52px 24px; }
+      .hero-left h1 { font-size: 48px; }
+      .hero-right { height: 300px; }
+      .hero-stat { gap: 24px; }
+      .concept { grid-template-columns: 1fr; }
+      .concept-text { padding: 60px 24px; }
+      .concept-img img { min-height: 280px; }
+      .class-sec { padding: 72px 24px; }
+      .class-grid { grid-template-columns: 1fr; }
+      .timetable { padding: 60px 24px; }
+      .tt-grid { grid-template-columns: 64px repeat(3,1fr); }
+      .instructor { padding: 72px 24px; }
+      .inst-grid { grid-template-columns: 1fr; }
+      .plan { padding: 72px 24px; }
+      .plan-grid { grid-template-columns: 1fr; }
+      .voice-grid { grid-template-columns: 1fr; }
+      .access { grid-template-columns: 1fr; }
+      .access-detail { padding: 52px 24px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  
+    /* ── Hamburger ── */
+    .ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 201; }
+    .ham-btn span { display: block; width: 22px; height: 2px; border-radius: 2px; transition: all 0.3s; }
+    .mob-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+    .mob-menu a, .mob-menu button.mob-link { font-size: 18px; letter-spacing: 0.1em; padding: 14px 32px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; width: 100%; text-align: center; transition: opacity 0.2s; text-decoration: none; display: block; }
+    .mob-menu a:hover, .mob-menu button.mob-link:hover { opacity: 0.6; }
+    .mob-cta { margin-top: 16px; padding: 16px 48px !important; font-weight: 700; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .ham-btn { display: flex; }
+      .nav-links { display: none !important; }
+      .mob-menu.open { display: flex; }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-main">SORA</div>
+    <div class="logo-sub">Yoga Studio · Nakameguro</div>
+  </div>
+  <div class="nav-links">
+    <a href="#class">クラス</a>
+    <a href="#instructor">インストラクター</a>
+    <a href="#plan">料金</a>
+    <a href="#access">アクセス</a>
+    <button class="nav-trial">体験レッスン予約</button>
+  </div>
+<button class="ham-btn" aria-label="メニュー">
+    <span style="background:#1a1e2a;"></span>
+    <span style="background:#1a1e2a;"></span>
+    <span style="background:#1a1e2a;"></span>
+  </button>
+</nav>
+<div class="mob-menu" style="background:rgba(255,255,255,0.98);">
+    <a href="#class" style="color:#1a1e2a;">クラス</a>
+    <a href="#instructor" style="color:#1a1e2a;">インストラクター</a>
+    <a href="#plan" style="color:#1a1e2a;">料金</a>
+    <a href="#access" style="color:#1a1e2a;">アクセス</a>
+  <a href="#" class="mob-cta" style="background:linear-gradient(135deg,#6b8cba,#4a6fa5);color:#fff;margin-top:12px;">体験レッスン予約</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Yoga Studio · Nakameguro</div>
+    <h1>呼吸を整え、<br /><em>心を解く。</em></h1>
+    <p>中目黒の閑静な空間で、自分と向き合う時間を。初心者から上級者まで、あなたのペースで始められるヨガスタジオ。</p>
+    <div class="hero-actions">
+      <button class="btn-blue">無料体験レッスン</button>
+      <button class="btn-outline">クラスを見る</button>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-item"><div class="num">350+</div><div class="lbl">会員数</div></div>
+      <div class="stat-item"><div class="num">18</div><div class="lbl">クラス数/週</div></div>
+      <div class="stat-item"><div class="num">5</div><div class="lbl">インストラクター</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1000&q=85" alt="ヨガ" />
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <div class="concept-text">
+    <div class="en">Our Philosophy</div>
+    <h2>「空」のように、<br /><em>自由に。</em></h2>
+    <p>SORAは「空」をテーマにしたヨガスタジオ。空のように広がる可能性と、雲が流れるような自然な動き——ヨガを通じて、日常の緊張をほどき、本来の自分へと還っていく時間を提供します。</p>
+    <p>木の温もりと自然光に包まれたスタジオで、あなたのペースで、あなただけのヨガを。</p>
+    <div class="concept-divider"></div>
+    <p style="font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.1em;">— 全クラス少人数制（最大12名） / 初心者歓迎 / 無料体験あり</p>
+  </div>
+  <div class="concept-img">
+    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=85" alt="ヨガスタジオ" />
+  </div>
+</section>
+
+<!-- CLASS -->
+<section class="class-sec" id="class">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Classes</div>
+      <h2>クラス一覧</h2>
+    </div>
+    <div class="class-grid">
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=600&q=80" alt="ハタヨガ" />
+        <div class="class-card-body">
+          <span class="level">初心者〜中級</span>
+          <h3>ハタヨガ</h3>
+          <p>ポーズをゆっくり丁寧に行うベーシックなヨガ。呼吸と動きの基礎を学べます。</p>
+          <div class="class-meta">
+            <span>🕐 60分</span>
+            <span>👤 定員12名</span>
+            <span>💴 ¥1,500/回</span>
+          </div>
+        </div>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="ヴィンヤサ" />
+        <div class="class-card-body">
+          <span class="level">中級〜上級</span>
+          <h3>ヴィンヤサフロー</h3>
+          <p>呼吸と動きを連動させ、流れるように行うダイナミックなスタイル。</p>
+          <div class="class-meta">
+            <span>🕐 75分</span>
+            <span>👤 定員10名</span>
+            <span>💴 ¥1,800/回</span>
+          </div>
+        </div>
+      </div>
+      <div class="class-card">
+        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="リストラティブ" />
+        <div class="class-card-body">
+          <span class="level">全レベル</span>
+          <h3>リストラティブヨガ</h3>
+          <p>ボルスターやブランケットを使い、深くリラックス。疲労回復・ストレス解消に。</p>
+          <div class="class-meta">
+            <span>🕐 90分</span>
+            <span>👤 定員8名</span>
+            <span>💴 ¥2,200/回</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMETABLE -->
+<section class="timetable">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Timetable</div>
+      <h2>タイムテーブル</h2>
+    </div>
+    <div class="tt-grid">
+      <div class="tt-header"></div>
+      <div class="tt-header">月</div>
+      <div class="tt-header">火</div>
+      <div class="tt-header">水</div>
+      <div class="tt-header">木</div>
+      <div class="tt-header">金</div>
+      <div class="tt-time">7:00</div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">中村</span></div>
+      <div class="tt-empty"></div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">田中</span></div>
+      <div class="tt-empty"></div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">中村</span></div>
+      <div class="tt-time">10:00</div>
+      <div class="tt-empty"></div>
+      <div class="tt-class"><span class="name">リストラティブ</span><span class="instructor">佐藤</span></div>
+      <div class="tt-empty"></div>
+      <div class="tt-class"><span class="name">リストラティブ</span><span class="instructor">鈴木</span></div>
+      <div class="tt-empty"></div>
+      <div class="tt-time">12:00</div>
+      <div class="tt-class"><span class="name">ヴィンヤサ</span><span class="instructor">山本</span></div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">田中</span></div>
+      <div class="tt-class"><span class="name">ヴィンヤサ</span><span class="instructor">山本</span></div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">中村</span></div>
+      <div class="tt-class"><span class="name">ヴィンヤサ</span><span class="instructor">山本</span></div>
+      <div class="tt-time">19:00</div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">鈴木</span></div>
+      <div class="tt-class"><span class="name">ヴィンヤサ</span><span class="instructor">山本</span></div>
+      <div class="tt-class"><span class="name">ハタヨガ</span><span class="instructor">佐藤</span></div>
+      <div class="tt-class"><span class="name">ヴィンヤサ</span><span class="instructor">田中</span></div>
+      <div class="tt-class"><span class="name">リストラティブ</span><span class="instructor">鈴木</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section class="instructor" id="instructor">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Instructor</div>
+      <h2>インストラクター</h2>
+    </div>
+    <div class="inst-grid">
+      <div class="inst-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="中村 麻衣" />
+        <div class="inst-info">
+          <div class="cert">RYT-500 / 全米ヨガアライアンス認定</div>
+          <h3>中村 麻衣</h3>
+          <p>インド・バリにて修業後、帰国。ハタヨガとリストラティブを専門とし、丁寧でわかりやすい指導が評判。</p>
+        </div>
+      </div>
+      <div class="inst-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80" alt="田中 彩" />
+        <div class="inst-info">
+          <div class="cert">RYT-200 / マタニティヨガ資格保有</div>
+          <h3>田中 彩</h3>
+          <p>産前産後のマタニティヨガを中心に活動。女性の身体への深い理解から生まれる穏やかな指導スタイル。</p>
+        </div>
+      </div>
+      <div class="inst-card">
+        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80" alt="鈴木 理恵" />
+        <div class="inst-info">
+          <div class="cert">RYT-200 / アシュタンガヨガ資格保有</div>
+          <h3>鈴木 理恵</h3>
+          <p>ダイナミックなヴィンヤサフローが得意。「楽しみながら変わる」をモットーに、情熱的な指導を展開。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section class="plan" id="plan">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Pricing</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:#fff;">料金プラン</h2>
+    </div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-name">Light</div>
+        <h3>チケット制</h3>
+        <div class="price">¥1,500<span class="price-unit">/回〜</span></div>
+        <div class="price-note">都度払い</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feature">好きな時に通える</div>
+        <div class="plan-feature">全クラス対象</div>
+        <div class="plan-feature">有効期限3ヶ月</div>
+        <button class="plan-btn outline">このプランで始める</button>
+      </div>
+      <div class="plan-card popular">
+        <div class="plan-popular-badge">人気 No.1</div>
+        <div class="plan-name">Standard</div>
+        <h3>月4回プラン</h3>
+        <div class="price">¥5,500<span class="price-unit">/月</span></div>
+        <div class="price-note">月額・税込</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feature">月4回まで受講可</div>
+        <div class="plan-feature">全クラス対象</div>
+        <div class="plan-feature">翌月繰越1回可</div>
+        <div class="plan-feature">オンラインクラス付き</div>
+        <button class="plan-btn">このプランで始める</button>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Unlimited</div>
+        <h3>通い放題プラン</h3>
+        <div class="price">¥9,900<span class="price-unit">/月</span></div>
+        <div class="price-note">月額・税込</div>
+        <div class="plan-divider"></div>
+        <div class="plan-feature">全クラス受け放題</div>
+        <div class="plan-feature">オンラインクラス付き</div>
+        <div class="plan-feature">ワークショップ割引</div>
+        <div class="plan-feature">月1回個別相談</div>
+        <button class="plan-btn outline">このプランで始める</button>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:rgba(255,255,255,0.3);margin-top:28px;">※ 初回体験レッスン（60分）は¥1,000でご参加いただけます。</p>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Voice</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;">お客様の声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p>仕事のストレスで体が固まっていたのが、週1回通い続けて3ヶ月でかなり柔軟になりました。中村先生の指導がとても丁寧で安心できます。</p>
+        <div class="profile">
+          <img class="v-avatar" src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&q=80" alt="山田M" />
+          <div><div class="v-name">山田 M さん</div><div class="v-meta">30代・会社員</div></div>
+        </div>
+      </div>
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p>産後の体型が気になってはじめたのですが、田中先生のマタニティ対応がとても心強かったです。今は通い放題で毎週楽しく通っています！</p>
+        <div class="profile">
+          <img class="v-avatar" src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?w=100&q=80" alt="佐藤K" />
+          <div><div class="v-name">佐藤 K さん</div><div class="v-meta">30代・主婦</div></div>
+        </div>
+      </div>
+      <div class="v-card">
+        <div class="stars">★★★★★</div>
+        <p>ヨガ未経験でドキドキしながら体験に来ましたが、先生たちがとても親切で、気づいたら2年通っています。スタジオの雰囲気も最高です。</p>
+        <div class="profile">
+          <img class="v-avatar" src="https://images.unsplash.com/photo-1548142813-c348350df52b?w=100&q=80" alt="鈴木T" />
+          <div><div class="v-name">鈴木 T さん</div><div class="v-meta">40代・自営業</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access" id="access">
+  <div class="access-map">[ Google Map ]</div>
+  <div class="access-detail">
+    <div class="en">Access</div>
+    <h2>アクセス</h2>
+    <div class="a-row"><span class="lbl">スタジオ</span><span class="val">SORA Yoga Studio</span></div>
+    <div class="a-row"><span class="lbl">住所</span><span class="val">東京都目黒区上目黒X-XX-XX<br />SORAビル 3F</span></div>
+    <div class="a-row"><span class="lbl">電話</span><span class="val">03-XXXX-XXXX</span></div>
+    <div class="a-row"><span class="lbl">営業時間</span><span class="val">7:00〜21:00（クラスによる）</span></div>
+    <div class="a-row"><span class="lbl">定休日</span><span class="val">不定休</span></div>
+    <div class="a-row"><span class="lbl">アクセス</span><span class="val">東急東横線「中目黒駅」正面口より徒歩5分</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2><em>Start your journey</em><br />まずは体験から。</h2>
+  <p>初回体験レッスン ¥1,000（60分）。<br />予約はオンラインから24時間受付中です。</p>
+  <button class="cta-btn">無料体験レッスンを予約する</button>
+</section>
+
+<footer>
+  <div class="foot-logo">SORA</div>
+  <div class="foot-links">
+    <a href="#">Instagram</a>
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">特定商取引法</a>
+  </div>
+  <div class="foot-copy">© 2025 SORA Yoga Studio. All rights reserved.</div>
+</footer>
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.ham-btn');
+  var menu = document.querySelector('.mob-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+    var spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'rotate(45deg) translateY(7px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a, .mob-link').forEach(function(el){
+    el.addEventListener('click', function(){
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+      var spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

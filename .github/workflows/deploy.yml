@@ -1,0 +1,44 @@
+name: Deploy to Lolipop
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to root (leciel.cutegirl.jp)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.leciel.cutegirl.jp
+          username: cutegirl.jp-leciel
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            demo-sites/_archive/**
+
+      - name: Deploy to leciel subfolder (leciel-webdesign.com)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.leciel.cutegirl.jp
+          username: cutegirl.jp-leciel
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /leciel/
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            **/.git*/**
+            .github/**
+            .claude/**
+            demo-sites/_archive/**

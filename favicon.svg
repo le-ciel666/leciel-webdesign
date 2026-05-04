@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <g transform="rotate(-90, 16, 16)" fill="none" stroke-width="6" stroke-linecap="butt">
+    <circle cx="16" cy="16" r="10" stroke="#ef4444" stroke-dasharray="8.80 54.03"/>
+    <circle cx="16" cy="16" r="10" stroke="#f97316" stroke-dasharray="8.80 54.03" stroke-dashoffset="-8.80"/>
+    <circle cx="16" cy="16" r="10" stroke="#eab308" stroke-dasharray="9.42 53.41" stroke-dashoffset="-17.59"/>
+    <circle cx="16" cy="16" r="10" stroke="#22c55e" stroke-dasharray="8.80 54.03" stroke-dashoffset="-27.02"/>
+    <circle cx="16" cy="16" r="10" stroke="#06b6d4" stroke-dasharray="8.80 54.03" stroke-dashoffset="-35.81"/>
+    <circle cx="16" cy="16" r="10" stroke="#3b82f6" stroke-dasharray="9.42 53.41" stroke-dashoffset="-44.61"/>
+    <circle cx="16" cy="16" r="10" stroke="#a855f7" stroke-dasharray="8.80 54.03" stroke-dashoffset="-54.03"/>
+  </g>
+</svg>

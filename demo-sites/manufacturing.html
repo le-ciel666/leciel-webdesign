@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>篠原精機株式会社｜製造業・町工場サンプルサイト｜LE CIEL WEB DESIGN</title>
+<meta name="description" content="LE CIEL WEB DESIGNの製造業・町工場向け制作事例。篠原精機株式会社｜0.001mmの精度を、東京・大田から世界へ をコンセプトにした金属加工メーカーのデモサイトです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0e10;
+    --bg-soft: #16181c;
+    --bg-card: #1c1f24;
+    --line: #2a2e36;
+    --line-soft: #20242a;
+    --paper: #f5f5f0;
+    --paper-soft: #e9e9e2;
+    --ink: #0d0e10;
+    --muted: #8a8f99;
+    --muted-light: #c2c6cf;
+    --accent: #ff5722;
+    --accent-deep: #e54100;
+    --steel: #b8bcc5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:1.85;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:0.06em}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+
+  .demo-ribbon{background:#000;color:#fff;text-align:center;padding:10px 16px;font-size:13px;letter-spacing:0.06em;font-family:'JetBrains Mono',monospace}
+  .demo-ribbon a{color:var(--accent);text-decoration:none;font-weight:600;margin-left:12px;border-bottom:1px solid var(--accent)}
+
+  nav.site{position:sticky;top:0;background:var(--bg);color:#fff;z-index:50;border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:1320px;margin:0 auto;padding:0 32px;display:flex;align-items:stretch;justify-content:space-between;gap:32px;height:80px}
+  .nav-brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+  .nav-logo{width:42px;height:42px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:0;clip-path:polygon(0 0,100% 0,100% 80%,80% 100%,0 100%)}
+  .nav-brand-name{display:flex;flex-direction:column;line-height:1.1}
+  .nav-brand-name strong{font-size:17px;font-weight:700;letter-spacing:0.02em}
+  .nav-brand-name span{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.18em;margin-top:3px}
+  .nav-menu{display:flex;list-style:none;align-items:center;gap:0}
+  .nav-menu li{display:flex;align-items:center;height:100%}
+  .nav-menu a{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 22px;height:100%;text-decoration:none;color:#fff;font-size:13px;font-weight:600;letter-spacing:0.06em;transition:background 0.2s,color 0.2s;line-height:1.2}
+  .nav-menu a small{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);letter-spacing:0.18em;margin-top:4px;font-weight:400}
+  .nav-menu a:hover{background:var(--bg-soft);color:var(--accent)}
+  .nav-cta{background:var(--accent);height:100%;display:flex;align-items:center;padding:0 28px !important;font-size:13px;color:#fff !important}
+  .nav-cta:hover{background:var(--accent-deep) !important}
+  .nav-cta small{color:rgba(255,255,255,0.7) !important}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px;color:#fff;align-self:center}
+  .nav-toggle span{display:block;width:26px;height:2px;background:#fff;margin:6px 0}
+
+  /* HERO */
+  .hero{position:relative;background:var(--bg);color:#fff;padding:0;overflow:hidden;min-height:780px;display:flex;align-items:stretch}
+  .hero-bg{position:absolute;inset:0;background-image:linear-gradient(110deg,rgba(13,14,16,0.95) 35%,rgba(13,14,16,0.4) 100%),url('https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1800&h=1200&fit=crop&q=85');background-size:cover;background-position:center}
+  .hero-inner{max-width:1320px;margin:0 auto;padding:96px 32px;width:100%;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+  .hero-mono{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:12px;letter-spacing:0.32em;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+  .hero-mono::before{content:'';width:32px;height:1px;background:var(--accent)}
+  .hero h1{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(38px,5vw,72px);line-height:1.18;color:#fff;margin-bottom:32px;letter-spacing:0.01em}
+  .hero h1 .accent{color:var(--accent);position:relative;display:inline-block}
+  .hero h1 .accent::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:3px;background:var(--accent)}
+  .hero-en{font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,8vw,140px);line-height:0.95;color:rgba(255,255,255,0.06);position:absolute;top:60px;right:32px;pointer-events:none;letter-spacing:0.01em;text-align:right;z-index:0}
+  .hero-lead{font-size:16px;line-height:2.05;color:var(--muted-light);margin-bottom:40px;max-width:560px}
+  .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
+  .btn{display:inline-flex;align-items:center;gap:14px;padding:18px 32px;font-size:14px;font-weight:700;letter-spacing:0.08em;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none;font-family:inherit}
+  .btn-primary{background:var(--accent);color:#fff;clip-path:polygon(0 0,100% 0,100% 75%,calc(100% - 14px) 100%,0 100%)}
+  .btn-primary:hover{background:#fff;color:var(--ink)}
+  .btn-line{background:transparent;color:#fff;border:2px solid #fff}
+  .btn-line:hover{background:#fff;color:var(--ink)}
+  .btn-arrow{transition:transform 0.25s;font-family:'JetBrains Mono',monospace}
+  .btn:hover .btn-arrow{transform:translateX(4px)}
+  .hero-stats{display:flex;gap:48px;border-top:1px solid var(--line);padding-top:28px}
+  .hero-stat{display:flex;flex-direction:column;gap:4px}
+  .hero-stat .num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:#fff;line-height:1;letter-spacing:0.02em}
+  .hero-stat .num em{font-style:normal;color:var(--accent);font-size:18px;margin-left:4px}
+  .hero-stat .lab{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.18em}
+  .hero-spec{background:rgba(255,87,34,0.08);border:1px solid var(--accent);padding:32px 28px;backdrop-filter:blur(6px)}
+  .hero-spec .lab{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:11px;letter-spacing:0.24em;margin-bottom:18px}
+  .hero-spec h4{font-size:24px;font-weight:700;color:#fff;margin-bottom:18px;line-height:1.5}
+  .hero-spec dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;font-size:13px}
+  .hero-spec dt{font-family:'JetBrains Mono',monospace;color:var(--muted);letter-spacing:0.08em;font-size:11px;align-self:center}
+  .hero-spec dd{color:#fff;font-weight:500}
+  .hero-spec dd strong{color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:0.02em;margin-right:4px}
+
+  /* MARQUEE */
+  .marquee{background:var(--ink);color:#fff;padding:24px 0;overflow:hidden;border-bottom:1px solid var(--line)}
+  .marquee-track{display:flex;gap:64px;animation:scroll 35s linear infinite;white-space:nowrap}
+  .marquee-track span{font-family:'Bebas Neue',sans-serif;font-size:28px;color:rgba(255,255,255,0.4);letter-spacing:0.06em;display:flex;align-items:center;gap:64px}
+  .marquee-track span::after{content:'◢';color:var(--accent);font-size:20px}
+  @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+  /* SECTION COMMON */
+  section.block{padding:140px 32px;max-width:1320px;margin:0 auto}
+  .sec-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.32em;color:var(--accent);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:14px}
+  .sec-label::before{content:'';width:32px;height:1px;background:var(--accent)}
+  .sec-num{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--muted);letter-spacing:0.16em;margin-bottom:20px;display:block}
+  .h2{font-family:'Noto Sans JP',sans-serif;font-weight:900;font-size:clamp(32px,4vw,52px);line-height:1.25;color:var(--ink);margin-bottom:28px;letter-spacing:0.01em}
+  .h2 .accent{color:var(--accent)}
+  .h2-en{font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--accent);letter-spacing:0.24em;margin-bottom:14px;display:block}
+  .lead{font-size:15.5px;line-height:2.05;color:var(--ink);max-width:680px}
+
+  /* ABOUT */
+  #about{background:var(--paper);max-width:none;padding:140px 0;margin:0;position:relative;overflow:hidden}
+  #about::before{content:'SHINOHARA';position:absolute;top:60px;right:-30px;font-family:'Bebas Neue',sans-serif;font-size:200px;color:var(--paper-soft);line-height:1;letter-spacing:0.02em;pointer-events:none;z-index:0}
+  .about-inner{max-width:1320px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+  .about-images{position:relative;height:600px}
+  .about-img-1{position:absolute;top:0;left:0;width:70%;height:65%;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1581094488379-6a44e95b9b34?w=900&h=900&fit=crop&q=85');box-shadow:20px 20px 0 var(--accent)}
+  .about-img-2{position:absolute;bottom:0;right:0;width:55%;height:50%;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&h=700&fit=crop&q=85');border:8px solid var(--paper)}
+  .about-text .h2{margin-bottom:32px}
+  .about-text .lead{margin-bottom:32px}
+  .about-quote{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:22px;color:var(--ink);line-height:1.65;padding-left:24px;border-left:3px solid var(--accent);margin-bottom:32px}
+  .about-sign{display:flex;align-items:center;gap:18px;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+  .about-sign strong{font-size:18px;color:var(--ink);font-weight:700;display:block;margin-bottom:2px}
+
+  /* SERVICES */
+  #services{background:var(--bg);color:#fff;max-width:none;padding:140px 0;margin:0}
+  .services-inner{max-width:1320px;margin:0 auto;padding:0 32px}
+  .services-head{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;margin-bottom:72px;align-items:end}
+  .services-head .h2{color:#fff}
+  .services-head .lead{color:var(--muted-light);margin:0}
+  .services-head .h2-en{color:var(--accent)}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .service-card{background:var(--bg-card);padding:0;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform 0.3s,border-color 0.3s}
+  .service-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+  .service-img{aspect-ratio:4/3;background-size:cover;background-position:center;position:relative}
+  .service-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(13,14,16,0.7))}
+  .service-num{position:absolute;top:18px;left:18px;font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;background:var(--accent);padding:4px 14px;letter-spacing:0.04em;z-index:1}
+  .service-body{padding:32px 28px;flex:1;display:flex;flex-direction:column;gap:14px}
+  .service-card h4{font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:700;color:#fff;line-height:1.45}
+  .service-card .h4-en{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--accent);letter-spacing:0.18em;margin-bottom:6px;display:block}
+  .service-card p{font-size:13.5px;color:var(--muted-light);line-height:1.95}
+  .service-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted-light)}
+  .service-card ul li{padding-left:18px;position:relative;font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;font-size:11px}
+  .service-card ul li::before{content:'▸';color:var(--accent);position:absolute;left:0;top:0}
+
+  /* SPEC TABLE */
+  #spec{background:var(--paper);max-width:none;padding:140px 0;margin:0}
+  .spec-inner{max-width:1320px;margin:0 auto;padding:0 32px}
+  .spec-head{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;margin-bottom:64px;align-items:end}
+  .spec-head .lead{margin:0}
+  .spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .spec-row{background:var(--paper);padding:32px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+  .spec-row .icon{width:48px;height:48px;background:var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;color:var(--accent);font-size:22px;clip-path:polygon(0 0,100% 0,100% 80%,80% 100%,0 100%)}
+  .spec-row .info h5{font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;color:var(--ink);margin-bottom:4px}
+  .spec-row .info p{font-size:12px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.04em}
+  .spec-row .val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--accent);letter-spacing:0.02em}
+
+  /* WORKS */
+  .works-head{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;margin-bottom:64px;align-items:end}
+  .works-head .lead{margin:0}
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .work-card{background:#fff;border:1px solid var(--line-soft);overflow:hidden;display:flex;flex-direction:column;transition:transform 0.3s,box-shadow 0.3s}
+  .work-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(0,0,0,0.1)}
+  .work-img{aspect-ratio:5/4;background-size:cover;background-position:center;position:relative}
+  .work-tag{position:absolute;top:14px;left:14px;background:var(--ink);color:#fff;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.18em;padding:5px 12px}
+  .work-body{padding:24px 22px;flex:1;display:flex;flex-direction:column;gap:8px}
+  .work-card h5{font-family:'Noto Sans JP',sans-serif;font-size:17px;font-weight:700;color:var(--ink);line-height:1.55}
+  .work-card .work-meta{display:flex;gap:14px;font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;margin-bottom:6px}
+  .work-card p{font-size:13px;color:var(--ink);line-height:1.85;margin-bottom:10px}
+  .work-card .work-data{display:flex;gap:14px;padding-top:14px;border-top:1px dashed var(--line-soft);margin-top:auto}
+  .work-data span{font-size:11px;color:var(--muted);display:flex;flex-direction:column}
+  .work-data span strong{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--accent);letter-spacing:0.02em;font-weight:400}
+
+  /* PROCESS */
+  #process{background:var(--bg);color:#fff;max-width:none;padding:140px 0;margin:0;position:relative;overflow:hidden}
+  .process-inner{max-width:1320px;margin:0 auto;padding:0 32px}
+  .process-head{text-align:center;max-width:780px;margin:0 auto 72px}
+  .process-head .sec-label{justify-content:center}
+  .process-head .h2{color:#fff}
+  .process-head .lead{color:var(--muted-light);margin:0 auto}
+  .process-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative}
+  .process-grid::before{content:'';position:absolute;top:42px;left:8%;right:8%;height:2px;background:var(--line);z-index:0}
+  .process-item{position:relative;text-align:center;padding:0 12px;z-index:1}
+  .process-item .step{width:84px;height:84px;background:var(--bg-card);border:2px solid var(--line);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--accent);transition:all 0.3s;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
+  .process-item:hover .step{background:var(--accent);color:#fff;border-color:var(--accent);transform:scale(1.05)}
+  .process-item h5{font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+  .process-item .h5-en{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--accent);letter-spacing:0.18em;margin-bottom:10px;display:block}
+  .process-item p{font-size:11.5px;color:var(--muted-light);line-height:1.85}
+
+  /* QUALITY */
+  .quality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:56px}
+  .quality-card{background:var(--paper);padding:48px 36px;display:flex;flex-direction:column;gap:14px;transition:background 0.3s}
+  .quality-card:hover{background:var(--paper-soft)}
+  .quality-card .num{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--accent);line-height:1;letter-spacing:0.02em}
+  .quality-card h4{font-family:'Noto Sans JP',sans-serif;font-size:20px;font-weight:700;color:var(--ink);line-height:1.5}
+  .quality-card p{font-size:13.5px;color:var(--ink);line-height:1.95}
+  .quality-card .stamp{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.18em;padding-top:14px;border-top:1px dashed var(--line);margin-top:auto}
+
+  /* NUMBERS */
+  #numbers{background:var(--ink);color:#fff;max-width:none;padding:140px 0;margin:0;position:relative;overflow:hidden}
+  #numbers::before{content:'NUMBERS';position:absolute;bottom:-30px;left:-20px;font-family:'Bebas Neue',sans-serif;font-size:240px;color:rgba(255,255,255,0.03);line-height:1;letter-spacing:0.02em;pointer-events:none}
+  .numbers-inner{max-width:1320px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+  .numbers-head{text-align:center;max-width:780px;margin:0 auto 72px}
+  .numbers-head .sec-label{justify-content:center}
+  .numbers-head .h2{color:#fff}
+  .numbers-head .lead{color:var(--muted-light);margin:0 auto}
+  .num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+  .num-card{background:var(--bg);padding:40px 28px}
+  .num-card .lab{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.24em;margin-bottom:14px}
+  .num-card .big{font-family:'Bebas Neue',sans-serif;font-size:88px;color:#fff;line-height:1;margin-bottom:10px;letter-spacing:0.01em}
+  .num-card .big em{font-style:normal;color:var(--accent);font-size:28px;margin-left:4px}
+  .num-card p{font-size:12.5px;color:var(--muted-light);line-height:1.85}
+
+  /* COMPANY */
+  .company-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+  .company-photo{aspect-ratio:4/5;background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=1000&fit=crop&q=85');position:sticky;top:96px}
+  .company-table{display:grid;grid-template-columns:auto 1fr}
+  .company-table > div{padding:22px 0;border-bottom:1px solid var(--line);display:contents}
+  .company-table dt{padding:22px 24px 22px 0;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.18em;border-bottom:1px solid var(--line-soft);font-weight:500;text-transform:uppercase}
+  .company-table dd{padding:22px 0;font-size:14px;color:var(--ink);line-height:1.8;border-bottom:1px solid var(--line-soft)}
+  .company-table dd strong{font-weight:700}
+
+  /* RECRUIT */
+  #recruit{background:var(--paper-soft);max-width:none;padding:140px 0;margin:0}
+  .recruit-inner{max-width:1320px;margin:0 auto;padding:0 32px}
+  .recruit-card{background:var(--ink);color:#fff;display:grid;grid-template-columns:1fr 1.2fr;gap:0;overflow:hidden;position:relative}
+  .recruit-img{background-size:cover;background-position:center;background-image:url('https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=900&h=1100&fit=crop&q=85');min-height:480px;position:relative}
+  .recruit-img::after{content:'WANTED';position:absolute;top:32px;left:32px;font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--accent);background:#fff;padding:8px 24px;letter-spacing:0.06em}
+  .recruit-body{padding:64px 56px}
+  .recruit-body .h2-en{color:var(--accent)}
+  .recruit-body .h2{color:#fff;margin-bottom:24px}
+  .recruit-body .lead{color:var(--muted-light);margin-bottom:32px}
+  .recruit-jobs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:32px}
+  .recruit-job{background:rgba(255,255,255,0.04);border:1px solid var(--line);padding:18px 22px}
+  .recruit-job h6{font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:4px}
+  .recruit-job .salary{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--accent);letter-spacing:0.02em}
+  .recruit-job .salary small{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--muted);margin-left:4px;letter-spacing:0}
+
+  /* FAQ */
+  .faq-list{max-width:920px;margin:56px auto 0}
+  .faq-item{border-bottom:1px solid var(--line-soft);cursor:pointer}
+  .faq-q{padding:28px 60px 28px 0;position:relative;font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;color:var(--ink);line-height:1.7;display:flex;gap:18px;align-items:start}
+  .faq-q::before{content:'Q';font-family:'Bebas Neue',sans-serif;color:var(--accent);font-size:24px;line-height:1;flex-shrink:0;letter-spacing:0.02em}
+  .faq-q::after{content:'+';position:absolute;right:0;top:30px;font-size:24px;color:var(--accent);transition:transform 0.3s;font-weight:300}
+  .faq-item.open .faq-q::after{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s,padding 0.3s;font-size:14px;color:var(--muted);line-height:1.95;padding:0 0 0 38px;display:flex;gap:18px;align-items:start}
+  .faq-a::before{content:'A';font-family:'Bebas Neue',sans-serif;color:var(--ink);font-size:20px;line-height:1;flex-shrink:0;letter-spacing:0.02em}
+  .faq-item.open .faq-a{max-height:400px;padding:0 0 28px 38px}
+
+  /* CTA */
+  #cta{background:var(--accent);color:#fff;max-width:none;padding:120px 0;margin:0;position:relative;overflow:hidden}
+  #cta::before{content:'CONTACT';position:absolute;top:50%;right:-20px;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,0.08);line-height:1;letter-spacing:0.02em;pointer-events:none}
+  .cta-inner{max-width:1080px;margin:0 auto;padding:0 32px;position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .cta-inner .h2{color:#fff;margin-bottom:24px}
+  .cta-inner .h2-en{color:#fff;opacity:0.7}
+  .cta-inner p{color:rgba(255,255,255,0.9);line-height:2;margin-bottom:32px;font-size:15px}
+  .cta-card{background:#fff;color:var(--ink);padding:40px 36px;border-bottom:6px solid var(--ink)}
+  .cta-card .latin{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:11px;letter-spacing:0.24em;margin-bottom:8px}
+  .cta-card h4{font-family:'Noto Sans JP',sans-serif;font-size:20px;font-weight:700;margin-bottom:24px}
+  .cta-tel{margin:8px 0 24px;padding:18px 0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .cta-tel small{font-size:11px;color:var(--muted);font-family:'JetBrains Mono',monospace;letter-spacing:0.18em;margin-bottom:4px;display:block}
+  .cta-tel strong{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--ink);letter-spacing:0.02em;display:block}
+  .cta-tel span{font-size:11px;color:var(--muted);margin-top:4px;display:block}
+  .cta-card .btn{justify-content:center;width:100%;background:var(--ink);color:#fff;clip-path:none}
+  .cta-card .btn:hover{background:var(--accent);color:#fff}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:start}
+  .contact-info{display:flex;flex-direction:column;gap:0}
+  .contact-info-block{padding:24px 0;border-bottom:1px solid var(--line-soft);display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:start}
+  .contact-info-block:first-child{border-top:1px solid var(--line-soft)}
+  .contact-info-block .lab{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.24em;color:var(--accent);text-transform:uppercase;padding-top:4px}
+  .contact-info-block .val{font-size:14px;line-height:1.85;color:var(--ink)}
+  .contact-form{background:var(--paper-soft);padding:48px 44px;display:grid;grid-template-columns:1fr 1fr;gap:24px 32px;border-top:4px solid var(--accent)}
+  .form-row{display:flex;flex-direction:column;gap:8px}
+  .form-row.full{grid-column:span 2}
+  .form-row label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--ink);text-transform:uppercase;font-weight:500}
+  .form-row label em{font-style:normal;color:var(--accent);margin-left:4px}
+  .form-row input,.form-row select,.form-row textarea{background:#fff;border:1px solid var(--line-soft);padding:14px 16px;font-size:15px;font-family:'Noto Sans JP',sans-serif;color:var(--ink);outline:none;transition:border-color 0.2s}
+  .form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--accent)}
+  .form-row textarea{min-height:140px;resize:vertical}
+  .form-submit{grid-column:span 2;background:var(--accent);color:#fff;padding:20px 32px;border:none;font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.16em;cursor:pointer;margin-top:16px;transition:background 0.2s,transform 0.2s;clip-path:polygon(0 0,100% 0,100% 75%,calc(100% - 14px) 100%,0 100%)}
+  .form-submit:hover{background:var(--accent-deep);transform:translateY(-1px)}
+
+  /* FOOTER */
+  footer.site{background:#08090b;color:rgba(255,255,255,0.7);padding:80px 32px 32px;border-top:4px solid var(--accent)}
+  .footer-inner{max-width:1320px;margin:0 auto}
+  .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:56px;padding-bottom:48px;border-bottom:1px solid var(--line)}
+  .footer-brand .logo{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .footer-brand .logo .nav-logo{width:36px;height:36px;font-size:20px}
+  .footer-brand strong{font-size:18px;color:#fff;font-weight:700}
+  .footer-brand small{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:0.18em}
+  .footer-brand p{font-size:13px;line-height:1.95;max-width:340px}
+  .footer-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.24em;color:var(--accent);text-transform:uppercase;margin-bottom:18px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;transition:color 0.2s}
+  .footer-col a:hover{color:#fff}
+  .footer-bottom{padding-top:32px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(255,255,255,0.4);flex-wrap:wrap;gap:16px}
+  .footer-back{background:rgba(255,255,255,0.06);color:#fff;padding:10px 22px;text-decoration:none;font-size:12px;letter-spacing:0.12em;transition:background 0.2s,color 0.2s}
+  .footer-back:hover{background:var(--accent);color:#fff}
+
+  @media (max-width:1100px){
+    .hero-inner,.about-inner,.services-head,.spec-head,.works-head,.company-grid,.recruit-card,.cta-inner,.contact-grid{grid-template-columns:1fr;gap:48px}
+    .hero-en{display:none}
+    .nav-menu{display:none}
+    .nav-toggle{display:block}
+    .services-grid,.spec-grid,.works-grid,.quality-grid,.num-grid{grid-template-columns:1fr 1fr}
+    .process-grid{grid-template-columns:repeat(3,1fr);gap:48px 0}
+    .process-grid::before{display:none}
+    .recruit-img{min-height:320px}
+    .recruit-body{padding:48px 32px}
+    .footer-top{grid-template-columns:1fr 1fr;gap:36px}
+  }
+  @media (max-width:720px){
+    section.block,#about,#services,#spec,#numbers,#process,#recruit,#cta{padding:80px 24px}
+    .about-inner,.services-inner,.spec-inner,.numbers-inner,.process-inner,.recruit-inner,.cta-inner{padding:0 24px}
+    .nav-inner{padding:0 20px}
+    .hero-inner{padding:64px 24px}
+    .hero-stats{gap:24px;flex-wrap:wrap}
+    .services-grid,.spec-grid,.works-grid,.quality-grid,.num-grid,.recruit-jobs{grid-template-columns:1fr}
+    .process-grid{grid-template-columns:1fr 1fr;gap:32px 0}
+    .about-images{height:420px}
+    .contact-form{padding:32px 22px;grid-template-columns:1fr}
+    .form-row.full,.form-submit{grid-column:span 1}
+    .contact-info-block{grid-template-columns:1fr;gap:6px}
+    .footer-top{grid-template-columns:1fr}
+    .footer-bottom{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo-ribbon">
+  &gt; これはLE CIEL WEB DESIGNの自主制作デモサイトです。
+  <a href="../index.html">制作サイトへ戻る →</a>
+</div>
+
+<nav class="site">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <span class="nav-logo">S</span>
+      <span class="nav-brand-name">
+        <strong>篠原精機株式会社</strong>
+        <span>SHINOHARA SEIKI CO., LTD.</span>
+      </span>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#about">私たちについて<small>ABOUT</small></a></li>
+      <li><a href="#services">事業内容<small>SERVICES</small></a></li>
+      <li><a href="#spec">設備・技術<small>SPEC</small></a></li>
+      <li><a href="#works">加工事例<small>WORKS</small></a></li>
+      <li><a href="#company">会社情報<small>COMPANY</small></a></li>
+      <li><a href="#recruit">採用<small>RECRUIT</small></a></li>
+      <li><a href="#contact" class="nav-cta">お問い合わせ<small>CONTACT</small></a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <span class="hero-en display">PRECISION</span>
+  <div class="hero-inner">
+    <div>
+      <p class="hero-mono">EST. 1962 / TOKYO OTA-KU</p>
+      <h1>
+        <span class="accent">0.001mm</span>の精度を、<br>
+        東京・大田から<br>
+        世界の現場へ。
+      </h1>
+      <p class="hero-lead">
+        航空宇宙・医療機器・半導体製造装置。「他では断られた」ような難削材・微細加工も、<br>
+        三代続く職人と最新の5軸マシニングが応えます。試作1個から量産まで、<br>
+        図面をいただければ、まずは見積もり0円で。
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">無料お見積もり <span class="btn-arrow">→</span></a>
+        <a href="#works" class="btn btn-line">加工事例を見る <span class="btn-arrow">→</span></a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <p class="num">63<em>YRS</em></p>
+          <p class="lab">FOUNDED 1962</p>
+        </div>
+        <div class="hero-stat">
+          <p class="num">±1<em>μm</em></p>
+          <p class="lab">PRECISION</p>
+        </div>
+        <div class="hero-stat">
+          <p class="num">4,200<em>+</em></p>
+          <p class="lab">PROJECTS / YR</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-spec">
+      <p class="lab">▸ TODAY'S CAPACITY</p>
+      <h4>本日の受注枠：<br>残り 3 件</h4>
+      <dl>
+        <dt>LEAD TIME</dt><dd><strong>4</strong>営業日 〜</dd>
+        <dt>MIN. LOT</dt><dd><strong>1</strong>個から対応</dd>
+        <dt>MATERIALS</dt><dd>SUS / Ti / Al / インコネル</dd>
+        <dt>DRAWINGS</dt><dd>PDF / DXF / STEP / IGES</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span>5-AXIS MACHINING</span>
+    <span>WIRE EDM</span>
+    <span>PRECISION GRINDING</span>
+    <span>MICRO MACHINING</span>
+    <span>TITANIUM PROCESSING</span>
+    <span>INCONEL PROCESSING</span>
+    <span>5-AXIS MACHINING</span>
+    <span>WIRE EDM</span>
+    <span>PRECISION GRINDING</span>
+    <span>MICRO MACHINING</span>
+    <span>TITANIUM PROCESSING</span>
+    <span>INCONEL PROCESSING</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-images">
+      <div class="about-img-1"></div>
+      <div class="about-img-2"></div>
+    </div>
+    <div class="about-text">
+      <span class="sec-num">— 01 / ABOUT US</span>
+      <p class="sec-label">Our Story</p>
+      <h2 class="h2">三代続く<span class="accent">職人</span>の手と、<br>最新マシニングの<span class="accent">融合</span>。</h2>
+      <p class="lead">
+        1962年、初代・篠原徳一が大田区蒲田の小さな町工場として創業。航空機部品の試作からスタートし、現在は半導体製造装置・医療機器・宇宙機器までを手がける精密加工メーカーへと成長してまいりました。
+      </p>
+      <p class="lead" style="margin-bottom:32px;">
+        三代に渡り守り続けてきたのは、「断らない町工場」であること。難削材・極小ロット・短納期。製造業の現場で"困った"が生まれる場所に、私たちはいつも立っています。
+      </p>
+      <p class="about-quote">
+        図面の向こう側にある、<br>
+        現場の困りごとまで読み解く。<br>
+        それが私たちの仕事です。
+      </p>
+      <div class="about-sign">
+        <div>
+          <strong>篠原 徹三 / Tetsuzo Shinohara</strong>
+          代表取締役・三代目
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="services-head">
+      <div>
+        <span class="sec-num">— 02 / OUR SERVICES</span>
+        <p class="sec-label">What We Do</p>
+        <span class="h2-en">SERVICES</span>
+        <h2 class="h2">私たちが<span class="accent">できる</span>こと。</h2>
+      </div>
+      <p class="lead">
+        切削・研削・放電加工・検査・組立まで、精密金属加工に必要な工程をワンストップで提供。<br>
+        試作品の単品加工から、年間数万個規模の量産まで対応可能です。
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">01</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— 5-AXIS MACHINING</span>
+          <h4>5軸マシニング加工</h4>
+          <p>同時5軸の最新マシニングセンタで、複雑形状をワンチャッキングで仕上げ。位置精度の累積誤差を抑え、品質と納期を両立します。</p>
+          <ul>
+            <li>YASDA / DMG MORI 5軸機 4台稼働</li>
+            <li>最大ワーク径 φ650mm</li>
+            <li>SUS, Ti, インコネル, ハステロイ対応</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">02</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— WIRE EDM</span>
+          <h4>ワイヤー放電加工</h4>
+          <p>髪の毛より細いワイヤーを使い、超硬合金やチタンも自在に切断。プレス金型・治具の高精度加工に最適です。</p>
+          <ul>
+            <li>三菱電機 / ソディック ワイヤEDM 6台</li>
+            <li>加工寸法精度 ±2μm</li>
+            <li>板厚 600mmまで対応</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">03</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— PRECISION GRINDING</span>
+          <h4>精密研削加工</h4>
+          <p>平面研削・円筒研削・治具研削。鏡面に近い面粗度（Ra0.05μm）と、サブミクロンの寸法精度を実現します。</p>
+          <ul>
+            <li>岡本工作機 / シギヤ精機 全11台</li>
+            <li>面粗度 Ra0.05μm まで対応</li>
+            <li>クーラントろ過装置完備</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">04</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— MICRO MACHINING</span>
+          <h4>微細・極小加工</h4>
+          <p>φ0.05mmのマイクロドリルを用いた極小穴加工、薄肉加工など、他社で「できない」と断られた案件もご相談ください。</p>
+          <ul>
+            <li>最小穴径 φ0.05mm</li>
+            <li>最薄肉厚 0.08mm</li>
+            <li>医療機器・電子部品向け実績多数</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">05</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— INSPECTION</span>
+          <h4>三次元測定・検査</h4>
+          <p>ZEISS製の高精度三次元測定機による全数検査・抜取検査。検査成績書と共に、トレーサビリティを担保した納品を行います。</p>
+          <ul>
+            <li>ZEISS CONTURA G2 完備</li>
+            <li>測定精度 0.9 + L/350μm</li>
+            <li>初品検査・全数検査・抜取検査対応</li>
+          </ul>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=525&fit=crop&q=85');">
+          <span class="service-num">06</span>
+        </div>
+        <div class="service-body">
+          <span class="h4-en">— PROTOTYPING</span>
+          <h4>試作・小ロット対応</h4>
+          <p>1個から量産直前の試作までを、最短4営業日で。設計者の方と直接対話しながら、現実的な加工方法をご提案します。</p>
+          <ul>
+            <li>図面 / 3Dデータからのお見積もり無料</li>
+            <li>守秘義務契約（NDA）即日対応</li>
+            <li>設計変更・改善提案も歓迎</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPEC -->
+<section id="spec">
+  <div class="spec-inner">
+    <div class="spec-head">
+      <div>
+        <span class="sec-num">— 03 / OUR SPEC</span>
+        <p class="sec-label">Equipment & Capability</p>
+        <span class="h2-en">SPECIFICATIONS</span>
+        <h2 class="h2">設備と<span class="accent">技術スペック</span>。</h2>
+      </div>
+      <p class="lead">
+        最新鋭のマシンと、職人の経験。両方そろって初めて、要求される精度に応えられます。<br>
+        24時間稼働対応の自動化セルも導入し、コスト面でも競争力を確保しています。
+      </p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-row">
+        <div class="icon">M</div>
+        <div class="info">
+          <h5>5軸マシニングセンタ</h5>
+          <p>YASDA YBM 950V × 2 / DMG MORI DMU65 × 2</p>
+        </div>
+        <div class="val">4 UNITS</div>
+      </div>
+      <div class="spec-row">
+        <div class="icon">M</div>
+        <div class="info">
+          <h5>立形マシニングセンタ</h5>
+          <p>OKK / OKUMA / MAKINO</p>
+        </div>
+        <div class="val">12 UNITS</div>
+      </div>
+      <div class="spec-row">
+        <div class="icon">L</div>
+        <div class="info">
+          <h5>NC旋盤・複合旋盤</h5>
+          <p>シチズン / ツガミ / 中村留</p>
+        </div>
+        <div class="val">9 UNITS</div>
+      </div>
+      <div class="spec-row">
+        <div class="icon">E</div>
+        <div class="info">
+          <h5>ワイヤー放電加工機</h5>
+          <p>三菱電機 MV2400R / ソディック AL400G</p>
+        </div>
+        <div class="val">6 UNITS</div>
+      </div>
+      <div class="spec-row">
+        <div class="icon">G</div>
+        <div class="info">
+          <h5>研削盤（平面・円筒）</h5>
+          <p>岡本工作機 / シギヤ精機</p>
+        </div>
+        <div class="val">11 UNITS</div>
+      </div>
+      <div class="spec-row">
+        <div class="icon">I</div>
+        <div class="info">
+          <h5>三次元測定機</h5>
+          <p>ZEISS CONTURA G2 / ミツトヨ Crysta-Apex S</p>
+        </div>
+        <div class="val">3 UNITS</div>
+      </div>
+    </div>
+    <div class="quality-grid">
+      <div class="quality-card">
+        <span class="num">ISO 9001</span>
+        <h4>品質マネジメントシステム認証</h4>
+        <p>2008年取得・継続更新中。設計・調達・製造・検査・出荷の全工程を、文書化された手順に基づき運用しています。</p>
+        <span class="stamp">▸ CERTIFIED 2008</span>
+      </div>
+      <div class="quality-card">
+        <span class="num">JIS Q 9100</span>
+        <h4>航空宇宙品質マネジメント認証</h4>
+        <p>航空宇宙産業向けの厳格な品質基準。航空機部品サプライヤーとしての要求事項に対応しています。</p>
+        <span class="stamp">▸ CERTIFIED 2015</span>
+      </div>
+      <div class="quality-card">
+        <span class="num">ISO 13485</span>
+        <h4>医療機器品質マネジメント認証</h4>
+        <p>医療機器の設計・製造に関する国際規格。手術器具・診断機器メーカー様への部品供給で適用しています。</p>
+        <span class="stamp">▸ CERTIFIED 2019</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="block" id="works">
+  <div class="works-head">
+    <div>
+      <span class="sec-num">— 04 / OUR WORKS</span>
+      <p class="sec-label">Case Study</p>
+      <span class="h2-en">WORKS</span>
+      <h2 class="h2">加工事例<span class="accent">.</span></h2>
+    </div>
+    <p class="lead">
+      これまでに手がけた加工事例の一部をご紹介します。<br>
+      お客様との守秘義務により詳細は伏せていますが、参考としてご覧ください。
+    </p>
+  </div>
+  <div class="works-grid">
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=700&h=560&fit=crop&q=85');"><span class="work-tag">AEROSPACE</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 001</span><span>TITANIUM</span></p>
+        <h5>航空機エンジン用 燃料ノズル部品</h5>
+        <p>チタン合金（Ti-6Al-4V）の5軸マシニングと精密研削の複合加工。航空宇宙品質マネジメント認証下で量産対応。</p>
+        <div class="work-data">
+          <span>精度<strong>±3μm</strong></span>
+          <span>面粗度<strong>Ra0.2</strong></span>
+          <span>月産<strong>2,400</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=700&h=560&fit=crop&q=85');"><span class="work-tag">MEDICAL</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 002</span><span>SUS316L</span></p>
+        <h5>内視鏡用 鉗子部品（極小加工）</h5>
+        <p>φ0.08mmの極小穴加工と外径φ1.2mmの薄肉円筒加工を組み合わせた高難度部品。医療機器ISO 13485下で生産。</p>
+        <div class="work-data">
+          <span>最小穴<strong>φ0.08</strong></span>
+          <span>肉厚<strong>0.1mm</strong></span>
+          <span>月産<strong>1,200</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&h=560&fit=crop&q=85');"><span class="work-tag">SEMICONDUCTOR</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 003</span><span>ALUMINUM</span></p>
+        <h5>半導体製造装置 ステージ部品</h5>
+        <p>φ650mmの大型アルミ部品をワンチャッキングで5軸加工。位置精度を全面で±5μm以内に確保。</p>
+        <div class="work-data">
+          <span>外径<strong>φ650</strong></span>
+          <span>位置精度<strong>±5μm</strong></span>
+          <span>納期<strong>7日</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=700&h=560&fit=crop&q=85');"><span class="work-tag">PROTOTYPE</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 004</span><span>INCONEL 718</span></p>
+        <h5>宇宙機器用 試作熱交換器プレート</h5>
+        <p>難削材インコネル718の薄板（厚み0.5mm）に微細流路をワイヤーEDMで加工。1個試作から量産検討まで伴走。</p>
+        <div class="work-data">
+          <span>板厚<strong>0.5mm</strong></span>
+          <span>流路幅<strong>0.3mm</strong></span>
+          <span>納期<strong>10日</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=700&h=560&fit=crop&q=85');"><span class="work-tag">AUTOMOTIVE</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 005</span><span>SCM440</span></p>
+        <h5>EV車用 高精度減速ギアシャフト</h5>
+        <p>歯車部の同軸度0.005mm以内を要求される精密シャフト。研削仕上げで鏡面（Ra0.1）まで作り込み。</p>
+        <div class="work-data">
+          <span>同軸度<strong>5μm</strong></span>
+          <span>面粗度<strong>Ra0.1</strong></span>
+          <span>月産<strong>800</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img" style="background-image:url('https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=700&h=560&fit=crop&q=85');"><span class="work-tag">JIG & FIXTURE</span>
+      </div>
+      <div class="work-body">
+        <p class="work-meta"><span>CASE 006</span><span>SKD11</span></p>
+        <h5>プレス金型用 高精度ダイプレート</h5>
+        <p>SKD11熱処理済み材を、ワイヤーEDMと治具研削の複合工程で加工。位置度はサブミクロンを実現。</p>
+        <div class="work-data">
+          <span>位置度<strong>0.8μm</strong></span>
+          <span>硬度<strong>HRC58</strong></span>
+          <span>納期<strong>14日</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="process-inner">
+    <div class="process-head">
+      <span class="sec-num">— 05 / WORK FLOW</span>
+      <p class="sec-label">How We Work</p>
+      <span class="h2-en">PROCESS</span>
+      <h2 class="h2">お問い合わせから<br>納品までの<span class="accent">流れ</span>。</h2>
+      <p class="lead">図面をいただいてから、最短4営業日で初品納品まで。<br>各工程の進捗は専用ポータルでリアルタイムにご確認いただけます。</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="step">01</div>
+        <span class="h5-en">INQUIRY</span>
+        <h5>お問い合わせ</h5>
+        <p>WEBフォーム / メール / お電話でご連絡。NDAは即日対応します。</p>
+      </div>
+      <div class="process-item">
+        <div class="step">02</div>
+        <span class="h5-en">RFQ</span>
+        <h5>図面確認・見積</h5>
+        <p>2D / 3Dデータを拝見し、48時間以内にお見積もりをご提示。</p>
+      </div>
+      <div class="process-item">
+        <div class="step">03</div>
+        <span class="h5-en">PLANNING</span>
+        <h5>工程設計</h5>
+        <p>担当エンジニアが最適な加工順序・治具を設計。改善提案もここで。</p>
+      </div>
+      <div class="process-item">
+        <div class="step">04</div>
+        <span class="h5-en">MACHINING</span>
+        <h5>製造・加工</h5>
+        <p>5軸MC / ワイヤEDM / 研削など、最適な工程で加工を実行。</p>
+      </div>
+      <div class="process-item">
+        <div class="step">05</div>
+        <span class="h5-en">INSPECT</span>
+        <h5>検査・成績書</h5>
+        <p>三次元測定機で全数 / 抜取検査。検査成績書を発行します。</p>
+      </div>
+      <div class="process-item">
+        <div class="step">06</div>
+        <span class="h5-en">SHIP</span>
+        <h5>納品</h5>
+        <p>梱包・出荷。トレーサビリティ情報も合わせてご納品します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section id="numbers">
+  <div class="numbers-inner">
+    <div class="numbers-head">
+      <span class="sec-num">— 06 / OUR NUMBERS</span>
+      <p class="sec-label">Facts and Figures</p>
+      <span class="h2-en">NUMBERS</span>
+      <h2 class="h2">数字で見る<span class="accent">篠原精機</span>。</h2>
+    </div>
+    <div class="num-grid">
+      <div class="num-card">
+        <p class="lab">▸ FOUNDED</p>
+        <p class="big">63<em>YRS</em></p>
+        <p>1962年創業。三代に渡り、東京・大田で町工場を営んでまいりました。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ CRAFTSMEN</p>
+        <p class="big">42<em>名</em></p>
+        <p>ベテランから20代の若手職人まで。技能士・指導員資格保有者多数。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ MACHINES</p>
+        <p class="big">45<em>台</em></p>
+        <p>マシニングセンタ・旋盤・EDM・研削盤など、加工機を全45台稼働。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ PROJECTS</p>
+        <p class="big">4,200<em>+</em></p>
+        <p>2024年度の年間案件数。試作1個から月産数千個まで対応。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ CLIENTS</p>
+        <p class="big">280<em>社</em></p>
+        <p>航空宇宙・医療・半導体・自動車など、幅広い業界のお客様に支えられています。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ PRECISION</p>
+        <p class="big">±1<em>μm</em></p>
+        <p>当社が日常的に達成している寸法公差。要求があればサブミクロンまで対応。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ DEFECT RATE</p>
+        <p class="big">0.04<em>%</em></p>
+        <p>2024年度実績。全数検査・抜取検査により、不良流出を限りなくゼロに。</p>
+      </div>
+      <div class="num-card">
+        <p class="lab">▸ ON-TIME</p>
+        <p class="big">99.6<em>%</em></p>
+        <p>納期遵守率。毎月、生産管理ボードで全工程の進捗を可視化しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="block" id="company">
+  <div class="company-grid">
+    <div class="company-photo"></div>
+    <div>
+      <span class="sec-num">— 07 / COMPANY PROFILE</span>
+      <p class="sec-label">Corporate Information</p>
+      <span class="h2-en">COMPANY</span>
+      <h2 class="h2">会社<span class="accent">情報</span>。</h2>
+      <dl class="company-table">
+        <dt>会社名</dt><dd>篠原精機株式会社<br><small style="color:var(--muted);font-size:12px;">SHINOHARA SEIKI CO., LTD.</small></dd>
+        <dt>創業</dt><dd>1962年（昭和37年）4月</dd>
+        <dt>設立</dt><dd>1976年（昭和51年）3月</dd>
+        <dt>代表者</dt><dd>代表取締役 篠原 徹三</dd>
+        <dt>資本金</dt><dd>5,000万円</dd>
+        <dt>従業員数</dt><dd>42名（2025年4月現在）</dd>
+        <dt>本社</dt><dd>〒144-0052 東京都大田区蒲田X-XX-X<br>TEL: 03-37XX-XXXX / FAX: 03-37XX-XXXX</dd>
+        <dt>第二工場</dt><dd>〒144-0035 東京都大田区南蒲田X-X-X<br>（5軸マシニング・自動化セル専用）</dd>
+        <dt>事業内容</dt><dd>精密金属加工 / 治工具設計・製作 / 試作品開発 / 三次元測定検査</dd>
+        <dt>取引銀行</dt><dd>三菱UFJ銀行 蒲田支店 / 城南信用金庫 大森支店 / 商工組合中央金庫</dd>
+        <dt>主要取引先</dt><dd>大手航空宇宙メーカー、半導体製造装置メーカー、医療機器メーカー、自動車部品メーカー 各社（順不同・敬称略）</dd>
+        <dt>認証</dt><dd>ISO 9001 / JIS Q 9100 / ISO 13485 / ISO 14001</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUIT -->
+<section id="recruit">
+  <div class="recruit-inner">
+    <div class="recruit-card">
+      <div class="recruit-img"></div>
+      <div class="recruit-body">
+        <span class="sec-num" style="color:var(--muted);">— 08 / WE'RE HIRING</span>
+        <span class="h2-en">RECRUIT</span>
+        <h2 class="h2">未来の<span class="accent" style="color:var(--accent);">職人</span>を、<br>募集しています。</h2>
+        <p class="lead">
+          篠原精機は、若手の育成に本気で取り組む町工場です。<br>
+          未経験者向けの教育プログラム、技能士資格取得支援、海外研修制度など、<br>
+          ものづくりに本気で向き合いたい方を、全力でバックアップします。
+        </p>
+        <div class="recruit-jobs">
+          <div class="recruit-job">
+            <h6>機械加工オペレーター</h6>
+            <p class="salary">¥240,000〜<small>/月（経験考慮）</small></p>
+          </div>
+          <div class="recruit-job">
+            <h6>CAD/CAMエンジニア</h6>
+            <p class="salary">¥280,000〜<small>/月（経験考慮）</small></p>
+          </div>
+          <div class="recruit-job">
+            <h6>品質保証スタッフ</h6>
+            <p class="salary">¥260,000〜<small>/月（経験考慮）</small></p>
+          </div>
+          <div class="recruit-job">
+            <h6>営業・カスタマーサクセス</h6>
+            <p class="salary">¥270,000〜<small>/月（経験考慮）</small></p>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-primary">採用情報を詳しく見る <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div style="text-align:center;max-width:780px;margin:0 auto;">
+    <span class="sec-num">— 09 / FAQ</span>
+    <p class="sec-label" style="justify-content:center;">Frequently Asked</p>
+    <span class="h2-en">FAQ</span>
+    <h2 class="h2">よくある<span class="accent">ご質問</span>。</h2>
+  </div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <div class="faq-q">試作1個からでも依頼できますか？</div>
+      <div class="faq-a">はい、もちろんです。試作1個でのご依頼も歓迎しております。むしろ「これから量産検討に入る」というフェーズの試作こそ、当社の経験がもっとも活きる領域です。設計者の方と直接やりとりしながら、現実的な加工方法・コストダウン提案までを行います。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">図面はどの形式で送ればよいですか？</div>
+      <div class="faq-a">PDF・DXF・DWG・STEP・IGES・Parasolid、いずれの形式でも対応可能です。3Dデータがあるとお見積もりがより正確になりますが、手描きのスケッチからでも対応いたします。NDA（守秘義務契約）は事前にお送りいただければ即日締結いたします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">難削材（チタン・インコネルなど）も加工できますか？</div>
+      <div class="faq-a">はい、得意領域です。チタン合金（Ti-6Al-4V等）、インコネル718、ハステロイ、SUS630、超硬合金などの難削材加工は、年間1,000件以上の実績があります。航空宇宙・医療機器分野での要求精度に対応した加工条件のノウハウを蓄積しています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">納期はどのくらいかかりますか？</div>
+      <div class="faq-a">案件規模・難度によりますが、試作品であれば最短4営業日から対応可能です。量産品については、月産数千個の安定供給体制も整っています。短納期・特急対応もご相談ください（追加費用が発生する場合があります）。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">工場見学は可能ですか？</div>
+      <div class="faq-a">はい、事前にご予約いただければ、本社工場・第二工場ともにご見学いただけます。設計者・購買担当者の方が現場をご覧になることで、加工の難度や品質体制のご理解が深まり、その後のお取引もスムーズになります。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">海外への輸出にも対応していますか？</div>
+      <div class="faq-a">対応可能です。北米・欧州・アジア圏への輸出実績があり、英文の図面・検査成績書発行、輸出梱包、フォワーダー手配までワンストップで対応いたします。輸出関連書類も英文で準備いたします。</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div>
+      <span class="h2-en">CONTACT US</span>
+      <h2 class="h2">図面が手元にあれば、<br>あとは<span style="border-bottom:4px solid #fff;">私たちに</span>。</h2>
+      <p>
+        どこに頼んでも「うちでは難しい」と言われた図面ほど、<br>
+        まずは私たちにご相談ください。<br>
+        見積もり・技術相談・NDA締結、すべて無料・即日対応します。
+      </p>
+    </div>
+    <div class="cta-card">
+      <p class="latin">▸ FREE ESTIMATE</p>
+      <h4>お見積もり完全無料・48時間以内に回答</h4>
+      <div class="cta-tel">
+        <small>▸ TEL</small>
+        <strong>03-37XX-XXXX</strong>
+        <span>受付：平日 8:30 - 18:00 / 土曜は事前予約制</span>
+      </div>
+      <a href="#contact" class="btn">フォームから相談する <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block" id="contact">
+  <div style="text-align:center;max-width:780px;margin:0 auto 56px;">
+    <span class="sec-num">— 10 / CONTACT</span>
+    <p class="sec-label" style="justify-content:center;">Get in Touch</p>
+    <span class="h2-en">CONTACT</span>
+    <h2 class="h2">お見積もり・<span class="accent">お問い合わせ</span>。</h2>
+    <p class="lead" style="margin:0 auto;">
+      図面・3Dデータをお送りいただければ、48時間以内にお見積もりをご回答いたします。<br>
+      技術的な相談だけでも歓迎です。
+    </p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <p class="lab">Address</p>
+        <p class="val">〒144-0052<br>東京都大田区蒲田X-XX-X<br>篠原精機ビル</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="lab">2nd Plant</p>
+        <p class="val">〒144-0035<br>東京都大田区南蒲田X-X-X</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="lab">Tel</p>
+        <p class="val">03-37XX-XXXX<br><span style="font-size:12px;color:var(--muted);">受付：平日 8:30 - 18:00</span></p>
+      </div>
+      <div class="contact-info-block">
+        <p class="lab">Email</p>
+        <p class="val">contact@shinohara-seiki.example.jp</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="lab">Access</p>
+        <p class="val">JR京浜東北線「蒲田駅」より徒歩7分<br>京急本線「京急蒲田駅」より徒歩10分</p>
+      </div>
+      <div class="contact-info-block">
+        <p class="lab">Hours</p>
+        <p class="val">平日 8:30 - 18:00<br>土曜 9:00 - 17:00（要予約）<br>日祝休</p>
+      </div>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('これはデモサイトのため、実際の送信は行われません。');">
+      <div class="form-row">
+        <label>会社名 <em>*</em></label>
+        <input type="text" placeholder="株式会社〇〇" required>
+      </div>
+      <div class="form-row">
+        <label>ご担当者名 <em>*</em></label>
+        <input type="text" placeholder="山田 太郎" required>
+      </div>
+      <div class="form-row">
+        <label>メール <em>*</em></label>
+        <input type="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="form-row">
+        <label>電話番号</label>
+        <input type="tel" placeholder="03-XXXX-XXXX">
+      </div>
+      <div class="form-row">
+        <label>業種 <em>*</em></label>
+        <select required>
+          <option value="">選択してください</option>
+          <option>航空宇宙</option>
+          <option>医療機器</option>
+          <option>半導体製造装置</option>
+          <option>自動車・モビリティ</option>
+          <option>装置・FA機器</option>
+          <option>研究機関・大学</option>
+          <option>個人事業・スタートアップ</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>お問い合わせ種別 <em>*</em></label>
+        <select required>
+          <option value="">選択してください</option>
+          <option>お見積もり依頼</option>
+          <option>技術相談・実現可否</option>
+          <option>工場見学のご希望</option>
+          <option>NDA締結のご相談</option>
+          <option>採用について</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-row full">
+        <label>ご相談内容 <em>*</em></label>
+        <textarea placeholder="部品名・材質・数量・希望納期など、わかる範囲でお聞かせください。図面は次の画面で添付できます。" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">▸ 無料お見積もりを依頼する</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="nav-logo">S</span>
+          <div>
+            <strong>篠原精機株式会社</strong>
+            <small>SHINOHARA SEIKI CO., LTD.</small>
+          </div>
+        </div>
+        <p>1962年創業。東京・大田の町工場として、三代にわたり航空宇宙・医療機器・半導体製造装置向けの精密金属加工を手がけてまいりました。</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#services">5軸マシニング加工</a></li>
+          <li><a href="#services">ワイヤー放電加工</a></li>
+          <li><a href="#services">精密研削加工</a></li>
+          <li><a href="#services">微細・極小加工</a></li>
+          <li><a href="#services">三次元測定検査</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#about">会社案内</a></li>
+          <li><a href="#spec">設備一覧</a></li>
+          <li><a href="#works">加工事例</a></li>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#recruit">採用情報</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>03-37XX-XXXX</li>
+          <li>contact@shinohara-seiki.example.jp</li>
+          <li>〒144-0052 東京都大田区蒲田X-XX-X</li>
+          <li>平日 8:30 - 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SHINOHARA SEIKI CO., LTD. All rights reserved. — designed by LE CIEL WEB DESIGN</span>
+      <a href="../index.html" class="footer-back">← LE CIEL WEB DESIGN へ戻る</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('#faqList .faq-item').forEach(item=>{
+    item.addEventListener('click',()=>item.classList.toggle('open'));
+  });
+  const tog=document.querySelector('.nav-toggle'),menu=document.querySelector('.nav-menu');
+  if(tog)tog.addEventListener('click',()=>{menu.style.display=menu.style.display==='flex'?'':'flex';menu.style.flexDirection='column';menu.style.position='absolute';menu.style.top='80px';menu.style.left='0';menu.style.right='0';menu.style.background='var(--bg)';menu.style.padding='24px';menu.style.borderBottom='1px solid var(--line)';});
+</script>
+</body>
+</html>

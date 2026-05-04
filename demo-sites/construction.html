@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大樹建設株式会社｜建設業サンプルサイト｜LE CIEL WEB DESIGN</title>
+<meta name="description" content="LE CIEL WEB DESIGNの建設業向け制作事例。大樹建設株式会社｜地域に根ざした総合建設会社の信頼を伝えるデモサイトです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Noto+Serif+JP:wght@400;500;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d1418;
+    --ink-soft: #1f2a30;
+    --bg: #f4f1ea;
+    --bg-warm: #ebe5d6;
+    --bg-deep: #d8d0bc;
+    --steel: #3a4a52;
+    --steel-deep: #1f2a30;
+    --accent: #c2410c; /* construction orange */
+    --accent-deep: #9a3412;
+    --line: #c4bba8;
+    --muted: #6b6857;
+    --safety: #f59e0b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'Noto Serif JP', serif; }
+  .num-font { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.02em; }
+  .mono { font-family: 'DM Mono', monospace; letter-spacing: 0.08em; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+
+  /* ===== DEMO RIBBON ===== */
+  .demo-ribbon {
+    background: var(--steel-deep);
+    color: var(--bg);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+  }
+  .demo-ribbon a {
+    color: var(--safety);
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 12px;
+    border-bottom: 1px solid var(--safety);
+  }
+
+  /* ===== TOP BAR ===== */
+  .topbar {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 6px 0;
+    font-size: 12px;
+  }
+  .topbar-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  .topbar-left { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
+  .topbar-left span { display: inline-flex; align-items: center; gap: 8px; }
+  .topbar-left span::before { content: '●'; color: var(--accent); font-size: 8px; }
+  .topbar-right { display: flex; gap: 16px; align-items: center; }
+  .topbar-right a { text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+  .topbar-right a:hover { opacity: 1; }
+
+  /* ===== NAV ===== */
+  nav.site {
+    position: sticky;
+    top: 0;
+    background: rgba(244,241,234,0.96);
+    backdrop-filter: blur(12px);
+    z-index: 50;
+    border-bottom: 2px solid var(--ink);
+  }
+  .nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .nav-brand-mark {
+    width: 46px;
+    height: 46px;
+    background: var(--ink);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 22px;
+    position: relative;
+  }
+  .nav-brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border: 2px solid var(--accent);
+    transform: translate(4px, 4px);
+    z-index: -1;
+  }
+  .nav-brand-text .name {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+  }
+  .nav-brand-text .sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .nav-menu {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-menu a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-menu a:hover { color: var(--accent); }
+  .nav-menu a .lat {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+  .nav-cta-group { display: flex; gap: 8px; }
+  .nav-cta {
+    background: var(--accent);
+    color: var(--bg) !important;
+    padding: 14px 22px;
+    font-weight: 700 !important;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-cta:hover { background: var(--accent-deep) !important; color: var(--bg) !important; }
+  .nav-cta.line {
+    background: var(--ink);
+    color: var(--bg) !important;
+  }
+  .nav-cta.line:hover { background: var(--steel); color: var(--bg) !important; }
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+  .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--ink); margin: 6px 0; transition: 0.3s; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 720px;
+    background:
+      linear-gradient(180deg, rgba(13,20,24,0.7) 0%, rgba(13,20,24,0.4) 50%, rgba(13,20,24,0.85) 100%),
+      url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1200&fit=crop&q=80') center/cover;
+    color: var(--bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    background: var(--accent);
+    z-index: 2;
+  }
+  .hero-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 120px 32px 100px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    color: var(--safety);
+    margin-bottom: 28px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-transform: uppercase;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 36px;
+    height: 2px;
+    background: var(--safety);
+  }
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 84px);
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    margin-bottom: 36px;
+    max-width: 1100px;
+  }
+  .hero h1 .accent { color: var(--safety); }
+  .hero h1 .small { display: block; font-size: 0.45em; font-weight: 500; letter-spacing: 0.16em; color: var(--bg-warm); margin-top: 16px; opacity: 0.85; }
+  .hero-lead {
+    font-size: 17px;
+    line-height: 2.1;
+    max-width: 640px;
+    margin-bottom: 48px;
+    color: rgba(244,241,234,0.88);
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .btn-orange { background: var(--accent); color: var(--bg); }
+  .btn-orange:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(194,65,12,0.4); }
+  .btn-outline { background: transparent; color: var(--bg); border: 2px solid var(--bg); }
+  .btn-outline:hover { background: var(--bg); color: var(--ink); }
+  .btn-arrow { transition: transform 0.25s; font-size: 16px; }
+  .btn:hover .btn-arrow { transform: translateX(4px); }
+
+  .hero-stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--accent);
+    color: var(--bg);
+    z-index: 2;
+  }
+  .hero-stat {
+    padding: 28px 32px;
+    border-right: 1px solid rgba(244,241,234,0.18);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .hero-stat .num em { font-style: normal; font-size: 22px; margin-left: 4px; opacity: 0.85; }
+  .hero-stat p {
+    font-size: 12px;
+    line-height: 1.55;
+    letter-spacing: 0.04em;
+    opacity: 0.92;
+  }
+  .hero-stat p strong { display: block; font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+
+  /* ===== SECTION COMMON ===== */
+  section.block {
+    padding: 140px 32px;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-head {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+  .label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+  }
+  .label::before, .label::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 3.6vw, 50px);
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+    margin-bottom: 24px;
+  }
+  .h2 .accent { color: var(--accent); }
+  .lead {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ===== PHILOSOPHY ===== */
+  #philosophy {
+    background: var(--bg-warm);
+    padding: 140px 32px;
+    margin: 0;
+    max-width: none;
+    position: relative;
+    overflow: hidden;
+  }
+  #philosophy::before {
+    content: '創業 1958';
+    position: absolute;
+    top: 80px;
+    right: -40px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    color: rgba(13,20,24,0.04);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .phil-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+  .phil-image {
+    aspect-ratio: 4/5;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .phil-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 6px solid var(--accent);
+    transform: translate(20px, 20px);
+    z-index: -1;
+  }
+  .phil-image .badge {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 16px 22px;
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+  }
+  .phil-image .badge .num-font {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--safety);
+    display: block;
+    margin-top: 4px;
+  }
+  .phil-text .h2 { margin-bottom: 36px; }
+  .phil-text .lead { margin: 0 0 36px 0; }
+  .phil-sign {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .phil-sign-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .phil-sign-name span {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== SERVICES ===== */
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .service-card {
+    background: var(--bg-warm);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 4px solid var(--accent);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(13,20,24,0.1); }
+  .service-card .num-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--accent);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+  }
+  .service-card .num-big small {
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  .service-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+  .service-card p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .service-card ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .service-card li {
+    background: var(--bg);
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+  .service-card .more {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.2s;
+  }
+  .service-card .more:hover { gap: 14px; }
+
+  /* ===== WORKS ===== */
+  #works { background: var(--ink); color: var(--bg); padding: 140px 32px; margin: 0; max-width: none; }
+  .works-inner { max-width: 1320px; margin: 0 auto; }
+  .works-inner .label { color: var(--safety); }
+  .works-inner .label::before, .works-inner .label::after { background: var(--safety); }
+  .works-inner .h2 { color: var(--bg); }
+  .works-inner .h2 .accent { color: var(--safety); }
+  .works-inner .lead { color: rgba(244,241,234,0.8); }
+
+  .works-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .works-filter button {
+    background: rgba(244,241,234,0.08);
+    border: 1px solid rgba(244,241,234,0.2);
+    color: var(--bg);
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .works-filter button:hover, .works-filter button.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+  }
+
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .work-card {
+    background: var(--steel-deep);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s;
+    display: block;
+  }
+  .work-card:hover { transform: translateY(-4px); }
+  .work-card:hover .work-img-inner { transform: scale(1.05); }
+  .work-img {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+  }
+  .work-img-inner {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s;
+  }
+  .work-img-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+  .work-body { padding: 28px; }
+  .work-body .num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--safety);
+    letter-spacing: 0.16em;
+    margin-bottom: 12px;
+  }
+  .work-body h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--bg);
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
+  .work-meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4px 16px;
+    font-size: 12px;
+    color: rgba(244,241,234,0.7);
+    line-height: 1.85;
+    padding-top: 16px;
+    border-top: 1px solid rgba(244,241,234,0.1);
+  }
+  .work-meta dt { color: var(--safety); letter-spacing: 0.08em; }
+
+  .works-cta {
+    text-align: center;
+    margin-top: 64px;
+  }
+  .works-cta .btn { background: var(--bg); color: var(--ink); }
+  .works-cta .btn:hover { background: var(--safety); color: var(--ink); }
+
+  /* ===== STRENGTHS ===== */
+  #strengths { background: var(--bg); padding: 140px 32px; margin: 0; max-width: none; }
+  .str-inner { max-width: 1320px; margin: 0 auto; }
+  .str-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 0;
+  }
+  .str-card {
+    background: var(--bg-warm);
+    padding: 48px 36px;
+    position: relative;
+    border-top: 4px solid var(--accent);
+  }
+  .str-card .lat {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .str-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--ink);
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+  .str-card h3 .num-font {
+    color: var(--accent);
+    font-size: 30px;
+    margin-right: 8px;
+  }
+  .str-card p {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--ink-soft);
+  }
+  .str-card-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--accent);
+    color: var(--bg);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== FLOW ===== */
+  #flow {
+    background: var(--bg-warm);
+    padding: 140px 32px;
+    margin: 0;
+    max-width: none;
+  }
+  .flow-inner { max-width: 1320px; margin: 0 auto; }
+  .flow-list {
+    display: grid;
+    gap: 0;
+    counter-reset: step;
+  }
+  .flow-item {
+    display: grid;
+    grid-template-columns: 80px 200px 1fr auto;
+    gap: 40px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+  }
+  .flow-item:first-child { border-top: 1px solid var(--line); }
+  .flow-item .step {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+  }
+  .flow-item .step::before {
+    content: 'STEP ';
+    display: block;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .flow-item h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .flow-item p {
+    font-size: 14px;
+    line-height: 1.95;
+    color: var(--ink-soft);
+  }
+  .flow-item .duration {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .flow-item .duration strong {
+    display: block;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    font-size: 14px;
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== SAFETY ===== */
+  #safety {
+    background: var(--steel-deep);
+    color: var(--bg);
+    padding: 140px 32px;
+    margin: 0;
+    max-width: none;
+    position: relative;
+    overflow: hidden;
+  }
+  #safety::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 60px,
+        rgba(245,158,11,0.04) 60px,
+        rgba(245,158,11,0.04) 80px
+      );
+    pointer-events: none;
+  }
+  .safety-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .safety-inner .label { color: var(--safety); }
+  .safety-inner .label::before, .safety-inner .label::after { background: var(--safety); }
+  .safety-inner .h2 { color: var(--bg); }
+  .safety-inner .h2 .accent { color: var(--safety); }
+  .safety-inner .lead { color: rgba(244,241,234,0.78); }
+
+  .safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 80px;
+    align-items: center;
+  }
+  .safety-image {
+    aspect-ratio: 4/3;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .safety-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 4px solid var(--safety);
+    transform: translate(20px, 20px);
+  }
+  .safety-list { display: flex; flex-direction: column; gap: 24px; }
+  .safety-item {
+    background: rgba(244,241,234,0.04);
+    padding: 28px 32px;
+    border-left: 4px solid var(--safety);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .safety-item .ico {
+    width: 44px;
+    height: 44px;
+    background: var(--safety);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .safety-item h4 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--bg);
+    margin-bottom: 8px;
+  }
+  .safety-item p {
+    font-size: 13px;
+    line-height: 1.85;
+    color: rgba(244,241,234,0.72);
+  }
+
+  .certs {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    padding: 32px;
+    background: rgba(244,241,234,0.04);
+    border: 1px dashed rgba(244,241,234,0.2);
+  }
+  .cert {
+    background: rgba(244,241,234,0.08);
+    color: var(--bg);
+    padding: 12px 20px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+  }
+  .cert strong { display: block; color: var(--safety); font-size: 11px; margin-bottom: 4px; letter-spacing: 0.18em; }
+
+  /* ===== VOICE ===== */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 0;
+  }
+  .voice-card {
+    background: var(--bg-warm);
+    padding: 40px 36px;
+    border-left: 4px solid var(--accent);
+    position: relative;
+  }
+  .voice-card .stars {
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+  .voice-card .title {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 19px;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+  .voice-card .quote {
+    font-size: 14px;
+    line-height: 2;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .voice-card .author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+  .voice-card .author strong { color: var(--ink); font-weight: 700; }
+  .voice-card .meta-tag {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 4px 10px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== HISTORY ===== */
+  #history { background: var(--bg-warm); padding: 140px 32px; margin: 0; max-width: none; }
+  .hist-inner { max-width: 1080px; margin: 0 auto; }
+  .hist-list { position: relative; padding-left: 56px; }
+  .hist-list::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: var(--line);
+  }
+  .hist-item {
+    position: relative;
+    padding: 20px 0 20px 36px;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  .hist-item::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 28px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--bg-warm);
+  }
+  .hist-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .hist-text h5 {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .hist-text p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+
+  /* ===== RECRUIT ===== */
+  #recruit {
+    background:
+      linear-gradient(180deg, rgba(13,20,24,0.85) 0%, rgba(13,20,24,0.7) 100%),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&h=900&fit=crop&q=80') center/cover;
+    color: var(--bg);
+    padding: 140px 32px;
+    margin: 0;
+    max-width: none;
+  }
+  .rec-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .rec-inner .label { color: var(--safety); }
+  .rec-inner .label::before, .rec-inner .label::after { background: var(--safety); }
+  .rec-inner .h2 { color: var(--bg); }
+  .rec-inner .h2 .accent { color: var(--safety); }
+  .rec-text p {
+    font-size: 16px;
+    line-height: 2.05;
+    color: rgba(244,241,234,0.85);
+    margin-bottom: 32px;
+  }
+  .rec-positions {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 36px;
+  }
+  .rec-pos {
+    background: rgba(244,241,234,0.08);
+    border: 1px solid rgba(244,241,234,0.18);
+    padding: 20px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: center;
+  }
+  .rec-pos h5 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .rec-pos h5 small { display: block; font-size: 11px; color: var(--safety); letter-spacing: 0.16em; margin-bottom: 4px; font-weight: 500; }
+  .rec-pos .type {
+    font-size: 12px;
+    background: rgba(244,241,234,0.12);
+    padding: 4px 12px;
+    letter-spacing: 0.08em;
+  }
+  .rec-pos .arrow {
+    font-size: 20px;
+    color: var(--safety);
+  }
+
+  /* ===== CONTACT ===== */
+  #contact {
+    background: var(--bg);
+    padding: 140px 32px;
+    margin: 0;
+    max-width: none;
+  }
+  .contact-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 64px;
+    margin-top: 64px;
+    align-items: start;
+  }
+  .contact-info-block {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+  }
+  .contact-info-block:first-child { border-top: 1px solid var(--line); }
+  .contact-info-block .lab {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--accent);
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+  .contact-info-block .val {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink);
+  }
+  .contact-info-block .val .big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--ink);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .contact-form {
+    background: var(--bg-warm);
+    padding: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 28px;
+  }
+  .form-row { display: flex; flex-direction: column; gap: 8px; }
+  .form-row.full { grid-column: span 2; }
+  .form-row label {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .form-row label em {
+    font-style: normal;
+    color: var(--accent);
+    margin-left: 4px;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 1px 6px;
+    font-size: 9px;
+  }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 14px 16px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus { border-color: var(--accent); }
+  .form-row textarea { min-height: 130px; resize: vertical; }
+  .form-submit {
+    grid-column: span 2;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 20px 32px;
+    border: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .form-submit:hover { background: var(--accent-deep); transform: translateY(-2px); }
+
+  /* ===== FAQ ===== */
+  .faq-list {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .faq-q {
+    padding: 28px 60px 28px 0;
+    position: relative;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.6;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+  }
+  .faq-q::before {
+    content: 'Q';
+    background: var(--accent);
+    color: var(--bg);
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    flex-shrink: 0;
+    letter-spacing: 0;
+  }
+  .faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 32px;
+    font-size: 28px;
+    color: var(--accent);
+    transition: transform 0.3s;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .faq-item.open .faq-q::after { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s, padding 0.3s;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.95;
+    padding: 0 0 0 52px;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+  }
+  .faq-a::before {
+    content: 'A';
+    background: var(--ink);
+    color: var(--bg);
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .faq-item.open .faq-a { max-height: 400px; padding: 0 0 28px 52px; }
+
+  /* ===== FOOTER ===== */
+  footer.site {
+    background: var(--ink);
+    color: rgba(244,241,234,0.75);
+    padding: 88px 32px 32px;
+  }
+  .footer-inner { max-width: 1320px; margin: 0 auto; }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(244,241,234,0.1);
+  }
+  .footer-brand .logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 24px;
+    color: var(--bg);
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-brand .logo-mark {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  .footer-brand .sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--safety);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+  .footer-brand p { font-size: 13px; line-height: 1.85; max-width: 320px; }
+  .footer-col h5 {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    color: var(--safety);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a { color: rgba(244,241,234,0.75); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--bg); }
+  .footer-bottom {
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(244,241,234,0.4);
+  }
+  .footer-back {
+    background: rgba(244,241,234,0.08);
+    color: var(--bg);
+    padding: 10px 22px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    transition: background 0.2s, color 0.2s;
+  }
+  .footer-back:hover { background: var(--accent); color: var(--bg); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1100px) {
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .hero-stat:nth-child(2) { border-right: none; }
+    .service-grid, .voice-grid { grid-template-columns: 1fr; }
+    .works-grid, .str-grid { grid-template-columns: 1fr 1fr; }
+    .phil-inner, .safety-grid, .rec-inner, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .flow-item { grid-template-columns: 70px 1fr; row-gap: 12px; }
+    .flow-item .step { grid-column: 1; grid-row: 1 / span 2; }
+    .flow-item h4 { grid-column: 2; }
+    .flow-item p { grid-column: 1 / -1; }
+    .flow-item .duration { grid-column: 1 / -1; text-align: left; }
+    .topbar-left { font-size: 11px; gap: 14px; }
+    .topbar-right { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    section.block, #philosophy, #works, #strengths, #flow, #safety, #history, #recruit, #contact { padding: 80px 22px; }
+    .nav-menu { display: none; }
+    .nav-toggle { display: block; }
+    .nav-cta-group .nav-cta:not(.line) { display: none; }
+    .hero { min-height: 580px; }
+    .hero-inner { padding: 80px 22px 200px; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+    .hero-stat { padding: 18px 16px; gap: 12px; }
+    .hero-stat .num { font-size: 38px; }
+    .hero-stat p { font-size: 11px; }
+    .hero-stat:nth-child(odd) { border-right: 1px solid rgba(244,241,234,0.18); }
+    .hero-stat:nth-child(2), .hero-stat:nth-child(4) { border-right: none; }
+    .hero-stat:nth-child(1), .hero-stat:nth-child(2) { border-bottom: 1px solid rgba(244,241,234,0.18); }
+    .works-grid, .str-grid { grid-template-columns: 1fr; }
+    .service-card { grid-template-columns: 1fr; gap: 20px; padding: 36px 28px; }
+    .service-card .num-big { font-size: 56px; }
+    .contact-form { padding: 32px 24px; grid-template-columns: 1fr; }
+    .form-row.full, .form-submit { grid-column: span 1; }
+    .rec-pos { grid-template-columns: 1fr auto; gap: 12px; }
+    .rec-pos .arrow { display: none; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
+    .topbar-inner { padding: 0 22px; }
+    .nav-inner { padding: 14px 22px; }
+    .nav-brand-text .name { font-size: 15px; }
+    .h2 { font-size: 28px; }
+    .hero h1 { font-size: 36px; }
+    .hist-list { padding-left: 32px; }
+    .hist-item { grid-template-columns: 1fr; gap: 8px; padding-left: 24px; }
+    .hist-item::before { left: -24px; }
+    .hist-list::before { left: 8px; }
+    .hist-year { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- DEMO RIBBON -->
+<div class="demo-ribbon">
+  これはLE CIEL WEB DESIGNの自主制作デモサイトです。
+  <a href="../index.html">制作サイトへ戻る →</a>
+</div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span>本社：埼玉県川越市</span>
+      <span>営業時間：平日 8:00-18:00</span>
+      <span>創業 1958年（昭和33年）</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">採用情報</a>
+      <a href="#">資料ダウンロード</a>
+      <a href="#">English</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="site">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-mark">大</div>
+      <div class="nav-brand-text">
+        <p class="name">大樹建設株式会社</p>
+        <p class="sub">TAIJU CONSTRUCTION CO., LTD.</p>
+      </div>
+    </a>
+    <ul class="nav-menu">
+      <li><a href="#philosophy"><span class="lat">ABOUT</span>会社案内</a></li>
+      <li><a href="#services"><span class="lat">SERVICES</span>事業内容</a></li>
+      <li><a href="#works"><span class="lat">WORKS</span>施工実績</a></li>
+      <li><a href="#strengths"><span class="lat">STRENGTH</span>強み</a></li>
+      <li><a href="#recruit"><span class="lat">RECRUIT</span>採用情報</a></li>
+    </ul>
+    <div class="nav-cta-group">
+      <a href="tel:0492000000" class="nav-cta line"><span>📞</span>お電話</a>
+      <a href="#contact" class="nav-cta">お問い合わせ →</a>
+    </div>
+    <button class="nav-toggle" aria-label="menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Since 1958 — TAIJU CONSTRUCTION</p>
+    <h1>
+      確かな技術と信頼で、<br>
+      地域の<span class="accent">百年</span>を支える。
+      <span class="small">大樹建設は、創業以来66年。<br>住まい・公共・産業を建てつづけてきた、川越の総合建設会社です。</span>
+    </h1>
+    <p class="hero-lead">
+      戸建て・店舗・公共施設・工場まで、設計から施工管理、アフターサービスまで一貫対応。<br>
+      職人の技と現場主義を大切に、お客様の「想い」を形にし続けます。
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-orange">無料相談・お見積り <span class="btn-arrow">→</span></a>
+      <a href="#works" class="btn btn-outline">施工実績を見る <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <p class="num">66<em>年</em></p>
+      <p><strong>創業1958年</strong>地域に根ざし、変わらず</p>
+    </div>
+    <div class="hero-stat">
+      <p class="num">2,400<em>件</em></p>
+      <p><strong>累計施工実績</strong>住宅から公共工事まで</p>
+    </div>
+    <div class="hero-stat">
+      <p class="num">98<em>%</em></p>
+      <p><strong>顧客満足度</strong>引渡し後アンケート結果</p>
+    </div>
+    <div class="hero-stat">
+      <p class="num">0<em>件</em></p>
+      <p><strong>重大労災</strong>10年連続無事故継続中</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="phil-inner">
+    <div class="phil-image" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&h=1100&fit=crop&q=80');">
+      <div class="badge">代表取締役<span class="num-font">大樹 一郎</span></div>
+    </div>
+    <div class="phil-text">
+      <p class="label">Philosophy</p>
+      <h2 class="h2">建てるのは建物ではなく、<br>そこで暮らす人の<span class="accent">未来</span>です。</h2>
+      <p class="lead">
+        建設は、図面通りに造るだけの仕事ではありません。<br>
+        その建物で誰が、どんな時間を過ごし、どんな未来を描くのか。<br>
+        私たちが見つめているのは、お客様の「これから」そのものです。<br><br>
+        昭和33年、川越の小さな大工集団から始まった私たちは、<br>
+        いまも変わらず「地域とともに、人とともに」を信条に、<br>
+        ひとつひとつの現場を、誠実に、丁寧に、積み重ねています。
+      </p>
+      <div class="phil-sign">
+        <div class="phil-sign-name">代表取締役社長　大樹 一郎<span>3代目／一級建築士・宅地建物取引士</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="block" id="services">
+  <div class="section-head">
+    <p class="label">Services</p>
+    <h2 class="h2">住まいから公共まで、<br>「建てる」のすべてを<span class="accent">ワンストップ</span>で。</h2>
+    <p class="lead">大樹建設は、設計・施工・施工管理・アフターメンテナンスまで自社一貫対応。下請け任せにしない、責任ある建設をお約束します。</p>
+  </div>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <div class="num-big">01<small>SERVICE</small></div>
+      <div>
+        <h3>住宅・新築工事</h3>
+        <p>木造・鉄骨造・RC造に対応した注文住宅。土地探しから資金計画、設計、施工管理、引渡後の定期点検まで、専任担当者が一貫してサポートします。</p>
+        <ul>
+          <li>注文住宅</li>
+          <li>建替え</li>
+          <li>二世帯住宅</li>
+          <li>長期優良住宅</li>
+          <li>耐震等級3</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="num-big">02<small>SERVICE</small></div>
+      <div>
+        <h3>店舗・商業施設</h3>
+        <p>飲食店・物販店・クリニック・オフィスなどの新築・改装。事業計画と運用動線を理解した、売上に貢献する空間設計をご提案します。</p>
+        <ul>
+          <li>新築店舗</li>
+          <li>居抜き改装</li>
+          <li>クリニック</li>
+          <li>オフィス</li>
+          <li>看板・サイン工事</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="num-big">03<small>SERVICE</small></div>
+      <div>
+        <h3>公共・産業施設</h3>
+        <p>学校・庁舎・福祉施設、工場・倉庫・物流センターなどの大規模建築。経営事項審査総合評定値930点超の信頼で、官公庁案件にも多数対応。</p>
+        <ul>
+          <li>学校・幼保施設</li>
+          <li>公民館・庁舎</li>
+          <li>工場・倉庫</li>
+          <li>物流センター</li>
+          <li>農業施設</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="num-big">04<small>SERVICE</small></div>
+      <div>
+        <h3>リフォーム・改修</h3>
+        <p>耐震補強、断熱改修、水回りリフォームから、大規模リノベーションまで。既存建物の価値を引き出し、暮らしや事業を次の段階へ進める改修を行います。</p>
+        <ul>
+          <li>フルリノベ</li>
+          <li>耐震補強</li>
+          <li>水回り</li>
+          <li>外装・屋根</li>
+          <li>原状回復</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="num-big">05<small>SERVICE</small></div>
+      <div>
+        <h3>土木・外構工事</h3>
+        <p>造成、擁壁、舗装、給排水工事、駐車場、エクステリアまで。建物本体だけでなく、敷地全体の使い勝手と耐久性を考えた施工を行います。</p>
+        <ul>
+          <li>造成・擁壁</li>
+          <li>舗装</li>
+          <li>給排水</li>
+          <li>外構・植栽</li>
+          <li>駐車場整備</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="num-big">06<small>SERVICE</small></div>
+      <div>
+        <h3>不動産・土地活用</h3>
+        <p>遊休地の活用提案から、賃貸住宅・店舗ビル・トランクルームの企画建設、運営サポートまで。グループ会社と連携し、収益不動産を一気通貫で支援します。</p>
+        <ul>
+          <li>賃貸住宅</li>
+          <li>店舗ビル</li>
+          <li>駐車場運営</li>
+          <li>収益試算</li>
+          <li>相続対策</li>
+        </ul>
+        <a href="#" class="more">サービス詳細を見る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works">
+  <div class="works-inner">
+    <div class="section-head">
+      <p class="label">Works</p>
+      <h2 class="h2">2,400件超の<span class="accent">施工実績</span>。<br>地域に建ちつづけた66年。</h2>
+      <p class="lead">創業以来、川越をはじめ埼玉県内・東京都内で2,400件以上を施工。代表的な実績の一部をご紹介します。</p>
+    </div>
+
+    <div class="works-filter" id="worksFilter">
+      <button class="active" data-cat="all">すべて</button>
+      <button data-cat="house">住宅・新築</button>
+      <button data-cat="shop">店舗・商業</button>
+      <button data-cat="public">公共・産業</button>
+      <button data-cat="reform">リフォーム</button>
+    </div>
+
+    <div class="works-grid" id="worksGrid">
+      <a href="#" class="work-card" data-cat="house">
+        <div class="work-img">
+          <span class="work-img-tag">住宅・新築</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2412 / 2024年完工</p>
+          <h4>木造2階建て・耐震等級3の家｜川越市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>木造軸組／2階建て</dd>
+            <dt>延床</dt><dd>132.48㎡</dd>
+            <dt>工期</dt><dd>5ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+
+      <a href="#" class="work-card" data-cat="shop">
+        <div class="work-img">
+          <span class="work-img-tag">店舗・商業</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2387 / 2024年完工</p>
+          <h4>地域密着型クリニック新築工事｜所沢市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>鉄骨造／2階建て</dd>
+            <dt>延床</dt><dd>284.5㎡</dd>
+            <dt>工期</dt><dd>7ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+
+      <a href="#" class="work-card" data-cat="public">
+        <div class="work-img">
+          <span class="work-img-tag">公共・産業</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1565514020179-026b92b84bb6?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2356 / 2023年完工</p>
+          <h4>市立第二小学校 体育館改築工事｜川越市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>RC造＋鉄骨造</dd>
+            <dt>延床</dt><dd>1,240㎡</dd>
+            <dt>工期</dt><dd>14ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+
+      <a href="#" class="work-card" data-cat="house">
+        <div class="work-img">
+          <span class="work-img-tag">住宅・新築</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2340 / 2023年完工</p>
+          <h4>暮らしを楽しむ平屋住宅｜狭山市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>木造平屋</dd>
+            <dt>延床</dt><dd>98.6㎡</dd>
+            <dt>工期</dt><dd>4ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+
+      <a href="#" class="work-card" data-cat="public">
+        <div class="work-img">
+          <span class="work-img-tag">公共・産業</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1565514157293-ec6a5c1bdc55?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2298 / 2023年完工</p>
+          <h4>食品工場 新築・冷蔵設備工事｜入間市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>鉄骨造／2階建て</dd>
+            <dt>延床</dt><dd>2,840㎡</dd>
+            <dt>工期</dt><dd>11ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+
+      <a href="#" class="work-card" data-cat="reform">
+        <div class="work-img">
+          <span class="work-img-tag">リフォーム</span>
+          <div class="work-img-inner" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&h=700&fit=crop&q=80');"></div>
+        </div>
+        <div class="work-body">
+          <p class="num">No. 2275 / 2023年完工</p>
+          <h4>築40年戸建てのフルリノベーション｜さいたま市</h4>
+          <dl class="work-meta">
+            <dt>構造</dt><dd>木造2階建て</dd>
+            <dt>規模</dt><dd>耐震・断熱・水回り</dd>
+            <dt>工期</dt><dd>3ヶ月</dd>
+          </dl>
+        </div>
+      </a>
+    </div>
+
+    <div class="works-cta">
+      <a href="#" class="btn btn-orange">すべての施工実績を見る <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+  <div class="str-inner">
+    <div class="section-head">
+      <p class="label">Our Strengths</p>
+      <h2 class="h2">大樹建設が、<br>地域に<span class="accent">選ばれ続ける</span>5つの理由。</h2>
+      <p class="lead">単なる施工会社ではなく、地域の「建てるを担うパートナー」として、私たちが大切にしている強みです。</p>
+    </div>
+    <div class="str-grid">
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L19.45 8 12 11.82 4.55 8 12 4.18zM4 9.5l7 3.55v7.4L4 16.5v-7zm9 10.95v-7.4l7-3.55v7l-7 3.95z" fill="currentColor"/></svg>
+        </div>
+        <p class="lat">REASON 01</p>
+        <h3><span class="num-font">01</span>自社一貫体制</h3>
+        <p>営業、設計、施工管理、アフターまで自社の人材で対応。中間業者を挟まないため、コミュニケーションの齟齬や責任の所在の曖昧さがありません。</p>
+      </div>
+
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" fill="currentColor"/></svg>
+        </div>
+        <p class="lat">REASON 02</p>
+        <h3><span class="num-font">02</span>耐震・耐久性能</h3>
+        <p>全棟標準で耐震等級3相当の構造計算を実施。許容応力度計算による裏付けを行い、地震に強く、長く住める家づくりを徹底しています。</p>
+      </div>
+
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 11H7v8h2v-8zm4-4h-2v12h2V7zm4 7h-2v5h2v-5zm2.5 7h-15c-.83 0-1.5-.67-1.5-1.5v-15C3 3.67 3.67 3 4.5 3h15c.83 0 1.5.67 1.5 1.5v15c0 .83-.67 1.5-1.5 1.5z" stroke="currentColor" fill="none" stroke-width="1.6"/></svg>
+        </div>
+        <p class="lat">REASON 03</p>
+        <h3><span class="num-font">03</span>明朗な見積り</h3>
+        <p>項目別・数量・単価を全て開示する透明な見積り。追加変更が発生した場合も書面でご説明し、ご了承を得てから着手します。</p>
+      </div>
+
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/></svg>
+        </div>
+        <p class="lat">REASON 04</p>
+        <h3><span class="num-font">04</span>専任ワンチーム</h3>
+        <p>1案件1チーム制。一級建築士・施工管理技士・大工棟梁・営業担当が、引渡しまで同じチームで担当。窓口の一本化で安心です。</p>
+      </div>
+
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/></svg>
+        </div>
+        <p class="lat">REASON 05</p>
+        <h3><span class="num-font">05</span>長期保証＋点検</h3>
+        <p>構造躯体・防水ともに最長35年保証。引渡後は1ヶ月、6ヶ月、1年、2年、5年、10年、以降5年ごとに無償点検を実施しています。</p>
+      </div>
+
+      <div class="str-card">
+        <div class="str-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M21 11h-3.17l2.54-2.54L19 7l-4 4-4-4-1.37 1.46L12.17 11H6.83l2.54-2.54L8 7l-4 4 4 4 1.37-1.46L6.83 11h5.34l-2.54 2.54L11 15l4-4 4 4 1.37-1.46L17.83 13H21v-2z" fill="currentColor" transform="rotate(45 12 12)"/></svg>
+        </div>
+        <p class="lat">REASON 06</p>
+        <h3><span class="num-font">06</span>地域密着66年</h3>
+        <p>本社川越から半径30km以内をフィールドに。地盤、気候、行政手続き、地元職人ネットワークを熟知し、トラブルの少ない現場運営を実現します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="flow-inner">
+    <div class="section-head">
+      <p class="label">Flow</p>
+      <h2 class="h2">ご相談から引渡しまで、<br><span class="accent">7つのステップ</span>。</h2>
+      <p class="lead">大樹建設の家づくり・建てづくりは、お客様にとって人生最大級のプロジェクトです。だからこそ、迷いと不安をなくす設計プロセスにこだわっています。</p>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item">
+        <p class="step">01</p>
+        <h4>無料ご相談・ヒアリング</h4>
+        <p>暮らし方、ご家族構成、ご予算、土地のご状況、お困りごとを丁寧にお伺いします。すぐに契約をお願いすることはありません。</p>
+        <p class="duration">所要：約60-90分<strong>ご来場/オンライン</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">02</p>
+        <h4>敷地調査・概算プラン</h4>
+        <p>現地調査、法規確認のうえ、ラフプランと概算見積りをご提示。判断材料がそろってから、本契約のご検討に進めます。</p>
+        <p class="duration">期間：2-3週間<strong>無料</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">03</p>
+        <h4>設計契約・詳細設計</h4>
+        <p>設計契約後、間取り、仕様、設備、外観イメージを詰めていきます。ショールーム見学やCGプレビューもご用意しています。</p>
+        <p class="duration">期間：2-3ヶ月<strong>建築士同行</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">04</p>
+        <h4>工事請負契約・確認申請</h4>
+        <p>最終仕様・最終見積りを書面でご確認いただき、正式契約。建築確認申請から着工まで一貫してサポートいたします。</p>
+        <p class="duration">期間：1-2ヶ月<strong>書面契約</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">05</p>
+        <h4>地鎮祭・着工</h4>
+        <p>着工に先立ち地鎮祭を行います（任意）。着工後は週次で進捗写真と工程をご報告し、現場見学もいつでも歓迎です。</p>
+        <p class="duration">期間：4-12ヶ月<strong>専任現場監督</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">06</p>
+        <h4>竣工・お引渡し</h4>
+        <p>社内検査・第三者機関検査・施主検査の3段階で品質を確認。鍵の引渡しと取扱説明を経て、新しい暮らしのスタートです。</p>
+        <p class="duration">所要：1日<strong>取扱説明込み</strong></p>
+      </div>
+      <div class="flow-item">
+        <p class="step">07</p>
+        <h4>アフター・定期点検</h4>
+        <p>引渡し後も、最長35年の長期保証と、定期無償点検でサポート。リフォーム・メンテナンスもいつでもご相談ください。</p>
+        <p class="duration">期間：35年保証<strong>定期点検あり</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY -->
+<section id="safety">
+  <div class="safety-inner">
+    <div class="section-head">
+      <p class="label">Quality &amp; Safety</p>
+      <h2 class="h2">"建てて終わり"にしないための、<br><span class="accent">品質管理と安全管理</span>。</h2>
+      <p class="lead">建設現場の品質と安全は、すべての出発点です。大樹建設は、社員と協力会社が一体となって、無事故・高品質の現場運営を継続しています。</p>
+    </div>
+
+    <div class="safety-grid">
+      <div class="safety-image" style="background-image:url('https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=900&h=700&fit=crop&q=80');"></div>
+      <div class="safety-list">
+        <div class="safety-item">
+          <div class="ico">01</div>
+          <div>
+            <h4>第三者機関による品質検査</h4>
+            <p>JIO（日本住宅保証検査機構）等による、基礎・構造・防水・完成の4段階検査を実施。社内検査だけに依存しない品質を担保します。</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <div class="ico">02</div>
+          <div>
+            <h4>10年連続 重大労災ゼロ</h4>
+            <p>毎朝のKY活動（危険予知）、月次安全パトロール、四半期ごとの安全大会を継続。協力会社とともに「事故ゼロ」を文化にしています。</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <div class="ico">03</div>
+          <div>
+            <h4>ISO 9001 / 14001 認証取得</h4>
+            <p>品質マネジメントシステム（ISO 9001）と環境マネジメントシステム（ISO 14001）の両方を取得・継続更新中。継続的改善を仕組みで担保します。</p>
+          </div>
+        </div>
+        <div class="safety-item">
+          <div class="ico">04</div>
+          <div>
+            <h4>BIM/ICT活用による施工管理</h4>
+            <p>3次元モデル（BIM）と現場ICTツールを導入。設計から施工まで情報を一元化し、手戻りや認識違いを最小限に抑えています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="certs">
+      <div class="cert"><strong>建設業許可</strong>埼玉県知事許可（特-3）第00000号<br>土木・建築・大工・とび土工・鋼構造物・舗装・しゅんせつ・板金・ガラス・塗装・防水・内装仕上・機械器具設置・電気・管・通信・水道施設・消防施設・解体</div>
+      <div class="cert"><strong>登録</strong>一級建築士事務所 埼玉県知事登録<br>第00000号</div>
+      <div class="cert"><strong>認証</strong>ISO 9001:2015<br>ISO 14001:2015</div>
+      <div class="cert"><strong>経審</strong>総合評定値（P）<br>930点（土木）／945点（建築）</div>
+      <div class="cert"><strong>加盟</strong>埼玉県建設業協会／川越商工会議所<br>JIO住宅瑕疵担保責任保険／日本ERI</div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="block" id="voice">
+  <div class="section-head">
+    <p class="label">Customer Voice</p>
+    <h2 class="h2">お客様から<br>いただいた<span class="accent">声</span>。</h2>
+    <p class="lead">引渡し後にいただいた、お客様アンケートの声の一部をご紹介します。</p>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <p class="stars">★ ★ ★ ★ ★</p>
+      <p class="title">「予算オーバーを正直に伝えてくれて安心」</p>
+      <p class="quote">他社では夢のような提案をされて舞い上がっていましたが、大樹建設さんは初回で「このままでは予算を200万超えます」と正直に教えてくれました。優先順位を一緒に整理してくれて、結果的に予算内で満足のいく家になりました。</p>
+      <div class="author"><strong>K.T 様</strong><span class="meta-tag">注文住宅 / 川越市</span></div>
+    </div>
+    <div class="voice-card">
+      <p class="stars">★ ★ ★ ★ ★</p>
+      <p class="title">「現場が綺麗で、職人さんに気品があった」</p>
+      <p class="quote">毎日のように現場を見に行きましたが、整理整頓が行き届いていて、職人さんもみな挨拶をしてくれました。"建物の品質は現場の品質"と聞きますが、本当にその通りだと感じています。</p>
+      <div class="author"><strong>M.S 様</strong><span class="meta-tag">注文住宅 / 狭山市</span></div>
+    </div>
+    <div class="voice-card">
+      <p class="stars">★ ★ ★ ★ ★</p>
+      <p class="title">「クリニック開業まで二人三脚で支えてくれた」</p>
+      <p class="quote">医療機器の搬入動線、患者様の動線、感染症対策、駐車場…医療コンサルでも気付かなかった配慮を、現場で何度も提案してくれました。開業から3年、今もメンテナンスでお世話になっています。</p>
+      <div class="author"><strong>N歯科クリニック様</strong><span class="meta-tag">店舗新築 / 所沢市</span></div>
+    </div>
+    <div class="voice-card">
+      <p class="stars">★ ★ ★ ★ ★</p>
+      <p class="title">「親身に父の代から、家族のように」</p>
+      <p class="quote">父が建てた家を、息子の私が建て替えました。創業当時から3代続けて担当してくれていることを聞き、とても感慨深かったです。図面の保管や定期点検記録もしっかり残っていて、本当に頼りになります。</p>
+      <div class="author"><strong>Y.H 様</strong><span class="meta-tag">建替え / さいたま市</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="history">
+  <div class="hist-inner">
+    <div class="section-head">
+      <p class="label">Our History</p>
+      <h2 class="h2">川越の小さな大工集団から、<br><span class="accent">66年の歩み</span>。</h2>
+    </div>
+    <div class="hist-list">
+      <div class="hist-item">
+        <p class="hist-year num-font">1958</p>
+        <div class="hist-text">
+          <h5>創業</h5>
+          <p>大樹工務店として、初代・大樹三郎が川越市内に大工集団を設立。地域の戸建て工事を中心に事業を開始。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">1972</p>
+        <div class="hist-text">
+          <h5>株式会社化・本社新築</h5>
+          <p>大樹建設株式会社に組織変更。川越市新宿町に本社を新築、社員数20名体制に。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">1985</p>
+        <div class="hist-text">
+          <h5>建設業許可（特定）取得</h5>
+          <p>特定建設業許可を取得し、公共工事への参画を開始。学校・公民館等の地域施設を多数受注。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">2003</p>
+        <div class="hist-text">
+          <h5>2代目社長就任・ISO認証取得</h5>
+          <p>大樹次郎が代表取締役に就任。ISO 9001を取得し、品質マネジメントの仕組み化を推進。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">2014</p>
+        <div class="hist-text">
+          <h5>累計施工2,000件突破</h5>
+          <p>累計施工件数2,000件突破。住宅事業部・建築事業部・土木事業部の3部門体制に再編。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">2020</p>
+        <div class="hist-text">
+          <h5>3代目社長就任・BIM全面導入</h5>
+          <p>大樹一郎が代表取締役社長に就任。設計・施工管理にBIMとICT施工を全面導入し、デジタル基盤を刷新。</p>
+        </div>
+      </div>
+      <div class="hist-item">
+        <p class="hist-year num-font">2024</p>
+        <div class="hist-text">
+          <h5>創業66年・累計施工2,400件</h5>
+          <p>働き方改革・脱炭素・地域共創をテーマに、ZEH住宅やゼロカーボン建築事業を推進中。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="block" id="faq">
+  <div class="section-head">
+    <p class="label">FAQ</p>
+    <h2 class="h2">よくある<span class="accent">ご質問</span>。</h2>
+  </div>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <div class="faq-q">相談・見積りは無料ですか？</div>
+      <div class="faq-a">はい、ご相談から概算プラン、概算見積りの作成まで無料です。詳細設計に進む段階で「設計契約」を結ばせていただきます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">対応エリアはどこまでですか？</div>
+      <div class="faq-a">本社川越市から半径30km圏内（埼玉県中央〜西部、東京都北部多摩地域）を中心に対応しております。エリア外の場合もまずはご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">他社で見積りを取った後でも相談できますか？</div>
+      <div class="faq-a">もちろん歓迎です。他社の見積書をお持ちいただければ、内訳をお客様目線で読み解き、ご検討の判断材料をご提供します。相見積もりも遠慮なくお申し付けください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">予算がそれほどない場合でも依頼できますか？</div>
+      <div class="faq-a">ご予算の中でできる最良の提案をするのが私たちの仕事です。優先順位の整理、補助金・住宅ローン控除の活用、規模調整など、お客様と一緒に最適解を考えます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">土地探しから依頼できますか？</div>
+      <div class="faq-a">グループ会社の不動産部門と連携し、土地探しからの一括サポートが可能です。建築計画と並行して進めるため、無駄のない計画が立てられます。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">引渡し後のメンテナンスはどうなりますか？</div>
+      <div class="faq-a">構造躯体・防水ともに最長35年保証、引渡後10年間は無償の定期点検（1ヶ月・6ヶ月・1年・2年・5年・10年）を実施します。以降も5年ごとに有償点検でサポートを継続します。</div>
+    </div>
+  </div>
+</section>
+
+<!-- RECRUIT -->
+<section id="recruit">
+  <div class="rec-inner">
+    <div class="rec-text">
+      <p class="label">Recruit</p>
+      <h2 class="h2">建てる仕事の、<br><span class="accent">これから</span>を一緒に。</h2>
+      <p>大樹建設は、66年の伝統を受け継ぎながら、これからの建設業を変えていく仲間を募集しています。<br>BIM・ICT活用による働き方改革、若手の早期登用、産休育休復職率100%。「建設業＝きつい」のイメージを、私たちから変えていきます。</p>
+      <div class="rec-positions">
+        <a href="#" class="rec-pos">
+          <h5><small>POSITION 01</small>施工管理（建築・土木）</h5>
+          <span class="type">正社員 / 中途</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="rec-pos">
+          <h5><small>POSITION 02</small>建築設計（一級建築士）</h5>
+          <span class="type">正社員 / 中途</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="rec-pos">
+          <h5><small>POSITION 03</small>大工・職方（協力会社含む）</h5>
+          <span class="type">正社員 / 業務委託</span>
+          <span class="arrow">→</span>
+        </a>
+        <a href="#" class="rec-pos">
+          <h5><small>POSITION 04</small>営業・住宅アドバイザー</h5>
+          <span class="type">正社員 / 中途</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <a href="#" class="btn btn-orange">採用情報サイトを見る <span class="btn-arrow">→</span></a>
+    </div>
+    <div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="section-head">
+      <p class="label">Contact</p>
+      <h2 class="h2">まずは、<span class="accent">お気軽に</span>ご相談ください。</h2>
+      <p class="lead">資料請求・ご相談・お見積りのご依頼まで、すべて無料です。お電話・フォーム・LINEからお選びいただけます。</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-info-block">
+          <p class="lab">Phone</p>
+          <p class="val"><span class="big">049-200-0000</span>受付：平日 8:00 – 18:00<br>土日祝の対応もご相談ください</p>
+        </div>
+        <div class="contact-info-block">
+          <p class="lab">Email</p>
+          <p class="val">info@taiju-construction.co.jp<br><span style="font-size:12px;color:var(--muted);">通常2営業日以内にご返信いたします</span></p>
+        </div>
+        <div class="contact-info-block">
+          <p class="lab">Office</p>
+          <p class="val">〒350-0000<br>埼玉県川越市新宿町X-X-X<br>大樹ビル 1F・2F</p>
+        </div>
+        <div class="contact-info-block">
+          <p class="lab">Hours</p>
+          <p class="val">月〜金　8:00 – 18:00<br>土・日・祝　完全予約制</p>
+        </div>
+        <div class="contact-info-block">
+          <p class="lab">Access</p>
+          <p class="val">JR川越線「川越駅」西口より徒歩8分<br>関越自動車道「川越IC」より車で12分<br>来客駐車場8台あり</p>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('これはデモサイトのため、実際の送信は行われません。');">
+        <div class="form-row">
+          <label>お名前 <em>必須</em></label>
+          <input type="text" placeholder="山田 太郎" required>
+        </div>
+        <div class="form-row">
+          <label>会社名 / 屋号</label>
+          <input type="text" placeholder="株式会社〇〇">
+        </div>
+        <div class="form-row">
+          <label>電話番号 <em>必須</em></label>
+          <input type="tel" placeholder="049-XXX-XXXX" required>
+        </div>
+        <div class="form-row">
+          <label>メールアドレス <em>必須</em></label>
+          <input type="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-row">
+          <label>ご相談の種類 <em>必須</em></label>
+          <select required>
+            <option value="">選択してください</option>
+            <option>住宅・新築のご相談</option>
+            <option>店舗・商業施設のご相談</option>
+            <option>公共・産業施設のご相談</option>
+            <option>リフォーム・改修のご相談</option>
+            <option>土木・外構工事のご相談</option>
+            <option>不動産・土地活用のご相談</option>
+            <option>採用に関するご質問</option>
+            <option>その他</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>ご予算（任意）</label>
+          <select>
+            <option>未定 / 相談したい</option>
+            <option>〜1,000万円</option>
+            <option>1,000〜2,000万円</option>
+            <option>2,000〜3,500万円</option>
+            <option>3,500〜5,000万円</option>
+            <option>5,000万円以上</option>
+          </select>
+        </div>
+        <div class="form-row full">
+          <label>ご相談内容 <em>必須</em></label>
+          <textarea placeholder="現在の状況、ご希望のスケジュール、土地の有無などをお知らせいただけるとスムーズです。" required></textarea>
+        </div>
+        <div class="form-row full">
+          <label style="display:flex; align-items:center; gap:8px; cursor:pointer; color: var(--ink-soft); font-family: inherit; letter-spacing:0; text-transform:none;">
+            <input type="checkbox" required style="width:auto; padding:0; border:1px solid var(--line);">
+            <span style="font-size:13px;">プライバシーポリシーに同意します</span>
+          </label>
+        </div>
+        <button type="submit" class="form-submit">この内容で送信する　→</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="logo"><span class="logo-mark">大</span>大樹建設株式会社</p>
+        <p class="sub">TAIJU CONSTRUCTION CO., LTD.</p>
+        <p>創業1958年、川越の地に根ざした総合建設会社。住宅・店舗・公共・産業まで、あらゆる「建てる」をワンストップでお引き受けします。</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sitemap</h5>
+        <ul>
+          <li><a href="#philosophy">会社案内</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#works">施工実績</a></li>
+          <li><a href="#strengths">私たちの強み</a></li>
+          <li><a href="#flow">ご依頼の流れ</a></li>
+          <li><a href="#safety">品質・安全管理</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Information</h5>
+        <ul>
+          <li><a href="#recruit">採用情報</a></li>
+          <li><a href="#faq">よくあるご質問</a></li>
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">資料ダウンロード</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">サイトポリシー</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li>049-200-0000</li>
+          <li>info@taiju-construction.co.jp</li>
+          <li>〒350-0000<br>埼玉県川越市新宿町X-X-X</li>
+          <li>平日 8:00 – 18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TAIJU CONSTRUCTION Co., Ltd. All rights reserved. — designed by LE CIEL WEB DESIGN</span>
+      <a href="../index.html" class="footer-back">← LE CIEL WEB DESIGN へ戻る</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Works filter
+  const filterBtns = document.querySelectorAll('#worksFilter button');
+  const cards = document.querySelectorAll('#worksGrid .work-card');
+  filterBtns.forEach(b => b.addEventListener('click', () => {
+    filterBtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const cat = b.dataset.cat;
+    cards.forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
+    });
+  }));
+
+  // FAQ
+  document.querySelectorAll('#faqList .faq-item').forEach(item => {
+    item.addEventListener('click', () => item.classList.toggle('open'));
+  });
+
+  // Mobile nav
+  const tog = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.nav-menu');
+  if (tog) tog.addEventListener('click', () => {
+    if (menu.style.display === 'flex') {
+      menu.style.display = '';
+    } else {
+      menu.style.display = 'flex';
+      menu.style.flexDirection = 'column';
+      menu.style.position = 'absolute';
+      menu.style.top = '100%';
+      menu.style.left = '0';
+      menu.style.right = '0';
+      menu.style.background = 'var(--bg)';
+      menu.style.padding = '24px';
+      menu.style.borderBottom = '2px solid var(--ink)';
+      menu.style.gap = '20px';
+    }
+  });
+</script>
+
+</body>
+</html>

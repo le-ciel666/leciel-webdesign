@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Soleil | 代官山のスペシャルティコーヒー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; color: #1e1a14; background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 72px; padding: 0 52px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,253,248,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(30,26,20,0.07); }
+    .logo { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 0.06em; color: #1e1a14; font-style: italic; }
+    .logo span { display: block; font-family: 'Noto Sans JP'; font-style: normal; font-size: 9px; letter-spacing: 0.28em; color: #b89a6a; margin-top: 1px; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a { font-size: 13px; color: #6b5e4e; letter-spacing: 0.06em; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #1e1a14; }
+    .nav-btn { background: #1e1a14; color: #fff; padding: 10px 24px; font-size: 13px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; transition: background 0.2s; }
+    .nav-btn:hover { background: #3a2e20; }
+
+    /* HERO */
+    .hero { height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; overflow: hidden; }
+    .hero-visual { position: relative; overflow: hidden; }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; }
+    .hero-visual:hover img { transform: scale(1.04); }
+    .hero-visual-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(30,26,20,0.15) 0%, transparent 60%); }
+    .hero-badge { position: absolute; bottom: 32px; left: 32px; background: rgba(255,253,248,0.92); backdrop-filter: blur(8px); padding: 14px 20px; }
+    .hero-badge .num { font-family: 'Playfair Display', serif; font-size: 36px; color: #1e1a14; line-height: 1; }
+    .hero-badge .lbl { font-size: 10px; letter-spacing: 0.18em; color: #b89a6a; margin-top: 4px; }
+    .hero-text { background: #f7f2ea; display: flex; flex-direction: column; justify-content: center; padding: 80px 72px; }
+    .hero-eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+    .hero-eyebrow span { font-size: 11px; letter-spacing: 0.32em; color: #b89a6a; text-transform: uppercase; }
+    .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: #b89a6a; }
+    .hero-text h1 { font-family: 'Playfair Display', serif; font-size: 64px; line-height: 1.18; color: #1e1a14; margin-bottom: 28px; }
+    .hero-text h1 em { font-style: italic; color: #b89a6a; }
+    .hero-text p { font-size: 15px; color: #6b5e4e; line-height: 2.1; margin-bottom: 44px; max-width: 400px; }
+    .hero-actions { display: flex; gap: 14px; align-items: center; }
+    .btn-primary { background: #1e1a14; color: #fff; padding: 15px 36px; font-size: 13px; letter-spacing: 0.14em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; transition: all 0.3s; }
+    .btn-primary:hover { background: #3a2e20; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,26,20,0.2); }
+    .btn-ghost { background: transparent; color: #1e1a14; padding: 14px 36px; font-size: 13px; letter-spacing: 0.14em; border: 1px solid rgba(30,26,20,0.22); cursor: pointer; font-family: 'Noto Sans JP'; transition: all 0.2s; }
+    .btn-ghost:hover { background: #1e1a14; color: #fff; }
+
+    /* FEATURES */
+    .features { display: grid; grid-template-columns: repeat(3,1fr); background: #1e1a14; }
+    .feat { padding: 52px 44px; border-right: 1px solid rgba(255,255,255,0.07); }
+    .feat:last-child { border-right: none; }
+    .feat .num { font-family: 'Playfair Display', serif; font-size: 52px; color: #b89a6a; line-height: 1; margin-bottom: 14px; }
+    .feat h3 { font-size: 14px; font-weight: 500; color: #fff; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .feat p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.9; }
+
+    /* STORY */
+    .story { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+    .story-img { overflow: hidden; }
+    .story-img img { width: 100%; height: 100%; object-fit: cover; }
+    .story-text { background: #fff; padding: 90px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .story-text .en { font-size: 11px; letter-spacing: 0.32em; color: #b89a6a; text-transform: uppercase; margin-bottom: 16px; }
+    .story-text h2 { font-family: 'Playfair Display', serif; font-size: 46px; line-height: 1.3; margin-bottom: 28px; }
+    .story-text p { font-size: 14px; color: #6b5e4e; line-height: 2.1; margin-bottom: 20px; }
+    .divider { width: 36px; height: 1px; background: #b89a6a; margin: 32px 0; }
+    .story-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+    .tag { padding: 6px 16px; background: #f7f2ea; font-size: 12px; color: #6b5e4e; letter-spacing: 0.06em; border-radius: 100px; }
+
+    /* MENU */
+    .menu-sec { padding: 100px 52px; background: #f7f2ea; }
+    .menu-sec .inner { max-width: 1160px; margin: 0 auto; }
+    .sec-hd { margin-bottom: 64px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .sec-hd-left .en { font-size: 11px; letter-spacing: 0.32em; color: #b89a6a; text-transform: uppercase; margin-bottom: 12px; }
+    .sec-hd-left h2 { font-family: 'Playfair Display', serif; font-size: 42px; }
+    .menu-cats { display: flex; gap: 12px; }
+    .menu-cat { padding: 8px 20px; background: transparent; border: 1px solid rgba(30,26,20,0.15); font-size: 12px; letter-spacing: 0.08em; cursor: pointer; font-family: 'Noto Sans JP'; color: #6b5e4e; transition: all 0.2s; }
+    .menu-cat.active, .menu-cat:hover { background: #1e1a14; color: #fff; border-color: #1e1a14; }
+    .menu-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    .menu-card { background: #fff; overflow: hidden; transition: all 0.3s; }
+    .menu-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(30,26,20,0.1); }
+    .menu-card img { width: 100%; height: 200px; object-fit: cover; }
+    .menu-card-body { padding: 20px; }
+    .menu-card-body .cat { font-size: 10px; letter-spacing: 0.22em; color: #b89a6a; text-transform: uppercase; margin-bottom: 8px; }
+    .menu-card-body h3 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 8px; }
+    .menu-card-body p { font-size: 12px; color: #8a7a6a; line-height: 1.8; margin-bottom: 14px; }
+    .menu-card-body .price { font-family: 'Playfair Display', serif; font-size: 22px; color: #1e1a14; }
+
+    /* GALLERY */
+    .gallery { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 320px 320px; gap: 4px; }
+    .g-item { overflow: hidden; position: relative; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .g-item:hover img { transform: scale(1.07); }
+    .g-item.tall { grid-row: span 2; }
+    .g-overlay { position: absolute; inset: 0; background: rgba(30,26,20,0); transition: background 0.3s; display: flex; align-items: center; justify-content: center; }
+    .g-item:hover .g-overlay { background: rgba(30,26,20,0.25); }
+    .g-overlay span { color: #fff; font-size: 13px; letter-spacing: 0.18em; opacity: 0; transition: opacity 0.3s; text-transform: uppercase; }
+    .g-item:hover .g-overlay span { opacity: 1; }
+
+    /* CONCEPT STRIP */
+    .concept-strip { background: #b89a6a; padding: 60px 52px; display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; }
+    .cs-item { padding: 32px 28px; text-align: center; }
+    .cs-item .icon { font-size: 28px; margin-bottom: 14px; filter: grayscale(1) brightness(10); }
+    .cs-item h3 { font-size: 14px; font-weight: 500; color: #fff; letter-spacing: 0.06em; margin-bottom: 8px; }
+    .cs-item p { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+    /* SNS / INSTAGRAM */
+    .sns { padding: 80px 52px; background: #fff; }
+    .sns .inner { max-width: 1160px; margin: 0 auto; }
+    .sns-hd { text-align: center; margin-bottom: 44px; }
+    .sns-hd .en { font-size: 11px; letter-spacing: 0.32em; color: #b89a6a; text-transform: uppercase; margin-bottom: 10px; }
+    .sns-hd h2 { font-family: 'Playfair Display', serif; font-size: 36px; }
+    .sns-hd p { font-size: 13px; color: #8a7a6a; margin-top: 8px; }
+    .sns-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 4px; }
+    .sns-item { overflow: hidden; aspect-ratio: 1; }
+    .sns-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; filter: brightness(0.95); }
+    .sns-item:hover img { transform: scale(1.08); filter: brightness(1); }
+
+    /* ACCESS */
+    .access { display: grid; grid-template-columns: 1fr 1fr; }
+    .access-img { overflow: hidden; min-height: 480px; }
+    .access-img img { width: 100%; height: 100%; object-fit: cover; }
+    .access-detail { background: #1e1a14; padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+    .access-detail .en { font-size: 11px; letter-spacing: 0.32em; color: #b89a6a; text-transform: uppercase; margin-bottom: 16px; }
+    .access-detail h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: #fff; margin-bottom: 40px; }
+    .a-row { display: flex; gap: 24px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 14px; }
+    .a-row .lbl { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; min-width: 60px; padding-top: 3px; }
+    .a-row .val { color: rgba(255,255,255,0.75); line-height: 1.8; }
+
+    /* CTA */
+    .cta { background: #f7f2ea; padding: 100px 52px; text-align: center; }
+    .cta h2 { font-family: 'Playfair Display', serif; font-size: 52px; margin-bottom: 16px; }
+    .cta h2 em { font-style: italic; color: #b89a6a; }
+    .cta p { font-size: 15px; color: #6b5e4e; margin-bottom: 44px; line-height: 2; }
+    .cta-btn { background: #1e1a14; color: #fff; padding: 18px 60px; font-size: 14px; letter-spacing: 0.18em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; transition: all 0.3s; }
+    .cta-btn:hover { background: #3a2e20; transform: translateY(-2px); box-shadow: 0 12px 36px rgba(30,26,20,0.2); }
+
+    footer { background: #1e1a14; padding: 36px 52px; display: flex; justify-content: space-between; align-items: center; }
+    .foot-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; font-style: italic; }
+    .foot-links { display: flex; gap: 24px; }
+    .foot-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; letter-spacing: 0.06em; }
+    .foot-copy { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.04em; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; height: auto; }
+      .hero-visual { height: 300px; }
+      .hero-text { padding: 52px 24px; }
+      .hero-text h1 { font-size: 42px; }
+      .features { grid-template-columns: 1fr; }
+      .feat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .story { grid-template-columns: 1fr; }
+      .story-img { height: 280px; }
+      .story-text { padding: 52px 24px; }
+      .menu-sec { padding: 72px 24px; }
+      .sec-hd { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .menu-grid { grid-template-columns: 1fr 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .g-item.tall { grid-row: span 1; height: 200px; }
+      .g-item { height: 200px; }
+      .concept-strip { grid-template-columns: 1fr 1fr; }
+      .sns-grid { grid-template-columns: repeat(3,1fr); }
+      .access { grid-template-columns: 1fr; }
+      .access-detail { padding: 52px 24px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  
+    /* ── Hamburger ── */
+    .ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 201; }
+    .ham-btn span { display: block; width: 22px; height: 2px; border-radius: 2px; transition: all 0.3s; }
+    .mob-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+    .mob-menu a, .mob-menu button.mob-link { font-size: 18px; letter-spacing: 0.1em; padding: 14px 32px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; width: 100%; text-align: center; transition: opacity 0.2s; text-decoration: none; display: block; }
+    .mob-menu a:hover, .mob-menu button.mob-link:hover { opacity: 0.6; }
+    .mob-cta { margin-top: 16px; padding: 16px 48px !important; font-weight: 700; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .ham-btn { display: flex; }
+      .nav-links { display: none !important; }
+      .mob-menu.open { display: flex; }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Café Soleil<span>Daikanyama · Specialty Coffee</span></div>
+  <div class="nav-links">
+    <a href="#story">こだわり</a>
+    <a href="#menu">メニュー</a>
+    <a href="#gallery">ギャラリー</a>
+    <a href="#access">アクセス</a>
+    <button class="nav-btn">テイクアウト予約</button>
+  </div>
+<button class="ham-btn" aria-label="メニュー">
+    <span style="background:#1e1a14;"></span>
+    <span style="background:#1e1a14;"></span>
+    <span style="background:#1e1a14;"></span>
+  </button>
+</nav>
+<div class="mob-menu" style="background:rgba(255,253,248,0.98);">
+    <a href="#story" style="color:#1e1a14;">こだわり</a>
+    <a href="#menu" style="color:#1e1a14;">メニュー</a>
+    <a href="#gallery" style="color:#1e1a14;">ギャラリー</a>
+    <a href="#access" style="color:#1e1a14;">アクセス</a>
+  <a href="#" class="mob-cta" style="background:#1e1a14;color:#fff;margin-top:12px;">テイクアウト予約</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-visual">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1000&q=85" alt="カフェ内装" />
+    <div class="hero-visual-overlay"></div>
+    <div class="hero-badge">
+      <div class="num">2013</div>
+      <div class="lbl">Est. Daikanyama</div>
+    </div>
+  </div>
+  <div class="hero-text">
+    <div class="hero-eyebrow"><span>Specialty Coffee & Food</span></div>
+    <h1>陽光のような、<br /><em>一杯を。</em></h1>
+    <p>代官山の静かな路地に佇むスペシャルティコーヒーのカフェ。世界中から厳選した豆を、丁寧に焙煎・抽出。ゆったりとした時間をお過ごしください。</p>
+    <div class="hero-actions">
+      <button class="btn-primary">メニューを見る</button>
+      <button class="btn-ghost">アクセス</button>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feat">
+    <div class="num">12</div>
+    <h3>産地直送のスペシャルティ豆</h3>
+    <p>エチオピア・グアテマラ・パナマなど、世界12カ国から厳選した豆を常時ラインナップ。</p>
+  </div>
+  <div class="feat">
+    <div class="num">38</div>
+    <h3>フードメニュー数</h3>
+    <p>地元野菜を使ったサラダ、自家製スイーツ、季節限定メニューなど充実のラインナップ。</p>
+  </div>
+  <div class="feat">
+    <div class="num">11</div>
+    <h3>年の実績</h3>
+    <p>2013年の創業以来、地域に根ざしたカフェとして多くのお客様に愛されています。</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-img">
+    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=900&q=85" alt="コーヒー豆" />
+  </div>
+  <div class="story-text">
+    <div class="en">Our Story</div>
+    <h2>一杯のコーヒーに、<br />物語を込めて。</h2>
+    <p>Café Soleilは「太陽」を意味するフランス語。毎朝、太陽が昇るように、お客様の一日を明るく照らす一杯を届けたい——その想いで創業しました。</p>
+    <p>農家との直接取引で仕入れた豆を、店内のロースターで毎日焙煎。豆の個性を最大限に引き出すバリスタによる抽出で、唯一無二の味わいをお楽しみいただけます。</p>
+    <div class="divider"></div>
+    <div class="story-tags">
+      <span class="tag">スペシャルティコーヒー</span>
+      <span class="tag">自家焙煎</span>
+      <span class="tag">オーガニック食材</span>
+      <span class="tag">テイクアウト可</span>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-sec" id="menu">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="sec-hd-left">
+        <div class="en">Menu</div>
+        <h2>メニュー</h2>
+      </div>
+      <div class="menu-cats">
+        <button class="menu-cat active">すべて</button>
+        <button class="menu-cat">コーヒー</button>
+        <button class="menu-cat">フード</button>
+        <button class="menu-cat">スイーツ</button>
+      </div>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&q=80" alt="エスプレッソ" />
+        <div class="menu-card-body">
+          <div class="cat">Coffee</div>
+          <h3>Espresso</h3>
+          <p>深みのある香りと凝縮したコクが楽しめる一杯。</p>
+          <div class="price">¥580</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&q=80" alt="カプチーノ" />
+        <div class="menu-card-body">
+          <div class="cat">Coffee</div>
+          <h3>Cappuccino</h3>
+          <p>きめ細かいミルクフォームとエスプレッソの絶妙なバランス。</p>
+          <div class="price">¥680</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&q=80" alt="アボカドトースト" />
+        <div class="menu-card-body">
+          <div class="cat">Food</div>
+          <h3>Avocado Toast</h3>
+          <p>地元農家のアボカドとライ麦パンのシンプルな贅沢。</p>
+          <div class="price">¥1,180</div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=400&q=80" alt="スイーツ" />
+        <div class="menu-card-body">
+          <div class="cat">Sweets</div>
+          <h3>Seasonal Cake</h3>
+          <p>毎日手作りの季節のケーキ。素材の風味を活かしたやさしい甘さ。</p>
+          <div class="price">¥780</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery" id="gallery">
+  <div class="g-item tall">
+    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=85" alt="カフェ" />
+    <div class="g-overlay"><span>Interior</span></div>
+  </div>
+  <div class="g-item">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=80" alt="コーヒー" />
+    <div class="g-overlay"><span>Coffee</span></div>
+  </div>
+  <div class="g-item">
+    <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=600&q=80" alt="豆" />
+    <div class="g-overlay"><span>Beans</span></div>
+  </div>
+  <div class="g-item">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80" alt="エスプレッソ" />
+    <div class="g-overlay"><span>Espresso</span></div>
+  </div>
+  <div class="g-item">
+    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=600&q=80" alt="フード" />
+    <div class="g-overlay"><span>Food</span></div>
+  </div>
+</div>
+
+<!-- CONCEPT STRIP -->
+<div class="concept-strip">
+  <div class="cs-item">
+    <div class="icon">☕</div>
+    <h3>スペシャルティ豆のみ使用</h3>
+    <p>品質基準80点以上のスペシャルティコーヒーのみ使用</p>
+  </div>
+  <div class="cs-item">
+    <div class="icon">🌿</div>
+    <h3>オーガニック食材</h3>
+    <p>地元農家・オーガニック食材を優先的に使用しています</p>
+  </div>
+  <div class="cs-item">
+    <div class="icon">📱</div>
+    <h3>テイクアウト・事前注文</h3>
+    <p>オンラインからテイクアウトの事前注文が可能です</p>
+  </div>
+  <div class="cs-item">
+    <div class="icon">🐾</div>
+    <h3>ペット同伴テラス席あり</h3>
+    <p>代官山の緑に囲まれたテラス席はペット同伴OK</p>
+  </div>
+</div>
+
+<!-- SNS -->
+<section class="sns">
+  <div class="inner">
+    <div class="sns-hd">
+      <div class="en">Instagram</div>
+      <h2>@cafe.soleil.daikanyama</h2>
+      <p>日々のコーヒーや空間をお届けしています。フォローお待ちしています。</p>
+    </div>
+    <div class="sns-grid">
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&q=80" alt="instagram" /></div>
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=300&q=80" alt="instagram" /></div>
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&q=80" alt="instagram" /></div>
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=300&q=80" alt="instagram" /></div>
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&q=80" alt="instagram" /></div>
+      <div class="sns-item"><img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=300&q=80" alt="instagram" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access" id="access">
+  <div class="access-img">
+    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900&q=85" alt="外観" />
+  </div>
+  <div class="access-detail">
+    <div class="en">Access</div>
+    <h2>アクセス</h2>
+    <div class="a-row"><span class="lbl">住所</span><span class="val">東京都渋谷区代官山町XX-XX<br />ソレイユビル 1F</span></div>
+    <div class="a-row"><span class="lbl">電話</span><span class="val">03-XXXX-XXXX</span></div>
+    <div class="a-row"><span class="lbl">営業時間</span><span class="val">平日 8:00〜20:00<br />土日祝 9:00〜21:00</span></div>
+    <div class="a-row"><span class="lbl">定休日</span><span class="val">不定休（Instagram にてお知らせ）</span></div>
+    <div class="a-row"><span class="lbl">アクセス</span><span class="val">東急東横線「代官山駅」正面口より徒歩3分</span></div>
+    <div class="a-row"><span class="lbl">駐車場</span><span class="val">なし（近隣にコインパーキングあり）</span></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Come & enjoy<br /><em>your moment.</em></h2>
+  <p>テイクアウトのオンライン事前注文はこちらから。<br />待ち時間なくスムーズにお受け取りいただけます。</p>
+  <button class="cta-btn">テイクアウト事前注文</button>
+</section>
+
+<footer>
+  <div class="foot-logo">Café Soleil</div>
+  <div class="foot-links">
+    <a href="#">Instagram</a>
+    <a href="#">プライバシーポリシー</a>
+  </div>
+  <div class="foot-copy">© 2025 Café Soleil. All rights reserved.</div>
+</footer>
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.ham-btn');
+  var menu = document.querySelector('.mob-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+    var spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'rotate(45deg) translateY(7px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a, .mob-link').forEach(function(el){
+    el.addEventListener('click', function(){
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+      var spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>癒しの整体 こころ | 吉祥寺の整体院</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans JP', sans-serif; font-weight: 300; color: #1c2030; background: #fff; line-height: 1.8; -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; display: block; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 48px; height: 70px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .logo { font-family: 'Noto Serif JP', serif; font-size: 20px; letter-spacing: 0.14em; color: #1c2030; display: flex; align-items: baseline; gap: 10px; }
+    .logo span { font-size: 10px; letter-spacing: 0.22em; color: #8ba89a; font-family: 'Noto Sans JP'; font-weight: 300; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 13px; color: #666; transition: color 0.2s; text-decoration: none; letter-spacing: 0.06em; }
+    .nav-links a:hover { color: #4a7c6a; }
+    .nav-btn { background: #4a7c6a; color: #fff; padding: 10px 22px; font-size: 13px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; transition: background 0.2s; border-radius: 2px; }
+    .nav-btn:hover { background: #3a6457; }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 55% 45%; padding-top: 70px; }
+    .hero-img { overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-text { background: #f4f7f5; display: flex; flex-direction: column; justify-content: center; padding: 80px 64px; }
+    .hero-tag { font-size: 11px; letter-spacing: 0.3em; color: #8ba89a; text-transform: uppercase; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+    .hero-tag::before { content: ''; width: 24px; height: 1px; background: #8ba89a; }
+    .hero-text h1 { font-family: 'Noto Serif JP', serif; font-size: 50px; font-weight: 700; line-height: 1.45; letter-spacing: 0.04em; margin-bottom: 28px; color: #1c2030; }
+    .hero-text p { font-size: 14px; color: #5a6a7a; line-height: 2.1; margin-bottom: 44px; }
+    .hero-badges { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+    .badge { background: #fff; border: 1px solid #d9e5de; padding: 6px 16px; font-size: 12px; color: #4a7c6a; border-radius: 100px; letter-spacing: 0.04em; }
+    .hero-cta { display: flex; gap: 12px; }
+    .btn-green { background: #4a7c6a; color: #fff; padding: 14px 32px; font-size: 14px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; transition: background 0.2s; border-radius: 2px; }
+    .btn-green:hover { background: #3a6457; }
+    .btn-line { background: #06c755; color: #fff; padding: 14px 32px; font-size: 14px; letter-spacing: 0.1em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 500; border-radius: 2px; }
+
+    /* TROUBLE */
+    .trouble { padding: 100px 48px; background: #fff; }
+    .trouble .inner { max-width: 1100px; margin: 0 auto; }
+    .sec-hd { text-align: center; margin-bottom: 60px; }
+    .sec-hd .en { font-size: 11px; letter-spacing: 0.3em; color: #8ba89a; text-transform: uppercase; margin-bottom: 14px; }
+    .sec-hd h2 { font-family: 'Noto Serif JP', serif; font-size: 38px; font-weight: 700; letter-spacing: 0.05em; }
+    .trouble-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .trouble-card { background: #f4f7f5; padding: 32px 24px; text-align: center; border-radius: 4px; transition: transform 0.2s; }
+    .trouble-card:hover { transform: translateY(-4px); }
+    .trouble-card .icon { font-size: 36px; margin-bottom: 14px; }
+    .trouble-card h3 { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; margin-bottom: 10px; color: #1c2030; }
+    .trouble-card p { font-size: 12px; color: #7a8a9a; line-height: 1.9; }
+
+    /* MENU */
+    .menu { padding: 100px 48px; background: #f4f7f5; }
+    .menu .inner { max-width: 1100px; margin: 0 auto; }
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 0; }
+    .menu-card { background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.05); transition: all 0.3s; }
+    .menu-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.1); transform: translateY(-4px); }
+    .menu-card img { width: 100%; height: 200px; object-fit: cover; }
+    .menu-card-body { padding: 24px 24px 28px; }
+    .menu-card-body .cat { font-size: 10px; letter-spacing: 0.22em; color: #8ba89a; text-transform: uppercase; margin-bottom: 10px; }
+    .menu-card-body h3 { font-family: 'Noto Serif JP', serif; font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .menu-card-body p { font-size: 13px; color: #6a7a8a; line-height: 1.9; margin-bottom: 18px; }
+    .menu-price-row { display: flex; justify-content: space-between; align-items: center; }
+    .menu-price-row .price { font-family: 'Noto Serif JP', serif; font-size: 24px; color: #4a7c6a; }
+    .menu-price-row .price span { font-size: 13px; color: #aaa; font-family: 'Noto Sans JP'; }
+    .menu-price-row .time { font-size: 12px; color: #aaa; letter-spacing: 0.06em; }
+
+    /* FLOW */
+    .flow { padding: 100px 48px; background: #fff; }
+    .flow .inner { max-width: 780px; margin: 0 auto; }
+    .flow-list { display: flex; flex-direction: column; gap: 0; }
+    .flow-item { display: flex; gap: 36px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid #e8eeeb; }
+    .flow-num { width: 48px; height: 48px; border-radius: 50%; background: #4a7c6a; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .flow-content h3 { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .flow-content p { font-size: 14px; color: #6a7a8a; line-height: 1.95; }
+
+    /* VOICE */
+    .voice { padding: 100px 48px; background: #f4f7f5; }
+    .voice .inner { max-width: 1100px; margin: 0 auto; }
+    .voice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .voice-card { background: #fff; padding: 32px 28px; border-radius: 6px; }
+    .voice-card .stars { color: #f0b132; font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
+    .voice-card p { font-size: 14px; color: #4a5a6a; line-height: 1.95; margin-bottom: 20px; }
+    .voice-card .profile { display: flex; align-items: center; gap: 12px; }
+    .voice-card .avatar { width: 40px; height: 40px; border-radius: 50%; background: #d9e5de; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+    .voice-card .name { font-size: 13px; font-weight: 500; }
+    .voice-card .age { font-size: 11px; color: #aaa; }
+
+    /* ACCESS */
+    .access { display: grid; grid-template-columns: 1fr 1fr; }
+    .access-map { background: #dde8e2; min-height: 420px; display: flex; align-items: center; justify-content: center; color: #8ba89a; font-size: 13px; letter-spacing: 0.1em; }
+    .access-detail { background: #1c2030; padding: 72px 64px; }
+    .access-detail .en { font-size: 11px; letter-spacing: 0.3em; color: #8ba89a; text-transform: uppercase; margin-bottom: 16px; }
+    .access-detail h2 { font-family: 'Noto Serif JP', serif; font-size: 34px; color: #fff; margin-bottom: 36px; letter-spacing: 0.06em; }
+    .access-row { display: flex; gap: 20px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 14px; }
+    .access-row .lbl { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.12em; min-width: 64px; padding-top: 3px; }
+    .access-row .val { color: rgba(255,255,255,0.75); }
+
+    /* CTA */
+    .cta { background: #4a7c6a; padding: 90px 48px; text-align: center; }
+    .cta h2 { font-family: 'Noto Serif JP', serif; font-size: 42px; font-weight: 700; color: #fff; margin-bottom: 14px; letter-spacing: 0.05em; }
+    .cta p { font-size: 14px; color: rgba(255,255,255,0.8); margin-bottom: 40px; line-height: 2; }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-w { background: #fff; color: #4a7c6a; padding: 16px 48px; font-size: 14px; letter-spacing: 0.12em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 700; transition: all 0.2s; }
+    .cta-btn-line { background: #06c755; color: #fff; padding: 16px 48px; font-size: 14px; letter-spacing: 0.12em; border: none; cursor: pointer; font-family: 'Noto Sans JP'; font-weight: 700; }
+
+    footer { background: #141820; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; }
+    footer .foot-logo { font-family: 'Noto Serif JP', serif; font-size: 16px; color: #fff; letter-spacing: 0.12em; }
+    footer .foot-copy { font-size: 11px; color: #444; }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-img { height: 280px; }
+      .hero-text { padding: 48px 24px; }
+      .hero-text h1 { font-size: 34px; }
+      .trouble-grid { grid-template-columns: repeat(2, 1fr); }
+      .menu { padding: 72px 24px; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .flow { padding: 72px 24px; }
+      .voice-grid { grid-template-columns: 1fr; }
+      .access { grid-template-columns: 1fr; }
+      .access-detail { padding: 48px 24px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  
+    /* ── Hamburger ── */
+    .ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; z-index: 201; }
+    .ham-btn span { display: block; width: 22px; height: 2px; border-radius: 2px; transition: all 0.3s; }
+    .mob-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+    .mob-menu a, .mob-menu button.mob-link { font-size: 18px; letter-spacing: 0.1em; padding: 14px 32px; background: none; border: none; cursor: pointer; font-family: 'Noto Sans JP', sans-serif; width: 100%; text-align: center; transition: opacity 0.2s; text-decoration: none; display: block; }
+    .mob-menu a:hover, .mob-menu button.mob-link:hover { opacity: 0.6; }
+    .mob-cta { margin-top: 16px; padding: 16px 48px !important; font-weight: 700; border-radius: 2px; }
+    @media (max-width: 768px) {
+      .ham-btn { display: flex; }
+      .nav-links { display: none !important; }
+      .mob-menu.open { display: flex; }
+    }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">癒しの整体 こころ<span>KOKORO SEITAI</span></div>
+  <div class="nav-links">
+    <a href="#trouble">お悩み</a>
+    <a href="#menu">メニュー</a>
+    <a href="#flow">施術の流れ</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#access">アクセス</a>
+    <button class="nav-btn">ご予約</button>
+  </div>
+<button class="ham-btn" aria-label="メニュー">
+    <span style="background:#1c2030;"></span>
+    <span style="background:#1c2030;"></span>
+    <span style="background:#1c2030;"></span>
+  </button>
+</nav>
+<div class="mob-menu" style="background:rgba(255,255,255,0.98);">
+    <a href="#trouble" style="color:#1c2030;">お悩み</a>
+    <a href="#menu" style="color:#1c2030;">メニュー</a>
+    <a href="#flow" style="color:#1c2030;">施術の流れ</a>
+    <a href="#voice" style="color:#1c2030;">お客様の声</a>
+    <a href="#access" style="color:#1c2030;">アクセス</a>
+  <a href="#" class="mob-cta" style="background:#4a7c6a;color:#fff;margin-top:12px;">ご予約</a>
+</div>
+
+<section class="hero">
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&q=80" alt="整体施術" />
+  </div>
+  <div class="hero-text">
+    <div class="hero-tag">Seitai · Kichijoji</div>
+    <h1>体の芯から、<br />ほぐれる。<br />整う。</h1>
+    <p>つらい肩こり・腰痛・頭痛……その根本原因にアプローチ。身体の歪みを整え、自然治癒力を高める整体で、毎日を楽に過ごせる身体へ。</p>
+    <div class="hero-badges">
+      <span class="badge">完全予約制</span>
+      <span class="badge">女性施術師在籍</span>
+      <span class="badge">駅徒歩3分</span>
+      <span class="badge">当日予約OK</span>
+    </div>
+    <div class="hero-cta">
+      <button class="btn-green">WEB予約はこちら</button>
+      <button class="btn-line">LINEで予約</button>
+    </div>
+  </div>
+</section>
+
+<section class="trouble" id="trouble">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Your Troubles</div>
+      <h2>こんなお悩みはありませんか？</h2>
+    </div>
+    <div class="trouble-grid">
+      <div class="trouble-card">
+        <div class="icon">🦴</div>
+        <h3>肩こり・首こり</h3>
+        <p>デスクワークや姿勢の悪さからくる慢性的な肩こり・首のこりに。</p>
+      </div>
+      <div class="trouble-card">
+        <div class="icon">🪑</div>
+        <h3>腰痛・ぎっくり腰</h3>
+        <p>長時間の座り仕事や立ち仕事による腰の痛み・違和感に悩む方に。</p>
+      </div>
+      <div class="trouble-card">
+        <div class="icon">🧠</div>
+        <h3>頭痛・眼精疲労</h3>
+        <p>首や肩のコリが原因の頭痛、目の奥の痛みでお困りの方に。</p>
+      </div>
+      <div class="trouble-card">
+        <div class="icon">🦵</div>
+        <h3>骨盤の歪み・むくみ</h3>
+        <p>産後の骨盤矯正、脚のむくみ・冷え性にお悩みの方に。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Menu</div>
+      <h2>施術メニュー</h2>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="全身整体" />
+        <div class="menu-card-body">
+          <div class="cat">Standard</div>
+          <h3>全身整体</h3>
+          <p>全身のバランスを整えるベーシックな整体コース。初めての方にもおすすめです。</p>
+          <div class="menu-price-row">
+            <div class="price">¥6,600<span> 税込</span></div>
+            <div class="time">60分</div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="骨盤矯正" />
+        <div class="menu-card-body">
+          <div class="cat">Correction</div>
+          <h3>骨盤矯正コース</h3>
+          <p>産後の骨盤の歪みやO脚・X脚に特化した矯正コース。スタイルアップにも。</p>
+          <div class="menu-price-row">
+            <div class="price">¥8,800<span> 税込</span></div>
+            <div class="time">75分</div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="ヘッドスパ" />
+        <div class="menu-card-body">
+          <div class="cat">Relaxation</div>
+          <h3>頭蓋骨調整＋全身</h3>
+          <p>頭痛・眼精疲労・自律神経の乱れに。頭蓋骨へのアプローチで心身をリセット。</p>
+          <div class="menu-price-row">
+            <div class="price">¥11,000<span> 税込</span></div>
+            <div class="time">90分</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Flow</div>
+      <h2>施術の流れ</h2>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <h3>ご予約</h3>
+          <p>WEB予約・LINE・お電話でご予約ください。当日予約も可能です（空き状況による）。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <h3>カウンセリング</h3>
+          <p>お悩みの症状や生活習慣など、丁寧にヒアリングします。お気軽にご相談ください。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <h3>身体の状態チェック</h3>
+          <p>姿勢・重心バランス・可動域などを確認し、歪みや硬直の原因を特定します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div class="flow-content">
+          <h3>施術</h3>
+          <p>お一人おひとりの状態に合わせた施術を行います。痛みの少ないやさしいアプローチが特徴です。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div class="flow-content">
+          <h3>アフターカウンセリング・セルフケアアドバイス</h3>
+          <p>施術後の状態をお伝えし、自宅でできるセルフケアや生活習慣のアドバイスをします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voice" id="voice">
+  <div class="inner">
+    <div class="sec-hd">
+      <div class="en">Voice</div>
+      <h2>お客様の声</h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p>長年悩んでいた腰痛が、3回の施術でかなり楽になりました。原因をしっかり説明してくれて安心感があります。</p>
+        <div class="profile"><div class="avatar">👩</div><div><div class="name">田中 M さん</div><div class="age">40代・女性</div></div></div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p>デスクワークで肩と首がひどかったのですが、施術後に驚くほど軽くなりました。セルフケアのアドバイスも助かっています。</p>
+        <div class="profile"><div class="avatar">👨</div><div><div class="name">佐藤 K さん</div><div class="age">30代・男性</div></div></div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p>産後の骨盤矯正でお世話になっています。女性の先生もいるので安心して通えます。体が整うとやる気も出てきました！</p>
+        <div class="profile"><div class="avatar">👩</div><div><div class="name">山本 Y さん</div><div class="age">30代・女性</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="access" id="access">
+  <div class="access-map">[ Google Map ]</div>
+  <div class="access-detail">
+    <div class="en">Access</div>
+    <h2>アクセス</h2>
+    <div class="access-row"><span class="lbl">院名</span><span class="val">癒しの整体 こころ</span></div>
+    <div class="access-row"><span class="lbl">住所</span><span class="val">東京都武蔵野市吉祥寺本町2-XX-XX<br />こころビル 2F</span></div>
+    <div class="access-row"><span class="lbl">電話</span><span class="val">0422-XX-XXXX</span></div>
+    <div class="access-row"><span class="lbl">営業時間</span><span class="val">平日 10:00〜21:00<br />土日祝 9:00〜19:00</span></div>
+    <div class="access-row"><span class="lbl">定休日</span><span class="val">不定休（要確認）</span></div>
+    <div class="access-row"><span class="lbl">アクセス</span><span class="val">JR中央線「吉祥寺駅」北口より徒歩3分</span></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>まずはお気軽にご相談を</h2>
+  <p>初回カウンセリングは無料です。身体のお悩み、何でもお話しください。<br />完全予約制・当日予約もお受けしています。</p>
+  <div class="cta-btns">
+    <button class="cta-btn-w">WEB予約はこちら</button>
+    <button class="cta-btn-line">LINEで予約・相談</button>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">癒しの整体 こころ</div>
+  <div class="foot-copy">© 2025 癒しの整体こころ. All rights reserved.</div>
+</footer>
+
+
+<script>
+(function(){
+  var btn = document.querySelector('.ham-btn');
+  var menu = document.querySelector('.mob-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    document.body.style.overflow = open ? 'hidden' : '';
+    var spans = btn.querySelectorAll('span');
+    if(open){
+      spans[0].style.transform = 'rotate(45deg) translateY(7px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-7px)';
+    } else {
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    }
+  });
+  menu.querySelectorAll('a, .mob-link').forEach(function(el){
+    el.addEventListener('click', function(){
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+      var spans = btn.querySelectorAll('span');
+      spans[0].style.transform = '';
+      spans[1].style.opacity = '';
+      spans[2].style.transform = '';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
