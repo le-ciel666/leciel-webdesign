@@ -889,6 +889,36 @@
     padding-top: 16px;
   }
 
+  .maintenance-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-width: 140px;
+  }
+
+  .maintenance-btn {
+    display: inline-block;
+    padding: 11px 24px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(16,185,129,0.28);
+  }
+
+  .maintenance-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(16,185,129,0.38);
+  }
+
   /* ===== WORKS ===== */
   #works { background: var(--bg); }
 
@@ -1377,6 +1407,7 @@
     .works-grid { grid-template-columns: 1fr; }
     .maintenance-body { flex-direction: column; gap: 20px; }
     .maintenance-items { grid-template-columns: 1fr; }
+    .maintenance-right { flex-direction: row; min-width: unset; justify-content: flex-start; }
     .maintenance-box { padding: 28px 22px; }
     .profile-card { padding: 28px 22px; }
     .profile-meta-grid { grid-template-columns: 1fr; }
@@ -1762,6 +1793,18 @@
         <div class="maintenance-items">
           <div class="maintenance-item">サーバー・ドメイン更新管理</div>
           <div class="maintenance-item">月5ページまでの新規追加</div>
+          <div class="maintenance-item">コンテンツ修正・テキスト更新</div>
+          <div class="maintenance-item">不具合発生時の対応</div>
+        </div>
+        <div class="maintenance-right">
+          <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" width="88" height="88" aria-hidden="true">
+            <path d="M45 7 L76 19 L76 42 C76 61 62 74 45 81 C28 74 14 61 14 42 L14 19 Z" fill="#d1fae5" stroke="#10b981" stroke-width="2.5"/>
+            <circle cx="45" cy="44" r="16" fill="#a7f3d0"/>
+            <path d="M35 44 L42 51 L56 35" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="62" cy="22" r="5" fill="#6ee7b7" opacity="0.6"/>
+            <circle cx="28" cy="26" r="3.5" fill="#6ee7b7" opacity="0.5"/>
+          </svg>
+          <a href="#contact" class="maintenance-btn">無料相談する →</a>
         </div>
       </div>
       <p class="maintenance-footer">※ プレミアムプランには公開後1年間の保守メンテナンスが含まれます。2年目以降は月額¥5,000（月5ページまで）でご継続いただけます。</p>
