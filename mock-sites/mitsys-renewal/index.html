@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コンタクトセンターDX・CTIシステム｜MITシステム研究所 Renewal Mock</title>
+<meta name="description" content="株式会社エム・アイ・ティシステム研究所様サイトリニューアル提案用モック。コンタクトセンター、アウトバウンド、CRM、音声認識、PBX連携を統合するCTIソリューションの現代的なWeb UIサンプルです。">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="theme-color" content="#0f5f9f">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="MIT System Renewal Mock">
+<meta property="og:title" content="コンタクトセンターDX・CTIシステム｜MITシステム研究所 Renewal Mock">
+<meta property="og:description" content="CRM、プレディクティブダイアラー、AI音声認識、PBX連携を一体で伝えるリニューアル提案モックです。">
+<meta property="og:url" content="https://leciel-webdesign.com/mock-sites/mitsys-renewal/">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/#organization",
+      "name": "MITシステム研究所",
+      "url": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://leciel-webdesign.com/assets/ogp.svg"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/#webpage",
+      "url": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/",
+      "name": "コンタクトセンターDX・CTIシステム",
+      "description": "QuickCRM、Quick eDialer、音声認識、IVR、PBX連携などを統合的に紹介するWebサイトリニューアル提案モック。",
+      "inLanguage": "ja",
+      "dateModified": "2026-05-09"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/#software",
+      "name": "MIT Contact Center Platform",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "コンタクトセンター運営に必要なCRM、アウトバウンド発信、音声認識、IVR、PBX連携を統合する業務プラットフォーム。",
+      "featureList": [
+        "QuickCRM",
+        "Quick eDialer",
+        "AI音声認識連携",
+        "IVR・PBX連携",
+        "プレディクティブ発信",
+        "CTI・顧客管理"
+      ],
+      "provider": {
+        "@id": "https://leciel-webdesign.com/mock-sites/mitsys-renewal/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111827;
+    --ink-2: #263447;
+    --muted: #64748b;
+    --line: #d9e4ee;
+    --line-strong: #b8c8d8;
+    --paper: #f5f8fb;
+    --white: #ffffff;
+    --navy: #12324a;
+    --blue: #0f5f9f;
+    --cyan: #00a6c8;
+    --green: #16a36a;
+    --amber: #f59e0b;
+    --red: #d84f45;
+    --shadow: 0 24px 70px rgba(17, 24, 39, 0.13);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  button, input, textarea { font: inherit; }
+
+  .demo-ribbon {
+    background: #101820;
+    color: #dceaf7;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .demo-ribbon a {
+    color: #8bdfff;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid #8bdfff;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(184, 200, 216, 0.75);
+  }
+  .nav {
+    max-width: 1240px;
+    height: 76px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    min-width: max-content;
+  }
+  .brand-mark {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    letter-spacing: 0;
+    box-shadow: 0 14px 30px rgba(15, 95, 159, 0.28);
+  }
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+  .brand-text strong { font-size: 15px; letter-spacing: 0.02em; }
+  .brand-text span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-2);
+  }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-actions { display: flex; align-items: center; gap: 10px; }
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .icon-btn span,
+  .icon-btn::before,
+  .icon-btn::after {
+    content: "";
+    width: 19px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    display: block;
+  }
+  .icon-btn { flex-direction: column; gap: 4px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 16px 34px rgba(15, 95, 159, 0.24);
+  }
+  .btn-primary:hover { background: #0b4f86; }
+  .btn-ghost {
+    background: #fff;
+    color: var(--blue);
+    border-color: var(--line-strong);
+  }
+  .btn-dark {
+    background: #132b3e;
+    color: #fff;
+  }
+  .arrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(115deg, rgba(15, 39, 58, 0.96) 0%, rgba(18, 50, 74, 0.88) 48%, rgba(7, 75, 107, 0.76) 100%),
+      url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1800&q=82');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 150px;
+    background: linear-gradient(180deg, rgba(245, 248, 251, 0), var(--paper));
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 88px 24px 118px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #9ee8ff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: currentColor;
+  }
+  .hero h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(38px, 5.5vw, 70px);
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    margin-bottom: 24px;
+    font-weight: 900;
+  }
+  .hero-lead {
+    color: #d8e9f4;
+    font-size: 16px;
+    line-height: 2;
+    max-width: 620px;
+    margin-bottom: 32px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .hero-proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 620px;
+  }
+  .proof-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    padding: 14px 15px;
+    min-height: 86px;
+  }
+  .proof-item strong {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .proof-item span {
+    display: block;
+    margin-top: 7px;
+    color: #bad7e9;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .ops-panel {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    color: var(--ink);
+    overflow: hidden;
+  }
+  .ops-top {
+    height: 54px;
+    padding: 0 18px;
+    background: #f0f6fb;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .traffic { display: flex; gap: 7px; }
+  .traffic span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+  .traffic span:nth-child(1) { background: var(--red); }
+  .traffic span:nth-child(2) { background: var(--amber); }
+  .traffic span:nth-child(3) { background: var(--green); }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #a9d6e5;
+    border-radius: 999px;
+    padding: 5px 10px;
+    color: #0b6b85;
+    background: #e9f8fc;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .status-pill::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .ops-body {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    min-height: 470px;
+  }
+  .ops-sidebar {
+    background: #12283a;
+    color: #cfe4f1;
+    padding: 18px 14px;
+  }
+  .ops-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+  }
+  .ops-menu { display: grid; gap: 8px; }
+  .ops-menu span {
+    border-radius: 7px;
+    padding: 9px 10px;
+    font-size: 12px;
+    color: #b8d0de;
+  }
+  .ops-menu .active { background: #1f7aaa; color: #fff; font-weight: 700; }
+  .ops-main { padding: 22px; background: #fbfdff; }
+  .ops-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .ops-head h3 { font-size: 18px; line-height: 1.45; }
+  .ops-head p { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .ops-kpi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .kpi-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 13px;
+  }
+  .kpi-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .kpi-card strong {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .kpi-card:nth-child(1) strong { color: var(--blue); }
+  .kpi-card:nth-child(2) strong { color: var(--green); }
+  .kpi-card:nth-child(3) strong { color: var(--amber); }
+  .dialer-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 12px;
+  }
+  .chart-box,
+  .queue-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 210px;
+  }
+  .chart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .bars {
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 7px;
+    align-items: end;
+  }
+  .bars span {
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(180deg, #12b6d4, #0f5f9f);
+    min-height: 24px;
+  }
+  .bars span:nth-child(1) { height: 44%; }
+  .bars span:nth-child(2) { height: 58%; }
+  .bars span:nth-child(3) { height: 72%; }
+  .bars span:nth-child(4) { height: 36%; }
+  .bars span:nth-child(5) { height: 64%; }
+  .bars span:nth-child(6) { height: 84%; }
+  .bars span:nth-child(7) { height: 78%; }
+  .bars span:nth-child(8) { height: 92%; }
+  .bars span:nth-child(9) { height: 66%; }
+  .bars span:nth-child(10) { height: 74%; }
+  .bars span:nth-child(11) { height: 52%; }
+  .bars span:nth-child(12) { height: 87%; }
+  .call-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .call-list li {
+    display: grid;
+    grid-template-columns: 12px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    background: #f4f8fb;
+    font-size: 12px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .call-list li:nth-child(2) .dot { background: var(--amber); }
+  .call-list li:nth-child(3) .dot { background: var(--blue); }
+  .call-list li:nth-child(4) .dot { background: var(--red); }
+  .call-list strong {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+  }
+
+  .section {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 110px 24px;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 46px;
+  }
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--blue);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .lead {
+    color: var(--ink-2);
+    font-size: 15.5px;
+    line-height: 2;
+  }
+
+  .challenge-band {
+    margin-top: -42px;
+    position: relative;
+    z-index: 2;
+  }
+  .challenge-panel {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .challenge-grid {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+  }
+  .challenge {
+    padding: 26px 24px;
+    border-right: 1px solid var(--line);
+    min-height: 180px;
+  }
+  .challenge:last-child { border-right: none; }
+  .challenge-num {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .challenge h3 {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .challenge p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 14px 36px rgba(17, 24, 39, 0.06);
+  }
+  .product-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+    gap: 24px;
+    align-items: center;
+    padding: 30px;
+  }
+  .product-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: #eaf5fb;
+    color: #0b5c82;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag.green { background: #e7f7ef; color: #0f7a4c; }
+  .tag.amber { background: #fff5dc; color: #996100; }
+  .tag.red { background: #fff0ee; color: #b73d34; }
+  .product-card h3 {
+    font-size: 23px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .product-card p {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    list-style: none;
+    margin-top: 20px;
+  }
+  .feature-list li {
+    position: relative;
+    padding: 11px 12px 11px 34px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #f8fbfd;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--cyan);
+  }
+  .mini-dashboard {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #f7fbff;
+    padding: 16px;
+  }
+  .mini-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 13px;
+    margin-bottom: 10px;
+  }
+  .mini-row:last-child { margin-bottom: 0; }
+  .mini-row span { color: var(--muted); font-size: 12px; }
+  .mini-row strong { color: var(--ink); font-size: 14px; }
+  .meter {
+    width: 110px;
+    height: 8px;
+    background: #e3edf5;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .meter i {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    border-radius: inherit;
+  }
+
+  .flow-wrap {
+    background: #fff;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .flow-step {
+    background: #fff;
+    padding: 24px 18px;
+    min-height: 205px;
+  }
+  .flow-step .step {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 34px;
+  }
+  .flow-step h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .flow-step p {
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .industry-card {
+    min-height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.12);
+  }
+  .industry-card:nth-child(1) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-card:nth-child(2) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-card:nth-child(3) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-card:nth-child(4) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-card:nth-child(5) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-card:nth-child(6) {
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82');
+  }
+  .industry-body {
+    padding: 24px;
+    width: 100%;
+  }
+  .industry-body span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #9ee8ff;
+    letter-spacing: 0.12em;
+  }
+  .industry-body h3 {
+    margin-top: 8px;
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  .industry-body p {
+    margin-top: 8px;
+    color: #d8e9f4;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .trust-band {
+    background: #102638;
+    color: #fff;
+  }
+  .trust-band .section-head h2,
+  .trust-band .lead { color: #fff; }
+  .trust-band .lead { color: #cfe0ec; }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 26px;
+    align-items: stretch;
+  }
+  .timeline {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    padding: 26px;
+  }
+  .timeline h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+  .timeline ul {
+    list-style: none;
+    display: grid;
+    gap: 15px;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 14px;
+    color: #dbeaf4;
+    font-size: 13.5px;
+  }
+  .timeline time {
+    font-family: 'JetBrains Mono', monospace;
+    color: #9ee8ff;
+    font-size: 12px;
+  }
+  .news-box {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 26px;
+  }
+  .news-box h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+  .news-list {
+    list-style: none;
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .news-list li {
+    background: #fff;
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 16px;
+    padding: 16px;
+    font-size: 13.5px;
+    align-items: center;
+  }
+  .news-list time {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--blue);
+    font-size: 12px;
+  }
+
+  .company {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 46px;
+    align-items: start;
+  }
+  .company-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px;
+    position: sticky;
+    top: 98px;
+  }
+  .company-card h2 { font-size: 34px; margin-bottom: 14px; }
+  .company-card p { color: var(--ink-2); font-size: 14px; line-height: 1.95; }
+  .office-card {
+    margin-top: 20px;
+    border-radius: 10px;
+    min-height: 230px;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0), rgba(18,50,74,0.72)),
+      url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=82');
+    background-size: cover;
+    background-position: center;
+  }
+  .company-table {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .company-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .company-row:last-child { border-bottom: none; }
+  .company-row dt {
+    background: #f2f7fb;
+    padding: 18px 20px;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .company-row dd {
+    padding: 18px 20px;
+    color: var(--ink-2);
+    font-size: 14px;
+  }
+
+  .cta {
+    background:
+      linear-gradient(115deg, rgba(15, 95, 159, 0.94), rgba(0, 166, 200, 0.82)),
+      url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=82');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  .cta-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 92px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 34px;
+    align-items: center;
+  }
+  .cta h2 { color: #fff; margin-bottom: 16px; }
+  .cta p {
+    color: #e6f8ff;
+    max-width: 720px;
+    line-height: 2;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .footer {
+    background: #101820;
+    color: #c7d5df;
+    padding: 34px 24px;
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    font-size: 12px;
+  }
+  .footer a { color: #9ee8ff; text-decoration: none; }
+
+  @media (max-width: 1040px) {
+    .nav-links {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: calc(100% + 8px);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-links.is-open { display: flex; }
+    .nav-links a { display: block; padding: 12px; }
+    .icon-btn { display: inline-flex; }
+    .hero-inner,
+    .section-head,
+    .trust-grid,
+    .company,
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-inner { padding-top: 64px; }
+    .ops-panel { max-width: 720px; }
+    .challenge-grid,
+    .flow,
+    .industry-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .challenge:nth-child(2) { border-right: none; }
+    .challenge { border-bottom: 1px solid var(--line); }
+    .product-card.featured { grid-template-columns: 1fr; }
+    .cta-actions { justify-content: flex-start; }
+  }
+
+  @media (max-width: 720px) {
+    .nav { height: 68px; padding: 0 16px; }
+    .brand-text span { display: none; }
+    .nav-actions .btn { display: none; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 48px 16px 92px;
+    }
+    .hero h1 { font-size: 38px; }
+    .hero-proof,
+    .ops-body,
+    .ops-kpi,
+    .dialer-grid,
+    .challenge-grid,
+    .product-grid,
+    .feature-list,
+    .flow,
+    .industry-grid,
+    .company-row {
+      grid-template-columns: 1fr;
+    }
+    .ops-sidebar { display: none; }
+    .product-card.featured { grid-column: span 1; padding: 22px; }
+    .section { padding: 78px 16px; }
+    .challenge-panel { padding: 0 16px; }
+    .challenge { border-right: none; min-height: auto; }
+    .company-card { position: static; }
+    .company-row dt,
+    .company-row dd { padding: 14px 16px; }
+    .news-list li { grid-template-columns: 1fr; gap: 4px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+  <div class="demo-ribbon">
+    LE CIEL WEB DESIGN 提案用リニューアルモックです。実在企業様の公式サイトではありません。
+    <a href="https://leciel-webdesign.com/">制作元へ戻る</a>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a class="brand" href="#top" aria-label="MITシステム研究所 Renewal Mock">
+        <span class="brand-mark">MIT</span>
+        <span class="brand-text">
+          <strong>MITシステム研究所</strong>
+          <span>Contact Center DX</span>
+        </span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="services/">製品一覧</a></li>
+        <li><a href="quickcrm/">QuickCRM</a></li>
+        <li><a href="quick-edialer/">Quick eDialer</a></li>
+        <li><a href="quickivr/">QuickIVR</a></li>
+        <li><a href="cti/">CTI接続</a></li>
+        <li><a href="#industries">導入領域</a></li>
+        <li><a href="company/">会社概要</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn btn-primary" href="#contact">資料請求・相談 <span class="arrow">→</span></a>
+        <button class="icon-btn" type="button" aria-label="メニューを開閉" aria-controls="navLinks" aria-expanded="false" id="navToggle"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Outbound / CRM / Voice AI / PBX</p>
+          <h1>電話業務を、<br>成果が見える<br>運用基盤へ。</h1>
+          <p class="hero-lead">
+            大規模コールセンターのCRM、プレディクティブ発信、AI音声認識、IVR、PBX連携まで。
+            MITシステム研究所の技術資産を「導入しやすさ」と「成果の見える化」で再編集した、次世代サイトの提案モックです。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="services/">サービスを見る <span class="arrow">→</span></a>
+            <a class="btn btn-ghost" href="#solution">課題から探す</a>
+          </div>
+          <div class="hero-proof" aria-label="主な訴求ポイント">
+            <div class="proof-item"><strong>5000+</strong><span>導入実績を訴求可能</span></div>
+            <div class="proof-item"><strong>AI</strong><span>音声認識・分析に対応</span></div>
+            <div class="proof-item"><strong>PBX</strong><span>既存電話環境とも連携</span></div>
+          </div>
+        </div>
+
+        <div class="ops-panel" aria-label="コンタクトセンター運用画面のイメージ">
+          <div class="ops-top">
+            <div class="traffic"><span></span><span></span><span></span></div>
+            <span class="status-pill">Live Campaign</span>
+          </div>
+          <div class="ops-body">
+            <aside class="ops-sidebar">
+              <div class="ops-logo">QuickCRM</div>
+              <div class="ops-menu">
+                <span class="active">Dashboard</span>
+                <span>Dialer</span>
+                <span>Customers</span>
+                <span>Scripts</span>
+                <span>Voice AI</span>
+                <span>Reports</span>
+              </div>
+            </aside>
+            <div class="ops-main">
+              <div class="ops-head">
+                <div>
+                  <h3>本日のアウトバウンド状況</h3>
+                  <p>架電、応答、結果登録、音声分析を一画面で把握</p>
+                </div>
+                <span class="tag green">稼働中</span>
+              </div>
+              <div class="ops-kpi">
+                <div class="kpi-card"><span>発信数</span><strong>8,420</strong></div>
+                <div class="kpi-card"><span>接続率</span><strong>42.8%</strong></div>
+                <div class="kpi-card"><span>対応待ち</span><strong>126</strong></div>
+              </div>
+              <div class="dialer-grid">
+                <div class="chart-box">
+                  <div class="chart-title"><span>Hourly Calls</span><strong>09:00-18:00</strong></div>
+                  <div class="bars" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="queue-box">
+                  <div class="chart-title"><span>Agent Queue</span><strong>Realtime</strong></div>
+                  <ul class="call-list">
+                    <li><span class="dot"></span><span>AI要約完了</span><strong>38件</strong></li>
+                    <li><span class="dot"></span><span>折返し予約</span><strong>19件</strong></li>
+                    <li><span class="dot"></span><span>優先リスト</span><strong>84件</strong></li>
+                    <li><span class="dot"></span><span>確認アラート</span><strong>7件</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-band" id="solution">
+      <div class="challenge-panel">
+        <div class="challenge-grid">
+          <article class="challenge">
+            <div class="challenge-num">01</div>
+            <h3>架電効率がオペレーター任せ</h3>
+            <p>リスト、発信、折返し、結果登録を分断せず、キャンペーン単位で進捗を管理します。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">02</div>
+            <h3>顧客情報と通話履歴が散在</h3>
+            <p>CRMとCTIを一体化し、応対履歴、属性、次アクションをすぐ追える状態へ。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">03</div>
+            <h3>通話内容を活用しきれない</h3>
+            <p>音声認識や要約、NGワード検知、品質評価の入口をサイト上でわかりやすく訴求。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">04</div>
+            <h3>既存PBXとの連携が不安</h3>
+            <p>オンプレミス、クラウド、既存電話基盤との接続相談を導入前から見える化します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div>
+          <p class="label">Solutions</p>
+          <h2>サービスページを、<br>検討しやすい導線へ再設計。</h2>
+        </div>
+        <p class="lead">
+          現サイトに掲載されている主要製品や関連サービスを、導入担当者が比較しやすいカード型に整理。
+          「何ができるか」「どの課題に効くか」「次に相談すべきこと」が短時間で伝わる構成です。
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card featured">
+          <div>
+            <div class="product-meta">
+              <span class="tag">Flagship</span>
+              <span class="tag green">CRM / CTI</span>
+            </div>
+            <h3>QuickCRM</h3>
+            <p>
+              コンタクトセンター運営の中核になる顧客管理基盤。応対履歴、案件ステータス、次回アクション、オペレーター画面を集約し、問い合わせ・営業・サポート業務を横断して支えます。
+            </p>
+            <ul class="feature-list">
+              <li>顧客情報・履歴管理</li>
+              <li>CTIポップアップ</li>
+              <li>権限別オペレーション</li>
+              <li>レポート出力</li>
+            </ul>
+            <div class="hero-actions"><a class="btn btn-ghost" href="quickcrm/">詳しく見る</a></div>
+          </div>
+          <div class="mini-dashboard">
+            <div class="mini-row"><div><strong>顧客カード連携</strong><br><span>着信と同時に情報表示</span></div><div class="meter"><i style="width:92%"></i></div></div>
+            <div class="mini-row"><div><strong>応対品質管理</strong><br><span>履歴・メモ・結果を標準化</span></div><div class="meter"><i style="width:84%"></i></div></div>
+            <div class="mini-row"><div><strong>分析レポート</strong><br><span>稼働率と成果を可視化</span></div><div class="meter"><i style="width:76%"></i></div></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Outbound</span><span class="tag amber">Dialer</span></div>
+          <h3>Quick eDialer</h3>
+          <p>大規模アウトバウンドに向けたプレディクティブダイアラー。発信リストとオペレーター稼働を連動させ、接続機会を最大化します。</p>
+          <ul class="feature-list">
+            <li>予測発信</li>
+            <li>リスト管理</li>
+            <li>キャンペーン別集計</li>
+            <li>折返し管理</li>
+          </ul>
+          <div class="hero-actions"><a class="btn btn-ghost" href="quick-edialer/">詳しく見る</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Voice Tech</span><span class="tag red">AI</span></div>
+          <h3>音声認識・通話分析</h3>
+          <p>通話内容をテキスト化し、要約、キーワード抽出、応対品質チェックに活用。管理者のモニタリング負荷を下げます。</p>
+          <ul class="feature-list">
+            <li>リアルタイム文字起こし</li>
+            <li>通話要約</li>
+            <li>NGワード検知</li>
+            <li>教育・評価支援</li>
+          </ul>
+          <div class="hero-actions"><a class="btn btn-ghost" href="quickivr/">IVRページを見る</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Telephony</span><span class="tag green">PBX</span></div>
+          <h3>IVR・PBX連携</h3>
+          <p>既存の電話設備やクラウドPBX、IVRと接続し、着信振分、音声ガイダンス、通話ログの一元化を支援します。</p>
+          <ul class="feature-list">
+            <li>IVRシナリオ</li>
+            <li>着信振分</li>
+            <li>通話録音</li>
+            <li>既存環境連携</li>
+          </ul>
+          <div class="hero-actions"><a class="btn btn-ghost" href="cti/">接続環境を見る</a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Integration</span><span class="tag">Consulting</span></div>
+          <h3>導入設計・運用支援</h3>
+          <p>コールフロー整理、既存システム調査、データ移行、稼働後の改善まで、業務に合わせた実装ロードマップを提示します。</p>
+          <ul class="feature-list">
+            <li>要件定義</li>
+            <li>データ移行</li>
+            <li>研修・マニュアル</li>
+            <li>保守サポート</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="flow-wrap">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <p class="label">Implementation Flow</p>
+            <h2>問い合わせ後の不安を、<br>先回りして解消する。</h2>
+          </div>
+          <p class="lead">
+            BtoBシステムの検討では、導入までの進め方が見えることが重要です。提案サイトでは、相談から運用定着までを明確なステップで掲載し、問い合わせの心理的ハードルを下げます。
+          </p>
+        </div>
+        <div class="flow">
+          <article class="flow-step"><div class="step">STEP 01</div><h3>現状ヒアリング</h3><p>業務フロー、架電量、既存PBX、利用中CRMを確認。</p></article>
+          <article class="flow-step"><div class="step">STEP 02</div><h3>構成プラン設計</h3><p>QuickCRM、Dialer、音声認識の必要範囲を整理。</p></article>
+          <article class="flow-step"><div class="step">STEP 03</div><h3>検証・接続確認</h3><p>電話環境、データ、権限、画面要件を段階的に検証。</p></article>
+          <article class="flow-step"><div class="step">STEP 04</div><h3>本番導入</h3><p>オペレーター研修、管理画面設定、移行を支援。</p></article>
+          <article class="flow-step"><div class="step">STEP 05</div><h3>改善運用</h3><p>KPIレポートをもとに発信効率と応対品質を改善。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="industries">
+      <div class="section-head">
+        <div>
+          <p class="label">Use Cases</p>
+          <h2>検討者が自分ごと化できる、<br>業種別の導入シーン。</h2>
+        </div>
+        <p class="lead">
+          元サイトの技術情報をそのまま並べるのではなく、利用シーンから導入メリットを想像できる構成に刷新。
+          サービスページ下層への展開もしやすい情報設計です。
+        </p>
+      </div>
+      <div class="industry-grid">
+        <article class="industry-card"><div class="industry-body"><span>CALL CENTER</span><h3>大規模コンタクトセンター</h3><p>オペレーター稼働、通話結果、品質管理を一元化。</p></div></article>
+        <article class="industry-card"><div class="industry-body"><span>SALES</span><h3>アウトバウンド営業</h3><p>架電リストとCRMを連携し、追客漏れを減らします。</p></div></article>
+        <article class="industry-card"><div class="industry-body"><span>SUPPORT</span><h3>カスタマーサポート</h3><p>履歴共有と音声要約で、応対品質のばらつきを抑制。</p></div></article>
+        <article class="industry-card"><div class="industry-body"><span>FINANCE</span><h3>金融・保険</h3><p>本人確認や記録管理が必要な高信頼業務にも対応。</p></div></article>
+        <article class="industry-card"><div class="industry-body"><span>HEALTHCARE</span><h3>予約・受付センター</h3><p>IVRと着信振分で、混雑時の受付負荷を軽減。</p></div></article>
+        <article class="industry-card"><div class="industry-body"><span>BPO</span><h3>BPO・業務受託</h3><p>複数案件のキャンペーン管理と成果報告を効率化。</p></div></article>
+      </div>
+    </section>
+
+    <section class="trust-band">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <p class="label">Trust Signals</p>
+            <h2>古く見える情報を、<br>信頼につながる資産へ。</h2>
+          </div>
+          <p class="lead">
+            沿革、ニュース、展示会出展、製品更新情報は、企業の継続性を示す重要な材料です。
+            ただし一覧だけでは伝わりにくいため、実績・進化・サポート姿勢として見せ直します。
+          </p>
+        </div>
+        <div class="trust-grid">
+          <div class="timeline">
+            <h3>事業の歩み</h3>
+            <ul>
+              <li><time>1980</time><span>株式会社エム・アイ・ティシステム研究所を設立。</span></li>
+              <li><time>2000s</time><span>CRM・CTI領域の開発、コンタクトセンター向け製品展開を強化。</span></li>
+              <li><time>2015</time><span>アウトバウンド向け自動ダイヤルソフトウェア Quick eDialer を発表。</span></li>
+              <li><time>2020s</time><span>音声認識、クラウド連携、PBX連携など運用DX領域へ展開。</span></li>
+            </ul>
+          </div>
+          <div class="news-box">
+            <h3>更新情報の見せ方サンプル</h3>
+            <ul class="news-list">
+              <li><time>2025.06</time><span>Interop Tokyo出展情報を、製品導入相談への導線として掲載。</span></li>
+              <li><time>2024.10</time><span>コールセンター/CRM デモ&コンファレンス出展情報を掲載。</span></li>
+              <li><time>2024.04</time><span>QuickCRM・Quick eDialerの機能更新を導入メリット付きで紹介。</span></li>
+              <li><time>2023.11</time><span>音声認識・AI連携の活用事例をニュースから特設ページへ展開。</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="company">
+      <div class="company">
+        <aside class="company-card">
+          <p class="label">Company</p>
+          <h2>技術会社らしさに、相談しやすさを足す。</h2>
+          <p>
+            会社概要は表形式で正確に残しながら、上部では「何の専門会社か」を明確化。
+            採用、展示会、問い合わせ、資料請求など、今後のサイト拡張にも耐える構成です。
+          </p>
+          <div class="office-card" aria-label="オフィスイメージ"></div>
+        </aside>
+        <dl class="company-table">
+          <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
+          <div class="company-row"><dt>設立</dt><dd>1980年6月</dd></div>
+          <div class="company-row"><dt>代表者</dt><dd>代表取締役 水尾 恒雅</dd></div>
+          <div class="company-row"><dt>所在地</dt><dd>〒100-6512 東京都千代田区丸の内1-5-1 新丸の内ビルディング12階</dd></div>
+          <div class="company-row"><dt>資本金</dt><dd>9,000万円</dd></div>
+          <div class="company-row"><dt>事業内容</dt><dd>コンピュータシステムの企画・開発・販売・保守、コンタクトセンター向けソリューション、CTI/CRM/PBX連携。</dd></div>
+          <div class="company-row"><dt>主要製品</dt><dd>QuickCRM、Quick eDialer、QuickIVR、音声認識連携、PBX関連ソリューション。</dd></div>
+          <div class="company-row"><dt>強み</dt><dd>コンタクトセンター業務への理解、電話基盤との連携、個別要件に合わせたシステム構築。</dd></div>
+          <div class="company-row"><dt>サイト改善案</dt><dd>サービス別下層、導入事例、機能比較、FAQ、資料請求フォーム、採用情報の再設計。</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="cta-inner">
+        <div>
+          <p class="eyebrow">Request / Demo / Consultation</p>
+          <h2>導入検討者が、次の一歩を迷わないサイトへ。</h2>
+          <p>
+            このモックは、MITシステム研究所様の既存情報をもとに、トップページとサービスページ群の方向性を一目で伝えるための提案サンプルです。
+            実制作では正式な製品資料、導入事例、営業フローに合わせて、問い合わせ率を高めるページ設計へ落とし込みます。
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-dark" href="https://www.mitsys.co.jp/index.html" target="_blank" rel="noopener">現サイトを見る</a>
+          <a class="btn btn-ghost" href="https://leciel-webdesign.com/">LE CIELへ戻る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>MIT System Renewal Mock / Designed by LE CIEL WEB DESIGN</p>
+      <p>Proposal sample based on publicly available website information.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
