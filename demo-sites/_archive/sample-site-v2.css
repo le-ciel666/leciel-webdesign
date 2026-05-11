@@ -225,13 +225,7 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
 }
 
 .kikka-hero::after {
-  background:
-    radial-gradient(circle at 75% 35%, rgba(255, 90, 45, 0.34), transparent 28%),
-    linear-gradient(90deg, rgba(8, 5, 4, 0.94), rgba(8, 5, 4, 0.38) 54%, rgba(8, 5, 4, 0.18));
-}
-
-.kikka-hero img {
-  filter: saturate(1.18) contrast(1.08);
+  background: linear-gradient(90deg, rgba(8, 5, 4, 0.9), rgba(8, 5, 4, 0.36) 48%, rgba(8, 5, 4, 0.04) 72%);
 }
 
 .kikka-hero h1 {
@@ -265,18 +259,6 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
 
 .kikka-yokocho .floating-card span {
   color: rgba(255, 248, 235, 0.74);
-}
-
-.kikka-yokocho .marquee {
-  color: #140b07;
-  background: var(--accent);
-}
-
-.kikka-yokocho .marquee span {
-  font-family: var(--sans);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  opacity: 1;
 }
 
 .kikka-intro {
