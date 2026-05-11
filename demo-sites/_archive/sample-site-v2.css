@@ -171,13 +171,373 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
 .yoga2 { --bg:#eef5f8; --accent:#557fae; --accent-soft:#d9e8f3; --dark:#182435; --display:"Cormorant Garamond","Noto Serif JP",serif; }
 .lp2 { --bg:#fff7f6; --accent:#e65f67; --accent-soft:#ffd8d8; --dark:#10131d; --display:"Noto Sans JP",system-ui,sans-serif; }
 
+.kikka-yokocho {
+  --bg: #0e0b0a;
+  --ink: #fff8eb;
+  --muted: #b6a28d;
+  --accent: #ff5a2d;
+  --accent-soft: #ffd36a;
+  --line: rgba(255, 248, 235, 0.16);
+  --dark: #0b0807;
+  background:
+    linear-gradient(135deg, rgba(255, 90, 45, 0.08) 0 1px, transparent 1px 22px),
+    #0e0b0a;
+  color: var(--ink);
+}
+
+.kikka-yokocho .topbar {
+  color: var(--ink);
+  background: linear-gradient(to bottom, rgba(14, 11, 10, 0.88), rgba(14, 11, 10, 0.18), transparent);
+}
+
+.kikka-yokocho .brand {
+  font-family: var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.kikka-yokocho .topbar nav a {
+  color: rgba(255, 248, 235, 0.84);
+  text-shadow: none;
+}
+
+.kikka-yokocho .topbar .cta,
+.kikka-yokocho .button {
+  color: #140b07;
+  background: var(--accent-soft);
+  box-shadow: 0 14px 32px rgba(255, 90, 45, 0.22);
+}
+
+.kikka-yokocho .button.secondary {
+  color: var(--ink);
+  background: rgba(255, 248, 235, 0.12);
+  border-color: rgba(255, 248, 235, 0.28);
+}
+
+.kikka-hero::before {
+  position: absolute;
+  inset: auto clamp(18px, 5vw, 64px) 24px auto;
+  z-index: 1;
+  width: min(34vw, 360px);
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--accent) 0 28px, transparent 28px 42px);
+  content: "";
+}
+
+.kikka-hero::after {
+  background:
+    radial-gradient(circle at 75% 35%, rgba(255, 90, 45, 0.34), transparent 28%),
+    linear-gradient(90deg, rgba(8, 5, 4, 0.94), rgba(8, 5, 4, 0.38) 54%, rgba(8, 5, 4, 0.18));
+}
+
+.kikka-hero img {
+  filter: saturate(1.18) contrast(1.08);
+}
+
+.kikka-hero h1 {
+  font-family: var(--sans);
+  font-weight: 900;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.kikka-hero .hero-content {
+  max-width: 920px;
+}
+
+.kikka-hero .hero-content p:not(.eyebrow) {
+  color: rgba(255, 248, 235, 0.82);
+}
+
+.kikka-yokocho .floating-card {
+  color: var(--ink);
+  background: rgba(16, 11, 8, 0.82);
+  border: 1px solid rgba(255, 211, 106, 0.28);
+  border-radius: 4px;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.44);
+}
+
+.kikka-yokocho .floating-card b {
+  color: var(--accent-soft);
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-yokocho .floating-card span {
+  color: rgba(255, 248, 235, 0.74);
+}
+
+.kikka-yokocho .marquee {
+  color: #140b07;
+  background: var(--accent);
+}
+
+.kikka-yokocho .marquee span {
+  font-family: var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  opacity: 1;
+}
+
+.kikka-intro {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255, 211, 106, 0.12), transparent 24%),
+    #0e0b0a;
+}
+
+.kikka-intro .lead {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-intro .feature-row {
+  border-bottom-color: rgba(255, 248, 235, 0.15);
+}
+
+.kikka-intro .feature-row b {
+  color: var(--accent);
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-intro .feature-row p {
+  color: rgba(255, 248, 235, 0.72);
+}
+
+.kikka-menu {
+  color: #1a100c;
+  background:
+    linear-gradient(90deg, rgba(255, 90, 45, 0.08) 1px, transparent 1px),
+    #fff4df;
+  background-size: 18px 18px;
+}
+
+.kikka-menu .eyebrow,
+.kikka-course .eyebrow {
+  color: var(--accent);
+}
+
+.kikka-menu h2,
+.kikka-course h2 {
+  max-width: 980px;
+  font-family: var(--sans);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.kikka-menu .cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.kikka-menu .card {
+  min-height: 278px;
+  color: #21130c;
+  background: #fffaf0;
+  border: 2px solid rgba(255, 90, 45, 0.18);
+  border-radius: 0;
+  box-shadow: 10px 10px 0 rgba(255, 90, 45, 0.14);
+}
+
+.kikka-menu .card h3 {
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-menu .card p {
+  color: #6a4e3a;
+}
+
+.kikka-special {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  min-height: 680px;
+  background: #16100d;
+}
+
+.special-photo {
+  min-height: 520px;
+}
+
+.special-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(52px, 8vw, 104px);
+}
+
+.special-copy h2 {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.special-copy p {
+  max-width: 680px;
+  color: rgba(255, 248, 235, 0.72);
+}
+
+.special-copy ul {
+  display: grid;
+  gap: 12px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.special-copy li {
+  padding: 18px 20px;
+  color: rgba(255, 248, 235, 0.78);
+  background: rgba(255, 248, 235, 0.08);
+  border-left: 4px solid var(--accent);
+}
+
+.special-copy li span {
+  display: inline-block;
+  min-width: 70px;
+  color: var(--accent-soft);
+  font-weight: 900;
+}
+
+.kikka-course {
+  background:
+    radial-gradient(circle at 78% 16%, rgba(255, 90, 45, 0.24), transparent 24%),
+    #0e0b0a;
+}
+
+.course-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 44px;
+  background: rgba(255, 248, 235, 0.16);
+}
+
+.course-row article {
+  min-height: 340px;
+  padding: 34px;
+  background: #16100d;
+}
+
+.course-row em {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--accent-soft);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.course-row h3 {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.course-row p {
+  color: rgba(255, 248, 235, 0.68);
+}
+
+.course-row b {
+  display: block;
+  margin-top: 24px;
+  color: var(--accent);
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.kikka-seats {
+  min-height: 720px;
+}
+
+.kikka-seats .text-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 90, 45, 0.12), transparent),
+    #fff4df;
+}
+
+.kikka-seats .text-panel h2 {
+  color: #1a100c;
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-seats .text-panel p {
+  color: #6a4e3a;
+}
+
+.kikka-seats .text-panel .eyebrow {
+  color: var(--accent);
+}
+
+.seat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.seat-tags span {
+  padding: 10px 14px;
+  color: #1a100c;
+  background: rgba(255, 90, 45, 0.13);
+  border: 1px solid rgba(255, 90, 45, 0.2);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.kikka-info {
+  background: #0e0b0a;
+}
+
+.kikka-info .info-panel {
+  color: #1a100c;
+  background: #fffaf0;
+}
+
+.kikka-info .info-panel h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-info .info-panel dd {
+  color: #6a4e3a;
+}
+
+.kikka-info .info-photo {
+  min-height: 520px;
+  padding: 0;
+}
+
+.kikka-final {
+  color: var(--ink);
+  background:
+    linear-gradient(rgba(14, 11, 10, 0.82), rgba(14, 11, 10, 0.9)),
+    url("../../assets/izakaya/course.png") center/cover;
+}
+
+.kikka-final h2 {
+  font-family: var(--sans);
+  font-weight: 900;
+}
+
+.kikka-final p {
+  color: rgba(255, 248, 235, 0.76);
+}
+
+.kikka-final .hero-actions {
+  justify-content: center;
+}
+
 @media (max-width: 920px) {
   .topbar { position: absolute; grid-template-columns: 1fr; align-items: start; gap: 14px; padding-top: 20px; }
   .topbar nav { justify-content: flex-start; flex-wrap: wrap; gap: 14px 18px; }
   .topbar .cta { justify-self: start; }
   .floating-card { position: relative; right: auto; bottom: auto; margin: 0 22px 34px; }
-  .intro-grid, .image-band, .split-info { grid-template-columns: 1fr; }
-  .cards { grid-template-columns: 1fr; }
+  .intro-grid, .image-band, .split-info, .kikka-special { grid-template-columns: 1fr; }
+  .cards, .kikka-menu .cards, .course-row { grid-template-columns: 1fr; }
   .image-band { min-height: auto; }
   .image-band > img { min-height: 420px; }
 }
@@ -186,5 +546,6 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
   h1 { font-size: 42px; }
   .hero-actions { flex-direction: column; }
   .button { width: 100%; }
-  .info-panel dl { grid-template-columns: 1fr; }
+  .info-panel dl, .feature-row { grid-template-columns: 1fr; }
+  .special-copy li span { display: block; margin-bottom: 6px; }
 }
