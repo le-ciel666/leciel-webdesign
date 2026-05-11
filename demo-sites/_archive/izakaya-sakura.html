@@ -11,72 +11,183 @@
   </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>炉端 さくら | 居酒屋サンプルサイト</title>
-    <meta name="description" content="居酒屋向けホームページ制作サンプル。料理、席、宴会予約が伝わる居酒屋サイトです。" />
+    <title>炉端 さくら | 新宿三丁目の炉端焼きと旬魚の居酒屋</title>
+    <meta name="description" content="新宿三丁目駅から徒歩3分。炉端 さくらは、炭火で焼き上げる旬魚と地鶏、季節の小皿、日本酒をゆっくり楽しめる居酒屋です。個室、カウンター、宴会コースをご用意しています。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="sample-site.css" />
   </head>
-  <body class="restaurant">
+  <body class="restaurant izakaya-sakura">
     <header class="site-header">
       <a class="logo" href="#">炉端 さくら</a>
       <nav>
         <a href="#concept">こだわり</a>
         <a href="#menu">お品書き</a>
-        <a href="#scene">利用シーン</a>
+        <a href="#course">ご宴会</a>
+        <a href="#seats">お席</a>
         <a href="#access">店舗情報</a>
-        <a class="nav-cta" href="#reserve">予約する</a>
+        <a class="nav-cta" href="#reserve">予約</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero sakura-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Robata Dining</p>
-          <h1>炭火の香りで、<br />今夜を特別に。</h1>
-          <p>旬の魚、地鶏、地酒。職人の手仕事と落ち着いた空間が伝わる、予約につながる居酒屋サイトです。</p>
-          <div class="actions"><a class="button" href="#reserve">席を予約する</a><a class="button secondary" href="#menu">コースを見る</a></div>
+          <p class="eyebrow">Shinjuku Robata Dining</p>
+          <h1>炭火の香りと、<br />旬を囲む夜。</h1>
+          <p>新宿三丁目の路地に灯る小さな炉端居酒屋。焼き台から届く香ばしさ、旬魚の刺身、季節の小皿、冷えた地酒で、肩の力がほどける一杯をどうぞ。</p>
+          <div class="actions">
+            <a class="button" href="#reserve">今夜の席を予約</a>
+            <a class="button secondary" href="#menu">お品書きを見る</a>
+          </div>
         </div>
-        <div class="hero-art has-image"><img src="../../assets/izakaya/hero.png" alt="炭火焼きと和食が並ぶ居酒屋カウンター" /><div class="art-label"><b>2-30名</b><span>個室、宴会、接待まで使いやすい席情報を整理。</span></div></div>
-      </section>
-
-      <section class="stats">
-        <div class="stat"><b>17:00</b><p>仕事帰りの来店に合わせた営業時間表示</p></div>
-        <div class="stat"><b>38種</b><p>全国の地酒を見やすく紹介</p></div>
-        <div class="stat"><b>24h</b><p>スマホから空席確認・予約へ誘導</p></div>
-      </section>
-
-      <section id="concept" class="section two-col">
-        <div class="visual-panel"></div>
-        <div><p class="eyebrow">Our Story</p><h2>炭火で引き出す、<br />素材本来の旨み。</h2><p>料理写真がなくても、炭火・旬・個室・地酒といった強みが伝わるように構成します。宴会や接待の予約前に知りたい情報を近くにまとめ、問い合わせを後押しします。</p></div>
-      </section>
-
-      <section id="menu" class="section band">
-        <div class="section-title"><p class="eyebrow">Menu</p><h2>注文したくなるお品書き</h2></div>
-        <div class="cards">
-          <article class="card"><small>Course</small><h3>季節の炉端コース</h3><p>宴会・接待に使いやすい内容をわかりやすく掲載。</p><div class="price">¥5,500</div></article>
-          <article class="card"><small>Special</small><h3>地鶏の炭火焼き</h3><p>看板メニューを主役にして来店理由を作ります。</p><div class="price">¥1,380</div></article>
-          <article class="card"><small>Drink</small><h3>日本酒ペアリング</h3><p>料理とお酒の相性を提案し客単価アップへ。</p><div class="price">¥3,300</div></article>
+        <div class="hero-art has-image">
+          <img src="../../assets/izakaya/hero.png" alt="炭火焼きと和食が並ぶ炉端居酒屋のカウンター" />
+          <div class="art-label">
+            <b>本日入荷</b>
+            <span>北海道 真ほっけ、三陸 牡蠣、京都 九条ねぎ。炭火で香ばしく仕上げます。</span>
+          </div>
         </div>
       </section>
 
-      <section id="scene" class="section">
-        <div class="section-title"><p class="eyebrow">Scene</p><h2>利用シーンが想像できる構成</h2></div>
+      <section class="stats sakura-stats" aria-label="店舗の特徴">
+        <div class="stat"><b>17:00</b><p>焼き台に火が入り、暖簾をかける時間。</p></div>
+        <div class="stat"><b>42席</b><p>カウンター、テーブル、半個室をご用意。</p></div>
+        <div class="stat"><b>36種</b><p>料理に合わせたい日本酒と焼酎を常備。</p></div>
+      </section>
+
+      <section id="concept" class="section two-col sakura-concept">
+        <div class="visual-panel food-photo">
+          <img src="../../assets/izakaya/counter.png" alt="木のカウンターと焼き台のある炉端居酒屋" />
+        </div>
+        <div>
+          <p class="eyebrow">Our Robata</p>
+          <h2>焼き上がる音まで、<br />酒の肴になる。</h2>
+          <p>炉端 さくらの主役は、炭火でじっくり火を入れる魚と野菜。表面は香ばしく、中はふっくら。焼き台を囲むカウンターでは、職人が串を返す音や立ちのぼる香りまで楽しめます。</p>
+          <div class="feature-list">
+            <span>備長炭の強い火力</span>
+            <span>毎朝仕入れる旬魚</span>
+            <span>出汁をきかせた小皿</span>
+            <span>料理に寄り添う地酒</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="menu" class="section band sakura-menu">
+        <div class="section-title">
+          <p class="eyebrow">Tonight Menu</p>
+          <h2>まず頼みたい、さくらの名物。</h2>
+          <p>炭火焼き、刺身、小皿、締めの土鍋ご飯まで。お一人でも、宴会でも、食べたいものが見つかる献立を揃えています。</p>
+        </div>
+        <div class="cards menu-cards">
+          <article class="card"><small>Robata</small><h3>地鶏もも炭火焼き</h3><p>皮目はぱりっと、身はしっとり。柚子胡椒と粗塩で。</p><div class="price">¥1,480</div></article>
+          <article class="card"><small>Fish</small><h3>大判ほっけ一夜干し</h3><p>脂ののった身を炭火で香ばしく。大根おろしを添えて。</p><div class="price">¥1,780</div></article>
+          <article class="card"><small>Sashimi</small><h3>旬魚のお造り五点盛り</h3><p>その日の良いところを少しずつ。日本酒の一杯目に。</p><div class="price">¥2,180</div></article>
+          <article class="card"><small>Vegetable</small><h3>焼き九条ねぎ 味噌だれ</h3><p>とろりと甘いねぎに、香ばしい自家製味噌を重ねます。</p><div class="price">¥780</div></article>
+          <article class="card"><small>Small Dish</small><h3>だし巻き玉子</h3><p>鰹と昆布の出汁を含ませた、ふるふるの定番小皿。</p><div class="price">¥820</div></article>
+          <article class="card"><small>Rice</small><h3>鮭といくらの土鍋ご飯</h3><p>炊き上げに25分。締めに分け合いたい人気の一品。</p><div class="price">¥2,480</div></article>
+        </div>
+      </section>
+
+      <section class="section seasonal">
+        <div class="seasonal-copy">
+          <p class="eyebrow">Seasonal Plate</p>
+          <h2>季節の香りを、少しずつ。</h2>
+          <p>春は山菜、夏は鮎、秋は茸、冬は牡蠣。仕入れに合わせて日替わりの短冊メニューをご用意しています。</p>
+        </div>
+        <div class="seasonal-board">
+          <div><b>本日の刺身</b><span>寒ぶり / 真鯛 / 生たこ / 〆さば</span></div>
+          <div><b>炉端焼き</b><span>牡蠣昆布焼き / 長芋 / 椎茸 / 銀だら西京焼き</span></div>
+          <div><b>酒肴</b><span>炙り明太子 / いぶりがっこチーズ / ほたるいか沖漬け</span></div>
+        </div>
+      </section>
+
+      <section id="course" class="section dark course-section">
+        <div class="section-title">
+          <p class="eyebrow">Course</p>
+          <h2>会話が弾む、炉端の宴。</h2>
+          <p>歓送迎会、週末の集まり、会社帰りの飲み会に。飲み放題付きコースや、料理中心の会食コースも承ります。</p>
+        </div>
+        <div class="course-grid">
+          <article>
+            <span>人気</span>
+            <h3>さくら炉端コース</h3>
+            <p>前菜三種、旬魚刺身、地鶏炭火焼き、季節野菜、土鍋ご飯、甘味。</p>
+            <b>¥5,500</b>
+          </article>
+          <article>
+            <span>飲み放題付き</span>
+            <h3>旬魚と炭火の宴会コース</h3>
+            <p>刺身盛り、名物ほっけ、串焼き、揚げ物、締めの蕎麦。120分飲み放題付き。</p>
+            <b>¥6,800</b>
+          </article>
+          <article>
+            <span>少人数会食</span>
+            <h3>季節のおまかせ会席</h3>
+            <p>仕入れに合わせた旬魚、和牛炭火焼き、料理長おすすめの日本酒一杯付き。</p>
+            <b>¥8,800</b>
+          </article>
+        </div>
+      </section>
+
+      <section id="seats" class="section seats-section">
+        <div class="section-title">
+          <p class="eyebrow">Seats</p>
+          <h2>ふらりと一杯も、集まりの夜も。</h2>
+        </div>
         <div class="gallery">
-          <div class="tile"><img src="../../assets/izakaya/counter.png" alt="暖簾と木の質感がある居酒屋カウンター" /><span>Counter</span></div>
-          <div class="tile"><img src="../../assets/izakaya/private-room.png" alt="落ち着いた個室席" /><span>Private Room</span></div>
-          <div class="tile"><img src="../../assets/izakaya/sake.png" alt="日本酒と酒器が並ぶカウンター" /><span>Sake</span></div>
-          <div class="tile"><img src="../../assets/izakaya/course.png" alt="炉端料理のコース" /><span>Robata Course</span></div>
-          <div class="tile"><img src="../../assets/izakaya/woman.png" alt="居酒屋で食事を楽しむ日本人女性" /><span>Dining Scene</span></div>
+          <div class="tile"><img src="../../assets/izakaya/counter.png" alt="焼き台を眺めるカウンター席" /><span>焼き台カウンター 10席</span></div>
+          <div class="tile"><img src="../../assets/izakaya/private-room.png" alt="落ち着いた木目の半個室席" /><span>半個室 4-8名</span></div>
+          <div class="tile"><img src="../../assets/izakaya/sake.png" alt="日本酒と酒器が並ぶ棚" /><span>地酒カウンター</span></div>
+          <div class="tile"><img src="../../assets/izakaya/course.png" alt="炉端料理と小皿が並ぶ宴会コース" /><span>宴会テーブル 最大24名</span></div>
+          <div class="tile"><img src="../../assets/izakaya/woman.png" alt="炉端居酒屋で食事を楽しむ女性" /><span>仕事帰りの一杯</span></div>
         </div>
       </section>
 
-      <section id="access" class="section dark">
-        <div class="info-grid"><div class="map-box">SHINJUKU</div><div><p class="eyebrow">Access</p><h2>店舗情報</h2><p>駅からのアクセス、営業時間、席数、予約方法を整理。幹事さんが迷わず問い合わせできます。</p><dl><dt>住所</dt><dd>東京都新宿区歌舞伎町 1-00-00 B1F</dd><dt>営業時間</dt><dd>17:00 - 23:30 / 月曜定休</dd><dt>席数</dt><dd>カウンター、テーブル、完全個室あり</dd></dl></div></div>
+      <section class="section drink-section band">
+        <div class="drink-copy">
+          <p class="eyebrow">Drink</p>
+          <h2>炭火に合う、辛口と香り。</h2>
+          <p>日本酒は常時36種。すっきり辛口、米の旨みがある純米、香りの良い吟醸まで、料理に合わせて一杯からお選びいただけます。</p>
+        </div>
+        <div class="drink-list">
+          <dl><dt>日本酒</dt><dd>伯楽星 / 日高見 / 紀土 / 風の森 / 醸し人九平次</dd></dl>
+          <dl><dt>焼酎</dt><dd>中々 / 富乃宝山 / 佐藤 黒 / 鳥飼</dd></dl>
+          <dl><dt>果実酒</dt><dd>濃厚梅酒 / あらごし桃 / ゆず酒</dd></dl>
+          <dl><dt>定番</dt><dd>生ビール / 角ハイボール / レモンサワー / 烏龍茶</dd></dl>
+        </div>
       </section>
 
-      <section id="reserve" class="final-cta"><p class="eyebrow">Reservation</p><h2>宴会予約につながる居酒屋サイトを制作します。</h2><p>メニュー、席、コース、空席導線を整理して、来店前の不安を減らします。</p><a class="button" href="https://leciel-webdesign.com/#contact">無料で相談する</a></section>
+      <section id="access" class="section dark sakura-access">
+        <div class="info-grid">
+          <div class="map-box">
+            <span>新宿三丁目駅 C6出口 徒歩3分</span>
+          </div>
+          <div>
+            <p class="eyebrow">Access</p>
+            <h2>店舗情報</h2>
+            <p>新宿の賑わいから少し入った路地の地下1階。暖簾と炭の香りを目印にお越しください。</p>
+            <dl>
+              <dt>住所</dt><dd>東京都新宿区新宿3-12-8 さくらビル B1F</dd>
+              <dt>営業時間</dt><dd>17:00 - 23:30（料理L.O. 22:30 / ドリンクL.O. 23:00）</dd>
+              <dt>定休日</dt><dd>月曜日（祝前日の場合は営業）</dd>
+              <dt>席数</dt><dd>42席 / カウンター10席 / 半個室4室 / 貸切30名様から</dd>
+              <dt>電話</dt><dd>03-6380-0000</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section id="reserve" class="final-cta reserve-section">
+        <p class="eyebrow">Reservation</p>
+        <h2>今夜の一杯を、炉端 さくらで。</h2>
+        <p>当日の空席確認、コースのご相談、個室のご希望はお電話で承ります。週末は早めのご予約がおすすめです。</p>
+        <div class="actions">
+          <a class="button" href="tel:0363800000">03-6380-0000</a>
+          <a class="button secondary" href="#access">アクセスを見る</a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
