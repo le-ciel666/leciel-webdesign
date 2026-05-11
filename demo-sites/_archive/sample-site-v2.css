@@ -228,6 +228,10 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
   background: linear-gradient(90deg, rgba(8, 5, 4, 0.9), rgba(8, 5, 4, 0.36) 48%, rgba(8, 5, 4, 0.04) 72%);
 }
 
+.kikka-hero > img {
+  object-position: center center;
+}
+
 .kikka-hero h1 {
   font-family: var(--sans);
   font-weight: 900;
@@ -530,4 +534,63 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
   .button { width: 100%; }
   .info-panel dl, .feature-row { grid-template-columns: 1fr; }
   .special-copy li span { display: block; margin-bottom: 6px; }
+}
+
+@media (max-width: 760px) {
+  .kikka-hero {
+    min-height: 760px;
+    align-items: end;
+  }
+
+  .kikka-hero > img {
+    height: 58%;
+    object-position: 66% center;
+  }
+
+  .kikka-hero::after {
+    background:
+      linear-gradient(180deg, rgba(8, 5, 4, 0.08) 0%, rgba(8, 5, 4, 0.18) 42%, rgba(8, 5, 4, 0.94) 58%, rgba(8, 5, 4, 0.98) 100%),
+      linear-gradient(90deg, rgba(8, 5, 4, 0.18), rgba(8, 5, 4, 0.02));
+  }
+
+  .kikka-hero::before {
+    content: none;
+  }
+
+  .kikka-hero .hero-content {
+    padding: 430px 22px 28px;
+  }
+
+  .kikka-hero h1 {
+    max-width: 360px;
+    margin-bottom: 18px;
+    font-size: clamp(38px, 12vw, 52px);
+    line-height: 1.04;
+  }
+
+  .kikka-hero .hero-content p:not(.eyebrow) {
+    max-width: 340px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .kikka-yokocho .floating-card {
+    margin: 0 22px 28px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .kikka-hero {
+    min-height: 720px;
+  }
+
+  .kikka-hero > img {
+    height: 54%;
+    object-position: 68% center;
+  }
+
+  .kikka-hero .hero-content {
+    padding-top: 390px;
+  }
 }
