@@ -1,0 +1,832 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VEMHY2G58C');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINO PILATES STUDIO | 中目黒のリフォーマーピラティス</title>
+    <meta name="description" content="中目黒の少人数制リフォーマーピラティススタジオ。姿勢改善、体幹づくり、産後ケア、パーソナルレッスンに対応。初回体験レッスン受付中。" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #21302d;
+        --muted: #6f7d77;
+        --line: #dfe7e1;
+        --sage: #789487;
+        --sage-dark: #4f6a5e;
+        --mint: #edf5f0;
+        --cream: #fbf7ef;
+        --warm: #d7c3a8;
+        --white: #fff;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Noto Sans JP", sans-serif;
+        color: var(--ink);
+        background: var(--cream);
+        line-height: 1.75;
+      }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; max-width: 100%; }
+      h1, h2, h3, p { margin-top: 0; }
+
+      .site-header {
+        position: fixed;
+        inset: 18px 24px auto;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 12px 14px 12px 22px;
+        border: 1px solid rgba(255,255,255,.72);
+        border-radius: 999px;
+        background: rgba(251,247,239,.82);
+        backdrop-filter: blur(18px);
+        box-shadow: 0 18px 50px rgba(33,48,45,.12);
+      }
+      .brand {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: .06em;
+        white-space: nowrap;
+      }
+      .nav {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: .88rem;
+        font-weight: 800;
+      }
+      .button,
+      .header-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 24px;
+        border-radius: 999px;
+        background: var(--ink);
+        color: var(--white);
+        font-weight: 900;
+        box-shadow: 0 14px 28px rgba(33,48,45,.18);
+      }
+      .header-cta {
+        min-height: 42px;
+        padding: 0 18px;
+        font-size: .86rem;
+      }
+      .button.secondary {
+        background: var(--white);
+        color: var(--ink);
+        border: 1px solid var(--line);
+        box-shadow: none;
+      }
+
+      .hero {
+        min-height: 94vh;
+        display: grid;
+        grid-template-columns: minmax(0, .92fr) minmax(430px, 1fr);
+        background: var(--mint);
+      }
+      .hero-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 130px 7vw 72px;
+      }
+      .eyebrow {
+        margin-bottom: 16px;
+        color: var(--sage-dark);
+        font-size: .78rem;
+        font-weight: 900;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin-bottom: 24px;
+        font-size: clamp(2.55rem, 6.8vw, 6.2rem);
+        line-height: .98;
+        letter-spacing: 0;
+      }
+      .serif {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 700;
+      }
+      .hero-lead {
+        max-width: 570px;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.4vw, 1.15rem);
+        font-weight: 600;
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        max-width: 620px;
+        margin-top: 52px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+      }
+      .hero-stats div {
+        min-height: 108px;
+        padding: 18px;
+        background: rgba(255,255,255,.7);
+      }
+      .hero-stats b {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        line-height: 1;
+      }
+      .hero-stats span {
+        display: block;
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: .82rem;
+        font-weight: 800;
+      }
+      .hero-visual {
+        position: relative;
+        min-height: 680px;
+        overflow: hidden;
+      }
+      .hero-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(237,245,240,.38), transparent 32%);
+      }
+      .visual-note {
+        position: absolute;
+        right: 28px;
+        bottom: 28px;
+        width: min(310px, calc(100% - 56px));
+        padding: 22px;
+        border-radius: 8px;
+        background: rgba(255,255,255,.9);
+        box-shadow: 0 18px 55px rgba(33,48,45,.18);
+      }
+      .visual-note b {
+        display: block;
+        margin-bottom: 6px;
+      }
+      .visual-note span {
+        color: var(--muted);
+        font-size: .9rem;
+        font-weight: 700;
+      }
+
+      .section {
+        padding: 96px 7vw;
+      }
+      .section-inner {
+        width: min(1160px, 100%);
+        margin: 0 auto;
+      }
+      .section-title {
+        display: grid;
+        grid-template-columns: minmax(0, .78fr) minmax(280px, .46fr);
+        gap: 48px;
+        align-items: end;
+        margin-bottom: 42px;
+      }
+      h2 {
+        margin-bottom: 0;
+        font-size: clamp(2rem, 4vw, 4.2rem);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+      .section-title p,
+      .intro-text,
+      .card p,
+      .faq p {
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .photo-strip {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 18px;
+        margin-top: -34px;
+      }
+      .photo-tile {
+        position: relative;
+        min-height: 380px;
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--mint);
+      }
+      .photo-tile.small { min-height: 300px; }
+      .photo-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo-label {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.9);
+        font-size: .8rem;
+        font-weight: 900;
+      }
+
+      .program-grid,
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card,
+      .price-card,
+      .faq,
+      .access-box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+      }
+      .card {
+        overflow: hidden;
+      }
+      .card img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+      }
+      .card-body {
+        padding: 24px;
+      }
+      .card small,
+      .price-card small,
+      dt {
+        color: var(--sage-dark);
+        font-size: .78rem;
+        font-weight: 900;
+        letter-spacing: .12em;
+      }
+      .card h3,
+      .price-card h3,
+      .faq h3 {
+        margin: 12px 0 10px;
+        font-size: 1.45rem;
+        line-height: 1.35;
+      }
+
+      .flow {
+        background: var(--white);
+      }
+      .flow-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+      }
+      .flow-item {
+        min-height: 220px;
+        padding: 24px;
+        background: var(--cream);
+      }
+      .flow-item b {
+        display: block;
+        margin-bottom: 22px;
+        font-family: "Cormorant Garamond", serif;
+        color: var(--warm);
+        font-size: 3.4rem;
+        line-height: .9;
+      }
+      .flow-item h3 {
+        margin-bottom: 8px;
+        font-size: 1.16rem;
+      }
+      .flow-item p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: .92rem;
+        font-weight: 600;
+      }
+
+      .studio-band {
+        display: grid;
+        grid-template-columns: minmax(320px, .82fr) minmax(0, 1fr);
+        gap: 54px;
+        align-items: center;
+        background: var(--mint);
+      }
+      .studio-panel {
+        padding-left: 7vw;
+      }
+      .studio-list {
+        display: grid;
+        gap: 16px;
+        margin-top: 32px;
+      }
+      .studio-list div {
+        display: grid;
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
+      }
+      .studio-list b {
+        color: var(--sage-dark);
+        font-size: .78rem;
+        letter-spacing: .12em;
+      }
+      .studio-list span {
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .studio-photo {
+        min-height: 620px;
+      }
+      .studio-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .instructor {
+        display: grid;
+        grid-template-columns: minmax(300px, .55fr) minmax(0, .8fr);
+        gap: 54px;
+        align-items: center;
+      }
+      .portrait {
+        overflow: hidden;
+        border-radius: 8px;
+        background: var(--mint);
+      }
+      .portrait img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+      }
+      .credential-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+      .credential-list span {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--sage-dark);
+        font-size: .84rem;
+        font-weight: 900;
+      }
+
+      .price-section {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .price-section .eyebrow,
+      .price-section .section-title p {
+        color: #bdd0c7;
+      }
+      .price-card {
+        min-height: 320px;
+        padding: 28px;
+        background: rgba(255,255,255,.08);
+        border-color: rgba(255,255,255,.18);
+      }
+      .price-card.featured {
+        background: var(--white);
+        color: var(--ink);
+      }
+      .price-card p {
+        min-height: 72px;
+        color: inherit;
+        opacity: .76;
+        font-weight: 600;
+      }
+      .price {
+        margin: 24px 0;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 3.15rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .price span {
+        font-family: "Noto Sans JP", sans-serif;
+        font-size: .92rem;
+      }
+      .price-card ul {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: .92rem;
+        font-weight: 800;
+      }
+
+      .trial {
+        min-height: 560px;
+        display: grid;
+        place-items: center;
+        padding: 104px 7vw;
+        text-align: center;
+        background:
+          linear-gradient(rgba(251,247,239,.86), rgba(251,247,239,.9)),
+          url("assets-pilates/trial-lesson.png") center / cover;
+      }
+      .trial-inner {
+        width: min(760px, 100%);
+      }
+      .trial h2 {
+        margin-bottom: 22px;
+      }
+      .trial p {
+        max-width: 620px;
+        margin-inline: auto;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .trial .button {
+        margin-top: 24px;
+      }
+
+      .faq-grid,
+      .access-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .faq,
+      .access-box {
+        padding: 28px;
+      }
+      dl {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 14px 20px;
+        margin: 24px 0 0;
+      }
+      dd {
+        margin: 0;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      footer {
+        padding: 34px 7vw;
+        background: var(--ink);
+        color: rgba(255,255,255,.78);
+        text-align: center;
+        font-size: .86rem;
+      }
+
+      @media (max-width: 980px) {
+        .site-header { inset: 12px 14px auto; }
+        .nav { display: none; }
+        .hero,
+        .section-title,
+        .studio-band,
+        .instructor,
+        .access-grid,
+        .faq-grid,
+        .photo-strip {
+          grid-template-columns: 1fr;
+        }
+        .hero { min-height: auto; }
+        .hero-copy { padding: 118px 6vw 48px; }
+        .hero-visual { min-height: 520px; }
+        .program-grid,
+        .price-grid,
+        .flow-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .studio-panel { padding: 76px 6vw 0; }
+        .studio-photo { min-height: 460px; }
+      }
+
+      @media (max-width: 640px) {
+        .site-header { padding-left: 16px; }
+        .brand { font-size: 1rem; }
+        .header-cta {
+          min-height: 38px;
+          padding: 0 14px;
+          font-size: .78rem;
+        }
+        h1 { font-size: clamp(2.35rem, 15vw, 4rem); }
+        .hero-stats,
+        .program-grid,
+        .price-grid,
+        .flow-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual { min-height: 390px; }
+        .visual-note {
+          right: 16px;
+          bottom: 16px;
+          width: calc(100% - 32px);
+        }
+        .section,
+        .trial { padding: 72px 6vw; }
+        .photo-tile,
+        .photo-tile.small { min-height: 260px; }
+        .card-body,
+        .price-card,
+        .faq,
+        .access-box { padding: 22px; }
+        dl,
+        .studio-list div {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#">LINO PILATES</a>
+      <nav class="nav" aria-label="メインナビゲーション">
+        <a href="#program">Program</a>
+        <a href="#flow">Flow</a>
+        <a href="#studio">Studio</a>
+        <a href="#price">Price</a>
+        <a href="#access">Access</a>
+      </nav>
+      <a class="header-cta" href="#trial">体験予約</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Nakameguro Reformer Pilates</p>
+          <h1><span class="serif">Align</span>姿勢から、からだは変わる。</h1>
+          <p class="hero-lead">LINO PILATESは、中目黒の少人数制リフォーマーピラティススタジオです。姿勢評価から始めて、体幹・柔軟性・呼吸を整えながら、しなやかで疲れにくい身体へ導きます。</p>
+          <div class="hero-actions">
+            <a class="button" href="#trial">初回体験を予約する</a>
+            <a class="button secondary" href="#program">レッスンを見る</a>
+          </div>
+          <div class="hero-stats" aria-label="スタジオの特徴">
+            <div><b>4</b><span>少人数クラス</span></div>
+            <div><b>50</b><span>分レッスン</span></div>
+            <div><b>7:30</b><span>朝クラス対応</span></div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img src="assets-pilates/reformer-studio-hero-v2.png" alt="明るいピラティススタジオでリフォーマーピラティスを行う女性とインストラクター" width="1672" height="941" />
+          <div class="visual-note">
+            <b>はじめてでも安心の姿勢チェック</b>
+            <span>目的や身体の癖に合わせて、無理なく続けられる動きを提案します。</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">First Trial</p>
+              <h2>まずは、身体の癖を知るところから。</h2>
+            </div>
+            <p>初回体験では、姿勢・呼吸・骨盤の位置を確認してからリフォーマーに乗ります。運動が久しぶりの方も、インストラクターが動きを細かくサポートします。</p>
+          </div>
+          <div class="photo-strip">
+            <figure class="photo-tile">
+              <img src="assets-pilates/trial-lesson.png" alt="リフォーマーピラティスの体験レッスンで姿勢を確認するインストラクター" width="1672" height="941" loading="lazy" decoding="async" />
+              <figcaption class="photo-label">Trial Lesson</figcaption>
+            </figure>
+            <figure class="photo-tile small">
+              <img src="assets-pilates/studio-interior.png" alt="自然光が入る清潔なピラティススタジオ内観" width="1672" height="941" loading="lazy" decoding="async" />
+              <figcaption class="photo-label">Clean Studio</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="program" class="section">
+        <div class="section-inner">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Program</p>
+              <h2>目的に合わせて選べるレッスン。</h2>
+            </div>
+            <p>姿勢改善、ボディメイク、産後ケア、パーソナルまで。少人数制だから、初めての方にも経験者にも必要な負荷で進められます。</p>
+          </div>
+          <div class="program-grid">
+            <article class="card">
+              <img src="assets-pilates/trial-lesson.png" alt="初心者向けリフォーマーピラティスレッスン" width="1672" height="941" loading="lazy" decoding="async" />
+              <div class="card-body">
+                <small>BEGINNER</small>
+                <h3>はじめてのリフォーマー</h3>
+                <p>マシンの使い方、呼吸、骨盤の位置を丁寧に確認。運動が久しぶりの方にもおすすめです。</p>
+              </div>
+            </article>
+            <article class="card">
+              <img src="assets-pilates/group-class.png" alt="少人数制リフォーマーピラティスクラス" width="1672" height="941" loading="lazy" decoding="async" />
+              <div class="card-body">
+                <small>POSTURE</small>
+                <h3>姿勢改善ピラティス</h3>
+                <p>肩こり、反り腰、猫背など、日常の姿勢悩みに合わせて体幹と背骨の動きを整えます。</p>
+              </div>
+            </article>
+            <article class="card">
+              <img src="assets-pilates/instructor-portrait.png" alt="ピラティスインストラクター" width="1672" height="941" loading="lazy" decoding="async" />
+              <div class="card-body">
+                <small>PRIVATE</small>
+                <h3>パーソナルセッション</h3>
+                <p>身体評価からメニューを組む個別レッスン。産後ケアやスポーツの補強にも対応します。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="flow" class="section flow">
+        <div class="section-inner">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Flow</p>
+              <h2>初回体験の流れ。</h2>
+            </div>
+            <p>ご来店からレッスン後のフィードバックまで約75分。身体の状態を見ながら進めるため、無理な動きは行いません。</p>
+          </div>
+          <div class="flow-grid">
+            <div class="flow-item"><b>01</b><h3>カウンセリング</h3><p>お悩み、運動歴、生活習慣を伺います。</p></div>
+            <div class="flow-item"><b>02</b><h3>姿勢チェック</h3><p>立ち姿勢と動きの癖を確認します。</p></div>
+            <div class="flow-item"><b>03</b><h3>レッスン</h3><p>リフォーマーで呼吸と体幹を整えます。</p></div>
+            <div class="flow-item"><b>04</b><h3>フィードバック</h3><p>今後の通い方やおすすめクラスをご提案します。</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="studio" class="studio-band">
+        <div class="studio-panel">
+          <p class="eyebrow">Studio</p>
+          <h2>清潔で集中できる、少人数制スタジオ。</h2>
+          <p class="intro-text">リフォーマーはゆとりを持って配置。大きな窓から自然光が入る落ち着いた空間で、周囲を気にせず自分の身体に向き合えます。</p>
+          <div class="studio-list">
+            <div><b>ROOM</b><span>最大4名の少人数制。インストラクターの目が届く距離感です。</span></div>
+            <div><b>ITEMS</b><span>タオル、水、レンタルウェアをご用意。手ぶらでも体験できます。</span></div>
+            <div><b>CARE</b><span>レッスン後は姿勢の変化とホームケアをお伝えします。</span></div>
+          </div>
+        </div>
+        <div class="studio-photo">
+          <img src="assets-pilates/studio-interior.png" alt="リフォーマーマシンが並ぶ明るいピラティススタジオ" width="1672" height="941" loading="lazy" decoding="async" />
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner instructor">
+          <div class="portrait">
+            <img src="assets-pilates/instructor-portrait.png" alt="LINO PILATESのインストラクター" width="1672" height="941" loading="lazy" decoding="async" />
+          </div>
+          <div>
+            <p class="eyebrow">Instructor</p>
+            <h2>一人ひとりの身体に合わせて、丁寧に。</h2>
+            <p class="intro-text">姿勢改善とリフォーマーピラティスを専門に、初心者から産後ケア、ボディメイクまで幅広くサポート。身体の変化を急がせず、続けやすいペースを一緒に見つけます。</p>
+            <div class="credential-list" aria-label="対応内容">
+              <span>リフォーマー指導</span>
+              <span>姿勢改善</span>
+              <span>産後ケア</span>
+              <span>初心者対応</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="price" class="section price-section">
+        <div class="section-inner">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Price</p>
+              <h2>続けやすい料金プラン。</h2>
+            </div>
+            <p>初回体験から月額プラン、パーソナルまで。目的と通うペースに合わせて選べます。</p>
+          </div>
+          <div class="price-grid">
+            <article class="price-card">
+              <small>TRIAL</small>
+              <h3>初回体験</h3>
+              <p>カウンセリングと姿勢チェック付き。まず試したい方に。</p>
+              <div class="price"><span>¥</span>2,200</div>
+              <ul>
+                <li>50分レッスン</li>
+                <li>レンタルウェア対応</li>
+                <li>当日入会特典あり</li>
+              </ul>
+            </article>
+            <article class="price-card featured">
+              <small>MONTHLY</small>
+              <h3>月4回プラン</h3>
+              <p>週1回のペースで姿勢改善を習慣化。人気の標準プランです。</p>
+              <div class="price"><span>¥</span>14,800</div>
+              <ul>
+                <li>少人数グループ</li>
+                <li>振替予約可能</li>
+                <li>姿勢チェック月1回</li>
+              </ul>
+            </article>
+            <article class="price-card">
+              <small>PRIVATE</small>
+              <h3>プライベート</h3>
+              <p>身体の悩みや目的に合わせて、完全個別で進めます。</p>
+              <div class="price"><span>¥</span>8,800</div>
+              <ul>
+                <li>1回50分</li>
+                <li>専用カルテ作成</li>
+                <li>ペアレッスン相談可</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="trial" class="trial">
+        <div class="trial-inner">
+          <p class="eyebrow">Trial Lesson</p>
+          <h2>初回体験レッスン受付中。</h2>
+          <p>姿勢や身体の癖を見ながら、今のあなたに合う動きから始めます。服装や持ち物に迷う方も、お気軽にご予約ください。</p>
+          <a class="button" href="#access">体験レッスンを予約する</a>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-inner">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">FAQ</p>
+              <h2>よくあるご質問。</h2>
+            </div>
+            <p>初めての方からよくいただく質問をまとめました。不安な点がある場合は、予約時にお気軽にご相談ください。</p>
+          </div>
+          <div class="faq-grid">
+            <article class="faq"><h3>身体が硬くても大丈夫ですか？</h3><p>大丈夫です。可動域に合わせて動きを調整するため、柔軟性に自信がない方でも始められます。</p></article>
+            <article class="faq"><h3>何を持って行けばいいですか？</h3><p>動きやすい服装、タオル、飲み物をお持ちください。レンタルウェアと水のご用意もあります。</p></article>
+            <article class="faq"><h3>運動経験がなくても参加できますか？</h3><p>初回は基本の呼吸と姿勢から始めます。強い負荷をかける前に身体の状態を確認します。</p></article>
+            <article class="faq"><h3>予約の変更はできますか？</h3><p>前日18時まで変更可能です。月額プランの方は同月内で振替予約をご利用いただけます。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="access" class="section">
+        <div class="section-inner access-grid">
+          <div class="access-box">
+            <p class="eyebrow">Access</p>
+            <h2>LINO PILATES STUDIO</h2>
+            <dl>
+              <dt>住所</dt><dd>東京都目黒区青葉台 0-00-00 2F</dd>
+              <dt>最寄り</dt><dd>中目黒駅 徒歩5分</dd>
+              <dt>時間</dt><dd>7:30 - 21:00</dd>
+              <dt>予約</dt><dd>Web予約 / 初回体験受付</dd>
+            </dl>
+          </div>
+          <div class="access-box">
+            <p class="eyebrow">Schedule</p>
+            <h2>朝も夜も通いやすく。</h2>
+            <dl>
+              <dt>平日</dt><dd>7:30 / 10:00 / 13:00 / 18:30 / 20:00</dd>
+              <dt>土日</dt><dd>9:00 / 11:00 / 14:00 / 16:00</dd>
+              <dt>定休日</dt><dd>火曜日</dd>
+              <dt>体験</dt><dd>初回体験はWeb予約から24時間受付中</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>LINO PILATES STUDIO</small>
+    </footer>
+  </body>
+</html>
