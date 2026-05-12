@@ -1,82 +1,304 @@
 <!doctype html>
 <html lang="ja">
   <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VEMHY2G58C');
-  </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VEMHY2G58C');
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SORA Yoga Studio | ヨガサンプルサイト</title>
-    <meta name="description" content="ヨガスタジオ向けホームページ制作サンプル。体験予約、クラス、料金が伝わるヨガサイトです。" />
+    <title>SORA Yoga Studio | 中目黒の少人数制ヨガスタジオ</title>
+    <meta name="description" content="SORA Yoga Studioは中目黒駅徒歩4分の少人数制ヨガスタジオです。初心者向け、朝ヨガ、リストラティブ、マタニティ対応クラスまで、無理なく続けられるレッスンをご用意しています。" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="sample-site.css" />
   </head>
   <body class="yoga">
-    <header class="site-header">
+    <header class="site-header yoga-header">
       <a class="logo" href="#">SORA Yoga Studio</a>
-      <nav>
-        <a href="#concept">コンセプト</a>
-        <a href="#class">クラス</a>
-        <a href="#plan">料金</a>
+      <nav aria-label="メインナビゲーション">
+        <a href="#concept">想い</a>
+        <a href="#classes">クラス</a>
+        <a href="#schedule">予定</a>
+        <a href="#price">料金</a>
         <a href="#access">アクセス</a>
         <a class="nav-cta" href="#trial">体験予約</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero sora-hero">
         <div class="hero-copy">
-          <p class="eyebrow">Yoga Studio</p>
-          <h1>呼吸を整え、<br />心をほどく。</h1>
-          <p>初心者でも安心して始められる少人数制ヨガスタジオ。体験予約まで迷わず進めるサイト構成です。</p>
-          <div class="actions"><a class="button" href="#trial">体験レッスンを予約</a><a class="button secondary" href="#class">クラスを見る</a></div>
+          <p class="eyebrow">Small group yoga studio in Nakameguro</p>
+          <h1>呼吸が深まると、毎日は少しやさしくなる。</h1>
+          <p>中目黒駅から徒歩4分。SORA Yoga Studioは、はじめての方も無理なく通える少人数制のヨガスタジオです。朝のリセット、仕事帰りのリラックス、産前産後のケアまで、今の身体に合う時間をご用意しています。</p>
+          <div class="actions">
+            <a class="button" href="#trial">体験レッスンを予約</a>
+            <a class="button secondary" href="#classes">クラスを見る</a>
+          </div>
         </div>
-        <div class="hero-art has-image"><img src="../../assets/yoga/instructor.png" alt="落ち着いたヨガスタジオに立つ日本人女性インストラクター" /><div class="art-label"><b>Trial</b><span>初回体験、持ち物、服装、不安点をまとめて案内。</span></div></div>
-      </section>
-
-      <section class="stats">
-        <div class="stat"><b>¥1,000</b><p>初回体験価格をわかりやすく表示</p></div>
-        <div class="stat"><b>12名</b><p>少人数制で安心感を訴求</p></div>
-        <div class="stat"><b>18</b><p>週間クラス数を見える化</p></div>
-      </section>
-
-      <section id="concept" class="section two-col">
-        <div class="visual-panel"></div>
-        <div><p class="eyebrow">Philosophy</p><h2>はじめてでも、安心して深まれる場所。</h2><p>ヨガサイトでは、クラスの難易度、講師の雰囲気、料金、体験の流れが重要です。予約前の不安を減らし、体験参加につなげます。</p></div>
-      </section>
-
-      <section id="class" class="section band">
-        <div class="section-title"><p class="eyebrow">Classes</p><h2>選びやすいクラス紹介</h2></div>
-        <div class="cards">
-          <article class="card"><small>Beginner</small><h3>ハタヨガ</h3><p>呼吸と基本ポーズをゆっくり学ぶ初心者向けクラス。</p><div class="price">60分</div></article>
-          <article class="card"><small>Flow</small><h3>ヴィンヤサフロー</h3><p>呼吸と動きをつなぎ、心身を軽やかに整えます。</p><div class="price">75分</div></article>
-          <article class="card"><small>Relax</small><h3>リストラティブ</h3><p>疲労回復と深いリラックスに向いた夜クラス。</p><div class="price">90分</div></article>
+        <div class="hero-art has-image sora-hero-art">
+          <img src="../../assets/yoga/instructor.png" alt="自然光の入るヨガスタジオで穏やかに立つ女性インストラクター" />
+          <div class="art-label">
+            <b>First trial ¥1,500</b>
+            <span>マット無料レンタル。動きやすい服装だけで参加できます。</span>
+          </div>
         </div>
       </section>
 
-      <section id="plan" class="section">
-        <div class="section-title"><p class="eyebrow">Plan</p><h2>入会前に比較しやすい料金設計</h2></div>
+      <section class="stats sora-stats" aria-label="スタジオの特徴">
+        <div class="stat"><b>最大8名</b><p>一人ひとりを見られる少人数制</p></div>
+        <div class="stat"><b>駅徒歩4分</b><p>朝も夜も通いやすい中目黒エリア</p></div>
+        <div class="stat"><b>週28本</b><p>初心者から経験者まで選べるクラス</p></div>
+      </section>
+
+      <section id="concept" class="section two-col sora-concept">
+        <div class="studio-photo">
+          <img src="../../assets/yoga/hero.png" alt="白いカーテン越しに光が入るヨガスタジオ" />
+          <div class="floating-hours">
+            <span>Open</span>
+            <b>7:00 - 21:30</b>
+            <small>平日夜・土日クラスあり</small>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Our philosophy</p>
+          <h2>よく動く日も、ただ休みたい日も。身体の声に合わせて選べる場所。</h2>
+          <p>SORAでは、ポーズの完成度よりも「今日の自分に気づくこと」を大切にしています。肩こり、冷え、眠りの浅さ、産後の不調など、日々の小さな違和感を整えるためのクラスを、経験豊富なインストラクターが丁寧に案内します。</p>
+          <div class="sora-points">
+            <span>初心者歓迎</span>
+            <span>マット無料</span>
+            <span>女性専用クラスあり</span>
+            <span>オンライン振替対応</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="classes" class="section band sora-class-section">
+        <div class="section-title">
+          <p class="eyebrow">Classes</p>
+          <h2>その日の体調に合わせて、無理なく選べるクラス。</h2>
+          <p>強度、目的、時間帯がひと目で分かるように整理しています。はじめての方には、呼吸と基本ポーズから始めるクラスがおすすめです。</p>
+        </div>
+        <div class="class-grid">
+          <article class="class-card">
+            <small>Beginner / 60min</small>
+            <h3>はじめてのハタヨガ</h3>
+            <p>呼吸、姿勢、基本ポーズをゆっくり確認。身体が硬い方や運動が久しぶりの方にも安心です。</p>
+            <ul>
+              <li>強度: やさしい</li>
+              <li>対象: 初心者・シニア</li>
+            </ul>
+          </article>
+          <article class="class-card featured">
+            <small>Morning / 45min</small>
+            <h3>朝の呼吸リセット</h3>
+            <p>背骨を目覚めさせ、呼吸を深める朝クラス。出勤前にも参加しやすい短時間レッスンです。</p>
+            <ul>
+              <li>強度: やさしい</li>
+              <li>対象: 一日を軽く始めたい方</li>
+            </ul>
+          </article>
+          <article class="class-card">
+            <small>Flow / 75min</small>
+            <h3>ヴィンヤサフロー</h3>
+            <p>呼吸と動きをつなげ、全身をしなやかに使います。集中して汗をかきたい日に。</p>
+            <ul>
+              <li>強度: 中</li>
+              <li>対象: 経験者・運動不足解消</li>
+            </ul>
+          </article>
+          <article class="class-card">
+            <small>Relax / 75min</small>
+            <h3>リストラティブヨガ</h3>
+            <p>ブロックやボルスターに身体を預け、深い休息へ。眠りの質を整えたい方に人気です。</p>
+            <ul>
+              <li>強度: とてもやさしい</li>
+              <li>対象: 疲労回復・睡眠ケア</li>
+            </ul>
+          </article>
+          <article class="class-card">
+            <small>Women / 60min</small>
+            <h3>骨盤コンディショニング</h3>
+            <p>骨盤周りと股関節を整え、冷えやむくみをケア。産後の方は医師の許可後にご参加ください。</p>
+            <ul>
+              <li>強度: やさしい</li>
+              <li>対象: 女性の身体ケア</li>
+            </ul>
+          </article>
+          <article class="class-card">
+            <small>Meditation / 50min</small>
+            <h3>月夜の瞑想ヨガ</h3>
+            <p>静かな呼吸法と短い瞑想で、忙しい頭を休める夜クラス。仕事帰りにもおすすめです。</p>
+            <ul>
+              <li>強度: とてもやさしい</li>
+              <li>対象: ストレスケア</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="schedule" class="section sora-schedule">
+        <div class="section-title">
+          <p class="eyebrow">Weekly schedule</p>
+          <h2>生活リズムに合わせて通える週間スケジュール。</h2>
+        </div>
+        <div class="schedule-board" aria-label="週間スケジュール">
+          <div><b>Mon</b><span>7:30 朝の呼吸リセット</span><span>19:30 リストラティブ</span></div>
+          <div><b>Tue</b><span>10:00 はじめてのハタヨガ</span><span>20:00 月夜の瞑想ヨガ</span></div>
+          <div><b>Wed</b><span>7:30 朝の呼吸リセット</span><span>18:45 ヴィンヤサフロー</span></div>
+          <div><b>Thu</b><span>10:30 骨盤コンディショニング</span><span>19:30 リストラティブ</span></div>
+          <div><b>Fri</b><span>7:30 朝の呼吸リセット</span><span>20:00 キャンドルヨガ</span></div>
+          <div><b>Sat</b><span>9:00 はじめてのハタヨガ</span><span>11:00 ヴィンヤサフロー</span></div>
+          <div><b>Sun</b><span>9:30 リストラティブ</span><span>13:00 季節のワークショップ</span></div>
+        </div>
+      </section>
+
+      <section class="section dark sora-teachers">
+        <div class="teacher-layout">
+          <div>
+            <p class="eyebrow">Instructors</p>
+            <h2>身体の変化に寄り添う、落ち着いた講師陣。</h2>
+            <p>レッスン前には体調や不安を伺い、ポーズの軽減法も丁寧にお伝えします。初心者の方も、周りと比べず自分のペースで参加できます。</p>
+          </div>
+          <div class="teacher-cards">
+            <article>
+              <img src="../../assets/yoga/instructor.png" alt="SORA Yoga Studio代表の青山紗季" />
+              <small>Director</small>
+              <h3>青山 紗季</h3>
+              <p>RYT500。呼吸法とリストラティブを中心に、日常へ戻る力を育てるクラスを担当。</p>
+            </article>
+            <article>
+              <img src="../../assets/yoga/props.png" alt="ヨガブロックを準備する講師" />
+              <small>Instructor</small>
+              <h3>三浦 花</h3>
+              <p>骨盤ケア、産前産後クラス担当。体調に合わせた軽減法をわかりやすく案内します。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="price" class="section sora-price">
+        <div class="section-title">
+          <p class="eyebrow">Price</p>
+          <h2>続け方に合わせて選べる料金プラン。</h2>
+        </div>
+        <div class="price-grid">
+          <article>
+            <small>Trial</small>
+            <h3>初回体験</h3>
+            <b>¥1,500</b>
+            <p>マットレンタル込み。初回カウンセリング10分付き。</p>
+            <a class="button" href="#trial">体験予約</a>
+          </article>
+          <article class="recommended">
+            <small>Monthly</small>
+            <h3>月4回プラン</h3>
+            <b>¥9,800</b>
+            <p>週1回のペースで整えたい方へ。翌月1回まで繰越できます。</p>
+            <a class="button" href="#trial">空き状況を見る</a>
+          </article>
+          <article>
+            <small>Ticket</small>
+            <h3>5回チケット</h3>
+            <b>¥14,000</b>
+            <p>忙しい月も通いやすい有効期限3ヶ月のチケットです。</p>
+            <a class="button secondary" href="#faq">詳しく見る</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section sora-gallery" aria-label="スタジオの雰囲気">
         <div class="gallery">
-          <div class="tile"><img src="../../assets/yoga/hero.png" alt="自然光が入るヨガスタジオ" /><span>Trial</span></div>
-          <div class="tile"><img src="../../assets/yoga/props.png" alt="ヨガマットとブロックが整ったスタジオ" /><span>Ticket</span></div>
-          <div class="tile"><img src="../../assets/yoga/schedule.png" alt="ヨガスタジオの予約相談デスク" /><span>Monthly</span></div>
-          <div class="tile"><img src="../../assets/yoga/instructor.png" alt="落ち着いたヨガスタジオに立つ日本人女性インストラクター" /><span>Instructor</span></div>
-          <div class="tile"><img src="../../assets/yoga/schedule.png" alt="ヨガスタジオのスケジュール導線" /><span>Schedule</span></div>
+          <div class="tile"><img src="../../assets/yoga/hero.png" alt="自然光が入るヨガスタジオ" /><span>Studio</span></div>
+          <div class="tile"><img src="../../assets/yoga/props.png" alt="ヨガマットとブロックが整ったスタジオ" /><span>Props</span></div>
+          <div class="tile"><img src="../../assets/yoga/schedule.png" alt="予約相談用のタブレットとノート" /><span>Booking</span></div>
+          <div class="tile"><img src="../../assets/yoga/instructor.png" alt="穏やかな女性インストラクター" /><span>Lesson</span></div>
+          <div class="tile"><img src="../../assets/yoga/props.png" alt="レッスン前に準備されたヨガブロック" /><span>Care</span></div>
         </div>
       </section>
 
-      <section id="access" class="section dark">
-        <div class="info-grid"><div class="map-box">NAKAMEGURO</div><div><p class="eyebrow">Access</p><h2>体験前の不安を減らす情報</h2><p>アクセス、持ち物、支払い方法、キャンセル規定などを整理して、安心して予約できるページにします。</p><dl><dt>住所</dt><dd>東京都目黒区上目黒 0-00-00 3F</dd><dt>営業時間</dt><dd>7:00 - 21:00 / クラスにより変動</dd><dt>予約</dt><dd>オンライン予約・体験レッスン受付</dd></dl></div></div>
+      <section id="trial" class="section band sora-trial">
+        <div class="section-title">
+          <p class="eyebrow">Trial flow</p>
+          <h2>体験当日の流れ。</h2>
+        </div>
+        <div class="flow-grid">
+          <article><span>01</span><h3>予約</h3><p>希望クラスを選び、フォームからお申し込みください。前日18時まで受付しています。</p></article>
+          <article><span>02</span><h3>来店</h3><p>開始15分前を目安にお越しください。着替えスペースをご利用いただけます。</p></article>
+          <article><span>03</span><h3>カウンセリング</h3><p>ヨガ経験、体調、気になる不調を確認し、無理のない動き方をお伝えします。</p></article>
+          <article><span>04</span><h3>レッスン</h3><p>呼吸から始め、身体の状態に合わせて進めます。水分補給も自由です。</p></article>
+        </div>
       </section>
 
-      <section id="trial" class="final-cta"><p class="eyebrow">Trial Lesson</p><h2>体験予約につながるヨガサイトを制作します。</h2><p>クラス、講師、料金、スケジュールを整理して、初めての方の背中を押します。</p><a class="button" href="https://leciel-webdesign.com/#contact">無料で相談する</a></section>
+      <section class="section sora-voice">
+        <div class="section-title">
+          <p class="eyebrow">Voice</p>
+          <h2>通っている方の声。</h2>
+        </div>
+        <div class="voice-grid">
+          <article><p>「運動が苦手で不安でしたが、少人数なので質問しやすく、肩の力を抜いて参加できました。」</p><b>30代 会社員</b></article>
+          <article><p>「夜のクラスに通い始めて、眠りが深くなりました。駅から近いので仕事帰りに寄りやすいです。」</p><b>40代 デザイナー</b></article>
+          <article><p>「産後の身体に合わせて動きを変えてくれるので安心。家でもできる呼吸法を教えてもらえます。」</p><b>30代 主婦</b></article>
+        </div>
+      </section>
+
+      <section id="faq" class="section band sora-faq">
+        <div class="section-title">
+          <p class="eyebrow">FAQ</p>
+          <h2>よくあるご質問。</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>身体が硬くても参加できますか？</summary>
+            <p>はい。柔軟性は必要ありません。ポーズは完成形を目指すものではなく、今の身体に合う範囲で行います。</p>
+          </details>
+          <details>
+            <summary>持ち物は何が必要ですか？</summary>
+            <p>動きやすい服装、お水、汗拭きタオルをご用意ください。ヨガマットは無料でレンタルできます。</p>
+          </details>
+          <details>
+            <summary>男性も参加できますか？</summary>
+            <p>通常クラスは男女ともに参加できます。女性専用クラスはスケジュールに表示しています。</p>
+          </details>
+          <details>
+            <summary>キャンセルはいつまで可能ですか？</summary>
+            <p>レッスン開始3時間前までオンラインで変更・キャンセルできます。体調不良の場合は無理せずご連絡ください。</p>
+          </details>
+        </div>
+      </section>
+
+      <section id="access" class="section dark sora-access">
+        <div class="info-grid">
+          <div class="map-box"><span>NAKAMEGURO<br />4 min walk</span></div>
+          <div>
+            <p class="eyebrow">Access</p>
+            <h2>SORA Yoga Studio</h2>
+            <p>東急東横線・東京メトロ日比谷線「中目黒駅」正面改札から徒歩4分。目黒川沿いの落ち着いた通りにある、自然光の入る小さなスタジオです。</p>
+            <dl>
+              <dt>住所</dt><dd>東京都目黒区上目黒 0-00-00 SORAビル 3F</dd>
+              <dt>営業時間</dt><dd>平日 7:00 - 21:30 / 土日 8:30 - 17:00</dd>
+              <dt>定休日</dt><dd>不定休・年末年始</dd>
+              <dt>設備</dt><dd>更衣スペース、ウォーターサーバー、マット無料レンタル</dd>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta sora-final">
+        <p class="eyebrow">Begin with one breath</p>
+        <h2>まずは一度、深く息をしに来てください。</h2>
+        <p>体験レッスンはオンラインで24時間受付中です。クラス選びに迷う方は、予約フォームの備考欄にご相談内容をご記入ください。</p>
+        <div class="actions">
+          <a class="button" href="#">体験レッスンを予約する</a>
+          <a class="button secondary" href="#schedule">スケジュールを見る</a>
+        </div>
+      </section>
     </main>
   </body>
 </html>
