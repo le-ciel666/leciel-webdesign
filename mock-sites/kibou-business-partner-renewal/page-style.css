@@ -990,3 +990,40 @@ details p {
     margin-top: 18px;
   }
 }
+
+/* ── パンくずナビ ── */
+.breadcrumb {
+  background: #f4f6f8;
+  padding: 10px 0;
+  font-size: 0.8rem;
+}
+.breadcrumb ol {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 0 24px;
+  flex-wrap: wrap;
+}
+.breadcrumb li {
+  color: #555;
+}
+.breadcrumb li + li::before {
+  content: "›";
+  margin: 0 6px;
+  color: #aaa;
+}
+.breadcrumb a {
+  color: #1a4fa8;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* ── セクション中部CTA ── */
+.section-cta {
+  margin-top: 48px;
+  text-align: center;
+}
