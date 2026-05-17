@@ -55,8 +55,9 @@
       .hair .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; max-width: 1180px; margin: 0 auto; background: rgba(20,20,20,.12); border: 1px solid rgba(20,20,20,.12); }
       .hair .flow-step { min-height: 230px; padding: 26px; background: #fff; }
       .hair .flow-step span { color: #9a6a4b; font-family: "Playfair Display", serif; font-size: 38px; }
-      .hair .salon-note { max-width: 1180px; margin: 46px auto 0; display: grid; grid-template-columns: .9fr 1.1fr; gap: 34px; align-items: stretch; }
-      .hair .salon-note img { min-height: 420px; }
+      .hair .salon-note { max-width: 1180px; margin: 46px auto 0; display: grid; grid-template-columns: 1fr; gap: 0; align-items: stretch; }
+      .hair .salon-note > * { min-width: 0; }
+      .hair .salon-note img { display: block; width: 100%; aspect-ratio: 17 / 10; min-height: 0; object-fit: cover; object-position: center; }
       .hair .salon-note .note-text { padding: clamp(30px, 5vw, 54px); color: #fff; background: #1a1715; }
       .hair .salon-note .note-text p { color: rgba(255,255,255,.76); }
       .hair .reserve-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; max-width: 1000px; margin: 34px auto 0; background: rgba(255,255,255,.25); }
