@@ -530,21 +530,192 @@
         .site-header { grid-template-columns: 1fr; padding-block: 16px; }
         .site-header nav { justify-content: flex-start; flex-wrap: wrap; }
         .header-cta { display: none; }
-        .hero, .split, .offer { grid-template-columns: 1fr; }
-        .product-card { min-height: 520px; }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          gap: 24px;
+          padding-block: 44px;
+        }
+        .split, .offer { grid-template-columns: 1fr; }
+        .product-stage {
+          align-self: auto;
+          min-height: auto;
+        }
+        .product-card {
+          min-height: auto;
+          aspect-ratio: 4 / 3;
+        }
         .ticker, .problem-grid, .ingredient-grid, .benefit-grid, .review-grid, .routine { grid-template-columns: 1fr 1fr; }
       }
       @media (max-width: 620px) {
-        .top-offer { font-size: 12px; }
-        .site-header nav a { font-size: 12px; }
-        h1 { font-size: 40px; }
-        h2 { font-size: 31px; }
-        .actions { flex-direction: column; }
-        .button { width: 100%; }
+        p {
+          font-size: 14px;
+          line-height: 1.7;
+        }
+        .top-offer {
+          padding: 8px 12px;
+          font-size: 11px;
+          line-height: 1.45;
+        }
+        .site-header {
+          gap: 10px;
+          min-height: auto;
+          padding: 12px 16px 10px;
+        }
+        .logo { font-size: 30px; }
+        .site-header nav {
+          flex-wrap: nowrap;
+          gap: 16px;
+          margin-inline: -16px;
+          padding-inline: 16px;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .site-header nav::-webkit-scrollbar { display: none; }
+        .site-header nav a {
+          flex: 0 0 auto;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+        .hero {
+          gap: 18px;
+          padding: 26px 16px 22px;
+        }
+        .award-row {
+          gap: 6px;
+          margin-bottom: 14px;
+        }
+        .award-row span {
+          padding: 6px 9px;
+          font-size: 11px;
+        }
+        .eyebrow { margin-bottom: 10px; }
+        h1 {
+          margin-bottom: 14px;
+          font-size: 36px;
+        }
+        h2 {
+          margin-bottom: 12px;
+          font-size: 28px;
+        }
+        h3 {
+          margin-bottom: 7px;
+          font-size: 19px;
+        }
+        .lead { font-size: 15px; }
+        .actions {
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 20px;
+        }
+        .button {
+          width: 100%;
+          min-height: 48px;
+          padding-inline: 16px;
+        }
+        .hero-points {
+          gap: 8px;
+          margin-top: 18px;
+        }
         .hero-points, .ticker, .problem-grid, .ingredient-grid, .benefit-grid, .compare, .review-grid, .routine { grid-template-columns: 1fr; }
-        .product-card, .image-panel { min-height: 420px; }
+        .hero-point {
+          min-height: auto;
+          padding: 14px 16px;
+        }
+        .hero-point b { font-size: 28px; }
+        .hero-point span { font-size: 13px; }
+        .product-card {
+          aspect-ratio: 1 / 0.86;
+          border-radius: 8px;
+        }
+        .product-badge {
+          right: 12px;
+          bottom: 12px;
+          width: calc(100% - 24px);
+          padding: 13px;
+        }
+        .product-badge b { font-size: 15px; }
+        .product-badge span { font-size: 12px; }
+        .ticker div { padding: 16px; }
+        .ticker b { font-size: 30px; }
+        .section { padding: 42px 16px; }
+        .section-head {
+          margin-bottom: 22px;
+          text-align: left;
+        }
+        .problem-grid,
+        .ingredient-grid,
+        .benefit-grid,
+        .review-grid,
+        .copy-list,
+        .guarantee,
+        .faq {
+          gap: 10px;
+        }
+        .problem-card,
+        .ingredient,
+        .benefit,
+        .review-card,
+        .routine-step {
+          min-height: auto;
+          padding: 18px;
+        }
+        .problem-card span {
+          width: 36px;
+          height: 36px;
+          margin-bottom: 12px;
+        }
+        .split,
+        .offer {
+          gap: 24px;
+        }
+        .image-panel {
+          min-height: auto;
+          aspect-ratio: 1 / 0.82;
+        }
         .copy-item { grid-template-columns: 1fr; }
+        .copy-item {
+          gap: 8px;
+          padding: 16px 0;
+        }
+        .copy-item strong { font-size: 28px; }
+        .compare { gap: 10px; }
+        .compare-box h3 {
+          padding: 14px 16px;
+          font-size: 18px;
+        }
+        .compare-box ul {
+          gap: 8px;
+          padding: 16px;
+        }
+        .routine-step span { font-size: 32px; }
+        .offer-card { padding: 22px 18px; }
+        .price-row {
+          gap: 8px;
+          margin: 16px 0;
+        }
+        .price-row .old { font-size: 14px; }
+        .price-row .new { font-size: 44px; }
+        .offer-list {
+          gap: 8px;
+          margin: 18px 0 22px;
+        }
+        .offer-list li { padding: 10px 12px; }
+        .guarantee div { padding: 16px; }
+        summary { padding: 16px; }
+        details p { padding: 0 16px 16px; }
+        .final-cta { padding: 48px 16px 96px; }
         .sticky-buy { display: grid; }
+        .sticky-buy {
+          gap: 10px;
+          padding: 9px 12px max(9px, env(safe-area-inset-bottom));
+        }
+        .sticky-buy b { font-size: 12px; }
+        .sticky-buy span { font-size: 11px; }
+        .sticky-buy .button {
+          width: auto;
+          min-width: 90px;
+        }
       }
     </style>
   </head>
