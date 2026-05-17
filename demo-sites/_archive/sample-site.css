@@ -701,7 +701,7 @@ dd {
 .course-section {
   background:
     linear-gradient(rgba(23, 11, 6, 0.88), rgba(23, 11, 6, 0.94)),
-    url("../../assets/izakaya/course.png") center/cover;
+    url("../../assets/izakaya/course.webp") center/cover;
 }
 
 .course-grid {
@@ -782,7 +782,7 @@ dd {
   overflow: hidden;
   background:
     linear-gradient(rgba(23, 11, 6, 0.22), rgba(23, 11, 6, 0.62)),
-    url("../../assets/izakaya/private-room.png") center/cover;
+    url("../../assets/izakaya/private-room.webp") center/cover;
 }
 
 .sakura-access .map-box span {
@@ -1176,7 +1176,7 @@ dd {
   overflow: hidden;
   background:
     linear-gradient(rgba(23, 33, 49, 0.28), rgba(23, 33, 49, 0.72)),
-    url("../../assets/yoga/schedule.png") center/cover;
+    url("../../assets/yoga/schedule.webp") center/cover;
 }
 
 .sora-access .map-box span {

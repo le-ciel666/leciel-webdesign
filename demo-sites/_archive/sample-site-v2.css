@@ -501,7 +501,7 @@ dd { margin: 0; color: var(--muted); line-height: 1.8; }
   color: var(--ink);
   background:
     linear-gradient(rgba(14, 11, 10, 0.82), rgba(14, 11, 10, 0.9)),
-    url("../../assets/izakaya/course.png") center/cover;
+    url("../../assets/izakaya/course.webp") center/cover;
 }
 
 .kikka-final h2 {
