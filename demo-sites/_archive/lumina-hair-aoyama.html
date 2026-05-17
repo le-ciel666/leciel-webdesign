@@ -72,12 +72,68 @@
         .hair .mosaic-photo { aspect-ratio: 16 / 9; min-height: 0; }
       }
       @media (max-width: 560px) {
+        .hair p {
+          font-size: 14px;
+          line-height: 1.65;
+        }
+        .hair h1 {
+          margin-bottom: 16px;
+          font-size: 34px;
+        }
+        .hair h2 {
+          margin-bottom: 12px;
+          font-size: 28px;
+        }
+        .hair h3 {
+          margin-bottom: 8px;
+          font-size: 21px;
+        }
+        .hair .eyebrow {
+          margin-bottom: 10px;
+          font-size: 11px;
+        }
+        .hair .site-header {
+          gap: 10px;
+          min-height: 0;
+          padding: 12px 16px;
+        }
+        .hair .site-header nav {
+          flex-wrap: nowrap;
+          gap: 14px;
+          margin-inline: -16px;
+          padding-inline: 16px;
+          overflow-x: auto;
+          scrollbar-width: none;
+        }
+        .hair .site-header nav::-webkit-scrollbar { display: none; }
+        .hair .site-header nav a {
+          flex: 0 0 auto;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+        .hair .site-header .nav-cta {
+          min-height: 34px;
+          padding-inline: 12px;
+        }
+        .hair .hero-copy {
+          padding: 34px 16px 28px;
+        }
+        .hair .hero-copy > p:not(.eyebrow) {
+          margin-bottom: 20px;
+        }
+        .hair .actions {
+          gap: 8px;
+        }
+        .hair .button {
+          min-height: 44px;
+          padding-inline: 16px;
+        }
         .hair .hero {
           min-height: auto;
         }
         .hair .hero-art,
         .hair .hero-art.has-image img {
-          min-height: 340px;
+          min-height: 300px;
         }
         .hair .art-label {
           left: 18px;
@@ -123,14 +179,33 @@
           font-size: 14px;
           line-height: 1.55;
         }
-        .hair .section { padding: 42px 16px; }
+        .hair .section { padding: 34px 16px; }
+        .hair .two-col {
+          gap: 18px;
+        }
+        .hair .visual-panel {
+          min-height: 0;
+        }
         .hair .image-panel { aspect-ratio: 4 / 3; width: 100%; }
         .hair .mosaic-photo { aspect-ratio: 16 / 9; border-radius: 4px 56px 4px 4px; }
-        .hair .section-rich { padding: 38px 16px; }
-        .hair .rich-head { margin-bottom: 22px; text-align: left; }
+        .hair .section-rich { padding: 32px 16px; }
+        .hair .rich-head { margin-bottom: 18px; text-align: left; }
+        .hair .feature-mosaic {
+          gap: 18px;
+        }
+        .hair .feature-list {
+          gap: 8px;
+        }
+        .hair .feature-card {
+          padding: 14px 0;
+        }
+        .hair .feature-card b {
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
         .hair .news-section {
-          padding-top: 32px;
-          padding-bottom: 24px;
+          padding-top: 28px;
+          padding-bottom: 20px;
         }
         .hair .news-section .rich-head {
           margin-bottom: 18px;
@@ -157,9 +232,9 @@
           line-height: 1.65;
         }
         .hair .news-section + .section {
-          padding-top: 34px;
+          padding-top: 28px;
         }
-        .hair .section-title { margin-bottom: 30px; }
+        .hair .section-title { margin-bottom: 22px; }
         .hair .section-title .eyebrow { margin-bottom: 12px; }
         .hair .section-title h2 { margin-bottom: 14px; }
         .hair .section-title p { line-height: 1.75; }
@@ -204,22 +279,81 @@
         .hair .menu-row strong {
           font-size: 22px;
         }
-        .hair .gallery { gap: 10px; }
-        .hair .voice { padding: 18px; }
+        .hair .coupon-grid,
+        .hair .stylist-grid,
+        .hair .voice-grid,
+        .hair .flow {
+          gap: 10px;
+        }
+        .hair .coupon,
+        .hair .stylist,
+        .hair .voice,
+        .hair .flow-step {
+          min-height: 0;
+          padding: 16px;
+        }
+        .hair .coupon h3,
+        .hair .stylist h3 {
+          margin: 8px 0 6px;
+          font-size: 21px;
+        }
+        .hair .coupon .price {
+          margin-top: 12px;
+          font-size: 28px;
+        }
+        .hair .stylist img {
+          width: calc(100% + 32px);
+          height: 240px;
+          margin: -16px -16px 14px;
+        }
+        .hair .gallery {
+          grid-auto-rows: 210px;
+          gap: 10px;
+        }
+        .hair .tile span {
+          left: 14px;
+          bottom: 12px;
+          font-size: 16px;
+        }
+        .hair .flow-step span {
+          font-size: 28px;
+        }
         .hair .salon-note {
           gap: 16px;
-          margin-top: 24px;
+          margin-top: 18px;
         }
         .hair .salon-note img {
           display: block;
           width: 100%;
-          height: clamp(220px, 62vw, 300px);
+          height: clamp(190px, 54vw, 260px);
           min-height: 0;
           aspect-ratio: 16 / 10;
           object-fit: cover;
           object-position: center;
         }
         .hair .salon-note .note-text { padding: 22px 18px; }
+        .hair .map-box {
+          min-height: 180px;
+        }
+        .hair dl {
+          gap: 8px;
+          margin-top: 18px;
+        }
+        .hair dd {
+          line-height: 1.6;
+        }
+        .hair .final-cta {
+          padding: 34px 16px;
+        }
+        .hair .final-cta p {
+          margin-bottom: 18px;
+        }
+        .hair .reserve-panel {
+          margin-top: 18px;
+        }
+        .hair .reserve-box {
+          padding: 16px;
+        }
         .hair .coupon-grid, .hair .stylist-grid, .hair .voice-grid, .hair .flow, .hair .menu-row, .hair .news-item { grid-template-columns: 1fr; }
         .hair .menu-row strong { text-align: left; }
       }
