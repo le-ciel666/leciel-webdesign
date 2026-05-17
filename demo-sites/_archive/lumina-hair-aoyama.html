@@ -74,6 +74,23 @@
       @media (max-width: 560px) {
         .hair .image-panel { aspect-ratio: 4 / 3; width: 100%; }
         .hair .mosaic-photo { aspect-ratio: 16 / 9; border-radius: 4px 56px 4px 4px; }
+        .hair .section-rich { padding: 44px 16px; }
+        .hair .rich-head { margin-bottom: 22px; text-align: left; }
+        .hair .voice { padding: 18px; }
+        .hair .salon-note {
+          gap: 16px;
+          margin-top: 24px;
+        }
+        .hair .salon-note img {
+          display: block;
+          width: 100%;
+          height: clamp(220px, 62vw, 300px);
+          min-height: 0;
+          aspect-ratio: 16 / 10;
+          object-fit: cover;
+          object-position: center;
+        }
+        .hair .salon-note .note-text { padding: 22px 18px; }
         .hair .coupon-grid, .hair .stylist-grid, .hair .voice-grid, .hair .flow, .hair .menu-row, .hair .news-item { grid-template-columns: 1fr; }
         .hair .menu-row strong { text-align: left; }
       }
