@@ -36,6 +36,7 @@
       .hair .news-item p { color: #2a2622; line-height: 1.8; }
       .hair .feature-mosaic { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(28px, 5vw, 70px); max-width: 1180px; margin: 0 auto; align-items: center; }
       .hair .mosaic-photo { min-height: 620px; overflow: hidden; border-radius: 4px 92px 4px 4px; box-shadow: 0 24px 70px rgba(22,18,14,.14); }
+      .hair .mosaic-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
       .hair .feature-list { display: grid; gap: 18px; }
       .hair .feature-card { padding: 24px 0; border-bottom: 1px solid rgba(20,20,20,.12); }
       .hair .feature-card b { display: block; margin-bottom: 8px; color: #9a6a4b; font-size: 18px; }
@@ -68,9 +69,11 @@
       @media (max-width: 900px) {
         .hair .notice-strip, .hair .feature-mosaic, .hair .salon-note, .hair .reserve-panel { grid-template-columns: 1fr; }
         .hair .coupon-grid, .hair .stylist-grid, .hair .voice-grid, .hair .flow { grid-template-columns: 1fr 1fr; }
+        .hair .mosaic-photo { aspect-ratio: 16 / 9; min-height: 0; }
       }
       @media (max-width: 560px) {
         .hair .image-panel { aspect-ratio: 4 / 3; width: 100%; }
+        .hair .mosaic-photo { aspect-ratio: 16 / 9; border-radius: 4px 56px 4px 4px; }
         .hair .coupon-grid, .hair .stylist-grid, .hair .voice-grid, .hair .flow, .hair .menu-row, .hair .news-item { grid-template-columns: 1fr; }
         .hair .menu-row strong { text-align: left; }
       }
