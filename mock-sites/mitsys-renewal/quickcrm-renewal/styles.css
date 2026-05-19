@@ -109,7 +109,11 @@ p{margin:0;text-wrap:pretty}
 .brand-logo-dark{display:none}
 body.theme-dark .brand-logo-light{display:none}
 body.theme-dark .brand-logo-dark{display:block}
-.site-footer .brand-logo{height:40px}
+.site-footer .brand-logo{display:none}
+.footer-wordmark{display:flex;align-items:center;gap:10px;text-decoration:none}
+.fwm-icon{width:36px;height:36px;border-radius:50%;border:2.5px solid rgba(255,255,255,.8);flex-shrink:0;display:grid;place-items:center}
+.fwm-icon::before{content:'Q';font-family:'Inter',sans-serif;font-weight:800;font-size:19px;color:#fff;line-height:1}
+.fwm-text{font-family:'Inter',sans-serif;font-weight:700;font-size:20px;color:#fff;letter-spacing:.12em;line-height:1}
 .drawer .brand-logo{height:32px}
 .brand-mark{
   width:32px;height:32px;border-radius:9px;
