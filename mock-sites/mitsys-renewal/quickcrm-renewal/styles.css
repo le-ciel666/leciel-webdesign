@@ -1334,3 +1334,192 @@ body.theme-dark .twk-panel{
     margin-right:-300px;
   }
 }
+
+/* =============================================================
+   Mobile hero: photo with badges overlaid at the bottom
+   Layout: eyebrow → h1 → lead → [ photo with 4 badges overlaid ]
+   ============================================================= */
+@media (max-width:560px){
+  .hero{
+    padding:14px 0 36px;
+    min-height:0;
+    display:block;
+    background:
+      radial-gradient(520px 360px at 90% 18%, rgba(99,165,56,.10), transparent 70%),
+      linear-gradient(180deg,#fbfcfe 0%,#fff 100%);
+  }
+  .hero::after{display:none}
+
+  .hero-inner{
+    display:grid!important;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "lead"
+      "photo";
+    gap:0;
+    width:calc(100% - 32px)!important;
+    max-width:calc(100% - 32px)!important;
+    padding-top:8px;
+  }
+  .hero-copy{display:contents}
+  .hero-copy::before{display:none}
+
+  .hero .eyebrow{grid-area:eyebrow;justify-self:start;align-self:start}
+  .hero h1{grid-area:title;width:100%;max-width:100%;margin-top:12px}
+  .hero .lead{grid-area:lead;width:100%;max-width:100%;margin-top:14px}
+
+  /* Photo cell: image + overlay + badges share the same grid cell */
+  .hero-visual{
+    grid-area:photo;
+    position:relative;
+    inset:auto;
+    width:100%;
+    height:auto;
+    aspect-ratio:4/3;
+    min-height:0;
+    margin:24px 0 0;
+    border-radius:22px;
+    overflow:hidden;
+    opacity:1;
+    filter:none;
+    box-shadow:0 22px 48px rgba(20,45,20,.14), 0 4px 14px rgba(0,0,0,.06);
+  }
+  .hero-visual::before{display:none}
+  .hero-photo{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:40% 38%!important;
+    transform:none!important;
+    border-radius:22px!important;
+    -webkit-mask-image:none!important;
+    mask-image:none!important;
+    opacity:1!important;
+  }
+  .hero-visual::after{display:none}
+
+  /* Compact 1-col 4-row badges on the LEFT (opposite side of the operator) */
+  .hero-badges{
+    grid-area:photo!important;
+    z-index:2;
+    align-self:center!important;
+    justify-self:start!important;
+    margin:0 0 0 12px!important;
+    padding:0!important;
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:none!important;
+    gap:6px!important;
+    width:38%!important;
+    max-width:38%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+  .hero-badges .badge{
+    justify-content:flex-start!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    box-sizing:border-box!important;
+    padding:6px 9px!important;
+    font-size:10.5px!important;
+    line-height:1.3!important;
+    background:rgba(255,255,255,.92)!important;
+    backdrop-filter:blur(12px) saturate(120%);
+    -webkit-backdrop-filter:blur(12px) saturate(120%);
+    border:1px solid rgba(255,255,255,.7)!important;
+    box-shadow:0 4px 12px rgba(8,32,76,.14)!important;
+    color:var(--ink)!important;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .hero-badges .badge .dot{width:5px;height:5px;flex-shrink:0}
+}
+
+/* Small tablet width (561–979px): same overlay layout, wider crop */
+@media (min-width:561px) and (max-width:979px){
+  .hero{
+    padding:24px 0 48px;
+    min-height:0;
+    display:block;
+  }
+  .hero::after{display:none}
+
+  .hero-inner{
+    display:grid!important;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "lead"
+      "photo";
+    gap:0;
+  }
+  .hero-copy{display:contents}
+  .hero-copy::before{display:none}
+
+  .hero .eyebrow{grid-area:eyebrow;justify-self:start;align-self:start}
+  .hero h1{grid-area:title;margin-top:14px}
+  .hero .lead{grid-area:lead;margin-top:14px}
+
+  .hero-visual{
+    grid-area:photo;
+    position:relative;
+    inset:auto;
+    width:100%;
+    height:auto;
+    aspect-ratio:16/9;
+    min-height:0;
+    margin:28px 0 0;
+    border-radius:24px;
+    overflow:hidden;
+    opacity:1;
+    filter:none;
+    box-shadow:0 26px 56px rgba(20,45,20,.16);
+  }
+  .hero-visual::before{display:none}
+  .hero-photo{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:40% 32%;
+    transform:none;
+    border-radius:24px;
+    -webkit-mask-image:none;
+    mask-image:none;
+    opacity:1;
+  }
+  .hero-visual::after{display:none}
+
+  .hero-badges{
+    grid-area:photo;
+    z-index:2;
+    align-self:center;
+    justify-self:start;
+    margin:0 0 0 18px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    width:36%;
+    max-width:36%;
+  }
+  .hero-badges .badge{
+    justify-content:center;
+    padding:10px 12px;
+    font-size:13px;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(14px) saturate(120%);
+    -webkit-backdrop-filter:blur(14px) saturate(120%);
+    border:1px solid rgba(255,255,255,.7);
+    box-shadow:0 6px 16px rgba(8,32,76,.14);
+    color:var(--ink);
+  }
+}
