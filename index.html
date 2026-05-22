@@ -1321,6 +1321,48 @@
   }
 
   .form-submit:hover { opacity: 0.9; transform: translateY(-1px); }
+  .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+  .form-error {
+    display: none;
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #fecaca;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .form-error.is-visible { display: block; }
+
+  .form-success {
+    display: none;
+    margin-top: 32px;
+    padding: 40px 32px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(147,197,253,0.4);
+    border-radius: 16px;
+    text-align: center;
+    color: var(--white);
+  }
+  .form-success.is-visible { display: block; }
+  .form-success .check {
+    width: 56px; height: 56px; margin: 0 auto 16px;
+    border-radius: 50%; background: linear-gradient(135deg,#3b82f6,#a855f7);
+    color: #fff; font-size: 28px; line-height: 56px;
+  }
+  .form-success h3 {
+    font-size: 20px; font-weight: 700; margin: 8px 0 16px; color: var(--white);
+  }
+  .form-success p {
+    font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.75); margin: 0 0 12px;
+  }
+  .form-success .note {
+    margin-top: 24px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.7;
+  }
 
   /* ===== FOOTER ===== */
   footer {
@@ -1986,29 +2028,41 @@
     <p class="section-label">CONTACT</p>
     <h2 class="section-title">まずはお気軽にご相談ください</h2>
     <p class="section-desc">「ホームページを作りたいけど何から始めればいいか分からない」という段階でも大歓迎です。個人店舗から法人様まで、どんなご相談もお受けします。</p>
-    <form class="contact-form" action="/contact.php" method="POST">
+    <form class="contact-form" id="contactForm" novalidate>
       <div class="form-row">
-        <label class="form-label">お名前 / 会社名</label>
-        <input type="text" name="お名前" class="form-input" placeholder="例）山田太郎 / 株式会社〇〇" required>
+        <label class="form-label" for="cf-name">お名前 / 会社名</label>
+        <input id="cf-name" type="text" name="name" class="form-input" placeholder="例）山田太郎 / 株式会社〇〇" required>
       </div>
       <div class="form-row">
-        <label class="form-label">メールアドレス</label>
-        <input type="email" name="メールアドレス" class="form-input" placeholder="例）info@example.com" required>
+        <label class="form-label" for="cf-email">メールアドレス</label>
+        <input id="cf-email" type="email" name="email" class="form-input" placeholder="例）info@example.com" required>
       </div>
       <div class="form-row">
-        <label class="form-label">業種・業態</label>
-        <input type="text" name="業種・業態" class="form-input" placeholder="例）美容室 / 飲食店 / 株式会社〇〇（小売業）">
+        <label class="form-label" for="cf-business">業種・業態</label>
+        <input id="cf-business" type="text" name="businessType" class="form-input" placeholder="例）美容室 / 飲食店 / 株式会社〇〇（小売業）">
       </div>
       <div class="form-row">
-        <label class="form-label">ご相談内容</label>
-        <textarea name="ご相談内容" class="form-input" placeholder="ご予算・ご希望・お悩みなど、お気軽にどうぞ。" required></textarea>
+        <label class="form-label" for="cf-message">ご相談内容</label>
+        <textarea id="cf-message" name="message" class="form-input" placeholder="ご予算・ご希望・お悩みなど、お気軽にどうぞ。" required></textarea>
       </div>
       <div class="form-row">
-        <label class="form-label">参考にしたいサイトのURLがあれば（任意）</label>
-        <input type="url" name="参考URL" class="form-input" placeholder="https://...">
+        <label class="form-label" for="cf-ref">参考にしたいサイトのURLがあれば（任意）</label>
+        <input id="cf-ref" type="url" name="referenceUrl" class="form-input" placeholder="https://...">
       </div>
-      <button type="submit" class="form-submit">送信する</button>
+      <button type="submit" class="form-submit" id="contactSubmit">送信する</button>
+      <div class="form-error" id="contactError" role="alert" aria-live="polite"></div>
     </form>
+
+    <div class="form-success" id="contactSuccess" role="status" aria-live="polite">
+      <div class="check">✓</div>
+      <h3>お問い合わせありがとうございます。</h3>
+      <p>ご入力いただいたメールアドレスへ、確認メールをお送りいたしました。<br>内容を確認のうえ、担当より2営業日以内にご連絡差し上げます。</p>
+      <p>今しばらくお待ちくださいませ。</p>
+      <div class="note">
+        ※ 確認メールが届かない場合は、迷惑メールフォルダもご確認ください。<br>
+        万が一届いていない場合は、お手数ですが <a href="mailto:aikawa@leciel-webdesign.com" style="color:#93c5fd;text-decoration:none;">aikawa@leciel-webdesign.com</a> まで直接ご連絡くださいませ。
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2091,6 +2145,67 @@ function toggleFaq(i) {
   const item = document.getElementById('faq' + i);
   item.classList.toggle('open');
 }
+
+// ========== CONTACT FORM ==========
+(function(){
+  const form = document.getElementById('contactForm');
+  if (!form) return;
+  const submitBtn = document.getElementById('contactSubmit');
+  const errorBox = document.getElementById('contactError');
+  const successBox = document.getElementById('contactSuccess');
+
+  function showError(msg){
+    errorBox.textContent = msg;
+    errorBox.classList.add('is-visible');
+  }
+  function clearError(){
+    errorBox.textContent = '';
+    errorBox.classList.remove('is-visible');
+  }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    clearError();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const fd = new FormData(form);
+    const payload = {
+      name:         (fd.get('name')         || '').toString().trim(),
+      email:        (fd.get('email')        || '').toString().trim(),
+      businessType: (fd.get('businessType') || '').toString().trim(),
+      message:      (fd.get('message')      || '').toString().trim(),
+      referenceUrl: (fd.get('referenceUrl') || '').toString().trim()
+    };
+
+    submitBtn.disabled = true;
+    const originalLabel = submitBtn.textContent;
+    submitBtn.textContent = '送信中…';
+
+    try {
+      const res = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      let data = {};
+      try { data = await res.json(); } catch (_) {}
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || '送信に失敗しました。時間をおいて再度お試しください。');
+      }
+      form.style.display = 'none';
+      successBox.classList.add('is-visible');
+      successBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      showError(err.message || '送信に失敗しました。時間をおいて再度お試しください。');
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
+})();
 
 </script>
 </body>

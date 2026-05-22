@@ -26,6 +26,8 @@ jobs:
             **/.git*/**
             .github/**
             .claude/**
+            _secrets.php
+            _secrets.example.php
 
       - name: Deploy to leciel subfolder (leciel-webdesign.com)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -41,3 +43,5 @@ jobs:
             **/.git*/**
             .github/**
             .claude/**
+            _secrets.php
+            _secrets.example.php
