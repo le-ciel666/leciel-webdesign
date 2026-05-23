@@ -283,53 +283,6 @@
     inset: 0;
     background: linear-gradient(90deg, rgba(243,247,249,0.95), rgba(243,247,249,0.08) 38%, rgba(7,23,36,0.08));
   }
-  .dispatch-card {
-    position: absolute;
-    right: 36px;
-    bottom: 48px;
-    width: min(360px, calc(100% - 56px));
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 22px 50px rgba(7,23,36,0.24);
-    overflow: hidden;
-  }
-  .dispatch-head {
-    background: var(--ink);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 18px;
-    font-size: 13px;
-    font-weight: 800;
-  }
-  .status-dot {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--yellow);
-  }
-  .status-dot::before {
-    content: '';
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--yellow);
-  }
-  .dispatch-body { padding: 18px; }
-  .dispatch-row {
-    display: grid;
-    grid-template-columns: 82px 1fr;
-    gap: 14px;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 13px;
-  }
-  .dispatch-row:last-child { border-bottom: 0; }
-  .dispatch-row b { color: var(--blue-2); }
-  .dispatch-row span { color: var(--muted); font-weight: 700; }
-
   .ticker {
     background: var(--blue-2);
     color: #fff;
@@ -892,7 +845,7 @@
     .price-note { position: static; }
   }
   @media (max-width: 760px) {
-    body { font-size: 15px; }
+    body { font-size: 15px; line-height: 1.7; }
     .notice-inner { display: block; text-align: center; }
     .notice-inner span + span { display: none; }
     .nav-inner { height: 68px; padding: 0 16px; }
@@ -901,16 +854,32 @@
     .brand-name { font-size: 14px; }
     .brand-sub { display: none; }
     .nav-action { display: none; }
-    .hero-content { padding: 48px 18px 66px; }
-    .hero-media { min-height: 380px; }
-    .dispatch-card { position: static; width: auto; margin: -82px 18px 26px; }
-    .hero-note { grid-template-columns: repeat(2, 1fr); }
+    .hero { min-height: auto; }
+    .hero-content { padding: 36px 18px 48px; }
+    .hero-lead { font-size: 14px; line-height: 1.75; }
+    .hero-media { min-height: 280px; }
+.hero-note { grid-template-columns: repeat(2, 1fr); }
+    .hero-note span { padding: 10px 8px; font-size: 11px; }
     .hero-tel { min-width: 100%; }
-    .ticker { padding: 18px; }
+    .ticker { padding: 14px 18px; }
     .ticker-list { grid-template-columns: 1fr 1fr; }
-    section { padding: 72px 18px; }
-    .section-head { gap: 24px; margin-bottom: 34px; }
-    .problem-grid, .trust-list, .flow-grid, .voice-grid, .price-tabs { grid-template-columns: 1fr; }
+    section { padding: 48px 18px; }
+    .section-head { gap: 12px; margin-bottom: 20px; }
+    .h2 { font-size: clamp(20px, 5.5vw, 26px); }
+    .lead { font-size: 14px; line-height: 1.75; }
+    .problem-grid { grid-template-columns: repeat(2, 1fr); }
+    .problem-card { min-height: auto; padding: 18px 14px; }
+    .problem-card .icon { width: 40px; height: 40px; font-size: 20px; margin-bottom: 12px; }
+    .problem-card h3 { font-size: 16px; }
+    .problem-card p { font-size: 12.5px; line-height: 1.7; }
+    .trust-list { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px; }
+    .trust-item { padding: 16px; }
+    .flow-grid, .voice-grid { grid-template-columns: 1fr; }
+    .price-tabs { grid-template-columns: repeat(2, 1fr); }
+    .flow-card { min-height: auto; padding: 20px 16px; }
+    .flow-card .step { font-size: 32px; margin-bottom: 12px; }
+    .voice-card { padding: 22px; }
+    .voice-card p { line-height: 1.8; }
     .price-row { grid-template-columns: 1fr; }
     .price-row.head { display: none; }
     .case-item { grid-template-columns: 1fr; }
@@ -969,17 +938,7 @@
         <span>作業保証あり</span>
       </div>
     </div>
-    <div>
-      <div class="hero-media"></div>
-      <div class="dispatch-card">
-        <div class="dispatch-head"><span>現在の受付状況</span><span class="status-dot">作業員待機中</span></div>
-        <div class="dispatch-body">
-          <div class="dispatch-row"><span>新宿区</span><b>蛇口根元の水漏れ / 30分前後</b></div>
-          <div class="dispatch-row"><span>世田谷区</span><b>トイレつまり / 40分前後</b></div>
-          <div class="dispatch-row"><span>江東区</span><b>洗面下配管漏水 / 35分前後</b></div>
-        </div>
-      </div>
-    </div>
+    <div class="hero-media"></div>
   </header>
 
   <div class="ticker">
@@ -1068,35 +1027,153 @@
         <p class="lead">表示価格は目安です。最終金額は現場確認後に確定します。深夜・早朝も受付し、緊急度が高い場合でも、作業前に金額を確認いただいてから着手します。</p>
       </div>
       <div class="price-tabs">
-        <button class="active" type="button">トイレ</button>
-        <button type="button">キッチン</button>
-        <button type="button">浴室</button>
-        <button type="button">洗面</button>
-        <button type="button">排水管</button>
-        <button type="button">漏水調査</button>
+        <button class="active" type="button" data-tab="toilet">トイレ</button>
+        <button type="button" data-tab="kitchen">キッチン</button>
+        <button type="button" data-tab="bath">浴室</button>
+        <button type="button" data-tab="wash">洗面</button>
+        <button type="button" data-tab="drain">排水管</button>
+        <button type="button" data-tab="leak">漏水調査</button>
       </div>
       <div class="price-board">
         <div class="price-table">
           <div class="price-row head"><div>症状・作業</div><div>内容</div><div>料金目安</div></div>
-          <div class="price-row">
-            <div class="price-name"><b>軽度つまり除去</b><span>紙づまり・流れが悪い・ラバーカップ相当</span></div>
-            <div>薬剤、ローポンプ、簡易器具での除去。異物混入がない場合の基本対応です。</div>
-            <div class="price-yen">5,500<small>円(税込)〜</small></div>
+
+          <div class="price-panel" data-panel="toilet">
+            <div class="price-row">
+              <div class="price-name"><b>軽度つまり除去</b><span>紙づまり・流れが悪い・ラバーカップ相当</span></div>
+              <div>薬剤、ローポンプ、簡易器具での除去。異物混入がない場合の基本対応です。</div>
+              <div class="price-yen">5,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>水漏れ修理</b><span>止水栓、給水管、タンク内部品</span></div>
+              <div>パッキン、ボールタップ、フロートバルブなど症状に応じて部品交換します。</div>
+              <div class="price-yen">6,600<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>便器脱着作業</b><span>異物落下・奥で詰まっている場合</span></div>
+              <div>玩具、清掃用品、固形物など、便器奥や排水接続部の異物を確認します。</div>
+              <div class="price-yen">22,000<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>高圧洗浄</b><span>屋外桝・排水管の閉塞、逆流</span></div>
+              <div>油脂、尿石、木の根、汚泥など、排水管側の詰まりに対応します。</div>
+              <div class="price-yen">27,500<small>円(税込)〜</small></div>
+            </div>
           </div>
-          <div class="price-row">
-            <div class="price-name"><b>水漏れ修理</b><span>止水栓、給水管、タンク内部品</span></div>
-            <div>パッキン、ボールタップ、フロートバルブなど症状に応じて部品交換します。</div>
-            <div class="price-yen">6,600<small>円(税込)〜</small></div>
+
+          <div class="price-panel" data-panel="kitchen" hidden>
+            <div class="price-row">
+              <div class="price-name"><b>排水口つまり除去</b><span>ゴミ受け周辺・S字トラップの詰まり</span></div>
+              <div>ヘアキャッチャー清掃から薬剤処理まで。油脂が固まっている場合は高圧洗浄を提案します。</div>
+              <div class="price-yen">5,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>蛇口・混合栓修理</b><span>パッキン・カートリッジ交換、水漏れ</span></div>
+              <div>シングルレバー・ツーハンドルどちらも対応。症状に応じて部品交換または本体交換を提案します。</div>
+              <div class="price-yen">8,800<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>蛇口・混合栓本体交換</b><span>シングル・ツーホール対応、施主支給可</span></div>
+              <div>メーカー・品番確認のうえ適合品を手配します。施主支給の場合は取付費のみの見積も可能です。</div>
+              <div class="price-yen">16,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>排水管高圧洗浄</b><span>油脂づまり・悪臭の根本除去</span></div>
+              <div>キッチン下から屋外桝まで配管内を洗浄。臭いが繰り返す場合はカメラ調査も対応します。</div>
+              <div class="price-yen">22,000<small>円(税込)〜</small></div>
+            </div>
           </div>
-          <div class="price-row">
-            <div class="price-name"><b>便器脱着作業</b><span>異物落下・奥で詰まっている場合</span></div>
-            <div>玩具、清掃用品、固形物など、便器奥や排水接続部の異物を確認します。</div>
-            <div class="price-yen">22,000<small>円(税込)〜</small></div>
+
+          <div class="price-panel" data-panel="bath" hidden>
+            <div class="price-row">
+              <div class="price-name"><b>排水口つまり除去</b><span>毛髪・石けんかすによる詰まり</span></div>
+              <div>ヘアキャッチャーから排水トラップまで清掃。臭いが改善しない場合は配管洗浄を提案します。</div>
+              <div class="price-yen">5,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>シャワー水栓修理</b><span>温度調節不良・水漏れ・ヘッド交換</span></div>
+              <div>サーモスタット不良やパッキン劣化に対応。ヘッド・ホース交換のみの対応も可能です。</div>
+              <div class="price-yen">8,800<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>混合水栓本体交換</b><span>壁付け・デッキ式対応</span></div>
+              <div>在来工法・ユニットバスどちらも対応。メーカー・タイプ確認のうえ適合品を手配します。</div>
+              <div class="price-yen">18,700<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>排水管洗浄</b><span>浴槽下・排水管の高圧清掃</span></div>
+              <div>浴槽下から排水桝まで。防臭・流れ改善が目的の定期メンテナンスにも対応します。</div>
+              <div class="price-yen">22,000<small>円(税込)〜</small></div>
+            </div>
           </div>
-          <div class="price-row">
-            <div class="price-name"><b>高圧洗浄</b><span>屋外桝・排水管の閉塞、逆流</span></div>
-            <div>油脂、尿石、木の根、汚泥など、排水管側の詰まりに対応します。</div>
-            <div class="price-yen">27,500<small>円(税込)〜</small></div>
+
+          <div class="price-panel" data-panel="wash" hidden>
+            <div class="price-row">
+              <div class="price-name"><b>排水口・トラップつまり除去</b><span>毛髪・石けん詰まりに対応</span></div>
+              <div>ポップアップ栓の清掃からS字トラップの取り外し洗浄まで対応します。</div>
+              <div class="price-yen">5,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>蛇口修理</b><span>パッキン・バルブ交換、水漏れ対応</span></div>
+              <div>洗面台のシングルレバー・ツーハンドルどちらも対応。水が止まらない・にじむ症状に対応します。</div>
+              <div class="price-yen">8,800<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>排水トラップ交換</b><span>臭い・漏水・劣化対応</span></div>
+              <div>樹脂製トラップの亀裂や継手の緩みによる水漏れ・臭いに対応。部品交換で解決できる場合がほとんどです。</div>
+              <div class="price-yen">7,700<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>給水管・床下水漏れ修理</b><span>接続部・ホース劣化の交換</span></div>
+              <div>洗面台下の給水管接続部やフレキ管の劣化に対応。床への浸水が始まっている場合は優先的に対応します。</div>
+              <div class="price-yen">13,200<small>円(税込)〜</small></div>
+            </div>
+          </div>
+
+          <div class="price-panel" data-panel="drain" hidden>
+            <div class="price-row">
+              <div class="price-name"><b>薬剤・器具清掃</b><span>軽度の詰まり・流れが遅い場合</span></div>
+              <div>薬剤洗浄またはワイヤー器具で対応。詰まりが深い場合や再発した場合は高圧洗浄を提案します。</div>
+              <div class="price-yen">8,800<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>屋内高圧洗浄</b><span>キッチン・浴室・洗面の排水管</span></div>
+              <div>専用高圧ポンプで管内の油脂・石けんかすを洗浄。悪臭が繰り返す場合の根本対処に有効です。</div>
+              <div class="price-yen">22,000<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>屋外桝・排水管洗浄</b><span>油脂・尿石・土砂の除去</span></div>
+              <div>排水桝の清掃から合流管まで。キッチン逆流や屋外への水溢れが起きている場合に対応します。</div>
+              <div class="price-yen">27,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>管内カメラ調査</b><span>詰まり原因・配管状態の確認</span></div>
+              <div>管内カメラで詰まり位置や配管の割れ・ずれを映像で確認。補修範囲の特定に使用します。</div>
+              <div class="price-yen">33,000<small>円(税込)〜</small></div>
+            </div>
+          </div>
+
+          <div class="price-panel" data-panel="leak" hidden>
+            <div class="price-row">
+              <div class="price-name"><b>目視・音聴調査</b><span>水道料金上昇・湿りの原因確認</span></div>
+              <div>目視確認と音聴棒を使った基本調査。水道メーター確認・各水栓の通水テストを含みます。</div>
+              <div class="price-yen">11,000<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>通水・加圧調査</b><span>床下・壁内の配管漏れを確認</span></div>
+              <div>給水管に圧力をかけて漏れの有無を判定。床下や壁内の目視できない箇所の調査に使用します。</div>
+              <div class="price-yen">16,500<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>壁内・床下精密調査</b><span>水分計・電磁波による詳細調査</span></div>
+              <div>非破壊検査機器で漏水箇所を絞り込みます。内装を剥がす前に補修範囲を最小化する目的で使用します。</div>
+              <div class="price-yen">22,000<small>円(税込)〜</small></div>
+            </div>
+            <div class="price-row">
+              <div class="price-name"><b>配管補修・交換</b><span>調査後に範囲を確定して見積</span></div>
+              <div>漏水箇所の特定後、補修・交換の選択肢と費用を書面で提示します。作業前の確認なしに進めることはありません。</div>
+              <div class="price-yen"><small style="font-size:13px;color:var(--muted);font-weight:700;">現場確認後<br>見積</small></div>
+            </div>
           </div>
         </div>
         <aside class="price-note">
@@ -1239,5 +1316,17 @@
     <a href="tel:0120-000-000">電話する</a>
     <a href="#price">料金を見る</a>
   </div>
+<script>
+  document.querySelectorAll('.price-tabs button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.price-tabs button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.price-panel').forEach(p => {
+        p.hidden = p.dataset.panel !== tab;
+      });
+    });
+  });
+</script>
 </body>
 </html>
