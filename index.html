@@ -373,7 +373,7 @@
   }
 
   .hero h1 .accent-line {
-    display: block;
+    display: inline;
     background: var(--gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1419,7 +1419,16 @@
     .flow-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
     .flow-steps::before { display: none; }
     .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .plan-card.featured { padding-top: 48px; }
+    .plan-card { padding: 24px 20px; }
+    .plan-card.featured { padding-top: 36px; }
+    .plan-head { min-height: unset; }
+    .plan-name { font-size: 18px; }
+    .plan-price { font-size: 32px; }
+    .plan-price-note { margin-bottom: 16px; }
+    .plan-duration { margin-bottom: 14px; }
+    .plan-desc { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
+    .plan-features { gap: 8px; margin-bottom: 20px; }
+    .plan-features li { font-size: 14px; }
     .works-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .maintenance-items { grid-template-columns: 1fr 1fr; }
     .profile-top { grid-template-columns: 1fr; gap: 32px; }
@@ -1444,18 +1453,67 @@
     }
     .nav-links.open .nav-cta { text-align: center; display: block; padding: 14px; }
     section { padding: 64px 20px; }
-    .features-grid { grid-template-columns: 1fr; }
-    .flow-steps { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .feature-card { padding: 20px 16px; }
+    .feature-icon { width: 48px; height: 48px; border-radius: 12px; margin-bottom: 12px; }
+    .feature-icon svg { width: 28px; height: 28px; }
+    .feature-card h3 { font-size: 15px; margin-bottom: 8px; }
+    .feature-card p { font-size: 13px; line-height: 1.6; }
+    .section-header { margin-bottom: 32px; }
+    .section-desc { font-size: 15px; line-height: 1.7; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    .flow-icon { display: none; }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      column-gap: 16px;
+      padding: 0 0 28px 0;
+      position: relative;
+    }
+    .flow-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 40px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+    }
+    .flow-num {
+      grid-column: 1;
+      grid-row: 1 / 3;
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      margin: 0;
+      align-self: start;
+    }
+    .flow-step h3 { grid-column: 2; grid-row: 1; font-size: 15px; margin-bottom: 4px; margin-top: 8px; }
+    .flow-step p { grid-column: 2; grid-row: 2; font-size: 13px; line-height: 1.6; }
     .works-grid { grid-template-columns: 1fr; }
-    .maintenance-body { flex-direction: column; gap: 20px; }
-    .maintenance-items { grid-template-columns: 1fr; }
+    .maintenance-body { flex-direction: column; gap: 12px; }
+    .maintenance-items { grid-template-columns: 1fr; gap: 7px; }
     .maintenance-right { flex-direction: row; min-width: unset; justify-content: flex-start; }
-    .maintenance-box { padding: 28px 22px; }
-    .profile-card { padding: 28px 22px; }
-    .profile-meta-grid { grid-template-columns: 1fr; }
+    .maintenance-box { padding: 24px 20px; }
+    .maintenance-title { font-size: 18px; }
+    .maintenance-price { font-size: 28px; }
+    .maintenance-note { margin-bottom: 12px; }
+    .maintenance-item { font-size: 14px; }
+    .profile-card { padding: 24px 20px; }
+    .profile-top { margin-bottom: 24px; gap: 20px; }
+    .profile-name-block { margin-bottom: 14px; gap: 14px; }
+    .profile-name-info h3 { font-size: 18px; }
+    .profile-text { font-size: 14px; line-height: 1.75; }
+    .profile-meta-grid { grid-template-columns: 1fr; gap: 10px; }
+    .profile-meta-item { padding: 12px 14px; }
+    .profile-meta-value { font-size: 14px; }
     .contact-form { padding: 28px 22px; }
-    .hero { padding: 70px 20px 60px; }
+    .hero { padding: 40px 20px 44px; }
     .hero-sub { font-size: 17px; }
+    .faq-list { gap: 8px; }
+    .faq-q { padding: 16px 18px; font-size: 15px; }
+    .faq-a { font-size: 14px; line-height: 1.7; }
+    .faq-item.open .faq-a { padding: 0 18px 16px; }
   }
 </style>
 </head>
@@ -1491,19 +1549,15 @@
 <section class="hero">
   <span class="hero-tag">個人店舗・法人まで幅広く対応</span>
   <h1>
-    あなたのビジネスの魅力を<br>
-    <span class="accent-line">WEBで、しっかり届ける。</span>
+    1ページ完結のホームページが<br>
+    <span class="accent-line">5万円</span>で作れます。
   </h1>
   <p class="hero-sub">
-    小さなお店から法人企業まで。<br>
-    信頼される・集客できる・問い合わせが増えるホームページを一緒に作ります。
+    あなたのビジネスの魅力をWEBでしっかり届けるホームページを一緒に作ります。
   </p>
   <div class="hero-buttons" style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;">
     <a href="#contact" class="btn-primary">無料で相談する</a>
-    <div style="display:inline-flex;flex-direction:column;align-items:center;">
-      <span class="price-badge">1ページ構成なら5万円！</span>
-      <a href="#pricing" class="btn-outline" style="width:100%;text-align:center;">料金を見る</a>
-    </div>
+    <a href="#pricing" class="btn-outline">料金プランを見る</a>
   </div>
 </section>
 
