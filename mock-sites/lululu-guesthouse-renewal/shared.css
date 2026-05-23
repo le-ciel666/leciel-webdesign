@@ -69,6 +69,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--line); padding: 5px 10px; border-radius: 999px;
   display: inline-flex; align-items: center; gap: 4px;
 }
+.appbar__book { display: none; } /* mobile: rely on sticky bottom CTA instead */
 .appbar__menu {
   width: 32px; height: 32px; display: grid; place-items: center;
   background: transparent; border: 0; padding: 0; cursor: pointer;
@@ -402,6 +403,65 @@ a { color: inherit; text-decoration: none; }
   background: var(--ink); color: var(--bg); border-color: var(--ink);
 }
 
+/* ── Reviews page (mobile base) ────────────────── */
+.rv-summary {
+  background: var(--ink); color: #fff;
+  padding: 48px 24px;
+}
+.rv-summary__inner {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 28px; align-items: center;
+}
+.rv-summary__score { text-align: center; }
+.rv-summary__num {
+  font-family: var(--en-serif); font-style: italic;
+  font-size: 72px; line-height: 1; color: #fff;
+  letter-spacing: -0.02em;
+}
+.rv-summary__stars {
+  color: var(--accent-warm);
+  font-size: 14px; letter-spacing: 0.15em;
+  margin-top: 6px;
+}
+.rv-summary__caption {
+  display: none;
+  font-family: var(--en-sans); font-size: 10px;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 14px;
+}
+.rv-summary__lead {
+  font-family: var(--jp-serif); font-size: 18px;
+  line-height: 1.5; margin-bottom: 10px; font-weight: 500;
+}
+.rv-summary__list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 8px;
+  font-size: 11px; color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
+}
+.rv-summary__list li {
+  display: flex; justify-content: space-between;
+}
+.rv-summary__score-en {
+  font-family: var(--en-sans); color: #fff;
+}
+.rv-bars { display: grid; gap: 18px; }
+.rv-bar__head {
+  display: flex; justify-content: space-between;
+  margin-bottom: 6px; font-size: 12px;
+}
+.rv-bar__head small { color: var(--ink-mute); margin-left: 4px; letter-spacing: 0.18em; }
+.rv-bar__score {
+  font-family: var(--en-serif); font-style: italic;
+  color: var(--accent);
+}
+.rv-bar__track {
+  height: 3px; background: var(--bg-alt);
+}
+.rv-bar__fill { height: 100%; background: var(--accent); }
+.rv-platforms { display: grid; gap: 10px; }
+
 /* ── Sticky bottom CTA ──────────────────────── */
 .bottom-cta {
   position: fixed; left: 0; right: 0; bottom: 0;
@@ -548,21 +608,23 @@ a { color: inherit; text-decoration: none; }
      We don't have textual nav items in HTML, so just style logo larger and
      add language + book CTA on the right. The existing .appbar__lang stays. */
 
-  /* Add a desktop-only "BOOK" button after the lang switch */
-  .appbar::after {
-    content: 'BOOK NOW';
+  /* Desktop-only booking button (actual link) after the lang switch */
+  .appbar__book {
     display: inline-flex; align-items: center;
-    height: 40px; padding: 0 20px;
+    height: 40px; padding: 0 22px;
     margin-left: 12px;
     background: var(--accent); color: #fff;
-    font-family: var(--en-sans); font-size: 11px; font-weight: 500;
-    letter-spacing: 0.22em;
+    font-family: var(--jp-sans); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    order: 3;
+    transition: opacity .2s;
   }
-  /* Wrap the right cluster: lang + ::after */
+  .appbar__book:hover { opacity: 0.85; }
+  /* Wrap the right cluster: logo + lang + book */
   .appbar { gap: 0; }
   .appbar__lang { order: 2; }
   .appbar__logo { order: 1; margin-right: auto; }
-  .appbar::after { order: 3; }
 
   /* ── Hero ───────────────────────────────────── */
   .hero { height: 720px; }
@@ -719,9 +781,7 @@ a { color: inherit; text-decoration: none; }
   /* ── Sticky bottom CTA disabled ─────── */
   .bottom-cta { display: none; }
 
-  /* ── Reviews page specific ──────────── */
-  /* Aggregate rating row + breakdown side-by-side */
-  /* The reviews list section becomes 2-column grid */
+  /* ── Reviews page specific (PC) ──────────── */
 
   /* Filter chips: wrap, no scroll */
   .filter-chips {
@@ -731,28 +791,80 @@ a { color: inherit; text-decoration: none; }
   }
   .filter-chips button { font-size: 13px; padding: 10px 20px; }
 
-  /* Reviews list (the .review-card cards inside the bg-alt section that
-     follows .filter-chips) becomes a 2-column grid via column-count. */
-  section[style*="bg-alt"] > .review-card {
-    width: 100%;
+  /* Summary (dark hero stripe): wider, more breathing room, 2-col split */
+  .rv-summary {
+    padding: 96px 0;
   }
-  /* The review-card section after filter-chips has inline background */
+  .rv-summary__inner {
+    max-width: 1280px; margin: 0 auto;
+    padding: 0 80px;
+    grid-template-columns: 360px 1fr;
+    gap: 96px;
+    align-items: center;
+  }
+  .rv-summary__score {
+    border-right: 1px solid rgba(255,255,255,0.18);
+    padding-right: 56px;
+  }
+  .rv-summary__num { font-size: 144px; }
+  .rv-summary__stars { font-size: 18px; letter-spacing: 0.22em; margin-top: 12px; }
+  .rv-summary__caption { display: block; }
+  .rv-summary__lead { font-size: 26px; margin-bottom: 24px; letter-spacing: 0.04em; }
+  .rv-summary__list { gap: 0; font-size: 14px; }
+  .rv-summary__list li {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    letter-spacing: 0.12em;
+  }
+  .rv-summary__list li:last-child { border-bottom: 0; }
+  .rv-summary__score-en { font-size: 16px; font-weight: 500; letter-spacing: 0.08em; }
+
+  /* Breakdown bars: 2x2 grid */
+  .rv-bars {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 80px;
+    max-width: 960px;
+  }
+  .rv-bar__head { font-size: 14px; align-items: baseline; }
+  .rv-bar__head small { font-size: 10px; }
+  .rv-bar__score { font-size: 22px; }
+  .rv-bar__track { height: 4px; }
+
+  /* Platforms: 3-column horizontal */
+  .rv-platforms {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  /* Final CTA: not full-width on PC */
+  .rv-cta {
+    width: auto;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 0 56px;
+  }
+
+  /* Filter chips section header above (drop bottom padding) */
+  .section--alt[style*="padding-top:32px"] {
+    padding-bottom: 0 !important;
+  }
+
+  /* Review-card wall: masonry-like 2 columns via CSS columns */
   body > section[style*="background: var(--bg-alt)"] {
     padding-left: 80px !important;
     padding-right: 80px !important;
     padding-bottom: 96px !important;
     column-count: 2;
-    column-gap: 24px;
+    column-gap: 28px;
+    max-width: 1440px;
+    margin: 0 auto;
   }
   body > section[style*="background: var(--bg-alt)"] .review-card {
     break-inside: avoid;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
     display: block; width: auto;
-  }
-
-  /* Filter chips section header above */
-  .section--alt[style*="padding-top:32px"] {
-    padding-bottom: 0 !important;
   }
 }
 
