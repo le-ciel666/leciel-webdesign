@@ -1,0 +1,4 @@
+# GitHub Actions の FTPデプロイステップ exclude に必ず追記する2行
+# （手動アップロードした _secrets.php がデプロイで削除されないようにするため）
+_secrets.php
+_secrets.example.php

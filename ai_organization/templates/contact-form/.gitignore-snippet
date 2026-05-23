@@ -1,0 +1,2 @@
+# クライアントリポジトリの .gitignore に必ず追記する1行
+_secrets.php
