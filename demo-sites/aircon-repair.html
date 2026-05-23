@@ -786,6 +786,7 @@
     color: #fff;
     background: var(--blue);
   }
+  .hero-mob-img { display: none; }
 
   @media (max-width: 1080px) {
     .nav-links { display: none; }
@@ -800,23 +801,115 @@
   @media (max-width: 720px) {
     body { font-size: 15px; }
     .topline-inner span:last-child, .nav-actions { display: none; }
-    .nav-inner { height: 68px; padding: 0 16px; }
+    .nav-inner { height: 60px; padding: 0 16px; }
     .brand-name { font-size: 18px; }
     .brand-sub { display: none; }
-    .hero { min-height: auto; padding-top: 310px; }
-    .hero-content { padding: 42px 18px 64px; }
-    .hero-metrics, .quick-list, .symptom-grid, .process-grid, .case-grid, .maker-grid, .brand-strip { grid-template-columns: 1fr; }
-    .quick { padding: 20px 18px; }
-    section { padding: 72px 18px; }
-    .section-head { gap: 24px; margin-bottom: 34px; }
-    .judge-photo { min-height: 360px; }
-    .judge-panel, .maker-card { padding: 26px; }
-    .judge-item { grid-template-columns: 1fr; }
+
+    /* Hero: padding-top方式を廃止し、専用画像要素で表示 */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+      padding-top: 0;
+      background: var(--mist);
+    }
+    .hero::before { display: none; }
+    .hero-mob-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: url('../assets/aircon/hero.webp') center 25%/cover no-repeat;
+    }
+    .hero-content { padding: 18px 18px 20px; }
+    h1 { font-size: clamp(24px, 7vw, 32px); margin-bottom: 12px; }
+    .chip { font-size: 11px; padding: 6px 10px; margin-bottom: 12px; }
+    .hero-lead { font-size: 13.5px; line-height: 1.8; margin-bottom: 16px; }
+    .hero-actions { gap: 10px; margin-bottom: 16px; }
+    .btn { min-height: 44px; padding: 10px 16px; font-size: 14px; }
+    .hero-metrics { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .metric { padding: 10px; }
+    .metric b { font-size: 16px; margin-bottom: 3px; }
+    .metric span { font-size: 10px; }
+    .diagnosis-card { margin: 0 18px 16px; width: auto; padding: 18px; }
+    .signal-row { font-size: 11px; gap: 8px; }
+
+    /* Quick nav */
+    .quick { padding: 12px 18px; }
+    .quick-inner { gap: 12px; }
+    .quick-list { grid-template-columns: repeat(2, 1fr); gap: 7px; }
+    .quick-list a { padding: 7px 10px; font-size: 12px; }
+
+    /* Sections */
+    section { padding: 44px 18px; }
+    .section-head { gap: 12px; margin-bottom: 20px; }
+    .h2 { font-size: clamp(20px, 6.5vw, 26px); line-height: 1.28; }
+    .label { font-size: 11px; margin-bottom: 10px; }
+    .lead { font-size: 13px; line-height: 1.85; }
+
+    /* Symptom */
+    .symptom-grid { grid-template-columns: 1fr; }
+    .symptom { min-height: auto; padding: 16px; }
+    .symptom::after { font-size: 38px; top: 10px; right: 12px; }
+    .symptom .icon { width: 40px; height: 40px; font-size: 17px; border-radius: 12px; margin-bottom: 10px; }
+    .symptom h3 { font-size: 15px; line-height: 1.35; margin-bottom: 6px; }
+    .symptom p { font-size: 12.5px; line-height: 1.7; }
+
+    /* Judge */
+    .judge-photo { min-height: 200px; }
+    .judge-panel { padding: 16px; }
+    .judge-list { margin-top: 12px; gap: 8px; }
+    .judge-item { grid-template-columns: 1fr; padding: 12px; gap: 4px; }
+    .judge-item b { font-size: 14px; margin-bottom: 2px; }
+    .judge-item p { font-size: 12.5px; line-height: 1.7; }
+
+    /* Price */
+    .price-table { border-radius: 16px; }
     .price-row { grid-template-columns: 1fr; }
     .price-row.head { display: none; }
-    .cta-panel a.tel-big { font-size: 32px; }
+    .price-row > div { padding: 12px 14px; }
+    .price-name b { font-size: 14px; }
+    .price-name span { font-size: 11px; }
+    .yen { font-size: 22px; }
+    .price-side { padding: 16px; }
+    .price-side h3 { font-size: 15px; margin-bottom: 8px; }
+    .price-side p { font-size: 13px; }
+
+    /* Process */
+    .process-grid { grid-template-columns: 1fr; gap: 10px; }
+    .process { min-height: auto; padding: 16px; }
+    .process .step { font-size: 28px; margin-bottom: 8px; }
+    .process h3 { font-size: 15px; margin-bottom: 6px; }
+    .process p { font-size: 12.5px; line-height: 1.7; }
+
+    /* Cases */
+    .case-grid { grid-template-columns: 1fr; }
+    .case-top { padding: 14px; }
+    .case-top h3 { font-size: 15px; }
+    .case-body { padding: 14px; }
+    .case-body p { font-size: 12.5px; }
+    .case-result { font-size: 12px; }
+
+    /* Maker */
+    .maker-grid { grid-template-columns: 1fr; }
+    .maker-card { padding: 16px; }
+    .maker-card h3 { font-size: 17px; margin-bottom: 10px; }
+    .brand-strip { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .brand-strip span { padding: 8px 6px; font-size: 11px; }
+
+    /* FAQ */
+    .faq { padding: 18px 0; }
+    .faq h3 { font-size: 14.5px; line-height: 1.6; gap: 12px; margin-bottom: 8px; }
+    .faq p { font-size: 13px; line-height: 1.85; gap: 12px; }
+
+    /* CTA */
+    .cta-inner { padding: 40px 18px; gap: 20px; }
+    .cta-panel { padding: 20px; }
+    .cta-panel a.tel-big { font-size: 30px; }
+    .cta-panel .btn { min-height: 44px; }
+
+    /* Fixed + Footer */
     .mobile-fixed { display: grid; }
-    footer { padding-bottom: 86px; }
+    footer { padding-bottom: 78px; }
   }
 </style>
 </head>
@@ -850,6 +943,7 @@
   </nav>
 
   <header class="hero">
+    <div class="hero-mob-img" aria-hidden="true"></div>
     <div class="hero-content">
       <p class="chip">エラーコード・型番から故障箇所を絞り込む空調診断</p>
       <h1>冷えない理由を、<br><span>勘ではなく診断で。</span></h1>
