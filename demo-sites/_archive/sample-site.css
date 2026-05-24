@@ -829,13 +829,13 @@ dd {
 }
 
 .yoga {
-  --paper: #edf3f7;
-  --ink: #182231;
-  --muted: #617087;
-  --accent: #587dab;
-  --accent-2: #a7c0d8;
-  --dark: #172131;
-  --radius: 3px;
+  --paper: #f0f4ee;
+  --ink: #17231f;
+  --muted: #61716b;
+  --accent: #487c6c;
+  --accent-2: #d3a85d;
+  --dark: #14211d;
+  --radius: 6px;
   --display: "Cormorant Garamond", "Noto Serif JP", serif;
 }
 
@@ -845,7 +845,7 @@ dd {
 
 .sora-hero {
   background:
-    linear-gradient(120deg, rgba(237, 243, 247, 0.72), rgba(255, 255, 255, 0.94) 54%),
+    linear-gradient(120deg, rgba(240, 244, 238, 0.76), rgba(255, 255, 255, 0.94) 54%),
     var(--bg);
 }
 
@@ -854,13 +854,34 @@ dd {
   text-wrap: balance;
 }
 
+.hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  max-width: 560px;
+  margin: -12px 0 28px;
+}
+
+.hero-highlights span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 13px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(72, 124, 108, 0.18);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
 .sora-hero-art img {
   object-position: center top;
 }
 
 .sora-stats .stat {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(237, 243, 247, 0.82));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(240, 244, 238, 0.82));
 }
 
 .studio-photo {
@@ -922,12 +943,46 @@ dd {
 .sora-points span {
   min-height: 50px;
   padding: 14px 16px;
-  background: rgba(237, 243, 247, 0.9);
-  border: 1px solid rgba(88, 125, 171, 0.18);
+  background: rgba(240, 244, 238, 0.9);
+  border: 1px solid rgba(72, 124, 108, 0.18);
   border-radius: var(--radius);
   color: var(--ink);
   font-size: 14px;
   font-weight: 800;
+}
+
+.first-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.first-grid article {
+  padding: 26px;
+  background: #fff;
+  border: 1px solid rgba(72, 124, 108, 0.16);
+  border-radius: var(--radius);
+}
+
+.first-grid span {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 20px;
+  place-items: center;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 50%;
+  font-family: var(--display);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.first-grid h3,
+.amenity-grid h3 {
+  font-size: 22px;
 }
 
 .sora-class-section .section-title p:not(.eyebrow),
@@ -947,14 +1002,14 @@ dd {
   min-height: 330px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(88, 125, 171, 0.14);
+  border: 1px solid rgba(72, 124, 108, 0.14);
   border-radius: var(--radius);
 }
 
 .class-card.featured {
   color: #fff;
   background:
-    linear-gradient(145deg, rgba(88, 125, 171, 0.9), rgba(23, 33, 49, 0.96)),
+    linear-gradient(145deg, rgba(72, 124, 108, 0.92), rgba(20, 33, 29, 0.96)),
     var(--dark);
   border-color: rgba(255, 255, 255, 0.18);
 }
@@ -991,6 +1046,44 @@ dd {
   font-weight: 700;
 }
 
+.fit-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(360px, 1.22fr);
+  gap: clamp(34px, 7vw, 90px);
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.fit-list {
+  display: grid;
+  gap: 12px;
+}
+
+.fit-list article {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.72fr) 1fr;
+  gap: 16px;
+  align-items: center;
+  min-height: 72px;
+  padding: 18px 22px;
+  background: linear-gradient(90deg, #fff, rgba(240, 244, 238, 0.78));
+  border: 1px solid rgba(72, 124, 108, 0.14);
+  border-radius: var(--radius);
+}
+
+.fit-list b {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.fit-list span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
 .schedule-board {
   display: grid;
   grid-template-columns: repeat(7, minmax(128px, 1fr));
@@ -999,8 +1092,8 @@ dd {
   max-width: 1220px;
   margin: 0 auto;
   padding: 1px;
-  background: rgba(88, 125, 171, 0.22);
-  border: 1px solid rgba(88, 125, 171, 0.22);
+  background: rgba(72, 124, 108, 0.22);
+  border: 1px solid rgba(72, 124, 108, 0.22);
   border-radius: var(--radius);
 }
 
@@ -1030,14 +1123,14 @@ dd {
 
 .teacher-layout {
   display: grid;
-  grid-template-columns: minmax(300px, 0.72fr) minmax(460px, 1.28fr);
+  grid-template-columns: minmax(280px, 0.62fr) minmax(600px, 1.38fr);
   gap: clamp(34px, 7vw, 88px);
   align-items: start;
 }
 
 .teacher-cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -1102,7 +1195,7 @@ dd {
 }
 
 .price-grid .recommended {
-  border-color: rgba(88, 125, 171, 0.38);
+  border-color: rgba(72, 124, 108, 0.38);
   box-shadow: 0 24px 70px rgba(24, 34, 49, 0.1);
 }
 
@@ -1123,6 +1216,11 @@ dd {
   margin-top: auto;
 }
 
+.sora-price .price-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1240px;
+}
+
 .flow-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -1137,7 +1235,7 @@ dd {
 }
 
 .voice-grid article {
-  background: linear-gradient(180deg, #fff, rgba(237, 243, 247, 0.72));
+  background: linear-gradient(180deg, #fff, rgba(240, 244, 238, 0.72));
 }
 
 .voice-grid b {
@@ -1145,6 +1243,56 @@ dd {
   margin-top: 22px;
   color: var(--accent);
   font-size: 14px;
+}
+
+.amenity-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(360px, 1.22fr);
+  gap: clamp(34px, 7vw, 90px);
+  align-items: start;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.amenity-grid article {
+  min-height: 176px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid rgba(72, 124, 108, 0.14);
+  border-radius: var(--radius);
+}
+
+.trial-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 980px;
+  margin: 30px auto 0;
+  padding: 24px 28px;
+  background: #fff;
+  border: 1px solid rgba(72, 124, 108, 0.16);
+  border-radius: var(--radius);
+}
+
+.trial-panel b {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.trial-panel p {
+  font-size: 14px;
+  line-height: 1.75;
 }
 
 .faq-list {
@@ -1156,7 +1304,7 @@ dd {
 
 .faq-list details {
   background: #fff;
-  border: 1px solid rgba(88, 125, 171, 0.16);
+  border: 1px solid rgba(72, 124, 108, 0.16);
   border-radius: var(--radius);
 }
 
@@ -1175,7 +1323,7 @@ dd {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(23, 33, 49, 0.28), rgba(23, 33, 49, 0.72)),
+    linear-gradient(rgba(20, 33, 29, 0.28), rgba(20, 33, 29, 0.72)),
     url("../../assets/yoga/schedule.webp") center/cover;
 }
 
@@ -1188,6 +1336,23 @@ dd {
   line-height: 1.1;
   letter-spacing: 0.05em;
   text-align: center;
+}
+
+.route-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.route-list span {
+  padding: 9px 12px;
+  color: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .sora-final .actions {
@@ -1298,5 +1463,408 @@ dd {
 
   dl {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 920px) {
+  .yoga-header {
+    align-items: center;
+    flex-direction: row;
+    gap: 14px;
+    min-height: auto;
+    padding: 12px 18px;
+  }
+
+  .yoga-header .logo {
+    flex: 0 0 auto;
+    font-size: 20px;
+    white-space: nowrap;
+  }
+
+  .yoga-header nav {
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    gap: 14px;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .yoga-header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .yoga-header nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .yoga-header .nav-cta {
+    min-height: 38px;
+    padding: 0 14px;
+  }
+
+  .yoga .section {
+    padding: 60px 20px;
+  }
+
+  .yoga .section-title {
+    margin-bottom: 32px;
+  }
+
+  .yoga h2 {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .yoga p {
+    font-size: 15px;
+    line-height: 1.78;
+  }
+
+  .sora-hero {
+    min-height: auto;
+  }
+
+  .sora-hero .hero-copy {
+    padding: 34px 20px 26px;
+  }
+
+  .sora-hero h1 {
+    margin-bottom: 18px;
+    font-size: clamp(34px, 9vw, 52px);
+    line-height: 1.12;
+  }
+
+  .sora-hero .hero-copy > p:not(.eyebrow) {
+    margin-bottom: 24px;
+    line-height: 1.78;
+  }
+
+  .hero-highlights {
+    margin: 0 0 22px;
+  }
+
+  .sora-hero .hero-art {
+    min-height: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .sora-hero .hero-art.has-image img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .sora-hero .art-label {
+    left: 14px;
+    bottom: 14px;
+    max-width: calc(100% - 28px);
+    padding: 16px;
+  }
+
+  .sora-hero .art-label b {
+    font-size: 22px;
+  }
+
+  .sora-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sora-stats .stat {
+    padding: 20px 14px;
+  }
+
+  .sora-stats .stat b {
+    font-size: clamp(26px, 6vw, 42px);
+  }
+
+  .sora-stats .stat p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .studio-photo,
+  .studio-photo img {
+    min-height: 360px;
+  }
+
+  .first-grid,
+  .class-grid,
+  .sora-price .price-grid,
+  .amenity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .first-grid article,
+  .class-card,
+  .price-grid article,
+  .amenity-grid article,
+  .voice-grid article {
+    padding: 20px;
+  }
+
+  .class-card,
+  .price-grid article,
+  .amenity-grid article {
+    min-height: 0;
+  }
+
+  .class-card h3,
+  .first-grid h3,
+  .amenity-grid h3 {
+    font-size: 19px;
+  }
+
+  .class-card p,
+  .class-card li,
+  .first-grid p,
+  .amenity-grid p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .fit-layout,
+  .amenity-layout,
+  .teacher-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .fit-list article {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    min-height: auto;
+  }
+
+  .schedule-board div {
+    min-height: 188px;
+    padding: 18px 16px;
+  }
+
+  .schedule-board b {
+    font-size: 26px;
+  }
+
+  .teacher-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .teacher-cards small,
+  .teacher-cards h3,
+  .teacher-cards p {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .sora-price .price-grid b {
+    font-size: 36px;
+  }
+
+  .sora-trial .flow-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .sora-trial .flow-grid article {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 16px;
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .sora-trial .flow-grid span {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 42px;
+    height: 42px;
+    margin: 0;
+    place-items: center;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+  .sora-trial .flow-grid h3,
+  .sora-trial .flow-grid p {
+    grid-column: 2;
+  }
+
+  .sora-trial .flow-grid h3 {
+    font-size: 19px;
+  }
+
+  .sora-trial .flow-grid p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .gallery {
+    grid-auto-rows: 180px;
+  }
+
+  .sora-access .map-box {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .yoga-header {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 16px;
+  }
+
+  .yoga-header nav {
+    width: 100%;
+  }
+
+  .yoga .section {
+    padding: 52px 18px;
+  }
+
+  .yoga .eyebrow {
+    margin-bottom: 12px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+
+  .sora-hero .hero-copy {
+    padding: 28px 18px 22px;
+  }
+
+  .hero-highlights span {
+    min-height: 32px;
+    font-size: 12px;
+  }
+
+  .sora-stats .stat {
+    padding: 16px 10px;
+  }
+
+  .first-grid,
+  .class-grid,
+  .sora-price .price-grid,
+  .amenity-grid {
+    gap: 10px;
+  }
+
+  .first-grid article,
+  .class-card,
+  .price-grid article,
+  .amenity-grid article {
+    padding: 16px 14px;
+  }
+
+  .first-grid span {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+
+  .class-card small,
+  .price-grid small,
+  .teacher-cards small {
+    margin-bottom: 10px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .class-card h3,
+  .first-grid h3,
+  .amenity-grid h3 {
+    font-size: 16px;
+  }
+
+  .class-card ul {
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .sora-price .price-grid b {
+    font-size: 30px;
+  }
+
+  .price-grid p {
+    margin-bottom: 18px;
+  }
+
+  .teacher-cards,
+  .voice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trial-panel {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .trial-panel b {
+    font-size: 26px;
+  }
+
+  .faq-list summary {
+    padding: 18px 20px;
+  }
+
+  .faq-list p {
+    padding: 0 20px 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .yoga h2 {
+    font-size: 28px;
+  }
+
+  .sora-hero h1 {
+    font-size: 34px;
+  }
+
+  .sora-hero .hero-art {
+    aspect-ratio: 4 / 3;
+  }
+
+  .sora-hero .art-label span {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .sora-stats .stat p {
+    font-size: 12px;
+  }
+
+  .class-card p,
+  .class-card li,
+  .first-grid p,
+  .amenity-grid p {
+    font-size: 13px;
+  }
+
+  .studio-photo,
+  .studio-photo img {
+    min-height: 300px;
+  }
+
+  .floating-hours {
+    right: 14px;
+    bottom: 14px;
+    width: calc(100% - 28px);
+    padding: 16px;
+  }
+
+  .floating-hours b {
+    font-size: 26px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 132px;
+    gap: 10px;
   }
 }
