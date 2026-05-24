@@ -228,13 +228,14 @@
     letter-spacing: 0;
     margin-bottom: 28px;
   }
-  h1 span {
+  h1 .highlight {
     color: var(--olive);
     text-decoration: underline;
     text-decoration-color: var(--lime);
     text-decoration-thickness: 0.18em;
     text-underline-offset: -0.08em;
   }
+  h1 .nowrap { white-space: nowrap; }
   .hero-lead {
     max-width: 670px;
     color: var(--deep);
@@ -781,6 +782,7 @@
     .hero-media { min-height: 360px; }
     .inspection-note { position: static; width: auto; margin: -54px 18px 30px; }
     .hero-content { padding: 40px 18px 64px; }
+    h1 { font-size: clamp(30px, 8vw, 34px); line-height: 1.18; }
     .hero-checks, .band-list, .pest-grid, .flow-grid, .voice-grid { grid-template-columns: 1fr; }
     section { padding: 72px 18px; }
     .section-head { gap: 24px; margin-bottom: 34px; }
@@ -827,7 +829,7 @@
   <header class="hero">
     <div class="hero-content">
       <p class="eyebrow en">INSPECTION FIRST</p>
-      <h1>見える虫だけでなく、<br><span>発生する理由</span>を止める。</h1>
+      <h1><span class="nowrap">見える虫だけでなく、</span><br><span class="highlight nowrap">発生する理由を止める。</span></h1>
       <p class="hero-lead">害虫駆除は、薬剤を撒いて終わりではありません。SECT PLANは、発生源・侵入口・水分・餌場・隠れ場所を調査し、駆除と再発予防を同時に設計します。住まいには安心を、店舗には衛生管理の記録を残す防除サービスです。</p>
       <div class="hero-actions">
         <a class="btn btn-lime" href="tel:0120-000-000">今すぐ相談する</a>
