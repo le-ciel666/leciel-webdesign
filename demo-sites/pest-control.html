@@ -25,16 +25,18 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+  html, body { max-width: 100%; overflow-x: hidden; }
   body {
     font-family: 'Noto Sans JP', sans-serif;
     color: var(--ink);
     background: var(--paper);
     font-size: 16px;
-    line-height: 1.85;
+    line-height: 1.78;
     -webkit-font-smoothing: antialiased;
   }
   img { display: block; max-width: 100%; }
   a { color: inherit; }
+  p, b, h2, h3, .btn { overflow-wrap: anywhere; }
   .en { font-family: 'Archivo', sans-serif; letter-spacing: 0; }
   .serif { font-family: 'Noto Serif JP', serif; }
 
@@ -154,6 +156,7 @@
     font-family: inherit;
     font-weight: 900;
     line-height: 1.35;
+    text-align: center;
     transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   }
   .btn:hover { transform: translateY(-2px); }
@@ -181,6 +184,7 @@
     background: var(--paper);
     overflow: hidden;
   }
+  .hero > div { min-width: 0; }
   .hero::before {
     content: '';
     position: absolute;
@@ -196,7 +200,7 @@
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 110px 7vw 84px;
+    padding: 88px 7vw 78px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -239,7 +243,7 @@
   .hero-lead {
     max-width: 670px;
     color: var(--deep);
-    line-height: 2.06;
+    line-height: 1.9;
     font-size: 17px;
     margin-bottom: 34px;
   }
@@ -263,6 +267,7 @@
     font-size: 12px;
     font-weight: 900;
     text-align: center;
+    min-width: 0;
   }
   .hero-media {
     position: relative;
@@ -337,6 +342,7 @@
     font-size: 12px;
     font-weight: 800;
     background: rgba(255,255,255,0.05);
+    min-width: 0;
   }
 
   section { padding: 108px 24px; }
@@ -364,10 +370,11 @@
     line-height: 1.26;
     font-weight: 900;
     letter-spacing: 0;
+    overflow-wrap: anywhere;
   }
   .lead {
     color: var(--deep);
-    line-height: 2.05;
+    line-height: 1.85;
     max-width: 780px;
   }
 
@@ -381,7 +388,7 @@
   .pest-card {
     background: #fff;
     padding: 32px 26px;
-    min-height: 284px;
+    min-height: 252px;
     position: relative;
   }
   .pest-card .num {
@@ -398,8 +405,8 @@
   }
   .pest-card p {
     color: var(--muted);
-    font-size: 13.5px;
-    line-height: 1.95;
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   #method {
@@ -447,8 +454,8 @@
   }
   .method-step p {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.8;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   .price-layout {
@@ -517,8 +524,8 @@
   }
   .price-note p {
     color: rgba(255,255,255,0.72);
-    font-size: 13.5px;
-    line-height: 1.95;
+    font-size: 14px;
+    line-height: 1.75;
   }
   .price-note ul {
     list-style: none;
@@ -557,7 +564,7 @@
   }
   .contract-panel p {
     color: rgba(255,255,255,0.72);
-    line-height: 2;
+    line-height: 1.8;
   }
   .contract-list {
     display: grid;
@@ -575,8 +582,8 @@
   }
   .contract-item p {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.85;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   .flow-grid {
@@ -605,8 +612,8 @@
   }
   .flow p {
     color: var(--muted);
-    font-size: 13px;
-    line-height: 1.9;
+    font-size: 14px;
+    line-height: 1.7;
   }
 
   #voices {
@@ -636,8 +643,8 @@
   }
   .voice p {
     color: var(--deep);
-    font-size: 13.5px;
-    line-height: 2;
+    font-size: 14px;
+    line-height: 1.8;
   }
   .voice small {
     display: block;
@@ -672,7 +679,7 @@
   .faq p {
     color: var(--muted);
     font-size: 14px;
-    line-height: 2;
+    line-height: 1.8;
   }
 
   .cta {
@@ -698,7 +705,7 @@
   }
   .cta p {
     color: rgba(255,255,255,0.75);
-    line-height: 2;
+    line-height: 1.85;
     max-width: 780px;
   }
   .cta-panel {
@@ -756,7 +763,9 @@
     text-decoration: none;
     color: var(--ink);
     background: var(--lime);
+    font-size: 15px;
     font-weight: 900;
+    white-space: nowrap;
   }
   .mobile-fixed a:last-child {
     background: var(--danger);
@@ -765,35 +774,129 @@
 
   @media (max-width: 1080px) {
     .nav-links { display: none; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-media { order: -1; min-height: 480px; }
-    .hero-content { padding-top: 56px; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-media { min-height: 420px; }
+    .hero-content { padding: 56px 32px 52px; }
     .band-inner, .section-head, .method-layout, .price-layout, .business-grid, .cta-inner { grid-template-columns: 1fr; }
     .pest-grid { grid-template-columns: repeat(2, 1fr); }
     .flow-grid { grid-template-columns: repeat(3, 1fr); }
     .price-note { position: static; }
   }
   @media (max-width: 720px) {
-    body { font-size: 15px; }
+    body { font-size: 15px; line-height: 1.72; }
+    .topbar { display: none; }
     .topbar-inner span:last-child, .nav-actions { display: none; }
     .nav-inner { height: 68px; padding: 0 16px; }
     .brand-name { font-size: 17px; }
     .brand-sub { display: none; }
-    .hero-media { min-height: 360px; }
-    .inspection-note { position: static; width: auto; margin: -54px 18px 30px; }
-    .hero-content { padding: 40px 18px 64px; }
-    h1 { font-size: clamp(30px, 8vw, 34px); line-height: 1.18; }
-    .hero-checks, .band-list, .pest-grid, .flow-grid, .voice-grid { grid-template-columns: 1fr; }
-    section { padding: 72px 18px; }
-    .section-head { gap: 24px; margin-bottom: 34px; }
-    .method-panel, .contract-panel { padding: 26px; }
-    .method-photo { min-height: 360px; }
-    .method-step { grid-template-columns: 1fr; }
-    .price-row { grid-template-columns: 1fr; }
+    .hero::before { display: none; }
+    .nav, .hero, .band, section, footer { max-width: 100vw; overflow-x: hidden; }
+    .hero-content { width: 100vw; max-width: 100vw; padding: 30px 18px 34px; }
+    .eyebrow { margin-bottom: 18px; font-size: 11px; padding: 6px 10px; }
+    h1 { font-size: clamp(26px, 7vw, 34px); line-height: 1.18; margin-bottom: 18px; }
+    .hero-content, h1, .hero-lead { min-width: 0; }
+    .hero-actions, .hero-checks { width: calc(100vw - 36px); max-width: calc(100vw - 36px); min-width: 0; }
+    .hero-lead { font-size: 15px; line-height: 1.76; margin-bottom: 22px; }
+    .hero-actions { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
+    .hero-actions .btn { width: 100%; min-height: 50px; }
+    .hero-checks { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .hero-checks span { padding: 10px 8px; font-size: 12px; }
+    .hero-media { min-height: auto; height: clamp(210px, 56vw, 250px); background-position: 68% 42%; }
+    .hero-media::before { background: linear-gradient(180deg, rgba(251,250,244,0), rgba(251,250,244,0.25)); }
+    .inspection-note { position: static; width: calc(100vw - 36px); margin: -24px 18px 28px; padding: 20px; }
+    .inspection-note h3 { font-size: 16px; margin-bottom: 10px; }
+    .inspection-row { grid-template-columns: 78px 1fr; gap: 12px; padding: 10px 0; font-size: 12.5px; }
+    .band { padding: 16px 18px; }
+    .band-inner { gap: 12px; }
+    .band-list { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    .band-list span { padding: 7px 6px; font-size: 11.5px; }
+    .pest-grid, .voice-grid { grid-template-columns: repeat(2, 1fr); }
+    section { padding: 58px 18px; }
+    .section-head { gap: 16px; margin-bottom: 26px; }
+    .label { font-size: 11px; margin-bottom: 10px; }
+    .h2 { font-size: clamp(25px, 7.4vw, 31px); line-height: 1.34; }
+    .lead { line-height: 1.76; }
+    .pest-card { min-height: auto; padding: 20px 16px; }
+    .pest-card .num { font-size: 34px; margin-bottom: 12px; }
+    .pest-card h3 { font-size: 16px; line-height: 1.4; margin-bottom: 8px; }
+    .pest-card p { font-size: 13px; line-height: 1.62; }
+    .method-panel, .contract-panel { padding: 24px 20px; }
+    .method-photo { min-height: auto; height: clamp(220px, 62vw, 280px); background-position: center 42%; }
+    .method-steps { margin-top: 22px; gap: 8px; }
+    .method-step { grid-template-columns: 52px 1fr; gap: 12px; padding: 14px; }
+    .method-step span { font-size: 13px; }
+    .method-step p { font-size: 13px; line-height: 1.62; }
+    .price-row { grid-template-columns: 1fr; border-bottom: 1px solid var(--line); }
+    .price-row > div { padding: 16px 18px; }
     .price-row.head { display: none; }
+    .price-name b { font-size: 16px; }
+    .yen { font-size: 30px; }
+    .price-note { padding: 24px 20px; }
+    .price-note h3 { font-size: 19px; }
+    .business-grid { gap: 16px; }
+    .contract-panel h3 { font-size: 22px; }
+    .contract-panel p { line-height: 1.75; }
+    .contract-list { gap: 8px; }
+    .contract-item { padding: 18px; }
+    .contract-item p { font-size: 13px; line-height: 1.62; }
+    .flow-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+    .flow {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      column-gap: 14px;
+      min-height: auto;
+      padding: 18px 0;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      position: relative;
+    }
+    .flow .step {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      margin: 0;
+      border-radius: 50%;
+      background: var(--deep);
+      color: var(--lime);
+      font-size: 16px;
+      grid-row: 1 / 3;
+      position: relative;
+      z-index: 1;
+    }
+    .flow:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 58px;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+    }
+    .flow h3 { font-size: 16px; margin-bottom: 5px; }
+    .flow p { font-size: 13px; line-height: 1.62; }
+    .voice { padding: 20px 16px; }
+    .voice .stars { font-size: 12px; margin-bottom: 10px; }
+    .voice h3 { font-size: 15px; line-height: 1.45; }
+    .voice p { font-size: 13px; line-height: 1.65; }
+    .faq { padding: 20px 0; }
+    .faq h3, .faq p { grid-template-columns: 30px 1fr; gap: 12px; }
+    .faq h3 { font-size: 15px; line-height: 1.55; }
+    .faq p { font-size: 13.5px; line-height: 1.7; }
+    .cta-inner { padding: 58px 18px 72px; gap: 24px; }
+    .cta h2 { font-size: clamp(28px, 8vw, 34px); line-height: 1.25; }
+    .cta p { line-height: 1.75; }
+    .cta-panel { padding: 22px 18px; }
     .cta-panel a.tel-big { font-size: 33px; }
     .mobile-fixed { display: grid; }
+    .mobile-fixed { width: 100vw; }
     footer { padding-bottom: 86px; }
+  }
+  @media (max-width: 390px) {
+    .voice-grid { grid-template-columns: 1fr; }
+    .brand-name { font-size: 16px; }
+    h1 { font-size: 26px; }
   }
 </style>
 </head>
