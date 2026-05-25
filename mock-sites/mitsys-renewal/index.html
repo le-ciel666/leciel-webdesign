@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <title>コンタクトセンターDX・CTIシステム｜MITシステム研究所 Renewal Mock</title>
 <meta name="description" content="株式会社エム・アイ・ティシステム研究所様サイトリニューアル提案用モック。コンタクトセンター、アウトバウンド、CRM、音声認識、PBX連携を統合するCTIソリューションの現代的なWeb UIサンプルです。">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -131,36 +132,25 @@
   }
   .brand {
     display: inline-flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     text-decoration: none;
     min-width: max-content;
   }
-  .brand-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--blue), var(--cyan));
-    color: #fff;
-    display: grid;
-    place-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
-    letter-spacing: 0;
-    box-shadow: 0 14px 30px rgba(31, 95, 63, 0.28);
+  .brand-logo {
+    display: block;
+    width: 210px;
+    height: auto;
   }
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.25;
-  }
-  .brand-text strong { font-size: 15px; letter-spacing: 0.02em; }
-  .brand-text span {
+  .brand-tagline {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.15em;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.28em;
     color: var(--muted);
     text-transform: uppercase;
+    padding-left: 2px;
   }
   .nav-links {
     display: flex;
@@ -1038,7 +1028,8 @@
 
   @media (max-width: 720px) {
     .nav { height: 68px; padding: 0 16px; }
-    .brand-text span { display: none; }
+    .brand-logo { width: 174px; }
+    .brand-tagline { display: none; }
     .nav-actions .btn { display: none; }
     .hero-inner {
       grid-template-columns: 1fr;
@@ -1076,11 +1067,8 @@
   <header class="site-header">
     <nav class="nav" aria-label="メインナビゲーション">
       <a class="brand" href="#top" aria-label="MITシステム研究所 Renewal Mock">
-        <span class="brand-mark">MIT</span>
-        <span class="brand-text">
-          <strong>MITシステム研究所</strong>
-          <span>Contact Center DX</span>
-        </span>
+        <img class="brand-logo" src="assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所">
+        <span class="brand-tagline">Contact Center DX</span>
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#products">製品・サービス</a></li>

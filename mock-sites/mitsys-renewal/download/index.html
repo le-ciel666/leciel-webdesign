@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
 <title>資料請求｜MITシステム研究所</title>
 <meta name="description" content="QuickCRMをはじめとするコンタクトセンター向けソリューションの資料請求ページです。">
 <meta name="theme-color" content="#173f2a">
@@ -47,29 +48,24 @@
   }
   .brand {
     display: inline-flex;
-    align-items: center;
-    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
     text-decoration: none;
   }
-  .brand-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, var(--green), var(--green-2));
-    color: #fff;
-    display: grid;
-    place-items: center;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 700;
+  .brand-logo {
+    display: block;
+    width: 210px;
+    height: auto;
   }
-  .brand-text { display: flex; flex-direction: column; line-height: 1.25; }
-  .brand-text strong { font-size: 15px; }
-  .brand-text span {
+  .brand-tagline {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
-    letter-spacing: .15em;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .28em;
     color: var(--muted);
     text-transform: uppercase;
+    padding-left: 2px;
   }
   .back-link {
     color: var(--green);
@@ -211,7 +207,8 @@
   @media (max-width: 840px) {
     .nav { padding: 0 16px; }
     .hero-inner { grid-template-columns: 1fr; padding: 54px 16px 72px; }
-    .brand-text span { display: none; }
+    .brand-logo { width: 174px; }
+    .brand-tagline { display: none; }
   }
 </style>
 </head>
@@ -219,11 +216,8 @@
   <header class="site-header">
     <nav class="nav" aria-label="メインナビゲーション">
       <a class="brand" href="../" aria-label="MITシステム研究所 トップ">
-        <span class="brand-mark">MIT</span>
-        <span class="brand-text">
-          <strong>MITシステム研究所</strong>
-          <span>Contact Center DX</span>
-        </span>
+        <img class="brand-logo" src="../assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所">
+        <span class="brand-tagline">Contact Center DX</span>
       </a>
       <a class="back-link" href="../">トップへ戻る</a>
     </nav>
