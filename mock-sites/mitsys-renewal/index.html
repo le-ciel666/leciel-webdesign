@@ -234,31 +234,94 @@
   .hero {
     position: relative;
     overflow: hidden;
-    background:
-      linear-gradient(115deg, rgba(13, 33, 24, 0.97) 0%, rgba(23, 63, 42, 0.9) 50%, rgba(35, 92, 55, 0.8) 100%),
-      url('assets/images/hero-call-center-japan.png');
+    background: #101820;
+    background-size: cover;
+    background-position: center 34%;
+    color: #fff;
+  }
+  .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    color: #fff;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: center;
+    animation: heroSlide 64s ease-in-out infinite;
+    animation-fill-mode: both;
+    will-change: opacity, transform;
+  }
+  .hero-slide:nth-child(1) { animation-name: heroSlideFirst; animation-delay: 0s; transform-origin: 52% 50%; }
+  .hero-slide:nth-child(2) { animation-delay: 8s; transform-origin: 45% 48%; }
+  .hero-slide:nth-child(3) { animation-delay: 16s; transform-origin: 55% 50%; }
+  .hero-slide:nth-child(4) { animation-delay: 24s; transform-origin: 46% 52%; }
+  .hero-slide:nth-child(5) { animation-delay: 32s; transform-origin: 52% 48%; }
+  .hero-slide:nth-child(6) { animation-delay: 40s; transform-origin: 50% 50%; }
+  .hero-slide:nth-child(7) { animation-delay: 48s; transform-origin: 52% 44%; }
+  .hero-slide:nth-child(8) { animation-delay: 56s; transform-origin: 48% 52%; }
+  @keyframes heroSlide {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    3.125%,
+    12.5% {
+      opacity: 1;
+      transform: scale(1.035);
+    }
+    15.625%,
+    100% {
+      opacity: 0;
+      transform: scale(1.035);
+    }
+  }
+  @keyframes heroSlideFirst {
+    0%,
+    12.5% {
+      opacity: 1;
+      transform: scale(1.035);
+    }
+    15.625%,
+    100% {
+      opacity: 0;
+      transform: scale(1.035);
+    }
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(100deg, rgba(5, 10, 14, 0.78) 0%, rgba(5, 10, 14, 0.56) 44%, rgba(5, 10, 14, 0.18) 78%, rgba(5, 10, 14, 0.02) 100%),
+      linear-gradient(180deg, rgba(5, 10, 14, 0.12) 0%, rgba(5, 10, 14, 0.08) 44%, rgba(5, 10, 14, 0.32) 100%);
+    pointer-events: none;
   }
   .hero::after {
     content: "";
     position: absolute;
     inset: auto 0 0;
+    z-index: 1;
     height: 150px;
     background: linear-gradient(180deg, rgba(245, 248, 251, 0), var(--paper));
     pointer-events: none;
   }
   .hero-inner {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 88px 24px 118px;
-    display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-    gap: 56px;
-    align-items: center;
+    padding: 108px 24px 126px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slideshow { display: none; }
   }
   .eyebrow {
     display: inline-flex;
@@ -279,18 +342,33 @@
   }
   .hero h1 {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: clamp(38px, 5.5vw, 70px);
-    line-height: 1.15;
+    font-size: clamp(42px, 5.7vw, 88px);
+    line-height: 1.18;
     letter-spacing: 0.01em;
-    margin-bottom: 24px;
+    max-width: 1200px;
+    margin-bottom: 34px;
     font-weight: 900;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  }
+  .hero h1 .highlight {
+    display: inline-block;
+    margin: 0 0.08em;
+    padding: 0.02em 0.18em 0.08em;
+    background: rgba(255, 255, 255, 0.95);
+    color: #5aa4c1;
+    text-shadow: none;
   }
   .hero-lead {
-    color: #dcebe0;
-    font-size: 16px;
+    color: #fff;
+    font-size: clamp(18px, 2.1vw, 30px);
     line-height: 2;
-    max-width: 620px;
-    margin-bottom: 32px;
+    max-width: 1180px;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  }
+  .hero-lead + .hero-lead {
+    margin-top: 12px;
   }
   .hero-actions {
     display: flex;
@@ -1012,8 +1090,7 @@
     .cta-inner {
       grid-template-columns: 1fr;
     }
-    .hero-inner { padding-top: 64px; }
-    .ops-panel { max-width: 720px; }
+    .hero-inner { padding-top: 76px; }
     .challenge-grid,
     .flow,
     .industry-grid {
@@ -1032,10 +1109,10 @@
     .brand-tagline { display: none; }
     .nav-actions .btn { display: none; }
     .hero-inner {
-      grid-template-columns: 1fr;
       padding: 48px 16px 92px;
     }
-    .hero h1 { font-size: 38px; }
+    .hero h1 { font-size: 39px; }
+    .hero h1 .highlight { margin-top: 8px; }
     .hero-proof,
     .ops-body,
     .ops-kpi,
@@ -1087,76 +1164,20 @@
 
   <main id="top">
     <section class="hero">
+      <div class="hero-slideshow" aria-hidden="true">
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-01.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-02.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-03.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-04.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-05.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-06.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-07.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-08.jpg');"></span>
+      </div>
       <div class="hero-inner">
-        <div>
-          <p class="eyebrow">QuickCRM / CTI / Contact Center</p>
-          <h1>電話業務を、<br>成果が見える<br>運用基盤へ。</h1>
-          <p class="hero-lead">
-            QuickCRMを中心に、顧客情報、応対履歴、業務画面、CTI連携を一つの運用基盤へ。
-            インバウンドにもアウトバウンドにも対応し、コンタクトセンターの業務に合わせたCRM環境を構築できます。
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="quickcrm-renewal/">QuickCRMを見る <span class="arrow">→</span></a>
-            <a class="btn btn-ghost" href="services/">サービス一覧</a>
-          </div>
-          <div class="hero-proof" aria-label="主な訴求ポイント">
-            <div class="proof-item"><strong>CRM</strong><span>顧客情報と応対履歴を一元管理</span></div>
-            <div class="proof-item"><strong>CTI</strong><span>電話業務とオペレーター画面を連携</span></div>
-            <div class="proof-item"><strong>Cloud</strong><span>クラウド/既存環境のどちらにも対応</span></div>
-          </div>
-        </div>
-
-        <div class="ops-panel" aria-label="コンタクトセンター運用画面のイメージ">
-          <div class="ops-top">
-            <div class="traffic"><span></span><span></span><span></span></div>
-            <span class="status-pill">Live Campaign</span>
-          </div>
-          <div class="ops-body">
-            <aside class="ops-sidebar">
-              <div class="ops-logo">QuickCRM</div>
-              <div class="ops-menu">
-                <span class="active">Dashboard</span>
-                <span>Dialer</span>
-                <span>Customers</span>
-                <span>Scripts</span>
-                <span>Voice AI</span>
-                <span>Reports</span>
-              </div>
-            </aside>
-            <div class="ops-main">
-              <div class="ops-head">
-                <div>
-                  <h3>本日のアウトバウンド状況</h3>
-                  <p>架電、応答、結果登録、音声分析を一画面で把握</p>
-                </div>
-                <span class="tag green">稼働中</span>
-              </div>
-              <div class="ops-kpi">
-                <div class="kpi-card"><span>発信数</span><strong>8,420</strong></div>
-                <div class="kpi-card"><span>接続率</span><strong>42.8%</strong></div>
-                <div class="kpi-card"><span>対応待ち</span><strong>126</strong></div>
-              </div>
-              <div class="dialer-grid">
-                <div class="chart-box">
-                  <div class="chart-title"><span>Hourly Calls</span><strong>09:00-18:00</strong></div>
-                  <div class="bars" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-                <div class="queue-box">
-                  <div class="chart-title"><span>Agent Queue</span><strong>Realtime</strong></div>
-                  <ul class="call-list">
-                    <li><span class="dot"></span><span>AI要約完了</span><strong>38件</strong></li>
-                    <li><span class="dot"></span><span>折返し予約</span><strong>19件</strong></li>
-                    <li><span class="dot"></span><span>優先リスト</span><strong>84件</strong></li>
-                    <li><span class="dot"></span><span>確認アラート</span><strong>7件</strong></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h1>コンタクトセンターの<br><span class="highlight">「やりたい」</span>を叶えるシステムを、これからも</h1>
+        <p class="hero-lead">CRMの専門メーカーがPBX機能を組み込み、トータルソリューションを提供します。</p>
+        <p class="hero-lead">アウトバウンド機能、プレディクティブ機能、インバウンド機能、音声認識付き音声応答機能、通話録音のすべてが有機的に結合され、AIソリューションへの進化を実現していきます。</p>
       </div>
     </section>
 
