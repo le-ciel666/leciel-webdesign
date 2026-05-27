@@ -71,7 +71,7 @@
   :root {
     --ink: #111827;
     --ink-2: #263447;
-    --muted: #64748b;
+    --muted: #475569;
     --line: #d9e6df;
     --line-strong: #b7cbbf;
     --paper: #f5f8f4;
@@ -832,15 +832,14 @@
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 12px;
-    padding: 24px 20px;
-    min-height: 220px;
+    padding: 20px 18px;
   }
   .flow-step .step {
     font-family: 'JetBrains Mono', monospace;
     color: var(--blue);
     font-size: 13px;
     font-weight: 700;
-    margin-bottom: 28px;
+    margin-bottom: 10px;
   }
   .flow-step h3 {
     font-size: 16px;
@@ -950,38 +949,98 @@
     color: #b7efc4;
     font-size: 12px;
   }
-  .news-box {
-    background: #fff;
-    color: var(--ink);
-    border-radius: 12px;
-    padding: 26px;
-  }
-  .news-box h3 {
-    font-size: 19px;
-    margin-bottom: 18px;
-  }
-  .news-list {
-    list-style: none;
-    display: grid;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    overflow: hidden;
-    border-radius: 8px;
-  }
-  .news-list li {
-    background: #fff;
-    display: grid;
-    grid-template-columns: 112px 1fr;
-    gap: 16px;
-    padding: 16px;
-    font-size: 13.5px;
+  .news-section { background: #fff; border-top: 1px solid var(--line); }
+  .news-section .section-head {
+    display: flex;
     align-items: center;
+    gap: 40px;
+    margin-bottom: 28px;
   }
-  .news-list time {
+  .news-section .section-head > div { flex-shrink: 0; }
+  .news-section .section-head .lead {
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+  .news-items {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .news-entry {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .news-entry:last-child { border-bottom: none; }
+  .news-entry:hover { background: #f8fbf7; }
+  .news-entry-date {
     font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
     color: var(--blue);
-    font-size: 12px;
+    padding-top: 3px;
+    white-space: nowrap;
+  }
+  .news-entry-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .news-entry-body {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.85;
+  }
+  .news-entry-body p + p { margin-top: 6px; }
+  .news-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 22px;
+  }
+  .pager-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pager-btn:hover:not(:disabled) { background: #f1f7f2; border-color: var(--line-strong); }
+  .pager-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .pager-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pager-num:hover { background: #f1f7f2; }
+  .pager-num.is-active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    cursor: default;
   }
 
   .company {
@@ -1066,20 +1125,50 @@
   }
 
   .footer {
-    background: #101820;
-    color: #c7d5df;
-    padding: 34px 24px;
+    background: #0c1118;
+    color: #8a9bb0;
+    padding: 0 24px;
   }
   .footer-inner {
     max-width: 1240px;
     margin: 0 auto;
+    height: 56px;
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
     align-items: center;
-    font-size: 12px;
+    position: relative;
   }
-  .footer a { color: #b7efc4; text-decoration: none; }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #6b7f96;
+  }
+  .footer-copy .copy-sym {
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-right: 1px;
+  }
+  .pagetop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: #1a2636;
+    border: 1px solid #2a3a50;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8a9bb0;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pagetop:hover { background: #253447; color: #fff; }
+  .pagetop svg { width: 14px; height: 14px; }
 
   @media (max-width: 1040px) {
     .nav-links {
@@ -1126,9 +1215,11 @@
     .brand-tagline { display: none; }
     .nav-actions .btn { display: none; }
     .hero-inner {
-      padding: 48px 16px 92px;
+      padding: 48px 16px 72px;
     }
-    .hero h1 { font-size: 39px; }
+    .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
+    .hero-lead { font-size: 15px; line-height: 1.75; }
+    .hero-lead + .hero-lead { margin-top: 8px; }
     .hero-proof,
     .ops-body,
     .ops-kpi,
@@ -1151,8 +1242,10 @@
     .company-card { position: static; }
     .company-row dt,
     .company-row dd { padding: 14px 16px; }
-    .news-list li { grid-template-columns: 1fr; gap: 4px; }
-    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .news-entry { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
+    .news-entry-date { padding-top: 0; }
+    .footer { padding: 0 16px; }
+    .footer-inner { height: 52px; }
   }
 </style>
 </head>
@@ -1400,40 +1493,39 @@
       </div>
     </section>
 
-    <section class="trust-band" id="news">
+    <section class="trust-band">
       <div class="section">
         <div class="section-head">
           <div>
-            <p class="label">News / History</p>
+            <p class="label">History</p>
             <h2>進化を続ける、コンタクトセンター技術。</h2>
           </div>
           <p class="lead">
-            MITシステム研究所の最新情報と、コンタクトセンター向け製品を継続して開発してきた歩みを掲載します。
-            製品の進化、導入実績、展示会出展などを通じて、会社としての専門性と継続性を伝えます。
+            MITシステム研究所は1980年の創業以来、コンタクトセンター向けシステムを独自に開発し続けています。
+            製品の進化、導入実績、展示会出展などを通じて、専門性と継続性を積み重ねてきました。
           </p>
         </div>
-        <div class="trust-grid">
-          <div class="timeline">
-            <h3>沿革</h3>
-            <ul>
-              <li><time>1980</time><span>株式会社エム・アイ・ティシステム研究所を設立。</span></li>
-              <li><time>2000s</time><span>CRM・CTI領域の開発、コンタクトセンター向け製品展開を強化。</span></li>
-              <li><time>2015</time><span>アウトバウンド向け自動ダイヤルソフトウェア Quick eDialer を発表。</span></li>
-              <li><time>2020s</time><span>音声認識、クラウド連携、PBX連携など運用DX領域へ展開。</span></li>
-            </ul>
-          </div>
-          <div class="news-box">
-            <h3>お知らせ</h3>
-            <ul class="news-list">
-              <li><time>2025.12</time><span>VISコンタクトセンターシステムが進化し、実用フェーズに入りました。</span></li>
-              <li><time>2024.12</time><span>コンタクトセンター向け垂直統合システムを発表しました。</span></li>
-              <li><time>2024.06</time><span>QuickeDialerが複数業務・複数拠点で順調に稼働しています。</span></li>
-              <li><time>2023.11</time><span>QuickeDialerとQuickCRMが大手テレマエージェンシーに大規模導入されました。</span></li>
-              <li><time>2023.10</time><span>コールセンター/CRM デモ&コンファレンス 2023 in 東京に出展しました。</span></li>
-            </ul>
-          </div>
+        <div class="timeline">
+          <ul>
+            <li><time>1980</time><span>株式会社エム・アイ・ティシステム研究所を設立。</span></li>
+            <li><time>2000s</time><span>CRM・CTI領域の開発、コンタクトセンター向け製品展開を強化。</span></li>
+            <li><time>2015</time><span>アウトバウンド向け自動ダイヤルソフトウェア Quick eDialer を発表。</span></li>
+            <li><time>2020s</time><span>音声認識、クラウド連携、PBX連携など運用DX領域へ展開。</span></li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="section-head">
+        <div>
+          <p class="label">News</p>
+          <h2>お知らせ</h2>
+        </div>
+        <p class="lead">製品のアップデート、導入事例、展示会出展など、最新情報をお届けします。</p>
+      </div>
+      <div id="newsItems" class="news-items"></div>
+      <nav class="news-pager" id="newsPager" aria-label="ページ切り替え"></nav>
     </section>
 
     <section class="section" id="company">
@@ -1482,12 +1574,113 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <p>MIT System Renewal Mock / Designed by LE CIEL WEB DESIGN</p>
-      <p>Proposal sample based on publicly available website information.</p>
+      <p class="footer-copy"><span class="copy-sym">©</span><span id="footerYear"></span> MIT System Research Institute Co.Ltd. All rights reserved.</p>
+      <a class="pagetop" href="#top" aria-label="ページトップへ戻る">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2 9 7 4 12 9"/>
+        </svg>
+      </a>
     </div>
   </footer>
 
   <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    /* ── News Pager ── */
+    const NEWS = [
+      {
+        date: '2025年12月',
+        title: '＜VISコンタクトセンターシステムが進化し、実用フェーズに＞',
+        body: 'コンタクトセンター向け垂直統合システム＜VISコンタクトセンターシステム＞がますます進化し、機能も充実し、実用フェーズに入りました。オンプレミスPBXのリプレイス、ノーコードでの業務画面作成、顧客満足度UPの施策、AI技術を活用した業務改善、効率向上を検討されているコンタクトセンター様に、様々な方向からのソリューションを提供します。'
+      },
+      {
+        date: '2024年12月',
+        title: '＜コンタクトセンター向け垂直統合システムを発表＞',
+        body: 'クラウドPBX、プレディクティブダイアラー、スパークコール対応、通話録音機能、音声認識機能、AI機能を利用する為のデータ収集（話者分離された音声をテキスト化、キーワード作成）を蓄積し個別に、チャットボット、FAQ作成に利用され業務の効率化を可能にします。（詳細は、お問い合わせください）'
+      },
+      {
+        date: '2024年6月',
+        title: '',
+        body: 'テレマエージェンシーに導入されたQuickeDialerが、複数の業務を複数の拠点で順調に稼働（大枠500席）しています。'
+      },
+      {
+        date: '2023年11月',
+        title: 'QuickeDialerとQuickCRMが大手テレマエージェンシーに大規模導入',
+        body: '効率を考えた弊社のダイアラー製品"QuickeDialer（クイックイーダイアラー）"が、大手テレマエージェンシー様へ大規模導入されることになりました。業務画面はQuickCRMの画面作成ツールを使用してお客様自身で作成され、簡単カスタマイズを可能にします。'
+      },
+      {
+        date: '2023年10月',
+        title: '【コールセンター/CRM デモ&amp;コンファレンス 2023 in 東京】に出展します',
+        body: '11月9日(木)・10日(金)に池袋で開催される「第24回コールセンター/CRM デモ&amp;コンファレンス 2023 in 東京」に出展します。インバウンド業務・アウトバウンド業務をいかに効率的に行うか、様々なご提案をいたしますので、ぜひ弊社ブースにもお立ち寄りください。\n場所：サンシャインシティ・文化会館　期間：2023年11月9日（木）・10日（金）10:00〜17:30'
+      },
+      {
+        date: '2023年8月',
+        title: 'コンタクトセンター向けソリューション"QuickCRM"バージョンアップ！',
+        body: 'クラウドベースのコンタクトセンター向けソリューション"QuickCRM"をバージョンアップし、ますます使いやすく、業務カスタマイズもしやすくなりました。管理者、SV様、業務画面作成者、音声応答フロー作成者など業務に関わる方々が、自分たちで簡単に業務作成、変更、追加できることをコンセプトにしています。'
+      },
+      {
+        date: '2023年6月',
+        title: '受電時のオートアテンダント機能を実験的に実装',
+        body: '弊社が「着信者主権」というコンセプトのもと開発を進めている、"企業にかかってくる受電のオートアテンダント機能"の一部を、このたび弊社本社の代表電話に実装いたしました。皆様のご意見を伺いながら、さらに機能アップを図り、「着信者主権」を実現していきます。'
+      },
+      {
+        date: '2023年5月',
+        title: '水尾社長 書き下ろし本を出版',
+        body: 'このたび、幻冬舎より「拡大しない経営」というタイトルで、自分なりの会社経営および開発コンセプトをまとめた本を発売しました。44年前にソフトメーカーになりたいという夢を持って会社を興して以来、ビジネスユースのソフトウエアを、いくつもリリースしてきましたが、その経験から、会社規模を大きくしないほうが、新しくユニークな製品を、より早く、よりリーズナブルに、しかも継続して開発できることと考えています。店頭およびAmazonなどでお買い求めいただければ幸いです。'
+      }
+    ];
+
+    const PER_PAGE = 5;
+    let currentPage = 1;
+    const totalPages = Math.ceil(NEWS.length / PER_PAGE);
+    const container = document.getElementById('newsItems');
+    const pager = document.getElementById('newsPager');
+
+    function renderNews(page) {
+      currentPage = page;
+      const start = (page - 1) * PER_PAGE;
+      const items = NEWS.slice(start, start + PER_PAGE);
+
+      container.innerHTML = items.map(item => `
+        <article class="news-entry">
+          <time class="news-entry-date">${item.date}</time>
+          <div>
+            ${item.title ? `<p class="news-entry-title">${item.title}</p>` : ''}
+            <p class="news-entry-body">${item.body.replace(/\n/g, '<br>')}</p>
+          </div>
+        </article>
+      `).join('');
+
+      pager.innerHTML = '';
+
+      const prev = document.createElement('button');
+      prev.className = 'pager-btn';
+      prev.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 2 4 7 9 12"/></svg>';
+      prev.setAttribute('aria-label', '前のページ');
+      prev.disabled = page === 1;
+      prev.addEventListener('click', () => { renderNews(currentPage - 1); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+      pager.appendChild(prev);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'pager-num' + (i === page ? ' is-active' : '');
+        btn.textContent = i;
+        btn.setAttribute('aria-label', `${i}ページ目`);
+        if (i !== page) btn.addEventListener('click', () => { renderNews(i); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+        pager.appendChild(btn);
+      }
+
+      const next = document.createElement('button');
+      next.className = 'pager-btn';
+      next.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 2 10 7 5 12"/></svg>';
+      next.setAttribute('aria-label', '次のページ');
+      next.disabled = page === totalPages;
+      next.addEventListener('click', () => { renderNews(currentPage + 1); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+      pager.appendChild(next);
+    }
+
+    renderNews(1);
+
     const toggle = document.getElementById('navToggle');
     const links = document.getElementById('navLinks');
 

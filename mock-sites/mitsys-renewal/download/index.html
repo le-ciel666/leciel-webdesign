@@ -27,10 +27,14 @@
   body {
     font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
     color: var(--ink);
-    background: var(--paper);
+    background: #0c1118;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
   }
+  main { flex: 1; background: #0c1118; }
   a { color: inherit; }
   .site-header {
     background: rgba(255, 255, 255, 0.95);
@@ -88,7 +92,7 @@
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(360px, 1fr);
     gap: 54px;
-    align-items: center;
+    align-items: start;
   }
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -107,39 +111,75 @@
   .hero p { color: #e7f5eb; max-width: 680px; }
   .hero-copy {
     display: flex;
-    min-height: 620px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
+  .site-footer {
+    background: #0c1118;
+    padding: 0 24px;
+  }
+  .site-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #6b7f96;
+  }
+  .footer-copy .copy-sym { font-family: sans-serif; font-size: 11px; margin-right: 1px; }
+  .pagetop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: #1a2636;
+    border: 1px solid #2a3a50;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8a9bb0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pagetop:hover { background: #253447; color: #fff; }
+  .pagetop svg { width: 14px; height: 14px; }
   .tel-card {
-    margin-top: auto;
-    width: min(100%, 520px);
-    border: 1px solid rgba(255, 255, 255, .28);
+    width: 100%;
+    border: 1px solid var(--line);
     border-radius: 12px;
-    background: rgba(255, 255, 255, .09);
-    padding: 24px;
-    backdrop-filter: blur(10px);
+    background: var(--paper);
+    padding: 20px 28px;
   }
   .tel-card span {
     display: block;
-    color: #d9eadf;
-    font-size: 14px;
+    color: var(--muted);
+    font-size: 13px;
     font-weight: 700;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .tel-card a {
     display: inline-block;
-    color: #fff;
+    color: var(--ink);
     font-family: 'JetBrains Mono', monospace;
-    font-size: clamp(34px, 4vw, 54px);
+    font-size: clamp(28px, 3.5vw, 44px);
     line-height: 1.1;
     font-weight: 700;
     text-decoration: none;
     letter-spacing: 0;
   }
   .tel-card p {
-    margin-top: 8px;
-    color: #cfe4d5;
+    margin-top: 6px;
+    color: var(--muted);
     font-size: 13px;
   }
   .form-card {
@@ -181,7 +221,56 @@
   }
   .btn-primary { background: var(--green); color: #fff; box-shadow: 0 16px 34px rgba(31, 95, 63, .22); }
   .btn-ghost { background: #fff; color: var(--green); border-color: var(--line); }
-  .submit-row { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .agree-row { margin-top: 4px; }
+  .agree-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .agree-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-height: auto;
+    cursor: pointer;
+    accent-color: var(--green);
+    flex-shrink: 0;
+  }
+  .required-badge {
+    display: inline-flex;
+    padding: 2px 7px;
+    background: #d84f45;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .privacy-link {
+    display: block;
+    margin-top: 6px;
+    margin-left: 26px;
+    font-size: 13px;
+    color: var(--green);
+    text-underline-offset: 2px;
+  }
+  .submit-row { margin-top: 16px; }
+  .btn-submit {
+    width: 100%;
+    min-height: 56px;
+    font-size: 16px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .btn-submit:disabled {
+    background: #9ca3af;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+  }
   .privacy { color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 16px; }
   .complete-panel {
     display: none;
@@ -206,9 +295,16 @@
   }
   @media (max-width: 840px) {
     .nav { padding: 0 16px; }
-    .hero-inner { grid-template-columns: 1fr; padding: 54px 16px 72px; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 48px 16px 64px;
+      gap: 28px;
+    }
     .brand-logo { width: 174px; }
     .brand-tagline { display: none; }
+    h1 { font-size: clamp(26px, 7vw, 36px); margin-bottom: 14px; }
+    .site-footer { padding: 0 16px; }
+    .site-footer-inner { height: 52px; }
   }
 </style>
 </head>
@@ -233,11 +329,6 @@
             QuickCRMの概要、主な機能、CTI/PBX連携、関連サービスの構成をまとめた資料をご用意しています。
             必要事項をご入力いただくと、すぐにダウンロードできます。
           </p>
-          <div class="tel-card">
-            <span>お電話でのお問い合わせはこちら</span>
-            <a href="tel:0368721210">03-6872-1210</a>
-            <p>受付時間 平日 9:00-18:00</p>
-          </div>
         </div>
         <section class="form-card" aria-labelledby="download-title">
           <h2 id="download-title">資料請求フォーム</h2>
@@ -255,8 +346,15 @@
             <label>電話番号
               <input type="tel" name="tel" autocomplete="tel" required>
             </label>
+            <div class="agree-row">
+              <label class="agree-label">
+                <input type="checkbox" id="agreeCheck" name="agree" required>
+                <span>下記について同意する<span class="required-badge">必須</span></span>
+              </label>
+              <a class="privacy-link" href="https://www.mitsys.co.jp/privacy_policy2.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a>
+            </div>
             <div class="submit-row">
-              <button class="btn btn-primary" type="submit">送信する</button>
+              <button class="btn btn-primary btn-submit" type="submit" id="submitBtn" disabled>この内容で資料請求する</button>
             </div>
           </form>
           <p class="privacy">送信内容はデモ用です。このモックでは外部サーバーへの送信は行いません。</p>
@@ -269,10 +367,27 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-copy"><span class="copy-sym">©</span><span id="footerYear"></span> MIT System Research Institute Co.Ltd. All rights reserved.</p>
+      <a class="pagetop" href="#top" aria-label="ページトップへ戻る">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2 9 7 4 12 9"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
   <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
     const form = document.getElementById('downloadForm');
-    const card = document.querySelector('.form-card');
-    const panel = document.getElementById('completePanel');
+    const agreeCheck = document.getElementById('agreeCheck');
+    const submitBtn = document.getElementById('submitBtn');
+
+    agreeCheck?.addEventListener('change', () => {
+      submitBtn.disabled = !agreeCheck.checked;
+    });
 
     form?.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -280,9 +395,7 @@
         form.reportValidity();
         return;
       }
-      card?.classList.add('is-complete');
-      panel?.classList.add('is-visible');
-      panel?.focus();
+      window.location.href = 'complete.html';
     });
   </script>
 </body>

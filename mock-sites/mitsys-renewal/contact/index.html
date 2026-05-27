@@ -14,7 +14,7 @@
   :root {
     --ink: #111827;
     --ink-2: #263447;
-    --muted: #64748b;
+    --muted: #475569;
     --line: #d9e6df;
     --paper: #f5f8f4;
     --green: #1f5f3f;
@@ -25,10 +25,14 @@
   body {
     font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
     color: var(--ink);
-    background: var(--paper);
+    background: #0c1118;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
   }
+  main { flex: 1; background: #0c1118; }
   a { color: inherit; }
   .site-header {
     background: rgba(255, 255, 255, 0.95);
@@ -51,11 +55,7 @@
     gap: 4px;
     text-decoration: none;
   }
-  .brand-logo {
-    display: block;
-    width: 210px;
-    height: auto;
-  }
+  .brand-logo { display: block; width: 210px; height: auto; }
   .brand-tagline {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -72,7 +72,6 @@
     text-decoration: none;
   }
   .hero {
-    min-height: calc(100vh - 76px);
     background:
       linear-gradient(115deg, rgba(13, 33, 24, .96), rgba(35, 92, 55, .84)),
       url('../assets/images/hero-call-center-japan.png');
@@ -87,13 +86,13 @@
     display: grid;
     grid-template-columns: minmax(0, .9fr) minmax(380px, 1fr);
     gap: 54px;
-    align-items: center;
+    align-items: start;
   }
   .hero-copy {
     display: flex;
-    min-height: 640px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 36px;
   }
   .eyebrow {
     font-family: 'JetBrains Mono', monospace;
@@ -110,9 +109,121 @@
     margin-bottom: 20px;
   }
   .hero p { color: #e7f5eb; max-width: 680px; }
+  .form-card {
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+  }
+  .form-card h2 { font-size: 24px; line-height: 1.4; margin-bottom: 8px; }
+  .form-card > p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+  .form-grid { display: grid; gap: 16px; }
+  label { display: grid; gap: 7px; font-size: 13px; font-weight: 700; color: var(--ink-2); }
+  input, textarea {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: var(--ink);
+    background: #fbfdfb;
+    outline: none;
+  }
+  input { min-height: 48px; }
+  textarea { min-height: 160px; resize: vertical; }
+  input:focus, textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(47, 138, 80, .14);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 50px;
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-primary { background: var(--green); color: #fff; box-shadow: 0 16px 34px rgba(31, 95, 63, .22); }
+  .agree-row { margin-top: 4px; }
+  .agree-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .agree-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    min-height: auto;
+    cursor: pointer;
+    accent-color: var(--green);
+    flex-shrink: 0;
+  }
+  .required-badge {
+    display: inline-flex;
+    padding: 2px 7px;
+    background: #d84f45;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .privacy-link {
+    display: block;
+    margin-top: 6px;
+    margin-left: 26px;
+    font-size: 13px;
+    color: var(--green);
+    text-underline-offset: 2px;
+  }
+  .submit-row { margin-top: 16px; }
+  .btn-submit {
+    width: 100%;
+    min-height: 56px;
+    font-size: 16px;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  }
+  .btn-submit:disabled {
+    background: #9ca3af;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+  }
+  .privacy { color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 16px; }
+  .complete-panel {
+    display: none;
+    margin-top: 20px;
+    padding: 28px;
+    border-radius: 10px;
+    background: #edf8f0;
+    border: 1px solid #b7d9bf;
+  }
+  .complete-panel.is-visible { display: block; }
+  .complete-panel h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--green);
+    margin-bottom: 10px;
+  }
+  .complete-panel p { color: var(--ink-2); font-size: 15px; line-height: 1.9; }
+  .form-card.is-complete .form-grid,
+  .form-card.is-complete .agree-row,
+  .form-card.is-complete .submit-row,
+  .form-card.is-complete .privacy,
+  .form-card.is-complete > p { display: none; }
   .tel-card {
-    margin-top: auto;
-    width: min(100%, 520px);
     border: 1px solid rgba(255, 255, 255, .28);
     border-radius: 12px;
     background: rgba(255, 255, 255, .09);
@@ -134,88 +245,64 @@
     line-height: 1.1;
     font-weight: 700;
     text-decoration: none;
+    letter-spacing: 0;
   }
   .tel-card p {
     margin-top: 8px;
     color: #cfe4d5;
     font-size: 13px;
   }
-  .form-card {
-    background: #fff;
-    color: var(--ink);
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    box-shadow: var(--shadow);
-    padding: 28px;
+  .site-footer {
+    background: #0c1118;
+    padding: 0 24px;
   }
-  .form-card h2 { font-size: 24px; line-height: 1.4; margin-bottom: 8px; }
-  .form-card > p { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
-  .form-grid { display: grid; gap: 16px; }
-  label { display: grid; gap: 7px; font-size: 13px; font-weight: 700; color: var(--ink-2); }
-  input,
-  textarea {
-    width: 100%;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 12px 14px;
-    color: var(--ink);
-    background: #fbfdfb;
-    outline: none;
+  .site-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
-  input { min-height: 48px; }
-  textarea {
-    min-height: 160px;
-    resize: vertical;
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #6b7f96;
   }
-  input:focus,
-  textarea:focus {
-    border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(47, 138, 80, .14);
-  }
-  .btn {
-    display: inline-flex;
+  .footer-copy .copy-sym { font-family: sans-serif; font-size: 11px; margin-right: 1px; }
+  .pagetop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: #1a2636;
+    border: 1px solid #2a3a50;
+    border-radius: 6px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    min-height: 50px;
-    padding: 12px 22px;
-    border-radius: 8px;
-    border: 1px solid transparent;
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
+    color: #8a9bb0;
+    transition: background 0.2s, color 0.2s;
   }
-  .btn-primary { background: var(--green); color: #fff; box-shadow: 0 16px 34px rgba(31, 95, 63, .22); }
-  .submit-row { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .privacy { color: var(--muted); font-size: 12px; line-height: 1.7; margin-top: 16px; }
-  .complete-panel {
-    display: none;
-    margin-top: 20px;
-    padding: 28px;
-    border-radius: 10px;
-    background: #edf8f0;
-    border: 1px solid #b7d9bf;
-  }
-  .complete-panel.is-visible { display: block; }
-  .complete-panel h3 {
-    font-size: 24px;
-    line-height: 1.4;
-    color: var(--green);
-    margin-bottom: 10px;
-  }
-  .complete-panel p { color: var(--ink-2); font-size: 15px; line-height: 1.9; }
-  .form-card.is-complete .form-grid,
-  .form-card.is-complete .privacy,
-  .form-card.is-complete > p {
-    display: none;
-  }
+  .pagetop:hover { background: #253447; color: #fff; }
+  .pagetop svg { width: 14px; height: 14px; }
   @media (max-width: 840px) {
     .nav { padding: 0 16px; }
-    .hero-inner { grid-template-columns: 1fr; padding: 54px 16px 72px; }
-    .hero-copy { min-height: auto; gap: 36px; }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      padding: 48px 16px 64px;
+      gap: 28px;
+    }
     .brand-logo { width: 174px; }
     .brand-tagline { display: none; }
+    h1 { font-size: clamp(26px, 7vw, 36px); margin-bottom: 14px; }
+    .site-footer { padding: 0 16px; }
+    .site-footer-inner { height: 52px; }
   }
 </style>
 </head>
@@ -265,8 +352,15 @@
             <label>お問い合わせ内容
               <textarea name="message" required></textarea>
             </label>
+            <div class="agree-row">
+              <label class="agree-label">
+                <input type="checkbox" id="agreeCheck" name="agree" required>
+                <span>下記について同意する<span class="required-badge">必須</span></span>
+              </label>
+              <a class="privacy-link" href="https://www.mitsys.co.jp/privacy_policy2.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて</a>
+            </div>
             <div class="submit-row">
-              <button class="btn btn-primary" type="submit">送信する</button>
+              <button class="btn btn-primary btn-submit" type="submit" id="submitBtn" disabled>この内容でお問い合わせする</button>
             </div>
           </form>
           <p class="privacy">送信内容はデモ用です。このモックでは外部サーバーへの送信は行いません。</p>
@@ -279,10 +373,29 @@
     </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-copy"><span class="copy-sym">©</span><span id="footerYear"></span> MIT System Research Institute Co.Ltd. All rights reserved.</p>
+      <a class="pagetop" href="#top" aria-label="ページトップへ戻る">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2 9 7 4 12 9"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
   <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
     const form = document.getElementById('contactForm');
     const card = document.querySelector('.form-card');
     const panel = document.getElementById('completePanel');
+    const agreeCheck = document.getElementById('agreeCheck');
+    const submitBtn = document.getElementById('submitBtn');
+
+    agreeCheck?.addEventListener('change', () => {
+      submitBtn.disabled = !agreeCheck.checked;
+    });
 
     form?.addEventListener('submit', (event) => {
       event.preventDefault();
