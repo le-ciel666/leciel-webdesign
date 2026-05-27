@@ -88,6 +88,22 @@ p{margin:0;text-wrap:pretty}
 .btn-outline-on-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3)}
 .btn-outline-on-dark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
 .btn-sm{min-height:40px;padding:0 16px;font-size:14px}
+
+/* Nav CTA buttons: rectangular, prominent */
+.nav-cta .btn{
+  border-radius:8px;
+  min-height:44px;
+  padding:0 20px;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.02em;
+}
+.nav-cta .btn-ghost{
+  border-width:1.5px;
+}
+.nav-cta .btn-primary{
+  box-shadow:none;
+}
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(3px)}
 
