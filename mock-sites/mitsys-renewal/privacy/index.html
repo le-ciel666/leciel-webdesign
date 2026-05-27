@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VEMHY2G58C');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../assets/favicon/favicon.ico" sizes="any">
+<title>個人情報の取り扱いについて｜MITシステム研究所</title>
+<meta name="description" content="株式会社MITシステム研究所の個人情報保護方針・プライバシーポリシーに関するページです。">
+<meta name="theme-color" content="#173f2a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111827;
+    --ink-2: #263447;
+    --muted: #475569;
+    --line: #d9e6df;
+    --paper: #f5f8f4;
+    --green: #1f5f3f;
+    --green-2: #2f8a50;
+    --shadow: 0 24px 70px rgba(17, 24, 39, 0.13);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: #0c1118;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+  main { flex: 1; background: #0c1118; }
+  a { color: inherit; }
+
+  /* Header */
+  .site-header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    max-width: 1180px;
+    height: 76px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-decoration: none;
+  }
+  .brand-logo { display: block; width: 210px; height: auto; }
+  .brand-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: .28em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding-left: 2px;
+  }
+  .back-link {
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  /* Page hero */
+  .page-hero {
+    background: linear-gradient(115deg, rgba(13, 33, 24, .98), rgba(35, 92, 55, .88));
+    color: #fff;
+    padding: 56px 24px 64px;
+    text-align: center;
+  }
+  .page-hero .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .14em;
+    color: #b7efc4;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .page-hero h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.3;
+    font-weight: 900;
+  }
+
+  /* Content */
+  .content-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+  .policy-block {
+    background: #fff;
+    border-radius: 14px;
+    padding: 48px 52px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--line);
+  }
+  .policy-block + .policy-block {
+    margin-top: 28px;
+  }
+
+  .policy-intro {
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.9;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    margin: 36px 0 14px;
+    padding-left: 14px;
+    border-left: 4px solid var(--green-2);
+    line-height: 1.5;
+  }
+  .section-title:first-child { margin-top: 0; }
+
+  .policy-text {
+    font-size: 15px;
+    color: var(--ink-2);
+    line-height: 1.9;
+    margin-bottom: 16px;
+  }
+
+  .purpose-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .purpose-table th,
+  .purpose-table td {
+    padding: 11px 16px;
+    border: 1px solid var(--line);
+    line-height: 1.7;
+    vertical-align: top;
+  }
+  .purpose-table th {
+    background: var(--paper);
+    font-weight: 700;
+    color: var(--ink-2);
+    white-space: nowrap;
+    width: 38%;
+  }
+  .purpose-table td {
+    color: var(--ink);
+  }
+  .purpose-table tr:first-child th,
+  .purpose-table tr:first-child td {
+    border-top: 2px solid var(--green);
+  }
+
+  .policy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    display: grid;
+    gap: 8px;
+  }
+  .policy-list li {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.8;
+    padding-left: 20px;
+    position: relative;
+  }
+  .policy-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green-2);
+  }
+
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    counter-reset: step;
+    display: grid;
+    gap: 10px;
+  }
+  .steps-list li {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.8;
+    padding-left: 34px;
+    position: relative;
+    counter-increment: step;
+  }
+  .steps-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .contact-box {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-top: 8px;
+  }
+  .contact-box p {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.9;
+  }
+  .contact-box strong {
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .contact-box a {
+    color: var(--green);
+    text-underline-offset: 2px;
+    text-decoration: underline;
+  }
+
+  .ga-note {
+    background: #f0f6f2;
+    border-left: 4px solid #9ec9b0;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 8px;
+  }
+
+  .enacted-date {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    text-align: right;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* Footer */
+  .site-footer {
+    background: #0c1118;
+    padding: 0 24px;
+  }
+  .site-footer-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .footer-copy {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #6b7f96;
+  }
+  .footer-copy .copy-sym { font-family: sans-serif; font-size: 11px; margin-right: 1px; }
+  .pagetop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: #1a2636;
+    border: 1px solid #2a3a50;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8a9bb0;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pagetop:hover { background: #253447; color: #fff; }
+  .pagetop svg { width: 14px; height: 14px; }
+
+  @media (max-width: 840px) {
+    .nav { padding: 0 16px; }
+    .brand-logo { width: 174px; }
+    .brand-tagline { display: none; }
+    .page-hero { padding: 40px 16px 48px; }
+    .content-wrap { padding: 32px 16px 56px; }
+    .policy-block { padding: 28px 20px; }
+    .section-title { font-size: 16px; }
+    .purpose-table th { width: auto; }
+    .site-footer { padding: 0 16px; }
+    .site-footer-inner { height: 52px; }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a class="brand" href="../" aria-label="MITシステム研究所 トップ">
+        <img class="brand-logo" src="../assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所">
+        <span class="brand-tagline">Contact Center DX</span>
+      </a>
+      <a class="back-link" href="../contact/">お問い合わせに戻る</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-hero">
+      <p class="eyebrow">Privacy Policy</p>
+      <h1>個人情報の取り扱いについて</h1>
+    </div>
+
+    <div class="content-wrap">
+      <div class="policy-block">
+
+        <p class="policy-intro">
+          株式会社MITシステム研究所（以下「当社」）は、お客様から取得した個人情報を適切に保護・管理するため、個人情報の保護に関する法律および関連するガイドラインを遵守し、以下の方針のもと適切に取り扱います。
+        </p>
+
+        <h2 class="section-title">個人情報の利用目的</h2>
+        <p class="policy-text">当社が取得・保有する個人情報の利用目的は以下のとおりです。</p>
+        <table class="purpose-table">
+          <tbody>
+            <tr>
+              <th>取引先ユーザー情報</th>
+              <td>システムの保守・メンテナンス業務</td>
+            </tr>
+            <tr>
+              <th>採用応募者情報</th>
+              <td>採用検討・応募者への連絡</td>
+            </tr>
+            <tr>
+              <th>海外従業者情報</th>
+              <td>採用検討・労務管理・雇用管理</td>
+            </tr>
+            <tr>
+              <th>お問い合わせ者情報</th>
+              <td>お問い合わせ対応・サービス案内・営業活動</td>
+            </tr>
+            <tr>
+              <th>取引先情報</th>
+              <td>連絡・契約履行・営業活動</td>
+            </tr>
+            <tr>
+              <th>採用候補者情報</th>
+              <td>採用選考・候補者への連絡</td>
+            </tr>
+            <tr>
+              <th>社員情報</th>
+              <td>雇用管理・給与管理・安全管理</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 class="section-title">保有個人データの安全管理措置</h2>
+        <p class="policy-text">当社は保有個人データの安全管理のため、以下の措置を講じています。</p>
+        <ul class="policy-list">
+          <li>基本方針の策定と社内・社外への公表</li>
+          <li>規律の整備（個人情報の取得から廃棄までのルール策定）</li>
+          <li>定期的な自己点検・内部監査・外部監査の実施</li>
+          <li>従業者への秘密保持誓約の締結と定期的な教育・訓練</li>
+          <li>物理的安全管理措置（機器・記録媒体の盗難・紛失防止等）</li>
+          <li>技術的安全管理措置（不正アクセス対策・マルウェア対策等）</li>
+          <li>クラウドサービスの利用（データセンターは日本国内）</li>
+        </ul>
+
+        <h2 class="section-title">開示等の請求手続き</h2>
+        <p class="policy-text">保有個人データの開示・訂正・利用停止等のご請求については、以下の手続きによりお申し出ください。</p>
+        <ol class="steps-list">
+          <li><strong>申出先：</strong>所定の「個人情報開示等請求書」をメールまたは配達記録郵便にてご提出ください。</li>
+          <li><strong>提出書面：</strong>所定事項をすべてご記入のうえご提出ください。</li>
+          <li><strong>本人確認：</strong>電話による照合、または身分証明書のコピーをご提示いただきます。</li>
+          <li><strong>代理人による請求：</strong>代理人の身分証明書および委任状（印鑑登録証明書付き）が必要です。</li>
+          <li><strong>手数料：</strong>1件につき550円（税込）を銀行振込にてお支払いください。</li>
+          <li><strong>回答方法：</strong>申告時にご指定いただいた方法（メールまたは郵送）にてご回答します。</li>
+          <li><strong>苦情申立先：</strong>JIPDEC 個人情報保護苦情相談室、またはJAPAS 苦情・相談窓口へお申し立てください。</li>
+        </ol>
+
+        <h2 class="section-title">個人情報に関するお問い合わせ窓口</h2>
+        <p class="policy-text">個人情報の取り扱いに関するご質問・ご相談は、下記窓口までお問い合わせください。</p>
+        <div class="contact-box">
+          <p>
+            <strong>株式会社MITシステム研究所</strong><br>
+            〒100-6512 東京都千代田区丸の内1-5-1 新丸の内ビルディング12階<br>
+            TEL：<a href="tel:0368721210">03-6872-1210</a>（受付時間：平日 9:00〜18:00）<br>
+            個人情報保護管理者：二神 正
+          </p>
+        </div>
+
+        <h2 class="section-title">Google Analyticsの利用について</h2>
+        <p class="policy-text">当社ウェブサイトでは、アクセス状況を分析するためにGoogle Analyticsを使用しています。Google AnalyticsはCookieを使用して訪問者の行動情報を収集しますが、収集されるデータに個人を識別できる情報は含まれません。収集されたデータはGoogle社のプライバシーポリシーに基づき管理されます。</p>
+        <div class="ga-note">
+          Google Analyticsによるデータ収集を希望されない場合は、ブラウザの設定によりCookieを無効にするか、<a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" style="color:var(--green);">Google Analyticsオプトアウトアドオン</a>をご利用ください。
+        </div>
+
+        <div class="enacted-date">
+          制定日：2007年2月28日<br>
+          最終更新日：2024年4月8日
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="footer-copy"><span class="copy-sym">©</span><span id="footerYear"></span> MIT System Research Institute Co.Ltd. All rights reserved.</p>
+      <a class="pagetop" href="#top" aria-label="ページトップへ戻る">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2 9 7 4 12 9"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
