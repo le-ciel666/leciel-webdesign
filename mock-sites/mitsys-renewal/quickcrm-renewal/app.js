@@ -57,6 +57,56 @@
   els.forEach(e => io.observe(e));
 })();
 
+// Download form
+(() => {
+  const form = document.getElementById('dlForm');
+  const agree = document.getElementById('dlAgree');
+  const submit = document.getElementById('dlSubmit');
+  const card = document.getElementById('dlFormCard');
+  const complete = document.getElementById('dlComplete');
+  if (!form || !agree || !submit) return;
+
+  agree.addEventListener('change', () => {
+    submit.disabled = !agree.checked;
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.style.display = 'none';
+    card.querySelector('h3').style.display = 'none';
+    card.querySelector('p').style.display = 'none';
+    card.querySelector('.dl-disclaimer').style.display = 'none';
+    complete.hidden = false;
+    complete.focus();
+  });
+})();
+
+// Contact form
+(() => {
+  const form = document.getElementById('cfForm');
+  const agree = document.getElementById('cfAgree');
+  const submit = document.getElementById('cfSubmit');
+  const card = document.getElementById('cfFormCard');
+  const complete = document.getElementById('cfComplete');
+  if (!form || !agree || !submit) return;
+
+  agree.addEventListener('change', () => {
+    submit.disabled = !agree.checked;
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.style.display = 'none';
+    card.querySelector('h3').style.display = 'none';
+    card.querySelector('p').style.display = 'none';
+    card.querySelector('.cf-disclaimer').style.display = 'none';
+    complete.hidden = false;
+    complete.focus();
+  });
+})();
+
 // Active section nav highlight (desktop)
 (() => {
   const links = document.querySelectorAll('.nav-links a[href^="#"]');
