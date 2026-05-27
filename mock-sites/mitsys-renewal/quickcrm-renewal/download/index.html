@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../../assets/favicon/favicon.ico" sizes="any">
+<meta name="theme-color" content="#3a7a1f">
+<title>資料ダウンロード｜QuickCRM</title>
+<meta name="description" content="QuickCRMの概要・機能・CTI/PBX連携などをまとめた資料をダウンロードいただけます。必要事項を入力するとすぐにダウンロードできます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{display:flex;flex-direction:column;min-height:100dvh}
+  main{flex:1}
+
+  /* ── Slim header ── */
+  .page-nav{
+    max-width:var(--container);height:var(--header-h);
+    margin:0 auto;padding:0 clamp(16px,2.4vw,32px);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .page-back{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:700;color:var(--brand);text-decoration:none;
+    transition:color .15s;
+  }
+  .page-back:hover{color:var(--brand-2)}
+
+  /* ── Hero ── */
+  .page-hero{
+    background:linear-gradient(135deg,#1a3d12 0%,#2f6a1a 55%,#3a7a1f 100%);
+    color:#fff;
+    padding:clamp(48px,7vw,80px) 0 clamp(64px,9vw,100px);
+  }
+  .page-hero-inner{
+    max-width:var(--container);margin:0 auto;
+    padding:0 clamp(16px,2.4vw,32px);
+    display:grid;grid-template-columns:1fr;gap:36px;align-items:start;
+  }
+  @media(min-width:860px){
+    .page-hero-inner{grid-template-columns:minmax(0,1fr) minmax(380px,500px);gap:60px}
+  }
+  .page-hero .eyebrow{color:#b7efc4}
+  .page-hero .eyebrow::before{background:#b7efc4}
+  .page-hero h1{
+    font-size:clamp(28px,4vw,44px);line-height:1.25;color:#fff;
+    margin-top:10px;margin-bottom:0;
+  }
+  .page-hero-desc{color:#d4edd8;font-size:15px;line-height:1.85;margin-top:14px}
+  .hero-benefits{
+    list-style:none;padding:0;margin:20px 0 0;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .hero-benefits li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;color:#e4f5e7;
+  }
+  .hero-benefits li::before{
+    content:"";flex:none;width:20px;height:20px;border-radius:50%;margin-top:2px;
+    background:rgba(255,255,255,.18) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3 8l3.5 3.5L13 5'/></svg>") center/11px no-repeat;
+  }
+
+  /* ── Page footer ── */
+  .page-footer{background:var(--bg-deep-2);padding:0 clamp(16px,2.4vw,32px)}
+  .page-footer-inner{
+    max-width:var(--container);margin:0 auto;height:52px;
+    display:flex;justify-content:center;align-items:center;
+  }
+  .page-footer-copy{
+    font-family:var(--font-en);font-size:12px;
+    color:var(--ink-on-dark-2);letter-spacing:.04em;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="page-nav">
+    <a href="../" class="brand" aria-label="QuickCRM トップ">
+      <img src="../assets/quickcrm-logo.png" alt="QuickCRM" class="brand-logo brand-logo-light" width="180" height="44">
+    </a>
+    <a class="page-back" href="../">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      トップへ戻る
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+
+      <div>
+        <span class="eyebrow">Document Download</span>
+        <h1>QuickCRMの資料を<br>ダウンロードする</h1>
+        <p class="page-hero-desc">QuickCRMの概要、主な機能、CTI/PBX連携、関連サービスの構成をまとめた資料をご用意しています。必要事項をご入力いただくと、すぐにダウンロードできます。</p>
+        <ul class="hero-benefits">
+          <li>製品概要・機能一覧（全28ページ）</li>
+          <li>CTI / PBX 連携構成図</li>
+          <li>導入事例サマリー（3社）</li>
+          <li>料金モデルの概要</li>
+        </ul>
+      </div>
+
+      <div class="dl-form-card" id="dlFormCard">
+        <h3>資料請求フォーム</h3>
+        <p>以下の項目をご入力のうえ送信してください。</p>
+        <form id="dlForm" class="dl-form-grid" novalidate>
+          <label class="dl-label">
+            会社名<span class="dl-req">必須</span>
+            <input type="text" name="company" autocomplete="organization" placeholder="株式会社サンプル" required>
+          </label>
+          <label class="dl-label">
+            お名前<span class="dl-req">必須</span>
+            <input type="text" name="name" autocomplete="name" placeholder="山田 太郎" required>
+          </label>
+          <label class="dl-label">
+            メールアドレス<span class="dl-req">必須</span>
+            <input type="email" name="email" autocomplete="email" placeholder="example@company.co.jp" required>
+          </label>
+          <label class="dl-label">
+            電話番号<span class="dl-req">必須</span>
+            <input type="tel" name="tel" autocomplete="tel" placeholder="03-0000-0000" required>
+          </label>
+          <div class="dl-agree-wrap">
+            <label class="dl-agree-label">
+              <input type="checkbox" id="dlAgree" name="agree" required>
+              <span>下記について同意する</span>
+            </label>
+            <a class="dl-privacy-link" href="https://www.mitsys.co.jp/privacy_policy2.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて →</a>
+          </div>
+          <button class="btn btn-primary dl-submit-btn" type="submit" id="dlSubmit" disabled>
+            この内容で資料請求する <span class="arr">→</span>
+          </button>
+        </form>
+        <p class="dl-disclaimer">送信内容はデモ用です。このモックでは外部サーバーへの送信は行いません。</p>
+        <div class="dl-complete" id="dlComplete" hidden aria-live="polite" tabindex="-1">
+          <div class="dl-complete-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>資料請求を受け付けました</h3>
+          <p>ご登録のメールアドレスに資料をお送りします。2営業日以内に担当者よりご連絡させていただきます。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <p class="page-footer-copy">© 2025 MITシステム研究所. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById('dlForm');
+  const agree = document.getElementById('dlAgree');
+  const submit = document.getElementById('dlSubmit');
+  const card = document.getElementById('dlFormCard');
+  const complete = document.getElementById('dlComplete');
+
+  agree?.addEventListener('change', () => { submit.disabled = !agree.checked; });
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.style.display = 'none';
+    card.querySelector('h3').style.display = 'none';
+    card.querySelectorAll('p').forEach(p => p.style.display = 'none');
+    complete.hidden = false;
+    complete.focus();
+  });
+</script>
+</body>
+</html>
