@@ -254,7 +254,7 @@
     opacity: 0;
     transform: scale(1);
     transform-origin: center;
-    animation: heroSlide 64s ease-in-out infinite;
+    animation: heroSlide 56s ease-in-out infinite;
     animation-fill-mode: both;
     will-change: opacity, transform;
   }
@@ -265,7 +265,6 @@
   .hero-slide:nth-child(5) { animation-delay: 32s; transform-origin: 52% 48%; }
   .hero-slide:nth-child(6) { animation-delay: 40s; transform-origin: 50% 50%; }
   .hero-slide:nth-child(7) { animation-delay: 48s; transform-origin: 52% 44%; }
-  .hero-slide:nth-child(8) { animation-delay: 56s; transform-origin: 48% 52%; }
   @keyframes heroSlide {
     0% {
       opacity: 0;
@@ -273,16 +272,16 @@
     }
     3.125% {
       opacity: 1;
-      transform: scale(1.008);
+      transform: scale(1.012);
     }
     12.5% {
       opacity: 1;
-      transform: scale(1.031);
+      transform: scale(1.048);
     }
     15.625%,
     100% {
       opacity: 0;
-      transform: scale(1.035);
+      transform: scale(1.055);
     }
   }
   @keyframes heroSlideFirst {
@@ -292,12 +291,12 @@
     }
     12.5% {
       opacity: 1;
-      transform: scale(1.031);
+      transform: scale(1.048);
     }
     15.625%,
     100% {
       opacity: 0;
-      transform: scale(1.035);
+      transform: scale(1.055);
     }
   }
   .hero::before {
@@ -1182,14 +1181,13 @@
   <main id="top">
     <section class="hero">
       <div class="hero-slideshow" aria-hidden="true">
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-01.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-02.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-03.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-04.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-05.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-06.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-07.jpg');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-08.jpg');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-01.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-02.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-03.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-04.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-05.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-06.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-07.webp');"></span>
       </div>
       <div class="hero-inner">
         <h1>
