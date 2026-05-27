@@ -92,9 +92,9 @@ p{margin:0;text-wrap:pretty}
 /* Nav CTA buttons: rectangular, prominent */
 .nav-cta .btn{
   border-radius:8px;
-  min-height:44px;
-  padding:0 20px;
-  font-size:14px;
+  min-height:48px;
+  padding:0 22px;
+  font-size:15px;
   font-weight:700;
   letter-spacing:.02em;
 }
@@ -102,7 +102,7 @@ p{margin:0;text-wrap:pretty}
   border-width:1.5px;
 }
 .nav-cta .btn-primary{
-  box-shadow:none;
+  box-shadow:0 4px 14px -4px rgba(58,122,31,.45);
 }
 .btn .arr{transition:transform .2s}
 .btn:hover .arr{transform:translateX(3px)}
@@ -159,7 +159,7 @@ body.theme-dark .brand-logo-dark{display:block}
 .nav-tel-text{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap}
 .nav-tel-lab{font-size:12px;color:var(--ink-3);font-weight:600;letter-spacing:.02em}
 .nav-tel-num{font-family:var(--font-en);font-size:22px;font-weight:800;color:var(--ink);letter-spacing:.01em;margin-top:4px}
-@media (min-width:1280px){.nav-tel{display:inline-flex}}
+@media (min-width:1060px){.nav-tel{display:inline-flex}}
 
 .nav-parent{display:none;align-items:center;padding:0 16px;height:48px;border-left:1px solid var(--line);transition:opacity .15s}
 .nav-parent:hover{opacity:.75}
