@@ -151,11 +151,13 @@
 
 <footer class="page-footer">
   <div class="page-footer-inner">
-    <p class="page-footer-copy">© 2025 MITシステム研究所. All rights reserved.</p>
+    <p class="page-footer-copy">© <span id="footerYear"></span> MITシステム研究所. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
+  document.getElementById('footerYear')?.replaceWith(new Date().getFullYear());
+
   const form = document.getElementById('dlForm');
   const agree = document.getElementById('dlAgree');
   const submit = document.getElementById('dlSubmit');

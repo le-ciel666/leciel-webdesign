@@ -2,6 +2,9 @@
 // QuickCRM Renewal — UI behavior
 // ============================================
 
+// Footer year
+document.getElementById('footerYear')?.replaceWith(new Date().getFullYear());
+
 // Sticky header shadow
 (() => {
   const header = document.querySelector('.site-header');
