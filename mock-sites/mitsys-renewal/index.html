@@ -93,6 +93,7 @@
     background: var(--paper);
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   a { color: inherit; }
   button, input, textarea { font: inherit; }
@@ -323,7 +324,7 @@
     z-index: 2;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 108px 24px 126px;
+    padding: 82px 24px 92px;
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-slideshow { display: none; }
@@ -347,7 +348,7 @@
   }
   .hero h1 {
     font-family: 'Noto Sans JP', sans-serif;
-    font-size: clamp(40px, 5.1vw, 88px);
+    font-size: clamp(38px, 4.5vw, 74px);
     line-height: 1.18;
     letter-spacing: 0.01em;
     max-width: 100%;
@@ -377,7 +378,7 @@
   }
   .hero-lead {
     color: #fff;
-    font-size: clamp(18px, 2.1vw, 30px);
+    font-size: clamp(17px, 1.82vw, 25px);
     line-height: 2;
     max-width: 1180px;
     margin-bottom: 0;
@@ -419,6 +420,230 @@
     color: #c7decf;
     font-size: 12px;
     line-height: 1.6;
+  }
+
+  .banner-showcase {
+    position: relative;
+    z-index: 3;
+    background: var(--paper);
+    padding: 0;
+    overflow: hidden;
+  }
+  .banner-showcase + .banner-showcase {
+    padding-top: 42px;
+  }
+  .banner-shell {
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .banner-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.75fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 18px;
+  }
+  .banner-heading.compact {
+    display: none;
+    margin-bottom: 0;
+  }
+  .banner-heading.compact h2,
+  .banner-heading.compact .lead {
+    display: none;
+  }
+  .banner-heading.centered {
+    display: block;
+    max-width: 1240px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .banner-heading.centered h2 {
+    max-width: none;
+  }
+  .banner-heading.centered .label {
+    justify-content: center;
+  }
+  .banner-heading h2 {
+    font-size: clamp(26px, 3.1vw, 42px);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .banner-heading .lead {
+    font-size: 14.5px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .slider-viewport {
+    overflow: hidden;
+    border-radius: 0;
+    cursor: grab;
+    touch-action: pan-y;
+  }
+  .slider-viewport.is-dragging {
+    cursor: grabbing;
+  }
+  .slider-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    padding: 0 7vw;
+    animation: none;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+  }
+  .banner-card {
+    position: relative;
+    flex: 0 0 86vw;
+    min-height: 460px;
+    overflow: hidden;
+    border-radius: 14px;
+    color: #fff;
+    background: #fff;
+    box-shadow: 0 22px 54px rgba(17, 24, 39, 0.12);
+  }
+  .application-card {
+    flex-basis: 82vw;
+    min-height: 390px;
+  }
+  .banner-card::before,
+  .banner-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .banner-card::before {
+    background-image: var(--banner-image);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+    filter: brightness(1.18) saturate(1.04);
+  }
+  .banner-card::after {
+    background:
+      linear-gradient(100deg, rgba(8, 28, 20, 0.06) 0%, rgba(8, 28, 20, 0.03) 44%, rgba(8, 28, 20, 0) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(5, 16, 12, 0.08) 100%);
+  }
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    min-height: inherit;
+    width: min(620px, 62%);
+    padding: 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .slider-track.service-slider {
+    animation-duration: 28s;
+  }
+  .slider-track.application-slider {
+    animation-duration: 58s;
+  }
+  .application-card .banner-content {
+    width: min(540px, 62%);
+    padding: 46px;
+  }
+  .banner-kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: #f4fff6;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.52);
+  }
+  .banner-content h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: clamp(36px, 4.2vw, 62px);
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.48);
+  }
+  .application-card .banner-content h3 {
+    font-size: clamp(32px, 3.4vw, 48px);
+  }
+  .banner-content p {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 600;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.62);
+    overflow-wrap: anywhere;
+  }
+  .application-card .banner-content p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .banner-tags span {
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+  }
+  .slider-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 0 max(24px, calc((100vw - 1240px) / 2 + 24px));
+  }
+  .slider-dots span {
+    width: 34px;
+    height: 3px;
+    border-radius: 999px;
+    background: #b7cbbf;
+    transition: width 0.25s, background 0.25s, opacity 0.25s;
+    opacity: 0.72;
+  }
+  .slider-dots span.is-active {
+    background: var(--blue);
+    opacity: 1;
+    width: 54px;
+  }
+  .slider-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 14px;
+    padding: 0 max(24px, calc((100vw - 1240px) / 2 + 24px));
+  }
+  .slider-btn {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--line-strong);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--blue);
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
+    transition: transform 0.2s, background 0.2s;
+  }
+  .slider-btn:hover {
+    transform: translateY(-1px);
+    background: #fff;
+  }
+  .slider-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+  @keyframes serviceRail {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 9px)); }
   }
 
   .ops-panel {
@@ -636,7 +861,7 @@
   }
 
   .challenge-band {
-    margin-top: -42px;
+    margin-top: 72px;
     position: relative;
     z-index: 2;
   }
@@ -1197,6 +1422,10 @@
       grid-template-columns: 1fr;
     }
     .hero-inner { padding-top: 76px; }
+    .banner-heading {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
     .challenge-grid,
     .flow,
     .industry-grid {
@@ -1215,11 +1444,57 @@
     .brand-tagline { display: none; }
     .nav-actions .btn { display: none; }
     .hero-inner {
-      padding: 48px 16px 72px;
+      padding: 40px 16px 56px;
     }
     .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
     .hero-lead { font-size: 15px; line-height: 1.75; }
     .hero-lead + .hero-lead { margin-top: 8px; }
+    .banner-showcase {
+      padding-top: 0;
+    }
+    .banner-showcase + .banner-showcase {
+      padding-top: 42px;
+    }
+    .banner-shell {
+      padding: 0;
+    }
+    .slider-viewport {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      border-radius: 0;
+    }
+    .slider-track {
+      animation: none;
+      width: max-content;
+    }
+    .slider-controls {
+      display: none;
+    }
+    .banner-card,
+    .application-card {
+      flex-basis: 88vw;
+      min-height: 280px;
+      border-radius: 10px;
+      scroll-snap-align: start;
+    }
+    .application-card {
+      min-height: 232px;
+    }
+    .banner-content,
+    .application-card .banner-content {
+      width: 100%;
+      padding: 24px;
+    }
+    .banner-content h3 {
+      font-size: 28px;
+    }
+    .banner-heading h2 {
+      font-size: 27px;
+    }
+    .banner-content p {
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
     .hero-proof,
     .ops-body,
     .ops-kpi,
@@ -1294,6 +1569,137 @@
         </h1>
         <p class="hero-lead">CRMの専門メーカーがPBX機能を組み込み、トータルソリューションを提供します。</p>
         <p class="hero-lead">アウトバウンド機能、プレディクティブ機能、インバウンド機能、音声認識付き音声応答機能、通話録音のすべてが有機的に結合され、AIソリューションへの進化を実現していきます。</p>
+      </div>
+    </section>
+
+    <section class="banner-showcase" aria-label="主要サービススライド">
+      <div class="banner-shell">
+        <div class="banner-heading compact">
+          <div>
+            <p class="label">Service Lineup</p>
+            <h2>コンタクトセンター運用を支える、3つの中核サービス。</h2>
+          </div>
+          <p class="lead">QuickCRMを中心に、VIS、Quick eDialerまでを横断して紹介。各サービスの役割がひと目で伝わるスライドバナーとして配置しています。</p>
+        </div>
+        <div class="slider-viewport" data-carousel="service">
+          <div class="slider-track service-slider">
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');">
+              <div class="banner-content">
+                <div class="banner-kicker">Core CRM</div>
+                <h3>QuickCRM</h3>
+                <p>応対品質と効率を、同時に底上げするCRM。</p>
+                <div class="banner-tags"><span>顧客管理</span><span>CTI連携</span><span>業務画面作成</span></div>
+              </div>
+            </article>
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/vis.png');">
+              <div class="banner-content">
+                <div class="banner-kicker">Vertical Integrated System</div>
+                <h3>VIS</h3>
+                <p>クラウドPBX、通話録音、音声テキスト化、AI活用、チャット・メールまで統合するコンタクトセンター基盤です。</p>
+                <div class="banner-tags"><span>クラウドPBX</span><span>AI / RAG</span><span>音声認識</span></div>
+              </div>
+            </article>
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/quick-edialer.png');">
+              <div class="banner-content">
+                <div class="banner-kicker">Outbound Dialer</div>
+                <h3>Quick eDialer</h3>
+                <p>プレディクティブ、プログレッシブ、プレビュー発信を備え、架電業務の効率化と成約率向上を支援します。</p>
+                <div class="banner-tags"><span>自動発信</span><span>リスト制御</span><span>リアルタイム監視</span></div>
+              </div>
+            </article>
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');" aria-hidden="true">
+              <div class="banner-content">
+                <div class="banner-kicker">Core CRM</div>
+                <h3>QuickCRM</h3>
+                <p>応対品質と効率を、同時に底上げするCRM。</p>
+                <div class="banner-tags"><span>顧客管理</span><span>CTI連携</span><span>業務画面作成</span></div>
+              </div>
+            </article>
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/vis.png');" aria-hidden="true">
+              <div class="banner-content">
+                <div class="banner-kicker">Vertical Integrated System</div>
+                <h3>VIS</h3>
+                <p>クラウドPBX、通話録音、音声テキスト化、AI活用、チャット・メールまで統合するコンタクトセンター基盤です。</p>
+                <div class="banner-tags"><span>クラウドPBX</span><span>AI / RAG</span><span>音声認識</span></div>
+              </div>
+            </article>
+            <article class="banner-card" style="--banner-image: url('assets/service-banners/quick-edialer.png');" aria-hidden="true">
+              <div class="banner-content">
+                <div class="banner-kicker">Outbound Dialer</div>
+                <h3>Quick eDialer</h3>
+                <p>プレディクティブ、プログレッシブ、プレビュー発信を備え、架電業務の効率化と成約率向上を支援します。</p>
+                <div class="banner-tags"><span>自動発信</span><span>リスト制御</span><span>リアルタイム監視</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="slider-dots" data-carousel-dots="service" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
+        <div class="slider-controls" aria-label="主要サービススライド操作">
+          <button class="slider-btn" type="button" data-carousel-prev="service" aria-label="前のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <button class="slider-btn" type="button" data-carousel-next="service" aria-label="次のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner-showcase" aria-label="利用可能なアプリケーション">
+      <div class="banner-shell">
+        <div class="banner-heading centered">
+          <div>
+            <p class="label">Available Applications</p>
+            <h2>利用可能なアプリケーション</h2>
+          </div>
+        </div>
+        <div class="slider-viewport" data-carousel="applications">
+          <div class="slider-track application-slider">
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/printdesigner.png');">
+              <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/caller-sovereignty.png');">
+              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/salon-operations.png');">
+              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/asset-building.png');">
+              <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/order-management.png');">
+              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/maintenance.png');">
+              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/calling-operations.png');">
+              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/printdesigner.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/caller-sovereignty.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/salon-operations.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/asset-building.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/order-management.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/maintenance.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
+            </article>
+            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/calling-operations.png');" aria-hidden="true">
+              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
+            </article>
+          </div>
+        </div>
+        <div class="slider-dots" data-carousel-dots="applications" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="slider-controls" aria-label="利用可能なアプリケーションスライド操作">
+          <button class="slider-btn" type="button" data-carousel-prev="applications" aria-label="前のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <button class="slider-btn" type="button" data-carousel-next="applications" aria-label="次のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
+        </div>
       </div>
     </section>
 
@@ -1693,6 +2099,125 @@
         links.classList.remove('is-open');
         toggle?.setAttribute('aria-expanded', 'false');
       });
+    });
+
+    document.querySelectorAll('[data-carousel]').forEach((viewport) => {
+      const name = viewport.dataset.carousel;
+      const track = viewport.querySelector('.slider-track');
+      const cards = Array.from(track?.querySelectorAll('.banner-card:not([aria-hidden="true"])') || []);
+      const allCards = Array.from(track?.querySelectorAll('.banner-card') || []);
+      if (!track || cards.length === 0) return;
+
+      const prev = document.querySelector(`[data-carousel-prev="${name}"]`);
+      const next = document.querySelector(`[data-carousel-next="${name}"]`);
+      const dots = Array.from(document.querySelectorAll(`[data-carousel-dots="${name}"] span`));
+      let index = 0;
+      let visualIndex = 0;
+      let autoTimer = null;
+      let pointerStart = 0;
+      let isDragging = false;
+
+      const cardStride = () => {
+        const first = track.querySelector('.banner-card');
+        const second = first?.nextElementSibling;
+        if (!first) return 0;
+        if (!second) return first.getBoundingClientRect().width;
+        return second.getBoundingClientRect().left - first.getBoundingClientRect().left;
+      };
+
+      const setPosition = (targetIndex, smooth = true) => {
+        track.style.transition = smooth ? 'transform 760ms cubic-bezier(.22, .78, .18, 1)' : 'none';
+        track.style.transform = `translate3d(${-cardStride() * targetIndex}px, 0, 0)`;
+      };
+
+      const updateDots = () => {
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === index);
+        });
+      };
+
+      const moveTo = (nextIndex, smooth = true) => {
+        visualIndex = nextIndex;
+        index = ((nextIndex % cards.length) + cards.length) % cards.length;
+        setPosition(visualIndex, smooth);
+        updateDots();
+      };
+
+      const normalizeLoopPosition = () => {
+        if (visualIndex >= cards.length) {
+          visualIndex = 0;
+          index = 0;
+          setPosition(0, false);
+          updateDots();
+        }
+        if (visualIndex < 0) {
+          visualIndex = cards.length - 1;
+          index = cards.length - 1;
+          setPosition(visualIndex, false);
+          updateDots();
+        }
+      };
+
+      const restart = () => {
+        window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => moveTo(index + 1), name === 'service' ? 4200 : 3600);
+      };
+
+      prev?.addEventListener('click', () => {
+        if (index === 0 && allCards.length > cards.length) {
+          visualIndex = cards.length;
+          setPosition(visualIndex, false);
+          requestAnimationFrame(() => moveTo(cards.length - 1));
+        } else {
+          moveTo(visualIndex - 1);
+        }
+        restart();
+      });
+      next?.addEventListener('click', () => {
+        moveTo(visualIndex + 1);
+        restart();
+      });
+
+      track.addEventListener('transitionend', normalizeLoopPosition);
+
+      viewport.addEventListener('pointerdown', (event) => {
+        isDragging = true;
+        pointerStart = event.clientX;
+        viewport.classList.add('is-dragging');
+        track.style.transition = 'none';
+        window.clearInterval(autoTimer);
+      });
+
+      viewport.addEventListener('pointerup', (event) => {
+        if (!isDragging) return;
+        const delta = event.clientX - pointerStart;
+        viewport.classList.remove('is-dragging');
+        isDragging = false;
+        if (Math.abs(delta) > 48) {
+          if (delta > 0 && index === 0 && allCards.length > cards.length) {
+            visualIndex = cards.length;
+            setPosition(visualIndex, false);
+            requestAnimationFrame(() => moveTo(cards.length - 1));
+          } else {
+            moveTo(visualIndex + (delta < 0 ? 1 : -1));
+          }
+        } else {
+          moveTo(visualIndex);
+        }
+        restart();
+      });
+
+      viewport.addEventListener('pointerleave', () => {
+        if (!isDragging) return;
+        viewport.classList.remove('is-dragging');
+        isDragging = false;
+        moveTo(visualIndex);
+        restart();
+      });
+
+      window.addEventListener('resize', () => moveTo(index, false));
+      updateDots();
+      restart();
     });
   </script>
 </body>
