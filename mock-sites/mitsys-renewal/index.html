@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
 <title>コンタクトセンターDX・CTIシステム｜MITシステム研究所 Renewal Mock</title>
 <meta name="description" content="株式会社エム・アイ・ティシステム研究所様サイトリニューアル提案用モック。コンタクトセンター、アウトバウンド、CRM、音声認識、PBX連携を統合するCTIソリューションの現代的なWeb UIサンプルです。">
@@ -480,6 +480,7 @@
     border-radius: 0;
     cursor: grab;
     touch-action: pan-y;
+    overscroll-behavior-x: contain;
   }
   .slider-viewport.is-dragging {
     cursor: grabbing;
@@ -492,6 +493,7 @@
     animation: none;
     transform: translate3d(0, 0, 0);
     will-change: transform;
+    user-select: none;
   }
   .banner-card {
     position: relative;
@@ -502,6 +504,9 @@
     color: #fff;
     background: #fff;
     box-shadow: 0 22px 54px rgba(17, 24, 39, 0.12);
+    text-decoration: none;
+    -webkit-user-drag: none;
+    user-select: none;
   }
   .application-card {
     flex-basis: 82vw;
@@ -596,50 +601,59 @@
   }
   .slider-dots {
     display: flex;
-    gap: 8px;
-    margin-top: 16px;
-    padding: 0 max(24px, calc((100vw - 1240px) / 2 + 24px));
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
   }
   .slider-dots span {
-    width: 34px;
-    height: 3px;
+    position: relative;
+    width: 12px;
+    height: 12px;
     border-radius: 999px;
-    background: #b7cbbf;
-    transition: width 0.25s, background 0.25s, opacity 0.25s;
-    opacity: 0.72;
+    background: #c7c9cc;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
   }
   .slider-dots span.is-active {
-    background: var(--blue);
-    opacity: 1;
-    width: 54px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #30323a;
+    background: transparent;
+  }
+  .slider-dots span.is-active::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: #30323a;
   }
   .slider-controls {
     display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-top: 14px;
-    padding: 0 max(24px, calc((100vw - 1240px) / 2 + 24px));
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 24px;
+    min-height: 48px;
   }
   .slider-btn {
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--line-strong);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--blue);
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #30323a;
     display: inline-grid;
     place-items: center;
     cursor: pointer;
-    box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08);
-    transition: transform 0.2s, background 0.2s;
+    box-shadow: none;
+    transition: color 0.2s, transform 0.2s;
   }
   .slider-btn:hover {
+    color: var(--blue);
     transform: translateY(-1px);
-    background: #fff;
   }
   .slider-btn svg {
-    width: 18px;
-    height: 18px;
+    width: 34px;
+    height: 34px;
   }
   @keyframes serviceRail {
     from { transform: translateX(0); }
@@ -1459,8 +1473,7 @@
       padding: 0;
     }
     .slider-viewport {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
+      overflow: hidden;
       border-radius: 0;
     }
     .slider-track {
@@ -1468,14 +1481,36 @@
       width: max-content;
     }
     .slider-controls {
-      display: none;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .slider-dots {
+      gap: 12px;
+    }
+    .slider-dots span {
+      width: 10px;
+      height: 10px;
+    }
+    .slider-dots span.is-active {
+      width: 18px;
+      height: 18px;
+    }
+    .slider-dots span.is-active::after {
+      inset: 4px;
+    }
+    .slider-btn {
+      width: 42px;
+      height: 42px;
+    }
+    .slider-btn svg {
+      width: 30px;
+      height: 30px;
     }
     .banner-card,
     .application-card {
       flex-basis: 88vw;
       min-height: 280px;
       border-radius: 10px;
-      scroll-snap-align: start;
     }
     .application-card {
       min-height: 232px;
@@ -1583,14 +1618,14 @@
         </div>
         <div class="slider-viewport" data-carousel="service">
           <div class="slider-track service-slider">
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');">
+            <a class="banner-card" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');">
               <div class="banner-content">
                 <div class="banner-kicker">Core CRM</div>
                 <h3>QuickCRM</h3>
                 <p>応対品質と効率を、同時に底上げするCRM。</p>
                 <div class="banner-tags"><span>顧客管理</span><span>CTI連携</span><span>業務画面作成</span></div>
               </div>
-            </article>
+            </a>
             <article class="banner-card" style="--banner-image: url('assets/service-banners/vis.png');">
               <div class="banner-content">
                 <div class="banner-kicker">Vertical Integrated System</div>
@@ -1633,9 +1668,9 @@
             </article>
           </div>
         </div>
-        <div class="slider-dots" data-carousel-dots="service" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
         <div class="slider-controls" aria-label="主要サービススライド操作">
           <button class="slider-btn" type="button" data-carousel-prev="service" aria-label="前のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <div class="slider-dots" data-carousel-dots="service" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
           <button class="slider-btn" type="button" data-carousel-next="service" aria-label="次のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
         </div>
       </div>
@@ -1695,9 +1730,9 @@
             </article>
           </div>
         </div>
-        <div class="slider-dots" data-carousel-dots="applications" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <div class="slider-controls" aria-label="利用可能なアプリケーションスライド操作">
           <button class="slider-btn" type="button" data-carousel-prev="applications" aria-label="前のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <div class="slider-dots" data-carousel-dots="applications" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
           <button class="slider-btn" type="button" data-carousel-next="applications" aria-label="次のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
         </div>
       </div>
@@ -2101,20 +2136,35 @@
       });
     });
 
+    document.addEventListener('gesturestart', (event) => event.preventDefault(), { passive: false });
+    document.addEventListener('gesturechange', (event) => event.preventDefault(), { passive: false });
+    document.addEventListener('touchmove', (event) => {
+      if (event.touches.length > 1) event.preventDefault();
+    }, { passive: false });
+
     document.querySelectorAll('[data-carousel]').forEach((viewport) => {
       const name = viewport.dataset.carousel;
       const track = viewport.querySelector('.slider-track');
       const cards = Array.from(track?.querySelectorAll('.banner-card:not([aria-hidden="true"])') || []);
-      const allCards = Array.from(track?.querySelectorAll('.banner-card') || []);
       if (!track || cards.length === 0) return;
+
+      const leadingClone = cards[cards.length - 1].cloneNode(true);
+      leadingClone.setAttribute('aria-hidden', 'true');
+      track.insertBefore(leadingClone, track.firstElementChild);
 
       const prev = document.querySelector(`[data-carousel-prev="${name}"]`);
       const next = document.querySelector(`[data-carousel-next="${name}"]`);
       const dots = Array.from(document.querySelectorAll(`[data-carousel-dots="${name}"] span`));
       let index = 0;
-      let visualIndex = 0;
+      let visualIndex = 1;
       let autoTimer = null;
       let pointerStart = 0;
+      let pointerStartY = 0;
+      let pointerId = null;
+      let dragDelta = 0;
+      let dragged = false;
+      let pressedLink = null;
+      let suppressNextClick = false;
       let isDragging = false;
 
       const cardStride = () => {
@@ -2130,6 +2180,10 @@
         track.style.transform = `translate3d(${-cardStride() * targetIndex}px, 0, 0)`;
       };
 
+      const setDragPosition = (delta) => {
+        track.style.transform = `translate3d(${-cardStride() * visualIndex + delta}px, 0, 0)`;
+      };
+
       const updateDots = () => {
         dots.forEach((dot, dotIndex) => {
           dot.classList.toggle('is-active', dotIndex === index);
@@ -2138,20 +2192,20 @@
 
       const moveTo = (nextIndex, smooth = true) => {
         visualIndex = nextIndex;
-        index = ((nextIndex % cards.length) + cards.length) % cards.length;
+        index = (((nextIndex - 1) % cards.length) + cards.length) % cards.length;
         setPosition(visualIndex, smooth);
         updateDots();
       };
 
       const normalizeLoopPosition = () => {
-        if (visualIndex >= cards.length) {
-          visualIndex = 0;
+        if (visualIndex > cards.length) {
+          visualIndex = 1;
           index = 0;
-          setPosition(0, false);
+          setPosition(visualIndex, false);
           updateDots();
         }
-        if (visualIndex < 0) {
-          visualIndex = cards.length - 1;
+        if (visualIndex < 1) {
+          visualIndex = cards.length;
           index = cards.length - 1;
           setPosition(visualIndex, false);
           updateDots();
@@ -2160,17 +2214,11 @@
 
       const restart = () => {
         window.clearInterval(autoTimer);
-        autoTimer = window.setInterval(() => moveTo(index + 1), name === 'service' ? 4200 : 3600);
+        autoTimer = window.setInterval(() => moveTo(visualIndex + 1), name === 'service' ? 4200 : 3600);
       };
 
       prev?.addEventListener('click', () => {
-        if (index === 0 && allCards.length > cards.length) {
-          visualIndex = cards.length;
-          setPosition(visualIndex, false);
-          requestAnimationFrame(() => moveTo(cards.length - 1));
-        } else {
-          moveTo(visualIndex - 1);
-        }
+        moveTo(visualIndex - 1);
         restart();
       });
       next?.addEventListener('click', () => {
@@ -2180,42 +2228,85 @@
 
       track.addEventListener('transitionend', normalizeLoopPosition);
 
+      const finishDrag = (delta) => {
+        viewport.classList.remove('is-dragging');
+        isDragging = false;
+        pointerId = null;
+        const threshold = Math.min(86, Math.max(38, cardStride() * 0.12));
+        if (Math.abs(delta) > threshold) {
+          dragged = true;
+          moveTo(visualIndex + (delta < 0 ? 1 : -1));
+        } else {
+          setPosition(visualIndex, false);
+        }
+        restart();
+      };
+
       viewport.addEventListener('pointerdown', (event) => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        if (event.pointerType === 'touch' && event.isPrimary === false) return;
         isDragging = true;
+        pointerId = event.pointerId;
         pointerStart = event.clientX;
+        pointerStartY = event.clientY;
+        dragDelta = 0;
+        dragged = false;
+        pressedLink = event.target.closest('a.banner-card');
         viewport.classList.add('is-dragging');
         track.style.transition = 'none';
         window.clearInterval(autoTimer);
+        viewport.setPointerCapture?.(event.pointerId);
+      });
+
+      viewport.addEventListener('pointermove', (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+        const deltaX = event.clientX - pointerStart;
+        const deltaY = event.clientY - pointerStartY;
+        dragDelta = deltaX;
+        if (Math.abs(deltaX) > 14 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          dragged = true;
+          event.preventDefault();
+          setDragPosition(deltaX);
+        }
       });
 
       viewport.addEventListener('pointerup', (event) => {
-        if (!isDragging) return;
+        if (!isDragging || event.pointerId !== pointerId) return;
+        viewport.releasePointerCapture?.(event.pointerId);
         const delta = event.clientX - pointerStart;
-        viewport.classList.remove('is-dragging');
-        isDragging = false;
-        if (Math.abs(delta) > 48) {
-          if (delta > 0 && index === 0 && allCards.length > cards.length) {
-            visualIndex = cards.length;
-            setPosition(visualIndex, false);
-            requestAnimationFrame(() => moveTo(cards.length - 1));
-          } else {
-            moveTo(visualIndex + (delta < 0 ? 1 : -1));
-          }
-        } else {
-          moveTo(visualIndex);
+        const isTap = Math.abs(delta) <= 14 && Math.abs(event.clientY - pointerStartY) <= 14;
+        finishDrag(delta);
+        if (isTap && pressedLink) {
+          suppressNextClick = true;
+          window.open(pressedLink.href, '_blank', 'noopener');
         }
-        restart();
+        pressedLink = null;
+      });
+
+      viewport.addEventListener('pointercancel', (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+        viewport.releasePointerCapture?.(event.pointerId);
+        finishDrag(dragDelta);
+        pressedLink = null;
       });
 
       viewport.addEventListener('pointerleave', () => {
         if (!isDragging) return;
-        viewport.classList.remove('is-dragging');
-        isDragging = false;
-        moveTo(visualIndex);
-        restart();
+        finishDrag(dragDelta);
+        pressedLink = null;
       });
 
-      window.addEventListener('resize', () => moveTo(index, false));
+      track.addEventListener('click', (event) => {
+        const link = event.target.closest('a.banner-card');
+        if (!link) return;
+        if (dragged || suppressNextClick) {
+          event.preventDefault();
+          suppressNextClick = false;
+        }
+      });
+
+      setPosition(visualIndex, false);
+      window.addEventListener('resize', () => moveTo(index + 1, false));
       updateDots();
       restart();
     });
