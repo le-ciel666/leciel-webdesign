@@ -1590,7 +1590,7 @@
       left: auto;
       top: auto;
       width: auto;
-      max-width: 66%;
+      max-width: 74%;
       padding: 22px 16px 24px;
     }
     .service-copy-title {
@@ -1600,6 +1600,8 @@
     .service-copy-main {
       font-size: 19px;
       line-height: 1.3;
+      /* <br>での改行のみにし、文章途中での自動折り返しを防ぐ */
+      white-space: nowrap;
     }
     .service-copy-sub {
       margin-top: 8px;
@@ -1764,7 +1766,7 @@
           <article class="service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.png');" aria-label="VIS AIを、コンタクトセンターの標準に。会話が、そのまま知識になる。">
             <div class="service-copy">
               <div class="service-copy-title">VIS</div>
-              <h3 class="service-copy-main">AIを、<br>コンタクトセンターの<br><em>標準に。</em></h3>
+              <h3 class="service-copy-main">AIを、<br>コンタクトセンター<br>の<em>標準に。</em></h3>
               <p class="service-copy-sub">会話が、そのまま知識になる。</p>
             </div>
           </article>
