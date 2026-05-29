@@ -547,6 +547,89 @@
   .slider-track.application-slider {
     animation-duration: 58s;
   }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+  .service-banner-card {
+    display: block;
+    position: relative;
+    aspect-ratio: 5084 / 2460;
+    overflow: hidden;
+    color: inherit;
+    background: #fff;
+    text-decoration: none;
+  }
+  .service-banner-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .service-copy-card {
+    background-image: var(--service-image);
+    background-size: cover;
+    background-position: center;
+  }
+  .service-copy-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.82) 38%, rgba(255,255,255,0.08) 72%);
+    pointer-events: none;
+  }
+  .service-copy {
+    position: absolute;
+    z-index: 1;
+    left: 7%;
+    top: 26%;
+    width: 58%;
+    color: #091332;
+  }
+  .service-copy-title {
+    margin-bottom: 18px;
+    color: var(--green);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .service-copy-main {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.24;
+    letter-spacing: 0;
+  }
+  .service-copy-main em {
+    color: var(--green);
+    font-style: normal;
+  }
+  .service-copy-main .tone-rise {
+    color: transparent;
+    background: linear-gradient(90deg, #4ea343 0%, #6fb147 52%, #c8a529 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .service-copy-sub {
+    margin-top: 12px;
+    color: #3f4a68;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+  .quickcrm-copy .service-copy-title,
+  .vis-copy .service-copy-title {
+    color: #091332;
+  }
+  .edialer-copy .service-copy-title {
+    color: #091332;
+  }
+  .edialer-copy .service-copy-main em {
+    color: #d99a20;
+  }
   .application-card .banner-content {
     width: min(540px, 62%);
     padding: 46px;
@@ -1480,6 +1563,9 @@
       animation: none;
       width: max-content;
     }
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
     .slider-controls {
       gap: 16px;
       margin-top: 18px;
@@ -1512,6 +1598,21 @@
       min-height: 280px;
       border-radius: 10px;
     }
+    .service-copy {
+      top: 24%;
+      width: 60%;
+    }
+    .service-copy-title {
+      margin-bottom: 14px;
+      font-size: 34px;
+    }
+    .service-copy-main {
+      font-size: 21px;
+    }
+    .service-copy-sub {
+      font-size: 12px;
+      line-height: 1.45;
+    }
     .application-card {
       min-height: 232px;
     }
@@ -1525,6 +1626,10 @@
     }
     .banner-heading h2 {
       font-size: 27px;
+    }
+    .banner-heading.centered h2 {
+      font-size: 22px;
+      white-space: nowrap;
     }
     .banner-content p {
       font-size: 13.5px;
@@ -1607,71 +1712,36 @@
       </div>
     </section>
 
-    <section class="banner-showcase" aria-label="主要サービススライド">
+    <section class="banner-showcase" aria-label="主要サービス">
       <div class="banner-shell">
         <div class="banner-heading compact">
           <div>
             <p class="label">Service Lineup</p>
             <h2>コンタクトセンター運用を支える、3つの中核サービス。</h2>
           </div>
-          <p class="lead">QuickCRMを中心に、VIS、Quick eDialerまでを横断して紹介。各サービスの役割がひと目で伝わるスライドバナーとして配置しています。</p>
+          <p class="lead">QuickCRMを中心に、VIS、Quick eDialerまでを横断して紹介。各サービスの役割がひと目で伝わるバナーとして配置しています。</p>
         </div>
-        <div class="slider-viewport" data-carousel="service">
-          <div class="slider-track service-slider">
-            <a class="banner-card" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');">
-              <div class="banner-content">
-                <div class="banner-kicker">Core CRM</div>
-                <h3>QuickCRM</h3>
-                <p>応対品質と効率を、同時に底上げするCRM。</p>
-                <div class="banner-tags"><span>顧客管理</span><span>CTI連携</span><span>業務画面作成</span></div>
-              </div>
-            </a>
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/vis.png');">
-              <div class="banner-content">
-                <div class="banner-kicker">Vertical Integrated System</div>
-                <h3>VIS</h3>
-                <p>クラウドPBX、通話録音、音声テキスト化、AI活用、チャット・メールまで統合するコンタクトセンター基盤です。</p>
-                <div class="banner-tags"><span>クラウドPBX</span><span>AI / RAG</span><span>音声認識</span></div>
-              </div>
-            </article>
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/quick-edialer.png');">
-              <div class="banner-content">
-                <div class="banner-kicker">Outbound Dialer</div>
-                <h3>Quick eDialer</h3>
-                <p>プレディクティブ、プログレッシブ、プレビュー発信を備え、架電業務の効率化と成約率向上を支援します。</p>
-                <div class="banner-tags"><span>自動発信</span><span>リスト制御</span><span>リアルタイム監視</span></div>
-              </div>
-            </article>
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/quickcrm-clean.png');" aria-hidden="true">
-              <div class="banner-content">
-                <div class="banner-kicker">Core CRM</div>
-                <h3>QuickCRM</h3>
-                <p>応対品質と効率を、同時に底上げするCRM。</p>
-                <div class="banner-tags"><span>顧客管理</span><span>CTI連携</span><span>業務画面作成</span></div>
-              </div>
-            </article>
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/vis.png');" aria-hidden="true">
-              <div class="banner-content">
-                <div class="banner-kicker">Vertical Integrated System</div>
-                <h3>VIS</h3>
-                <p>クラウドPBX、通話録音、音声テキスト化、AI活用、チャット・メールまで統合するコンタクトセンター基盤です。</p>
-                <div class="banner-tags"><span>クラウドPBX</span><span>AI / RAG</span><span>音声認識</span></div>
-              </div>
-            </article>
-            <article class="banner-card" style="--banner-image: url('assets/service-banners/quick-edialer.png');" aria-hidden="true">
-              <div class="banner-content">
-                <div class="banner-kicker">Outbound Dialer</div>
-                <h3>Quick eDialer</h3>
-                <p>プレディクティブ、プログレッシブ、プレビュー発信を備え、架電業務の効率化と成約率向上を支援します。</p>
-                <div class="banner-tags"><span>自動発信</span><span>リスト制御</span><span>リアルタイム監視</span></div>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div class="slider-controls" aria-label="主要サービススライド操作">
-          <button class="slider-btn" type="button" data-carousel-prev="service" aria-label="前のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
-          <div class="slider-dots" data-carousel-dots="service" aria-hidden="true"><span class="is-active"></span><span></span><span></span></div>
-          <button class="slider-btn" type="button" data-carousel-next="service" aria-label="次のサービスを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
+        <div class="service-grid">
+          <article class="service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.png');" aria-label="VIS AIを、コンタクトセンターの標準に。会話が、そのまま知識になる。">
+            <div class="service-copy">
+              <div class="service-copy-title">VIS</div>
+              <h3 class="service-copy-main">AIを、<br>コンタクトセンターの<br><em>標準に。</em></h3>
+              <p class="service-copy-sub">会話が、そのまま知識になる。</p>
+            </div>
+          </article>
+          <a class="service-banner-card service-copy-card quickcrm-copy" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--service-image: url('assets/service-banners/quickcrm-bg-clean.png');" aria-label="QuickCRM 応対品質と効率を、同時に底上げするCRM。">
+            <div class="service-copy">
+              <div class="service-copy-title">QuickCRM</div>
+              <h3 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h3>
+            </div>
+          </a>
+          <a class="service-banner-card service-copy-card edialer-copy" href="quick-edialer/" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.png');" aria-label="Quick eDialer アイドルタイムを、成約に変える。必要なときだけ、クラウド重量で。">
+            <div class="service-copy">
+              <div class="service-copy-title">Quick eDialer</div>
+              <h3 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h3>
+              <p class="service-copy-sub">必要なときだけ、クラウド重量で。</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1680,7 +1750,6 @@
       <div class="banner-shell">
         <div class="banner-heading centered">
           <div>
-            <p class="label">Available Applications</p>
             <h2>利用可能なアプリケーション</h2>
           </div>
         </div>
