@@ -1391,12 +1391,10 @@
   .office-card {
     margin-top: 20px;
     border-radius: 10px;
-    min-height: 230px;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,0), rgba(19,47,33,0.72)),
-      url('assets/images/shin-marunouchi-building.jpg');
+    aspect-ratio: 3 / 4;
+    background: url('assets/images/mitsys-office.webp');
     background-size: cover;
-    background-position: center 34%;
+    background-position: center;
   }
   .company-table {
     background: #fff;
@@ -1421,6 +1419,35 @@
     padding: 18px 20px;
     color: var(--ink-2);
     font-size: 14px;
+  }
+  .philosophy-lead {
+    margin: 0 0 10px;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .philosophy-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .philosophy-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .philosophy-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green, #4ea343);
   }
 
   .cta {
@@ -1696,6 +1723,8 @@
     .challenge-panel { padding: 0 16px; }
     .challenge { border-right: none; min-height: auto; }
     .company-card { position: static; }
+    /* スマホでは会社画像が縦長になりすぎないよう高さを抑える */
+    .office-card { aspect-ratio: auto; height: 320px; }
     .company-row dt,
     .company-row dd { padding: 14px 16px; }
     .news-entry { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
@@ -2091,6 +2120,18 @@
           <div class="office-card" aria-label="新丸の内ビルディング外観"></div>
         </aside>
         <dl class="company-table">
+          <div class="company-row company-row--philosophy">
+            <dt>企業理念</dt>
+            <dd>
+              <p class="philosophy-lead">私達は、</p>
+              <ul class="philosophy-list">
+                <li>物真似をしない独自の商品を創造しなければなりません。</li>
+                <li>その商品は、使う人にとって優しくなければなりません。</li>
+                <li>その商品は、継続して進化できるものでなければなりません。</li>
+                <li>その商品は、適正な利益をもたらす源泉でなければなりません。</li>
+              </ul>
+            </dd>
+          </div>
           <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
           <div class="company-row"><dt>設立</dt><dd>1980年6月</dd></div>
           <div class="company-row"><dt>代表者</dt><dd>代表取締役 水尾 恒雅</dd></div>
