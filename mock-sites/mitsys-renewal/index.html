@@ -1566,6 +1566,10 @@
     .service-grid {
       grid-template-columns: 1fr;
     }
+    /* スマホでは QuickCRM → VIS → Quick eDialer の順に表示 */
+    .service-grid .quickcrm-copy { order: 1; }
+    .service-grid .vis-copy { order: 2; }
+    .service-grid .edialer-copy { order: 3; }
     .slider-controls {
       gap: 16px;
       margin-top: 18px;
