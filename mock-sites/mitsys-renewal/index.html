@@ -2380,5 +2380,26 @@
       restart();
     });
   </script>
+  <script>
+    // iOS Safari は viewport の user-scalable=no / maximum-scale を無視するため、
+    // ピンチ（マルチタッチ）ズームと double-tap ズームを JS で抑止し、表示倍率を固定する。
+    (function () {
+      // Safari 独自のジェスチャーイベント（ピンチ）をキャンセル
+      ['gesturestart', 'gesturechange', 'gestureend'].forEach(function (type) {
+        document.addEventListener(type, function (e) { e.preventDefault(); }, { passive: false });
+      });
+      // 指 2 本以上のタッチ移動（ピンチ）をキャンセル
+      document.addEventListener('touchmove', function (e) {
+        if (e.touches && e.touches.length > 1) { e.preventDefault(); }
+      }, { passive: false });
+      // double-tap ズームの抑止
+      var lastTouchEnd = 0;
+      document.addEventListener('touchend', function (e) {
+        var now = e.timeStamp;
+        if (now - lastTouchEnd <= 300) { e.preventDefault(); }
+        lastTouchEnd = now;
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
