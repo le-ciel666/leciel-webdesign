@@ -387,7 +387,8 @@
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
   }
   .hero-lead + .hero-lead {
-    margin-top: 12px;
+    /* 段落間も行内と同じ行間に揃える（line-heightのみで均一化） */
+    margin-top: 0;
   }
   .hero-actions {
     display: flex;
@@ -1551,7 +1552,7 @@
     }
     .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
     .hero-lead { font-size: 15px; line-height: 1.75; }
-    .hero-lead + .hero-lead { margin-top: 8px; }
+    .hero-lead + .hero-lead { margin-top: 0; }
     .banner-showcase {
       padding-top: 0;
     }
@@ -1569,8 +1570,11 @@
       animation: none;
       width: max-content;
     }
+    /* Gridのままだとカードの高さが内容に追従せず文章が切れる（Safari）。
+       Flex縦並びにして高さを内容に合わせる。orderでの並べ替えも有効。 */
     .service-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
     }
     /* スマホでは QuickCRM → Quick eDialer → VIS の順に表示（VISを一番下） */
     .service-grid .quickcrm-copy { order: 1; }
