@@ -86,14 +86,24 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
   body {
     font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
     color: var(--ink);
     background: var(--paper);
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
+    overscroll-behavior-x: none;
+    /* 指で左右に画面を動かせないようにする（縦スクロールとピンチズームは許可） */
+    touch-action: pan-y pinch-zoom;
   }
   a { color: inherit; }
   button, input, textarea { font: inherit; }
