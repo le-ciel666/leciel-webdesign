@@ -320,15 +320,6 @@
       linear-gradient(180deg, rgba(5, 10, 14, 0.12) 0%, rgba(5, 10, 14, 0.08) 44%, rgba(5, 10, 14, 0.32) 100%);
     pointer-events: none;
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: auto 0 0;
-    z-index: 1;
-    height: 48px;
-    background: linear-gradient(180deg, rgba(245, 248, 251, 0), var(--paper));
-    pointer-events: none;
-  }
   .hero-inner {
     position: relative;
     z-index: 2;
@@ -565,11 +556,16 @@
   .service-banner-card {
     display: block;
     position: relative;
-    aspect-ratio: 5084 / 2460;
     overflow: hidden;
     color: inherit;
     background: #fff;
     text-decoration: none;
+  }
+  /* PC（横並び）でのみ横長バナー比率を適用。スマホは内容に応じた高さにして文章が切れないようにする */
+  @media (min-width: 721px) {
+    .service-banner-card {
+      aspect-ratio: 5084 / 2460;
+    }
   }
   .service-banner-card img {
     display: block;
@@ -1580,9 +1576,8 @@
     .service-grid .quickcrm-copy { order: 1; }
     .service-grid .edialer-copy { order: 2; }
     .service-grid .vis-copy { order: 3; }
-    /* スマホでは固定の横長比率をやめ、テキスト量に応じて高さを伸ばし文章が切れないようにする */
+    /* スマホはテキスト量に応じて高さが伸びる（PCのみ比率指定）。最低限の高さだけ確保 */
     .service-banner-card {
-      aspect-ratio: auto;
       min-height: 188px;
     }
     .service-copy {
