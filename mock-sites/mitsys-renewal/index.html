@@ -1580,6 +1580,13 @@
     .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
     .hero-lead { font-size: 15px; line-height: 1.75; }
     .hero-lead + .hero-lead { margin-top: 0; }
+    /* スマホでは各セクションのタイトルが大きすぎて縦幅を取るため縮小 */
+    h2 { font-size: 22px; line-height: 1.4; }
+    .challenge-message h2 { font-size: 20px; line-height: 1.45; }
+    .company-card h2 { font-size: 22px; line-height: 1.4; }
+    .label { margin-bottom: 8px; }
+    /* スマホでは1カラム化で縦に効くgapが大きすぎるため詰める */
+    .section-head { margin-bottom: 28px; gap: 16px; }
     .banner-showcase {
       padding-top: 0;
     }
@@ -1692,6 +1699,10 @@
     .banner-content h3 {
       font-size: 28px;
     }
+    /* スマホではアプリケーションバナーの説明文は非表示にし、タイトルのみ表示 */
+    .application-card .banner-content p {
+      display: none;
+    }
     .banner-heading h2 {
       font-size: 27px;
     }
@@ -1731,6 +1742,11 @@
     .news-entry-date { padding-top: 0; }
     .footer { padding: 0 16px; }
     .footer-inner { height: 52px; }
+    .footer-copy {
+      font-size: clamp(9.5px, 3vw, 12px);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
   }
 </style>
 </head>
@@ -1805,11 +1821,11 @@
               <h3 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h3>
             </div>
           </a>
-          <div class="service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.png');" aria-label="Quick eDialer アイドルタイムを、成約に変える。必要なときだけ、クラウド重量で。">
+          <div class="service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.png');" aria-label="Quick eDialer アイドルタイムを、成約に変える。必要なときだけ、クラウド従量で。">
             <div class="service-copy">
               <div class="service-copy-title">Quick eDialer</div>
               <h3 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h3>
-              <p class="service-copy-sub">必要なときだけ、クラウド重量で。</p>
+              <p class="service-copy-sub">必要なときだけ、クラウド従量で。</p>
             </div>
           </div>
         </div>
@@ -2094,6 +2110,14 @@
           <div class="office-card" aria-label="新丸の内ビルディング外観"></div>
         </aside>
         <dl class="company-table">
+          <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
+          <div class="company-row"><dt>設立</dt><dd>1980年6月</dd></div>
+          <div class="company-row"><dt>代表者</dt><dd>代表取締役 水尾 恒雅</dd></div>
+          <div class="company-row"><dt>所在地</dt><dd>〒100-6512 東京都千代田区丸の内1-5-1 新丸の内ビルディング12階</dd></div>
+          <div class="company-row"><dt>資本金</dt><dd>9,000万円</dd></div>
+          <div class="company-row"><dt>事業内容</dt><dd>コンピュータシステムの企画・開発・販売・保守、コンタクトセンター向けソリューション、CTI/CRM/PBX連携。</dd></div>
+          <div class="company-row"><dt>主要製品</dt><dd>QuickCRM、Quick eDialer、QuickIVR、Quick mPBX、Voice Catcher、Quick WFM、Quick eReport。</dd></div>
+          <div class="company-row"><dt>対応領域</dt><dd>インバウンド業務、アウトバウンド業務、CRM構築、PBX/CTI連携、音声応答、通話録音、レポート作成。</dd></div>
           <div class="company-row company-row--philosophy">
             <dt>企業理念</dt>
             <dd>
@@ -2106,14 +2130,6 @@
               </ul>
             </dd>
           </div>
-          <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
-          <div class="company-row"><dt>設立</dt><dd>1980年6月</dd></div>
-          <div class="company-row"><dt>代表者</dt><dd>代表取締役 水尾 恒雅</dd></div>
-          <div class="company-row"><dt>所在地</dt><dd>〒100-6512 東京都千代田区丸の内1-5-1 新丸の内ビルディング12階</dd></div>
-          <div class="company-row"><dt>資本金</dt><dd>9,000万円</dd></div>
-          <div class="company-row"><dt>事業内容</dt><dd>コンピュータシステムの企画・開発・販売・保守、コンタクトセンター向けソリューション、CTI/CRM/PBX連携。</dd></div>
-          <div class="company-row"><dt>主要製品</dt><dd>QuickCRM、Quick eDialer、QuickIVR、Quick mPBX、Voice Catcher、Quick WFM、Quick eReport。</dd></div>
-          <div class="company-row"><dt>対応領域</dt><dd>インバウンド業務、アウトバウンド業務、CRM構築、PBX/CTI連携、音声応答、通話録音、レポート作成。</dd></div>
           <div class="company-row"><dt>お問い合わせ</dt><dd>03-6872-1210</dd></div>
         </dl>
       </div>
