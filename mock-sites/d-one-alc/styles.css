@@ -412,18 +412,29 @@ image-slot::part(ring)  { border-color: rgba(255,255,255,.18); }
    Company profile
    ========================================================================= */
 .company { background: var(--bg); }
-.profile { border: 1px solid var(--line); }
+/* Mobile-first: ラベルを上・値を下に縦積み。値が全幅を使えるので折り返しが減り読みやすい */
+.profile { border: 1px solid var(--line); background: var(--card); }
 .profile dl { display: grid; }
 .profile .row {
-  display: grid; grid-template-columns: 120px 1fr; border-bottom: 1px solid var(--line);
+  display: block; border-bottom: 1px solid var(--line); padding: 16px 18px;
+  position: relative;
 }
 .profile .row:last-child { border-bottom: 0; }
 .profile dt {
-  background: var(--bg-3); padding: 18px 20px; font-weight: 700; color: var(--ink);
-  font-size: 14px; letter-spacing: .04em; border-right: 1px solid var(--line);
+  background: transparent; padding: 0 0 0 12px; border: 0; margin-bottom: 7px;
+  font-family: var(--ff-lbl); font-weight: 600; color: var(--accent);
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase; line-height: 1.4;
+  position: relative;
 }
-.profile dd { padding: 18px 20px; font-size: 15px; color: var(--ink-2); }
-.profile dd .ph { color: var(--ink-4); font-size: 13px; }
+/* ラベル頭の小さなアクセントの目印 */
+.profile dt::before {
+  content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 12px; background: var(--accent);
+}
+.profile dd {
+  padding: 0 0 0 12px; font-size: 16px; line-height: 1.7; color: var(--ink); font-weight: 500;
+}
+.profile dd .ph { color: var(--ink-4); font-size: 13px; font-weight: 400; }
 .map-embed {
   margin-top: 22px; border: 1px solid var(--line); background: var(--bg-3);
   aspect-ratio: 16/7; display: flex; align-items: center; justify-content: center;
@@ -572,7 +583,16 @@ form input::placeholder, form textarea::placeholder { color: var(--ink-4); }
 
   .team-grid { grid-template-columns: 1fr 1fr; gap: 56px; }
 
-  .profile .row { grid-template-columns: 180px 1fr; }
+  /* PCは従来の2カラム（ラベル左・値右）に戻す */
+  .profile .row { display: grid; grid-template-columns: 180px 1fr; padding: 0; }
+  .profile dt {
+    background: var(--bg-3); border-right: 1px solid var(--line);
+    padding: 18px 20px; margin: 0; font-family: var(--ff-jp); font-weight: 700;
+    font-size: 14px; letter-spacing: .04em; color: var(--ink); text-transform: none;
+    display: flex; align-items: center;
+  }
+  .profile dt::before { display: none; }
+  .profile dd { padding: 18px 20px; font-size: 15px; color: var(--ink-2); font-weight: 400; }
 
   .contact-grid { grid-template-columns: .8fr 1.2fr; align-items: start; }
   .form-row { grid-template-columns: 1fr 1fr; }
