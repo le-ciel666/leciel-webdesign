@@ -29,6 +29,8 @@ jobs:
             _secrets.php
             _secrets.example.php
             ai_organization/**
+            # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
+            prime-networks/**
 
       - name: Deploy to leciel subfolder (leciel-webdesign.com)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -47,3 +49,5 @@ jobs:
             _secrets.php
             _secrets.example.php
             ai_organization/**
+            # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
+            prime-networks/**

@@ -2,3 +2,7 @@
 *.zip
 .claude/
 _secrets.php
+.vercel
+
+# prime-networks は独立リポジトリで管理（GitHub: le-ciel666/prime-networks）
+mock-sites/prime-networks/
