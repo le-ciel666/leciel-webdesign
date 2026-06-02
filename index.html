@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C"></script>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
   </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -171,15 +182,14 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
+    /* OS標準の日本語フォントを使用（Webフォント読込ゼロ＝即描画・LCP最速） */
+    --font-jp: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", YuGothic, Meiryo, sans-serif;
     --primary: #2563eb;
     --primary-dark: #1e3a8a;
     --primary-light: #eff6ff;
-    --accent: #10b981;
+    --accent: #047857;
     --accent-light: #ecfdf5;
     --navy: #0f172a;
     --text: #1e293b;
@@ -195,7 +205,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-jp);
     font-size: 17px;
     line-height: 1.8;
     color: var(--text);
@@ -257,7 +267,7 @@
   }
 
   .logo-main {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-jp);
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -1546,6 +1556,7 @@
   </div>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <span class="hero-tag">個人店舗・法人まで幅広く対応</span>
@@ -1726,7 +1737,7 @@
       <!-- 建設・製造・会計事務所 -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&h=540&fit=crop&q=80" alt="建設・製造・会計事務所 デモサイト" loading="lazy" decoding="async" width="600" height="200">
+          <img src="/assets/works/construction.webp" alt="建設・製造・会計事務所 デモサイト" loading="lazy" decoding="async" width="600" height="200">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
@@ -1774,7 +1785,7 @@
       <!-- 美容皮膚科・眼科・歯医者 -->
       <div class="work-card">
         <div class="work-img-wrap">
-          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=900&h=540&fit=crop&q=80" alt="美容皮膚科・眼科・歯医者 デモサイト" loading="lazy" decoding="async" width="600" height="200">
+          <img src="/assets/works/clinic.webp" alt="美容皮膚科・眼科・歯医者 デモサイト" loading="lazy" decoding="async" width="600" height="200">
           <span class="work-demo-badge">自主制作デモ</span>
         </div>
         <div class="work-body">
@@ -2123,13 +2134,14 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px;">
     <span aria-hidden="true" style="width:32px;height:32px;display:inline-block;border-radius:50%;background:conic-gradient(from 0deg,#ef4444 0%,#f97316 14%,#eab308 28%,#22c55e 43%,#06b6d4 57%,#3b82f6 71%,#a855f7 86%,#ef4444 100%);-webkit-mask:radial-gradient(circle,transparent 34%,#000 35%,#000 100%);mask:radial-gradient(circle,transparent 34%,#000 35%,#000 100%);"></span>
     <div style="text-align:left;line-height:1.3;">
-      <p style="font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.9);margin:0;">LE CIEL WEB DESIGN</p>
+      <p style="font-size:16px;font-weight:700;letter-spacing:0.08em;color:rgba(255,255,255,0.9);margin:0;">LE CIEL WEB DESIGN</p>
       <p style="font-size:11px;letter-spacing:0.1em;color:rgba(255,255,255,0.5);margin:0;">ル・シエルウェブデザイン</p>
     </div>
   </div>
