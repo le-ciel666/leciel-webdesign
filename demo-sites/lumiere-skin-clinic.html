@@ -4,23 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUMIERE SKIN CLINIC｜銀座の美容皮膚科・肌診断・レーザー治療</title>
-<meta name="description" content="銀座駅徒歩2分。しみ、肝斑、毛穴、ニキビ跡、たるみ、医療脱毛まで。医師の診察と肌画像解析をもとに治療計画を提案する美容皮膚科 LUMIERE SKIN CLINIC のデモサイトです。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&family=Marcellus&display=swap" rel="stylesheet">
+<meta name="description" content="銀座駅徒歩2分。しみ、肝斑、毛穴、ニキビ跡、たるみ、医療脱毛まで。医師の診察と肌画像解析をもとに治療計画を提案する美容皮膚科 LUMIERE SKIN CLINIC です。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%2327322f'/%3E%3Cg%20stroke='%23f5c6bd'%20stroke-width='1.4'%3E%3Cpath%20d='M16%208v16M8%2016h16'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preload" as="image" href="../assets/beauty-dermatology/hero-mobile.webp" media="(max-width: 760px)" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/beauty-dermatology/hero.webp" media="(min-width: 761px)" fetchpriority="high">
+<!-- Google Analytics (gtag) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VEMHY2G58C');
+  (function () {
+    var loaded = false;
+    function loadGtag() {
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+      document.head.appendChild(s);
+      ['scroll','click','touchstart','keydown','mousemove'].forEach(function (ev) {
+        window.removeEventListener(ev, loadGtag, true);
+      });
+    }
+    ['scroll','click','touchstart','keydown','mousemove'].forEach(function (ev) {
+      window.addEventListener(ev, loadGtag, true);
+    });
+  })();
+</script>
 <style>
   :root {
+    --font-jp: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+    --font-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", serif;
     --ink: #1b2024;
     --ink-2: #343c42;
-    --muted: #6d777c;
+    --muted: #5b656a;
     --line: #dfe5e3;
     --paper: #ffffff;
     --veil: #f7f9f7;
     --sage: #6f8e82;
     --sage-dark: #3f6659;
     --coral: #d98172;
+    --coral-ink: #b8503f;
     --coral-soft: #f7ded9;
-    --rose: #b95f68;
+    --rose: #a8434c;
     --chart: #27322f;
     --gold: #b99a5f;
     --aqua: #80c6c2;
@@ -28,19 +56,20 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-jp);
     color: var(--ink);
     background: var(--paper);
     font-size: 16px;
     line-height: 1.85;
     -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
   }
   img { display: block; max-width: 100%; }
   a { color: inherit; }
-  .en { font-family: 'Inter', sans-serif; letter-spacing: 0; }
-  .brand-font { font-family: 'Marcellus', serif; letter-spacing: 0.04em; }
+  .en { font-family: var(--font-en); letter-spacing: 0; }
+  .brand-font { font-family: var(--font-serif); letter-spacing: 0.04em; }
 
   .demo-ribbon {
     background: var(--chart);
@@ -48,12 +77,16 @@
     text-align: center;
     padding: 9px 16px;
     font-size: 13px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    line-height: 1.45;
   }
   .demo-ribbon a {
     color: #f5c6bd;
     text-decoration: none;
     font-weight: 900;
-    margin-left: 12px;
     border-bottom: 1px solid currentColor;
   }
 
@@ -64,9 +97,11 @@
     top: 38px;
     z-index: 60;
     color: #fff;
-    mix-blend-mode: difference;
     pointer-events: none;
   }
+  .brand,
+  .nav,
+  .header-phone { mix-blend-mode: difference; }
   .header-inner {
     max-width: 1400px;
     height: 78px;
@@ -78,11 +113,13 @@
     gap: 24px;
     pointer-events: auto;
   }
+  .header-inner > * { min-width: 0; }
   .brand {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 13px;
+    min-width: 0;
   }
   .brand-mark {
     width: 42px;
@@ -122,6 +159,58 @@
     letter-spacing: 0.08em;
   }
   .nav a { text-decoration: none; }
+  .mobile-nav { display: none; position: relative; flex-shrink: 0; }
+  .mobile-nav summary {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(255,255,255,0.42);
+    background: rgba(255,255,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    z-index: 5;
+  }
+  .mobile-nav summary::-webkit-details-marker { display: none; }
+  .mobile-nav summary span {
+    width: 22px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.2s, width 0.2s;
+  }
+  .mobile-nav summary span:nth-child(2) { width: 15px; }
+  .mobile-nav[open] summary span:nth-child(1) {
+    width: 22px;
+    transform: translateY(3px) rotate(45deg);
+  }
+  .mobile-nav[open] summary span:nth-child(2) {
+    width: 22px;
+    transform: translateY(-3px) rotate(-45deg);
+  }
+  .mobile-nav-panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    width: min(320px, calc(100vw - 32px));
+    padding: 18px;
+    background: rgba(39,50,47,0.98);
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.14);
+    display: grid;
+    gap: 4px;
+  }
+  .mobile-nav-panel a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    font-size: 14px;
+    font-weight: 800;
+  }
   .header-actions {
     display: flex;
     gap: 10px;
@@ -143,6 +232,7 @@
     font-weight: 900;
   }
   .btn {
+    min-width: 0;
     min-height: 48px;
     display: inline-flex;
     align-items: center;
@@ -154,6 +244,7 @@
     text-decoration: none;
     font-weight: 900;
     line-height: 1.35;
+    text-align: center;
     transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
   }
   .btn:hover { transform: translateY(-2px); }
@@ -163,7 +254,7 @@
     box-shadow: 0 18px 36px rgba(39,50,47,0.22);
   }
   .btn-coral {
-    background: var(--coral);
+    background: var(--coral-ink);
     color: #fff;
     box-shadow: 0 18px 36px rgba(217,129,114,0.26);
   }
@@ -193,7 +284,7 @@
     position: absolute;
     right: -3vw;
     top: 118px;
-    font-family: 'Marcellus', serif;
+    font-family: var(--font-serif);
     font-size: clamp(82px, 14vw, 230px);
     line-height: 0.8;
     color: rgba(255,255,255,0.14);
@@ -210,6 +301,7 @@
     position: relative;
     z-index: 2;
   }
+  .hero-inner > * { min-width: 0; }
   .hero-kicker {
     display: inline-flex;
     gap: 12px;
@@ -228,11 +320,21 @@
     background: currentColor;
   }
   .hero h1 {
-    font-family: 'Marcellus', serif;
-    font-size: clamp(58px, 8.2vw, 132px);
-    line-height: 0.95;
-    letter-spacing: 0.02em;
+    max-width: 900px;
+    font-size: clamp(38px, 4.8vw, 72px);
+    line-height: 1.18;
+    letter-spacing: 0;
+    font-weight: 900;
+  }
+  .hero-brand-line {
+    display: block;
+    margin-top: 14px;
+    font-family: var(--font-serif);
+    font-size: clamp(52px, 8.4vw, 128px);
+    line-height: 0.92;
+    letter-spacing: 0.03em;
     font-weight: 400;
+    overflow-wrap: normal;
   }
   .hero-ja {
     margin-top: 24px;
@@ -260,7 +362,7 @@
     box-shadow: var(--shadow);
   }
   .hero-panel .panel-label {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.16em;
@@ -315,7 +417,7 @@
   }
   .marquee span {
     padding: 18px 24px;
-    font-family: 'Marcellus', serif;
+    font-family: var(--font-serif);
     font-size: 18px;
     letter-spacing: 0.08em;
     color: rgba(255,255,255,0.78);
@@ -337,7 +439,7 @@
     margin-bottom: 50px;
   }
   .eyebrow {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.18em;
@@ -351,7 +453,7 @@
     font-weight: 900;
   }
   .headline {
-    font-family: 'Marcellus', serif;
+    font-family: var(--font-serif);
     font-weight: 400;
     letter-spacing: 0.02em;
   }
@@ -388,8 +490,9 @@
   .concern-card.large .chips span {
     color: rgba(255,255,255,0.78);
   }
+  .concern-card.large b { color: #f5c6bd; }
   .concern-card b {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.16em;
@@ -446,7 +549,7 @@
     align-items: start;
   }
   .method-row .num {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-size: 13px;
     font-weight: 900;
   }
@@ -505,7 +608,7 @@
     border: 1px solid rgba(255,255,255,0.18);
   }
   .diagnosis-points div {
-    background: rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.18);
     padding: 18px;
   }
   .diagnosis-points b {
@@ -541,11 +644,12 @@
     background: var(--coral-soft);
   }
   .menu-card small {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 0.14em;
   }
+  .menu-card.featured small { color: var(--chart); }
   .menu-card h3 {
     margin-top: 16px;
     font-size: 24px;
@@ -690,7 +794,7 @@
     border: 1px solid rgba(255,255,255,0.18);
   }
   .case-card {
-    background: rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.18);
     padding: 26px;
     min-height: 340px;
     display: flex;
@@ -798,7 +902,7 @@
     padding: 24px;
   }
   .flow-step small {
-    color: var(--coral);
+    color: var(--coral-ink);
     font-weight: 900;
   }
   .flow-step h3 {
@@ -906,6 +1010,10 @@
     background: #fff;
     padding: 22px 24px;
   }
+  .mobile-nav {
+    background: transparent;
+    padding: 0;
+  }
   summary {
     cursor: pointer;
     list-style: none;
@@ -962,16 +1070,19 @@
       position: sticky;
       top: 0;
       background: var(--chart);
-      mix-blend-mode: normal;
     }
+    .brand,
+    .nav,
+    .header-phone { mix-blend-mode: normal; }
     .header-inner {
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto auto;
       height: 72px;
     }
     .nav,
     .header-phone {
       display: none;
     }
+    .mobile-nav { display: block; }
     .hero {
       min-height: auto;
     }
@@ -986,7 +1097,7 @@
       grid-template-columns: 1fr;
     }
     .hero-inner {
-      padding-top: 110px;
+      padding-top: 72px;
     }
     .story-image {
       min-height: 520px;
@@ -1005,10 +1116,15 @@
 
   @media (max-width: 760px) {
     body { font-size: 15px; }
-    .demo-ribbon { font-size: 12px; }
+    .demo-ribbon {
+      font-size: 12px;
+      padding: 7px 12px;
+      gap: 6px 12px;
+    }
     .header-inner {
       height: 66px;
       padding: 0 16px;
+      gap: 10px;
     }
     .brand-mark {
       width: 36px;
@@ -1016,78 +1132,281 @@
     }
     .brand-name { font-size: 16px; }
     .brand-sub { font-size: 9px; }
-    .header-actions .btn { display: none; }
     .hero {
       background:
-        linear-gradient(180deg, rgba(27,32,36,0.72), rgba(27,32,36,0.38), rgba(27,32,36,0.88)),
-        url('../assets/beauty-dermatology/hero.webp') center/cover no-repeat;
+        linear-gradient(180deg, rgba(27,32,36,0.78), rgba(27,32,36,0.46), rgba(27,32,36,0.92)),
+        url('../assets/beauty-dermatology/hero-mobile.webp') center/cover no-repeat;
     }
-    .hero::after {
-      top: 96px;
-      font-size: 80px;
-      right: -36px;
-    }
+    .hero::after { display: none; }
     .hero-inner {
-      padding: 82px 18px 54px;
-      gap: 34px;
+      padding: 38px 18px 28px;
+      gap: 24px;
     }
-    .hero h1 {
-      font-size: 54px;
+    .hero-kicker {
+      margin-bottom: 16px;
+      font-size: 11px;
+      gap: 10px;
+    }
+    .hero-kicker::before { width: 38px; }
+    .hero h1 { font-size: 32px; }
+    .hero-brand-line {
+      margin-top: 8px;
+      font-size: 42px;
+      line-height: 0.96;
     }
     .hero-ja {
-      font-size: 23px;
+      margin-top: 18px;
+      font-size: 20px;
+      line-height: 1.5;
     }
+    .hero-lead {
+      margin-top: 14px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .hero-actions {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-actions .btn {
+      min-height: 48px;
+      padding: 10px 12px;
+      font-size: 13px;
+      white-space: normal;
+    }
+    .btn-line { background: rgba(255,255,255,0.1); }
     .hero-panel {
-      padding: 22px;
+      padding: 20px;
     }
-    .panel-grid,
+    .hero-panel h2 {
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    .hero-panel p {
+      font-size: 12px;
+      line-height: 1.65;
+    }
+    .panel-grid {
+      grid-template-columns: repeat(2, 1fr);
+      margin-top: 16px;
+    }
+    .panel-grid div { padding: 12px; }
     .concern-map,
-    .menu-grid,
+    .menu-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .concern-card.large { grid-column: 1 / -1; }
     .case-grid,
     .flow-grid,
     .faq-grid {
       grid-template-columns: 1fr;
     }
-    section {
-      padding: 68px 18px;
-    }
+    section { padding: 58px 18px; }
     .section-head {
       gap: 18px;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
+    .section-head p,
+    .sticky-copy p,
+    .scene-copy p,
+    .story-copy p,
+    .price-note p,
+    .doctor-copy p,
+    details p {
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    h2 {
+      font-size: 30px;
+      line-height: 1.22;
+    }
+    h2 br { display: none; }
     .concern-card,
     .concern-card.large {
       min-height: auto;
+      padding: 19px 16px;
+    }
+    .concern-card h3 {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+    .concern-card p {
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .chips {
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .chips span {
+      padding: 3px 8px;
+      font-size: 11px;
     }
     .method-row {
-      grid-template-columns: 1fr;
-      gap: 10px;
-      padding: 26px 0;
+      grid-template-columns: 42px 1fr;
+      gap: 8px 14px;
+      padding: 24px 0;
+    }
+    .method-row .num {
+      grid-row: 1 / 3;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--coral-ink);
+      display: grid;
+      place-items: center;
+    }
+    .method-row h3 { font-size: 19px; }
+    .method-row p {
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .method-meta {
+      grid-column: 2;
+      grid-template-columns: 1fr 1fr;
+    }
+    .method-meta span {
+      padding: 7px 8px;
+      font-size: 11px;
     }
     .story-image {
-      min-height: 380px;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+      max-height: 320px;
     }
     .story-copy,
     .scene-copy {
       padding: 34px 22px;
     }
+    .diagnosis-points { margin-top: 24px; }
+    .diagnosis-points div { padding: 15px; }
+    .diagnosis-points span {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .menu-card {
+      min-height: auto;
+      padding: 19px 16px;
+    }
+    .menu-card h3 {
+      margin-top: 10px;
+      font-size: 17px;
+    }
+    .menu-card p {
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .menu-card ul {
+      padding-top: 16px;
+      font-size: 12px;
+      line-height: 1.45;
+    }
     .scene-image img {
-      min-height: 340px;
+      height: clamp(220px, 58vw, 320px);
+      min-height: 0;
     }
     .price-table {
-      min-width: 720px;
+      min-width: 0;
+      border: 0;
+      background: transparent;
+      display: block;
     }
-    .price-table-wrap,
+    .price-table-wrap {
+      overflow-x: visible;
+      padding-bottom: 8px;
+    }
     .schedule-wrap {
       overflow-x: auto;
       padding-bottom: 8px;
     }
+    .price-table thead { display: none; }
+    .price-table tbody,
+    .price-table tr,
+    .price-table td {
+      display: block;
+      width: 100%;
+    }
+    .price-table tbody {
+      display: grid;
+      gap: 10px;
+    }
+    .price-table tr {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+    }
+    .price-table td {
+      border: 0;
+      padding: 4px 0;
+    }
+    .price-table td:first-child {
+      width: auto;
+      font-size: 16px;
+    }
+    .price-table td:nth-child(2) {
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .price-table td:last-child {
+      margin-top: 4px;
+      color: var(--sage-dark);
+      font-size: 18px;
+      white-space: normal;
+    }
+    .price-table td:nth-child(2)::before,
+    .price-table td:last-child::before {
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+    .price-table td:nth-child(2)::before { content: '内容'; }
+    .price-table td:last-child::before { content: '料金'; }
+    .risk-box { padding: 18px; }
+    .case-card {
+      min-height: auto;
+      padding: 20px;
+    }
+    .case-before-after span { min-height: 76px; }
+    .flow-grid {
+      gap: 0;
+    }
+    .flow-step {
+      min-height: auto;
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 4px 14px;
+      align-items: start;
+    }
+    .flow-step small {
+      grid-row: 1 / 3;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--coral-soft);
+      color: var(--coral-ink);
+      font-size: 11px;
+      line-height: 1.15;
+      text-align: center;
+    }
+    .flow-step h3 {
+      margin-top: 0;
+      font-size: 17px;
+    }
+    .flow-step p {
+      margin-top: 0;
+      font-size: 13px;
+      line-height: 1.65;
+    }
     .doctor-photo img {
-      min-height: 460px;
+      height: clamp(320px, 92vw, 440px);
+      min-height: 0;
     }
-    .doctor-copy {
-      padding: 36px 0 68px;
-    }
+    .doctor-copy { padding: 32px 0 58px; }
     .profile-list,
     .access-list div {
       grid-template-columns: 1fr;
@@ -1098,8 +1417,59 @@
       padding: 22px;
     }
     .schedule {
-      min-width: 560px;
+      min-width: 480px;
       font-size: 12px;
+    }
+    .schedule th,
+    .schedule td {
+      padding: 10px 6px;
+    }
+    .map {
+      min-height: 140px;
+      font-size: 13px;
+    }
+    details { padding: 19px 18px; }
+    .final-cta {
+      margin-top: 58px;
+      padding: 64px 18px;
+      background:
+        linear-gradient(90deg, rgba(39,50,47,0.95), rgba(39,50,47,0.72)),
+        url('../assets/beauty-dermatology/hero-mobile.webp') center/cover no-repeat;
+    }
+    .footer-inner {
+      display: grid;
+      gap: 8px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .demo-ribbon {
+      display: block;
+      text-align: center;
+    }
+    .demo-ribbon a {
+      display: block;
+      width: fit-content;
+      margin: 2px auto 0;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      padding-right: 76px;
+    }
+    .header-actions { display: none; }
+    .mobile-nav {
+      display: block !important;
+      margin-left: 0;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .hero-actions {
+      grid-template-columns: 1fr;
+      gap: 8px;
     }
     .mobile-cta {
       position: fixed;
@@ -1121,6 +1491,24 @@
       font-size: 13px;
     }
     footer { padding-bottom: 88px; }
+  }
+
+  @media (max-width: 430px) {
+    .brand-name { font-size: 15px; }
+    .brand-sub { font-size: 8px; letter-spacing: 0.12em; }
+    .mobile-nav summary {
+      width: 44px;
+      height: 44px;
+    }
+    .hero-brand-line { font-size: 38px; }
+    .hero-actions .btn {
+      font-size: 12px;
+      padding-inline: 8px;
+    }
+    .concern-card,
+    .menu-card {
+      padding: 17px 14px;
+    }
   }
 </style>
 </head>
@@ -1151,14 +1539,26 @@
         </a>
         <a class="btn btn-coral" href="#reserve">無料カウンセリング</a>
       </div>
+      <details class="mobile-nav">
+        <summary aria-label="メニューを開く"><span></span><span></span></summary>
+        <nav class="mobile-nav-panel" aria-label="モバイルナビゲーション">
+          <a href="#concern">悩みから探す</a>
+          <a href="#menu">施術メニュー</a>
+          <a href="#price">料金</a>
+          <a href="#cases">症例</a>
+          <a href="#doctor">医師紹介</a>
+          <a href="#access">アクセス</a>
+        </nav>
+      </details>
     </div>
   </header>
 
+  <main>
   <section class="hero">
     <div class="hero-inner">
       <div>
         <p class="hero-kicker en">MEDICAL SKIN DESIGN</p>
-        <h1>Quiet<br>Confidence.</h1>
+        <h1>銀座の美容皮膚科<br><span class="hero-brand-line">LUMIERE SKIN CLINIC</span></h1>
         <p class="hero-ja">肌を変える前に、<br>肌を正しく知る美容皮膚科。</p>
         <p class="hero-lead">銀座駅徒歩2分。肌画像解析と医師の診察をもとに、しみ・肝斑・毛穴・ニキビ跡・たるみ・医療脱毛まで、治療とホームケアを組み合わせて設計します。</p>
         <div class="hero-actions">
@@ -1194,7 +1594,7 @@
           <p class="eyebrow en">CONCERN ATLAS</p>
           <h2>悩みから選べる、<br>美容皮膚科の導線。</h2>
         </div>
-        <p>人気クリニックサイトでは、施術名よりも先に「しみ」「肝斑」「毛穴」「ニキビ跡」などの悩み別導線が強く設計されています。予約前の迷いを減らすため、症状の言葉から治療へつなげます。</p>
+        <p>施術名が分からない方も、気になる症状からご相談いただけます。しみ、肝斑、毛穴、ニキビ跡などを診察で見極め、一人ひとりに合う治療へつなげます。</p>
       </div>
       <div class="concern-map">
         <article class="concern-card large">
@@ -1247,7 +1647,7 @@
         <div class="sticky-copy">
           <p class="eyebrow en">DESIGN METHOD</p>
           <h2>美容医療を、<br>衝動ではなく計画に。</h2>
-          <p>「今すぐこの施術」ではなく、肌状態・生活・予算・ダウンタイム許容度から逆算して治療を組み立てる見せ方です。高単価施術も、理由が伝わると予約につながります。</p>
+          <p>流行の施術を急いで選ぶのではなく、肌状態・生活・予算・ダウンタイム許容度から逆算して、無理のない治療計画を一緒に組み立てます。</p>
         </div>
         <div class="method-list">
           <article class="method-row">
@@ -1289,7 +1689,7 @@
 
   <section class="visual-story">
     <div class="story-grid">
-      <div class="story-image" aria-label="肌診断カウンセリング"></div>
+      <div class="story-image" role="img" aria-label="肌診断カウンセリング"></div>
       <div class="story-copy">
         <p class="eyebrow en">COUNSELING EXPERIENCE</p>
         <h2 class="headline">From feeling to finding.</h2>
@@ -1310,7 +1710,7 @@
           <p class="eyebrow en">TREATMENT MENU</p>
           <h2>施術メニューを、<br>比較しやすく整理。</h2>
         </div>
-        <p>美容皮膚科ではメニュー数が多くなりがちです。目的・適応・注意点をそろえて表示することで、ユーザーが自分に合う施術を比較できます。</p>
+        <p>目的・適応・注意点をそろえて掲載しています。気になる施術がある場合も、まずは診察で肌状態を確認し、適応の有無をご案内します。</p>
       </div>
       <div class="menu-grid">
         <article class="menu-card featured">
@@ -1370,7 +1770,7 @@
       <div class="scene-copy">
         <p class="eyebrow en">TREATMENT ROOM</p>
         <h2>医療らしい清潔感と、美容らしい期待感。</h2>
-        <p>人気美容皮膚科のサイトは「ラグジュアリー」だけではなく、施術室・機器・医療者の手元が見える安心感を大切にしています。写真素材も、抽象的なモデル写真ではなく実際の施術体験に近いものを使います。</p>
+        <p>清潔な施術室と医療機器を備え、診察から施術後のケアまで落ち着いて過ごせる環境を整えています。初めての方にも手順が分かるよう、事前説明を丁寧に行います。</p>
       </div>
       <div class="scene-image">
         <img src="../assets/beauty-dermatology/treatment.webp" alt="美容皮膚科のレーザー施術イメージ">
@@ -1390,7 +1790,7 @@
       <div class="price-layout">
         <aside class="price-note">
           <h3>無理な当日契約を前提にしない、相談しやすい価格表示。</h3>
-          <p>表示価格は税込のデモ表記です。実際の医療広告では、自由診療、リスク、副作用、未承認機器の有無などの表記確認が必要です。</p>
+          <p>表示価格は税込です。自由診療のため保険適用外となります。施術ごとのリスク、副作用、必要回数の目安は診察時に個別にお伝えします。</p>
         </aside>
         <div>
           <div class="price-table-wrap">
@@ -1410,7 +1810,7 @@
             </table>
           </div>
           <div class="risk-box">
-            <b>リスク・副作用の表記例</b>
+            <b>リスク・副作用について</b>
             <p>赤み、腫れ、乾燥、かさぶた、色素沈着、内出血、熱感、痛みなどが生じる場合があります。施術の適応は医師の診察により判断します。</p>
           </div>
         </div>
@@ -1423,9 +1823,9 @@
       <div class="section-head">
         <div>
           <p class="eyebrow en">CASE LIBRARY</p>
-          <h2>症例は、期待値を整えるために見せる。</h2>
+          <h2>症例で、治療経過と費用の目安を確認。</h2>
         </div>
-        <p>症例コンテンツは強い集客要素ですが、誇張せず、施術内容・回数・費用・リスクを併記することで信頼感を作ります。</p>
+        <p>治療結果には個人差があります。施術内容、回数、費用、起こり得るリスクをあわせて確認し、現実的な変化の目安としてご覧ください。</p>
       </div>
       <div class="case-grid">
         <article class="case-card">
@@ -1481,7 +1881,7 @@
           <p class="eyebrow en">VISIT FLOW</p>
           <h2>予約から施術後まで、<br>迷わない体験設計。</h2>
         </div>
-        <p>人気サイトほど、初回来院の流れが丁寧です。ユーザーの不安が減るほど、予約フォームへの移動が自然になります。</p>
+        <p>初めての美容医療でも不安が少なくなるよう、予約から診察、施術後の注意事項まで順を追ってご案内します。</p>
       </div>
       <div class="flow-grid">
         <article class="flow-step"><small class="en">STEP 01</small><h3>WEB予約</h3><p>悩み、希望日時、カウンセリングのみか当日施術希望かを選択。</p></article>
@@ -1579,6 +1979,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="footer-inner">
