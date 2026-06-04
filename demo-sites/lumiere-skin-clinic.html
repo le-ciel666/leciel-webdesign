@@ -1049,6 +1049,132 @@
     justify-content: center;
   }
 
+  .contact {
+    background: var(--veil);
+    scroll-margin-top: 90px;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .contact-intro .eyebrow { margin-bottom: 16px; }
+  .contact-intro h2 { margin-bottom: 22px; }
+  .contact-intro p {
+    color: var(--ink-2);
+    font-weight: 600;
+    line-height: 1.9;
+    margin-bottom: 26px;
+  }
+  .contact-points {
+    display: grid;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .contact-points li {
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+    color: var(--ink-2);
+    font-weight: 700;
+  }
+  .contact-points li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--coral-soft);
+    box-shadow: inset 0 0 0 2px var(--coral);
+  }
+  .contact-phone {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 18px 26px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+  }
+  .contact-phone small {
+    color: var(--coral-ink);
+    font-weight: 800;
+    letter-spacing: 0.14em;
+  }
+  .contact-phone strong {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+  }
+  .contact-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+  }
+  .contact-form { display: grid; gap: 20px; }
+  .form-row { display: grid; gap: 8px; }
+  .form-row.two { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row label {
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .form-row .req {
+    margin-left: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--coral-ink);
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--veil);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 15px;
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--coral);
+    box-shadow: 0 0 0 3px var(--coral-soft);
+    background: #fff;
+  }
+  .contact-form textarea { min-height: 130px; resize: vertical; }
+  .form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.7;
+  }
+  .form-consent input { width: 18px; height: 18px; margin-top: 2px; flex: none; }
+  .contact-form .btn-coral { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
+  .form-note { font-size: 12px; color: var(--muted); text-align: center; }
+  .form-done {
+    display: none;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: var(--coral-soft);
+    color: var(--coral-ink);
+    font-weight: 800;
+    text-align: center;
+  }
+  .form-done.show { display: block; }
+
   footer {
     background: var(--chart);
     color: rgba(255,255,255,0.72);
@@ -1436,6 +1562,10 @@
         linear-gradient(90deg, rgba(39,50,47,0.95), rgba(39,50,47,0.72)),
         url('../assets/beauty-dermatology/hero-mobile.webp') center/cover no-repeat;
     }
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+    .contact-card { padding: 24px; border-radius: 16px; }
+    .form-row.two { grid-template-columns: 1fr; }
+    .contact-phone { width: 100%; }
     .footer-inner {
       display: grid;
       gap: 8px;
@@ -1562,11 +1692,10 @@
         <p class="hero-ja">肌を変える前に、<br>肌を正しく知る美容皮膚科。</p>
         <p class="hero-lead">銀座駅徒歩2分。肌画像解析と医師の診察をもとに、しみ・肝斑・毛穴・ニキビ跡・たるみ・医療脱毛まで、治療とホームケアを組み合わせて設計します。</p>
         <div class="hero-actions">
-          <a class="btn btn-coral" href="#reserve">カウンセリング予約</a>
           <a class="btn btn-line" href="#concern">悩みから施術を探す</a>
         </div>
       </div>
-      <aside class="hero-panel" id="reserve">
+      <aside class="hero-panel">
         <p class="panel-label en">FIRST COUNSELING</p>
         <h2>初回は肌診断・医師診察・治療プラン作成まで。</h2>
         <div class="panel-grid">
@@ -1773,7 +1902,7 @@
         <p>清潔な施術室と医療機器を備え、診察から施術後のケアまで落ち着いて過ごせる環境を整えています。初めての方にも手順が分かるよう、事前説明を丁寧に行います。</p>
       </div>
       <div class="scene-image">
-        <img src="../assets/beauty-dermatology/treatment.webp" alt="美容皮膚科のレーザー施術イメージ">
+        <img src="../assets/beauty-dermatology/treatment.webp" alt="美容皮膚科のレーザー施術イメージ" width="1610" height="977" loading="lazy" decoding="async">
       </div>
     </div>
   </section>
@@ -1857,7 +1986,7 @@
     <div class="section-inner">
       <div class="doctor-layout">
         <div class="doctor-photo">
-          <img src="../assets/beauty-dermatology/doctor.webp" alt="LUMIERE SKIN CLINIC 院長">
+          <img src="../assets/beauty-dermatology/doctor.webp" alt="LUMIERE SKIN CLINIC 院長" width="852" height="1846" loading="lazy" decoding="async">
         </div>
         <div class="doctor-copy">
           <p class="eyebrow en">MEDICAL SUPERVISION</p>
@@ -1979,6 +2108,81 @@
       </div>
     </div>
   </section>
+  <section class="contact" id="reserve">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <p class="eyebrow en">FREE COUNSELING</p>
+          <h2>無料カウンセリングの<br>ご予約・お問い合わせ</h2>
+          <p>初回は肌画像解析・医師診察・治療プラン作成・お見積りまで無料で行います。ご希望の施術が決まっていない方も、気になるお悩みからご相談いただけます。</p>
+          <ul class="contact-points">
+            <li>カウンセリング・肌診断は無料（初回）</li>
+            <li>無理な勧誘や即日契約のお願いはしません</li>
+            <li>WEB予約は24時間受付。通常1〜2営業日でご返信</li>
+          </ul>
+          <a class="contact-phone" href="tel:03-0000-1122">
+            <small>お電話でのご予約</small>
+            <strong class="en">03-0000-1122</strong>
+            <span style="font-size:12px;color:var(--muted);font-weight:700;">診療時間 10:00–19:00 / 水曜・日曜休診</span>
+          </a>
+        </div>
+
+        <div class="contact-card">
+          <form class="contact-form" id="reserveForm" novalidate>
+            <div class="form-row two">
+              <div class="form-row">
+                <label for="cf-name">お名前<span class="req">必須</span></label>
+                <input type="text" id="cf-name" name="name" placeholder="山田 花子" required>
+              </div>
+              <div class="form-row">
+                <label for="cf-kana">フリガナ</label>
+                <input type="text" id="cf-kana" name="kana" placeholder="ヤマダ ハナコ">
+              </div>
+            </div>
+            <div class="form-row two">
+              <div class="form-row">
+                <label for="cf-tel">電話番号<span class="req">必須</span></label>
+                <input type="tel" id="cf-tel" name="tel" placeholder="090-0000-0000" required>
+              </div>
+              <div class="form-row">
+                <label for="cf-mail">メールアドレス<span class="req">必須</span></label>
+                <input type="email" id="cf-mail" name="email" placeholder="example@mail.com" required>
+              </div>
+            </div>
+            <div class="form-row two">
+              <div class="form-row">
+                <label for="cf-concern">気になるお悩み・ご希望の施術</label>
+                <select id="cf-concern" name="concern">
+                  <option value="">選択してください</option>
+                  <option>しみ・肝斑・くすみ</option>
+                  <option>毛穴・ざらつき</option>
+                  <option>ニキビ・ニキビ跡</option>
+                  <option>たるみ・ハリ</option>
+                  <option>医療脱毛</option>
+                  <option>ホームケア・その他</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="cf-date">ご希望の来院日</label>
+                <input type="date" id="cf-date" name="date">
+              </div>
+            </div>
+            <div class="form-row">
+              <label for="cf-message">ご相談内容</label>
+              <textarea id="cf-message" name="message" placeholder="ご希望の施術内容、お肌のお悩み、ご質問などをご自由にご記入ください。"></textarea>
+            </div>
+            <label class="form-consent">
+              <input type="checkbox" id="cf-agree" name="agree" required>
+              <span>個人情報の取り扱いについて同意のうえ送信します。ご入力いただいた情報は、ご予約・お問い合わせへの対応にのみ使用します。</span>
+            </label>
+            <button type="submit" class="btn btn-coral">無料カウンセリングを申し込む</button>
+            <p class="form-note">お急ぎの場合はお電話（03-0000-1122 / 10:00–19:00）でも承ります。</p>
+            <p class="form-done" id="cf-done">送信ありがとうございます。担当より1〜2営業日以内にご連絡いたします。</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
   </main>
 
   <footer>
@@ -1992,5 +2196,18 @@
     <a class="btn btn-line" href="tel:03-0000-1122">電話する</a>
     <a class="btn btn-coral" href="#reserve">WEB予約</a>
   </div>
+  <script>
+    (function () {
+      var form = document.getElementById('reserveForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var done = document.getElementById('cf-done');
+        if (done) done.classList.add('show');
+        form.reset();
+      });
+    })();
+  </script>
 </body>
 </html>
