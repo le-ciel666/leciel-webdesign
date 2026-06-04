@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="assets/favicon/favicon-48.png" sizes="48x48">
 <title>コンタクトセンターDX・CTIシステム｜MITシステム研究所 Renewal Mock</title>
 <meta name="description" content="株式会社エム・アイ・ティシステム研究所様サイトリニューアル提案用モック。コンタクトセンター、アウトバウンド、CRM、音声認識、PBX連携を統合するCTIソリューションの現代的なWeb UIサンプルです。">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -64,9 +64,10 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-01.webp" fetchpriority="high" media="(min-width: 721px)">
+<link rel="preload" as="image" href="assets/service-banners/quickcrm-bg-clean.webp" fetchpriority="high" media="(max-width: 720px)">
+<link rel="preload" as="image" href="assets/service-banners/vis-ai-bg.webp" media="(max-width: 720px)">
+<link rel="preload" as="image" href="assets/service-banners/quick-edialer-success-bg.webp" media="(max-width: 720px)">
 <style>
   :root {
     --ink: #111827;
@@ -83,6 +84,8 @@
     --amber: #f59e0b;
     --red: #d84f45;
     --shadow: 0 24px 70px rgba(17, 24, 39, 0.13);
+    --font-sans: system-ui, -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -92,7 +95,7 @@
     width: 100%;
   }
   body {
-    font-family: 'IBM Plex Sans JP', 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     color: var(--ink);
     background: var(--paper);
     line-height: 1.8;
@@ -155,7 +158,7 @@
     height: auto;
   }
   .brand-tagline {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     line-height: 1;
     letter-spacing: 0.28em;
@@ -238,7 +241,7 @@
     box-shadow: 0 22px 48px rgba(13, 33, 24, 0.28);
   }
   .arrow {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 13px;
   }
 
@@ -335,7 +338,7 @@
     align-items: center;
     gap: 10px;
     color: #b7efc4;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -348,7 +351,7 @@
     background: currentColor;
   }
   .hero h1 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: clamp(38px, 4.5vw, 74px);
     line-height: 1.18;
     letter-spacing: 0.01em;
@@ -411,7 +414,7 @@
   }
   .proof-item strong {
     display: block;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 22px;
     line-height: 1.2;
     color: #fff;
@@ -597,14 +600,14 @@
   .service-copy-title {
     margin-bottom: 18px;
     color: var(--green);
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 40px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
   }
   .service-copy-main {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: 25px;
     font-weight: 900;
     line-height: 1.24;
@@ -642,7 +645,7 @@
     padding: 46px;
   }
   .banner-kicker {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.16em;
     color: #f4fff6;
@@ -651,7 +654,7 @@
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.52);
   }
   .banner-content h3 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: clamp(36px, 4.2vw, 62px);
     line-height: 1.16;
     letter-spacing: 0.01em;
@@ -803,7 +806,7 @@
     padding: 18px 14px;
   }
   .ops-logo {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: #fff;
     letter-spacing: 0.08em;
@@ -847,7 +850,7 @@
   }
   .kpi-card strong {
     display: block;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 24px;
     line-height: 1.1;
   }
@@ -924,7 +927,7 @@
   .call-list li:nth-child(3) .dot { background: var(--blue); }
   .call-list li:nth-child(4) .dot { background: var(--red); }
   .call-list strong {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
   }
 
@@ -944,7 +947,7 @@
     max-width: 760px;
   }
   .label {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     color: var(--blue);
     letter-spacing: 0.15em;
@@ -952,7 +955,7 @@
     margin-bottom: 12px;
   }
   h2 {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-sans);
     font-size: clamp(30px, 4vw, 48px);
     line-height: 1.25;
     letter-spacing: 0.01em;
@@ -1010,8 +1013,8 @@
   }
   .challenge:last-child { border-right: none; }
   .challenge-num {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--cyan);
+    font-family: var(--font-mono);
+    color: #157a45;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -1164,7 +1167,7 @@
     padding: 20px 18px;
   }
   .flow-step .step {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     color: var(--blue);
     font-size: 13px;
     font-weight: 700;
@@ -1194,34 +1197,18 @@
     color: #fff;
     display: flex;
     align-items: flex-end;
+    background-color: #0c1f15;
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), var(--banner-image, none);
     background-size: cover;
     background-position: center;
     box-shadow: 0 16px 34px rgba(17, 24, 39, 0.12);
-  }
-  .industry-card:nth-child(1) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=82');
-  }
-  .industry-card:nth-child(2) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=82');
-  }
-  .industry-card:nth-child(3) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=900&q=82');
-  }
-  .industry-card:nth-child(4) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=82');
-  }
-  .industry-card:nth-child(5) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=900&q=82');
-  }
-  .industry-card:nth-child(6) {
-    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=82');
   }
   .industry-body {
     padding: 24px;
     width: 100%;
   }
   .industry-body span {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11px;
     color: #b7efc4;
     letter-spacing: 0.12em;
@@ -1245,6 +1232,7 @@
   .trust-band .section-head h2,
   .trust-band .lead { color: #fff; }
   .trust-band .lead { color: #d3e4d8; }
+  .trust-band .label { color: #9bd8aa; }
   .trust-grid {
     display: grid;
     grid-template-columns: 0.92fr 1.08fr;
@@ -1274,7 +1262,7 @@
     font-size: 13.5px;
   }
   .timeline time {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     color: #b7efc4;
     font-size: 12px;
   }
@@ -1307,7 +1295,7 @@
   .news-entry:last-child { border-bottom: none; }
   .news-entry:hover { background: #f8fbf7; }
   .news-entry-date {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 11.5px;
     color: var(--blue);
     padding-top: 3px;
@@ -1392,7 +1380,8 @@
     margin-top: 20px;
     border-radius: 10px;
     aspect-ratio: 3 / 4;
-    background: url('assets/images/mitsys-office.webp');
+    background-color: #0c1f15;
+    background-image: var(--banner-image, none);
     background-size: cover;
     background-position: center;
   }
@@ -1451,9 +1440,10 @@
   }
 
   .cta {
-    background:
+    background-color: #173f2a;
+    background-image:
       linear-gradient(115deg, rgba(23, 63, 42, 0.96), rgba(47, 138, 80, 0.84)),
-      url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=82');
+      var(--banner-image, none);
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -1495,10 +1485,10 @@
     position: relative;
   }
   .footer-copy {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 12px;
     letter-spacing: 0.06em;
-    color: #6b7f96;
+    color: #94a3b6;
   }
   .footer-copy .copy-sym {
     font-family: sans-serif;
@@ -1570,6 +1560,9 @@
   }
 
   @media (max-width: 720px) {
+    /* スマホではヒーローの背景スライドショーを表示しない（重い暗いグラデ越しで視認性が低く、LCPを遅らせるため）。
+       ヒーローは .hero の濃色背景＋見出しテキストで成立させ、LCPをテキストにして高速化する。 */
+    .hero-slideshow { display: none; }
     .nav { height: 68px; padding: 0 16px; }
     .brand-logo { width: 174px; }
     .brand-tagline { display: none; }
@@ -1741,11 +1734,16 @@
     .news-entry { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
     .news-entry-date { padding-top: 0; }
     .footer { padding: 0 16px; }
-    .footer-inner { height: 52px; }
+    .footer-inner {
+      height: auto;
+      min-height: 52px;
+      padding: 14px 52px;
+    }
     .footer-copy {
       font-size: clamp(9.5px, 3vw, 12px);
       letter-spacing: 0.02em;
-      white-space: nowrap;
+      white-space: normal;
+      text-align: center;
     }
   }
 </style>
@@ -1753,8 +1751,8 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="メインナビゲーション">
-      <a class="brand" href="#top" aria-label="MITシステム研究所 Renewal Mock">
-        <img class="brand-logo" src="assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所" width="282" height="63" fetchpriority="high">
         <span class="brand-tagline">Contact Center DX</span>
       </a>
       <ul class="nav-links" id="navLinks">
@@ -1776,12 +1774,12 @@
     <section class="hero">
       <div class="hero-slideshow" aria-hidden="true">
         <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-01.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-02.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-03.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-04.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-05.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-06.webp');"></span>
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-07.webp');"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-02.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-03.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-04.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-05.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-06.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-07.webp"></span>
       </div>
       <div class="hero-inner">
         <h1>
@@ -1808,23 +1806,23 @@
           <p class="lead">QuickCRMを中心に、VIS、Quick eDialerまでを横断して紹介。各サービスの役割がひと目で伝わるバナーとして配置しています。</p>
         </div>
         <div class="service-grid">
-          <article class="service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.png');" aria-label="VIS AIを、コンタクトセンターの標準に。会話が、そのまま知識になる。">
+          <article class="service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.webp');">
             <div class="service-copy">
               <div class="service-copy-title">VIS</div>
-              <h3 class="service-copy-main">AIを、<br>コンタクトセンター<br>の<em>標準に。</em></h3>
+              <h2 class="service-copy-main">AIを、<br>コンタクトセンター<br>の<em>標準に。</em></h2>
               <p class="service-copy-sub">会話が、そのまま知識になる。</p>
             </div>
           </article>
-          <a class="service-banner-card service-copy-card quickcrm-copy" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--service-image: url('assets/service-banners/quickcrm-bg-clean.png');" aria-label="QuickCRM 応対品質と効率を、同時に底上げするCRM。">
+          <a class="service-banner-card service-copy-card quickcrm-copy" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--service-image: url('assets/service-banners/quickcrm-bg-clean.webp');">
             <div class="service-copy">
               <div class="service-copy-title">QuickCRM</div>
-              <h3 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h3>
+              <h2 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h2>
             </div>
           </a>
-          <div class="service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.png');" aria-label="Quick eDialer アイドルタイムを、成約に変える。必要なときだけ、クラウド従量で。">
+          <div class="service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.webp');">
             <div class="service-copy">
               <div class="service-copy-title">Quick eDialer</div>
-              <h3 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h3>
+              <h2 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h2>
               <p class="service-copy-sub">必要なときだけ、クラウド従量で。</p>
             </div>
           </div>
@@ -1841,46 +1839,46 @@
         </div>
         <div class="slider-viewport" data-carousel="applications">
           <div class="slider-track application-slider">
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/printdesigner.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp">
               <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/caller-sovereignty.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/caller-sovereignty.webp">
               <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/salon-operations.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/salon-operations.webp">
               <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/asset-building.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/asset-building.webp">
               <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/order-management.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/order-management.webp">
               <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/maintenance.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/maintenance.webp">
               <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/calling-operations.png');">
+            <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp">
               <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/printdesigner.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/caller-sovereignty.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/caller-sovereignty.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/salon-operations.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/salon-operations.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/asset-building.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/asset-building.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/order-management.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/order-management.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/maintenance.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/maintenance.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
             </article>
-            <article class="banner-card application-card" style="--banner-image: url('assets/service-banners/calling-operations.png');" aria-hidden="true">
+            <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp" aria-hidden="true">
               <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
             </article>
           </div>
@@ -2054,12 +2052,12 @@
         </p>
       </div>
       <div class="industry-grid">
-        <article class="industry-card"><div class="industry-body"><span>CONTACT CENTER</span><h3>コンタクトセンター運営</h3><p>顧客情報、応対履歴、対応結果を一元管理し、オペレーター業務を標準化。</p></div></article>
-        <article class="industry-card"><div class="industry-body"><span>OUTBOUND</span><h3>アウトバウンド業務</h3><p>コールリスト、架電結果、折返し予定をCRM上で管理し、追客漏れを防止。</p></div></article>
-        <article class="industry-card"><div class="industry-body"><span>SUPPORT</span><h3>カスタマーサポート</h3><p>問い合わせ履歴と顧客情報を共有し、担当者が変わっても対応品質を維持。</p></div></article>
-        <article class="industry-card"><div class="industry-body"><span>FINANCE</span><h3>金融・保険窓口</h3><p>本人確認、対応記録、次回アクションを残し、正確な顧客対応を支援。</p></div></article>
-        <article class="industry-card"><div class="industry-body"><span>RESERVATION</span><h3>予約・受付センター</h3><p>IVRや着信振分と連携し、混雑時の受付、折返し、履歴管理を効率化。</p></div></article>
-        <article class="industry-card"><div class="industry-body"><span>BPO</span><h3>BPO・業務受託</h3><p>複数案件の画面、リスト、対応結果を分けて管理し、運用報告をしやすく。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-01.webp"><div class="industry-body"><span>CONTACT CENTER</span><h3>コンタクトセンター運営</h3><p>顧客情報、応対履歴、対応結果を一元管理し、オペレーター業務を標準化。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-02.webp"><div class="industry-body"><span>OUTBOUND</span><h3>アウトバウンド業務</h3><p>コールリスト、架電結果、折返し予定をCRM上で管理し、追客漏れを防止。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-03.webp"><div class="industry-body"><span>SUPPORT</span><h3>カスタマーサポート</h3><p>問い合わせ履歴と顧客情報を共有し、担当者が変わっても対応品質を維持。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-04.webp"><div class="industry-body"><span>FINANCE</span><h3>金融・保険窓口</h3><p>本人確認、対応記録、次回アクションを残し、正確な顧客対応を支援。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-05.webp"><div class="industry-body"><span>RESERVATION</span><h3>予約・受付センター</h3><p>IVRや着信振分と連携し、混雑時の受付、折返し、履歴管理を効率化。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-06.webp"><div class="industry-body"><span>BPO</span><h3>BPO・業務受託</h3><p>複数案件の画面、リスト、対応結果を分けて管理し、運用報告をしやすく。</p></div></article>
       </div>
     </section>
 
@@ -2107,7 +2105,7 @@
             MITシステム研究所は、コンタクトセンター向けCRM、CTI、IVR、アウトバウンド支援など、電話業務に関わるシステムを企画・開発・提供しています。
             独自製品と個別要件への対応力を活かし、企業ごとの運用に合ったコンタクトセンター環境づくりを支援します。
           </p>
-          <div class="office-card" aria-label="新丸の内ビルディング外観"></div>
+          <div class="office-card" role="img" aria-label="新丸の内ビルディング外観" data-banner="assets/images/mitsys-office.webp"></div>
         </aside>
         <dl class="company-table">
           <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
@@ -2135,7 +2133,7 @@
       </div>
     </section>
 
-    <section class="cta" id="contact">
+    <section class="cta" id="contact" data-banner="assets/images/cta-band.webp">
       <div class="cta-inner">
         <div>
           <p class="eyebrow">Request / Demo / Consultation</p>
@@ -2166,6 +2164,45 @@
 
   <script>
     document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    /* ── ヒーロー2枚目以降の背景を遅延読み込み（LCP画像との競合を防ぐ） ── */
+    (function () {
+      var hydrate = function () {
+        document.querySelectorAll('.hero-slide[data-bg]').forEach(function (el) {
+          el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')";
+          el.removeAttribute('data-bg');
+        });
+      };
+      if (document.readyState === 'complete') {
+        hydrate();
+      } else {
+        window.addEventListener('load', function () { setTimeout(hydrate, 200); });
+      }
+    })();
+
+    /* ── 画面外バナー背景の遅延読み込み（初期ロードの回線占有を防ぎLCPを改善） ── */
+    (function () {
+      var load = function (el) {
+        el.style.setProperty('--banner-image', "url('" + el.getAttribute('data-banner') + "')");
+        el.removeAttribute('data-banner');
+      };
+      var start = function () {
+        var lazies = document.querySelectorAll('[data-banner]');
+        if (!lazies.length) return;
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { load(e.target); io.unobserve(e.target); }
+            });
+          }, { rootMargin: '500px 800px' });
+          lazies.forEach(function (el) { io.observe(el); });
+        } else {
+          lazies.forEach(load);
+        }
+      };
+      if (document.readyState === 'complete') { start(); }
+      else { window.addEventListener('load', start); }
+    })();
 
     /* ── News Pager ── */
     const NEWS = [
