@@ -65,9 +65,7 @@
 }
 </script>
 <link rel="preload" as="image" href="assets/images/marunouchi/hero-01.webp" fetchpriority="high" media="(min-width: 721px)">
-<link rel="preload" as="image" href="assets/service-banners/quickcrm-bg-clean.webp" fetchpriority="high" media="(max-width: 720px)">
-<link rel="preload" as="image" href="assets/service-banners/vis-ai-bg.webp" media="(max-width: 720px)">
-<link rel="preload" as="image" href="assets/service-banners/quick-edialer-success-bg.webp" media="(max-width: 720px)">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-mobile.webp" fetchpriority="high" media="(max-width: 720px)">
 <style>
   :root {
     --ink: #111827;
@@ -1560,9 +1558,14 @@
   }
 
   @media (max-width: 720px) {
-    /* スマホではヒーローの背景スライドショーを表示しない（重い暗いグラデ越しで視認性が低く、LCPを遅らせるため）。
-       ヒーローは .hero の濃色背景＋見出しテキストで成立させ、LCPをテキストにして高速化する。 */
+    /* スマホでは7枚の重いスライドショーは出さず、最適化した静止画1枚を背景に表示する。
+       単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、見た目の寂しさを解消する。 */
     .hero-slideshow { display: none; }
+    .hero {
+      background-image: url('assets/images/marunouchi/hero-mobile.webp');
+      background-size: cover;
+      background-position: center 28%;
+    }
     .nav { height: 68px; padding: 0 16px; }
     .brand-logo { width: 174px; }
     .brand-tagline { display: none; }
