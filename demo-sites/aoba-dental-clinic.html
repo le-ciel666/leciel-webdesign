@@ -5,14 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AOBA DENTAL CLINIC｜青葉台駅徒歩2分の歯科医院</title>
 <meta name="description" content="青葉台駅徒歩2分。予防歯科・小児歯科・矯正・審美治療まで、丁寧な説明と精密診断で家族の歯を守るAOBA DENTAL CLINICのデモサイトです。">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23087f84'/%3E%3Cpath d='M32 16c-7 0-12 4-12 11 0 9 4 21 7 21 2 0 2-6 5-6s3 6 5 6c3 0 7-12 7-21 0-7-5-11-12-11z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preload" as="image" fetchpriority="high" media="(max-width: 759px)" href="../assets/dental/hero-mobile.webp">
+<link rel="preload" as="image" fetchpriority="high" media="(min-width: 760px)" href="../assets/dental/hero.webp">
 <style>
   :root {
+    --font-jp: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+    --font-en: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --ink: #14303a;
     --ink-soft: #31515b;
-    --muted: #6d858c;
+    --muted: #566e74;
     --line: #d8e7e9;
     --paper: #ffffff;
     --mist: #f3faf9;
@@ -29,7 +31,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: var(--font-jp);
     color: var(--ink);
     background: var(--paper);
     font-size: 16px;
@@ -38,7 +40,7 @@
   }
   img { max-width: 100%; display: block; }
   a { color: inherit; }
-  .en { font-family: 'Inter', sans-serif; letter-spacing: 0; }
+  .en { font-family: var(--font-en); letter-spacing: 0; }
 
   .demo-ribbon {
     background: var(--navy);
@@ -484,7 +486,7 @@
     display: grid;
     place-items: center;
     background: var(--mist-deep);
-    color: var(--aqua-deep);
+    color: #066b6f;
     font-weight: 900;
   }
   .feature-row h3 {
@@ -542,6 +544,8 @@
     background: var(--navy);
     color: #fff;
   }
+  .case-band .label { color: #9fe8df; }
+  .case-band .section-head p { color: rgba(255,255,255,0.86); }
   .case-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -819,7 +823,7 @@
       bottom: 0;
       z-index: 60;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       background: #fff;
       border-top: 1px solid var(--line);
       box-shadow: 0 -14px 34px rgba(15,42,54,0.12);
@@ -832,6 +836,19 @@
       font-size: 13px;
     }
     footer { padding-bottom: 88px; }
+  }
+
+  @media (max-width: 759px) {
+    .hero {
+      background:
+        linear-gradient(180deg, rgba(243,250,249,0.95), rgba(243,250,249,0.84) 56%, #fff 100%),
+        url('../assets/dental/hero-mobile.webp') center top/cover no-repeat;
+    }
+    .cta {
+      background:
+        linear-gradient(90deg, rgba(15,42,54,0.92), rgba(15,42,54,0.74)),
+        url('../assets/dental/hero-mobile.webp') center/cover no-repeat;
+    }
   }
 </style>
 </head>
@@ -866,18 +883,17 @@
           <small>お電話でのご予約</small>
           <strong class="en">045-000-4182</strong>
         </a>
-        <a class="btn btn-primary" href="#reserve">WEB予約</a>
       </div>
     </div>
   </nav>
 
+  <main>
   <header class="hero">
     <div class="hero-content">
       <p class="hero-kicker">痛くなる前に通いたくなる歯科医院へ</p>
       <h1>家族の歯を、<br><span>10年先まで</span><br>美しく健康に。</h1>
       <p class="hero-lead">青葉台駅徒歩2分。CT・口腔内スキャナーによる精密診断と、わかりやすい治療計画で、むし歯治療から予防、矯正、審美治療まで丁寧に支えます。</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#reserve">空き枠を確認する</a>
         <a class="btn btn-line" href="#treatment">診療メニューを見る</a>
       </div>
       <div class="hero-meta">
@@ -962,7 +978,7 @@
     <div class="section-inner">
       <div class="feature-layout">
         <div class="feature-photo">
-          <img src="../assets/dental/consultation.webp" alt="デジタル診断を使った歯科カウンセリング">
+          <img src="../assets/dental/consultation.webp" alt="デジタル診断を使った歯科カウンセリング" width="1736" height="906" loading="lazy" decoding="async">
         </div>
         <div>
           <p class="label">FEATURE</p>
@@ -999,7 +1015,7 @@
     <div class="section-inner">
       <div class="doctor-layout">
         <div class="doctor-photo">
-          <img src="../assets/dental/doctor.webp" alt="AOBA DENTAL CLINIC 院長">
+          <img src="../assets/dental/doctor.webp" alt="AOBA DENTAL CLINIC 院長" width="1024" height="1536" loading="lazy" decoding="async">
         </div>
         <div class="doctor-copy">
           <p class="label">DOCTOR</p>
@@ -1109,13 +1125,13 @@
   <section class="cta">
     <div class="section-inner">
       <h2>歯の悩みを、相談しやすい場所から始めませんか。</h2>
-      <p>初診カウンセリング、クリーニング、矯正相談までWEB予約で空き枠を確認できます。</p>
+      <p>初診カウンセリング、クリーニング、矯正相談まで、お電話でお気軽にご相談ください。</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#reserve">WEB予約をする</a>
         <a class="btn btn-dark" href="tel:045-000-4182">045-000-4182</a>
       </div>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="footer-inner">
@@ -1126,7 +1142,6 @@
 
   <div class="mobile-cta" aria-label="スマートフォン固定予約導線">
     <a class="btn btn-line" href="tel:045-000-4182">電話する</a>
-    <a class="btn btn-primary" href="#reserve">WEB予約</a>
   </div>
 </body>
 </html>
