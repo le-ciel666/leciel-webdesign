@@ -6,3 +6,6 @@ _secrets.php
 
 # prime-networks は独立リポジトリで管理（GitHub: le-ciel666/prime-networks）
 mock-sites/prime-networks/
+
+# blueport は独立リポジトリで管理（GitHub: le-ciel666/blueport）
+mock-sites/blueport/
