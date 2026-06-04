@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PageSpeed Insightsで全項目100点を取る方法｜実際に達成した全手順を公開 | LE CIEL WEB DESIGN</title>
+<meta name="description" content="PageSpeed Insightsのパフォーマンス・ユーザー補助・おすすめの方法・SEOの4項目すべてで100点を取る方法を、実際に達成したサイトの構成をもとに具体的に解説。画像・フォント・JS・サーバー設定（.htaccess）まで、再現できる全手順を公開します。">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leciel-webdesign.com/blog/pagespeed-insights-100/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../favicon.svg">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="PageSpeed Insightsで全項目100点を取る方法｜実際に達成した全手順を公開">
+<meta property="og:description" content="パフォーマンス・ユーザー補助・おすすめの方法・SEOの4項目すべてで100点。実際に達成した構成をもとに、画像・フォント・JS・サーバー設定まで再現できる手順を公開します。">
+<meta property="og:url" content="https://leciel-webdesign.com/blog/pagespeed-insights-100/">
+<meta property="og:site_name" content="LE CIEL WEB DESIGN">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PageSpeed Insightsで全項目100点を取る方法">
+<meta name="twitter:description" content="4項目すべてで100点を取る全手順を、実際に達成した構成をもとに公開します。">
+<meta name="twitter:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<!-- 構造化データ: 記事 (BlogPosting / HowTo) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PageSpeed Insightsで全項目100点を取る方法｜実際に達成した全手順を公開",
+  "description": "PageSpeed Insightsの4項目すべてで100点を取る方法を、実際に達成したサイト構成をもとに、画像・フォント・JS・サーバー設定まで具体的に解説します。",
+  "image": "https://leciel-webdesign.com/assets/ogp.svg",
+  "datePublished": "2026-06-04",
+  "dateModified": "2026-06-04",
+  "author": { "@type": "Organization", "name": "LE CIEL WEB DESIGN", "url": "https://leciel-webdesign.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LE CIEL WEB DESIGN",
+    "logo": { "@type": "ImageObject", "url": "https://leciel-webdesign.com/assets/ogp.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leciel-webdesign.com/blog/pagespeed-insights-100/" }
+}
+</script>
+<!-- 構造化データ: パンくず (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://leciel-webdesign.com/" },
+    { "@type": "ListItem", "position": 2, "name": "お役立ちブログ", "item": "https://leciel-webdesign.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "PageSpeed Insightsで全項目100点を取る方法", "item": "https://leciel-webdesign.com/blog/pagespeed-insights-100/" }
+  ]
+}
+</script>
+<!-- 構造化データ: FAQ (FAQPage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "PageSpeed Insightsで100点を取ると検索順位は上がりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "スコアそのものが順位を直接決めるわけではありませんが、Core Web Vitals（表示速度・操作性・レイアウト安定性）はGoogleのランキング要因の一つです。表示が速く快適なサイトは離脱が減り、結果として評価やコンバージョンの向上につながります。100点は目的ではなく、快適なサイトの結果と捉えるのが正解です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "WordPressでも100点は取れますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "可能ですが、テーマやプラグインが多いほど難易度は上がります。不要なプラグインを削り、画像最適化・キャッシュ・遅延読み込みを徹底すれば高得点は狙えます。静的HTMLで作る場合に比べると、JavaScriptの肥大化に注意が必要です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "モバイルとパソコンで点数が違うのはなぜですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "PageSpeed Insightsのモバイル計測は、低速な回線と非力なCPUを想定して厳しめに採点されます。そのため一般にモバイルの方が点数が下がりやすく、100点を狙うならモバイル基準で最適化するのが鉄則です。" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../blog.css?v=20260604f">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <span class="logo-main">LE CIEL WEB DESIGN</span>
+        <span class="logo-sub">ル・シエルウェブデザイン</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">特長</a></li>
+      <li><a href="/#works">デモサイト</a></li>
+      <li><a href="/#pricing">料金</a></li>
+      <li><a href="/#profile">運営者情報</a></li>
+      <li><a href="/blog/">ブログ</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../">お役立ちブログ</a></li>
+      <li>PageSpeed Insightsで全項目100点を取る方法</li>
+    </ol>
+  </nav>
+
+  <!-- 記事ヘッダー -->
+  <header class="article-head">
+    <span class="article-cat">技術・SEO</span>
+    <h1 class="article-title">PageSpeed Insightsで全項目100点を取る方法｜実際に達成した全手順を公開</h1>
+    <div class="article-meta">
+      <span>公開日：2026年6月4日</span>
+      <span>カテゴリ：技術・SEO</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p class="lead">
+      PageSpeed Insightsで<strong>パフォーマンス・ユーザー補助・おすすめの方法・SEOの4項目すべてを100点</strong>にするのは、運任せではなく再現可能な技術です。
+      この記事は、当サイト（leciel-webdesign.com）のトップページを実際にモバイル全項目100点にしたときの構成をもとに、画像・フォント・JavaScript・サーバー設定まで、そのまま真似できる手順を公開します。
+    </p>
+
+    <figure class="ps-shot">
+      <img src="../assets/pagespeed-100.webp" width="1598" height="702"
+           alt="PageSpeed Insightsの計測結果。携帯電話（モバイル）でパフォーマンス・ユーザー補助・おすすめの方法・SEOがすべて100点">
+      <figcaption>実際の計測結果：モバイルでパフォーマンス・ユーザー補助・おすすめの方法・SEOの全項目100点</figcaption>
+    </figure>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">この記事でわかること</p>
+      <ol>
+        <li><a href="#basics">そもそもPageSpeed Insightsの「4項目」とは</a></li>
+        <li><a href="#measure">正しい測り方：Lighthouseでモバイル＆PC両方を測る</a></li>
+        <li><a href="#cwv">パフォーマンス100点の核心：Core Web Vitals</a></li>
+        <li><a href="#images">①画像を制す（最大の得点源）</a></li>
+        <li><a href="#fonts">②フォントの罠：日本語Webフォントは捨てる</a></li>
+        <li><a href="#js">③JavaScriptとサードパーティを遅らせる</a></li>
+        <li><a href="#server">④サーバー設定（.htaccess）で底上げ</a></li>
+        <li><a href="#a11y">ユーザー補助・おすすめの方法・SEOを100点にする</a></li>
+        <li><a href="#checklist">100点チェックリスト</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="basics">そもそもPageSpeed Insightsの「4項目」とは</h2>
+    <p>PageSpeed Insights（Lighthouse）は、ページを4つの観点で0〜100点で採点します。</p>
+    <ul>
+      <li><strong>パフォーマンス</strong>：表示速度・体感速度。最も難しく、最も差が出る</li>
+      <li><strong>ユーザー補助（Accessibility）</strong>：色のコントラスト、代替テキスト、ラベルなど</li>
+      <li><strong>おすすめの方法（Best Practices）</strong>：HTTPS、コンソールエラー、画像の縦横比など</li>
+      <li><strong>SEO</strong>：メタ情報、モバイル対応、クロール可否など</li>
+    </ul>
+    <div class="note">
+      <p class="note-title">大前提：モバイルで採点する</p>
+      <p>モバイル計測は低速回線・非力なCPUを想定して厳しく採点されます。<strong>モバイルで100点なら、PCはほぼ自動的に100点</strong>です。最初からモバイル基準で最適化しましょう。</p>
+    </div>
+
+    <h2 id="measure">正しい測り方：Lighthouseでモバイル＆PC両方を測る</h2>
+    <p>改善の前に「正しく測る」ことが重要です。ここを外すと“直したつもり”で終わります。</p>
+    <h3>公開版のPageSpeed Insightsだけに頼らない</h3>
+    <p>Web版の<a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>は手軽ですが、共有の利用枠の制限ですぐ計測できなくなることがあります。本格的に追い込むなら、同じエンジンである<strong>Lighthouse のコマンド版（CLI）</strong>をローカルに入れて測るのが確実です。100点未満のときは、点数の内訳（個別の監査項目）を見れば原因が具体的に分かります。</p>
+    <p class="code-label">Lighthouse CLI でモバイルを測る</p>
+    <pre><code>lighthouse "https://example.com/" \
+  --only-categories=performance,accessibility,best-practices,seo \
+  --form-factor=mobile --screenEmulation.mobile \
+  --output=html --output-path=/tmp/lh-mobile.html</code></pre>
+    <h3>モバイルとPC、両方で100点を目指す</h3>
+    <p>スコアは<strong>モバイルとデスクトップで別々</strong>に出ます。「全項目100点」とは、モバイル4項目＋デスクトップ4項目の<strong>計8スコアすべて</strong>が100という意味です。厳しいモバイルを基準に作れば、デスクトップ（<code>--preset=desktop</code>で計測）はほぼ自動的に100になります。</p>
+    <div class="note">
+      <p class="note-title">ローカル簡易サーバーの数値は鵜呑みにしない</p>
+      <p><code>python3 -m http.server</code>のような簡易サーバーは<strong>圧縮もキャッシュも返さない</strong>ため、本番より低く出ます。最終確認は必ず<strong>本番URL（圧縮・キャッシュが効く状態）</strong>で測り直しましょう。修正直後はPageSpeed側のキャッシュが古いことがあるので、数分待ってから再テストします（目安：LCP 2.5秒以内・CLS 0.1未満）。</p>
+    </div>
+
+    <h2 id="cwv">パフォーマンス100点の核心：Core Web Vitals</h2>
+    <p>パフォーマンス点は主に次の指標で決まります。意味を押さえると、何を直せばいいかが見えてきます。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>指標</th><th>意味</th><th>主な対策</th></tr></thead>
+        <tbody>
+          <tr><td>LCP</td><td>主役の画像・見出しが表示されるまで</td><td>画像最適化・preload・フォント非依存</td></tr>
+          <tr><td>CLS</td><td>表示中のガタつき（レイアウトずれ）</td><td>画像に幅高さ指定・aspect-ratio</td></tr>
+          <tr><td>TBT / INP</td><td>操作に反応するまでの待ち時間</td><td>JSを減らす・遅延読み込み</td></tr>
+          <tr><td>FCP / SI</td><td>最初の描画・全体の表示速度</td><td>CSSインライン化・圧縮・キャッシュ</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>ポイントは<strong>「最初の画面に必要なものだけを最速で出し、それ以外は後回しにする」</strong>こと。以下、具体的に何をやったかを順番に解説します。</p>
+
+    <h2 id="images">①画像を制す（最大の得点源）</h2>
+    <p>ほとんどのサイトで、表示を遅くしている最大の犯人は画像です。ここを正すだけで点数は劇的に上がります。</p>
+    <h3>次世代フォーマット（WebP / AVIF）に変換する</h3>
+    <p>JPEG・PNGはWebPへ変換するだけで、画質を保ったまま容量を3〜7割削減できます。当サイトでは全画像を自前でWebP化しています。</p>
+    <p class="code-label">macOS / Linux でまとめてWebP変換（cwebp）</p>
+    <pre><code># 通常の画像（高圧縮）
+cwebp -q 78 -m 6 -sharp_yuv hero.jpg -o hero.webp</code></pre>
+    <p><strong>主役（LCP）画像だけは品質優先</strong>で<code>-q 64〜68</code>程度に。下げすぎて主役画像がボケるとLCPの印象が悪くなり本末転倒です。また再圧縮を何度も繰り返すと劣化が累積するので、元画像から<strong>1回だけ</strong>変換します。</p>
+    <h3>表示サイズに合わせて縮小する（過剰な解像度を配信しない）</h3>
+    <p>「表示は600px幅なのに4000px幅の画像を配信」が典型的な失点。スマホ100点を狙うなら、実際の表示幅を少し上回る<strong>780px前後</strong>を目安に縮小すると、画質と容量のバランスが取れます。</p>
+    <h3>すべての画像に width / height を指定する（CLS対策）</h3>
+    <p>サイズ未指定だと、画像読み込み時にレイアウトがガタつき（CLS悪化）ます。<code>width</code><code>height</code>または<code>aspect-ratio</code>で表示枠を先に確保します。</p>
+    <pre><code>&lt;img src="hero.webp" width="1200" height="675" alt="店内の様子"&gt;</code></pre>
+    <h3>LCP画像はpreload、それ以外はlazyに</h3>
+    <p>ファーストビューの主役画像（LCP画像）は<code>preload</code>と<code>fetchpriority="high"</code>で最優先に。逆に画面外の画像は<code>loading="lazy"</code>＋<code>decoding="async"</code>で後回しにし、初期表示の帯域をLCPに譲ります。<strong>主役画像をlazyにするのは厳禁</strong>（かえってLCPが遅くなり減点されます）。</p>
+    <pre><code>&lt;!-- 主役画像は先読み（LCP短縮）。lazyにしない --&gt;
+&lt;link rel="preload" as="image" href="hero.webp" fetchpriority="high"&gt;
+&lt;img src="hero.webp" width="1200" height="675" fetchpriority="high" decoding="async" alt="店内の様子"&gt;
+
+&lt;!-- 画面外の画像は遅延 --&gt;
+&lt;img src="staff.webp" loading="lazy" decoding="async" width="800" height="600" alt="スタッフ"&gt;</code></pre>
+
+    <h2 id="fonts">②フォントの罠：日本語Webフォントは捨てる</h2>
+    <p>
+      ここが最大のハマりどころです。Google FontsのNoto Sans JPのような<strong>日本語Webフォントは数MB級で重く、LCPの足を引っ張ります</strong>（PageSpeedの計測環境ではこれが律速になり、どれだけ画像を最適化しても100点に届かないことがあります）。
+    </p>
+    <p>
+      解決策はシンプルで、<strong>Webフォントの読み込みをやめ、OS標準の日本語フォントスタックを使う</strong>こと。これでフォント由来の読み込みがゼロになり、即描画＝LCP最速になります。当サイトもこの方式です。
+    </p>
+    <p class="code-label">OS標準フォントスタック（Webフォント読込ゼロ）</p>
+    <pre><code>body {
+  font-family:
+    -apple-system, BlinkMacSystemFont,
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+}</code></pre>
+    <div class="note">
+      <p class="note-title">なぜWebフォントだけで100点が崩れるのか</p>
+      <p>Lighthouseのシミュレーションは、<code>font-display: swap</code>にしていても<strong>主役テキスト（LCP）が使うWebフォントのダウンロードを「表示の律速」として扱います</strong>。日本語フォントは1ファミリで2〜3MB級になるため、実際の表示は速くてもスコア上は何秒もかかった判定になり、100点が安定しません。</p>
+    </div>
+    <h3>ブランド書体をどうしても使いたいなら「初回操作時に読み込む」</h3>
+    <p>意匠上どうしても特定のフォントが必要な場合の決定版は、<strong>ページ表示時には読み込まず、ユーザーの最初の操作（スクロール・タップなど）が起きてから読み込む</strong>方法です。Lighthouseは操作しないので計測中はシステムフォントで描画＝100点。実ユーザーには初回スクロール等で本来の書体へ即差し替わるので、見た目はほぼ変わりません。</p>
+    <pre><code>&lt;noscript&gt;&lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=...&amp;display=swap"&gt;&lt;/noscript&gt;
+&lt;script&gt;(function(){var done=false;function load(){if(done)return;done=true;
+  var l=document.createElement('link');l.rel='stylesheet';
+  l.href='https://fonts.googleapis.com/css2?family=...&amp;display=swap';
+  document.head.appendChild(l);}
+  ['scroll','pointerdown','touchstart','keydown','wheel','click']
+    .forEach(function(e){window.addEventListener(e,load,{once:true,passive:true});});
+})();&lt;/script&gt;</code></pre>
+    <p>前提として、CSSのフォント指定の<strong>末尾に必ずシステムフォントを置く</strong>こと（読み込み前はそれで表示されます）。さらに堅くするなら、使う文字だけを抜き出した<strong>サブセットwoff2を自前ホスト</strong>します。</p>
+    <div class="note">
+      <p class="note-title">判断基準</p>
+      <p><strong>全項目100点が絶対要件なら、OS標準フォントスタックが最短かつ確実。</strong>ブランド書体が必須のときだけ、上記の「操作時読み込み」を使う——と切り分けるのがおすすめです。</p>
+    </div>
+
+    <h2 id="js">③JavaScriptとサードパーティを遅らせる</h2>
+    <p>計測タグ（Googleアナリティクスなど）や広告・チャットなどの外部スクリプトは、TBT・INPを悪化させる代表格です。<strong>計測は維持しつつ、初期表示を妨げないよう「最初の操作まで読み込みを遅らせる」</strong>のが有効です。</p>
+    <p>当サイトのGA4（gtag）はこの方式。スクロールやタップなど最初の操作が起きてから読み込むため、初期描画を一切邪魔しません。</p>
+    <p class="code-label">gtag.js を最初の操作まで遅延ロードする実装</p>
+    <pre><code>&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXX');
+  (function(){
+    function loadGtag(){
+      if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
+      document.head.appendChild(s);
+    }
+    ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+      window.addEventListener(ev, loadGtag, { once:true, passive:true });
+    });
+  })();
+&lt;/script&gt;</code></pre>
+    <div class="note">
+      <p class="note-title">「数秒後に読み込む」タイマー方式はNG</p>
+      <p>「読み込み後◯秒で実行」のような短いタイマーは、<strong>Lighthouseの計測時間内に発火してスクリプトがダウンロードされ、結局減点に戻ります</strong>。スクロール・タップなどの<strong>操作をきっかけにする</strong>のが確実です（Lighthouseは操作しないため計測中は一切読み込まれません）。一度も操作せず離脱する人の計測を取りこぼしたくない場合のみ、十分長い（4秒以上の）フォールバックを併用します。</p>
+    </div>
+    <p>そのほか、<strong>使っていないJS・jQuery・重いスライダーは思い切って削除</strong>。CSSアニメーションやネイティブ機能で代替できることは多いです。</p>
+
+    <h2 id="server">④サーバー設定（.htaccess）で底上げ</h2>
+    <p>配信側の設定も得点に効きます。Apache（ロリポップ等）なら<code>.htaccess</code>で<strong>圧縮（Brotli/gzip）</strong>と<strong>長期キャッシュ</strong>を有効化します。実際に当サイトで使っている設定がこちらです。</p>
+    <p class="code-label">.htaccess（圧縮 + キャッシュ）</p>
+    <pre><code># ---- 圧縮 ----
+&lt;IfModule mod_brotli.c&gt;
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml font/woff2
+&lt;/IfModule&gt;
+&lt;IfModule mod_deflate.c&gt;
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+&lt;/IfModule&gt;
+
+# ---- キャッシュ（静的資産は1年・HTMLは常に最新） ----
+&lt;IfModule mod_headers.c&gt;
+  &lt;FilesMatch "\.(woff2|webp|svg|png|jpe?g|ico|css|js)$"&gt;
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  &lt;/FilesMatch&gt;
+  &lt;FilesMatch "\.html$"&gt;
+    Header set Cache-Control "no-cache, must-revalidate"
+  &lt;/FilesMatch&gt;
+&lt;/IfModule&gt;</code></pre>
+    <p>あわせて<strong>HTTPS化（常時SSL）</strong>は必須。これは「おすすめの方法」スコアの前提でもあります。</p>
+    <div class="note">
+      <p class="note-title">未使用CSSの削減は“やりすぎない”</p>
+      <p>「未使用CSSの削減」「CSSの最小化」も加点要素ですが、<strong>インラインの大きな<code>&lt;style&gt;</code>を手で削ると表示崩れのリスクが高い</strong>です。画像・フォント・サーバー設定で既にパフォーマンスが100点なら、無理に触らないのも正しい判断です。</p>
+    </div>
+
+    <h2 id="a11y">ユーザー補助・おすすめの方法・SEOを100点にする</h2>
+    <p>87点前後で止まる原因はほぼ決まっています。どれも確実に直せます。</p>
+    <ul>
+      <li><strong>&lt;main&gt;ランドマークを置く</strong>：本文全体を<code>&lt;main&gt;</code>で囲む（<code>landmark-one-main</code>の定番減点。<code>&lt;/header&gt;</code>の直後に開き、<code>&lt;footer&gt;</code>の直前で閉じる）</li>
+      <li><strong>見出しレベルを飛ばさない</strong>：<code>h1→h2→h3</code>と連番に（<code>heading-order</code>。h2の次にh4はNG。見た目を変えずタグだけ直し、CSSがタグ名で当たっていればセレクタも一緒に直す）</li>
+      <li><strong>色のコントラスト比</strong>を確保（本文4.5:1以上）。薄いグレー文字は失点しがち</li>
+      <li>すべての<code>img</code>に内容を表す<code>alt</code>を付ける</li>
+      <li>フォームの入力欄は<code>&lt;label for&gt;</code>で必ずラベルを紐付ける（<strong><code>placeholder</code>はラベルの代わりになりません</strong>）。アイコンだけのボタンは<code>aria-label</code></li>
+      <li>テキストの無いリンク・ボタンを作らない（<code>link-name</code>/<code>button-name</code>）</li>
+      <li><code>&lt;html lang="ja"&gt;</code>を指定</li>
+    </ul>
+    <div class="note">
+      <p class="note-title">実体験の落とし穴：mix-blend-mode</p>
+      <p>ヘッダー全体に<code>mix-blend-mode: difference</code>を掛けると、ボタンの色まで反転してコントラスト判定に落ちることがあります。テキスト要素だけに適用するのが安全です。</p>
+    </div>
+    <h3>おすすめの方法（Best Practices）</h3>
+    <ul>
+      <li>HTTPSで配信し、混在コンテンツ（http://）を残さない</li>
+      <li>ブラウザのコンソールにエラーを出さない（原因は<code>network-requests</code>でステータス400以上を探すと特定できる）</li>
+      <li><strong>favicon.icoの404</strong>はコンソールエラーの定番。<code>&lt;head&gt;</code>に<code>&lt;link rel="icon"&gt;</code>を明示すると、ブラウザが<code>/favicon.ico</code>を取りに行かなくなりエラーが消える</li>
+      <li>画像は正しい縦横比（width/heightと実比率を一致）で表示</li>
+    </ul>
+    <p class="code-label">リクエストを増やさずfaviconを宣言（インラインSVG・404も同時に解消）</p>
+    <pre><code>&lt;link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3C/svg%3E"&gt;</code></pre>
+    <h3>SEO</h3>
+    <ul>
+      <li><code>title</code>と<code>meta name="description"</code>を各ページ固有に設定</li>
+      <li>モバイルで読めるフォントサイズ・タップ領域（モバイルフレンドリー）</li>
+      <li><code>robots.txt</code>でブロックしない、<code>canonical</code>を指定</li>
+      <li>構造化データ（JSON-LD）を入れるとリッチリザルトにも有利</li>
+    </ul>
+
+    <h2 id="checklist">100点チェックリスト</h2>
+    <ul class="checklist">
+      <li>画像はすべてWebP化し、表示サイズに合わせて縮小した</li>
+      <li>すべての画像に width / height（または aspect-ratio）を指定した</li>
+      <li>主役画像は preload＋fetchpriority、画面外は loading="lazy"＋decoding="async"（主役はlazyにしない）</li>
+      <li>日本語Webフォントをやめ、OS標準フォントスタックにした（残す場合は初回操作で読み込み）</li>
+      <li>計測タグ・外部スクリプトを初回操作まで遅延ロードした</li>
+      <li>未使用のJS / プラグインを削除した</li>
+      <li>.htaccessで圧縮（Brotli/gzip）と長期キャッシュを有効化した</li>
+      <li>HTTPS化し、コンソールエラーをゼロにした（faviconは &lt;link rel="icon"&gt; で明示）</li>
+      <li>&lt;main&gt;ランドマークを置き、見出しレベルを飛ばさず連番にした</li>
+      <li>本文コントラスト4.5:1以上・全画像にalt・フォーム入力にlabelを付けた</li>
+      <li>title / description / canonical / 構造化データを設定した</li>
+      <li>本番URLでモバイル・デスクトップ両方を測り、計8スコア100を確認した</li>
+    </ul>
+
+    <!-- 記事内CTA -->
+    <div class="cta-box">
+      <h3>「速くて100点」のホームページを、5万円〜で。</h3>
+      <p>当サイトと同じく、スマホ最適化・表示速度・SEOまで作り込んだサイトを制作します。<br>今のサイトの速度診断だけでも無料でお受けします。全国オンライン対応。</p>
+      <a href="../../#contact" class="btn-primary">無料で相談する</a>
+      <p class="cta-note">しつこい営業は一切いたしません</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 style="margin-top:0;">よくある質問</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>100点を取ると検索順位は上がりますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>スコアが直接順位を決めるわけではありませんが、Core Web Vitalsはランキング要因の一つです。速く快適なサイトは離脱が減り、評価やコンバージョンの向上につながります。100点は目的ではなく「快適なサイトの結果」と捉えるのが正解です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>WordPressでも100点は取れますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>可能ですが、テーマ・プラグインが多いほど難易度は上がります。不要なプラグインを削り、画像最適化・キャッシュ・遅延読み込みを徹底すれば高得点は狙えます。静的HTMLに比べJavaScriptの肥大化に注意が必要です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>モバイルとパソコンで点数が違うのはなぜですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>モバイル計測は低速回線・非力なCPUを想定して厳しく採点されます。モバイルの方が下がりやすいため、100点を狙うならモバイル基準で最適化するのが鉄則です。</p></div>
+      </div>
+    </section>
+
+    <h2 id="summary">まとめ</h2>
+    <p>
+      PageSpeed Insightsの全項目100点は、特別な裏技ではなく<strong>「正しく測る → 画像の最適化 → 日本語Webフォントを使わない → JSを遅らせる → サーバー設定で底上げ → 正しいHTML構造（&lt;main&gt;・見出し階層）」</strong>という地道な積み重ねで再現できます。後から最適化するより、<strong>最初から100点が取れる設計</strong>で作るのが結局いちばん早いです。
+      とくに日本語サイトでは<strong>フォントの扱いが勝負どころ</strong>。ここを誤ると、どれだけ画像を頑張っても100点には届きません。
+    </p>
+    <p>
+      速いサイトは、訪問者にとって快適なだけでなく、離脱を減らし<a href="../hp-shukyaku-dekinai-riyu/">集客の底上げ</a>にも直結します。制作の<a href="../hp-seisaku-hiyou-souba/">費用相場</a>とあわせて検討してみてください。
+      「自社サイトを速くしたい」「最初から100点のサイトを作りたい」方は、お気軽にご相談ください。
+    </p>
+
+  </article>
+
+  <!-- 関連記事 -->
+  <section class="related">
+    <h3 class="related-title">あわせて読みたい記事</h3>
+    <div class="related-grid">
+      <a href="../hp-shukyaku-dekinai-riyu/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">集客・改善</span>
+          <h4>ホームページで集客できない7つの理由と改善策</h4>
+        </div>
+      </a>
+      <a href="../hp-seisaku-hiyou-souba/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">費用・料金</span>
+          <h4>ホームページ制作の費用相場は？個人・店舗・法人別に解説</h4>
+        </div>
+      </a>
+      <a href="../" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">準備中</span>
+          <h4>スマホ対応ホームページがなぜ重要なのか</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-mark" aria-hidden="true"></span>
+    <div style="text-align:left;line-height:1.3;">
+      <p class="ft-main">LE CIEL WEB DESIGN</p>
+      <p class="ft-sub">ル・シエルウェブデザイン</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="/#features">特長</a>
+    <a href="/#works">デモサイト</a>
+    <a href="/#pricing">料金</a>
+    <a href="/#profile">運営者情報</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">お問い合わせ</a>
+  </div>
+  <p>© 2024 LE CIEL WEB DESIGN. All rights reserved.</p>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>

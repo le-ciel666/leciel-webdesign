@@ -29,6 +29,8 @@ jobs:
             _secrets.php
             _secrets.example.php
             ai_organization/**
+            # ブログの内部運用ドキュメント（SEO戦略メモ）は公開しない
+            blog/CONTENT-PLAN.md
             # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
             prime-networks/**
 
@@ -49,5 +51,7 @@ jobs:
             _secrets.php
             _secrets.example.php
             ai_organization/**
+            # ブログの内部運用ドキュメント（SEO戦略メモ）は公開しない
+            blog/CONTENT-PLAN.md
             # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
             prime-networks/**
