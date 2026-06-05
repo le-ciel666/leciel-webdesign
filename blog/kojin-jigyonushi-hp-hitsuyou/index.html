@@ -99,7 +99,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="../blog.css?v=20260605b">
+<link rel="stylesheet" href="../blog.css?v=20260605c">
 </head>
 <body>
 
@@ -298,10 +298,6 @@
         <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
         <span>コピー</span>
       </button>
-      <button class="share-btn share-native" type="button" data-share="native" style="display:none;" aria-label="その他の方法でシェア">
-        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
-        <span>シェア</span>
-      </button>
     </div>
   </div>
 
@@ -382,11 +378,6 @@
       if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(done); }
       else { var ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); done(); }
     });
-    var nativeBtn = document.querySelector('.share-native');
-    if (nativeBtn && navigator.share) {
-      nativeBtn.style.display = 'inline-flex';
-      nativeBtn.addEventListener('click', function(){ navigator.share({ title: title, url: url }).catch(function(){}); });
-    }
   })();
   document.querySelectorAll('.faq-q').forEach(function(btn){
     btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
