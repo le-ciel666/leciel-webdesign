@@ -51,7 +51,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="blog.css?v=20260605c">
+<link rel="stylesheet" href="blog.css?v=20260606a">
 </head>
 <body>
 
@@ -94,6 +94,46 @@
   <div class="post-list">
 
     <!-- 記事カード（公開済み） -->
+    <a href="seitai-sekkotsuin-homepage-tsukurikata/" class="post-card">
+      <div class="post-thumb"></div>
+      <div class="post-body">
+        <span class="post-cat">業種別</span>
+        <h2>整体院・接骨院のホームページの作り方｜予約が増える構成と必要ページ</h2>
+        <p class="excerpt">症状別の訴求、料金と施術内容の見せ方、口コミと実績、予約導線、地域＋症状のSEO・MEO、費用感まで解説します。</p>
+        <span class="post-date">2026年6月6日</span>
+      </div>
+    </a>
+
+    <a href="biyou-hifuka-clinic-homepage-tsukurikata/" class="post-card">
+      <div class="post-thumb"></div>
+      <div class="post-body">
+        <span class="post-cat">業種別</span>
+        <h2>美容皮膚科・クリニックのホームページの作り方｜集患につながる構成</h2>
+        <p class="excerpt">施術メニューと料金の見せ方、症例と医療広告ガイドライン、予約導線、世界観のデザイン、MEO連携、費用感まで解説します。</p>
+        <span class="post-date">2026年6月6日</span>
+      </div>
+    </a>
+
+    <a href="shigyou-zeirishi-homepage-tsukurikata/" class="post-card">
+      <div class="post-thumb"></div>
+      <div class="post-body">
+        <span class="post-cat">業種別</span>
+        <h2>税理士・士業のホームページの作り方｜相談・顧問契約につながる構成</h2>
+        <p class="excerpt">専門性と信頼の伝え方、対応業務・料金の見せ方、相談導線、地域＋業務のSEO、費用感まで解説します。</p>
+        <span class="post-date">2026年6月6日</span>
+      </div>
+    </a>
+
+    <a href="koumuten-kensetsu-homepage-tsukurikata/" class="post-card">
+      <div class="post-thumb"></div>
+      <div class="post-body">
+        <span class="post-cat">業種別</span>
+        <h2>工務店・建設業のホームページの作り方｜受注・採用につながる構成</h2>
+        <p class="excerpt">受注の決め手になる施工事例の見せ方、信頼を生む会社情報、問い合わせ・採用の導線、MEO連携、費用感まで解説します。</p>
+        <span class="post-date">2026年6月6日</span>
+      </div>
+    </a>
+
     <a href="shucchou-service-homepage-shukyaku/" class="post-card">
       <div class="post-thumb"></div>
       <div class="post-body">
@@ -217,6 +257,10 @@
     <!-- 今後の記事はこのカードを複製して追加 -->
 
   </div>
+
+  <!-- ページャー（1ページ10件・JSで自動生成） -->
+  <nav class="pager" id="pager" aria-label="ページ送り"></nav>
+
 </main>
 
 <!-- FOOTER -->
@@ -244,6 +288,52 @@
   var hamburger = document.getElementById('hamburger');
   var navLinks = document.getElementById('navLinks');
   if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+
+  // ===== 記事一覧ページャー（1ページ10件） =====
+  (function(){
+    var PER = 10;
+    var list = document.querySelector('.post-list');
+    var pager = document.getElementById('pager');
+    if (!list || !pager) return;
+    var cards = Array.prototype.slice.call(list.querySelectorAll('.post-card'));
+    var total = Math.ceil(cards.length / PER);
+
+    function getPage(){
+      var m = location.search.match(/[?&]page=(\d+)/);
+      var p = m ? parseInt(m[1], 10) : 1;
+      if (isNaN(p) || p < 1) p = 1;
+      if (p > total) p = total;
+      return p;
+    }
+    function link(p, label){ return '<a href="?page=' + p + '" data-p="' + p + '">' + label + '</a>'; }
+    function buildPager(p){
+      if (total <= 1) return '';
+      var h = '';
+      h += p > 1 ? link(p - 1, '‹ 前へ') : '<span class="page-num disabled">‹ 前へ</span>';
+      for (var i = 1; i <= total; i++){
+        h += (i === p) ? '<span class="page-num current">' + i + '</span>' : link(i, i);
+      }
+      h += p < total ? link(p + 1, '次へ ›') : '<span class="page-num disabled">次へ ›</span>';
+      return h;
+    }
+    function render(p){
+      cards.forEach(function(c, i){
+        c.style.display = (i >= (p - 1) * PER && i < p * PER) ? '' : 'none';
+      });
+      pager.innerHTML = buildPager(p);
+    }
+    pager.addEventListener('click', function(e){
+      var a = e.target.closest('a[data-p]');
+      if (!a) return;
+      e.preventDefault();
+      var p = parseInt(a.getAttribute('data-p'), 10);
+      history.pushState({ page: p }, '', p === 1 ? location.pathname : '?page=' + p);
+      render(p);
+      window.scrollTo({ top: Math.max(0, list.offsetTop - 90), behavior: 'smooth' });
+    });
+    window.addEventListener('popstate', function(){ render(getPage()); });
+    render(getPage());
+  })();
 </script>
 </body>
 </html>

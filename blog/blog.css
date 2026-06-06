@@ -285,7 +285,19 @@ body > nav {
 .blog-hero h1 { font-size: clamp(26px, 5vw, 36px); color: var(--navy); font-weight: 800; }
 .blog-hero p { color: var(--text); margin-top: 12px; font-size: 16px; }
 @media (prefers-reduced-motion: reduce) { .blog-hero { animation: none; } }
-.post-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding: 48px 0 80px; }
+.post-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding: 48px 0 32px; }
+
+/* ===== ページャー ===== */
+.pager { display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; padding: 8px 0 80px; }
+.pager a, .pager .page-num { min-width: 44px; height: 44px; padding: 0 12px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--border); border-radius: 12px; background: #fff; color: var(--text);
+  font-weight: 700; font-size: 15px; text-decoration: none; transition: transform .15s, box-shadow .15s, border-color .15s, color .15s; }
+.pager a:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(37,99,235,.15); }
+.pager .current { background: var(--gradient); color: #fff; border: 0; box-shadow: 0 6px 16px rgba(139,92,246,.3); }
+.pager .disabled { opacity: .4; pointer-events: none; }
+@media (max-width: 480px) {
+  .pager a, .pager .page-num { min-width: 40px; height: 40px; font-size: 14px; padding: 0 9px; }
+}
 .post-card { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none;
   color: var(--text); background: #fff; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
 .post-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(15,23,42,.1); }
