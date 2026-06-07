@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ホームページの表示速度を改善する方法｜遅いと損する理由とすぐできる対策 | LE CIEL WEB DESIGN</title>
+<meta name="description" content="ホームページの表示速度が遅いとなぜ損するのか、Core Web Vitalsの基礎から、画像・フォント・サーバー・コードでできる改善策まで解説。スマホでも速いサイトにするための実践的な手順をまとめました。">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leciel-webdesign.com/blog/hyoji-sokudo-kaizen/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../favicon.svg">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="ホームページの表示速度を改善する方法｜遅いと損する理由とすぐできる対策">
+<meta property="og:description" content="遅いと損する理由、Core Web Vitalsの基礎、画像・フォント・サーバーでできる改善策まで実践的に解説します。">
+<meta property="og:url" content="https://leciel-webdesign.com/blog/hyoji-sokudo-kaizen/">
+<meta property="og:site_name" content="LE CIEL WEB DESIGN">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ホームページの表示速度を改善する方法｜遅いと損する理由とすぐできる対策">
+<meta name="twitter:description" content="遅いと損する理由、Core Web Vitalsの基礎、画像・フォント・サーバーでできる改善策まで実践的に解説します。">
+<meta name="twitter:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<!-- 構造化データ: 記事 (BlogPosting) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ホームページの表示速度を改善する方法｜遅いと損する理由とすぐできる対策",
+  "description": "遅いと損する理由、Core Web Vitalsの基礎、画像・フォント・サーバーでできる改善策まで実践的に解説します。",
+  "image": "https://leciel-webdesign.com/assets/ogp.svg",
+  "datePublished": "2026-06-07",
+  "dateModified": "2026-06-07",
+  "author": { "@type": "Organization", "name": "LE CIEL WEB DESIGN", "url": "https://leciel-webdesign.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LE CIEL WEB DESIGN",
+    "logo": { "@type": "ImageObject", "url": "https://leciel-webdesign.com/assets/ogp.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leciel-webdesign.com/blog/hyoji-sokudo-kaizen/" }
+}
+</script>
+<!-- 構造化データ: パンくず (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://leciel-webdesign.com/" },
+    { "@type": "ListItem", "position": 2, "name": "お役立ちブログ", "item": "https://leciel-webdesign.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "ホームページの表示速度を改善する方法", "item": "https://leciel-webdesign.com/blog/hyoji-sokudo-kaizen/" }
+  ]
+}
+</script>
+<!-- 構造化データ: FAQ (FAQPage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ホームページは何秒以内に表示されるべきですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "明確な合格ラインはありませんが、主要コンテンツの表示（LCP）は2.5秒以内が目安です。一般に表示に3秒以上かかると離脱が大きく増えるとされます。まずはスマホでの表示を基準に、画像の最適化などで体感的に『すぐ開く』状態を目指すのが現実的です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "表示速度はSEO（検索順位）に影響しますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "影響します。Googleは表示速度を含むCore Web Vitalsをページ体験の評価要素にしています。ただし速度だけで順位が決まるわけではなく、コンテンツの質が前提です。『質の高い内容を、速く・スマホで快適に届ける』ことが、検索でも集客でも有利になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "表示速度の改善は自分でもできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "画像の圧縮・不要な機能の削除など、基本的な対策は自分でも可能です。一方で、フォントの読み込み制御・サーバー設定（キャッシュやgzip）・コードの最適化は専門知識が要る部分もあります。PageSpeed Insightsの提案を上から試し、難しい部分は制作者に依頼するのが効率的です。" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../blog.css?v=20260606a">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <span class="logo-main">LE CIEL WEB DESIGN</span>
+        <span class="logo-sub">ル・シエルウェブデザイン</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">特長</a></li>
+      <li><a href="/#works">デモサイト</a></li>
+      <li><a href="/#pricing">料金</a></li>
+      <li><a href="/#profile">運営者情報</a></li>
+      <li><a href="/blog/">ブログ</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../">お役立ちブログ</a></li>
+      <li>ホームページの表示速度を改善する方法</li>
+    </ol>
+  </nav>
+
+  <!-- 記事ヘッダー -->
+  <header class="article-head">
+    <span class="article-cat">技術・SEO</span>
+    <h1 class="article-title">ホームページの表示速度を改善する方法｜遅いと損する理由とすぐできる対策</h1>
+    <div class="article-meta">
+      <span>公開日：2026年6月7日</span>
+      <span>カテゴリ：技術・SEO</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p class="lead">
+      「ページがなかなか開かない」——その数秒で、せっかくの見込み客は去っていきます。表示速度は<strong>離脱率にも検索順位にも直結する</strong>、地味だけれど効果の大きい改善ポイントです。この記事では、表示が遅いと損する理由・速度の測り方・遅くなる原因・そして<strong>画像・フォント・サーバーなどでできる具体的な改善策</strong>まで、専門知識がなくてもわかるように解説します。
+    </p>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">この記事でわかること</p>
+      <ol>
+        <li><a href="#why">表示速度が遅いと損する理由</a></li>
+        <li><a href="#sokutei">まずは速度を測る</a></li>
+        <li><a href="#genin">サイトが遅くなる主な原因</a></li>
+        <li><a href="#taisaku">すぐできる改善策</a></li>
+        <li><a href="#cwv">Core Web Vitalsとは</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="why">表示速度が遅いと損する理由</h2>
+    <p>表示速度は、見た目には現れない“隠れた集客力”です。遅いだけで、次のような損失が積み重なります。</p>
+    <ul>
+      <li><strong>離脱が増える</strong>：表示に3秒以上かかると、多くの人が開く前に離れてしまいます</li>
+      <li><strong>検索順位が下がりやすい</strong>：Googleは表示速度（Core Web Vitals）を評価の一要素にしています</li>
+      <li><strong>問い合わせが減る</strong>：たどり着く前に離脱されれば、当然コンバージョンも下がります</li>
+      <li><strong>スマホで特に響く</strong>：通信環境が不安定なモバイルほど、速度差が体感に出ます</li>
+    </ul>
+    <p>「サイトはあるのに成果が出ない」原因の一つにもなります。あわせて<a href="../hp-shukyaku-dekinai-riyu/">ホームページで集客できない7つの理由</a>もご覧ください。</p>
+
+    <h2 id="sokutei">まずは速度を測る</h2>
+    <p>改善の前に、現状を数値で把握しましょう。代表的な無料ツールが<strong>Google PageSpeed Insights</strong>です。URLを入れるだけで、スマホ・PC別にスコアと改善提案が表示されます。</p>
+    <ul>
+      <li>まず<strong>スマホのスコア</strong>を確認する（モバイル基準で評価されるため）</li>
+      <li>「改善できる項目」に具体的な対策が出るので、上から潰していく</li>
+      <li>実際に全項目100点を取った実例は<a href="../pagespeed-insights-100/">PageSpeed Insightsで全項目100点を取る方法</a>で公開しています</li>
+    </ul>
+
+    <h2 id="genin">サイトが遅くなる主な原因</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>原因</th><th>内容</th></tr></thead>
+        <tbody>
+          <tr><td>画像が重い</td><td>サイズの大きい画像をそのまま使っている（最大の原因になりがち）</td></tr>
+          <tr><td>フォントの読み込み</td><td>Webフォントの読み込みで表示が待たされる</td></tr>
+          <tr><td>JavaScript・プラグイン過多</td><td>不要なスクリプトや過剰な機能が読み込みを重くする</td></tr>
+          <tr><td>サーバーが遅い</td><td>格安・低スペックなサーバーで応答が遅い</td></tr>
+          <tr><td>キャッシュ未設定</td><td>再訪問時も毎回すべて読み込んでいる</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="taisaku">すぐできる改善策</h2>
+    <h3>① 画像を最適化する（効果大）</h3>
+    <p>最も効果が出やすいのが画像です。<strong>WebPなどの軽い形式に変換</strong>し、表示サイズに合わせて圧縮します。これだけでスコアが大きく変わることも珍しくありません。</p>
+    <h3>② フォントを軽くする</h3>
+    <p>Webフォント（とくに日本語）は重くなりがちです。<strong>必要な書体だけに絞る</strong>、あるいは端末標準のフォントを使うと、表示が一気に速くなります。</p>
+    <h3>③ 不要なスクリプト・機能を減らす</h3>
+    <p>使っていないプラグインや外部スクリプトは削除・遅延読み込みに。<strong>計測タグなども初期表示を妨げないよう遅らせる</strong>のが定石です。</p>
+    <h3>④ サーバーとキャッシュを見直す</h3>
+    <p>応答の速いサーバーを選び、<strong>ブラウザキャッシュやgzip圧縮</strong>を有効にします。サーバーの選び方は<a href="../domain-server-erabikata/">独自ドメインとレンタルサーバーの選び方</a>で解説しています。</p>
+
+    <h2 id="cwv">Core Web Vitalsとは</h2>
+    <p>Googleがユーザー体験の指標として重視するのが<strong>Core Web Vitals</strong>です。次の3つを覚えておけば十分です。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>指標</th><th>意味</th><th>目安</th></tr></thead>
+        <tbody>
+          <tr><td>LCP</td><td>主要コンテンツが表示されるまでの時間</td><td>2.5秒以内</td></tr>
+          <tr><td>INP</td><td>操作への反応の速さ</td><td>200ミリ秒以内</td></tr>
+          <tr><td>CLS</td><td>表示中のレイアウトのズレにくさ</td><td>0.1以内</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>難しく見えますが、<strong>画像を軽くし、表示の安定したサイトを作れば自然と満たせます</strong>。数値はPageSpeed Insightsで確認できます。</p>
+
+    <!-- 記事内CTA -->
+    <div class="cta-box">
+      <h3>速くて成果の出るサイトを5万円〜で</h3>
+      <p>画像・フォント・サーバー設定まで最適化し、スマホでも速いサイトに仕上げます。自社サイトはPageSpeed Insightsで全項目100点を達成しています。<br>初回相談・お見積もりは無料、全国オンライン対応です。</p>
+      <a href="../../#works" class="btn-primary" style="margin-right:10px;">デモサイトを見る</a>
+      <a href="../../#contact" class="btn-primary">無料で相談する</a>
+      <p class="cta-note">しつこい営業は一切いたしません</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 style="margin-top:0;">よくある質問</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>ホームページは何秒以内に表示されるべきですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>明確な合格ラインはありませんが、主要コンテンツの表示（LCP）は2.5秒以内が目安です。一般に表示に3秒以上かかると離脱が大きく増えるとされます。まずはスマホでの表示を基準に、画像の最適化などで体感的に『すぐ開く』状態を目指すのが現実的です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>表示速度はSEO（検索順位）に影響しますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>影響します。Googleは表示速度を含むCore Web Vitalsをページ体験の評価要素にしています。ただし速度だけで順位が決まるわけではなく、コンテンツの質が前提です。『質の高い内容を、速く・スマホで快適に届ける』ことが、検索でも集客でも有利になります。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>表示速度の改善は自分でもできますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>画像の圧縮・不要な機能の削除など、基本的な対策は自分でも可能です。一方で、フォントの読み込み制御・サーバー設定（キャッシュやgzip）・コードの最適化は専門知識が要る部分もあります。PageSpeed Insightsの提案を上から試し、難しい部分は制作者に依頼するのが効率的です。</p></div>
+      </div>
+    </section>
+
+    <h2 id="summary">まとめ</h2>
+    <p>
+      表示速度は、<strong>離脱率・検索順位・問い合わせ数のすべてに効く</strong>地味で強力な改善ポイントです。まずはPageSpeed Insightsで測り、<strong>画像の最適化から</strong>着手するのが最短ルートです。
+    </p>
+    <p>
+      「サイトが重い気がする」「スマホで遅い」と感じたら、お気軽にご相談ください。速く・崩れず・成果につながるサイトに仕上げます。
+    </p>
+
+  </article>
+
+  <!-- SNSシェア -->
+  <div class="share-bar">
+    <span class="share-label">この記事をシェアする</span>
+    <div class="share-btns">
+      <a class="share-btn share-x" data-share="x" target="_blank" rel="noopener" aria-label="Xでポストする">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>ポスト</span>
+      </a>
+      <a class="share-btn share-line" data-share="line" target="_blank" rel="noopener" aria-label="LINEで送る">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.41 8.12.33.07.78.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56s5.86-3.45 7.99-5.91C21.49 13.61 22 12 22 10.23 22 5.69 17.52 2 12 2zM8.08 12.69H6.16c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.34h1.42c.28 0 .5.22.5.5s-.22.5-.5.5zm1.94-.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm4.62 0c0 .22-.14.41-.35.48a.51.51 0 0 1-.15.02c-.16 0-.31-.07-.4-.2l-1.97-2.68v2.38c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.21.14-.4.35-.47.21-.07.44 0 .56.18l1.97 2.68V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm3.18-2.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.92c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5h1.92c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42z"/></svg>
+        <span>LINE</span>
+      </a>
+      <a class="share-btn share-fb" data-share="facebook" target="_blank" rel="noopener" aria-label="Facebookでシェア">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <span>シェア</span>
+      </a>
+      <a class="share-btn share-hatena" data-share="hatena" target="_blank" rel="noopener" aria-label="はてなブックマークに追加">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="900" font-family="Arial, sans-serif" fill="currentColor">B!</text></svg>
+        <span>はてブ</span>
+      </a>
+      <button class="share-btn share-copy" type="button" data-share="copy" aria-label="リンクをコピー">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>コピー</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 関連記事 -->
+  <section class="related">
+    <h3 class="related-title">あわせて読みたい記事</h3>
+    <div class="related-grid">
+      <a href="../pagespeed-insights-100/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">技術・SEO</span>
+          <h4>PageSpeed Insightsで全項目100点を取る方法</h4>
+        </div>
+      </a>
+      <a href="../domain-server-erabikata/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">技術・SEO</span>
+          <h4>独自ドメインとレンタルサーバーの選び方｜初心者向けにやさしく解説</h4>
+        </div>
+      </a>
+      <a href="../hp-shukyaku-dekinai-riyu/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">集客・改善</span>
+          <h4>ホームページで集客できない7つの理由と改善策</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-mark" aria-hidden="true"></span>
+    <div style="text-align:left;line-height:1.3;">
+      <p class="ft-main">LE CIEL WEB DESIGN</p>
+      <p class="ft-sub">ル・シエルウェブデザイン</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="/#features">特長</a>
+    <a href="/#works">デモサイト</a>
+    <a href="/#pricing">料金</a>
+    <a href="/#profile">運営者情報</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">お問い合わせ</a>
+  </div>
+  <p>© 2024 LE CIEL WEB DESIGN. All rights reserved.</p>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  // ===== SNSシェア =====
+  (function(){
+    var url = location.href.split('#')[0];
+    var title = document.title;
+    var eu = encodeURIComponent(url), et = encodeURIComponent(title);
+    var links = {
+      x: 'https://twitter.com/intent/tweet?text=' + et + '&url=' + eu,
+      line: 'https://social-plugins.line.me/lineit/share?url=' + eu,
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + eu,
+      hatena: 'https://b.hatena.ne.jp/entry/s/' + url.replace(/^https?:\/\//, '')
+    };
+    document.querySelectorAll('.share-btn[data-share]').forEach(function(el){
+      var k = el.getAttribute('data-share');
+      if (links[k]) el.setAttribute('href', links[k]);
+    });
+    var copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) copyBtn.addEventListener('click', function(){
+      var label = copyBtn.querySelector('span'); var orig = label.textContent;
+      function done(){ copyBtn.classList.add('copied'); label.textContent = 'コピーしました'; setTimeout(function(){ copyBtn.classList.remove('copied'); label.textContent = orig; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(done); }
+      else { var ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); done(); }
+    });
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>

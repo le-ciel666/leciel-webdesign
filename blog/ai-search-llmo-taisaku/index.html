@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO | LE CIEL WEB DESIGN</title>
+<meta name="description" content="GoogleのAI Overviewや生成AIの回答に引用されるための、これからのSEO（LLMO/AIO対策）を解説。AIに選ばれるコンテンツの作り方、構造化データ、E-E-A-T、従来SEOとの関係まで、2026年時点の実践ポイントをまとめました。">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leciel-webdesign.com/blog/ai-search-llmo-taisaku/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../favicon.svg">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO">
+<meta property="og:description" content="AIに引用されるコンテンツの作り方、構造化データ、E-E-A-T、従来SEOとの関係まで2026年時点のポイントを解説します。">
+<meta property="og:url" content="https://leciel-webdesign.com/blog/ai-search-llmo-taisaku/">
+<meta property="og:site_name" content="LE CIEL WEB DESIGN">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO">
+<meta name="twitter:description" content="AIに引用されるコンテンツの作り方、構造化データ、E-E-A-T、従来SEOとの関係まで2026年時点のポイントを解説します。">
+<meta name="twitter:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<!-- 構造化データ: 記事 (BlogPosting) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO",
+  "description": "AIに引用されるコンテンツの作り方、構造化データ、E-E-A-T、従来SEOとの関係まで2026年時点のポイントを解説します。",
+  "image": "https://leciel-webdesign.com/assets/ogp.svg",
+  "datePublished": "2026-06-07",
+  "dateModified": "2026-06-07",
+  "author": { "@type": "Organization", "name": "LE CIEL WEB DESIGN", "url": "https://leciel-webdesign.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LE CIEL WEB DESIGN",
+    "logo": { "@type": "ImageObject", "url": "https://leciel-webdesign.com/assets/ogp.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leciel-webdesign.com/blog/ai-search-llmo-taisaku/" }
+}
+</script>
+<!-- 構造化データ: パンくず (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://leciel-webdesign.com/" },
+    { "@type": "ListItem", "position": 2, "name": "お役立ちブログ", "item": "https://leciel-webdesign.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "AI検索（AI Overview）に載るサイトの作り方", "item": "https://leciel-webdesign.com/blog/ai-search-llmo-taisaku/" }
+  ]
+}
+</script>
+<!-- 構造化データ: FAQ (FAQPage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "AI検索対策には、従来のSEOとは別の特別なことが必要ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "基本的には従来の“良いSEO”の延長線上にあります。AIの多くは検索インデックスを土台にしているため、検索で評価される質の高いサイトはAIにも引用されやすくなります。そのうえで、質問に結論から明確に答える・構造化データを入れる・一次情報やE-E-A-Tを高める、といった点を意識すると、AIの回答に取り上げられやすくなります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AI検索が広まると、従来のSEOは不要になりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "不要にはなりません。AI Overviewも引用元として実際のページを参照し、ユーザーが詳細を求めてサイトを訪れる流れは続いています。表示速度・スマホ対応・質の高いコンテンツといったSEOの基本は、AI時代でも引き続き重要です。むしろ基本ができているサイトほど、AIにも選ばれやすくなります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AI検索対策は何から始めればいいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "まずは従来のSEOの土台（表示速度・スマホ対応・検索意図に応えるコンテンツ）を整えることが先決です。そのうえで、各見出しに結論を明記する、FAQや記事の構造化データを入れる、運営者情報や実体験などの一次情報を充実させる、という順で進めると効果的です。特別な裏ワザより、正攻法の積み上げが最も効きます。" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../blog.css?v=20260606a">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <span class="logo-main">LE CIEL WEB DESIGN</span>
+        <span class="logo-sub">ル・シエルウェブデザイン</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">特長</a></li>
+      <li><a href="/#works">デモサイト</a></li>
+      <li><a href="/#pricing">料金</a></li>
+      <li><a href="/#profile">運営者情報</a></li>
+      <li><a href="/blog/">ブログ</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../">お役立ちブログ</a></li>
+      <li>AI検索（AI Overview）に載るサイトの作り方</li>
+    </ol>
+  </nav>
+
+  <!-- 記事ヘッダー -->
+  <header class="article-head">
+    <span class="article-cat">AI・最新</span>
+    <h1 class="article-title">AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO</h1>
+    <div class="article-meta">
+      <span>公開日：2026年6月7日</span>
+      <span>カテゴリ：AI・最新</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p class="lead">
+      検索の形が変わりつつあります。GoogleのAI Overview（検索結果上部のAI要約）や、ChatGPTなどの生成AIに直接質問する人が増え、<strong>「自分のサイトがAIの回答に引用されるか」</strong>が新しい集客の鍵になってきました。この記事では、2026年時点で<strong>AI検索に載る（引用される）ためのサイトの作り方</strong>を、従来のSEOとの関係も含めてわかりやすく解説します。
+    </p>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">この記事でわかること</p>
+      <ol>
+        <li><a href="#towa">AI検索（AI Overview）とは</a></li>
+        <li><a href="#naze">なぜ今、対策が必要なのか</a></li>
+        <li><a href="#how">AIに引用されるサイトの作り方</a></li>
+        <li><a href="#kankei">従来のSEOとの関係</a></li>
+        <li><a href="#chuui">注意点</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="towa">AI検索（AI Overview）とは</h2>
+    <p><strong>AI検索</strong>とは、検索結果や生成AIが<strong>質問に対して直接“答え”を返す</strong>仕組みのことです。代表的なものに次があります。</p>
+    <ul>
+      <li><strong>Google AI Overview</strong>：検索結果の上部に、AIがまとめた要約と引用元を表示</li>
+      <li><strong>ChatGPT・生成AIの回答</strong>：ユーザーの質問にAIが文章で回答し、参照元を示すことも</li>
+    </ul>
+    <p>これらに自社の情報が<strong>引用元として表示される</strong>ことが、新しい露出のチャンスになります。こうしたAI向けの最適化は<strong>LLMO（大規模言語モデル最適化）</strong>や<strong>AIO（AI最適化）</strong>と呼ばれ始めています。</p>
+
+    <h2 id="naze">なぜ今、対策が必要なのか</h2>
+    <ul>
+      <li><strong>ユーザーがAIの回答で完結する</strong>ことが増え、サイトへの流入の仕方が変わってきている</li>
+      <li>AIに<strong>引用されれば、第三者のお墨付き</strong>のように信頼を獲得できる</li>
+      <li>まだ取り組む事業者が少なく、<strong>早く始めるほど先行者利益</strong>が大きい</li>
+    </ul>
+    <p>とはいえ慌てる必要はありません。後述のとおり、<strong>やるべきことの多くは“良いSEO”と重なります</strong>。</p>
+
+    <h2 id="how">AIに引用されるサイトの作り方</h2>
+    <h3>① 質問に「結論から」明確に答える</h3>
+    <p>AIは、質問に対して<strong>端的で明確な答え</strong>を含むページを引用しやすい傾向があります。各見出しの直後に結論を書き、その後で理由や詳細を補う構成が有効です。</p>
+    <h3>② 構造化して書く（見出し・箇条書き・表）</h3>
+    <p>AIは内容を解析して引用します。<strong>見出し（h2/h3）・箇条書き・表</strong>で情報を整理すると、要点を抜き出してもらいやすくなります。</p>
+    <h3>③ 構造化データ（schema）を入れる</h3>
+    <p>FAQ・記事・パンくずなどの<strong>構造化データ</strong>は、AIや検索エンジンが内容を正確に理解する助けになります（当ブログも全記事に設定しています）。</p>
+    <h3>④ E-E-A-T（経験・専門性・権威性・信頼性）を高める</h3>
+    <p>AIは<strong>信頼できる情報源</strong>を優先します。運営者情報・実績・一次情報（実体験や具体的なデータ）を明示し、誰が書いた情報かを分かるようにしましょう。</p>
+    <h3>⑤ 独自の一次情報を載せる</h3>
+    <p>どこにでもある一般論より、<strong>自社の実例・実データ・体験</strong>が引用されやすく、差別化にもなります。たとえば当サイトの<a href="../pagespeed-insights-100/">PageSpeed全項目100点の実例</a>のような一次情報です。</p>
+
+    <h2 id="kankei">従来のSEOとの関係</h2>
+    <p>結論として、<strong>AI検索対策は従来SEOの“延長線上”</strong>にあります。AIも多くは検索インデックスを土台にしているため、<strong>検索で評価されるサイトはAIにも引用されやすい</strong>のです。</p>
+    <ul>
+      <li>表示速度・スマホ対応などの<strong>技術的な土台</strong>（<a href="../hyoji-sokudo-kaizen/">表示速度の改善</a>）</li>
+      <li>検索意図に応える<strong>質の高いコンテンツ</strong>（<a href="../chusho-kigyo-blog-seo/">ブログSEO入門</a>）</li>
+      <li>店舗なら<strong>Googleビジネスプロフィール</strong>（<a href="../google-business-profile-meo/">MEO対策</a>）</li>
+    </ul>
+    <p>これらの“良いSEO”を積み上げることが、そのままAI検索対策になります。</p>
+
+    <h2 id="chuui">注意点</h2>
+    <ul>
+      <li><strong>AIをだます小細工は逆効果</strong>：不自然なキーワード詰め込みなどは評価されません</li>
+      <li><strong>事実の正確さが最重要</strong>：誤情報は引用されず、信頼も失います</li>
+      <li><strong>変化が速い領域</strong>：仕様は今後も変わるため、最新情報を追いながら基本に忠実に</li>
+    </ul>
+    <p>※本記事は2026年時点の情報をもとにしています。AI検索の仕様は変化が早いため、最新の動向もあわせてご確認ください。</p>
+
+    <!-- 記事内CTA -->
+    <div class="cta-box">
+      <h3>これからの検索に強いサイトを作ります</h3>
+      <p>構造化データ・E-E-A-T・表示速度まで、AI検索にも従来SEOにも強い土台で制作します。自社ブログでも同じ設計を実践しています。<br>初回相談・お見積もりは無料、全国オンライン対応です。</p>
+      <a href="../../#works" class="btn-primary" style="margin-right:10px;">デモサイトを見る</a>
+      <a href="../../#contact" class="btn-primary">無料で相談する</a>
+      <p class="cta-note">しつこい営業は一切いたしません</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 style="margin-top:0;">よくある質問</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>AI検索対策には、従来のSEOとは別の特別なことが必要ですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>基本的には従来の“良いSEO”の延長線上にあります。AIの多くは検索インデックスを土台にしているため、検索で評価される質の高いサイトはAIにも引用されやすくなります。そのうえで、質問に結論から明確に答える・構造化データを入れる・一次情報やE-E-A-Tを高める、といった点を意識すると、AIの回答に取り上げられやすくなります。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>AI検索が広まると、従来のSEOは不要になりますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>不要にはなりません。AI Overviewも引用元として実際のページを参照し、ユーザーが詳細を求めてサイトを訪れる流れは続いています。表示速度・スマホ対応・質の高いコンテンツといったSEOの基本は、AI時代でも引き続き重要です。むしろ基本ができているサイトほど、AIにも選ばれやすくなります。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>AI検索対策は何から始めればいいですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>まずは従来のSEOの土台（表示速度・スマホ対応・検索意図に応えるコンテンツ）を整えることが先決です。そのうえで、各見出しに結論を明記する、FAQや記事の構造化データを入れる、運営者情報や実体験などの一次情報を充実させる、という順で進めると効果的です。特別な裏ワザより、正攻法の積み上げが最も効きます。</p></div>
+      </div>
+    </section>
+
+    <h2 id="summary">まとめ</h2>
+    <p>
+      AI検索（AI Overview・生成AI）に引用されるための対策は、<strong>「結論から明確に・構造化して・一次情報とE-E-A-Tで信頼を示す」</strong>こと。その多くは従来の“良いSEO”と重なります。
+    </p>
+    <p>
+      まだ取り組む事業者が少ない今こそ、先行して土台を整える好機です。これからの検索に強いサイトを作りたい方は、お気軽にご相談ください。
+    </p>
+
+  </article>
+
+  <!-- SNSシェア -->
+  <div class="share-bar">
+    <span class="share-label">この記事をシェアする</span>
+    <div class="share-btns">
+      <a class="share-btn share-x" data-share="x" target="_blank" rel="noopener" aria-label="Xでポストする">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>ポスト</span>
+      </a>
+      <a class="share-btn share-line" data-share="line" target="_blank" rel="noopener" aria-label="LINEで送る">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.41 8.12.33.07.78.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56s5.86-3.45 7.99-5.91C21.49 13.61 22 12 22 10.23 22 5.69 17.52 2 12 2zM8.08 12.69H6.16c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.34h1.42c.28 0 .5.22.5.5s-.22.5-.5.5zm1.94-.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm4.62 0c0 .22-.14.41-.35.48a.51.51 0 0 1-.15.02c-.16 0-.31-.07-.4-.2l-1.97-2.68v2.38c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.21.14-.4.35-.47.21-.07.44 0 .56.18l1.97 2.68V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm3.18-2.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.92c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5h1.92c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42z"/></svg>
+        <span>LINE</span>
+      </a>
+      <a class="share-btn share-fb" data-share="facebook" target="_blank" rel="noopener" aria-label="Facebookでシェア">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <span>シェア</span>
+      </a>
+      <a class="share-btn share-hatena" data-share="hatena" target="_blank" rel="noopener" aria-label="はてなブックマークに追加">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="900" font-family="Arial, sans-serif" fill="currentColor">B!</text></svg>
+        <span>はてブ</span>
+      </a>
+      <button class="share-btn share-copy" type="button" data-share="copy" aria-label="リンクをコピー">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>コピー</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 関連記事 -->
+  <section class="related">
+    <h3 class="related-title">あわせて読みたい記事</h3>
+    <div class="related-grid">
+      <a href="../chusho-kigyo-blog-seo/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">集客・改善</span>
+          <h4>小さな会社のためのブログ・コンテンツSEO入門｜書くべき記事と続け方</h4>
+        </div>
+      </a>
+      <a href="../pagespeed-insights-100/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">技術・SEO</span>
+          <h4>PageSpeed Insightsで全項目100点を取る方法</h4>
+        </div>
+      </a>
+      <a href="../google-business-profile-meo/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">集客・改善</span>
+          <h4>GoogleビジネスプロフィールでMEO対策｜店舗集客の完全ガイド</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-mark" aria-hidden="true"></span>
+    <div style="text-align:left;line-height:1.3;">
+      <p class="ft-main">LE CIEL WEB DESIGN</p>
+      <p class="ft-sub">ル・シエルウェブデザイン</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="/#features">特長</a>
+    <a href="/#works">デモサイト</a>
+    <a href="/#pricing">料金</a>
+    <a href="/#profile">運営者情報</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">お問い合わせ</a>
+  </div>
+  <p>© 2024 LE CIEL WEB DESIGN. All rights reserved.</p>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  // ===== SNSシェア =====
+  (function(){
+    var url = location.href.split('#')[0];
+    var title = document.title;
+    var eu = encodeURIComponent(url), et = encodeURIComponent(title);
+    var links = {
+      x: 'https://twitter.com/intent/tweet?text=' + et + '&url=' + eu,
+      line: 'https://social-plugins.line.me/lineit/share?url=' + eu,
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + eu,
+      hatena: 'https://b.hatena.ne.jp/entry/s/' + url.replace(/^https?:\/\//, '')
+    };
+    document.querySelectorAll('.share-btn[data-share]').forEach(function(el){
+      var k = el.getAttribute('data-share');
+      if (links[k]) el.setAttribute('href', links[k]);
+    });
+    var copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) copyBtn.addEventListener('click', function(){
+      var label = copyBtn.querySelector('span'); var orig = label.textContent;
+      function done(){ copyBtn.classList.add('copied'); label.textContent = 'コピーしました'; setTimeout(function(){ copyBtn.classList.remove('copied'); label.textContent = orig; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(done); }
+      else { var ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); done(); }
+    });
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>
