@@ -64,8 +64,8 @@
   ]
 }
 </script>
-<link rel="preload" as="image" href="assets/images/marunouchi/hero-01.webp" fetchpriority="high" media="(min-width: 721px)">
-<link rel="preload" as="image" href="assets/images/marunouchi/hero-mobile.webp" fetchpriority="high" media="(max-width: 720px)">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-01.webp" fetchpriority="high" media="(min-width: 721px)">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-02.webp" fetchpriority="high" media="(max-width: 720px)">
 <style>
   :root {
     --ink: #111827;
@@ -266,31 +266,33 @@
     opacity: 0;
     transform: scale(1);
     transform-origin: center;
-    animation: heroSlide 56s ease-in-out infinite;
+    animation: heroSlide 72s ease-in-out infinite;
     animation-fill-mode: both;
     will-change: opacity, transform;
   }
   .hero-slide:nth-child(1) { animation-name: heroSlideFirst; animation-delay: 0s; transform-origin: 52% 50%; }
-  .hero-slide:nth-child(2) { animation-delay: 8s; transform-origin: 45% 48%; }
-  .hero-slide:nth-child(3) { animation-delay: 16s; transform-origin: 55% 50%; }
-  .hero-slide:nth-child(4) { animation-delay: 24s; transform-origin: 46% 52%; }
-  .hero-slide:nth-child(5) { animation-delay: 32s; transform-origin: 52% 48%; }
-  .hero-slide:nth-child(6) { animation-delay: 40s; transform-origin: 50% 50%; }
-  .hero-slide:nth-child(7) { animation-delay: 48s; transform-origin: 52% 44%; }
+  .hero-slide:nth-child(2) { animation-delay: 8s; transform-origin: 58% 82%; background-position: 54% 82%; }
+  .hero-slide:nth-child(3) { animation-delay: 16s; transform-origin: 52% 50%; }
+  .hero-slide:nth-child(4) { animation-delay: 24s; transform-origin: 45% 48%; }
+  .hero-slide:nth-child(5) { animation-delay: 32s; transform-origin: 55% 50%; }
+  .hero-slide:nth-child(6) { animation-delay: 40s; transform-origin: 46% 52%; }
+  .hero-slide:nth-child(7) { animation-delay: 48s; transform-origin: 52% 48%; }
+  .hero-slide:nth-child(8) { animation-delay: 56s; transform-origin: 50% 50%; }
+  .hero-slide:nth-child(9) { animation-delay: 64s; transform-origin: 52% 44%; }
   @keyframes heroSlide {
     0% {
       opacity: 0;
       transform: scale(1);
     }
-    3.125% {
+    2.431% {
       opacity: 1;
       transform: scale(1.012);
     }
-    12.5% {
+    9.722% {
       opacity: 1;
       transform: scale(1.048);
     }
-    15.625%,
+    12.153%,
     100% {
       opacity: 0;
       transform: scale(1.055);
@@ -301,11 +303,11 @@
       opacity: 1;
       transform: scale(1);
     }
-    12.5% {
+    9.722% {
       opacity: 1;
       transform: scale(1.048);
     }
-    15.625%,
+    12.153%,
     100% {
       opacity: 0;
       transform: scale(1.055);
@@ -317,8 +319,8 @@
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(100deg, rgba(5, 10, 14, 0.78) 0%, rgba(5, 10, 14, 0.56) 44%, rgba(5, 10, 14, 0.18) 78%, rgba(5, 10, 14, 0.02) 100%),
-      linear-gradient(180deg, rgba(5, 10, 14, 0.12) 0%, rgba(5, 10, 14, 0.08) 44%, rgba(5, 10, 14, 0.32) 100%);
+      linear-gradient(100deg, rgba(5, 10, 14, 0.58) 0%, rgba(5, 10, 14, 0.38) 44%, rgba(5, 10, 14, 0.12) 78%, rgba(5, 10, 14, 0.01) 100%),
+      linear-gradient(180deg, rgba(5, 10, 14, 0.08) 0%, rgba(5, 10, 14, 0.05) 44%, rgba(5, 10, 14, 0.22) 100%);
     pointer-events: none;
   }
   .hero-inner {
@@ -326,7 +328,7 @@
     z-index: 2;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 82px 24px 92px;
+    padding: 62px 24px 68px;
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-slideshow { display: none; }
@@ -357,6 +359,7 @@
     margin-bottom: 34px;
     font-weight: 900;
     text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    overflow-wrap: anywhere;
   }
   .hero-title-line {
     display: block;
@@ -386,10 +389,14 @@
     margin-bottom: 0;
     font-weight: 700;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+    overflow-wrap: anywhere;
   }
   .hero-lead + .hero-lead {
     /* 段落間も行内と同じ行間に揃える（line-heightのみで均一化） */
     margin-top: 0;
+  }
+  .sp-break {
+    display: none;
   }
   .hero-actions {
     display: flex;
@@ -490,9 +497,9 @@
   }
   .slider-track {
     display: flex;
-    gap: 22px;
+    gap: 18px;
     width: max-content;
-    padding: 0 7vw;
+    padding: 0 24px 0 0;
     animation: none;
     transform: translate3d(0, 0, 0);
     will-change: transform;
@@ -500,10 +507,10 @@
   }
   .banner-card {
     position: relative;
-    flex: 0 0 86vw;
-    min-height: 460px;
+    flex: 0 0 clamp(420px, 30vw, 560px);
+    min-height: 286px;
     overflow: hidden;
-    border-radius: 14px;
+    border-radius: 12px;
     color: #fff;
     background: #fff;
     box-shadow: 0 22px 54px rgba(17, 24, 39, 0.12);
@@ -512,8 +519,8 @@
     user-select: none;
   }
   .application-card {
-    flex-basis: 82vw;
-    min-height: 390px;
+    flex-basis: clamp(420px, 30vw, 560px);
+    min-height: 286px;
   }
   .banner-card::before,
   .banner-card::after {
@@ -538,22 +545,14 @@
     position: relative;
     z-index: 1;
     min-height: inherit;
-    width: min(620px, 62%);
-    padding: 52px;
+    width: min(420px, 78%);
+    padding: 34px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
   }
   .slider-track.service-slider {
-    animation-duration: 28s;
-  }
-  .slider-track.application-slider {
     animation-duration: 58s;
-  }
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: 100%;
   }
   .service-banner-card {
     display: block;
@@ -562,12 +561,6 @@
     color: inherit;
     background: #fff;
     text-decoration: none;
-  }
-  /* PC（横並び）でのみ横長バナー比率を適用。スマホは内容に応じた高さにして文章が切れないようにする */
-  @media (min-width: 721px) {
-    .service-banner-card {
-      aspect-ratio: 5084 / 2460;
-    }
   }
   .service-banner-card img {
     display: block;
@@ -591,22 +584,22 @@
     position: absolute;
     z-index: 1;
     left: 7%;
-    top: 26%;
-    width: 58%;
+    top: 22%;
+    width: 66%;
     color: #091332;
   }
   .service-copy-title {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     color: var(--green);
     font-family: var(--font-sans);
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
   }
   .service-copy-main {
     font-family: var(--font-sans);
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 900;
     line-height: 1.24;
     letter-spacing: 0;
@@ -622,9 +615,9 @@
     background-clip: text;
   }
   .service-copy-sub {
-    margin-top: 12px;
+    margin-top: 10px;
     color: #3f4a68;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.55;
   }
@@ -639,8 +632,8 @@
     color: #d99a20;
   }
   .application-card .banner-content {
-    width: min(540px, 62%);
-    padding: 46px;
+    width: min(400px, 78%);
+    padding: 34px;
   }
   .banner-kicker {
     font-family: var(--font-mono);
@@ -653,14 +646,14 @@
   }
   .banner-content h3 {
     font-family: var(--font-sans);
-    font-size: clamp(36px, 4.2vw, 62px);
+    font-size: clamp(30px, 3vw, 42px);
     line-height: 1.16;
     letter-spacing: 0.01em;
     margin-bottom: 14px;
     text-shadow: 0 4px 18px rgba(0, 0, 0, 0.48);
   }
   .application-card .banner-content h3 {
-    font-size: clamp(32px, 3.4vw, 48px);
+    font-size: clamp(28px, 2.8vw, 38px);
   }
   .banner-content p {
     color: #fff;
@@ -1558,13 +1551,13 @@
   }
 
   @media (max-width: 720px) {
-    /* スマホでは7枚の重いスライドショーは出さず、最適化した静止画1枚を背景に表示する。
+    /* スマホでは重いスライドショーは出さず、縦向きの静止画1枚を背景に表示する。
        単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、見た目の寂しさを解消する。 */
     .hero-slideshow { display: none; }
     .hero {
-      background-image: url('assets/images/marunouchi/hero-mobile.webp');
+      background-image: url('assets/images/marunouchi/hero-new-02.webp');
       background-size: cover;
-      background-position: center 28%;
+      background-position: 56% 68%;
     }
     .nav { height: 68px; padding: 0 16px; }
     .brand-logo { width: 174px; }
@@ -1573,12 +1566,14 @@
     .hero-inner {
       padding: 40px 16px 56px;
     }
-    .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
-    .hero-lead { font-size: 15px; line-height: 1.75; }
+    .hero h1 { font-size: 25px; line-height: 1.24; margin-bottom: 20px; }
+    .hero-lead { font-size: 14px; line-height: 1.75; word-break: keep-all; }
+    .hero-lead br,
+    .hero-lead .sp-break { display: block; }
     .hero-lead + .hero-lead { margin-top: 0; }
     /* スマホでは各セクションのタイトルが大きすぎて縦幅を取るため縮小 */
     h2 { font-size: 22px; line-height: 1.4; }
-    .challenge-message h2 { font-size: 20px; line-height: 1.45; }
+    .challenge-message h2 { font-size: 20px; line-height: 1.45; overflow-wrap: anywhere; }
     .company-card h2 { font-size: 22px; line-height: 1.4; }
     .label { margin-bottom: 8px; }
     /* スマホでは1カラム化で縦に効くgapが大きすぎるため詰める */
@@ -1600,19 +1595,8 @@
       animation: none;
       width: max-content;
     }
-    /* Gridのままだとカードの高さが内容に追従せず文章が切れる（Safari）。
-       Flex縦並びにして高さを内容に合わせる。orderでの並べ替えも有効。 */
-    .service-grid {
-      display: flex;
-      flex-direction: column;
-    }
-    /* スマホでは QuickCRM → Quick eDialer → VIS の順に表示（VISを一番下） */
-    .service-grid .quickcrm-copy { order: 1; }
-    .service-grid .edialer-copy { order: 2; }
-    .service-grid .vis-copy { order: 3; }
-    /* スマホはテキスト量に応じて高さが伸びる（PCのみ比率指定）。最低限の高さだけ確保 */
     .service-banner-card {
-      min-height: 188px;
+      min-height: 280px;
     }
     .service-copy {
       position: relative;
@@ -1620,8 +1604,8 @@
       left: auto;
       top: auto;
       width: auto;
-      max-width: 74%;
-      padding: 22px 16px 24px;
+      max-width: 76%;
+      padding: 28px 20px;
     }
     .service-copy-title {
       margin-bottom: 10px;
@@ -1668,10 +1652,6 @@
       flex-basis: 88vw;
       min-height: 280px;
       border-radius: 10px;
-    }
-    .service-copy {
-      top: 24%;
-      width: 60%;
     }
     .service-copy-title {
       margin-bottom: 14px;
@@ -1776,7 +1756,9 @@
   <main id="top">
     <section class="hero">
       <div class="hero-slideshow" aria-hidden="true">
-        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-01.webp');"></span>
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-new-01.webp');"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-new-02.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-01.webp"></span>
         <span class="hero-slide" data-bg="assets/images/marunouchi/hero-02.webp"></span>
         <span class="hero-slide" data-bg="assets/images/marunouchi/hero-03.webp"></span>
         <span class="hero-slide" data-bg="assets/images/marunouchi/hero-04.webp"></span>
@@ -1786,62 +1768,43 @@
       </div>
       <div class="hero-inner">
         <h1>
-          <span class="hero-title-line">コンタクトセンターの</span>
-          <span class="hero-title-line flow">
-            <span class="highlight hero-title-chunk">「やりたい」</span>
-            <span class="hero-title-chunk">を叶える</span>
-            <span class="hero-title-chunk">システムを、</span>
-            <span class="hero-title-chunk">これからも</span>
-          </span>
+          <span class="hero-title-line">業務の可能性を、もっと自由に。</span>
         </h1>
-        <p class="hero-lead">CRMの専門メーカーがPBX機能を組み込み、トータルソリューションを提供します。</p>
-        <p class="hero-lead">アウトバウンド機能、プレディクティブ機能、インバウンド機能、音声認識付き音声応答機能、通話録音のすべてが有機的に結合され、AIソリューションへの進化を実現していきます。</p>
+        <p class="hero-lead">お客様の思いを形にするだけではありません。<br>「できない」と諦めていたことを<br class="sp-break">「思いつかなかった」新しい方法で。<br>誰でも使えるオンリーワンのシステムで<br class="sp-break">成長を支え続けます。</p>
       </div>
     </section>
 
-    <section class="banner-showcase" aria-label="主要サービス">
+    <section class="banner-showcase" aria-label="サービスと利用可能なアプリケーション">
       <div class="banner-shell">
         <div class="banner-heading compact">
           <div>
             <p class="label">Service Lineup</p>
-            <h2>コンタクトセンター運用を支える、3つの中核サービス。</h2>
+            <h2>コンタクトセンター運用を支えるサービスとアプリケーション。</h2>
           </div>
-          <p class="lead">QuickCRMを中心に、VIS、Quick eDialerまでを横断して紹介。各サービスの役割がひと目で伝わるバナーとして配置しています。</p>
+          <p class="lead">QuickCRM、VIS、Quick eDialer、各種アプリケーションを同じバナーサイズで横断して紹介します。</p>
         </div>
-        <div class="service-grid">
-          <article class="service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.webp');">
-            <div class="service-copy">
-              <div class="service-copy-title">VIS</div>
-              <h2 class="service-copy-main">AIを、<br>コンタクトセンター<br>の<em>標準に。</em></h2>
-              <p class="service-copy-sub">会話が、そのまま知識になる。</p>
-            </div>
-          </article>
-          <a class="service-banner-card service-copy-card quickcrm-copy" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--service-image: url('assets/service-banners/quickcrm-bg-clean.webp');">
-            <div class="service-copy">
-              <div class="service-copy-title">QuickCRM</div>
-              <h2 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h2>
-            </div>
-          </a>
-          <div class="service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.webp');">
-            <div class="service-copy">
-              <div class="service-copy-title">Quick eDialer</div>
-              <h2 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h2>
-              <p class="service-copy-sub">必要なときだけ、クラウド従量で。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="banner-showcase" aria-label="利用可能なアプリケーション">
-      <div class="banner-shell">
-        <div class="banner-heading centered">
-          <div>
-            <h2>利用可能なアプリケーション</h2>
-          </div>
-        </div>
-        <div class="slider-viewport" data-carousel="applications">
-          <div class="slider-track application-slider">
+        <div class="slider-viewport" data-carousel="services">
+          <div class="slider-track service-slider">
+            <a class="banner-card service-banner-card service-copy-card quickcrm-copy" href="https://leciel-webdesign.com/mock-sites/mitsys-renewal/quickcrm-renewal/" target="_blank" rel="noopener" style="--service-image: url('assets/service-banners/quickcrm-bg-clean.webp');">
+              <div class="service-copy">
+                <div class="service-copy-title">QuickCRM</div>
+                <h2 class="service-copy-main">応対品質と効率を、<br><span class="tone-rise">同時に底上げする</span>CRM。</h2>
+              </div>
+            </a>
+            <article class="banner-card service-banner-card service-copy-card vis-copy" style="--service-image: url('assets/service-banners/vis-ai-bg.webp');">
+              <div class="service-copy">
+                <div class="service-copy-title">VIS</div>
+                <h2 class="service-copy-main">AIを、<br>コンタクトセンター<br>の<em>標準に。</em></h2>
+                <p class="service-copy-sub">会話が、そのまま知識になる。</p>
+              </div>
+            </article>
+            <article class="banner-card service-banner-card service-copy-card edialer-copy" style="--service-image: url('assets/service-banners/quick-edialer-success-bg.webp');">
+              <div class="service-copy">
+                <div class="service-copy-title">Quick eDialer</div>
+                <h2 class="service-copy-main">アイドルタイムを、<br><em>成約に変える。</em></h2>
+                <p class="service-copy-sub">必要なときだけ、クラウド従量で。</p>
+              </div>
+            </article>
             <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp">
               <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
             </article>
@@ -1863,33 +1826,12 @@
             <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp">
               <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
             </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Document</div><h3>PrintDesigner</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/caller-sovereignty.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/salon-operations.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/asset-building.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/order-management.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/maintenance.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
-            </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp" aria-hidden="true">
-              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
-            </article>
           </div>
         </div>
-        <div class="slider-controls" aria-label="利用可能なアプリケーションスライド操作">
-          <button class="slider-btn" type="button" data-carousel-prev="applications" aria-label="前のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
-          <div class="slider-dots" data-carousel-dots="applications" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <button class="slider-btn" type="button" data-carousel-next="applications" aria-label="次のアプリケーションを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
+        <div class="slider-controls" aria-label="サービスとアプリケーションスライド操作">
+          <button class="slider-btn" type="button" data-carousel-prev="services" aria-label="前のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <div class="slider-dots" data-carousel-dots="services" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <button class="slider-btn" type="button" data-carousel-next="services" aria-label="次のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
         </div>
       </div>
     </section>
@@ -2332,6 +2274,13 @@
       const leadingClone = cards[cards.length - 1].cloneNode(true);
       leadingClone.setAttribute('aria-hidden', 'true');
       track.insertBefore(leadingClone, track.firstElementChild);
+      const trailingClones = document.createDocumentFragment();
+      cards.forEach(function (card) {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        trailingClones.appendChild(clone);
+      });
+      track.appendChild(trailingClones);
 
       const prev = document.querySelector(`[data-carousel-prev="${name}"]`);
       const next = document.querySelector(`[data-carousel-next="${name}"]`);
@@ -2395,7 +2344,7 @@
 
       const restart = () => {
         window.clearInterval(autoTimer);
-        autoTimer = window.setInterval(() => moveTo(visualIndex + 1), name === 'service' ? 4200 : 3600);
+        autoTimer = window.setInterval(() => moveTo(visualIndex + 1), name === 'services' ? 4200 : 3600);
       };
 
       prev?.addEventListener('click', () => {
