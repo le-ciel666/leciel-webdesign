@@ -1590,13 +1590,17 @@
     .slider-viewport {
       overflow: hidden;
       border-radius: 0;
+      box-sizing: border-box;
+      padding: 0 12px;
     }
     .slider-track {
       animation: none;
       width: max-content;
+      gap: 12px;
+      padding: 0;
     }
     .service-banner-card {
-      min-height: 280px;
+      min-height: 0;
     }
     .service-copy {
       position: relative;
@@ -1649,9 +1653,29 @@
     }
     .banner-card,
     .application-card {
-      flex-basis: 88vw;
-      min-height: 280px;
+      flex: 0 0 calc(100vw - 24px);
+      width: calc(100vw - 24px);
+      max-width: calc(100vw - 24px);
+      aspect-ratio: 1200 / 583;
+      min-height: 0;
       border-radius: 10px;
+    }
+    .banner-card::before {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      transform: none;
+    }
+    .service-copy-card {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .service-copy-card::before {
+      display: none;
+    }
+    .application-card::before {
+      background-size: cover;
     }
     .service-copy-title {
       margin-bottom: 14px;
@@ -1665,7 +1689,7 @@
       line-height: 1.45;
     }
     .application-card {
-      min-height: 232px;
+      min-height: 0;
     }
     .banner-content,
     .application-card .banner-content {
@@ -2270,6 +2294,13 @@
       const track = viewport.querySelector('.slider-track');
       const cards = Array.from(track?.querySelectorAll('.banner-card:not([aria-hidden="true"])') || []);
       if (!track || cards.length === 0) return;
+
+      cards.forEach((card) => {
+        const banner = card.getAttribute('data-banner');
+        if (!banner) return;
+        card.style.setProperty('--banner-image', "url('" + banner + "')");
+        card.removeAttribute('data-banner');
+      });
 
       const leadingClone = cards[cards.length - 1].cloneNode(true);
       leadingClone.setAttribute('aria-hidden', 'true');
