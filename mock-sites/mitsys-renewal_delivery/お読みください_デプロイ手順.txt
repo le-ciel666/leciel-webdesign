@@ -14,10 +14,8 @@
    ├─ お読みください_デプロイ手順.txt   ← このファイル（※アップロード不要）
    └─ site/                              ← この「中身」を公開ディレクトリへ
         ├─ index.html                    … トップページ
-        ├─ contact/                      … お問い合わせ
-        ├─ download/                     … 資料請求／資料ダウンロード
         ├─ privacy/                      … 個人情報の取り扱いについて
-        ├─ quickcrm-renewal/             … QuickCRM 製品サイト
+        ├─ quickcrm-renewal/             … QuickCRM 製品サイト（問い合わせ・資料請求含む）
         └─ assets/                       … 画像・ロゴ・PDF など
 
   ※「お読みください_デプロイ手順.txt」は社内向けの説明書です。
@@ -67,9 +65,7 @@
      送信内容を受信できるよう、サーバー側の送信処理（例: PHPでのメール送信、
      フォーム送信サービスの利用など）を実装し、各フォームの送信先を設定してください。
 
-  ▼ 対象フォーム（4件）
-     ・/contact/                      （お問い合わせ）
-     ・/download/                     （資料請求）
+  ▼ 対象フォーム（2件）
      ・/quickcrm-renewal/contact/     （QuickCRM お問い合わせ）
      ・/quickcrm-renewal/download/    （QuickCRM 資料請求）
 
