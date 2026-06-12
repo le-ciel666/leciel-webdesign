@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法 | LE CIEL WEB DESIGN</title>
+<meta name="description" content="構造化データ（schema.org / JSON-LD）とは何かと、FAQPage・BlogPosting・BreadcrumbList・LocalBusinessの具体的な入れ方を、コピペできるコード例つきで初心者向けに解説。設置場所・検証方法・よくある失敗までまとめました。">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leciel-webdesign.com/blog/kouzouka-data-nyumon/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../favicon.svg">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法">
+<meta property="og:description" content="FAQPage・BlogPosting・BreadcrumbList・LocalBusinessの入れ方を、コピペできるコード例つきで初心者向けに解説します。">
+<meta property="og:url" content="https://leciel-webdesign.com/blog/kouzouka-data-nyumon/">
+<meta property="og:site_name" content="LE CIEL WEB DESIGN">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法">
+<meta name="twitter:description" content="FAQPage・BlogPosting・BreadcrumbList・LocalBusinessの入れ方を、コピペできるコード例つきで解説します。">
+<meta name="twitter:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<!-- 構造化データ: 記事 (BlogPosting) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法",
+  "description": "FAQPage・BlogPosting・BreadcrumbList・LocalBusinessの入れ方を、コピペできるコード例つきで初心者向けに解説します。",
+  "image": "https://leciel-webdesign.com/assets/ogp.svg",
+  "datePublished": "2026-06-13",
+  "dateModified": "2026-06-13",
+  "author": { "@type": "Organization", "name": "LE CIEL WEB DESIGN", "url": "https://leciel-webdesign.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LE CIEL WEB DESIGN",
+    "logo": { "@type": "ImageObject", "url": "https://leciel-webdesign.com/assets/ogp.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leciel-webdesign.com/blog/kouzouka-data-nyumon/" }
+}
+</script>
+<!-- 構造化データ: パンくず (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://leciel-webdesign.com/" },
+    { "@type": "ListItem", "position": 2, "name": "お役立ちブログ", "item": "https://leciel-webdesign.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "構造化データの入れ方（初心者向け）", "item": "https://leciel-webdesign.com/blog/kouzouka-data-nyumon/" }
+  ]
+}
+</script>
+<!-- 構造化データ: FAQ (FAQPage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "構造化データを入れると、検索順位は上がりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "構造化データそのものが直接的な順位アップの要因になるわけではありません。ただし、検索エンジンやAIがページ内容を正確に理解できるようになり、FAQやパンくずなどがリッチリザルト（検索結果での追加表示）として出ることで、クリック率の向上やAIへの引用されやすさにつながります。間接的に集客へ効く施策と考えるとよいでしょう。" }
+    },
+    {
+      "@type": "Question",
+      "name": "構造化データはどの形式で書けばよいですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "GoogleはJSON-LD形式を推奨しています。HTMLの本文とは分けて、script type=application/ld+json のブロックとして書き、ページのhead内（またはbody内）に設置します。本文の見た目を変えずに追記できるため、初心者でも扱いやすい形式です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "WordPressでも構造化データは入れられますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "入れられます。多くのSEO系プラグインが構造化データの自動出力に対応しており、設定するだけでArticleやBreadcrumb、FAQなどを付与できます。ただし、テーマやプラグインが重複して出力していないか、内容がページと一致しているかは確認が必要です。自由度高く正確に入れたい場合は、JSON-LDを手動で設置する方法も有効です。" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../blog.css?v=20260606a">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <span class="logo-main">LE CIEL WEB DESIGN</span>
+        <span class="logo-sub">ル・シエルウェブデザイン</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">特長</a></li>
+      <li><a href="/#works">デモサイト</a></li>
+      <li><a href="/#pricing">料金</a></li>
+      <li><a href="/#profile">運営者情報</a></li>
+      <li><a href="/blog/">ブログ</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../">お役立ちブログ</a></li>
+      <li>構造化データの入れ方（初心者向け）</li>
+    </ol>
+  </nav>
+
+  <!-- 記事ヘッダー -->
+  <header class="article-head">
+    <span class="article-cat">技術・SEO</span>
+    <h1 class="article-title">構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法</h1>
+    <div class="article-meta">
+      <span>公開日：2026年6月13日</span>
+      <span>カテゴリ：技術・SEO</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p class="lead">
+      <strong>構造化データとは、検索エンジンやAIに「このページは何について書かれているか」を正確に伝えるための“目印”</strong>です。難しそうに見えますが、実際は<strong>JSON-LDという形式で書いたコードを、ページに貼るだけ</strong>。FAQやパンくずが検索結果でリッチに表示されたり、AIに引用されやすくなったりと、メリットは小さくありません。この記事では、<strong>まず入れるべき4種類の構造化データを、コピペできるコード例つき</strong>で、初心者向けに解説します。当ブログも全記事に同じ仕組みを実装しています。
+    </p>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">この記事でわかること</p>
+      <ol>
+        <li><a href="#towa">構造化データとは？（schema.org / JSON-LD）</a></li>
+        <li><a href="#naze">なぜ今、構造化データが重要なのか</a></li>
+        <li><a href="#four">まず入れるべき4つの構造化データ（コード例）</a></li>
+        <li><a href="#setti">設置方法（3ステップ）</a></li>
+        <li><a href="#kenshou">正しく入ったか検証する方法</a></li>
+        <li><a href="#shippai">よくある失敗</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="towa">構造化データとは？（schema.org / JSON-LD）</h2>
+    <p>結論として、構造化データは<strong>「人が読む文章」を「機械が理解できるデータ」に翻訳して添える仕組み</strong>です。3つの言葉を押さえれば十分です。</p>
+    <ul>
+      <li><strong>schema.org（スキーマ）</strong>：GoogleやMicrosoftなどが共同で決めた“データの書き方のルール集”。記事・FAQ・店舗などの型が用意されています。</li>
+      <li><strong>JSON-LD</strong>：そのルールに沿ってデータを書く形式。Googleが推奨しています。本文の見た目を変えずに追記できます。</li>
+      <li><strong>リッチリザルト</strong>：構造化データが正しく入ると、検索結果にFAQやパンくず、レビューの星などが追加表示されること。クリック率アップにつながります。</li>
+    </ul>
+
+    <h2 id="naze">なぜ今、構造化データが重要なのか</h2>
+    <ul>
+      <li><strong>AIに内容を正確に伝えられる</strong>：AI検索（AI OverviewやChatGPT）は、構造化されたデータを手がかりに内容を理解します。とくに<strong>FAQPage</strong>はAI時代に有効とされています（<a href="../aeo-ai-overview-taisaku/">AEO対策</a>参照）。</li>
+      <li><strong>検索結果で目立つ</strong>：パンくずやFAQが表示されると、競合より情報量が多く見え、クリックされやすくなります。</li>
+      <li><strong>誤解を防げる</strong>：「いつ書かれた・誰が書いた・どんな店か」を明示でき、E-E-A-T（信頼性）の補強にもなります（<a href="../eeat-toha-takameru/">E-E-A-Tとは？</a>）。</li>
+    </ul>
+
+    <h2 id="four">まず入れるべき4つの構造化データ（コード例）</h2>
+    <p>全部を一気に入れる必要はありません。<strong>多くのサイトは、次の4つから始めれば十分</strong>です。値（"〜"の部分）を自分のサイトに合わせて書き換えてください。</p>
+
+    <h3>① BreadcrumbList（パンくず）</h3>
+    <p>ページの階層を示します。検索結果に「ホーム › ブログ › 記事名」と表示され、構造が伝わります。</p>
+    <p class="code-label">パンくずの構造化データ</p>
+    <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://example.com/" },
+    { "@type": "ListItem", "position": 2, "name": "ブログ", "item": "https://example.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "記事のタイトル", "item": "https://example.com/blog/article/" }
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+    <h3>② BlogPosting / Article（記事）</h3>
+    <p>記事の見出し・公開日・著者を伝えます。ブログ記事には必須級です。</p>
+    <p class="code-label">記事の構造化データ</p>
+    <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "記事のタイトル",
+  "description": "記事の要約",
+  "datePublished": "2026-06-13",
+  "dateModified": "2026-06-13",
+  "author": { "@type": "Organization", "name": "あなたの屋号" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "あなたの屋号",
+    "logo": { "@type": "ImageObject", "url": "https://example.com/logo.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://example.com/blog/article/" }
+}
+&lt;/script&gt;</code></pre>
+
+    <h3>③ FAQPage（よくある質問）</h3>
+    <p><strong>AI時代に最も効きやすい</strong>のがこれです。ページ内に置いたQ&amp;Aを、機械にも“質問と答え”として認識させます。</p>
+    <p class="code-label">FAQの構造化データ</p>
+    <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "よくある質問の文",
+      "acceptedAnswer": { "@type": "Answer", "text": "その答えの文。" }
+    },
+    {
+      "@type": "Question",
+      "name": "2つ目の質問の文",
+      "acceptedAnswer": { "@type": "Answer", "text": "2つ目の答えの文。" }
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+    <p class="note">※注意：FAQの構造化データに書く内容は、<strong>必ずページ本文にも表示されているもの</strong>に限ります。表示していない内容を書くのは規約違反です。</p>
+
+    <h3>④ LocalBusiness（店舗・事業所）</h3>
+    <p>店舗や事業所がある場合は、住所・電話・営業時間を伝えます。MEO（地図の集客）とも相性が良い型です（<a href="../google-business-profile-meo/">MEO対策</a>）。</p>
+    <p class="code-label">店舗情報の構造化データ</p>
+    <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "店舗・事業所名",
+  "image": "https://example.com/photo.jpg",
+  "telephone": "03-0000-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "000-0000",
+    "addressRegion": "東京都",
+    "addressLocality": "〇〇区",
+    "streetAddress": "〇〇1-2-3"
+  },
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "url": "https://example.com/"
+}
+&lt;/script&gt;</code></pre>
+
+    <h2 id="setti">設置方法（3ステップ）</h2>
+    <ol>
+      <li><strong>コードを用意する</strong>：上の型をコピーし、"〜"の値を自分のサイトの情報に書き換えます。</li>
+      <li><strong>ページに貼る</strong>：HTMLの <code>&lt;head&gt;</code> 内（または <code>&lt;/body&gt;</code> の直前）に、そのまま貼り付けます。複数種類を入れる場合は、ブロックを並べて置けばOKです。</li>
+      <li><strong>本文と一致させる</strong>：日付・タイトル・FAQの中身などが、実際のページ表示と食い違わないようにします。</li>
+    </ol>
+    <p>WordPressの場合は、SEO系プラグインで自動出力できることが多いです。ただし<strong>重複出力や、内容のズレ</strong>が起きやすいので、後述の検証は必ず行いましょう。</p>
+
+    <h2 id="kenshou">正しく入ったか検証する方法</h2>
+    <ul>
+      <li><strong>リッチリザルト テスト</strong>：Googleの公式ツールにURL（または貼り付けたコード）を入れると、構造化データが正しく認識されるか・エラーがないかを確認できます。</li>
+      <li><strong>スキーマ検証ツール（Schema Markup Validator）</strong>：schema.org構文として正しいかを細かくチェックできます。</li>
+      <li><strong>Search Console</strong>：「拡張」やリッチリザルトのレポートで、サイト全体の認識状況やエラーを継続的に監視できます。</li>
+    </ul>
+
+    <h2 id="shippai">よくある失敗</h2>
+    <ul>
+      <li><strong>本文にない内容を構造化データに書く</strong>：とくにFAQで起こりがち。規約違反になり、ペナルティのリスクもあります。</li>
+      <li><strong>カンマや括弧の閉じ忘れ</strong>：JSON-LDは1文字でも崩れると無効になります。検証ツールで必ず確認を。</li>
+      <li><strong>URLや日付の書式ミス</strong>：日付は <code>2026-06-13</code> の形式、URLは <code>https://</code> から正確に。</li>
+      <li><strong>プラグインとの重複</strong>：WordPressでテーマとプラグインが二重に出力していないか確認します。</li>
+    </ul>
+    <p>※本記事は2026年6月時点の情報をもとにしています。仕様やツール名は変わることがあるため、最新の公式情報もあわせてご確認ください。</p>
+
+    <!-- 記事内CTA -->
+    <div class="cta-box">
+      <h3>構造化データ込みで、検索にもAIにも強く作ります</h3>
+      <p>Article・パンくず・FAQ・店舗情報まで、ページ内容と一致した正しい構造化データを実装します。当ブログも全記事で同じ設計を実践しています。<br>初回相談・お見積もりは無料、全国オンライン対応です。</p>
+      <a href="../../#works" class="btn-primary" style="margin-right:10px;">デモサイトを見る</a>
+      <a href="../../#contact" class="btn-primary">無料で相談する</a>
+      <p class="cta-note">しつこい営業は一切いたしません</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 style="margin-top:0;">よくある質問</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>構造化データを入れると、検索順位は上がりますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>構造化データそのものが直接的な順位アップの要因になるわけではありません。ただし、検索エンジンやAIがページ内容を正確に理解できるようになり、FAQやパンくずなどがリッチリザルト（検索結果での追加表示）として出ることで、クリック率の向上やAIへの引用されやすさにつながります。間接的に集客へ効く施策と考えるとよいでしょう。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>構造化データはどの形式で書けばよいですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>GoogleはJSON-LD形式を推奨しています。HTMLの本文とは分けて、script type=application/ld+json のブロックとして書き、ページのhead内（またはbody内）に設置します。本文の見た目を変えずに追記できるため、初心者でも扱いやすい形式です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>WordPressでも構造化データは入れられますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>入れられます。多くのSEO系プラグインが構造化データの自動出力に対応しており、設定するだけでArticleやBreadcrumb、FAQなどを付与できます。ただし、テーマやプラグインが重複して出力していないか、内容がページと一致しているかは確認が必要です。自由度高く正確に入れたい場合は、JSON-LDを手動で設置する方法も有効です。</p></div>
+      </div>
+    </section>
+
+    <h2 id="summary">まとめ</h2>
+    <p>
+      構造化データは、<strong>JSON-LDで書いたコードをページに貼るだけ</strong>で、検索エンジンとAIにページ内容を正確に伝えられる仕組みです。まずは<strong>パンくず・記事・FAQ・（店舗なら）LocalBusinessの4つ</strong>から。入れたら必ず<strong>リッチリザルト テストで検証</strong>し、本文と一致させましょう。
+    </p>
+    <p>
+      AIに引用される全体像は<a href="../ai-search-llmo-taisaku/">AI検索に載るサイトの作り方</a>、GoogleのAI Overview対策は<a href="../aeo-ai-overview-taisaku/">AEO対策とは？</a>もあわせてどうぞ。「自分のサイトに正しく入っているか不安」という方は、お気軽にご相談ください。
+    </p>
+
+  </article>
+
+  <!-- SNSシェア -->
+  <div class="share-bar">
+    <span class="share-label">この記事をシェアする</span>
+    <div class="share-btns">
+      <a class="share-btn share-x" data-share="x" target="_blank" rel="noopener" aria-label="Xでポストする">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>ポスト</span>
+      </a>
+      <a class="share-btn share-line" data-share="line" target="_blank" rel="noopener" aria-label="LINEで送る">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.41 8.12.33.07.78.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56s5.86-3.45 7.99-5.91C21.49 13.61 22 12 22 10.23 22 5.69 17.52 2 12 2zM8.08 12.69H6.16c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.34h1.42c.28 0 .5.22.5.5s-.22.5-.5.5zm1.94-.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm4.62 0c0 .22-.14.41-.35.48a.51.51 0 0 1-.15.02c-.16 0-.31-.07-.4-.2l-1.97-2.68v2.38c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.21.14-.4.35-.47.21-.07.44 0 .56.18l1.97 2.68V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm3.18-2.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.92c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5h1.92c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42z"/></svg>
+        <span>LINE</span>
+      </a>
+      <a class="share-btn share-fb" data-share="facebook" target="_blank" rel="noopener" aria-label="Facebookでシェア">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <span>シェア</span>
+      </a>
+      <a class="share-btn share-hatena" data-share="hatena" target="_blank" rel="noopener" aria-label="はてなブックマークに追加">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="900" font-family="Arial, sans-serif" fill="currentColor">B!</text></svg>
+        <span>はてブ</span>
+      </a>
+      <button class="share-btn share-copy" type="button" data-share="copy" aria-label="リンクをコピー">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>コピー</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 関連記事 -->
+  <section class="related">
+    <h3 class="related-title">あわせて読みたい記事</h3>
+    <div class="related-grid">
+      <a href="../aeo-ai-overview-taisaku/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">AI・最新</span>
+          <h4>AEO対策とは？GoogleのAI Overviewに表示させる方法</h4>
+        </div>
+      </a>
+      <a href="../eeat-toha-takameru/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">技術・SEO</span>
+          <h4>E-E-A-Tとは？個人・小規模サイトでも信頼性を高める方法</h4>
+        </div>
+      </a>
+      <a href="../ai-search-llmo-taisaku/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">AI・最新</span>
+          <h4>AI検索（Google AI Overview・ChatGPT）に載るサイトの作り方｜これからのSEO</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-mark" aria-hidden="true"></span>
+    <div style="text-align:left;line-height:1.3;">
+      <p class="ft-main">LE CIEL WEB DESIGN</p>
+      <p class="ft-sub">ル・シエルウェブデザイン</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="/#features">特長</a>
+    <a href="/#works">デモサイト</a>
+    <a href="/#pricing">料金</a>
+    <a href="/#profile">運営者情報</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">お問い合わせ</a>
+  </div>
+  <p>© 2024 LE CIEL WEB DESIGN. All rights reserved.</p>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  // ===== SNSシェア =====
+  (function(){
+    var url = location.href.split('#')[0];
+    var title = document.title;
+    var eu = encodeURIComponent(url), et = encodeURIComponent(title);
+    var links = {
+      x: 'https://twitter.com/intent/tweet?text=' + et + '&url=' + eu,
+      line: 'https://social-plugins.line.me/lineit/share?url=' + eu,
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + eu,
+      hatena: 'https://b.hatena.ne.jp/entry/s/' + url.replace(/^https?:\/\//, '')
+    };
+    document.querySelectorAll('.share-btn[data-share]').forEach(function(el){
+      var k = el.getAttribute('data-share');
+      if (links[k]) el.setAttribute('href', links[k]);
+    });
+    var copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) copyBtn.addEventListener('click', function(){
+      var label = copyBtn.querySelector('span'); var orig = label.textContent;
+      function done(){ copyBtn.classList.add('copied'); label.textContent = 'コピーしました'; setTimeout(function(){ copyBtn.classList.remove('copied'); label.textContent = orig; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(done); }
+      else { var ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); done(); }
+    });
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>

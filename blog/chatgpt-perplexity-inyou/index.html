@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatGPT・Perplexityに引用されるサイトの作り方｜生成AIに載る方法 | LE CIEL WEB DESIGN</title>
+<meta name="description" content="ChatGPT・Perplexity・Geminiなどの生成AIに、自社サイトを引用・紹介してもらうための方法を解説。各AIが情報を取得する仕組みの違い、引用されやすいページの作り方、llms.txtやrobots設定の考え方まで、個人事業主・中小企業向けにまとめました。">
+<meta name="author" content="LE CIEL WEB DESIGN">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://leciel-webdesign.com/blog/chatgpt-perplexity-inyou/">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="apple-touch-icon" href="../../favicon.svg">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="ChatGPT・Perplexityに引用されるサイトの作り方｜生成AIに載る方法">
+<meta property="og:description" content="各生成AIが情報を取得する仕組みの違いと、引用されやすいページの作り方、llms.txtやrobots設定の考え方までまとめました。">
+<meta property="og:url" content="https://leciel-webdesign.com/blog/chatgpt-perplexity-inyou/">
+<meta property="og:site_name" content="LE CIEL WEB DESIGN">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChatGPT・Perplexityに引用されるサイトの作り方｜生成AIに載る方法">
+<meta name="twitter:description" content="各生成AIが情報を取得する仕組みの違いと、引用されやすいページの作り方をまとめました。">
+<meta name="twitter:image" content="https://leciel-webdesign.com/assets/ogp.svg">
+
+<!-- 構造化データ: 記事 (BlogPosting) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ChatGPT・Perplexityに引用されるサイトの作り方｜生成AIに載る方法",
+  "description": "各生成AIが情報を取得する仕組みの違いと、引用されやすいページの作り方、llms.txtやrobots設定の考え方までまとめました。",
+  "image": "https://leciel-webdesign.com/assets/ogp.svg",
+  "datePublished": "2026-06-13",
+  "dateModified": "2026-06-13",
+  "author": { "@type": "Organization", "name": "LE CIEL WEB DESIGN", "url": "https://leciel-webdesign.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LE CIEL WEB DESIGN",
+    "logo": { "@type": "ImageObject", "url": "https://leciel-webdesign.com/assets/ogp.svg" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leciel-webdesign.com/blog/chatgpt-perplexity-inyou/" }
+}
+</script>
+<!-- 構造化データ: パンくず (BreadcrumbList) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://leciel-webdesign.com/" },
+    { "@type": "ListItem", "position": 2, "name": "お役立ちブログ", "item": "https://leciel-webdesign.com/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "ChatGPT・Perplexityに引用されるサイトの作り方", "item": "https://leciel-webdesign.com/blog/chatgpt-perplexity-inyou/" }
+  ]
+}
+</script>
+<!-- 構造化データ: FAQ (FAQPage) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ChatGPTやPerplexityに自社サイトを引用してもらうには、特別な登録が必要ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "特別な登録や申請は基本的に不要です。これらのAIはWeb上の情報や検索インデックスを参照しているため、検索エンジンに正しくインデックスされ、内容が分かりやすく信頼できるページであれば、引用の候補になります。まずはクロールを妨げていないか（robots.txtやnoindexの設定）を確認し、結論を明確に書く・構造化データを入れる・一次情報を充実させることが近道です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ChatGPTとPerplexityでは、対策の方法が違いますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "情報の取得元は異なりますが、やるべき対策の大枠は共通しています。Perplexityはその場でWeb検索して引用元を明示する傾向が強く、ChatGPTも検索機能を使って最新情報や参照元を返します。いずれも「検索で見つけやすく、答えが明確で、信頼できるページ」を好むため、良いSEOと結論ファースト・構造化・E-E-A-Tの強化が、どのAIにも効く共通対策になります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "llms.txtを置けば、AIに引用されやすくなりますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "llms.txtはサイトの要点をAI向けにまとめて伝える新しい試みですが、2026年時点で各AIが必ず参照すると保証されたものではありません。置くこと自体に大きなデメリットはないものの、優先すべきは本文そのものの分かりやすさと信頼性です。まずはページ本文を結論ファースト・構造化データ・一次情報で整え、そのうえで補助的に検討するのが現実的です。" }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../blog.css?v=20260606a">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div class="logo-text">
+        <span class="logo-main">LE CIEL WEB DESIGN</span>
+        <span class="logo-sub">ル・シエルウェブデザイン</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/#features">特長</a></li>
+      <li><a href="/#works">デモサイト</a></li>
+      <li><a href="/#pricing">料金</a></li>
+      <li><a href="/#profile">運営者情報</a></li>
+      <li><a href="/blog/">ブログ</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol>
+      <li><a href="../../">ホーム</a></li>
+      <li><a href="../">お役立ちブログ</a></li>
+      <li>ChatGPT・Perplexityに引用されるサイトの作り方</li>
+    </ol>
+  </nav>
+
+  <!-- 記事ヘッダー -->
+  <header class="article-head">
+    <span class="article-cat">AI・最新</span>
+    <h1 class="article-title">ChatGPT・Perplexityに引用されるサイトの作り方｜生成AIに載る方法</h1>
+    <div class="article-meta">
+      <span>公開日：2026年6月13日</span>
+      <span>カテゴリ：AI・最新</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <p class="lead">
+      「ChatGPTに質問したら、ある会社のサイトが紹介されていた」——そんな場面が当たり前になってきました。<strong>ChatGPTやPerplexity、Geminiといった生成AIに自社サイトを引用・紹介してもらう</strong>ことは、新しい集客の入口です。この記事では、<strong>各AIが情報を取得する仕組みの違い</strong>と、<strong>引用されやすいページの作り方</strong>、そして話題のllms.txtやrobots設定の考え方までを、専門用語をかみくだいて解説します。結論を先に言うと、<strong>やるべきことの大枠はどのAIでも共通</strong>です。
+    </p>
+
+    <!-- 目次 -->
+    <nav class="toc" aria-label="目次">
+      <p class="toc-title">この記事でわかること</p>
+      <ol>
+        <li><a href="#shikumi">生成AIはどこから情報を取得しているのか</a></li>
+        <li><a href="#chigai">ChatGPT・Perplexity・Geminiの違い</a></li>
+        <li><a href="#how">生成AIに引用されるための7つの対策</a></li>
+        <li><a href="#tech">クロールを妨げない技術設定（robots・llms.txt）</a></li>
+        <li><a href="#kakunin">引用されているか確認する方法</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#summary">まとめ</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="shikumi">生成AIはどこから情報を取得しているのか</h2>
+    <p>結論から言うと、<strong>多くの生成AIは「Web検索」と「学習データ」の2つを組み合わせて答えています</strong>。とくに最新情報や事業者の紹介では、その場でWebを検索し、見つけたページを引用する動きが主流です。</p>
+    <ul>
+      <li><strong>学習データ</strong>：AIが事前に学習した大量のテキスト。古い情報も含まれ、特定の中小事業者まで覚えていることは少ない。</li>
+      <li><strong>リアルタイムのWeb検索</strong>：質問に応じてその場で検索し、新しいページを参照する仕組み。<strong>ここで引用されることが、事業者にとっての勝負どころ</strong>です。</li>
+    </ul>
+    <p>つまり、自社が引用されるかどうかは「<strong>検索でちゃんと見つかり、AIが答えに使いやすい形で書かれているか</strong>」にかかっています。これは<a href="../ai-search-llmo-taisaku/">AI検索に載るサイトの作り方</a>や<a href="../llmo-taisaku-toha/">LLMO対策</a>の考え方とそのまま重なります。</p>
+
+    <h2 id="chigai">ChatGPT・Perplexity・Geminiの違い</h2>
+    <p>取得元は少しずつ違いますが、<strong>対策の方向性は同じ</strong>です。違いを知っておくと納得して取り組めます。</p>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>AI</th><th>情報の取り方の特徴</th><th>引用元の示し方</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ChatGPT</td><td>検索機能でWebを参照し、最新情報や事実を補う</td><td>回答内に参照リンクを表示することがある</td></tr>
+        <tr><td>Perplexity</td><td>質問ごとにWeb検索を行うのが基本。引用重視</td><td>番号付きで引用元を明示する傾向が強い</td></tr>
+        <tr><td>Gemini</td><td>Google検索と連携して情報を参照</td><td>関連サイトや出典を示すことがある</td></tr>
+        <tr><td>Copilot</td><td>検索を組み合わせて回答。出典を提示</td><td>引用元リンクを表示する</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>とくに<strong>Perplexityは「引用元を示すこと」を前提にした設計</strong>なので、引用されれば実際のアクセスにつながりやすいAIです。一方で、どのAIも「検索で評価されるページ」を引きやすいという共通点があります。だからこそ、<strong>各AI向けに別々の対策をするのではなく、土台となる“良いページ”を1つ作り込むのが効率的</strong>です。</p>
+
+    <h2 id="how">生成AIに引用されるための7つの対策</h2>
+
+    <h3>① 質問形のテーマで、結論から答える</h3>
+    <p>AIは「質問への明確な答え」を探しています。実際に聞かれる質問をテーマにし、<strong>冒頭で結論を一文</strong>、そのあとに根拠を続けましょう。</p>
+
+    <h3>② 事実・数字・固有名詞を具体的に書く</h3>
+    <p>AIは<strong>あいまいな表現より、具体的な事実</strong>を引用しやすい傾向があります。「安い」ではなく「1ページ◯万円〜」、「実績多数」ではなく「◯件」のように、検証できる形で書きましょう。</p>
+
+    <h3>③ 一次情報（自社にしかない情報）を載せる</h3>
+    <p>一般論はどのサイトにもあり、わざわざ引用されません。<strong>自社の実例・実データ・体験</strong>こそ価値があります。たとえば当サイトの<a href="../pagespeed-insights-100/">PageSpeed全項目100点の実例</a>のように、「実際にやって出た結果」は強い一次情報です。</p>
+
+    <h3>④ 構造化データでAIに内容を伝える</h3>
+    <p>FAQ・記事・パンくずなどの<strong>構造化データ</strong>は、AIが内容を正確に理解する助けになります。具体的な入れ方は<a href="../kouzouka-data-nyumon/">構造化データの入れ方（初心者向け）</a>で解説しています。</p>
+
+    <h3>⑤ E-E-A-T（信頼性）を示す</h3>
+    <p>AIは<strong>信頼できる発信源</strong>を優先します。運営者情報・実績・資格を明示しましょう。詳しくは<a href="../eeat-toha-takameru/">E-E-A-Tとは？信頼性を高める方法</a>へ。</p>
+
+    <h3>⑥ 他サイトからの言及（サイテーション）を増やす</h3>
+    <p>AIは「複数の情報源で一致している事実」を信頼します。<strong>SNS・各種ポータル・口コミ・Googleビジネスプロフィール</strong>などで会社名や事業内容が一貫して言及されていると、引用の確度が上がります。店舗なら<a href="../google-business-profile-meo/">MEO対策</a>も効きます。</p>
+
+    <h3>⑦ 検索で見つかる土台（SEO）を固める</h3>
+    <p>そもそも検索で見つからなければ、AIにも拾われません。<strong>表示速度・スマホ対応・検索意図に応える内容</strong>を整えましょう（<a href="../hyoji-sokudo-kaizen/">表示速度の改善</a>）。</p>
+
+    <h2 id="tech">クロールを妨げない技術設定（robots・llms.txt）</h2>
+    <p>意外と多いのが、<strong>「気づかないうちにAIのクロールを拒否している」</strong>ケースです。引用以前の問題なので、まず確認しましょう。</p>
+    <ul>
+      <li><strong>noindex・robots.txtでブロックしていないか</strong>：検索エンジンに見せないページは、AIにも見えません。公開したいページが除外されていないか確認を。</li>
+      <li><strong>AIクローラーを拒否していないか</strong>：robots.txtで <code>GPTBot</code> や <code>PerplexityBot</code> などを意図せずブロックしていないか確認します。引用されたいなら、これらを許可しておく必要があります。</li>
+      <li><strong>llms.txt は“補助”と考える</strong>：サイトの要点をAI向けにまとめる新しい試みですが、2026年時点で各AIが必ず参照する保証はありません。置くのは自由ですが、<strong>優先すべきは本文そのものの分かりやすさ</strong>です。</li>
+    </ul>
+    <p>※AIクローラーをあえて拒否したい（情報を学習・引用させたくない）場合は逆の設定をします。引用による集客を狙うのか、情報を守りたいのか、方針を決めてから設定しましょう。</p>
+
+    <h2 id="kakunin">引用されているか確認する方法</h2>
+    <ul>
+      <li><strong>実際に質問してみる</strong>：ChatGPTやPerplexityに「◯◯（地域・業種）でおすすめは？」など、お客さま目線の質問を入れて、自社や競合が出るか確認します。</li>
+      <li><strong>アクセス解析で参照元を見る</strong>：GA4などで、ChatGPTやPerplexityからの流入が来ているかをチェックします。</li>
+      <li><strong>定期的に繰り返す</strong>：AIの回答は変動します。月1回など定点観測すると、対策の効果が見えてきます。</li>
+    </ul>
+    <p>※本記事は2026年6月時点の情報をもとにしています。各AIの仕様は変化が早いため、最新の動向もあわせてご確認ください。</p>
+
+    <!-- 記事内CTA -->
+    <div class="cta-box">
+      <h3>生成AIに引用されやすいサイトを作ります</h3>
+      <p>結論ファーストの構成・構造化データ・E-E-A-T・クロール設定まで、ChatGPTやPerplexityに拾われやすい土台で制作します。自社ブログでも同じ設計を実践しています。<br>初回相談・お見積もりは無料、全国オンライン対応です。</p>
+      <a href="../../#works" class="btn-primary" style="margin-right:10px;">デモサイトを見る</a>
+      <a href="../../#contact" class="btn-primary">無料で相談する</a>
+      <p class="cta-note">しつこい営業は一切いたしません</p>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq">
+      <h2 style="margin-top:0;">よくある質問</h2>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>ChatGPTやPerplexityに自社サイトを引用してもらうには、特別な登録が必要ですか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>特別な登録や申請は基本的に不要です。これらのAIはWeb上の情報や検索インデックスを参照しているため、検索エンジンに正しくインデックスされ、内容が分かりやすく信頼できるページであれば、引用の候補になります。まずはクロールを妨げていないか（robots.txtやnoindexの設定）を確認し、結論を明確に書く・構造化データを入れる・一次情報を充実させることが近道です。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>ChatGPTとPerplexityでは、対策の方法が違いますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>情報の取得元は異なりますが、やるべき対策の大枠は共通しています。Perplexityはその場でWeb検索して引用元を明示する傾向が強く、ChatGPTも検索機能を使って最新情報や参照元を返します。いずれも「検索で見つけやすく、答えが明確で、信頼できるページ」を好むため、良いSEOと結論ファースト・構造化・E-E-A-Tの強化が、どのAIにも効く共通対策になります。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" type="button"><span>llms.txtを置けば、AIに引用されやすくなりますか？</span><span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>llms.txtはサイトの要点をAI向けにまとめて伝える新しい試みですが、2026年時点で各AIが必ず参照すると保証されたものではありません。置くこと自体に大きなデメリットはないものの、優先すべきは本文そのものの分かりやすさと信頼性です。まずはページ本文を結論ファースト・構造化データ・一次情報で整え、そのうえで補助的に検討するのが現実的です。</p></div>
+      </div>
+    </section>
+
+    <h2 id="summary">まとめ</h2>
+    <p>
+      ChatGPTやPerplexityに引用されるための対策は、<strong>「検索で見つかる土台を固め、結論ファーストで具体的に書き、一次情報とE-E-A-Tで信頼を示す」</strong>こと。AIごとに別々の小細工をするより、<strong>土台となる“良いページ”を1つ作り込む</strong>のが最も効率的です。まずはクロールを妨げていないかの確認から始めましょう。
+    </p>
+    <p>
+      用語を整理したい方は<a href="../llmo-taisaku-toha/">LLMO対策とは？</a>、GoogleのAI Overview対策は<a href="../aeo-ai-overview-taisaku/">AEO対策とは？</a>、全体像は<a href="../ai-search-llmo-taisaku/">AI検索に載るサイトの作り方</a>もあわせてどうぞ。
+    </p>
+
+  </article>
+
+  <!-- SNSシェア -->
+  <div class="share-bar">
+    <span class="share-label">この記事をシェアする</span>
+    <div class="share-btns">
+      <a class="share-btn share-x" data-share="x" target="_blank" rel="noopener" aria-label="Xでポストする">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        <span>ポスト</span>
+      </a>
+      <a class="share-btn share-line" data-share="line" target="_blank" rel="noopener" aria-label="LINEで送る">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2C6.48 2 2 5.69 2 10.23c0 4.07 3.58 7.48 8.41 8.12.33.07.78.22.89.5.1.26.07.66.03.92l-.14.86c-.04.26-.2 1.02.89.56s5.86-3.45 7.99-5.91C21.49 13.61 22 12 22 10.23 22 5.69 17.52 2 12 2zM8.08 12.69H6.16c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.34h1.42c.28 0 .5.22.5.5s-.22.5-.5.5zm1.94-.5c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm4.62 0c0 .22-.14.41-.35.48a.51.51 0 0 1-.15.02c-.16 0-.31-.07-.4-.2l-1.97-2.68v2.38c0 .28-.22.5-.5.5s-.5-.22-.5-.5V8.35c0-.21.14-.4.35-.47.21-.07.44 0 .56.18l1.97 2.68V8.35c0-.28.22-.5.5-.5s.5.22.5.5v3.84zm3.18-2.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42c.28 0 .5.22.5.5s-.22.5-.5.5h-1.92c-.28 0-.5-.22-.5-.5V8.35c0-.28.22-.5.5-.5h1.92c.28 0 .5.22.5.5s-.22.5-.5.5h-1.42v.92h1.42z"/></svg>
+        <span>LINE</span>
+      </a>
+      <a class="share-btn share-fb" data-share="facebook" target="_blank" rel="noopener" aria-label="Facebookでシェア">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <span>シェア</span>
+      </a>
+      <a class="share-btn share-hatena" data-share="hatena" target="_blank" rel="noopener" aria-label="はてなブックマークに追加">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="17" text-anchor="middle" font-size="15" font-weight="900" font-family="Arial, sans-serif" fill="currentColor">B!</text></svg>
+        <span>はてブ</span>
+      </a>
+      <button class="share-btn share-copy" type="button" data-share="copy" aria-label="リンクをコピー">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        <span>コピー</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 関連記事 -->
+  <section class="related">
+    <h3 class="related-title">あわせて読みたい記事</h3>
+    <div class="related-grid">
+      <a href="../llmo-taisaku-toha/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">AI・最新</span>
+          <h4>LLMO対策とは？SEOとの違いと今日から始める5ステップ</h4>
+        </div>
+      </a>
+      <a href="../aeo-ai-overview-taisaku/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">AI・最新</span>
+          <h4>AEO対策とは？GoogleのAI Overviewに表示させる方法</h4>
+        </div>
+      </a>
+      <a href="../kouzouka-data-nyumon/" class="related-card">
+        <div class="related-thumb"></div>
+        <div class="related-body">
+          <span class="related-cat">技術・SEO</span>
+          <h4>構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装</h4>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="footer-mark" aria-hidden="true"></span>
+    <div style="text-align:left;line-height:1.3;">
+      <p class="ft-main">LE CIEL WEB DESIGN</p>
+      <p class="ft-sub">ル・シエルウェブデザイン</p>
+    </div>
+  </div>
+  <div class="footer-links">
+    <a href="/#features">特長</a>
+    <a href="/#works">デモサイト</a>
+    <a href="/#pricing">料金</a>
+    <a href="/#profile">運営者情報</a>
+    <a href="/blog/">ブログ</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#contact">お問い合わせ</a>
+  </div>
+  <p>© 2024 LE CIEL WEB DESIGN. All rights reserved.</p>
+</footer>
+
+<script>
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger) hamburger.addEventListener('click', function(){ navLinks.classList.toggle('open'); });
+  // ===== SNSシェア =====
+  (function(){
+    var url = location.href.split('#')[0];
+    var title = document.title;
+    var eu = encodeURIComponent(url), et = encodeURIComponent(title);
+    var links = {
+      x: 'https://twitter.com/intent/tweet?text=' + et + '&url=' + eu,
+      line: 'https://social-plugins.line.me/lineit/share?url=' + eu,
+      facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + eu,
+      hatena: 'https://b.hatena.ne.jp/entry/s/' + url.replace(/^https?:\/\//, '')
+    };
+    document.querySelectorAll('.share-btn[data-share]').forEach(function(el){
+      var k = el.getAttribute('data-share');
+      if (links[k]) el.setAttribute('href', links[k]);
+    });
+    var copyBtn = document.querySelector('.share-copy');
+    if (copyBtn) copyBtn.addEventListener('click', function(){
+      var label = copyBtn.querySelector('span'); var orig = label.textContent;
+      function done(){ copyBtn.classList.add('copied'); label.textContent = 'コピーしました'; setTimeout(function(){ copyBtn.classList.remove('copied'); label.textContent = orig; }, 1600); }
+      if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(url).then(done).catch(done); }
+      else { var ta = document.createElement('textarea'); ta.value = url; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); done(); }
+    });
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+</script>
+</body>
+</html>

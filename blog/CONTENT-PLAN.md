@@ -37,6 +37,26 @@
 - [ ] SEO対策とは 初心者向け
 - [ ] 補助金 ホームページ制作
 
+### AI検索クラスター（柱1・最優先／競合薄・差別化）
+親（ピラー）＝ `ai-search-llmo-taisaku/`「AI検索に載るサイトの作り方」を軸に、専門特化の子記事で束ねる。
+- [x] LLMO 対策 とは → ✅ 公開済み `llmo-taisaku-toha/`（用語整理・SEOとの違い・始め方5ステップ）
+- [x] AEO 対策 / AI Overview 表示 → ✅ 公開済み `aeo-ai-overview-taisaku/`（Google AI Overview特化の実践）
+- [x] ChatGPT・Perplexityに引用されるサイトの作り方 → ✅ 公開済み `chatgpt-perplexity-inyou/`（生成AI個別・robots/llms.txt）
+- [x] 構造化データ（FAQ・Article）の入れ方 初心者向け → ✅ 公開済み `kouzouka-data-nyumon/`（コード例つき・技術/SEO）
+- [x] E-E-A-Tとは？個人・小規模で信頼性を高める方法 → ✅ 公開済み `eeat-toha-takameru/`（技術/SEO）
+- [x] 「SEOはもう終わり」は本当か？AI時代に変わること → ✅ 公開済み `seo-owari-ai-jidai/`
+
+→ AI検索クラスター（ピラー1＋子記事6＝計7本）が完成。次は柱2（受注直結KW）へ。
+
+### 受注直結の抜けKW（柱2・次点）
+- [ ] ホームページ リニューアル タイミング/費用/進め方
+- [ ] ホームページ 運用・保守とは（費用相場・自分でできること）
+- [ ] ホームページ 制作 期間（最短5営業日が強み）
+- [ ] ホームページ 制作 流れ（依頼〜公開の全ステップ）
+- [ ] ホームページ 自分で作る vs 依頼（判断基準）
+- [ ] 採用サイト 作り方・必要性（新ジャンル）
+- [ ] ECサイト・ネットショップ 始め方（個人事業主向け）
+
 ## 新記事の追加手順
 1. `blog/<英数字スラッグ>/index.html` を作る（`hp-seisaku-hiyou-souba/index.html` をコピー）。
 2. 差し替える：`<title>` / `description` / canonical / OGP / 3つのJSON-LD（Article・Breadcrumb・FAQ）/ パンくず / h1 / 本文 / FAQ / 関連記事。

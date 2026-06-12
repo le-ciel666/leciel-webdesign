@@ -2,25 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leciel-webdesign.com/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- AI・最新 -->
   <url>
-    <loc>https://leciel-webdesign.com/blog/hp-seisaku-hiyou-souba/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <loc>https://leciel-webdesign.com/blog/chatgpt-perplexity-inyou/</loc>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://leciel-webdesign.com/blog/hp-shukyaku-dekinai-riyu/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <loc>https://leciel-webdesign.com/blog/seo-owari-ai-jidai/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/aeo-ai-overview-taisaku/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/llmo-taisaku-toha/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/ai-search-llmo-taisaku/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 技術・SEO -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/kouzouka-data-nyumon/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/eeat-toha-takameru/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/domain-server-erabikata/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/hyoji-sokudo-kaizen/</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -30,14 +76,138 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- 集客・改善 -->
   <url>
-    <loc>https://leciel-webdesign.com/blog/kojin-jigyonushi-hp-hitsuyou/</loc>
+    <loc>https://leciel-webdesign.com/blog/homepage-shukyaku-hajimekata/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/toiawase-fueru-cta-kaizen/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/chusho-kigyo-blog-seo/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/google-business-profile-meo/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/hp-shukyaku-dekinai-riyu/</loc>
     <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 費用・料金 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-hojokin-2026/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-getsugaku-lease/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/kakuyasu-homepage-karakuri/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/hp-seisaku-hiyou-souba/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 依頼・選び方 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/wix-peraichi-vs-pro/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/freelance-vs-seisakugaisha/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-kojin-furiransu-irai/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 業種別 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/seitai-sekkotsuin-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/biyou-hifuka-clinic-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/shigyou-zeirishi-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/koumuten-kensetsu-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/shucchou-service-homepage-shukyaku/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/shika-iin-homepage-shukan/</loc>
+    <lastmod>2026-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/inshokuten-cafe-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/biyoushitsu-homepage-tsukurikata/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 基礎知識 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/kojin-jigyonushi-hp-hitsuyou/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
