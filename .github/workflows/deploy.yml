@@ -33,10 +33,11 @@ jobs:
             mock-sites/mitsys-renewal_delivery/**
             # ブログの内部運用ドキュメント（SEO戦略メモ）は公開しない
             blog/CONTENT-PLAN.md
-            # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
-            prime-networks/**
-            # WordPressをインストールしたblueportディレクトリはFTPデプロイで上書き・削除しない
-            blueport/**
+            # WordPressをインストールしたディレクトリはFTPデプロイで上書き・削除しない
+            # （静的同期するとサーバー側のWP本体が壊れるため、mock-sites/配下のパスで除外）
+            mock-sites/prime-networks/**
+            mock-sites/blueport/**
+            mock-sites/azusa/**
 
       - name: Deploy to leciel subfolder (leciel-webdesign.com)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -59,7 +60,8 @@ jobs:
             mock-sites/mitsys-renewal_delivery/**
             # ブログの内部運用ドキュメント（SEO戦略メモ）は公開しない
             blog/CONTENT-PLAN.md
-            # WordPressをインストールしたprime-networksディレクトリはFTPデプロイで上書き・削除しない
-            prime-networks/**
-            # WordPressをインストールしたblueportディレクトリはFTPデプロイで上書き・削除しない
-            blueport/**
+            # WordPressをインストールしたディレクトリはFTPデプロイで上書き・削除しない
+            # （静的同期するとサーバー側のWP本体が壊れるため、mock-sites/配下のパスで除外）
+            mock-sites/prime-networks/**
+            mock-sites/blueport/**
+            mock-sites/azusa/**
