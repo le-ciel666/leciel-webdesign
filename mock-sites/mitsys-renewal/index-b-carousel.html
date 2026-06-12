@@ -325,7 +325,7 @@
     z-index: 2;
     max-width: 1240px;
     margin: 0 auto;
-    padding: 82px 24px 92px;
+    padding: 68px 24px 72px;
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-slideshow { display: none; }
@@ -1615,7 +1615,7 @@
     .brand-tagline { display: none; }
     .nav-actions .btn { display: none; }
     .hero-inner {
-      padding: 40px 16px 56px;
+      padding: 34px 16px 46px;
     }
     .hero h1 { font-size: 28px; line-height: 1.22; margin-bottom: 20px; }
     .hero-lead { font-size: 15px; line-height: 1.75; }
@@ -1740,23 +1740,30 @@
     .service-carousel-card {
       flex-basis: calc(100vw - 32px);
       max-width: calc(100vw - 32px);
-      min-height: 320px;
+      aspect-ratio: 5084 / 2460;
+      min-height: auto;
       border-radius: 10px;
     }
     .service-carousel-card::before {
       background-size: cover;
       background-position: center;
     }
+    .service-carousel-card .service-copy {
+      max-width: 56%;
+      padding: 14px 12px 14px;
+    }
     .service-carousel-card .service-copy-title {
-      margin-bottom: 16px;
-      font-size: 38px;
+      margin-bottom: 7px;
+      font-size: 24px;
     }
     .service-carousel-card .service-copy-main {
-      font-size: 23px;
+      font-size: 14px;
+      line-height: 1.18;
     }
     .service-carousel-card .service-copy-sub {
-      margin-top: 10px;
-      font-size: 13px;
+      margin-top: 6px;
+      font-size: 8.5px;
+      line-height: 1.35;
     }
     .application-card {
       min-height: 232px;
