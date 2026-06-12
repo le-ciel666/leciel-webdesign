@@ -1,0 +1,5 @@
+# 提案用モックサイトは検索エンジンにインデックスさせない
+# （配下の全ファイルに適用。WordPress側のモックにも効くようHTTPヘッダーで指定）
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>
