@@ -39,6 +39,8 @@
     *{box-sizing:border-box}
     ::selection{background:#E9DCC2}
     img{max-width:100%}
+    /* ステートメント文は意味の区切り（span単位）でのみ改行させる */
+    #stmtWords span{display:inline-block}
     @keyframes kenburns{0%{transform:scale(1.04)}100%{transform:scale(1.16)}}
     @keyframes heroLetter{0%{opacity:0;transform:translateY(46px);filter:blur(10px)}100%{opacity:1;transform:translateY(0);filter:blur(0)}}
     @keyframes fadeUpK{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
@@ -90,13 +92,24 @@
       #siteHeader{padding-left:18px!important;padding-right:18px!important}
       #hero{min-height:0!important;height:auto!important;padding:130px 0 96px}
       #hero h1{font-size:74px!important}
+      #heroContent{padding:0 18px!important}
+      #hero .hero-lead{font-size:15px!important;letter-spacing:.02em!important;line-height:1.95!important}
+      #hero .hero-sub{font-size:11px!important;letter-spacing:.04em!important;line-height:1.7}
+      #hero .hero-sep{display:block;height:0;font-size:0;line-height:0;overflow:hidden}
       #heroBtns{flex-wrap:wrap}
       #heroBtns a{flex:1 1 auto}
-      #statement{padding:78px 0 60px!important}
+      #statement{padding:66px 0 56px!important}
+      #stmtWords{font-size:20px!important;line-height:1.75!important;letter-spacing:.02em!important;padding:0 20px!important}
+      #stmtGhost{font-size:30vw!important}
       #concept{padding:44px 20px 76px!important}
       #features,#coupon,#stylist,#access{padding-left:20px!important;padding-right:20px!important;padding-top:72px!important;padding-bottom:72px!important}
       #style,#voice{padding:72px 20px!important}
-      #cta-sec{padding:96px 22px!important}
+      #features h3{font-size:20px!important;letter-spacing:.04em!important;line-height:1.7!important}
+      #features .feat-media img{height:260px!important}
+      #cta-sec{padding:88px 20px!important}
+      #cta-sec h2{font-size:23px!important;letter-spacing:.04em!important;line-height:1.7!important}
+      #cta-sec p{font-size:12px!important;letter-spacing:.02em!important;line-height:1.95!important}
+      #cta-sec a{font-size:13px!important;letter-spacing:.12em!important;padding:16px 28px!important;white-space:nowrap}
       #gallery{padding:78px 0 72px!important}
       .g-styles{grid-template-columns:repeat(2,1fr);gap:12px}
       .g-stats{margin-top:60px}
@@ -162,8 +175,8 @@
       </h1>
       <p style="margin:22px 0 0;font-family:'Shippori Mincho',serif;font-size:17px;letter-spacing:.6em;text-indent:.6em;color:#FCF7EB;text-shadow:0 2px 14px rgba(20,15,8,.85),0 0 5px rgba(20,15,8,.6);animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) .9s both">カノン　下北沢</p>
       <div style="width:1px;height:54px;background:linear-gradient(180deg,rgba(235,221,190,0),#D9C492);margin:30px auto;animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.05s both"></div>
-      <p style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(17px,2vw,21px);line-height:2.1;letter-spacing:.18em;color:#FDFBF5;text-shadow:0 2px 16px rgba(20,15,8,.85),0 0 5px rgba(20,15,8,.55);animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.15s both">お気に入りの行きつけサロンを探している、<br>大人女性へ。</p>
-      <p style="margin:16px 0 0;font-size:13.5px;letter-spacing:.26em;color:#F6EFE0;text-shadow:0 2px 14px rgba(20,15,8,.85),0 0 4px rgba(20,15,8,.6);animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.3s both">マンツーマン施術でゆったり&nbsp;&nbsp;─&nbsp;&nbsp;下北沢駅 徒歩30秒</p>
+      <p class="hero-lead" style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(17px,2vw,21px);line-height:2.1;letter-spacing:.18em;color:#FDFBF5;text-shadow:0 2px 16px rgba(20,15,8,.85),0 0 5px rgba(20,15,8,.55);animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.15s both">お気に入りの行きつけサロンを探している、<br>大人女性へ。</p>
+      <p class="hero-sub" style="margin:16px 0 0;font-size:13.5px;letter-spacing:.26em;color:#F6EFE0;text-shadow:0 2px 14px rgba(20,15,8,.85),0 0 4px rgba(20,15,8,.6);animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.3s both">マンツーマン施術でゆったり<span class="hero-sep">&nbsp;&nbsp;─&nbsp;&nbsp;</span>下北沢駅 徒歩30秒</p>
       <div id="heroBtns" style="display:flex;gap:16px;justify-content:center;align-items:center;margin-top:38px;animation:fadeUpK 1.1s cubic-bezier(.22,1,.36,1) 1.45s both">
         <a href="https://beauty.hotpepper.jp/CSP/bt/reserve/?storeId=H000345284" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#C8A766,#A98445);color:#fff;text-decoration:none;padding:17px 44px;border-radius:2px;font-size:13.5px;letter-spacing:.24em;box-shadow:0 14px 34px -12px rgba(120,92,40,.7);transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s" style-hover="transform:translateY(-3px);box-shadow:0 22px 44px -14px rgba(120,92,40,.85)">空席確認・WEB予約</a>
         <a href="#coupon" style="border:1px solid rgba(253,251,245,.85);background:rgba(30,24,15,.45);color:#FDFBF5;text-decoration:none;padding:16px 38px;border-radius:2px;font-size:13.5px;letter-spacing:.24em;backdrop-filter:blur(6px);text-shadow:0 1px 8px rgba(20,15,8,.6);transition:background .4s, color .4s, text-shadow .4s" style-hover="background:rgba(253,251,245,.94);color:#5A4A2E;text-shadow:none">クーポンを見る</a>
@@ -344,7 +357,7 @@
       <h2 data-reveal="up" data-delay="100" style="margin:0;font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(26px,3vw,36px);letter-spacing:.14em;color:#37301F">サロンの雰囲気</h2>
       <p data-reveal="up" data-delay="200" style="margin:20px 0 0;font-size:13.5px;letter-spacing:.16em;color:#8B7E68">お席の間隔が広く、緊張せずリラックスして過ごせる空間です。</p>
     </div>
-    <div class="gallery-track" data-reveal="up" data-delay="150" style="display:flex;width:max-content;gap:18px;animation:marqueeK 58s linear infinite;padding-left:18px" style-hover="animation-play-state:paused">
+    <div class="gallery-track" style="display:flex;width:max-content;gap:18px;animation:marqueeK 58s linear infinite;padding-left:18px" style-hover="animation-play-state:paused">
       <div style="display:flex;gap:18px">
         <img src="https://imgbp.hotp.jp/CSP/IMG_SRC/65/60/B189066560/B189066560.jpg?impolicy=HPB_policy_default&w=480&h=360" alt="店内" style="height:250px;width:333px;object-fit:cover;border-radius:3px">
         <img src="https://imgbp.hotp.jp/CSP/IMG_SRC/83/07/B100688307/B100688307.jpg?impolicy=HPB_policy_default&w=480&h=360" alt="店内" style="height:250px;width:333px;object-fit:cover;border-radius:3px;margin-top:22px">
