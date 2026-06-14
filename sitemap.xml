@@ -8,9 +8,17 @@
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- 採用・人材 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/saiyou-site-tsukurikata/</loc>
+    <lastmod>2026-06-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- AI・最新 -->

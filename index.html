@@ -2149,6 +2149,15 @@
       <p class="section-desc">ホームページ制作の費用・集客・技術のことを、はじめての方にもわかりやすく発信しています。</p>
     </div>
     <div class="blog-home-grid">
+      <a href="/blog/saiyou-site-tsukurikata/" class="blog-home-card">
+        <div class="blog-home-thumb"></div>
+        <div class="blog-home-body">
+          <span class="blog-home-cat">採用・人材</span>
+          <h3>採用サイトの作り方｜応募が増える構成・必要ページと中小企業に必要な理由</h3>
+          <p>求人媒体との違い、応募が集まる必須ページと構成、Indeedや求人検索エンジン・Googleしごと検索に載せるSEO対策、作り方3つの方法と費用相場まで、中小企業・店舗向けに解説します。</p>
+          <span class="blog-home-date">2026.06.14</span>
+        </div>
+      </a>
       <a href="/blog/chatgpt-perplexity-inyou/" class="blog-home-card">
         <div class="blog-home-thumb"></div>
         <div class="blog-home-body">
@@ -2164,15 +2173,6 @@
           <span class="blog-home-cat">技術・SEO</span>
           <h3>構造化データの入れ方｜初心者向けにFAQ・記事・パンくずを実装する方法</h3>
           <p>構造化データ（JSON-LD）とは何かと、FAQPage・BlogPosting・BreadcrumbList・LocalBusinessの入れ方を、コピペできるコード例つきで解説します。</p>
-          <span class="blog-home-date">2026.06.13</span>
-        </div>
-      </a>
-      <a href="/blog/eeat-toha-takameru/" class="blog-home-card">
-        <div class="blog-home-thumb"></div>
-        <div class="blog-home-body">
-          <span class="blog-home-cat">技術・SEO</span>
-          <h3>E-E-A-Tとは？個人・小規模サイトでも信頼性を高める方法｜AI時代のSEO</h3>
-          <p>経験・専門性・権威性・信頼性とは何かと、小さなサイトでも運営者情報・実績・一次情報・口コミで信頼性を高める具体策をまとめました。</p>
           <span class="blog-home-date">2026.06.13</span>
         </div>
       </a>
@@ -2371,6 +2371,10 @@ function toggleFaq(i) {
       try { data = await res.json(); } catch (_) {}
       if (!res.ok || !data.ok) {
         throw new Error(data.error || '送信に失敗しました。時間をおいて再度お試しください。');
+      }
+      // GA4: お問い合わせ送信完了をキーイベントとして計測
+      if (typeof gtag === 'function') {
+        gtag('event', 'generate_lead', { form_name: 'contact', form_location: 'top' });
       }
       form.style.display = 'none';
       successBox.classList.add('is-visible');
