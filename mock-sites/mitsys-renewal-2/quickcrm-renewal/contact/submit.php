@@ -14,7 +14,7 @@ declare(strict_types=1);
    設置条件: PHP が動作するサーバーに index.html と同じ階層へ置くだけ。
    ===================================================================== */
 const TO_EMAIL   = 'aikawa@leciel-webdesign.com';  // 通知の受信先（一旦こちら。納品時にクライアントの受信先へ変更）
-const FROM_EMAIL = 'noreply@mitsys.co.jp';     // ★送信元（自ドメインの実在アドレス）
+const FROM_EMAIL = 'noreply@leciel-webdesign.com';  // 送信元（このサーバーのドメイン＝届きやすい）
 const FROM_NAME  = 'QuickCRM お問い合わせ';
 const SITE_NAME  = 'QuickCRM';
 const SITE_URL   = 'https://www.mitsys.co.jp/';
