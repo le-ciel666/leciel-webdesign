@@ -80,6 +80,11 @@
     background:rgba(255,255,255,.18) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3 8l3.5 3.5L13 5'/></svg>") center/11px no-repeat;
   }
 
+  /* ハニーポット（画面外へ隠す） */
+  .cf-hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  /* 送信エラーメッセージ */
+  .cf-error{margin:0;color:#c0392b;font-size:13.5px;font-weight:600;line-height:1.65}
+
   /* ── Page footer ── */
   .page-footer{background:var(--bg-deep-2);padding:0 clamp(16px,2.4vw,32px)}
   .page-footer-inner{
@@ -130,7 +135,11 @@
       <div class="cf-form-card" id="cfFormCard">
         <h3>お問い合わせフォーム</h3>
         <p>以下の項目をご入力のうえ送信してください。</p>
-        <form id="cfForm" class="cf-form-grid" novalidate>
+        <form id="cfForm" class="cf-form-grid" method="POST" action="submit.php" novalidate>
+          <!-- bot対策ハニーポット（人間には見えない／空のまま送信される想定） -->
+          <div class="cf-hp" aria-hidden="true">
+            <label>ご記入不要<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
           <label class="cf-label">
             会社名<span class="cf-req">必須</span>
             <input type="text" name="company" autocomplete="organization" placeholder="株式会社サンプル" required>
@@ -158,6 +167,7 @@
             </label>
             <a class="cf-privacy-link" href="https://www.mitsys.co.jp/privacy_policy2.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて →</a>
           </div>
+          <p class="cf-error" id="cfError" role="alert" hidden></p>
           <button class="btn btn-primary cf-submit-btn" type="submit" id="cfSubmit" disabled>
             この内容でお問い合わせする <span class="arr">→</span>
           </button>
@@ -189,17 +199,54 @@
   const submit = document.getElementById('cfSubmit');
   const card = document.getElementById('cfFormCard');
   const complete = document.getElementById('cfComplete');
+  const errorBox = document.getElementById('cfError');
 
   agree?.addEventListener('change', () => { submit.disabled = !agree.checked; });
 
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
+  const showComplete = () => {
     form.style.display = 'none';
-    card.querySelector('h3').style.display = 'none';
-    card.querySelectorAll('p').forEach(p => p.style.display = 'none');
+    // カード直下の見出し・説明文だけ隠す（完了メッセージ内のテキストは残す）
+    card.querySelectorAll(':scope > h3, :scope > p').forEach(el => el.style.display = 'none');
     complete.hidden = false;
     complete.focus();
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (errorBox) errorBox.hidden = true;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const original = submit.innerHTML;
+    submit.disabled = true;
+    submit.textContent = '送信中…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        body: new FormData(form)
+      });
+      let data = {};
+      try { data = await res.json(); } catch (_) {}
+
+      if (res.ok && data.ok) {
+        showComplete();
+      } else {
+        if (errorBox) {
+          errorBox.textContent = data.message || '送信に失敗しました。時間をおいて再度お試しください。';
+          errorBox.hidden = false;
+        }
+        submit.disabled = false;
+        submit.innerHTML = original;
+      }
+    } catch (_) {
+      if (errorBox) {
+        errorBox.textContent = '送信に失敗しました。通信環境をご確認のうえ、再度お試しください。';
+        errorBox.hidden = false;
+      }
+      submit.disabled = false;
+      submit.innerHTML = original;
+    }
   });
 </script>
 </body>
