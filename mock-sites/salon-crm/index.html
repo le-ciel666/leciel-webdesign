@@ -43,6 +43,9 @@ body{margin:0;}
 .nav-mobile-panel.open{display:flex;}
 .loop-mobile{display:none;}
 .concept-arrow-sp{display:none;}
+.cmp-hint{display:none;}
+@keyframes cmpHintIn{from{opacity:0;transform:translate(-50%,-44%);}to{opacity:1;transform:translate(-50%,-50%);}}
+@keyframes cmpSwipe{0%,100%{transform:translateX(-3px);}50%{transform:translateX(3px);}}
 @media(max-width:1023px){
   .nav-desktop{display:none;}
   .nav-mobile-btn{display:flex;}
@@ -50,10 +53,17 @@ body{margin:0;}
   .loop-mobile{display:block;}
   /* スマホでは「5つの機能」セクションの2枚目以降の画像を非表示（1枚目のみ表示） */
   .feat-img-sp-hide{display:none;}
-  /* スマホでは概要セクションのコネクターを下向き矢印に切り替え */
+  /* スマホでは概要セクションのコネクターをシンプルな下向き矢印に切り替え */
   .concept-arrow-pc{display:none;}
   .concept-arrow-sp{display:block;}
   .concept-arrow{min-width:0;padding:2px 0;}
+  /* 比較表：横スクロールを促すふわっとしたヒント */
+  .cmp-hint{display:flex;align-items:center;gap:9px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    background:rgba(43,40,35,.82);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);color:#F7F2E7;
+    padding:11px 18px;border-radius:999px;font-size:13.5px;font-weight:600;letter-spacing:.04em;white-space:nowrap;
+    box-shadow:0 18px 44px -18px rgba(0,0,0,.45);pointer-events:none;z-index:5;animation:cmpHintIn .5s ease both;}
+  .cmp-hint svg{animation:cmpSwipe 1.3s ease-in-out infinite;}
+  .cmp-hint.hide{animation:none;opacity:0;transition:opacity .45s ease;}
 }
 
 /* ===== Hover / focus states ===== */
@@ -134,7 +144,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
       </div>
       <div class="concept-arrow" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:80px;">
         <!-- PC: 横向きの曲線コネクター -->
-        <svg class="concept-arrow-pc" width="100" height="210" viewBox="0 0 100 210" fill="none" style="overflow:visible;display:block;">
+        <svg class="concept-arrow-pc" width="100" height="210" viewBox="0 0 100 210" fill="none" style="overflow:visible;">
           <defs>
             <linearGradient id="flowConnect" x1="0" y1="210" x2="100" y2="0" gradientUnits="userSpaceOnUse">
               <stop offset="0" stop-color="#A6BD86"/>
@@ -146,19 +156,13 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <path d="M6 198 C 70 176, 30 58, 94 30" stroke="url(#flowConnect)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
           <circle cx="94" cy="30" r="3" fill="#CBAA63" opacity="0.9" style="filter:blur(0.4px);"/>
         </svg>
-        <!-- SP: 下向きの矢印（縦積み時に意味が通るように） -->
-        <svg class="concept-arrow-sp" width="34" height="60" viewBox="0 0 34 60" fill="none" style="overflow:visible;display:block;">
+        <!-- SP: シンプルな下向き矢印のみ -->
+        <svg class="concept-arrow-sp" width="28" height="48" viewBox="0 0 28 48" fill="none" style="overflow:visible;">
           <defs>
-            <linearGradient id="flowConnectSp" x1="17" y1="0" x2="17" y2="60" gradientUnits="userSpaceOnUse">
-              <stop offset="0" stop-color="#A6BD86"/>
-              <stop offset="0.5" stop-color="#DDCB8C"/>
-              <stop offset="1" stop-color="#BF9F58"/>
-            </linearGradient>
+            <linearGradient id="flowDownConcept" x1="14" y1="0" x2="14" y2="48" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B7CC93"/><stop offset="0.55" stop-color="#DDCB8C"/><stop offset="1" stop-color="#C2A35E"/></linearGradient>
           </defs>
-          <circle cx="17" cy="5" r="2.6" fill="#A6BD86"/>
-          <line x1="17" y1="5" x2="17" y2="46" stroke="url(#flowConnectSp)" stroke-width="7" stroke-linecap="round" opacity="0.35" style="filter:blur(4px);"/>
-          <line x1="17" y1="5" x2="17" y2="46" stroke="url(#flowConnectSp)" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M8 42 L17 54 L26 42" fill="none" stroke="url(#flowConnectSp)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="14" y1="4" x2="14" y2="38" stroke="url(#flowDownConcept)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M6 32 L14 43 L22 32" fill="none" stroke="url(#flowDownConcept)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
       <div data-reveal data-delay="140" style="opacity:0;flex:1 1 320px;min-width:280px;background:linear-gradient(160deg,#FFFDF8,#FAF4E6);border:1.5px solid #E0CE99;border-radius:20px;padding:clamp(28px,3vw,40px);box-shadow:0 30px 70px -38px rgba(150,116,46,.45);">
@@ -372,7 +376,8 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
     <div data-reveal style="opacity:0;text-align:center;margin-bottom:clamp(40px,5vw,58px);">
       <h2 style="font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(22px,3vw,35px);line-height:1.55;letter-spacing:.02em;margin:0;color:#2C2823;">単なる「受付窓口」から「お店の心臓部」への、<br>確かな進化。</h2>
     </div>
-    <div data-reveal style="opacity:0;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <div data-reveal style="opacity:0;position:relative;">
+      <div class="cmp-scroll" id="cmpScroll" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
       <div style="min-width:680px;display:grid;grid-template-columns:0.9fr 1.2fr 1.2fr;border:1px solid #EAE0CC;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -44px rgba(120,95,40,.4);">
         <div style="padding:20px 22px;background:#FBF9F3;"></div>
         <div style="padding:20px 22px;background:linear-gradient(135deg,#EFEBE3,#E6E0D5);text-align:center;"><div style="font-family:'Shippori Mincho',serif;font-size:18.5px;color:#7A7265;">従来のコールセンター</div><div style="font-size:14px;color:#A89A86;margin-top:3px;">（受付窓口）</div></div>
@@ -393,6 +398,16 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
         <div style="padding:20px 22px;border-top:1px solid #F0E9D9;font-family:'Shippori Mincho',serif;font-size:17.5px;color:#3E3933;display:flex;align-items:center;">ビジネスへの貢献</div>
         <div style="padding:20px 22px;border-top:1px solid #F0E9D9;border-left:1px solid #F4EEE0;font-size:15.5px;color:#7A7265;line-height:1.8;display:flex;align-items:center;">コストセンター（単なる予約処理）</div>
         <div style="padding:20px 22px;border-top:1px solid #F0E9D9;border-left:1px solid #F4EEE0;background:#FDFBF5;font-size:15.5px;color:#46513A;line-height:1.8;font-weight:600;display:flex;align-items:center;">プロフィットセンター（LTV向上・解約率低下・新規売上創出）</div>
+      </div>
+      </div>
+      <!-- スマホ用：横スクロールを促すふわっとしたヒント -->
+      <div class="cmp-hint" id="cmpHint" aria-hidden="true">
+        <svg width="34" height="16" viewBox="0 0 34 16" fill="none" aria-hidden="true">
+          <path d="M7 8 H27" stroke="#F7F2E7" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M7 8 L11 4 M7 8 L11 12" stroke="#F7F2E7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M27 8 L23 4 M27 8 L23 12" stroke="#F7F2E7" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>横にスクロールできます</span>
       </div>
     </div>
   </div>
@@ -593,6 +608,23 @@ function handleSubmit(e){
   } else {
     els.forEach(function(el){ el.style.opacity = '1'; });
   }
+})();
+
+// ===== 比較表の横スクロールヒント（スワイプ or 一定時間でフェードアウト） =====
+(function(){
+  var sc = document.getElementById('cmpScroll');
+  var hint = document.getElementById('cmpHint');
+  if (!sc || !hint) return;
+  var done = false;
+  function hide(){
+    if (done) return;
+    done = true;
+    hint.classList.add('hide');
+    setTimeout(function(){ hint.style.display = 'none'; }, 500);
+    sc.removeEventListener('scroll', hide);
+  }
+  sc.addEventListener('scroll', hide, { passive: true });
+  setTimeout(hide, 5000);
 })();
 </script>
 </body>
