@@ -42,11 +42,18 @@ body{margin:0;}
 .nav-mobile-panel a.cta{margin-top:10px;text-align:center;background:linear-gradient(135deg,#C3A35F,#A37E36);color:#fff;padding:13px;border-radius:999px;font-size:16.5px;font-weight:600;border-bottom:none;}
 .nav-mobile-panel.open{display:flex;}
 .loop-mobile{display:none;}
+.concept-arrow-sp{display:none;}
 @media(max-width:1023px){
   .nav-desktop{display:none;}
   .nav-mobile-btn{display:flex;}
   .loop-desktop{display:none;}
   .loop-mobile{display:block;}
+  /* スマホでは「5つの機能」セクションの2枚目以降の画像を非表示（1枚目のみ表示） */
+  .feat-img-sp-hide{display:none;}
+  /* スマホでは概要セクションのコネクターを下向き矢印に切り替え */
+  .concept-arrow-pc{display:none;}
+  .concept-arrow-sp{display:block;}
+  .concept-arrow{min-width:0;padding:2px 0;}
 }
 
 /* ===== Hover / focus states ===== */
@@ -125,8 +132,9 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
         <div style="font-size:15px;color:#A89A86;letter-spacing:.06em;margin-bottom:18px;">（コストセンター）</div>
         <p style="font-size:16.5px;line-height:1.95;color:#6B6359;margin:0;">予約や問い合わせを「ただ処理する」だけの場所。効率だけが求められ、お客様との会話は事務的になりがちでした。</p>
       </div>
-      <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:80px;">
-        <svg width="100" height="210" viewBox="0 0 100 210" fill="none" style="overflow:visible;display:block;">
+      <div class="concept-arrow" style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;align-self:stretch;min-width:80px;">
+        <!-- PC: 横向きの曲線コネクター -->
+        <svg class="concept-arrow-pc" width="100" height="210" viewBox="0 0 100 210" fill="none" style="overflow:visible;display:block;">
           <defs>
             <linearGradient id="flowConnect" x1="0" y1="210" x2="100" y2="0" gradientUnits="userSpaceOnUse">
               <stop offset="0" stop-color="#A6BD86"/>
@@ -137,6 +145,20 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <path d="M6 198 C 70 176, 30 58, 94 30" stroke="url(#flowConnect)" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.4" style="filter:blur(5px);"/>
           <path d="M6 198 C 70 176, 30 58, 94 30" stroke="url(#flowConnect)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
           <circle cx="94" cy="30" r="3" fill="#CBAA63" opacity="0.9" style="filter:blur(0.4px);"/>
+        </svg>
+        <!-- SP: 下向きの矢印（縦積み時に意味が通るように） -->
+        <svg class="concept-arrow-sp" width="34" height="60" viewBox="0 0 34 60" fill="none" style="overflow:visible;display:block;">
+          <defs>
+            <linearGradient id="flowConnectSp" x1="17" y1="0" x2="17" y2="60" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#A6BD86"/>
+              <stop offset="0.5" stop-color="#DDCB8C"/>
+              <stop offset="1" stop-color="#BF9F58"/>
+            </linearGradient>
+          </defs>
+          <circle cx="17" cy="5" r="2.6" fill="#A6BD86"/>
+          <line x1="17" y1="5" x2="17" y2="46" stroke="url(#flowConnectSp)" stroke-width="7" stroke-linecap="round" opacity="0.35" style="filter:blur(4px);"/>
+          <line x1="17" y1="5" x2="17" y2="46" stroke="url(#flowConnectSp)" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M8 42 L17 54 L26 42" fill="none" stroke="url(#flowConnectSp)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
       <div data-reveal data-delay="140" style="opacity:0;flex:1 1 320px;min-width:280px;background:linear-gradient(160deg,#FFFDF8,#FAF4E6);border:1.5px solid #E0CE99;border-radius:20px;padding:clamp(28px,3vw,40px);box-shadow:0 30px 70px -38px rgba(150,116,46,.45);">
@@ -267,7 +289,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
 
     <!-- Feature 02 -->
     <div data-reveal style="opacity:0;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,4vw,60px);margin-bottom:clamp(54px,6vw,90px);flex-direction:row-reverse;">
-      <div style="flex:1 1 360px;min-width:300px;">
+      <div class="feat-img-sp-hide" style="flex:1 1 360px;min-width:300px;">
         <div style="position:relative;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #EFE7D6;box-shadow:0 30px 70px -40px rgba(120,95,40,.5);">
           <img src="img/feat-monitor-v3.webp" alt="シンプルな1画面" style="width:100%;height:auto;display:block;"/>
         </div>
@@ -285,7 +307,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
 
     <!-- Feature 03 -->
     <div data-reveal style="opacity:0;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,4vw,60px);margin-bottom:clamp(54px,6vw,90px);">
-      <div style="flex:1 1 360px;min-width:300px;">
+      <div class="feat-img-sp-hide" style="flex:1 1 360px;min-width:300px;">
         <div style="position:relative;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #EFE7D6;box-shadow:0 30px 70px -40px rgba(120,95,40,.5);">
           <img src="img/feat-soundwave-v2.webp" alt="自動まとめメモ" style="width:100%;height:auto;display:block;"/>
         </div>
@@ -308,7 +330,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
 
     <!-- Feature 04 -->
     <div data-reveal style="opacity:0;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,4vw,60px);margin-bottom:clamp(54px,6vw,90px);flex-direction:row-reverse;">
-      <div style="flex:1 1 360px;min-width:300px;">
+      <div class="feat-img-sp-hide" style="flex:1 1 360px;min-width:300px;">
         <div style="position:relative;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#FCFAF4,#F6EFE0);border:1px solid #EFE7D6;box-shadow:0 30px 70px -40px rgba(120,95,40,.5);">
           <img src="img/feat-connect-v2.webp" alt="いつもの担当者へつなぐ" style="width:100%;height:auto;display:block;"/>
         </div>
@@ -326,7 +348,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
 
     <!-- Feature 05 -->
     <div data-reveal style="opacity:0;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(28px,4vw,60px);">
-      <div style="flex:1 1 360px;min-width:300px;">
+      <div class="feat-img-sp-hide" style="flex:1 1 360px;min-width:300px;">
         <div style="position:relative;border-radius:20px;overflow:hidden;background:#fff;border:1px solid #EFE7D6;box-shadow:0 30px 70px -40px rgba(120,95,40,.5);">
           <img src="img/feat-funnel-v3.webp" alt="自動リスト作成" style="width:100%;height:auto;display:block;"/>
         </div>
