@@ -55,6 +55,8 @@ body{margin:0;}
   /* ヒーロー見出しの改行位置をスマホ用に切り替え */
   .br-pc{display:none;}
   .br-sp{display:inline;}
+  /* 「もたらす価値」はスマホでラベルを上・本文を下に全幅表示し改行を減らす */
+  .value-box{flex-direction:column;gap:8px;}
   /* スマホでは「5つの機能」セクションの2枚目以降の画像を非表示（1枚目のみ表示） */
   .feat-img-sp-hide{display:none;}
   /* スマホでは概要セクションのコネクターをシンプルな下向き矢印に切り替え */
@@ -291,7 +293,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <div style="background:#F0ECE3;border-radius:12px;padding:15px 17px;"><div style="font-size:13px;font-weight:700;color:#A89A86;letter-spacing:.08em;margin-bottom:6px;">これまでは</div><div style="font-size:15px;color:#6B6359;line-height:1.8;">「メールで相談した件ですが…」と言われると、別の画面を探す必要がありました。</div></div>
           <div style="background:#fff;border:1.5px solid #DCC98F;border-radius:12px;padding:15px 17px;box-shadow:0 8px 24px -16px rgba(150,116,46,.4);"><div style="font-size:13px;font-weight:700;color:#A07E36;letter-spacing:.08em;margin-bottom:6px;">これからは</div><div style="font-size:15px;color:#4A453D;line-height:1.8;font-weight:500;">メールも、チャットも、お電話の履歴も。すべてがお客様ごとに1つの画面にまとまります。</div></div>
         </div>
-        <div style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">誰が対応しても「○○様、先日のチャットの続きですね」と、まるで専属コンシェルジュのようにスムーズなお話し合いが始まります。</span></div>
+        <div class="value-box" style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">誰が対応しても「○○様、先日のチャットの続きですね」と、まるで専属コンシェルジュのようにスムーズなお話し合いが始まります。</span></div>
       </div>
     </div>
 
@@ -309,7 +311,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <div style="background:#F0ECE3;border-radius:12px;padding:15px 17px;"><div style="font-size:13px;font-weight:700;color:#A89A86;letter-spacing:.08em;margin-bottom:6px;">これまでは</div><div style="font-size:15px;color:#6B6359;line-height:1.8;">電話の操作、顧客情報の入力、録音の確認…いくつもの画面を切り替える応対は、気を散らせていました。</div></div>
           <div style="background:#fff;border:1.5px solid #DCC98F;border-radius:12px;padding:15px 17px;box-shadow:0 8px 24px -16px rgba(150,116,46,.4);"><div style="font-size:13px;font-weight:700;color:#A07E36;letter-spacing:.08em;margin-bottom:6px;">これからは</div><div style="font-size:15px;color:#4A453D;line-height:1.8;font-weight:500;">すべての操作がWebブラウザ上の「1つの画面」だけで完結します。</div></div>
         </div>
-        <div style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">画面操作に迷うことがなくなり、目の前のお客様との「会話」だけに100%集中できます。操作トラブルで慌てることもありません。</span></div>
+        <div class="value-box" style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">画面操作に迷うことがなくなり、目の前のお客様との「会話」だけに100%集中できます。操作トラブルで慌てることもありません。</span></div>
       </div>
     </div>
 
@@ -332,7 +334,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <div style="background:#F0ECE3;border-radius:12px;padding:15px 17px;"><div style="font-size:13px;font-weight:700;color:#A89A86;letter-spacing:.08em;margin-bottom:6px;">これまでは</div><div style="font-size:15px;color:#6B6359;line-height:1.8;">複雑なお電話の後は、記録を残す（後処理）だけでも大変な労力がかかっていました。</div></div>
           <div style="background:#fff;border:1.5px solid #DCC98F;border-radius:12px;padding:15px 17px;box-shadow:0 8px 24px -16px rgba(150,116,46,.4);"><div style="font-size:13px;font-weight:700;color:#A07E36;letter-spacing:.08em;margin-bottom:6px;">これからは</div><div style="font-size:15px;color:#4A453D;line-height:1.8;font-weight:500;">AIが通話内容をテキスト化し、要約（サマリー）を自動で作成・登録します。</div></div>
         </div>
-        <div style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">負担が劇的に減るだけでなく、次に誰が対応しても完璧に状況を把握できる「均一で質の高い記録」が残ります。</span></div>
+        <div class="value-box" style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">負担が劇的に減るだけでなく、次に誰が対応しても完璧に状況を把握できる「均一で質の高い記録」が残ります。</span></div>
       </div>
     </div>
 
@@ -350,7 +352,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <div style="background:#F0ECE3;border-radius:12px;padding:15px 17px;"><div style="font-size:13px;font-weight:700;color:#A89A86;letter-spacing:.08em;margin-bottom:6px;">これまでは</div><div style="font-size:15px;color:#6B6359;line-height:1.8;">お電話のたびに違うスタッフが対応し、その都度、状況をお伺いしなければなりませんでした。</div></div>
           <div style="background:#fff;border:1.5px solid #DCC98F;border-radius:12px;padding:15px 17px;box-shadow:0 8px 24px -16px rgba(150,116,46,.4);"><div style="font-size:13px;font-weight:700;color:#A07E36;letter-spacing:.08em;margin-bottom:6px;">これからは</div><div style="font-size:15px;color:#4A453D;line-height:1.8;font-weight:500;">「前回対応したスタッフ」へ自動的にお電話をつなぐことができます。</div></div>
         </div>
-        <div style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">「あ、○○さん、この間の件だけど…」と、お客様にこの上ない安心感と信頼感を与え、成約率の向上に直結します。</span></div>
+        <div class="value-box" style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">「あ、○○さん、この間の件だけど…」と、お客様にこの上ない安心感と信頼感を与え、成約率の向上に直結します。</span></div>
       </div>
     </div>
 
@@ -368,7 +370,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
           <div style="background:#F0ECE3;border-radius:12px;padding:15px 17px;"><div style="font-size:13px;font-weight:700;color:#A89A86;letter-spacing:.08em;margin-bottom:6px;">これまでは</div><div style="font-size:15px;color:#6B6359;line-height:1.8;">ご案内が必要なお客様を探し出す作業に時間がかかり、架電のタイミングを逃していました。</div></div>
           <div style="background:#fff;border:1.5px solid #DCC98F;border-radius:12px;padding:15px 17px;box-shadow:0 8px 24px -16px rgba(150,116,46,.4);"><div style="font-size:13px;font-weight:700;color:#A07E36;letter-spacing:.08em;margin-bottom:6px;">これからは</div><div style="font-size:15px;color:#4A453D;line-height:1.8;font-weight:500;">今アプローチすべきお客様のリストをきめ細かく自動作成。大量の自動発信機能も備えています。</div></div>
         </div>
-        <div style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">「ちょうど連絡が欲しかった！」と思っていただける絶妙なタイミングで、心を込めたご案内（アポイント獲得）が可能になります。</span></div>
+        <div class="value-box" style="background:#EDF1E6;border-radius:12px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;"><span style="flex-shrink:0;font-size:13px;font-weight:700;color:#6E8A52;background:#fff;border:1px solid #CBD9B8;border-radius:6px;padding:3px 9px;letter-spacing:.04em;margin-top:2px;">もたらす価値</span><span style="font-size:15.5px;color:#46513A;line-height:1.85;">「ちょうど連絡が欲しかった！」と思っていただける絶妙なタイミングで、心を込めたご案内（アポイント獲得）が可能になります。</span></div>
       </div>
     </div>
   </div>
