@@ -44,6 +44,7 @@ body{margin:0;}
 .loop-mobile{display:none;}
 .concept-arrow-sp{display:none;}
 .cmp-hint{display:none;}
+.br-sp{display:none;}
 @keyframes cmpHintIn{from{opacity:0;transform:translate(-50%,-44%);}to{opacity:1;transform:translate(-50%,-50%);}}
 @keyframes cmpSwipe{0%,100%{transform:translateX(-3px);}50%{transform:translateX(3px);}}
 @media(max-width:1023px){
@@ -51,6 +52,9 @@ body{margin:0;}
   .nav-mobile-btn{display:flex;}
   .loop-desktop{display:none;}
   .loop-mobile{display:block;}
+  /* ヒーロー見出しの改行位置をスマホ用に切り替え */
+  .br-pc{display:none;}
+  .br-sp{display:inline;}
   /* スマホでは「5つの機能」セクションの2枚目以降の画像を非表示（1枚目のみ表示） */
   .feat-img-sp-hide{display:none;}
   /* スマホでは概要セクションのコネクターをシンプルな下向き矢印に切り替え */
@@ -116,7 +120,7 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
   <div style="position:relative;max-width:1240px;margin:0 auto;display:flex;align-items:center;min-height:clamp(540px,78vh,740px);padding:clamp(48px,6vw,92px) clamp(20px,4vw,48px);">
     <div style="max-width:660px;width:100%;">
       <div style="font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.26em;color:#B2924F;font-weight:600;text-transform:uppercase;margin-bottom:22px;">Premium Salon Concierge</div>
-      <h1 style="font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(22px,2.9vw,33px);line-height:1.55;letter-spacing:.02em;margin:0 0 24px;color:#2C2823;">単なる受付窓口から、一生モノのファンを<br>生み出す<span style="color:#A07E36;">「お店の心臓部」</span>へ。</h1>
+      <h1 style="font-family:'Shippori Mincho',serif;font-weight:600;font-size:clamp(22px,2.9vw,33px);line-height:1.55;letter-spacing:.02em;margin:0 0 24px;color:#2C2823;">単なる受付窓口から、一生モノの<br class="br-sp">ファンを<br class="br-pc">生み出す<br class="br-sp"><span style="color:#A07E36;">「お店の心臓部」</span>へ。</h1>
       <p style="font-size:clamp(15px,1.6vw,17px);line-height:2;color:#5C554B;margin:0 0 30px;max-width:30em;">次世代のコンタクトセンターが実現する、<br>最高の<strong style="color:#3E3933;font-weight:600;">おもてなし</strong>と<strong style="color:#3E3933;font-weight:600;">LTVの最大化</strong>。</p>
       <div style="display:flex;flex-wrap:wrap;gap:8px 22px;font-size:15px;color:#8A8275;">
         <span style="display:inline-flex;align-items:center;gap:7px;"><span style="color:#9CAE7E;font-weight:700;">✓</span>1996年からコンタクトセンターの進化を支える</span>
