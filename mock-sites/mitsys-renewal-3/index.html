@@ -721,7 +721,9 @@
     color: #b9831a;
   }
   .application-card .banner-content {
-    width: min(400px, 78%);
+    /* 短い1文の説明は2行に収めたいので、テキスト列を広めに確保する
+       （1枚表示でカード幅に余裕があるため、最長文＝着信者主権でも2行で収まる） */
+    width: min(560px, 86%);
     padding: 34px;
   }
   .banner-kicker {
