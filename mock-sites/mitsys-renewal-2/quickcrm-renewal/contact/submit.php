@@ -57,7 +57,7 @@ function respond(bool $ok, string $message): void {
 }
 
 /* ---- 自己完結のSMTPクライアント（認証つき送信。外部ライブラリ不要） ---- */
-function smtp_send(string $subject, string $body, string $replyTo = ''): array {
+function smtp_send(string $subject, string $body, string $to, string $replyTo = ''): array {
     $transport = (SMTP_SECURE === 'ssl') ? 'ssl://' . SMTP_HOST : SMTP_HOST;
     $ctx = stream_context_create(['ssl' => ['verify_peer' => true, 'verify_peer_name' => true]]);
     $errno = 0; $errstr = '';
@@ -98,7 +98,7 @@ function smtp_send(string $subject, string $body, string $replyTo = ''): array {
 
     $send('MAIL FROM:<' . MAIL_FROM . '>');
     if ($code($read()) !== '250') { fclose($fp); return [false, 'MAIL FROM拒否（送信元アドレスをご確認ください）']; }
-    $send('RCPT TO:<' . MAIL_TO . '>');
+    $send('RCPT TO:<' . $to . '>');
     $rcpt = $code($read());
     if ($rcpt !== '250' && $rcpt !== '251') { fclose($fp); return [false, 'RCPT TO拒否（受信先アドレスをご確認ください）']; }
     $send('DATA');
@@ -106,7 +106,7 @@ function smtp_send(string $subject, string $body, string $replyTo = ''): array {
 
     $headers = [
         'From: ' . mb_encode_mimeheader((string)MAIL_FROM_NAME, 'UTF-8', 'B') . ' <' . MAIL_FROM . '>',
-        'To: <' . MAIL_TO . '>',
+        'To: <' . $to . '>',
         'Subject: ' . mb_encode_mimeheader($subject, 'UTF-8', 'B'),
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
@@ -199,12 +199,46 @@ $body = implode("\n", [
     'IPアドレス: ' . ($_SERVER['REMOTE_ADDR'] ?? '-'),
 ]);
 
-[$ok, $detail] = smtp_send($subject, $body, $replyTo);
+/* ① 管理者への通知メール（これが本処理の成否判定） */
+[$ok, $detail] = smtp_send($subject, $body, MAIL_TO, $replyTo);
 
 if (!$ok) {
     error_log('quickcrm contact smtp failed: ' . $detail);
     http_response_code(502);
     respond(false, '送信に失敗しました。お手数ですが、時間をおいて再度お試しください。');
+}
+
+/* ② お問い合わせ者本人への確認（自動返信）メール
+      ・本人宛の送信に失敗しても、お問い合わせ自体は成立しているので成功として返す。 */
+$ackSubject = '【QuickCRM】お問い合わせを受け付けました';
+$ackBody = implode("\n", [
+    $name . ' 様',
+    '',
+    'この度は、QuickCRMへお問い合わせいただき、誠にありがとうございます。',
+    '以下の内容でお問い合わせを受け付けました。',
+    '担当者より2営業日以内にご連絡いたします。',
+    '',
+    '────────────────────',
+    '■会社名',          $company,
+    '■お名前',          $name,
+    '■メールアドレス',   $email,
+    '■電話番号',         $tel,
+    '■お問い合わせ内容', $message,
+    '────────────────────',
+    '',
+    '※本メールは送信専用ではございません。ご不明点はそのままご返信ください。',
+    '※お心当たりのない場合は、お手数ですが本メールを破棄してください。',
+    '',
+    '──────────────────────────────',
+    '株式会社エム・アイ・ティシステム研究所（MITシステム研究所）',
+    'QuickCRM 担当',
+    'TEL：03-6872-1210（平日 9:00〜18:00）',
+    'Mail：' . MAIL_FROM,
+    '──────────────────────────────',
+]);
+[$ackOk, $ackDetail] = smtp_send($ackSubject, $ackBody, $email, (string)MAIL_FROM);
+if (!$ackOk) {
+    error_log('quickcrm contact ack mail failed: ' . $ackDetail);
 }
 
 respond(true, 'お問い合わせを受け付けました。担当より2営業日以内にご連絡いたします。');
