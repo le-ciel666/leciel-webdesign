@@ -495,15 +495,20 @@ footer .foot-bottom a:hover{color:#CFC8BB;}
       <div data-reveal data-delay="120" style="opacity:0;flex:1 1 360px;min-width:300px;">
         <div style="background:#fff;border:1px solid #EDE4D2;border-radius:20px;padding:clamp(26px,3vw,38px);box-shadow:0 30px 70px -44px rgba(120,95,40,.4);">
           <div id="formWrap">
-            <form onsubmit="handleSubmit(event)">
+            <form id="demoForm" method="POST" action="contact/submit.php" novalidate onsubmit="handleSubmit(event)">
               <h3 style="font-family:'Shippori Mincho',serif;font-weight:600;font-size:24px;margin:0 0 6px;color:#2C2823;">無料デモのお申し込み</h3>
               <p style="font-size:14.5px;color:#8A8275;margin:0 0 22px;line-height:1.7;">下記フォームよりお気軽にお問い合わせください。担当者より折り返しご連絡いたします。</p>
+              <!-- bot対策ハニーポット（人間には見えない／空のまま送信される想定） -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+                <label>ご記入不要<input type="text" name="website" tabindex="-1" autocomplete="off"/></label>
+              </div>
               <div style="display:flex;flex-direction:column;gap:14px;">
-                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">お名前 <span style="color:#C58B5A;">必須</span></span><input type="text" required placeholder="山田 花子" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
-                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">サロン名・会社名 <span style="color:#C58B5A;">必須</span></span><input type="text" required placeholder="〇〇ビューティーサロン" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
-                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">メールアドレス <span style="color:#C58B5A;">必須</span></span><input type="email" required placeholder="example@salon.co.jp" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
-                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">お電話番号</span><input type="tel" placeholder="03-0000-0000" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
-                <button type="submit" style="margin-top:6px;width:100%;background:linear-gradient(135deg,#C3A35F 0%,#A37E36 100%);color:#fff;border:none;padding:16px;border-radius:999px;font-size:18px;font-weight:600;letter-spacing:.04em;cursor:pointer;font-family:'Zen Kaku Gothic New',sans-serif;box-shadow:0 14px 30px -10px rgba(150,116,46,.6);">無料デモを申し込む →</button>
+                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">お名前 <span style="color:#C58B5A;">必須</span></span><input type="text" name="name" autocomplete="name" required placeholder="山田 花子" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
+                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">サロン名・会社名 <span style="color:#C58B5A;">必須</span></span><input type="text" name="company" autocomplete="organization" required placeholder="〇〇ビューティーサロン" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
+                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">メールアドレス <span style="color:#C58B5A;">必須</span></span><input type="email" name="email" autocomplete="email" required placeholder="example@salon.co.jp" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
+                <label style="display:block;"><span style="display:block;font-size:14.5px;color:#6B6359;margin-bottom:6px;font-weight:500;">お電話番号</span><input type="tel" name="tel" autocomplete="tel" placeholder="03-0000-0000" style="width:100%;border:1px solid #E3DAC8;background:#FCFAF5;border-radius:10px;padding:12px 14px;font-size:16px;font-family:'Zen Kaku Gothic New',sans-serif;color:#3E3933;outline:none;"/></label>
+                <p id="formError" role="alert" hidden style="margin:0;color:#c0392b;font-size:13.5px;font-weight:600;line-height:1.65;"></p>
+                <button type="submit" id="demoSubmit" style="margin-top:6px;width:100%;background:linear-gradient(135deg,#C3A35F 0%,#A37E36 100%);color:#fff;border:none;padding:16px;border-radius:999px;font-size:18px;font-weight:600;letter-spacing:.04em;cursor:pointer;font-family:'Zen Kaku Gothic New',sans-serif;box-shadow:0 14px 30px -10px rgba(150,116,46,.6);">無料デモを申し込む →</button>
                 <p style="font-size:12.5px;color:#A89A86;text-align:center;margin:4px 0 0;line-height:1.6;">送信いただいた情報は、本デモのご案内のみに利用いたします。</p>
               </div>
             </form>
@@ -585,13 +590,46 @@ window.addEventListener('resize', function(){
   if (window.innerWidth >= 1024) closeMenu();
 });
 
-// ===== Contact form (demo) =====
-function handleSubmit(e){
+// ===== Contact form (SMTP送信 / QuickCRM方式) =====
+async function handleSubmit(e){
   e.preventDefault();
-  document.getElementById('formWrap').style.display = 'none';
-  document.getElementById('successWrap').style.display = 'block';
-  var success = document.getElementById('successWrap');
-  if (success && success.scrollIntoView) success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  var form = e.target;
+  var errorBox = document.getElementById('formError');
+  var submitBtn = document.getElementById('demoSubmit');
+  if (errorBox) errorBox.hidden = true;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+
+  var original = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '送信中…'; }
+
+  var showSuccess = function(){
+    document.getElementById('formWrap').style.display = 'none';
+    document.getElementById('successWrap').style.display = 'block';
+    var success = document.getElementById('successWrap');
+    if (success && success.scrollIntoView) success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  var showError = function(msg){
+    if (errorBox) { errorBox.textContent = msg; errorBox.hidden = false; }
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = original; }
+  };
+
+  try {
+    var res = await fetch(form.action, {
+      method: 'POST',
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      body: new FormData(form)
+    });
+    var data = {};
+    try { data = await res.json(); } catch (_) {}
+
+    if (res.ok && data.ok) {
+      showSuccess();
+    } else {
+      showError(data.message || '送信に失敗しました。時間をおいて再度お試しください。');
+    }
+  } catch (_) {
+    showError('送信に失敗しました。通信環境をご確認のうえ、再度お試しください。');
+  }
 }
 
 // ===== Scroll reveal =====
