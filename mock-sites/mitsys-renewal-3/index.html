@@ -1,0 +1,2676 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="assets/favicon/favicon-48.png" sizes="48x48">
+<title>コンタクトセンターDX・CTIシステム｜MITシステム研究所</title>
+<meta name="description" content="株式会社MITシステム研究所は、コールセンター・コンタクトセンター向けCRM「QuickCRM」をはじめ、アウトバウンド発信、IVR、音声認識、PBX/CTI連携までを一貫して提供します。1980年の創業以来、現場に寄り添うシステムで応対品質と業務効率の向上を支援します。">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="株式会社MITシステム研究所">
+<meta name="theme-color" content="#173f2a">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:site_name" content="株式会社MITシステム研究所">
+<meta property="og:title" content="コンタクトセンターDX・CTIシステム｜MITシステム研究所">
+<meta property="og:description" content="コールセンター向けCRM「QuickCRM」、アウトバウンド発信、IVR、音声認識、PBX/CTI連携を一貫提供。応対品質と業務効率の向上を支援する株式会社MITシステム研究所の公式サイトです。">
+<meta property="og:url" content="https://www.mitsys.co.jp/">
+<meta property="og:image" content="https://www.mitsys.co.jp/assets/images/marunouchi/hero-02.webp">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.mitsys.co.jp/#organization",
+      "name": "MITシステム研究所",
+      "url": "https://www.mitsys.co.jp/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.mitsys.co.jp/assets/logo/mitsys-logo.png"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.mitsys.co.jp/#webpage",
+      "url": "https://www.mitsys.co.jp/",
+      "name": "コンタクトセンターDX・CTIシステム",
+      "description": "コールセンター・コンタクトセンター向けCRM「QuickCRM」、Quick eDialer、QuickIVR、音声認識、PBX/CTI連携を統合的に提供する株式会社MITシステム研究所の公式サイト。",
+      "inLanguage": "ja",
+      "dateModified": "2026-05-09"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.mitsys.co.jp/#software",
+      "name": "MIT Contact Center Platform",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "コンタクトセンター運営に必要なCRM、アウトバウンド発信、音声認識、IVR、PBX連携を統合する業務プラットフォーム。",
+      "featureList": [
+        "QuickCRM",
+        "Quick eDialer",
+        "AI音声認識連携",
+        "IVR・PBX連携",
+        "プレディクティブ発信",
+        "CTI・顧客管理"
+      ],
+      "provider": {
+        "@id": "https://www.mitsys.co.jp/#organization"
+      }
+    }
+  ]
+}
+</script>
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-01.webp" fetchpriority="high" media="(min-width: 721px)">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-02.webp" fetchpriority="high" media="(max-width: 720px)">
+<style>
+  :root {
+    --ink: #111827;
+    --ink-2: #263447;
+    --muted: #475569;
+    --line: #d9e6df;
+    --line-strong: #b7cbbf;
+    --paper: #f5f8f4;
+    --white: #ffffff;
+    --navy: #173f2a;
+    --blue: #1f5f3f;
+    --cyan: #4b9b62;
+    --green: #2f8a50;
+    --amber: #f59e0b;
+    --red: #d84f45;
+    --shadow: 0 24px 70px rgba(17, 24, 39, 0.13);
+    --font-sans: system-ui, -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    /* 指で左右に画面を動かせないようにする（縦スクロールとピンチズームは許可） */
+    touch-action: pan-y pinch-zoom;
+  }
+  a { color: inherit; }
+  button, input, textarea { font: inherit; }
+
+  .demo-ribbon {
+    background: #101820;
+    color: #dceaf7;
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+  }
+  .demo-ribbon a {
+    color: #9bd8aa;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid #9bd8aa;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(184, 200, 216, 0.75);
+  }
+  .nav {
+    max-width: 1240px;
+    height: 76px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    text-decoration: none;
+    min-width: max-content;
+  }
+  .brand-logo {
+    display: block;
+    width: 210px;
+    height: auto;
+  }
+  .brand-tagline {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.28em;
+    color: var(--muted);
+    text-transform: uppercase;
+    padding-left: 2px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .nav-links a { text-decoration: none; }
+  .nav-links a:not(.svc-btn):hover { color: var(--blue); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+  /* 各サービスへジャンプするボタン群（ヘッダーからは非表示） */
+  .svc-switch {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding-right: 12px;
+    margin-right: 2px;
+    border-right: 1px solid var(--line);
+  }
+  .svc-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    height: 40px;
+    padding: 0 17px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #36995c 0%, #2f8a50 100%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    white-space: nowrap;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(47, 138, 80, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  .svc-btn::after {
+    content: "↗";
+    font-family: var(--font-mono);
+    font-size: 12px;
+    opacity: 0.72;
+    transition: transform 0.18s ease, opacity 0.18s ease;
+  }
+  .svc-btn:hover {
+    background: linear-gradient(180deg, #2f8a50 0%, #267343 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(47, 138, 80, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  .svc-btn:hover::after { transform: translate(2px, -2px); opacity: 1; }
+  .svc-btn:focus-visible {
+    outline: 2px solid #1f5f3f;
+    outline-offset: 2px;
+  }
+  /* スマホ・タブレットのドロップダウン内専用ブロック（PCでは非表示） */
+  .nav-svc { display: none; }
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .icon-btn span,
+  .icon-btn::before,
+  .icon-btn::after {
+    content: "";
+    width: 19px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    display: block;
+  }
+  .icon-btn { flex-direction: column; gap: 4px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 16px 34px rgba(31, 95, 63, 0.24);
+  }
+  .btn-primary:hover { background: #174a31; }
+  .btn-ghost {
+    background: #fff;
+    color: var(--blue);
+    border-color: var(--line-strong);
+  }
+  .btn-dark {
+    background: #142f22;
+    color: #fff;
+  }
+  .btn-cta-main {
+    min-height: 62px;
+    padding: 18px 34px;
+    font-size: 18px;
+    box-shadow: 0 22px 48px rgba(13, 33, 24, 0.28);
+  }
+  .arrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background: #101820;
+    background-size: cover;
+    background-position: center 34%;
+    color: #fff;
+  }
+  .hero-slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: center;
+    animation: heroSlide 72s ease-in-out infinite;
+    animation-fill-mode: both;
+    will-change: opacity, transform;
+  }
+  .hero-slide:nth-child(1) { animation-name: heroSlideFirst; animation-delay: 0s; transform-origin: 52% 50%; }
+  .hero-slide:nth-child(2) { animation-delay: 8s; transform-origin: 50% 50%; background-position: 50% 50%; }
+  .hero-slide:nth-child(3) { animation-delay: 16s; transform-origin: 52% 50%; }
+  .hero-slide:nth-child(4) { animation-delay: 24s; transform-origin: 45% 48%; }
+  .hero-slide:nth-child(5) { animation-delay: 32s; transform-origin: 55% 50%; }
+  .hero-slide:nth-child(6) { animation-delay: 40s; transform-origin: 46% 52%; }
+  .hero-slide:nth-child(7) { animation-delay: 48s; transform-origin: 52% 48%; }
+  .hero-slide:nth-child(8) { animation-delay: 56s; transform-origin: 50% 50%; }
+  .hero-slide:nth-child(9) { animation-delay: 64s; transform-origin: 52% 44%; }
+  @keyframes heroSlide {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    2.431% {
+      opacity: 1;
+      transform: scale(1.012);
+    }
+    9.722% {
+      opacity: 1;
+      transform: scale(1.048);
+    }
+    12.153%,
+    100% {
+      opacity: 0;
+      transform: scale(1.055);
+    }
+  }
+  @keyframes heroSlideFirst {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    9.722% {
+      opacity: 1;
+      transform: scale(1.048);
+    }
+    12.153%,
+    100% {
+      opacity: 0;
+      transform: scale(1.055);
+    }
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(100deg, rgba(5, 10, 14, 0.42) 0%, rgba(5, 10, 14, 0.22) 42%, rgba(5, 10, 14, 0.04) 72%, rgba(5, 10, 14, 0) 100%),
+      linear-gradient(180deg, rgba(5, 10, 14, 0.04) 0%, rgba(5, 10, 14, 0.02) 50%, rgba(5, 10, 14, 0.12) 100%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 62px 24px 68px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-slideshow { display: none; }
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #b7efc4;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: currentColor;
+  }
+  .hero h1 {
+    font-family: var(--font-sans);
+    font-size: clamp(38px, 4.5vw, 74px);
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    max-width: 100%;
+    margin-bottom: 34px;
+    font-weight: 900;
+    text-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+    overflow-wrap: anywhere;
+  }
+  .hero-title-line {
+    display: block;
+  }
+  .hero-title-line.flow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 0.18em;
+  }
+  .hero-title-chunk {
+    display: inline-block;
+    white-space: nowrap;
+  }
+  .hero h1 .highlight {
+    display: inline-block;
+    padding: 0.02em 0.18em 0.08em;
+    background: rgba(255, 255, 255, 0.95);
+    color: #5aa4c1;
+    text-shadow: none;
+  }
+  .hero-lead {
+    color: #fff;
+    font-size: clamp(17px, 1.82vw, 25px);
+    line-height: 2;
+    max-width: 1180px;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+    overflow-wrap: anywhere;
+  }
+  .hero-lead + .hero-lead {
+    /* 段落間も行内と同じ行間に揃える（line-heightのみで均一化） */
+    margin-top: 0;
+  }
+  .sp-break {
+    display: none;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .hero-proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 620px;
+  }
+  .proof-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    padding: 14px 15px;
+    min-height: 86px;
+  }
+  .proof-item strong {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 22px;
+    line-height: 1.2;
+    color: #fff;
+  }
+  .proof-item span {
+    display: block;
+    margin-top: 7px;
+    color: #c7decf;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .banner-showcase {
+    position: relative;
+    z-index: 3;
+    background: var(--paper);
+    padding: 0;
+    overflow: hidden;
+    /* 1枚を中央にどんと見せ、両端に隣のバナーを少しだけのぞかせる。
+       --peek が片側にのぞく量。これだけ画面端から差し引いた幅が中央カードの幅になる。 */
+    --peek: clamp(26px, 7vw, 168px);
+    --card-h: clamp(320px, 26vw, 462px);
+  }
+  .banner-showcase + .banner-showcase {
+    padding-top: 42px;
+  }
+  .banner-shell {
+    max-width: none;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .banner-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.75fr);
+    gap: 48px;
+    align-items: end;
+    margin-bottom: 18px;
+  }
+  .banner-heading.compact {
+    display: none;
+    margin-bottom: 0;
+  }
+  .banner-heading.compact h2,
+  .banner-heading.compact .lead {
+    display: none;
+  }
+  .banner-heading.centered {
+    display: block;
+    max-width: 1240px;
+    margin: 0 auto 24px;
+    padding: 0 24px;
+    text-align: center;
+  }
+  .banner-heading.centered h2 {
+    max-width: none;
+  }
+  .banner-heading.centered .label {
+    justify-content: center;
+  }
+  .banner-heading h2 {
+    font-size: clamp(26px, 3.1vw, 42px);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .banner-heading .lead {
+    font-size: 14.5px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .slider-viewport {
+    overflow: hidden;
+    border-radius: 0;
+    cursor: grab;
+    touch-action: pan-y;
+    overscroll-behavior-x: contain;
+  }
+  .slider-viewport.is-dragging {
+    cursor: grabbing;
+  }
+  .slider-track {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    padding: 0 24px 0 0;
+    animation: none;
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    user-select: none;
+  }
+  .banner-card {
+    position: relative;
+    flex: 0 0 calc(100vw - 2 * var(--peek));
+    min-height: var(--card-h);
+    overflow: hidden;
+    border-radius: 12px;
+    color: #fff;
+    background: #fff;
+    box-shadow: 0 22px 54px rgba(17, 24, 39, 0.12);
+    text-decoration: none;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+  .application-card {
+    flex-basis: calc(100vw - 2 * var(--peek));
+    min-height: var(--card-h);
+  }
+  .banner-card::before,
+  .banner-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .banner-card::before {
+    background-image: var(--banner-image);
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.02);
+    filter: brightness(1.18) saturate(1.04);
+  }
+  .banner-card::after {
+    background:
+      linear-gradient(100deg, rgba(8, 28, 20, 0.06) 0%, rgba(8, 28, 20, 0.03) 44%, rgba(8, 28, 20, 0) 100%),
+      linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(5, 16, 12, 0.08) 100%);
+  }
+  .banner-content {
+    position: relative;
+    z-index: 1;
+    min-height: inherit;
+    width: min(420px, 78%);
+    padding: 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .slider-track.service-slider {
+    animation-duration: 58s;
+  }
+  .service-banner-card {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    color: inherit;
+    background: #fff;
+    text-decoration: none;
+  }
+  .service-banner-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .service-copy-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #fff;
+  }
+  .service-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #eef2f7;
+  }
+  .service-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+  }
+  .vis-copy .service-photo img {
+    object-position: 86% center;
+  }
+  .edialer-copy .service-photo img {
+    object-position: 92% center;
+  }
+  /* 写真の上に左側だけ白パネルを重ね、文字を読みやすくする（女性は右側にフルで見せる） */
+  .service-copy-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(95deg, #fff 0%, #fff 43%, rgba(255, 255, 255, 0.9) 51%, rgba(255, 255, 255, 0.35) 61%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+  }
+  .service-copy-card::after {
+    display: none;
+  }
+  .service-copy {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    min-width: 0;
+    /* 1枚表示で横幅に余裕があるので、長文も少ない行数で読める。
+       高さはカード共通の --card-h に合わせ、写真が縦に切れないようにする。 */
+    min-height: var(--card-h);
+    padding: clamp(22px, 2vw, 34px) clamp(20px, 1.9vw, 30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(10px, 0.6vw, 16px);
+    color: #091332;
+  }
+  .service-copy-title {
+    margin: 0;
+    color: #091332;
+    font-family: var(--font-sans);
+    font-size: clamp(28px, 1.95vw, 48px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .service-copy-head {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(18px, 1.3vw, 27px);
+    font-weight: 800;
+    line-height: 1.45;
+    letter-spacing: 0;
+    color: #0d1b3d;
+  }
+  .service-copy-sub {
+    margin: 0;
+    color: #14502a;
+    font-size: clamp(15px, 0.95vw, 21px);
+    font-weight: 700;
+    line-height: 1.55;
+  }
+  .service-copy-body {
+    margin: 0;
+    color: #45506e;
+    font-size: clamp(15.5px, 1.05vw, 22px);
+    font-weight: 500;
+    line-height: 1.74;
+  }
+  .service-copy-body strong {
+    font-weight: 800;
+    color: #091332;
+  }
+  .service-copy-quote {
+    margin: 2px 0 0;
+    color: #091332;
+    font-size: clamp(16.5px, 1.1vw, 23px);
+    font-weight: 800;
+    line-height: 1.45;
+  }
+  .edialer-copy .service-copy-quote {
+    color: #b9831a;
+  }
+  .application-card .banner-content {
+    width: min(400px, 78%);
+    padding: 34px;
+  }
+  .banner-kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: #f4fff6;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.52);
+  }
+  .banner-content h3 {
+    font-family: var(--font-sans);
+    font-size: clamp(30px, 3vw, 42px);
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    margin-bottom: 14px;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.48);
+  }
+  .application-card .banner-content h3 {
+    font-size: clamp(28px, 2.8vw, 38px);
+  }
+  .banner-content p {
+    color: #fff;
+    font-size: 16.5px;
+    line-height: 1.8;
+    font-weight: 600;
+    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.62);
+    overflow-wrap: anywhere;
+  }
+  .application-card .banner-content p {
+    font-size: 16.5px;
+    line-height: 1.8;
+  }
+  .banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+  .banner-tags span {
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+  }
+  .slider-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .slider-dots span {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: #c7c9cc;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+  .slider-dots span.is-active {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #30323a;
+    background: transparent;
+  }
+  .slider-dots span.is-active::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: #30323a;
+  }
+  .slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 24px;
+    min-height: 48px;
+  }
+  .slider-btn {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #30323a;
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: none;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .slider-btn:hover {
+    color: var(--blue);
+    transform: translateY(-1px);
+  }
+  .slider-btn svg {
+    width: 34px;
+    height: 34px;
+  }
+  @keyframes serviceRail {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 9px)); }
+  }
+
+  .ops-panel {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+    color: var(--ink);
+    overflow: hidden;
+  }
+  .ops-top {
+    height: 54px;
+    padding: 0 18px;
+    background: #f1f7f2;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+  .traffic { display: flex; gap: 7px; }
+  .traffic span { width: 10px; height: 10px; border-radius: 50%; display: block; }
+  .traffic span:nth-child(1) { background: var(--red); }
+  .traffic span:nth-child(2) { background: var(--amber); }
+  .traffic span:nth-child(3) { background: var(--green); }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #afd9bb;
+    border-radius: 999px;
+    padding: 5px 10px;
+    color: #17623a;
+    background: #eaf8ed;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .status-pill::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .ops-body {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    min-height: 470px;
+  }
+  .ops-sidebar {
+    background: #163323;
+    color: #d2e7d8;
+    padding: 18px 14px;
+  }
+  .ops-logo {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: #fff;
+    letter-spacing: 0.08em;
+    margin-bottom: 22px;
+  }
+  .ops-menu { display: grid; gap: 8px; }
+  .ops-menu span {
+    border-radius: 7px;
+    padding: 9px 10px;
+    font-size: 12px;
+    color: #bdd6c4;
+  }
+  .ops-menu .active { background: #2f8a50; color: #fff; font-weight: 700; }
+  .ops-main { padding: 22px; background: #fbfdfb; }
+  .ops-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .ops-head h3 { font-size: 18px; line-height: 1.45; }
+  .ops-head p { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .ops-kpi {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .kpi-card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    padding: 13px;
+  }
+  .kpi-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .kpi-card strong {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 24px;
+    line-height: 1.1;
+  }
+  .kpi-card:nth-child(1) strong { color: var(--blue); }
+  .kpi-card:nth-child(2) strong { color: var(--green); }
+  .kpi-card:nth-child(3) strong { color: var(--amber); }
+  .dialer-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 12px;
+  }
+  .chart-box,
+  .queue-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 210px;
+  }
+  .chart-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .bars {
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 7px;
+    align-items: end;
+  }
+  .bars span {
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(180deg, #65b76f, #1f5f3f);
+    min-height: 24px;
+  }
+  .bars span:nth-child(1) { height: 44%; }
+  .bars span:nth-child(2) { height: 58%; }
+  .bars span:nth-child(3) { height: 72%; }
+  .bars span:nth-child(4) { height: 36%; }
+  .bars span:nth-child(5) { height: 64%; }
+  .bars span:nth-child(6) { height: 84%; }
+  .bars span:nth-child(7) { height: 78%; }
+  .bars span:nth-child(8) { height: 92%; }
+  .bars span:nth-child(9) { height: 66%; }
+  .bars span:nth-child(10) { height: 74%; }
+  .bars span:nth-child(11) { height: 52%; }
+  .bars span:nth-child(12) { height: 87%; }
+  .call-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .call-list li {
+    display: grid;
+    grid-template-columns: 12px 1fr auto;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 7px;
+    background: #f4f8fb;
+    font-size: 12px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+  .call-list li:nth-child(2) .dot { background: var(--amber); }
+  .call-list li:nth-child(3) .dot { background: var(--blue); }
+  .call-list li:nth-child(4) .dot { background: var(--red); }
+  .call-list strong {
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  .section {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 110px 24px;
+  }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 46px;
+  }
+  .section-head h2 {
+    max-width: none;
+  }
+  .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--blue);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: var(--font-sans);
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+  }
+  .lead {
+    color: var(--ink-2);
+    font-size: 15.5px;
+    line-height: 2;
+  }
+
+  .challenge-band {
+    margin-top: 72px;
+    position: relative;
+    z-index: 2;
+  }
+  .challenge-panel {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .challenge-message {
+    background: rgba(19, 47, 33, 0.94);
+    color: #fff;
+    border-radius: 14px 14px 0 0;
+    padding: 28px 28px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+  .challenge-message h2 {
+    color: #fff;
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.35;
+  }
+  .challenge-message p {
+    color: #d9eadf;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .challenge-grid {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 0 0 14px 14px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+  }
+  .challenge {
+    padding: 26px 24px;
+    border-right: 1px solid var(--line);
+    min-height: 180px;
+  }
+  .challenge:last-child { border-right: none; }
+  .challenge-num {
+    font-family: var(--font-mono);
+    color: #157a45;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .challenge h3 {
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .challenge p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .product-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 26px;
+    box-shadow: 0 14px 36px rgba(17, 24, 39, 0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .product-card.featured {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+    gap: 24px;
+    align-items: center;
+    padding: 30px;
+  }
+  .product-subhead {
+    grid-column: span 2;
+    margin-top: 14px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+  .product-subhead h3 {
+    font-size: 24px;
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .product-subhead p {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 760px;
+  }
+  .product-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: #eaf5fb;
+    color: #1d5f3a;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .tag.green { background: #e7f7ef; color: #0f7a4c; }
+  .tag.amber { background: #fff5dc; color: #996100; }
+  .tag.red { background: #fff0ee; color: #b73d34; }
+  .product-card h3 {
+    font-size: 23px;
+    line-height: 1.45;
+    margin-bottom: 12px;
+  }
+  .product-card p {
+    color: var(--ink-2);
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .product-card .hero-actions {
+    margin-top: 28px;
+    margin-bottom: 0;
+  }
+  .product-card:not(.featured) .hero-actions {
+    margin-top: auto;
+    padding-top: 24px;
+  }
+  .feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    list-style: none;
+    margin-top: 20px;
+  }
+  .feature-list li {
+    position: relative;
+    padding: 11px 12px 11px 34px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #f8fbf7;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .feature-list li::before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background: var(--cyan);
+  }
+  .mini-dashboard {
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: #f7fbf7;
+    padding: 16px;
+  }
+  .mini-row {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 10px;
+  }
+  .mini-row:last-child { margin-bottom: 0; }
+  .mini-row span { color: var(--muted); font-size: 12px; }
+  .mini-row strong { color: var(--ink); font-size: 14px; }
+  .flow-wrap {
+    background: #fff;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .flow {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .flow-step {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 18px;
+  }
+  .flow-step .step {
+    font-family: var(--font-mono);
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .flow-step h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+  .flow-step p {
+    color: var(--muted);
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  .industry-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .industry-card {
+    min-height: 250px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    background-color: #0c1f15;
+    background-image: linear-gradient(180deg, rgba(9, 31, 45, 0.16), rgba(9, 31, 45, 0.88)), var(--banner-image, none);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 16px 34px rgba(17, 24, 39, 0.12);
+  }
+  .industry-body {
+    padding: 24px;
+    width: 100%;
+  }
+  .industry-body span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: #b7efc4;
+    letter-spacing: 0.12em;
+  }
+  .industry-body h3 {
+    margin-top: 8px;
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  .industry-body p {
+    margin-top: 8px;
+    color: #dcebe0;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .trust-band {
+    background: #132f21;
+    color: #fff;
+  }
+  .trust-band .section-head h2,
+  .trust-band .lead { color: #fff; }
+  .trust-band .lead { color: #d3e4d8; }
+  .trust-band .label { color: #9bd8aa; }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 26px;
+    align-items: stretch;
+  }
+  .timeline {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    padding: 26px;
+  }
+  .timeline h3 {
+    font-size: 19px;
+    margin-bottom: 18px;
+  }
+  .timeline ul {
+    list-style: none;
+    display: grid;
+    gap: 15px;
+  }
+  .timeline li {
+    display: grid;
+    grid-template-columns: 78px 1fr;
+    gap: 14px;
+    color: #dbeaf4;
+    font-size: 13.5px;
+  }
+  .timeline time {
+    font-family: var(--font-mono);
+    color: #b7efc4;
+    font-size: 12px;
+  }
+  .news-section { background: #fff; border-top: 1px solid var(--line); }
+  .news-section .section-head {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 28px;
+  }
+  .news-section .section-head > div { flex-shrink: 0; }
+  .news-section .section-head .lead {
+    font-size: 14px;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+  .news-items {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .news-entry {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .news-entry:last-child { border-bottom: none; }
+  .news-entry:hover { background: #f8fbf7; }
+  .news-entry-date {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--blue);
+    padding-top: 3px;
+    white-space: nowrap;
+  }
+  .news-entry-title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .news-entry-body {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.85;
+  }
+  .news-entry-body p + p { margin-top: 6px; }
+  .news-pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 22px;
+  }
+  .pager-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pager-btn:hover:not(:disabled) { background: #f1f7f2; border-color: var(--line-strong); }
+  .pager-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+  .pager-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink-2);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .pager-num:hover { background: #f1f7f2; }
+  .pager-num.is-active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+    cursor: default;
+  }
+
+  .company {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 46px;
+    align-items: start;
+  }
+  .company-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 28px;
+    position: sticky;
+    top: 98px;
+  }
+  .company-card h2 { font-size: 34px; margin-bottom: 14px; }
+  .company-card p { color: var(--ink-2); font-size: 14px; line-height: 1.95; }
+  .office-card {
+    margin-top: 20px;
+    border-radius: 10px;
+    aspect-ratio: 3 / 4;
+    background-color: #0c1f15;
+    background-image: var(--banner-image, none);
+    background-size: cover;
+    background-position: center;
+  }
+  .company-table {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .company-row {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .company-row:last-child { border-bottom: none; }
+  .company-row dt {
+    background: #f1f7f2;
+    padding: 18px 20px;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .company-row dd {
+    padding: 18px 20px;
+    color: var(--ink-2);
+    font-size: 14px;
+  }
+  .philosophy-lead {
+    margin: 0 0 10px;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .philosophy-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .philosophy-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .philosophy-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green, #4ea343);
+  }
+
+  .cta {
+    background-color: #173f2a;
+    background-image:
+      linear-gradient(115deg, rgba(23, 63, 42, 0.96), rgba(47, 138, 80, 0.84)),
+      var(--banner-image, none);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  .cta-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 92px 24px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 34px;
+    align-items: center;
+  }
+  .cta h2 { color: #fff; margin-bottom: 16px; }
+  .cta p {
+    color: #e7f5eb;
+    max-width: 720px;
+    line-height: 2;
+  }
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .footer {
+    background: #0c1118;
+    color: #8a9bb0;
+    padding: 0 24px;
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .footer-copy {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #94a3b6;
+  }
+  .footer-copy .copy-sym {
+    font-family: sans-serif;
+    font-size: 11px;
+    margin-right: 1px;
+  }
+  .pagetop {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    background: #1a2636;
+    border: 1px solid #2a3a50;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8a9bb0;
+    font-size: 14px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pagetop:hover { background: #253447; color: #fff; }
+  .pagetop svg { width: 14px; height: 14px; }
+
+  /* テキストメニューとサービスバーが横並びで収まらなくなる幅でドロップダウン化 */
+  @media (max-width: 1200px) {
+    .nav-links {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      top: calc(100% + 8px);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+      display: none;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .nav-links.is-open { display: flex; }
+    .nav-links a:not(.svc-btn) { display: block; padding: 12px; }
+    .icon-btn { display: inline-flex; }
+    /* サービスへ移動ボタンはヘッダーから非表示 */
+    .svc-switch { display: none; }
+    .nav-svc {
+      display: none;
+      margin-top: 8px;
+      padding: 14px 4px 4px;
+      border-top: 1px solid var(--line);
+    }
+    .nav-svc-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+      padding-left: 2px;
+    }
+    .nav-svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+    .nav-svc-grid .svc-btn {
+      height: 46px;
+      padding: 0 8px;
+      gap: 0;
+      font-size: 12px;
+      justify-content: center;
+    }
+    .nav-svc-grid .svc-btn::after { display: none; }
+  }
+
+  /* PC幅では見出しを1行に固定し、その下に説明文を表示する */
+  @media (min-width: 1041px) {
+    .section-head h2,
+    .challenge-message h2 { white-space: nowrap; }
+  }
+
+  @media (max-width: 1040px) {
+    .hero-inner,
+    .section-head,
+    .trust-grid,
+    .company,
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+    .hero-inner { padding-top: 76px; }
+    .banner-heading {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .challenge-grid,
+    .flow,
+    .industry-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .challenge-message { grid-template-columns: 1fr; }
+    .challenge:nth-child(2) { border-right: none; }
+    .challenge { border-bottom: 1px solid var(--line); }
+    .product-card.featured { grid-template-columns: 1fr; }
+    .cta-actions { justify-content: flex-start; }
+  }
+
+  @media (max-width: 720px) {
+    /* スマホでは重いスライドショーは出さず、縦向きの静止画1枚を背景に表示する。
+       単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、見た目の寂しさを解消する。 */
+    .hero-slideshow { display: none; }
+    .hero {
+      background-image: url('assets/images/marunouchi/hero-new-02.webp');
+      background-size: cover;
+      background-position: 56% 68%;
+    }
+    .nav { height: 68px; padding: 0 16px; }
+    .brand-logo { width: 174px; }
+    .brand-tagline { display: none; }
+    .nav-actions .btn { display: none; }
+    .hero-inner {
+      padding: 40px 16px 56px;
+    }
+    .hero h1 { font-size: 25px; line-height: 1.24; margin-bottom: 20px; }
+    .hero-lead { font-size: 14px; line-height: 1.75; word-break: keep-all; }
+    .hero-lead br,
+    .hero-lead .sp-break { display: block; }
+    .hero-lead + .hero-lead { margin-top: 0; }
+    /* スマホでは各セクションのタイトルが大きすぎて縦幅を取るため縮小 */
+    h2 { font-size: 22px; line-height: 1.4; }
+    .challenge-message h2 { font-size: 20px; line-height: 1.45; overflow-wrap: anywhere; }
+    .company-card h2 { font-size: 22px; line-height: 1.4; }
+    .label { margin-bottom: 8px; }
+    /* スマホでは1カラム化で縦に効くgapが大きすぎるため詰める */
+    .section-head { margin-bottom: 28px; gap: 16px; }
+    .banner-showcase {
+      padding-top: 0;
+    }
+    .banner-showcase + .banner-showcase {
+      padding-top: 42px;
+    }
+    .banner-shell {
+      padding: 0;
+    }
+    .slider-viewport {
+      overflow: hidden;
+      border-radius: 0;
+      box-sizing: border-box;
+      padding: 0;
+    }
+    /* スマホでも1枚を中央に置き、両端を少しだけのぞかせる */
+    .banner-showcase {
+      --peek: clamp(16px, 6vw, 30px);
+    }
+    .slider-track {
+      animation: none;
+      width: max-content;
+      gap: 12px;
+      padding: 0;
+    }
+    .service-banner-card {
+      min-height: 0;
+    }
+    /* スマホは写真をカード全面に敷き、下側の白グラデーションに文字を重ねて1枚のバナーにする
+       （女性は上側に見せ、テキストは全幅で2行に収める） */
+    .service-copy-card {
+      display: block;
+      position: relative;
+    }
+    /* .banner-card::before の background-color:#fff より詳細度を上げて打ち消す（透明部分から白が透けるのを防ぐ） */
+    .service-banner-card.service-copy-card::before {
+      display: block;
+      background-color: transparent;
+      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.85) 63%, #fff 73%, #fff 100%);
+      background-size: auto;
+    }
+    .service-photo {
+      position: absolute;
+      inset: 0;
+      flex: none;
+      width: auto;
+      aspect-ratio: auto;
+    }
+    .service-photo img {
+      object-position: right center;
+    }
+    .service-copy {
+      position: relative;
+      z-index: 2;
+      flex: none;
+      width: 100%;
+      max-width: none;
+      min-height: 74vw;
+      padding: 16px 18px 18px;
+      gap: 5px;
+      justify-content: flex-end;
+    }
+    .service-copy-title {
+      font-size: 24px;
+    }
+    .service-copy-head {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    /* スマホでは長文バナーはタイトル＋見出し2行だけに絞り、小見出し・本文は非表示 */
+    .service-copy-sub,
+    .service-copy-body {
+      display: none;
+    }
+    .service-copy-quote {
+      font-size: 15.5px;
+    }
+    .slider-controls {
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .slider-dots {
+      gap: 12px;
+    }
+    .slider-dots span {
+      width: 10px;
+      height: 10px;
+    }
+    .slider-dots span.is-active {
+      width: 18px;
+      height: 18px;
+    }
+    .slider-dots span.is-active::after {
+      inset: 4px;
+    }
+    .slider-btn {
+      width: 42px;
+      height: 42px;
+    }
+    .slider-btn svg {
+      width: 30px;
+      height: 30px;
+    }
+    .banner-card,
+    .application-card {
+      flex: 0 0 calc(100vw - 2 * var(--peek));
+      width: calc(100vw - 2 * var(--peek));
+      max-width: calc(100vw - 2 * var(--peek));
+      aspect-ratio: 1200 / 583;
+      min-height: 0;
+      border-radius: 10px;
+    }
+    .banner-card::before {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: #fff;
+      transform: none;
+    }
+    /* 縦積みのサービスバナーは画像比率に縛られず、本文の高さで伸ばす */
+    .service-copy-card {
+      aspect-ratio: auto;
+      height: auto;
+    }
+    .application-card::before {
+      background-size: cover;
+    }
+    .application-card {
+      min-height: 0;
+    }
+    .banner-content,
+    .application-card .banner-content {
+      width: 100%;
+      padding: 24px;
+    }
+    .banner-content h3 {
+      font-size: 28px;
+    }
+    /* スマホではアプリケーションバナーの説明文は非表示にし、タイトルのみ表示 */
+    .application-card .banner-content p {
+      display: none;
+    }
+    .banner-heading h2 {
+      font-size: 27px;
+    }
+    .banner-heading.centered h2 {
+      font-size: 22px;
+      white-space: nowrap;
+    }
+    .banner-content p {
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+    .hero-proof,
+    .ops-body,
+    .ops-kpi,
+    .dialer-grid,
+    .challenge-grid,
+    .product-grid,
+    .feature-list,
+    .flow,
+    .industry-grid,
+    .company-row {
+      grid-template-columns: 1fr;
+    }
+    .ops-sidebar { display: none; }
+    .product-card.featured { grid-column: span 1; padding: 22px; }
+    .product-subhead { grid-column: span 1; }
+    .flow { gap: 12px; }
+    .section { padding: 78px 16px; }
+    .challenge-panel { padding: 0 16px; }
+    .challenge { border-right: none; min-height: auto; }
+    .company-card { position: static; }
+    /* スマホでは会社画像が縦長になりすぎないよう高さを抑える */
+    .office-card { aspect-ratio: auto; height: 320px; }
+    .company-row dt,
+    .company-row dd { padding: 14px 16px; }
+    .news-entry { grid-template-columns: 1fr; gap: 4px; padding: 16px; }
+    .news-entry-date { padding-top: 0; }
+    .footer { padding: 0 16px; }
+    .footer-inner {
+      height: auto;
+      min-height: 52px;
+      padding: 14px 52px;
+    }
+    .footer-copy {
+      font-size: clamp(9.5px, 3vw, 12px);
+      letter-spacing: 0.02em;
+      white-space: normal;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="メインナビゲーション">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/logo/mitsys-logo.png" alt="株式会社MITシステム研究所" width="282" height="63" fetchpriority="high">
+        <span class="brand-tagline">Contact Center DX</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#products">製品・サービス</a></li>
+        <li><a href="#flow">導入までの流れ</a></li>
+        <li><a href="#news">お知らせ</a></li>
+        <li><a href="#company">会社情報</a></li>
+        <!-- スマホ・タブレットのドロップダウン内に表示するサービス移動ボタン -->
+        <li class="nav-svc">
+          <span class="nav-svc-label">サービスへ移動</span>
+          <div class="nav-svc-grid">
+            <a class="svc-btn" href="quickcrm-renewal/" target="_blank" rel="noopener">QuickCRM</a>
+            <a class="svc-btn" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">Quick eDialer</a>
+            <a class="svc-btn" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">VIS</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-actions">
+        <!-- 各サービスへジャンプするボタン群。専用ページが用意でき次第 href を差し替える。 -->
+        <div class="svc-switch" role="group" aria-label="サービスへ移動">
+          <a class="svc-btn" href="quickcrm-renewal/" target="_blank" rel="noopener">QuickCRM</a>
+          <a class="svc-btn" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">Quick eDialer</a>
+          <a class="svc-btn" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">VIS</a>
+        </div>
+        <a class="btn btn-primary" href="https://www.mitsys.co.jp/contact.html">お問い合わせ <span class="arrow">→</span></a>
+        <button class="icon-btn" type="button" aria-label="メニューを開閉" aria-controls="navLinks" aria-expanded="false" id="navToggle"><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-slideshow" aria-hidden="true">
+        <span class="hero-slide" style="background-image: url('assets/images/marunouchi/hero-new-01.webp');"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-sky.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-01.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-02.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-03.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-04.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-05.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-06.webp"></span>
+        <span class="hero-slide" data-bg="assets/images/marunouchi/hero-07.webp"></span>
+      </div>
+      <div class="hero-inner">
+        <h1>
+          <span class="hero-title-line">業務の可能性を、もっと自由に。</span>
+        </h1>
+        <p class="hero-lead">お客様の思いを形にするだけではありません。<br>「できない」と諦めていたことを<br class="sp-break">「思いつかなかった」新しい方法で。<br>誰でも使えるオンリーワンのシステムで<br class="sp-break">成長を支え続けます。</p>
+      </div>
+    </section>
+
+    <section class="banner-showcase" aria-label="サービスと利用可能なアプリケーション">
+      <div class="banner-shell">
+        <div class="banner-heading compact">
+          <div>
+            <p class="label">Service Lineup</p>
+            <h2>コンタクトセンター運用を支えるサービスとアプリケーション。</h2>
+          </div>
+          <p class="lead">QuickCRM、VIS、Quick eDialer、各種アプリケーションを同じバナーサイズで横断して紹介します。</p>
+        </div>
+        <div class="slider-viewport" data-carousel="services">
+          <div class="slider-track service-slider">
+            <a class="banner-card service-banner-card service-copy-card quickcrm-copy" href="quickcrm-renewal/" target="_blank" rel="noopener">
+              <div class="service-copy">
+                <div class="service-copy-title">QuickCRM</div>
+                <h3 class="service-copy-head">応対品質と効率を同時に底上げするCRM<br>コールセンターの無駄なコストを削減</h3>
+                <p class="service-copy-sub">業務画面の構築・修正から高度な分析・CTI連携まで。専門知識なしで、これ1つで完結できるCRMシステム。</p>
+                <p class="service-copy-body">通常のCRM機能としてだけでなく、CTI連携でアウトバウンド・インバウンド業務が容易に実現可能。業務画面はノーコードで構築できるため、現場担当者でも作成・修正が可能に。さらに、ダッシュボード画面やリアルタイム分析まで、1つのシステムで実現できます。</p>
+              </div>
+              <div class="service-photo"><img src="assets/service-banners/quickcrm-bg-clean.webp" alt="ヘッドセットで顧客対応するオペレーター" loading="lazy" decoding="async"></div>
+            </a>
+            <article class="banner-card application-card" data-banner="assets/service-banners/order-management.webp">
+              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
+            </article>
+            <article class="banner-card application-card" data-banner="assets/service-banners/maintenance.webp">
+              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
+            </article>
+            <a class="banner-card service-banner-card service-copy-card edialer-copy" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">
+              <div class="service-copy">
+                <div class="service-copy-title">Quick eDialer</div>
+                <p class="service-copy-body">過去の架電実績から接続しやすい属性を指定してリストを抽出。管理者・オペレーターの介在なく、リストは時間帯ごとに自動で切り替わり、常に最適なリスト発信を継続します。</p>
+                <p class="service-copy-body">留守電は自動検知・自動吹込みで処理し、キャリアメッセージも自動検知して自動更新。発信倍率の最適化でオペレーターの待機時間を削減し、1人あたりの生産性を高め、少ない人数で最大の成果を実現します。</p>
+                <p class="service-copy-quote">“人件費を削減し、成果を最大化します”</p>
+              </div>
+              <div class="service-photo"><img src="assets/service-banners/quick-edialer-success-bg.webp" alt="成果を喜ぶコンタクトセンターのオペレーター" loading="lazy" decoding="async"></div>
+            </a>
+            <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp">
+              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
+            </article>
+            <a class="banner-card service-banner-card service-copy-card vis-copy" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">
+              <div class="service-copy">
+                <div class="service-copy-title">VIS</div>
+                <h3 class="service-copy-head">コンタクトセンターで利用される機器を垂直統合したシステム</h3>
+                <p class="service-copy-sub">各機器の情報を共有するメリット。</p>
+                <p class="service-copy-body">PBX、チャット、メール、通話録音、音声認識などの機能を垂直に統合し、個々で処理した情報を一元管理。一元管理された情報はお客様と対応中に迅速に表示され、オペレータとの会話を随時AIに学習させることで、<strong>“よりオペレータに近いAIエージェント”を育てます</strong>。</p>
+              </div>
+              <div class="service-photo"><img src="assets/service-banners/vis-ai-bg.webp" alt="AIエージェントと連携するコンタクトセンターのオペレーター" loading="lazy" decoding="async"></div>
+            </a>
+            <article class="banner-card application-card" data-banner="assets/service-banners/salon-operations.webp">
+              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
+            </article>
+            <article class="banner-card application-card" data-banner="assets/service-banners/caller-sovereignty.webp">
+              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
+            </article>
+            <article class="banner-card application-card" data-banner="assets/service-banners/asset-building.webp">
+              <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
+            </article>
+            <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp">
+              <div class="banner-content"><div class="banner-kicker">Document</div><h3>Quick eReport</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
+            </article>
+          </div>
+        </div>
+        <div class="slider-controls" aria-label="サービスとアプリケーションスライド操作">
+          <button class="slider-btn" type="button" data-carousel-prev="services" aria-label="前のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
+          <div class="slider-dots" data-carousel-dots="services" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <button class="slider-btn" type="button" data-carousel-next="services" aria-label="次のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="challenge-band" id="solution">
+      <div class="challenge-panel">
+        <div class="challenge-message">
+          <h2>その課題、QuickCRMでまとめて解決へ。</h2>
+          <p>顧客情報、応対履歴、電話連携、業務画面を一つのCRM基盤に集約。コンタクトセンターごとの運用に合わせて、使いやすい環境を構築できます。</p>
+        </div>
+        <div class="challenge-grid">
+          <article class="challenge">
+            <div class="challenge-num">01</div>
+            <h3>業務に合うCRM画面を用意したい</h3>
+            <p>案件処理、受付、受注、アウトバウンドなど、業務内容に合わせた画面を構築できます。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">02</div>
+            <h3>顧客情報と応対履歴を一元管理したい</h3>
+            <p>電話、メール、LINEなどの応対を顧客情報にひもづけ、履歴を追いやすくします。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">03</div>
+            <h3>インバウンド/アウトバウンドを同じ基盤で扱いたい</h3>
+            <p>受付対応、発信業務、コールリスト、対応結果を同じCRM基盤で管理できます。</p>
+          </article>
+          <article class="challenge">
+            <div class="challenge-num">04</div>
+            <h3>既存PBXやクラウド環境と連携したい</h3>
+            <p>利用中の電話基盤やセキュリティ要件に合わせ、CTI接続やデータベース配置を相談できます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <div>
+          <p class="label">Main Service</p>
+          <h2>QuickCRMで、顧客対応を一元化。</h2>
+        </div>
+        <p class="lead">
+          QuickCRMは、顧客情報、応対履歴、CTI連携、業務画面作成を一体で扱えるコンタクトセンター向けCRMです。
+          インバウンド、アウトバウンドの双方に対応し、現場の業務に合わせた運用フローを柔軟に構築できます。
+        </p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product-card featured">
+          <div>
+            <div class="product-meta">
+              <span class="tag">主力製品</span>
+              <span class="tag green">CRM / CTI</span>
+            </div>
+            <h3>QuickCRM</h3>
+            <p>
+              QuickCRMは、電話応対を中心に、顧客情報とコンタクト履歴をひもづけて管理するコンタクトセンター向けCRMです。業務画面を作成・変更できる機能や、CTI/PBX連携、メール・SMS・LINEなどのオプションを組み合わせ、業務に合わせた運用環境を構築できます。
+            </p>
+            <ul class="feature-list">
+              <li>顧客情報・応対履歴管理</li>
+              <li>インバウンド/アウトバウンド対応</li>
+              <li>CTI・PBX連携</li>
+              <li>業務画面の作成・変更</li>
+            </ul>
+            <div class="hero-actions"><a class="btn btn-primary" href="quickcrm-renewal/">QuickCRMページへ <span class="arrow">→</span></a></div>
+          </div>
+          <div class="mini-dashboard">
+            <div class="mini-row"><strong>業務画面を自社仕様に構築</strong><br><span>テンプレートや画面作成機能を使い、案件処理、受付、受注、アウトバウンドなどの業務画面を作成できます。</span></div>
+            <div class="mini-row"><strong>電話業務とCRMを連携</strong><br><span>着信時の顧客情報表示、通話履歴、コールリスト、架電結果などを一つの運用基盤で扱えます。</span></div>
+            <div class="mini-row"><strong>クラウドから既存環境まで対応</strong><br><span>AWS上のデータベース利用やオンプレミス配置、接続確認済みPBX・クラウド系電話サービスとの連携に対応します。</span></div>
+          </div>
+        </article>
+
+        <div class="product-subhead">
+          <h3>関連サービス</h3>
+          <p>QuickCRMを中心に、発信業務、音声応答、PBX連携、録音、レポート、要員管理まで、コンタクトセンター運営に必要な周辺機能を組み合わせて提供します。</p>
+        </div>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">AI</span><span class="tag green">Voice AI</span></div>
+          <h3>VIS</h3>
+          <p>音声認識とAIを活用し、コンタクトセンターの会話をテキスト化・分析する音声AIソリューション。応対内容をナレッジとして蓄積し、品質向上と業務改善につなげます。</p>
+          <ul class="feature-list">
+            <li>音声認識・テキスト化</li>
+            <li>会話のナレッジ化</li>
+            <li>応対品質の分析</li>
+            <li>QuickCRM連携</li>
+          </ul>
+          <div class="hero-actions"><a class="btn btn-ghost" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">サービスページへ <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Outbound</span><span class="tag amber">Dialer</span></div>
+          <h3>Quick eDialer</h3>
+          <p>アウトバウンド業務向けの自動ダイヤルソフト。プレビュー、プログレッシブ、プレディクティブなどの発信モードで、架電効率とオペレーター稼働を高めます。</p>
+          <ul class="feature-list">
+            <li>予測発信</li>
+            <li>リスト管理</li>
+            <li>キャンペーン別集計</li>
+            <li>折返し管理</li>
+          </ul>
+          <div class="hero-actions"><a class="btn btn-ghost" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">サービスページへ <span class="arrow">→</span></a></div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Voice Response</span><span class="tag green">IVR</span></div>
+          <h3>QuickIVR</h3>
+          <p>電話受付、音声案内、あふれ呼対応、情報収集を自動化する音声応答システム。QuickCRMと連携し、顧客情報を活用した受付導線を構築できます。</p>
+          <ul class="feature-list">
+            <li>自動音声応答</li>
+            <li>あふれ呼対応</li>
+            <li>SMS発信</li>
+            <li>CRM連携</li>
+          </ul>
+        </article>
+
+        <article class="product-card">
+          <div class="product-meta"><span class="tag">Reporting</span><span class="tag">Report</span></div>
+          <h3>Quick eReport</h3>
+          <p>コンタクトセンターの運用状況を可視化するレポート作成機能。標準レポートに加え、業務に合わせた集計項目のカスタマイズにも対応します。</p>
+          <ul class="feature-list">
+            <li>統計レポート</li>
+            <li>時系列分析</li>
+            <li>業務別集計</li>
+            <li>個別カスタマイズ</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="flow-wrap" id="flow">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <p class="label">Implementation Flow</p>
+            <h2>導入までの流れ。</h2>
+          </div>
+          <p class="lead">
+            初回相談から構成設計、接続確認、本番導入、改善運用までを段階的に支援します。電話環境や既存システムを確認しながら、自社に合う導入範囲を整理できます。
+          </p>
+        </div>
+        <div class="flow">
+          <article class="flow-step"><div class="step">STEP 01</div><h3>現状ヒアリング</h3><p>業務フロー、架電量、既存PBX、利用中CRMを確認。</p></article>
+          <article class="flow-step"><div class="step">STEP 02</div><h3>構成プラン設計</h3><p>QuickCRM、Dialer、音声認識の必要範囲を整理。</p></article>
+          <article class="flow-step"><div class="step">STEP 03</div><h3>検証・接続確認</h3><p>電話環境、データ、権限、画面要件を段階的に検証。</p></article>
+          <article class="flow-step"><div class="step">STEP 04</div><h3>本番導入</h3><p>オペレーター研修、管理画面設定、移行を支援。</p></article>
+          <article class="flow-step"><div class="step">STEP 05</div><h3>改善運用</h3><p>KPIレポートをもとに発信効率と応対品質を改善。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="industries">
+      <div class="section-head">
+        <div>
+          <p class="label">Use Cases</p>
+          <h2>QuickCRMの活用シーン。</h2>
+        </div>
+        <p class="lead">
+          顧客対応、発信業務、予約受付、BPOなど、電話応対が発生するさまざまな業務でQuickCRMと関連サービスを活用できます。
+          顧客情報、応対履歴、通話結果を一元管理し、現場の運用に合わせたCRM環境を構築します。
+        </p>
+      </div>
+      <div class="industry-grid">
+        <article class="industry-card" data-banner="assets/images/industry/ind-01.webp"><div class="industry-body"><span>CONTACT CENTER</span><h3>コンタクトセンター運営</h3><p>顧客情報、応対履歴、対応結果を一元管理し、オペレーター業務を標準化。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-02.webp"><div class="industry-body"><span>OUTBOUND</span><h3>アウトバウンド業務</h3><p>コールリスト、架電結果、折返し予定をCRM上で管理し、追客漏れを防止。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-03.webp"><div class="industry-body"><span>SUPPORT</span><h3>カスタマーサポート</h3><p>問い合わせ履歴と顧客情報を共有し、担当者が変わっても対応品質を維持。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-04.webp"><div class="industry-body"><span>FINANCE</span><h3>金融・保険窓口</h3><p>本人確認、対応記録、次回アクションを残し、正確な顧客対応を支援。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-05.webp"><div class="industry-body"><span>RESERVATION</span><h3>予約・受付センター</h3><p>IVRや着信振分と連携し、混雑時の受付、折返し、履歴管理を効率化。</p></div></article>
+        <article class="industry-card" data-banner="assets/images/industry/ind-06.webp"><div class="industry-body"><span>BPO</span><h3>BPO・業務受託</h3><p>複数案件の画面、リスト、対応結果を分けて管理し、運用報告をしやすく。</p></div></article>
+      </div>
+    </section>
+
+    <section class="trust-band">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <p class="label">History</p>
+            <h2>進化を続ける、コンタクトセンター技術。</h2>
+          </div>
+          <p class="lead">
+            MITシステム研究所は1980年の創業以来、コンタクトセンター向けシステムを独自に開発し続けています。
+            製品の進化、導入実績、展示会出展などを通じて、専門性と継続性を積み重ねてきました。
+          </p>
+        </div>
+        <div class="timeline">
+          <ul>
+            <li><time>1980</time><span>株式会社エム・アイ・ティシステム研究所を設立。</span></li>
+            <li><time>2000s</time><span>CRM・CTI領域の開発、コンタクトセンター向け製品展開を強化。</span></li>
+            <li><time>2015</time><span>アウトバウンド向け自動ダイヤルソフトウェア Quick eDialer を発表。</span></li>
+            <li><time>2020s</time><span>音声認識、クラウド連携、PBX連携など運用DX領域へ展開。</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section news-section" id="news">
+      <div class="section-head">
+        <div>
+          <p class="label">News</p>
+          <h2>お知らせ</h2>
+        </div>
+        <p class="lead">製品のアップデート、導入事例、展示会出展など、最新情報をお届けします。</p>
+      </div>
+      <div id="newsItems" class="news-items"></div>
+      <nav class="news-pager" id="newsPager" aria-label="ページ切り替え"></nav>
+    </section>
+
+    <section class="section" id="company">
+      <div class="company">
+        <aside class="company-card">
+          <p class="label">Company</p>
+          <h2>コンタクトセンターシステムを支える技術会社。</h2>
+          <p>
+            MITシステム研究所は、コンタクトセンター向けCRM、CTI、IVR、アウトバウンド支援など、電話業務に関わるシステムを企画・開発・提供しています。
+            独自製品と個別要件への対応力を活かし、企業ごとの運用に合ったコンタクトセンター環境づくりを支援します。
+          </p>
+          <div class="office-card" role="img" aria-label="新丸の内ビルディング外観" data-banner="assets/images/mitsys-office.webp"></div>
+        </aside>
+        <dl class="company-table">
+          <div class="company-row"><dt>会社名</dt><dd>株式会社エム・アイ・ティシステム研究所</dd></div>
+          <div class="company-row"><dt>設立</dt><dd>1980年6月</dd></div>
+          <div class="company-row"><dt>代表者</dt><dd>代表取締役 水尾 恒雅</dd></div>
+          <div class="company-row"><dt>所在地</dt><dd>〒100-6512 東京都千代田区丸の内1-5-1 新丸の内ビルディング12階</dd></div>
+          <div class="company-row"><dt>資本金</dt><dd>9,000万円</dd></div>
+          <div class="company-row"><dt>事業内容</dt><dd>コンピュータシステムの企画・開発・販売・保守、コンタクトセンター向けソリューション、CTI/CRM/PBX連携。</dd></div>
+          <div class="company-row"><dt>主要製品</dt><dd>QuickCRM、Quick eDialer、QuickIVR、Quick mPBX、Voice Catcher、Quick WFM、Quick eReport。</dd></div>
+          <div class="company-row"><dt>対応領域</dt><dd>インバウンド業務、アウトバウンド業務、CRM構築、PBX/CTI連携、音声応答、通話録音、レポート作成。</dd></div>
+          <div class="company-row company-row--philosophy">
+            <dt>企業理念</dt>
+            <dd>
+              <p class="philosophy-lead">私達は、</p>
+              <ul class="philosophy-list">
+                <li>物真似をしない独自の商品を創造しなければなりません。</li>
+                <li>その商品は、使う人にとって優しくなければなりません。</li>
+                <li>その商品は、継続して進化できるものでなければなりません。</li>
+                <li>その商品は、適正な利益をもたらす源泉でなければなりません。</li>
+              </ul>
+            </dd>
+          </div>
+          <div class="company-row"><dt>お問い合わせ</dt><dd>03-6872-1210</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="cta" id="contact" data-banner="assets/images/cta-band.webp">
+      <div class="cta-inner">
+        <div>
+          <p class="eyebrow">Request / Demo / Consultation</p>
+          <h2>コンタクトセンターの課題を、まずはご相談ください。</h2>
+          <p>
+            QuickCRMをはじめ、発信業務、音声応答、PBX連携、通話録音、レポート作成まで、運用環境に合わせた構成をご提案します。
+            既存システムとの連携やクラウド移行についてもお気軽にお問い合わせください。
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-dark btn-cta-main" href="https://www.mitsys.co.jp/contact.html">お問い合わせ</a>
+          <a class="btn btn-ghost" href="tel:0368721210">電話で相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-copy"><span class="copy-sym">©</span><span id="footerYear"></span> MIT System Research Institute Co.Ltd. All rights reserved.</p>
+      <a class="pagetop" href="#top" aria-label="ページトップへ戻る">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="2 9 7 4 12 9"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    /* ── ヒーロー2枚目以降の背景を遅延読み込み（LCP画像との競合を防ぐ） ── */
+    (function () {
+      var hydrate = function () {
+        document.querySelectorAll('.hero-slide[data-bg]').forEach(function (el) {
+          el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')";
+          el.removeAttribute('data-bg');
+        });
+      };
+      if (document.readyState === 'complete') {
+        hydrate();
+      } else {
+        window.addEventListener('load', function () { setTimeout(hydrate, 200); });
+      }
+    })();
+
+    /* ── 画面外バナー背景の遅延読み込み（初期ロードの回線占有を防ぎLCPを改善） ── */
+    (function () {
+      var load = function (el) {
+        el.style.setProperty('--banner-image', "url('" + el.getAttribute('data-banner') + "')");
+        el.removeAttribute('data-banner');
+      };
+      var start = function () {
+        var lazies = document.querySelectorAll('[data-banner]');
+        if (!lazies.length) return;
+        if ('IntersectionObserver' in window) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) { load(e.target); io.unobserve(e.target); }
+            });
+          }, { rootMargin: '500px 800px' });
+          lazies.forEach(function (el) { io.observe(el); });
+        } else {
+          lazies.forEach(load);
+        }
+      };
+      if (document.readyState === 'complete') { start(); }
+      else { window.addEventListener('load', start); }
+    })();
+
+    /* ── News Pager ── */
+    const NEWS = [
+      {
+        date: '2025年12月',
+        title: '＜VISコンタクトセンターシステムが進化し、実用フェーズに＞',
+        body: 'コンタクトセンター向け垂直統合システム＜VISコンタクトセンターシステム＞がますます進化し、機能も充実し、実用フェーズに入りました。オンプレミスPBXのリプレイス、ノーコードでの業務画面作成、顧客満足度UPの施策、AI技術を活用した業務改善、効率向上を検討されているコンタクトセンター様に、様々な方向からのソリューションを提供します。'
+      },
+      {
+        date: '2024年12月',
+        title: '＜コンタクトセンター向け垂直統合システムを発表＞',
+        body: 'クラウドPBX、プレディクティブダイアラー、スパークコール対応、通話録音機能、音声認識機能、AI機能を利用する為のデータ収集（話者分離された音声をテキスト化、キーワード作成）を蓄積し個別に、チャットボット、FAQ作成に利用され業務の効率化を可能にします。（詳細は、お問い合わせください）'
+      },
+      {
+        date: '2024年6月',
+        title: '',
+        body: 'テレマエージェンシーに導入されたQuickeDialerが、複数の業務を複数の拠点で順調に稼働（大枠500席）しています。'
+      },
+      {
+        date: '2023年11月',
+        title: 'QuickeDialerとQuickCRMが大手テレマエージェンシーに大規模導入',
+        body: '効率を考えた弊社のダイアラー製品"QuickeDialer（クイックイーダイアラー）"が、大手テレマエージェンシー様へ大規模導入されることになりました。業務画面はQuickCRMの画面作成ツールを使用してお客様自身で作成され、簡単カスタマイズを可能にします。'
+      },
+      {
+        date: '2023年10月',
+        title: '【コールセンター/CRM デモ&amp;コンファレンス 2023 in 東京】に出展します',
+        body: '11月9日(木)・10日(金)に池袋で開催される「第24回コールセンター/CRM デモ&amp;コンファレンス 2023 in 東京」に出展します。インバウンド業務・アウトバウンド業務をいかに効率的に行うか、様々なご提案をいたしますので、ぜひ弊社ブースにもお立ち寄りください。\n場所：サンシャインシティ・文化会館　期間：2023年11月9日（木）・10日（金）10:00〜17:30'
+      },
+      {
+        date: '2023年8月',
+        title: 'コンタクトセンター向けソリューション"QuickCRM"バージョンアップ！',
+        body: 'クラウドベースのコンタクトセンター向けソリューション"QuickCRM"をバージョンアップし、ますます使いやすく、業務カスタマイズもしやすくなりました。管理者、SV様、業務画面作成者、音声応答フロー作成者など業務に関わる方々が、自分たちで簡単に業務作成、変更、追加できることをコンセプトにしています。'
+      },
+      {
+        date: '2023年6月',
+        title: '受電時のオートアテンダント機能を実験的に実装',
+        body: '弊社が「着信者主権」というコンセプトのもと開発を進めている、"企業にかかってくる受電のオートアテンダント機能"の一部を、このたび弊社本社の代表電話に実装いたしました。皆様のご意見を伺いながら、さらに機能アップを図り、「着信者主権」を実現していきます。'
+      },
+      {
+        date: '2023年5月',
+        title: '水尾社長 書き下ろし本を出版',
+        body: 'このたび、幻冬舎より「拡大しない経営」というタイトルで、自分なりの会社経営および開発コンセプトをまとめた本を発売しました。44年前にソフトメーカーになりたいという夢を持って会社を興して以来、ビジネスユースのソフトウエアを、いくつもリリースしてきましたが、その経験から、会社規模を大きくしないほうが、新しくユニークな製品を、より早く、よりリーズナブルに、しかも継続して開発できることと考えています。店頭およびAmazonなどでお買い求めいただければ幸いです。'
+      }
+    ];
+
+    const PER_PAGE = 5;
+    let currentPage = 1;
+    const totalPages = Math.ceil(NEWS.length / PER_PAGE);
+    const container = document.getElementById('newsItems');
+    const pager = document.getElementById('newsPager');
+
+    function renderNews(page) {
+      currentPage = page;
+      const start = (page - 1) * PER_PAGE;
+      const items = NEWS.slice(start, start + PER_PAGE);
+
+      container.innerHTML = items.map(item => `
+        <article class="news-entry">
+          <time class="news-entry-date">${item.date}</time>
+          <div>
+            ${item.title ? `<p class="news-entry-title">${item.title}</p>` : ''}
+            <p class="news-entry-body">${item.body.replace(/\n/g, '<br>')}</p>
+          </div>
+        </article>
+      `).join('');
+
+      pager.innerHTML = '';
+
+      const prev = document.createElement('button');
+      prev.className = 'pager-btn';
+      prev.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 2 4 7 9 12"/></svg>';
+      prev.setAttribute('aria-label', '前のページ');
+      prev.disabled = page === 1;
+      prev.addEventListener('click', () => { renderNews(currentPage - 1); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+      pager.appendChild(prev);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'pager-num' + (i === page ? ' is-active' : '');
+        btn.textContent = i;
+        btn.setAttribute('aria-label', `${i}ページ目`);
+        if (i !== page) btn.addEventListener('click', () => { renderNews(i); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+        pager.appendChild(btn);
+      }
+
+      const next = document.createElement('button');
+      next.className = 'pager-btn';
+      next.innerHTML = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 2 10 7 5 12"/></svg>';
+      next.setAttribute('aria-label', '次のページ');
+      next.disabled = page === totalPages;
+      next.addEventListener('click', () => { renderNews(currentPage + 1); document.getElementById('news').scrollIntoView({behavior:'smooth', block:'start'}); });
+      pager.appendChild(next);
+    }
+
+    renderNews(1);
+
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    links?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('gesturestart', (event) => event.preventDefault(), { passive: false });
+    document.addEventListener('gesturechange', (event) => event.preventDefault(), { passive: false });
+    document.addEventListener('touchmove', (event) => {
+      if (event.touches.length > 1) event.preventDefault();
+    }, { passive: false });
+
+    document.querySelectorAll('[data-carousel]').forEach((viewport) => {
+      const name = viewport.dataset.carousel;
+      const track = viewport.querySelector('.slider-track');
+      const cards = Array.from(track?.querySelectorAll('.banner-card:not([aria-hidden="true"])') || []);
+      if (!track || cards.length === 0) return;
+
+      cards.forEach((card) => {
+        const banner = card.getAttribute('data-banner');
+        if (!banner) return;
+        card.style.setProperty('--banner-image', "url('" + banner + "')");
+        card.removeAttribute('data-banner');
+      });
+
+      const leadingClone = cards[cards.length - 1].cloneNode(true);
+      leadingClone.setAttribute('aria-hidden', 'true');
+      track.insertBefore(leadingClone, track.firstElementChild);
+      const trailingClones = document.createDocumentFragment();
+      cards.forEach(function (card) {
+        const clone = card.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        trailingClones.appendChild(clone);
+      });
+      track.appendChild(trailingClones);
+
+      const prev = document.querySelector(`[data-carousel-prev="${name}"]`);
+      const next = document.querySelector(`[data-carousel-next="${name}"]`);
+      const dots = Array.from(document.querySelectorAll(`[data-carousel-dots="${name}"] span`));
+      let index = 0;
+      let visualIndex = 1;
+      let autoTimer = null;
+      let pointerStart = 0;
+      let pointerStartY = 0;
+      let pointerId = null;
+      let dragDelta = 0;
+      let dragged = false;
+      let pressedLink = null;
+      let suppressNextClick = false;
+      let isDragging = false;
+
+      const cardStride = () => {
+        const first = track.querySelector('.banner-card');
+        const second = first?.nextElementSibling;
+        if (!first) return 0;
+        if (!second) return first.getBoundingClientRect().width;
+        return second.getBoundingClientRect().left - first.getBoundingClientRect().left;
+      };
+
+      // 中央寄せのためのオフセット。表示領域（パディングを除いた内側幅）の中央に
+      // アクティブカードが来るよう、左右に余白（=隣カードがのぞく量）を確保する。
+      const centerOffset = () => {
+        const card = track.querySelector('.banner-card');
+        if (!card) return 0;
+        const style = window.getComputedStyle(viewport);
+        const padL = parseFloat(style.paddingLeft) || 0;
+        const padR = parseFloat(style.paddingRight) || 0;
+        const inner = viewport.clientWidth - padL - padR;
+        return Math.max(0, (inner - card.getBoundingClientRect().width) / 2);
+      };
+
+      const setPosition = (targetIndex, smooth = true) => {
+        track.style.transition = smooth ? 'transform 760ms cubic-bezier(.22, .78, .18, 1)' : 'none';
+        track.style.transform = `translate3d(${centerOffset() - cardStride() * targetIndex}px, 0, 0)`;
+      };
+
+      const setDragPosition = (delta) => {
+        track.style.transform = `translate3d(${centerOffset() - cardStride() * visualIndex + delta}px, 0, 0)`;
+      };
+
+      const updateDots = () => {
+        dots.forEach((dot, dotIndex) => {
+          dot.classList.toggle('is-active', dotIndex === index);
+        });
+      };
+
+      const moveTo = (nextIndex, smooth = true) => {
+        visualIndex = nextIndex;
+        index = (((nextIndex - 1) % cards.length) + cards.length) % cards.length;
+        setPosition(visualIndex, smooth);
+        updateDots();
+      };
+
+      const normalizeLoopPosition = () => {
+        if (visualIndex > cards.length) {
+          visualIndex = 1;
+          index = 0;
+          setPosition(visualIndex, false);
+          updateDots();
+        }
+        if (visualIndex < 1) {
+          visualIndex = cards.length;
+          index = cards.length - 1;
+          setPosition(visualIndex, false);
+          updateDots();
+        }
+      };
+
+      const restart = () => {
+        window.clearInterval(autoTimer);
+        autoTimer = window.setInterval(() => moveTo(visualIndex + 1), name === 'services' ? 4200 : 3600);
+      };
+
+      prev?.addEventListener('click', () => {
+        moveTo(visualIndex - 1);
+        restart();
+      });
+      next?.addEventListener('click', () => {
+        moveTo(visualIndex + 1);
+        restart();
+      });
+
+      track.addEventListener('transitionend', normalizeLoopPosition);
+
+      const finishDrag = (delta) => {
+        viewport.classList.remove('is-dragging');
+        isDragging = false;
+        pointerId = null;
+        const threshold = Math.min(86, Math.max(38, cardStride() * 0.12));
+        if (Math.abs(delta) > threshold) {
+          dragged = true;
+          moveTo(visualIndex + (delta < 0 ? 1 : -1));
+        } else {
+          setPosition(visualIndex, false);
+        }
+        restart();
+      };
+
+      viewport.addEventListener('pointerdown', (event) => {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        if (event.pointerType === 'touch' && event.isPrimary === false) return;
+        isDragging = true;
+        pointerId = event.pointerId;
+        pointerStart = event.clientX;
+        pointerStartY = event.clientY;
+        dragDelta = 0;
+        dragged = false;
+        pressedLink = event.target.closest('a.banner-card');
+        viewport.classList.add('is-dragging');
+        track.style.transition = 'none';
+        window.clearInterval(autoTimer);
+        viewport.setPointerCapture?.(event.pointerId);
+      });
+
+      viewport.addEventListener('pointermove', (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+        const deltaX = event.clientX - pointerStart;
+        const deltaY = event.clientY - pointerStartY;
+        dragDelta = deltaX;
+        if (Math.abs(deltaX) > 14 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          dragged = true;
+          event.preventDefault();
+          setDragPosition(deltaX);
+        }
+      });
+
+      viewport.addEventListener('pointerup', (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+        viewport.releasePointerCapture?.(event.pointerId);
+        const delta = event.clientX - pointerStart;
+        const isTap = Math.abs(delta) <= 14 && Math.abs(event.clientY - pointerStartY) <= 14;
+        finishDrag(delta);
+        if (isTap && pressedLink) {
+          suppressNextClick = true;
+          window.open(pressedLink.href, '_blank', 'noopener');
+        }
+        pressedLink = null;
+      });
+
+      viewport.addEventListener('pointercancel', (event) => {
+        if (!isDragging || event.pointerId !== pointerId) return;
+        viewport.releasePointerCapture?.(event.pointerId);
+        finishDrag(dragDelta);
+        pressedLink = null;
+      });
+
+      viewport.addEventListener('pointerleave', () => {
+        if (!isDragging) return;
+        finishDrag(dragDelta);
+        pressedLink = null;
+      });
+
+      track.addEventListener('click', (event) => {
+        const link = event.target.closest('a.banner-card');
+        if (!link) return;
+        if (dragged || suppressNextClick) {
+          event.preventDefault();
+          suppressNextClick = false;
+        }
+      });
+
+      setPosition(visualIndex, false);
+      window.addEventListener('resize', () => moveTo(index + 1, false));
+      updateDots();
+      restart();
+    });
+  </script>
+  <script>
+    // ピンチズーム自体は許可しつつ、指を離したら元の表示倍率（等倍）に戻す。
+    // viewport の maximum-scale を一時的に 1 にして強制的に縮小 → 直後に解除して再ズーム可能に保つ。
+    (function () {
+      if (!window.visualViewport) return;
+      var vp = document.querySelector('meta[name="viewport"]');
+      if (!vp) return;
+      var base = 'width=device-width, initial-scale=1, viewport-fit=cover';
+      var timer = null;
+      function resetZoom() {
+        if (window.visualViewport.scale > 1.01) {
+          // maximum-scale=1 を付与すると現在の倍率が 1 を超えているため強制的に等倍へ戻る
+          vp.setAttribute('content', base + ', maximum-scale=1, user-scalable=no');
+          // 次のフレーム以降で解除し、再度ズームできる状態に戻す
+          if (timer) { clearTimeout(timer); }
+          timer = setTimeout(function () { vp.setAttribute('content', base); }, 350);
+        }
+      }
+      // 指を離した（ピンチ終了）後に倍率を判定して戻す
+      document.addEventListener('touchend', function () {
+        setTimeout(resetZoom, 120);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

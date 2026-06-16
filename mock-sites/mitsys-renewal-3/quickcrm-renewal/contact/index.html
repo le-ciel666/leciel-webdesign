@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="../../assets/favicon/favicon.ico" sizes="any">
+<meta name="theme-color" content="#3a7a1f">
+<title>お問い合わせ｜QuickCRM</title>
+<meta name="description" content="QuickCRMに関するご相談・お問い合わせはこちら。コンタクトセンター専門コンサルタントが対応します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body{display:flex;flex-direction:column;min-height:100dvh}
+  main{flex:1}
+
+  /* ── Slim header ── */
+  .page-nav{
+    max-width:var(--container);height:var(--header-h);
+    margin:0 auto;padding:0 clamp(16px,2.4vw,32px);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .page-back{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:700;color:var(--brand);text-decoration:none;
+    transition:color .15s;
+  }
+  .page-back:hover{color:var(--brand-2)}
+
+  /* ── Hero ── */
+  .page-hero{
+    background:linear-gradient(135deg,#1a3d12 0%,#2f6a1a 55%,#3a7a1f 100%);
+    color:#fff;
+    padding:clamp(48px,7vw,80px) 0 clamp(64px,9vw,100px);
+  }
+  .page-hero-inner{
+    max-width:var(--container);margin:0 auto;
+    padding:0 clamp(16px,2.4vw,32px);
+    display:grid;grid-template-columns:1fr;gap:36px;align-items:start;
+  }
+  @media(min-width:900px){
+    .page-hero-inner{grid-template-columns:minmax(0,1fr) minmax(400px,520px);gap:60px}
+  }
+  .page-hero .eyebrow{color:#b7efc4}
+  .page-hero .eyebrow::before{background:#b7efc4}
+  .page-hero h1{
+    font-size:clamp(28px,4vw,44px);line-height:1.25;color:#fff;
+    margin-top:10px;margin-bottom:0;
+  }
+  .page-hero-desc{color:#d4edd8;font-size:15px;line-height:1.85;margin-top:14px}
+
+  /* Tel block in hero */
+  .hero-tel-block{
+    margin-top:28px;padding:20px 22px;border-radius:14px;
+    background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(8px);
+  }
+  .hero-tel-label{font-size:13px;color:#c8e8cc;font-weight:600;margin-bottom:4px}
+  .hero-tel-num{
+    display:block;
+    font-family:var(--font-en);font-size:clamp(28px,3.5vw,40px);font-weight:800;
+    color:#fff;letter-spacing:.01em;line-height:1.1;text-decoration:none;
+    transition:opacity .15s;
+  }
+  .hero-tel-num:hover{opacity:.82}
+  .hero-tel-hours{font-size:13px;color:#c8e8cc;margin-top:6px}
+
+  .hero-points{
+    list-style:none;padding:0;margin:24px 0 0;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .hero-points li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;color:#e4f5e7;
+  }
+  .hero-points li::before{
+    content:"";flex:none;width:20px;height:20px;border-radius:50%;margin-top:2px;
+    background:rgba(255,255,255,.18) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' d='M3 8l3.5 3.5L13 5'/></svg>") center/11px no-repeat;
+  }
+
+  /* ハニーポット（画面外へ隠す） */
+  .cf-hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  /* 送信エラーメッセージ */
+  .cf-error{margin:0;color:#c0392b;font-size:13.5px;font-weight:600;line-height:1.65}
+
+  /* ── Page footer ── */
+  .page-footer{background:var(--bg-deep-2);padding:0 clamp(16px,2.4vw,32px)}
+  .page-footer-inner{
+    max-width:var(--container);margin:0 auto;height:52px;
+    display:flex;justify-content:center;align-items:center;
+  }
+  .page-footer-copy{
+    font-family:var(--font-en);font-size:12px;
+    color:var(--ink-on-dark-2);letter-spacing:.04em;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="page-nav">
+    <a href="../" class="brand" aria-label="QuickCRM トップ">
+      <img src="../assets/quickcrm-logo.png" alt="QuickCRM" class="brand-logo brand-logo-light" width="180" height="44">
+    </a>
+    <a class="page-back" href="../">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+      トップへ戻る
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="page-hero-inner">
+
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1>お問い合わせ</h1>
+        <p class="page-hero-desc">QuickCRM、CTI/PBX連携、アウトバウンド業務、IVR、通話録音、レポート作成など、コンタクトセンターに関するご相談を承ります。</p>
+        <div class="hero-tel-block">
+          <p class="hero-tel-label">お電話でのお問い合わせ</p>
+          <a href="tel:03-6872-1210" class="hero-tel-num">03-6872-1210</a>
+          <p class="hero-tel-hours">平日 9:00〜18:00（土日祝休）</p>
+        </div>
+        <ul class="hero-points">
+          <li>初回相談・デモ無料</li>
+          <li>コンタクトセンター専門コンサルタントが対応</li>
+          <li>クラウド・オンプレ双方の導入をご提案</li>
+          <li>2営業日以内にご返信</li>
+        </ul>
+      </div>
+
+      <div class="cf-form-card" id="cfFormCard">
+        <h3>お問い合わせフォーム</h3>
+        <p>以下の項目をご入力のうえ送信してください。</p>
+        <form id="cfForm" class="cf-form-grid" method="POST" action="submit.php" novalidate>
+          <!-- bot対策ハニーポット（人間には見えない／空のまま送信される想定） -->
+          <div class="cf-hp" aria-hidden="true">
+            <label>ご記入不要<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <label class="cf-label">
+            会社名<span class="cf-req">必須</span>
+            <input type="text" name="company" autocomplete="organization" placeholder="株式会社サンプル" required>
+          </label>
+          <label class="cf-label">
+            お名前<span class="cf-req">必須</span>
+            <input type="text" name="name" autocomplete="name" placeholder="山田 太郎" required>
+          </label>
+          <label class="cf-label">
+            メールアドレス<span class="cf-req">必須</span>
+            <input type="email" name="email" autocomplete="email" placeholder="example@company.co.jp" required>
+          </label>
+          <label class="cf-label">
+            電話番号<span class="cf-req">必須</span>
+            <input type="tel" name="tel" autocomplete="tel" placeholder="03-0000-0000" required>
+          </label>
+          <label class="cf-label">
+            お問い合わせ内容<span class="cf-req">必須</span>
+            <textarea name="message" placeholder="ご相談内容をご記入ください" required></textarea>
+          </label>
+          <div class="cf-agree-wrap">
+            <label class="cf-agree-label">
+              <input type="checkbox" id="cfAgree" name="agree" required>
+              <span>下記について同意する</span>
+            </label>
+            <a class="cf-privacy-link" href="https://www.mitsys.co.jp/privacy_policy2.html" target="_blank" rel="noopener noreferrer">個人情報の取り扱いについて →</a>
+          </div>
+          <p class="cf-error" id="cfError" role="alert" hidden></p>
+          <button class="btn btn-primary cf-submit-btn" type="submit" id="cfSubmit" disabled>
+            この内容でお問い合わせする <span class="arr">→</span>
+          </button>
+        </form>
+        <div class="cf-complete" id="cfComplete" hidden aria-live="polite" tabindex="-1">
+          <div class="cf-complete-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>お問い合わせを受け付けました</h3>
+          <p>お問い合わせいただきありがとうございます。2営業日以内に担当者よりご連絡させていただきます。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <div class="page-footer-inner">
+    <p class="page-footer-copy">© <span id="footerYear"></span> MITシステム研究所. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footerYear')?.replaceWith(new Date().getFullYear());
+
+  const form = document.getElementById('cfForm');
+  const agree = document.getElementById('cfAgree');
+  const submit = document.getElementById('cfSubmit');
+  const card = document.getElementById('cfFormCard');
+  const complete = document.getElementById('cfComplete');
+  const errorBox = document.getElementById('cfError');
+
+  agree?.addEventListener('change', () => { submit.disabled = !agree.checked; });
+
+  const showComplete = () => {
+    form.style.display = 'none';
+    // カード直下の見出し・説明文だけ隠す（完了メッセージ内のテキストは残す）
+    card.querySelectorAll(':scope > h3, :scope > p').forEach(el => el.style.display = 'none');
+    complete.hidden = false;
+    complete.focus();
+  };
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (errorBox) errorBox.hidden = true;
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const original = submit.innerHTML;
+    submit.disabled = true;
+    submit.textContent = '送信中…';
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
+        body: new FormData(form)
+      });
+      let data = {};
+      try { data = await res.json(); } catch (_) {}
+
+      if (res.ok && data.ok) {
+        showComplete();
+      } else {
+        if (errorBox) {
+          errorBox.textContent = data.message || '送信に失敗しました。時間をおいて再度お試しください。';
+          errorBox.hidden = false;
+        }
+        submit.disabled = false;
+        submit.innerHTML = original;
+      }
+    } catch (_) {
+      if (errorBox) {
+        errorBox.textContent = '送信に失敗しました。通信環境をご確認のうえ、再度お試しください。';
+        errorBox.hidden = false;
+      }
+      submit.disabled = false;
+      submit.innerHTML = original;
+    }
+  });
+</script>
+</body>
+</html>
