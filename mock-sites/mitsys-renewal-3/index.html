@@ -83,6 +83,11 @@
     --amber: #f59e0b;
     --red: #d84f45;
     --shadow: 0 24px 70px rgba(17, 24, 39, 0.13);
+    /* ヒーローとカルーセルの縦幅を 6:4 で連動させる基準値。
+       ヒーロー(=hero-h) + カルーセル(=hero-h×0.6667) + 切替ボタン(約64px) の合計が
+       高さ1000pxのブラウザに余裕をもって収まるよう 46vh を上限500pxで使う
+       （1000px時: ヒーロー460 + カルーセル307 + ボタン64 ≒ 831px） */
+    --hero-h: clamp(400px, 46vh, 500px);
     --font-sans: system-ui, -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, Meiryo, sans-serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Courier New', monospace;
   }
@@ -168,15 +173,38 @@
   .nav-links {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 38px;
     list-style: none;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 700;
-    color: var(--ink-2);
+    letter-spacing: 0.04em;
+    color: var(--navy);
     white-space: nowrap;
   }
   .nav-links a { text-decoration: none; }
+  /* 下線がホバーで中央から広がるアンダーライン */
+  .nav-links a:not(.svc-btn) {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 6px;
+    color: var(--navy);
+    transition: color .25s ease;
+  }
+  .nav-links a:not(.svc-btn)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #36995c, #2f8a50);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .3s cubic-bezier(.4,0,.2,1);
+  }
   .nav-links a:not(.svc-btn):hover { color: var(--blue); }
+  .nav-links a:not(.svc-btn):hover::after { transform: scaleX(1); }
   .nav-actions { display: flex; align-items: center; gap: 12px; }
 
   /* 各サービスへジャンプするボタン群（ヘッダーからは非表示） */
@@ -226,6 +254,7 @@
   }
   /* スマホ・タブレットのドロップダウン内専用ブロック（PCでは非表示） */
   .nav-svc { display: none; }
+  .nav-contact { display: none; }
   .icon-btn {
     width: 42px;
     height: 42px;
@@ -297,6 +326,9 @@
   .hero {
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    min-height: var(--hero-h);
     background: #101820;
     background-size: cover;
     background-position: center 34%;
@@ -377,6 +409,7 @@
   .hero-inner {
     position: relative;
     z-index: 2;
+    width: 100%;
     max-width: 1240px;
     margin: 0 auto;
     padding: 62px 24px 68px;
@@ -492,10 +525,85 @@
     /* 1枚を中央にどんと見せ、両端に隣のバナーを少しだけのぞかせる。
        --peek が片側にのぞく量。これだけ画面端から差し引いた幅が中央カードの幅になる。 */
     --peek: clamp(26px, 7vw, 168px);
-    --card-h: clamp(320px, 26vw, 462px);
+    /* ヒーロー6に対してカルーセルは4。ヒーロー高さの 2/3 に揃える */
+    --card-h: calc(var(--hero-h) * 0.6667);
   }
   .banner-showcase + .banner-showcase {
     padding-top: 42px;
+  }
+  /* カルーセル直下のCTAバンド（ブロック全体がコンタクトへのリンク） */
+  .cta-band-section {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 72px 24px 80px;
+  }
+  .cta-band {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #1a3d12 0%, #3a7a1f 60%, #63a538 100%);
+    color: #fff;
+    border-radius: 28px;
+    padding: clamp(40px, 6vw, 64px) clamp(24px, 5vw, 56px);
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .cta-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.1), transparent 40%), radial-gradient(circle at 80% 80%, rgba(130,200,85,.18), transparent 50%);
+    pointer-events: none;
+  }
+  .cta-band:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px -22px rgba(26,61,18,.7);
+  }
+  .cta-band h2 {
+    position: relative;
+    color: #fff;
+    font-size: clamp(22px, 3.4vw, 36px);
+    font-weight: 800;
+    line-height: 1.45;
+    margin: 0 0 16px;
+    max-width: none;
+  }
+  .cta-band p {
+    position: relative;
+    color: rgba(255,255,255,.82);
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.8;
+  }
+  .cta-band .cta-arrow {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 26px;
+    font-size: clamp(15px, 1.6vw, 17px);
+    font-weight: 700;
+    color: #fff;
+  }
+  .cta-band .cta-arrow span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.18);
+    transition: transform .3s ease, background .3s ease;
+  }
+  .cta-band:hover .cta-arrow span {
+    transform: translateX(4px);
+    background: rgba(255,255,255,.3);
+  }
+  @media (max-width: 640px) {
+    .cta-band-section { padding: 48px 16px 52px; }
+    .cta-band { border-radius: 22px; }
   }
   .banner-shell {
     max-width: none;
@@ -631,7 +739,14 @@
   }
   .service-photo {
     position: absolute;
-    inset: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    /* 写真をカード全幅ではなく右側だけに絞る。
+       全幅だと横長フレームにcoverで合わせた際に縦が大きく拡大され、
+       女性が巨大化して頭や首が切れてしまうため、表示幅を抑えて縮小する */
+    left: auto;
+    width: 58%;
     z-index: 0;
     background: #eef2f7;
   }
@@ -639,13 +754,23 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: right center;
+    object-position: center 22%;
   }
   .vis-copy .service-photo img {
-    object-position: 86% center;
+    object-position: 70% 22%;
   }
   .edialer-copy .service-photo img {
-    object-position: 92% center;
+    object-position: 78% 22%;
+  }
+  /* 白基調バナー：左の文章は白背景のまま、写真は全体を表示して人物を切らない。
+     画像自体が白背景なので、余白部分はカードの白と自然に溶け込む。 */
+  .light-copy .service-photo {
+    background: transparent;
+    width: 64%;
+  }
+  .light-copy .service-photo img {
+    object-fit: contain;
+    object-position: right center;
   }
   /* 写真の上に左側だけ白パネルを重ね、文字を読みやすくする（女性は右側にフルで見せる） */
   .service-copy-card::before {
@@ -758,6 +883,27 @@
     font-size: 16.5px;
     line-height: 1.8;
   }
+  .banner-content p + p {
+    margin-top: 12px;
+  }
+  /* 長めの説明文を写真の上でも読めるようにガラス調パネルを敷く（着信者主権・受注など） */
+  .longtext-banner .banner-content {
+    width: min(620px, 92%);
+    justify-content: center;
+    padding: clamp(22px, 2.4vw, 36px);
+    background: linear-gradient(115deg, rgba(8, 22, 16, 0.86) 0%, rgba(8, 22, 16, 0.74) 60%, rgba(8, 22, 16, 0.42) 100%);
+    backdrop-filter: blur(3px);
+  }
+  .longtext-banner .banner-content h3 {
+    margin-bottom: 16px;
+  }
+  .longtext-banner .banner-content p {
+    font-size: clamp(13.5px, 1.05vw, 16px);
+    line-height: 1.85;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
   .banner-tags {
     display: flex;
     flex-wrap: wrap;
@@ -786,7 +932,19 @@
     height: 12px;
     border-radius: 999px;
     background: #c7c9cc;
+    cursor: pointer;
     transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+  /* 小さなドットでも押しやすいよう、見た目より広いタップ領域を確保する */
+  .slider-dots span::before {
+    content: "";
+    position: absolute;
+    inset: -11px;
+    border-radius: 50%;
+  }
+  .slider-dots span:not(.is-active):hover {
+    background: #9aa0a6;
+    transform: scale(1.15);
   }
   .slider-dots span.is-active {
     width: 20px;
@@ -806,7 +964,7 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-top: 24px;
+    margin-top: 16px;
     min-height: 48px;
   }
   .slider-btn {
@@ -1350,16 +1508,13 @@
   }
   .news-section { background: #fff; border-top: 1px solid var(--line); }
   .news-section .section-head {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+    display: block;
     margin-bottom: 28px;
   }
-  .news-section .section-head > div { flex-shrink: 0; }
   .news-section .section-head .lead {
+    margin-top: 14px;
     font-size: 14px;
-    line-height: 1.6;
-    white-space: nowrap;
+    line-height: 1.7;
   }
   .news-items {
     border: 1px solid var(--line);
@@ -1649,6 +1804,24 @@
       justify-content: center;
     }
     .nav-svc-grid .svc-btn::after { display: none; }
+    /* ドロワー最下部のお問い合わせボタン（全幅） */
+    .nav-contact {
+      display: block;
+      margin-top: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+    /* .nav-links a:not(.svc-btn) の navy 指定に勝つよう詳細度を上げて白文字にする */
+    .nav-links .nav-contact .btn,
+    .nav-links .nav-contact .btn .arrow {
+      color: #fff;
+    }
+    .nav-links .nav-contact .btn {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    .nav-links .nav-contact .btn::after { display: none; }
   }
 
   /* PC幅では見出しを1行に固定し、その下に説明文を表示する */
@@ -1687,9 +1860,15 @@
        単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、見た目の寂しさを解消する。 */
     .hero-slideshow { display: none; }
     .hero {
+      /* スマホは6:4比率を適用せず、内容に応じた高さに戻す */
+      min-height: auto;
       background-image: url('assets/images/marunouchi/hero-new-02.webp');
       background-size: cover;
       background-position: 56% 68%;
+    }
+    /* スマホのカルーセルは従来どおりの高さに戻す */
+    .banner-showcase {
+      --card-h: clamp(300px, 78vw, 420px);
     }
     .nav { height: 68px; padding: 0 16px; }
     .brand-logo { width: 174px; }
@@ -1698,7 +1877,9 @@
     .hero-inner {
       padding: 40px 16px 56px;
     }
-    .hero h1 { font-size: 25px; line-height: 1.24; margin-bottom: 20px; }
+    /* スマホではタイトルを1行に収める（15文字が画面幅に入るようvw連動で縮小） */
+    .hero h1 { font-size: clamp(18px, 5.4vw, 25px); line-height: 1.3; margin-bottom: 20px; white-space: nowrap; }
+    .hero h1 .hero-title-line { white-space: nowrap; }
     .hero-lead { font-size: 14px; line-height: 1.75; word-break: keep-all; }
     .hero-lead br,
     .hero-lead .sp-break { display: block; }
@@ -1734,22 +1915,24 @@
       width: max-content;
       gap: 12px;
       padding: 0;
+      /* 各カードを最も高いカードに引き伸ばさず、自前の高さ（=画像比率）を保つ。
+         これで横長のアプリ系バナーが縦に伸びて左右が切れるのを防ぐ */
+      align-items: flex-start;
     }
     .service-banner-card {
       min-height: 0;
     }
-    /* スマホは写真をカード全面に敷き、下側の白グラデーションに文字を重ねて1枚のバナーにする
-       （女性は上側に見せ、テキストは全幅で2行に収める） */
-    .service-copy-card {
+    /* スマホでは隣のアプリ系バナーと同じく 16:9・タイトルのみ・左上配置に統一する。
+       .banner-card{aspect-ratio:1200/583} に後勝ちされないよう詳細度を上げる */
+    .banner-card.service-copy-card {
       display: block;
       position: relative;
+      aspect-ratio: 1672 / 941;
+      height: auto;
     }
-    /* .banner-card::before の background-color:#fff より詳細度を上げて打ち消す（透明部分から白が透けるのを防ぐ） */
+    /* スマホでは上部の白いスクリム（曇り）は出さず、写真をそのまま見せる */
     .service-banner-card.service-copy-card::before {
-      display: block;
-      background-color: transparent;
-      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.85) 63%, #fff 73%, #fff 100%);
-      background-size: auto;
+      display: none;
     }
     .service-photo {
       position: absolute;
@@ -1759,18 +1942,20 @@
       aspect-ratio: auto;
     }
     .service-photo img {
+      object-fit: cover;
       object-position: right center;
     }
     .service-copy {
       position: relative;
       z-index: 2;
       flex: none;
-      width: 100%;
-      max-width: none;
-      min-height: 74vw;
-      padding: 16px 18px 18px;
-      gap: 5px;
-      justify-content: flex-end;
+      /* 写真の左側（人物がいない明るい余白）にテキストを収め、被写体に被らないようにする */
+      width: 56%;
+      max-width: 56%;
+      min-height: 0;
+      padding: 18px 20px;
+      gap: 4px;
+      justify-content: flex-start;
     }
     .service-copy-title {
       font-size: 24px;
@@ -1779,13 +1964,32 @@
       font-size: 14px;
       line-height: 1.5;
     }
-    /* スマホでは長文バナーはタイトル＋見出し2行だけに絞り、小見出し・本文は非表示 */
+    /* スマホではタイトル＋見出し（説明）だけ。小見出し・本文・引用は非表示 */
     .service-copy-sub,
-    .service-copy-body {
+    .service-copy-body,
+    .service-copy-quote {
       display: none;
     }
-    .service-copy-quote {
-      font-size: 15.5px;
+    /* スマホでは長文バナーの暗い（グレーの）パネルは出さず、タイトルを左上に置く */
+    .longtext-banner .banner-content {
+      background: none;
+      backdrop-filter: none;
+      width: 100%;
+      padding: 24px;
+      justify-content: flex-start;
+    }
+    /* 上部に置くタイトルを読みやすくする控えめなダークスクリム（白文字用） */
+    .application-card.longtext-banner::after {
+      background: linear-gradient(180deg, rgba(5, 16, 12, 0.5) 0%, rgba(5, 16, 12, 0.18) 28%, rgba(5, 16, 12, 0) 52%);
+    }
+    /* 白基調バナーのデスクトップ用指定（右寄せ64%・contain）をスマホに持ち込まない。
+       スマホは他のサービスバナーと同じく写真全面＋下の白グラデーション表示にする */
+    .light-copy .service-photo {
+      width: auto;
+    }
+    .light-copy .service-photo img {
+      object-fit: cover;
+      object-position: right center;
     }
     .slider-controls {
       gap: 16px;
@@ -1828,16 +2032,14 @@
       background-color: #fff;
       transform: none;
     }
-    /* 縦積みのサービスバナーは画像比率に縛られず、本文の高さで伸ばす */
-    .service-copy-card {
-      aspect-ratio: auto;
-      height: auto;
-    }
     .application-card::before {
       background-size: cover;
+      background-position: center;
     }
     .application-card {
       min-height: 0;
+      /* 画像（1672×941）と同じ比率にして cover でも左右が切れず全体が映るようにする */
+      aspect-ratio: 1672 / 941;
     }
     .banner-content,
     .application-card .banner-content {
@@ -1911,10 +2113,9 @@
         <span class="brand-tagline">Contact Center DX</span>
       </a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#products">製品・サービス</a></li>
-        <li><a href="#flow">導入までの流れ</a></li>
         <li><a href="#news">お知らせ</a></li>
         <li><a href="#company">会社情報</a></li>
+        <li><a href="https://www.mitsys.co.jp/president.html">社長紹介</a></li>
         <!-- スマホ・タブレットのドロップダウン内に表示するサービス移動ボタン -->
         <li class="nav-svc">
           <span class="nav-svc-label">サービスへ移動</span>
@@ -1924,6 +2125,8 @@
             <a class="svc-btn" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">VIS</a>
           </div>
         </li>
+        <!-- スマホのドロワー最下部に表示するお問い合わせボタン -->
+        <li class="nav-contact"><a class="btn btn-primary" href="https://www.mitsys.co.jp/contact.html">お問い合わせ <span class="arrow">→</span></a></li>
       </ul>
       <div class="nav-actions">
         <!-- 各サービスへジャンプするボタン群。専用ページが用意でき次第 href を差し替える。 -->
@@ -1970,34 +2173,35 @@
         </div>
         <div class="slider-viewport" data-carousel="services">
           <div class="slider-track service-slider">
-            <a class="banner-card service-banner-card service-copy-card quickcrm-copy" href="quickcrm-renewal/" target="_blank" rel="noopener">
+            <article class="banner-card service-banner-card service-copy-card quickcrm-copy light-copy">
               <div class="service-copy">
                 <div class="service-copy-title">QuickCRM</div>
                 <h3 class="service-copy-head">応対品質と効率を同時に底上げするCRM<br>コールセンターの無駄なコストを削減</h3>
-                <p class="service-copy-sub">業務画面の構築・修正から高度な分析・CTI連携まで。専門知識なしで、これ1つで完結できるCRMシステム。</p>
+                <p class="service-copy-sub">業務画面の構築・修正から高度な分析・CTI連携まで。<br>専門知識なしで、これ1つで完結できるCRMシステム。</p>
                 <p class="service-copy-body">通常のCRM機能としてだけでなく、CTI連携でアウトバウンド・インバウンド業務が容易に実現可能。業務画面はノーコードで構築できるため、現場担当者でも作成・修正が可能に。さらに、ダッシュボード画面やリアルタイム分析まで、1つのシステムで実現できます。</p>
               </div>
-              <div class="service-photo"><img src="assets/service-banners/quickcrm-bg-clean.webp" alt="ヘッドセットで顧客対応するオペレーター" loading="lazy" decoding="async"></div>
-            </a>
-            <article class="banner-card application-card" data-banner="assets/service-banners/order-management.webp">
-              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>電話・Webからの注文受付、顧客確認、対応結果、出荷連携までを見通しよく管理します。</p></div>
+              <div class="service-photo"><img src="assets/service-banners/quickcrm-new.webp" alt="ヘッドセットで顧客対応するオペレーター" loading="lazy" decoding="async"></div>
             </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/maintenance.webp">
-              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>修理依頼、機器情報、対応履歴、訪問予定を結びつけ、保守サービスの品質を高めます。</p></div>
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/order-management.webp">
+              <div class="banner-content"><div class="banner-kicker">Order Desk</div><h3>受注</h3><p>お客様情報や過去の注文履歴を着信と同時に自動表示し、会話内容に応じて必要な入力項目や確認事項を画面上にナビゲーションします。住所や商品名は自動補完、受注内容はリアルタイムで自動チェックされるため、入力ミスや確認漏れを防止。</p><p>通話終了後には受注内容を自動要約し、登録作業を大幅に削減することで、オペレーターが応対に集中できる環境を実現します。</p></div>
             </article>
-            <a class="banner-card service-banner-card service-copy-card edialer-copy" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/maintenance.webp">
+              <div class="banner-content"><div class="banner-kicker">Field Service</div><h3>保守</h3><p>電話やメールで障害・故障の連絡を受けると、契約情報、設置機器、過去の対応履歴を自動表示。問い合わせ内容に応じて受付項目や確認事項を画面で案内するため、担当者による対応品質のばらつきを抑制します。</p><p>受付内容はチケットとして自動登録され、担当者への引き継ぎや進捗管理も一元化。対応履歴や作業結果は自動で蓄積されるため、迅速な原因特定と顧客対応品質の向上を実現します。</p></div>
+            </article>
+            <article class="banner-card service-banner-card service-copy-card edialer-copy">
               <div class="service-copy">
                 <div class="service-copy-title">Quick eDialer</div>
+                <h3 class="service-copy-head">接続しやすいリストを自動抽出・自動発信。<br>少人数でも成果を最大化する自動発信システム。</h3>
                 <p class="service-copy-body">過去の架電実績から接続しやすい属性を指定してリストを抽出。管理者・オペレーターの介在なく、リストは時間帯ごとに自動で切り替わり、常に最適なリスト発信を継続します。</p>
                 <p class="service-copy-body">留守電は自動検知・自動吹込みで処理し、キャリアメッセージも自動検知して自動更新。発信倍率の最適化でオペレーターの待機時間を削減し、1人あたりの生産性を高め、少ない人数で最大の成果を実現します。</p>
                 <p class="service-copy-quote">“人件費を削減し、成果を最大化します”</p>
               </div>
               <div class="service-photo"><img src="assets/service-banners/quick-edialer-success-bg.webp" alt="成果を喜ぶコンタクトセンターのオペレーター" loading="lazy" decoding="async"></div>
-            </a>
-            <article class="banner-card application-card" data-banner="assets/service-banners/calling-operations.webp">
-              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>コールリスト、発信結果、折返し予定、キャンペーン実績を管理し、発信業務を効率化します。</p></div>
             </article>
-            <a class="banner-card service-banner-card service-copy-card vis-copy" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/calling-operations.webp">
+              <div class="banner-content"><div class="banner-kicker">Outbound</div><h3>架電業務</h3><p>顧客情報や過去の応対履歴を確認しながら効率的に架電できるほか、架電結果に応じて次回アクションや登録項目を画面上で自動案内します。</p><p>通話内容は自動で記録・要約されるため、後処理時間を大幅に削減。見込み顧客の優先順位付けや再架電管理も自動化し、オペレーターは最適なタイミングで効率よくアプローチできます。限られた人員でも高い生産性を実現し、成果向上を支援します。</p></div>
+            </article>
+            <article class="banner-card service-banner-card service-copy-card vis-copy">
               <div class="service-copy">
                 <div class="service-copy-title">VIS</div>
                 <h3 class="service-copy-head">コンタクトセンターで利用される機器を垂直統合したシステム</h3>
@@ -2005,218 +2209,42 @@
                 <p class="service-copy-body">PBX、チャット、メール、通話録音、音声認識などの機能を垂直に統合し、個々で処理した情報を一元管理。一元管理された情報はお客様と対応中に迅速に表示され、オペレータとの会話を随時AIに学習させることで、<strong>“よりオペレータに近いAIエージェント”を育てます</strong>。</p>
               </div>
               <div class="service-photo"><img src="assets/service-banners/vis-ai-bg.webp" alt="AIエージェントと連携するコンタクトセンターのオペレーター" loading="lazy" decoding="async"></div>
-            </a>
-            <a class="banner-card application-card" href="../salon-crm/" target="_blank" rel="noopener" data-banner="assets/service-banners/salon-operations.webp">
-              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>理美容業務</h3><p>予約受付、顧客カルテ、来店履歴、スタッフ対応を一元化し、サロン運営を支援します。</p></div>
-            </a>
-            <article class="banner-card application-card" data-banner="assets/service-banners/caller-sovereignty.webp">
-              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>発信者番号、時間帯、転送ルール、録音や履歴保存を組み合わせ、受け手主導の電話対応を実現します。</p></div>
             </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/asset-building.webp">
-              <div class="banner-content"><div class="banner-kicker">Finance</div><h3>資産形成</h3><p>相談履歴、フォロー予定、顧客属性を管理し、長期的な資産形成サポートに活用できます。</p></div>
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/salon-operations.webp">
+              <div class="banner-content"><div class="banner-kicker">Salon CRM</div><h3>サロン・エステ業務</h3><p>お客様からの電話や問い合わせを受けると、来店履歴・施術履歴・契約コース・予約状況を自動表示。カウンセリング内容やお悩み、注意事項も一画面で確認できるため、担当者が変わっても質の高い対応を実現します。</p><p>予約変更やコース追加も画面の案内に沿って簡単に登録でき、会話内容は自動で要約・記録。次回来店の提案やフォローコール対象者も自動抽出されるため、顧客満足度向上とリピート率向上を支援します。</p></div>
             </article>
-            <article class="banner-card application-card" data-banner="assets/service-banners/printdesigner.webp">
-              <div class="banner-content"><div class="banner-kicker">Document</div><h3>Quick eReport</h3><p>帳票、申込書、ラベルなどの出力物を業務に合わせて設計し、CRMデータと連動します。</p></div>
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/caller-sovereignty.webp">
+              <div class="banner-content"><div class="banner-kicker">Inbound Control</div><h3>着信者主権</h3><p>受信する電話（インバウンド）において、発信者側ではなく「受ける側（企業・組織）」が主導権を持って対応の選別やコントロールを行うという概念です。</p><p>一般的な電話対応では、着信があったらその都度業務を中断して応答しなければなりませんが、このコンセプトやシステムは、受電側があらかじめコントロールする仕組みを指します。</p></div>
+            </article>
+            <article class="banner-card application-card longtext-banner" data-banner="assets/service-banners/asset-building.webp">
+              <div class="banner-content"><div class="banner-kicker">Real Estate</div><h3>不動産投資業務</h3><p>見込み顧客の属性や過去の応対履歴、資料請求・セミナー参加履歴を一画面で確認。データクレンジングやマッチングを行うことで効率的にアプローチできます。</p><p>会話内容や興味度合いは自動で記録・要約され、次回提案やフォロー時期も自動管理。商談化の可能性が高い顧客を優先表示することで営業活動の効率を向上させます。架電結果から契約までの進捗を可視化し、追客漏れの防止と成約率向上を支援します。</p></div>
+            </article>
+            <article class="banner-card service-banner-card service-copy-card light-copy">
+              <div class="service-copy">
+                <div class="service-copy-title">Quick eReport</div>
+                <h3 class="service-copy-head">データを自在に分析・可視化するレポート実行ツール。</h3>
+                <p class="service-copy-body">データベース内の情報をスプレッドシート形式で自在に分析・可視化できるレポート実行ツールです。集計、絞り込み、色分け表示、ページ分割、自動更新などを画面設定だけで簡単に組み合わせることができ、専門知識は必要ありません。</p>
+                <p class="service-copy-body">日々の業務データを分かりやすく整理し、売上や生産性、対応状況などの重要指標をリアルタイムに把握。埋もれがちな課題や改善ポイントを素早く発見することができます。</p>
+              </div>
+              <div class="service-photo"><img src="assets/service-banners/quick-ereport.webp" alt="タブレットでデータを分析するオペレーター" loading="lazy" decoding="async"></div>
             </article>
           </div>
         </div>
         <div class="slider-controls" aria-label="サービスとアプリケーションスライド操作">
           <button class="slider-btn" type="button" data-carousel-prev="services" aria-label="前のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 4.5 7 10l5.5 5.5"/></svg></button>
-          <div class="slider-dots" data-carousel-dots="services" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="slider-dots" data-carousel-dots="services" role="tablist" aria-label="バナーを切り替え"><span class="is-active"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
           <button class="slider-btn" type="button" data-carousel-next="services" aria-label="次のバナーを見る"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.5 5.5 5.5-5.5 5.5"/></svg></button>
         </div>
       </div>
     </section>
 
-    <section class="challenge-band" id="solution">
-      <div class="challenge-panel">
-        <div class="challenge-message">
-          <h2>その課題、QuickCRMでまとめて解決へ。</h2>
-          <p>顧客情報、応対履歴、電話連携、業務画面を一つのCRM基盤に集約。コンタクトセンターごとの運用に合わせて、使いやすい環境を構築できます。</p>
-        </div>
-        <div class="challenge-grid">
-          <article class="challenge">
-            <div class="challenge-num">01</div>
-            <h3>業務に合うCRM画面を用意したい</h3>
-            <p>案件処理、受付、受注、アウトバウンドなど、業務内容に合わせた画面を構築できます。</p>
-          </article>
-          <article class="challenge">
-            <div class="challenge-num">02</div>
-            <h3>顧客情報と応対履歴を一元管理したい</h3>
-            <p>電話、メール、LINEなどの応対を顧客情報にひもづけ、履歴を追いやすくします。</p>
-          </article>
-          <article class="challenge">
-            <div class="challenge-num">03</div>
-            <h3>インバウンド/アウトバウンドを同じ基盤で扱いたい</h3>
-            <p>受付対応、発信業務、コールリスト、対応結果を同じCRM基盤で管理できます。</p>
-          </article>
-          <article class="challenge">
-            <div class="challenge-num">04</div>
-            <h3>既存PBXやクラウド環境と連携したい</h3>
-            <p>利用中の電話基盤やセキュリティ要件に合わせ、CTI接続やデータベース配置を相談できます。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="products">
-      <div class="section-head">
-        <div>
-          <p class="label">Main Service</p>
-          <h2>QuickCRMで、顧客対応を一元化。</h2>
-        </div>
-        <p class="lead">
-          QuickCRMは、顧客情報、応対履歴、CTI連携、業務画面作成を一体で扱えるコンタクトセンター向けCRMです。
-          インバウンド、アウトバウンドの双方に対応し、現場の業務に合わせた運用フローを柔軟に構築できます。
-        </p>
-      </div>
-
-      <div class="product-grid">
-        <article class="product-card featured">
-          <div>
-            <div class="product-meta">
-              <span class="tag">主力製品</span>
-              <span class="tag green">CRM / CTI</span>
-            </div>
-            <h3>QuickCRM</h3>
-            <p>
-              QuickCRMは、電話応対を中心に、顧客情報とコンタクト履歴をひもづけて管理するコンタクトセンター向けCRMです。業務画面を作成・変更できる機能や、CTI/PBX連携、メール・SMS・LINEなどのオプションを組み合わせ、業務に合わせた運用環境を構築できます。
-            </p>
-            <ul class="feature-list">
-              <li>顧客情報・応対履歴管理</li>
-              <li>インバウンド/アウトバウンド対応</li>
-              <li>CTI・PBX連携</li>
-              <li>業務画面の作成・変更</li>
-            </ul>
-            <div class="hero-actions"><a class="btn btn-primary" href="quickcrm-renewal/">QuickCRMページへ <span class="arrow">→</span></a></div>
-          </div>
-          <div class="mini-dashboard">
-            <div class="mini-row"><strong>業務画面を自社仕様に構築</strong><br><span>テンプレートや画面作成機能を使い、案件処理、受付、受注、アウトバウンドなどの業務画面を作成できます。</span></div>
-            <div class="mini-row"><strong>電話業務とCRMを連携</strong><br><span>着信時の顧客情報表示、通話履歴、コールリスト、架電結果などを一つの運用基盤で扱えます。</span></div>
-            <div class="mini-row"><strong>クラウドから既存環境まで対応</strong><br><span>AWS上のデータベース利用やオンプレミス配置、接続確認済みPBX・クラウド系電話サービスとの連携に対応します。</span></div>
-          </div>
-        </article>
-
-        <div class="product-subhead">
-          <h3>関連サービス</h3>
-          <p>QuickCRMを中心に、発信業務、音声応答、PBX連携、録音、レポート、要員管理まで、コンタクトセンター運営に必要な周辺機能を組み合わせて提供します。</p>
-        </div>
-
-        <article class="product-card">
-          <div class="product-meta"><span class="tag">AI</span><span class="tag green">Voice AI</span></div>
-          <h3>VIS</h3>
-          <p>音声認識とAIを活用し、コンタクトセンターの会話をテキスト化・分析する音声AIソリューション。応対内容をナレッジとして蓄積し、品質向上と業務改善につなげます。</p>
-          <ul class="feature-list">
-            <li>音声認識・テキスト化</li>
-            <li>会話のナレッジ化</li>
-            <li>応対品質の分析</li>
-            <li>QuickCRM連携</li>
-          </ul>
-          <div class="hero-actions"><a class="btn btn-ghost" href="https://www.mitsys.co.jp/service_contact_center.html" target="_blank" rel="noopener">サービスページへ <span class="arrow">→</span></a></div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-meta"><span class="tag">Outbound</span><span class="tag amber">Dialer</span></div>
-          <h3>Quick eDialer</h3>
-          <p>アウトバウンド業務向けの自動ダイヤルソフト。プレビュー、プログレッシブ、プレディクティブなどの発信モードで、架電効率とオペレーター稼働を高めます。</p>
-          <ul class="feature-list">
-            <li>予測発信</li>
-            <li>リスト管理</li>
-            <li>キャンペーン別集計</li>
-            <li>折返し管理</li>
-          </ul>
-          <div class="hero-actions"><a class="btn btn-ghost" href="https://www.mitsys.co.jp/service_dialer.html" target="_blank" rel="noopener">サービスページへ <span class="arrow">→</span></a></div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-meta"><span class="tag">Voice Response</span><span class="tag green">IVR</span></div>
-          <h3>QuickIVR</h3>
-          <p>電話受付、音声案内、あふれ呼対応、情報収集を自動化する音声応答システム。QuickCRMと連携し、顧客情報を活用した受付導線を構築できます。</p>
-          <ul class="feature-list">
-            <li>自動音声応答</li>
-            <li>あふれ呼対応</li>
-            <li>SMS発信</li>
-            <li>CRM連携</li>
-          </ul>
-        </article>
-
-        <article class="product-card">
-          <div class="product-meta"><span class="tag">Reporting</span><span class="tag">Report</span></div>
-          <h3>Quick eReport</h3>
-          <p>コンタクトセンターの運用状況を可視化するレポート作成機能。標準レポートに加え、業務に合わせた集計項目のカスタマイズにも対応します。</p>
-          <ul class="feature-list">
-            <li>統計レポート</li>
-            <li>時系列分析</li>
-            <li>業務別集計</li>
-            <li>個別カスタマイズ</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="flow-wrap" id="flow">
-      <div class="section">
-        <div class="section-head">
-          <div>
-            <p class="label">Implementation Flow</p>
-            <h2>導入までの流れ。</h2>
-          </div>
-          <p class="lead">
-            初回相談から構成設計、接続確認、本番導入、改善運用までを段階的に支援します。電話環境や既存システムを確認しながら、自社に合う導入範囲を整理できます。
-          </p>
-        </div>
-        <div class="flow">
-          <article class="flow-step"><div class="step">STEP 01</div><h3>現状ヒアリング</h3><p>業務フロー、架電量、既存PBX、利用中CRMを確認。</p></article>
-          <article class="flow-step"><div class="step">STEP 02</div><h3>構成プラン設計</h3><p>QuickCRM、Dialer、音声認識の必要範囲を整理。</p></article>
-          <article class="flow-step"><div class="step">STEP 03</div><h3>検証・接続確認</h3><p>電話環境、データ、権限、画面要件を段階的に検証。</p></article>
-          <article class="flow-step"><div class="step">STEP 04</div><h3>本番導入</h3><p>オペレーター研修、管理画面設定、移行を支援。</p></article>
-          <article class="flow-step"><div class="step">STEP 05</div><h3>改善運用</h3><p>KPIレポートをもとに発信効率と応対品質を改善。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="industries">
-      <div class="section-head">
-        <div>
-          <p class="label">Use Cases</p>
-          <h2>QuickCRMの活用シーン。</h2>
-        </div>
-        <p class="lead">
-          顧客対応、発信業務、予約受付、BPOなど、電話応対が発生するさまざまな業務でQuickCRMと関連サービスを活用できます。
-          顧客情報、応対履歴、通話結果を一元管理し、現場の運用に合わせたCRM環境を構築します。
-        </p>
-      </div>
-      <div class="industry-grid">
-        <article class="industry-card" data-banner="assets/images/industry/ind-01.webp"><div class="industry-body"><span>CONTACT CENTER</span><h3>コンタクトセンター運営</h3><p>顧客情報、応対履歴、対応結果を一元管理し、オペレーター業務を標準化。</p></div></article>
-        <article class="industry-card" data-banner="assets/images/industry/ind-02.webp"><div class="industry-body"><span>OUTBOUND</span><h3>アウトバウンド業務</h3><p>コールリスト、架電結果、折返し予定をCRM上で管理し、追客漏れを防止。</p></div></article>
-        <article class="industry-card" data-banner="assets/images/industry/ind-03.webp"><div class="industry-body"><span>SUPPORT</span><h3>カスタマーサポート</h3><p>問い合わせ履歴と顧客情報を共有し、担当者が変わっても対応品質を維持。</p></div></article>
-        <article class="industry-card" data-banner="assets/images/industry/ind-04.webp"><div class="industry-body"><span>FINANCE</span><h3>金融・保険窓口</h3><p>本人確認、対応記録、次回アクションを残し、正確な顧客対応を支援。</p></div></article>
-        <article class="industry-card" data-banner="assets/images/industry/ind-05.webp"><div class="industry-body"><span>RESERVATION</span><h3>予約・受付センター</h3><p>IVRや着信振分と連携し、混雑時の受付、折返し、履歴管理を効率化。</p></div></article>
-        <article class="industry-card" data-banner="assets/images/industry/ind-06.webp"><div class="industry-body"><span>BPO</span><h3>BPO・業務受託</h3><p>複数案件の画面、リスト、対応結果を分けて管理し、運用報告をしやすく。</p></div></article>
-      </div>
-    </section>
-
-    <section class="trust-band">
-      <div class="section">
-        <div class="section-head">
-          <div>
-            <p class="label">History</p>
-            <h2>進化を続ける、コンタクトセンター技術。</h2>
-          </div>
-          <p class="lead">
-            MITシステム研究所は1980年の創業以来、コンタクトセンター向けシステムを独自に開発し続けています。
-            製品の進化、導入実績、展示会出展などを通じて、専門性と継続性を積み重ねてきました。
-          </p>
-        </div>
-        <div class="timeline">
-          <ul>
-            <li><time>1980</time><span>株式会社エム・アイ・ティシステム研究所を設立。</span></li>
-            <li><time>2000s</time><span>CRM・CTI領域の開発、コンタクトセンター向け製品展開を強化。</span></li>
-            <li><time>2015</time><span>アウトバウンド向け自動ダイヤルソフトウェア Quick eDialer を発表。</span></li>
-            <li><time>2020s</time><span>音声認識、クラウド連携、PBX連携など運用DX領域へ展開。</span></li>
-          </ul>
-        </div>
-      </div>
+    <!-- CTAバンド（ブロック全体がコンタクトページへのリンク） -->
+    <section class="cta-band-section">
+      <a class="cta-band" href="https://www.mitsys.co.jp/contact.html">
+        <h2>まずは無料相談から。<br>業務に合わせた最適構成をご提案します。</h2>
+        <p>導入時の構成・連携・運用設計まで、コンタクトセンター専門のコンサルタントが対応します。資料ダウンロード、デモのご依頼もこちらから。</p>
+        <span class="cta-arrow">お問い合わせ <span aria-hidden="true">→</span></span>
+      </a>
     </section>
 
     <section class="section news-section" id="news">
@@ -2224,8 +2252,8 @@
         <div>
           <p class="label">News</p>
           <h2>お知らせ</h2>
+          <p class="lead">製品のアップデート、導入事例、展示会出展など、最新情報をお届けします。</p>
         </div>
-        <p class="lead">製品のアップデート、導入事例、展示会出展など、最新情報をお届けします。</p>
       </div>
       <div id="newsItems" class="news-items"></div>
       <nav class="news-pager" id="newsPager" aria-label="ページ切り替え"></nav>
@@ -2563,6 +2591,14 @@
       next?.addEventListener('click', () => {
         moveTo(visualIndex + 1);
         restart();
+      });
+      // 中央のドットをクリックしてもそのスライドへ切り替える
+      dots.forEach((dot, dotIndex) => {
+        dot.style.cursor = 'pointer';
+        dot.addEventListener('click', () => {
+          moveTo(dotIndex + 1);
+          restart();
+        });
       });
 
       track.addEventListener('transitionend', normalizeLoopPosition);
