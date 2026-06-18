@@ -1606,7 +1606,8 @@
     display: grid;
     grid-template-columns: 0.82fr 1.18fr;
     gap: 46px;
-    align-items: start;
+    /* 右の会社概要カードを左カード（写真で背が高い）と同じ高さまで伸ばす */
+    align-items: stretch;
   }
   .company-card {
     background: #fff;
@@ -1632,11 +1633,15 @@
     border: 1px solid var(--line);
     border-radius: 12px;
     overflow: hidden;
+    /* 行を縦に並べ、余った高さを各行へ均等配分して左カードと底を揃える */
+    display: flex;
+    flex-direction: column;
   }
   .company-row {
     display: grid;
     grid-template-columns: 170px 1fr;
     border-bottom: 1px solid var(--line);
+    flex: 1 0 auto;
   }
   .company-row:last-child { border-bottom: none; }
   .company-row dt {
