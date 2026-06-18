@@ -65,8 +65,7 @@
   ]
 }
 </script>
-<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-01.webp" fetchpriority="high" media="(min-width: 721px)">
-<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-02.webp" fetchpriority="high" media="(max-width: 720px)">
+<link rel="preload" as="image" href="assets/images/marunouchi/hero-new-01.webp" fetchpriority="high">
 <style>
   :root {
     --ink: #111827;
@@ -798,10 +797,11 @@
     color: #091332;
   }
   .service-copy-title {
-    margin: 0;
+    /* サービス名の下に他バナーのタイトル同様の余白を足す（flexのgapに加算される） */
+    margin: 0 0 clamp(4px, 0.4vw, 8px);
     color: #091332;
     font-family: var(--font-sans);
-    font-size: clamp(24px, 1.6vw, 38px);
+    font-size: clamp(24px, 2vw, 32px);
     font-weight: 800;
     line-height: 1;
     letter-spacing: 0;
@@ -818,14 +818,14 @@
   .service-copy-sub {
     margin: 0;
     color: #14502a;
-    font-size: clamp(13px, 0.78vw, 16px);
+    font-size: clamp(13px, 0.95vw, 16px);
     font-weight: 700;
     line-height: 1.45;
   }
   .service-copy-body {
     margin: 0;
     color: #45506e;
-    font-size: clamp(12.5px, 0.82vw, 16px);
+    font-size: clamp(12.5px, 0.95vw, 16px);
     font-weight: 500;
     line-height: 1.55;
   }
@@ -1861,15 +1861,16 @@
   }
 
   @media (max-width: 720px) {
-    /* スマホでは重いスライドショーは出さず、縦向きの静止画1枚を背景に表示する。
-       単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、見た目の寂しさを解消する。 */
+    /* スマホでは重いスライドショーは出さず、PCのメイン画像(hero-new-01)と同じ静止画を背景に表示する。
+       単一画像をpreloadして先読みするのでLCPへの影響を抑えつつ、PCと見た目を統一する。 */
     .hero-slideshow { display: none; }
     .hero {
       /* スマホは6:4比率を適用せず、内容に応じた高さに戻す */
       min-height: auto;
-      background-image: url('assets/images/marunouchi/hero-new-02.webp');
+      /* PCと同じ横長画像。縦長画面ではcoverで中央を切り抜き、東京駅前の中心スカイラインを見せる */
+      background-image: url('assets/images/marunouchi/hero-new-01.webp');
       background-size: cover;
-      background-position: 56% 68%;
+      background-position: 50% 50%;
     }
     /* スマホのカルーセルは従来どおりの高さに戻す */
     .banner-showcase {
