@@ -2,15 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leciel-webdesign.com/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- 依頼・選び方／基礎知識 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-renewal/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-seisaku-nagare/</loc>
+    <lastmod>2026-06-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- 採用・人材 -->
@@ -106,59 +120,13 @@
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/google-business-profile-meo/</loc>
-    <lastmod>2026-06-05</lastmod>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leciel-webdesign.com/blog/hp-shukyaku-dekinai-riyu/</loc>
-    <lastmod>2026-06-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 費用・料金 -->
-  <url>
-    <loc>https://leciel-webdesign.com/blog/homepage-hojokin-2026/</loc>
     <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://leciel-webdesign.com/blog/homepage-getsugaku-lease/</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://leciel-webdesign.com/blog/kakuyasu-homepage-karakuri/</loc>
-    <lastmod>2026-06-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://leciel-webdesign.com/blog/hp-seisaku-hiyou-souba/</loc>
-    <lastmod>2026-06-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 依頼・選び方 -->
-  <url>
-    <loc>https://leciel-webdesign.com/blog/wix-peraichi-vs-pro/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://leciel-webdesign.com/blog/freelance-vs-seisakugaisha/</loc>
-    <lastmod>2026-06-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://leciel-webdesign.com/blog/homepage-kojin-furiransu-irai/</loc>
-    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -209,6 +177,50 @@
   <url>
     <loc>https://leciel-webdesign.com/blog/biyoushitsu-homepage-tsukurikata/</loc>
     <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 費用・依頼・選び方 -->
+  <url>
+    <loc>https://leciel-webdesign.com/blog/hp-seisaku-hiyou-souba/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/freelance-vs-seisakugaisha/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-kojin-furiransu-irai/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/kakuyasu-homepage-karakuri/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-getsugaku-lease/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/homepage-hojokin-2026/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leciel-webdesign.com/blog/wix-peraichi-vs-pro/</loc>
+    <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
