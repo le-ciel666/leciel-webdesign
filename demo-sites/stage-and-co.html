@@ -434,7 +434,6 @@
       <a class="lnk" onclick="navTo('plans')">料金プラン</a>
       <a class="lnk" onclick="navTo('cases')">施工事例</a>
       <a class="lnk" onclick="navTo('company')">会社概要</a>
-      <a class="lnk" onclick="navTo('contact')">お問い合わせ</a>
       <a class="nav-cta" onclick="navTo('contact')">無料相談</a>
     </div>
     <button class="burger" aria-label="メニューを開く" onclick="openMenu()"><span></span><span></span><span></span></button>
@@ -447,7 +446,6 @@
     <a onclick="navTo('plans')">料金プラン</a>
     <a onclick="navTo('cases')">施工事例</a>
     <a onclick="navTo('company')">会社概要</a>
-    <a onclick="navTo('contact')">お問い合わせ</a>
     <a class="cta" onclick="navTo('contact')">無料相談はこちら</a>
   </div>
 
@@ -846,17 +844,51 @@ function mountOverlay(html){
   o.scrollTop = 0;
   var ov = o.querySelector('.ov'); if(ov) ov.scrollTop = 0;
 }
-function closeOverlay(){
+function clearOverlay(){
   el('overlay').innerHTML = '';
   document.body.classList.remove('locked');
 }
-function overlayToContact(){
-  closeOverlay();
-  setTimeout(function(){ navTo('contact'); }, 60);
+function closeOverlay(){ overlayBack(); }
+function overlayToContact(){ __pendingContact = true; overlayBack(); }
+
+/* ===================== ROUTER (browser history) =====================
+   詳細はオーバーレイ表示だが、URL(#service/... 等)を履歴に積むことで
+   ブラウザバック＝詳細を閉じる挙動にする。直リンク・共有・更新にも対応。 */
+var SERVICE_SLUGS = ['home-staging','vacation-rental','renovation','interior'];
+var PLAN_SLUGS = ['standard','premium'];
+var __pendingContact = false;
+
+function routeOf(hash){
+  var m;
+  if((m = hash.match(/^#service\/(.+)$/))){ var i = SERVICE_SLUGS.indexOf(m[1]); if(i>=0) return {t:'service', i:i}; }
+  if((m = hash.match(/^#plan\/(.+)$/))){ var j = PLAN_SLUGS.indexOf(m[1]); if(j>=0) return {t:'plan', i:j}; }
+  if((m = hash.match(/^#case\/(\d+)$/))){ var k = parseInt(m[1],10); if(CASES[k]) return {t:'case', i:k}; }
+  return null;
 }
+function navHash(hash){
+  if(location.hash === hash){ routeRender(); return; }
+  history.pushState(null, '', hash);
+  routeRender();
+}
+function overlayBack(){ history.back(); }
+function routeRender(){
+  var r = routeOf(location.hash);
+  if(r){
+    closeMenu();
+    if(r.t==='service') renderService(r.i);
+    else if(r.t==='plan') renderPlan(r.i);
+    else renderCase(r.i);
+    return;
+  }
+  clearOverlay();
+  if(__pendingContact){ __pendingContact = false; setTimeout(function(){ navTo('contact'); }, 50); }
+}
+function openService(i){ closeMenu(); navHash('#service/'+SERVICE_SLUGS[i]); }
+function openPlan(i){ closeMenu(); navHash('#plan/'+PLAN_SLUGS[i]); }
+function openCase(i){ closeMenu(); navHash('#case/'+i); }
 
 /* ===================== SERVICE detail ===================== */
-function openService(i){
+function renderService(i){
   closeMenu();
   var s = SERVICES[i], d = s.detail;
   var offer = d.offer.map(function(o){ return '<div class="li"><span class="dot"></span><span class="t">'+esc(o)+'</span></div>'; }).join('');
@@ -872,7 +904,7 @@ function openService(i){
   var html =
   '<div class="ov">'+
     '<div class="ov-bar">'+
-      '<button class="ov-back" onclick="closeOverlay()">← トップへ戻る</button>'+
+      '<button class="ov-back" onclick="overlayBack()">← トップへ戻る</button>'+
       '<a class="btn-sm" onclick="overlayToContact()">このサービスを相談する</a>'+
     '</div>'+
     '<div class="ov-heroband ph photo '+esc(s.img)+'"><span class="ph-tag light">[ '+esc(s.t)+' イメージ写真 ]</span>'+
@@ -909,7 +941,7 @@ function openService(i){
 }
 
 /* ===================== PLAN detail ===================== */
-function openPlan(i){
+function renderPlan(i){
   closeMenu();
   var p = PLANS[i], d = p.detail;
   var fee = d.feeRows.map(function(f){ return '<div class="fee-cell"><div class="k">'+esc(f.k)+'</div><div class="v">'+esc(f.v)+'</div><div class="note">'+esc(f.note)+'</div></div>'; }).join('');
@@ -918,7 +950,7 @@ function openPlan(i){
   var html =
   '<div class="ov">'+
     '<div class="ov-bar">'+
-      '<button class="ov-back" onclick="closeOverlay()">← トップへ戻る</button>'+
+      '<button class="ov-back" onclick="overlayBack()">← トップへ戻る</button>'+
       '<a class="btn-sm" onclick="overlayToContact()">このプランを相談する</a>'+
     '</div>'+
     '<div class="ov-heroband ph photo '+esc(p.img)+'"><span class="ph-tag light">[ '+esc(p.name)+' イメージ写真 ]</span>'+
@@ -947,14 +979,14 @@ function openPlan(i){
 }
 
 /* ===================== CASE detail ===================== */
-function openCase(i){
+function renderCase(i){
   closeMenu();
   var c = CASES[i];
   var spec = c.specRows.map(function(r){ return '<div class="sr"><div class="k">'+esc(r.k)+'</div><div class="v">'+esc(r.v)+'</div></div>'; }).join('');
   var html =
   '<div class="ov">'+
     '<div class="ov-bar">'+
-      '<button class="ov-back" onclick="closeOverlay()">← 施工事例一覧へ戻る</button>'+
+      '<button class="ov-back" onclick="overlayBack()">← 施工事例一覧へ戻る</button>'+
       '<a class="btn-sm" onclick="overlayToContact()">この事例について相談する</a>'+
     '</div>'+
     '<div class="ov-body" style="padding-top:clamp(36px,6vw,72px);padding-bottom:100px;max-width:1080px;">'+
@@ -1052,10 +1084,22 @@ function closeMenu(){ var m=el('mmenu'); if(m&&m.classList.contains('open')){ m.
 /* ESC closes overlay / menu */
 document.addEventListener('keydown', function(e){
   if(e.key === 'Escape'){
-    if(el('overlay').innerHTML) closeOverlay();
+    if(el('overlay').innerHTML) overlayBack();
     else closeMenu();
   }
 });
+
+/* ===================== Router init ===================== */
+(function initRouter(){
+  /* 直リンク(#service/... 等)で開いた場合も、戻る先にトップを用意する */
+  var initial = location.hash;
+  if(routeOf(initial)){
+    history.replaceState(null, '', location.pathname + location.search);
+    history.pushState(null, '', initial);
+  }
+  window.addEventListener('popstate', routeRender);
+  routeRender();
+})();
 </script>
 </body>
 </html>
