@@ -207,7 +207,7 @@
     min-height: 720px;
     background:
       linear-gradient(180deg, rgba(13,20,24,0.7) 0%, rgba(13,20,24,0.4) 50%, rgba(13,20,24,0.85) 100%),
-      url('../assets/construction/hero-mobile.webp') center/cover;
+      url('../assets/construction/hero-mobile.webp?v=20260620a') center/cover;
     color: var(--bg);
     overflow: hidden;
     display: flex;
@@ -1292,7 +1292,7 @@
     .hero {
       background-image:
         linear-gradient(180deg, rgba(13,20,24,0.7) 0%, rgba(13,20,24,0.4) 50%, rgba(13,20,24,0.85) 100%),
-        url('../assets/construction/hero.webp');
+        url('../assets/construction/hero.webp?v=20260620a');
     }
   }
   @media (max-width: 1100px) {
