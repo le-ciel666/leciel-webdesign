@@ -1328,7 +1328,7 @@
     .nav-cta-mobile .nav-tel { background: var(--ink); color: var(--bg); }
     .nav-cta-mobile .nav-contact-cta { background: var(--accent); color: var(--bg); }
     .hero { min-height: 580px; }
-    .hero-inner { padding: 80px 22px 200px; }
+    .hero-inner { padding: 80px 22px 280px; }
     .hero-stats { grid-template-columns: 1fr 1fr; }
     .hero-stat { padding: 18px 16px; gap: 6px; flex-direction: column; align-items: flex-start; }
     .hero-stat .num { font-size: clamp(30px, 9vw, 38px); white-space: nowrap; }
