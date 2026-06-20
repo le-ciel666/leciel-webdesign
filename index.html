@@ -603,466 +603,445 @@
 
   /* ===== PRICING ===== */
   #pricing { background: var(--white); }
+  #pricing .section-desc { max-width: none; }
 
-  .plans-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    align-items: stretch;
-    margin-bottom: 40px;
+  /* 料金比較表 */
+  .plan-table-area { position: relative; margin-top: 8px; }
+  .plan-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--border);
+    border-radius: 16px 16px 0 0;
   }
-
-  .plan-card {
-    border: 2px solid var(--border);
-    border-radius: 20px;
-    padding: 36px 28px;
+  .plan-table {
+    width: 100%;
+    min-width: 660px;
+    border-collapse: collapse;
     background: var(--white);
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.2s;
   }
-
-  .plan-card:hover { box-shadow: 0 8px 32px rgba(37,99,235,0.1); }
-
-  .plan-card.featured {
-    border: none;
-    background: linear-gradient(160deg, #1e3a8a 0%, #2563eb 100%);
-    color: var(--white);
+  .plan-table th,
+  .plan-table td {
+    padding: 16px 18px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .plan-table thead th {
     position: relative;
-    box-shadow: 0 16px 48px rgba(37,99,235,0.35);
+    vertical-align: top;
+    padding: 46px 18px 22px;
+    border-bottom: 2px solid #cbd5e1;
   }
-
-  .plan-badge {
+  .pt-tier {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .pt-cap {
+    display: block;
+    margin-top: 7px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  .pt-pop {
     position: absolute;
-    top: -14px;
+    top: 14px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--gradient);
     color: var(--white);
-    font-size: 13px;
-    font-weight: 700;
-    padding: 5px 20px;
-    border-radius: 100px;
-    white-space: nowrap;
-  }
-
-  .plan-tag {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-  }
-
-  .plan-card.featured .plan-tag { color: rgba(255,255,255,0.75); }
-
-  .plan-name {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 4px;
-  }
-
-  .plan-card.featured .plan-name { color: var(--white); }
-
-  .plan-sub {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-  }
-
-  .plan-card.featured .plan-sub { color: rgba(255,255,255,0.7); }
-
-  .plan-price {
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .plan-duration {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--primary-light);
-    color: var(--primary);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-    align-self: flex-start;
-  }
-
-  .plan-card.featured .plan-duration {
-    background: rgba(255,255,255,0.15);
-    color: #bfdbfe;
-  }
-
-  .plan-included {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--accent-light);
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 6px;
-    margin-top: 10px;
-    align-self: flex-start;
-  }
-
-  .plan-head {
-    min-height: 110px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .plan-price-block {
-    margin-top: auto;
-    margin-bottom: 4px;
-  }
-
-  .plan-card.featured .plan-price { color: var(--white); }
-
-  .plan-price-note {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 28px;
-  }
-
-  .plan-card.featured .plan-price-note { color: rgba(255,255,255,0.7); }
-
-  .plan-desc {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.8;
-    margin-bottom: 24px;
-  }
-
-  .plan-card.featured .plan-desc { color: rgba(255,255,255,0.85); }
-
-  .plan-badge-green {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--accent-light);
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 6px;
-    margin-bottom: 20px;
-  }
-
-  .plan-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-    margin-bottom: 32px;
-  }
-
-  .plan-features li {
-    font-size: 16px;
-    color: var(--text);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .plan-card.featured .plan-features li { color: rgba(255,255,255,0.92); }
-
-  .plan-features li::before {
-    content: '✓';
-    color: var(--accent);
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .plan-card.featured .plan-features li::before { color: #6ee7b7; }
-
-  .plan-btn {
-    display: block;
-    text-align: center;
-    padding: 16px;
-    border-radius: 10px;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s;
-    margin-top: auto;
-  }
-
-  .plan-btn-dark {
-    background: var(--navy);
-    color: var(--white);
-  }
-
-  .plan-btn-dark:hover { background: #1e3a8a; }
-
-  .plan-card.featured .plan-btn {
-    background: var(--white);
-    color: var(--primary);
-  }
-
-  .plan-card.featured .plan-btn:hover { background: #eff6ff; }
-
-  /* Maintenance */
-  .maintenance-box {
-    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
-    border: 1.5px solid #bbf7d0;
-    border-radius: 16px;
-    padding: 36px 40px;
-  }
-
-  .maintenance-label {
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.2em;
-    color: var(--accent);
-    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+    padding: 4px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+  }
+  .plan-table tbody th[scope=row] {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    background: var(--white);
+  }
+  .plan-table td { font-size: 15px; color: var(--text); }
+  .plan-table .pt-feat { background: var(--primary-light); }
+  .plan-table thead th.pt-feat { border-bottom-color: var(--primary); }
+  .plan-table thead th.pt-feat .pt-tier { color: var(--primary); }
+  .pt-price td {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+  }
+  .pt-price td.pt-feat { color: var(--primary); }
+  .pt-yen { font-size: 15px; font-weight: 700; margin-right: 1px; }
+  .pt-price td .pt-unit { font-size: 12px; font-weight: 500; color: var(--text-muted); margin-left: 3px; }
+  .pt-num td { font-size: 16px; font-weight: 600; }
+  .pt-yes { color: var(--accent); font-size: 18px; font-weight: 700; }
+  .pt-no { color: #cbd5e1; }
+  .pt-corner { position: sticky; left: 0; z-index: 1; background: var(--white); }
+  .plan-table thead .pt-corner { border-bottom: 2px solid #cbd5e1; }
+  .pt-cta-row td { padding: 22px 18px 26px; }
+  .price-cta {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    background: var(--navy);
+    color: var(--white);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .price-cta:hover { background: var(--primary); transform: translateY(-2px); }
+  .pt-feat .price-cta { background: var(--primary); box-shadow: 0 6px 18px rgba(37,99,235,0.32); }
+  .pt-feat .price-cta:hover { background: var(--primary-dark); }
+
+  /* 横スワイプヒント（スマホで表がはみ出す時だけ表示） */
+  .plan-scroll-hint {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    padding: 16px 24px;
+    border-radius: 16px;
+    background: rgba(15,23,42,0.82);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 30px rgba(15,23,42,0.4);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    white-space: nowrap;
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity .4s ease, visibility .4s ease, transform .4s ease;
+  }
+  .plan-scroll-hint.is-on { display: flex; }
+  @media (max-width: 700px) { .plan-scroll-hint { display: flex; } }
+  .plan-scroll-hint.is-off { display: none !important; }
+  .plan-scroll-hint.is-done { opacity: 0; visibility: hidden; transform: translate(-50%,-50%) scale(.94); }
+  .plan-scroll-hint .psh-ico {
+    font-size: 22px;
+    line-height: 1;
+    color: #93c5fd;
+    animation: psh-swipe 1.4s ease-in-out infinite;
+  }
+  @keyframes psh-swipe { 0%,100%{transform:translateX(-5px)} 50%{transform:translateX(5px)} }
+  @media (prefers-reduced-motion: reduce) { .plan-scroll-hint .psh-ico { animation: none; } }
+
+  /* 全プラン共通：比較表の下に1行で表示 */
+  .price-incl-shared {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 20px 28px;
+    border: 1px solid var(--border);
+    border-top: 0;
+    border-radius: 0 0 16px 16px;
+    background: var(--bg);
+  }
+  .price-incl-shared .pi-label {
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.04em;
+  }
+  .price-incl-shared p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--text-muted);
+    letter-spacing: 0.01em;
   }
 
-  .maintenance-title {
+  /* 保守メンテナンス */
+  .maint {
+    margin-top: 48px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid #bbf7d0;
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  }
+  .maint-head {
+    padding: 28px 36px 22px;
+    border-bottom: 1px solid #d1fae5;
+  }
+  .maint-head .eyebrow-jp {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .maint-head h4 {
+    margin: 8px 0 0;
     font-size: 22px;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
   }
-
-  .maintenance-price-wrap {
-    margin-bottom: 8px;
+  .maint-head .lead {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
   }
-
-  .maintenance-price {
-    font-size: 36px;
+  .maint-plan {
+    display: grid;
+    grid-template-columns: 230px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 26px 36px;
+  }
+  .maint-plan + .maint-plan { border-top: 1px solid #d1fae5; }
+  .mp-tag {
+    display: inline-block;
+    margin-bottom: 11px;
+    padding: 4px 13px;
+    border: 1px solid #86efac;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  .maint-plan h5 {
+    margin: 0;
+    font-size: 18px;
     font-weight: 700;
     color: var(--navy);
+    letter-spacing: 0.02em;
+    line-height: 1.45;
   }
-
-  .maintenance-price-unit {
-    font-size: 16px;
-    color: var(--text-muted);
-  }
-
-  .maintenance-note {
+  .maint-plan .desc {
+    margin: 0;
     font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-  }
-
-  .maintenance-body {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .maintenance-left {
-    min-width: 200px;
-  }
-
-  .maintenance-items {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-  }
-
-  .maintenance-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 15px;
+    line-height: 1.9;
     color: var(--text);
-    line-height: 1.5;
   }
-
-  .maintenance-item::before {
-    content: '✓';
-    color: var(--accent);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .maintenance-footer {
-    margin-top: 20px;
-    font-size: 14px;
+  .maint-plan .desc .sub {
+    display: block;
+    margin-top: 10px;
+    font-size: 12.5px;
+    line-height: 1.7;
     color: var(--text-muted);
-    border-top: 1px solid #d1fae5;
-    padding-top: 16px;
   }
-
-  .maintenance-right {
+  .mp-price {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    min-width: 140px;
+    align-items: flex-end;
+    gap: 8px;
+    white-space: nowrap;
   }
-
-  .maintenance-btn {
-    display: inline-block;
-    padding: 14px 30px;
+  .mp-price .amount {
+    font-size: 34px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+  }
+  .mp-price .unit { font-size: 13px; color: var(--text-muted); margin-left: 6px; }
+  .mp-price .badge {
+    order: -1;
+    padding: 3px 12px;
+    border-radius: 999px;
     background: var(--accent);
-    color: #fff;
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .mp-cta {
+    display: inline-block;
+    margin-top: 2px;
+    padding: 11px 26px;
+    background: var(--accent);
+    color: var(--white);
     border-radius: 100px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: all 0.2s;
-    white-space: nowrap;
+    letter-spacing: 0.04em;
     box-shadow: 0 4px 14px rgba(16,185,129,0.28);
+    transition: all 0.2s;
   }
-
-  .maintenance-btn:hover {
-    background: #059669;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 22px rgba(16,185,129,0.38);
+  .mp-cta:hover { background: #059669; transform: translateY(-2px); }
+  .maint-foot {
+    margin: 0;
+    padding: 0 36px 24px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
   }
 
   /* ===== WORKS ===== */
   #works { background: var(--bg); }
 
-  .works-category {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 48px 0 24px;
-  }
-  .works-category:first-of-type { margin-top: 0; }
+  /* 構成タイプ別グループ */
+  .works-group { margin-top: 64px; }
+  .works-group:first-of-type { margin-top: 0; }
 
-  .works-category-title {
+  .works-group-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .works-group-num {
+    flex-shrink: 0;
     font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: var(--primary);
+  }
+  .works-group-title {
+    font-size: 22px;
     font-weight: 700;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+  .works-group-desc {
+    flex-basis: 100%;
+    max-width: 880px;
+    margin: 8px 0 0;
+    font-size: 14.5px;
+    line-height: 1.9;
     color: var(--text-muted);
-    letter-spacing: 0.06em;
-    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .works-group-desc .note {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--primary);
   }
 
-  .works-category::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  /* グループ内グリッド */
+  .dcards { display: grid; gap: 24px; }
+  .dcards.col3 { grid-template-columns: repeat(3, 1fr); }
+  .dcards.col2 { grid-template-columns: repeat(2, 1fr); }
 
-
-  .works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .work-card {
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: box-shadow 0.2s, transform 0.2s;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .work-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(-3px); }
-
-  .work-demo-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(0,0,0,0.65);
-    color: var(--white);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
-    backdrop-filter: blur(4px);
-  }
-
-  .work-img-wrap {
+  /* 画像オーバーレイ型カード */
+  .dcard {
     position: relative;
-    height: 200px;
-    background: var(--primary-light);
+    display: block;
     overflow: hidden;
+    border-radius: 16px;
+    aspect-ratio: 16 / 11;
+    background: var(--navy);
+    text-decoration: none;
+    box-shadow: 0 2px 14px rgba(15,23,42,0.06);
+    transition: box-shadow 0.25s, transform 0.25s;
   }
-
-  .work-img-wrap img {
+  .dcard:hover { box-shadow: 0 16px 40px rgba(15,23,42,0.16); transform: translateY(-3px); }
+  .dcard img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
   }
-
-  .work-img-wrap.plumbing {
-    background: url('./assets/plumbing/hero.webp') center/cover no-repeat, var(--primary-light);
+  .dcard:hover img { transform: scale(1.05); }
+  .dcard::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,23,42,0.05) 0%, rgba(15,23,42,0) 38%, rgba(15,23,42,0.82) 100%);
   }
-
-  .work-img-wrap.plumbing img {
-    opacity: 0;
-  }
-
-  .work-img-wrap.aircon {
-    background: url('./assets/aircon/hero.webp') center/cover no-repeat, var(--primary-light);
-  }
-
-  .work-img-wrap.aircon img {
-    opacity: 0;
-  }
-
-  .work-img-wrap.pest {
-    background: url('./assets/pest/hero.webp') center/cover no-repeat, var(--primary-light);
-  }
-
-  .work-img-wrap.pest img {
-    opacity: 0;
-  }
-
-  .work-body {
-    padding: 18px 16px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .work-genre {
-    display: inline-block;
-    background: var(--primary-light);
-    color: var(--primary);
+  .dcard-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(6px);
     font-size: 12px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 4px;
-    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(15,23,42,0.14);
   }
-
-  .work-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .work-btn {
-    display: block;
-    text-align: center;
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 14px;
+  .dcard-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: rgba(15,23,42,0.6);
+    backdrop-filter: blur(4px);
+    font-size: 11px;
     font-weight: 600;
-    text-decoration: none;
-    background: var(--navy);
     color: var(--white);
-    transition: background 0.2s;
   }
+  .dcard-info {
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 2;
+    padding: 22px 22px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .dcard-cat {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.84);
+  }
+  .dcard-title {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.03em;
+    line-height: 1.4;
+  }
+  .dcard-arrow {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.55);
+    color: var(--white);
+    font-size: 16px;
+    transition: background 0.25s, border-color 0.25s;
+  }
+  .dcard:hover .dcard-arrow { background: var(--primary); border-color: var(--primary); }
 
-  .work-btn:hover { background: var(--primary); }
+  /* 横長フィーチャー（WordPress型など） */
+  .dcard.feature { aspect-ratio: 16 / 6.2; border-radius: 18px; }
+  .dcard.feature .dcard-info { padding: 30px 34px 28px; }
+  .dcard.feature .dcard-cat { font-size: 14px; }
+  .dcard.feature .dcard-title { font-size: 25px; }
 
   /* ===== PROFILE ===== */
   #profile { background: var(--white); }
@@ -1428,19 +1407,10 @@
     .features-grid { grid-template-columns: 1fr 1fr; }
     .flow-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
     .flow-steps::before { display: none; }
-    .plans-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
-    .plan-card { padding: 24px 20px; }
-    .plan-card.featured { padding-top: 36px; }
-    .plan-head { min-height: unset; }
-    .plan-name { font-size: 18px; }
-    .plan-price { font-size: 32px; }
-    .plan-price-note { margin-bottom: 16px; }
-    .plan-duration { margin-bottom: 14px; }
-    .plan-desc { font-size: 14px; line-height: 1.7; margin-bottom: 16px; }
-    .plan-features { gap: 8px; margin-bottom: 20px; }
-    .plan-features li { font-size: 14px; }
-    .works-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-    .maintenance-items { grid-template-columns: 1fr 1fr; }
+    .maint-plan { grid-template-columns: 1fr; gap: 14px; padding: 24px 26px; }
+    .mp-price { align-items: flex-start; }
+    .dcards.col3 { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .works-group { margin-top: 48px; }
     .profile-top { grid-template-columns: 1fr; gap: 32px; }
   }
 
@@ -1500,15 +1470,27 @@
     }
     .flow-step h3 { grid-column: 2; grid-row: 1; font-size: 15px; margin-bottom: 4px; margin-top: 8px; }
     .flow-step p { grid-column: 2; grid-row: 2; font-size: 13px; line-height: 1.6; }
-    .works-grid { grid-template-columns: 1fr; }
-    .maintenance-body { flex-direction: column; gap: 12px; }
-    .maintenance-items { grid-template-columns: 1fr; gap: 7px; }
-    .maintenance-right { flex-direction: row; min-width: unset; justify-content: flex-start; }
-    .maintenance-box { padding: 24px 20px; }
-    .maintenance-title { font-size: 18px; }
-    .maintenance-price { font-size: 28px; }
-    .maintenance-note { margin-bottom: 12px; }
-    .maintenance-item { font-size: 14px; }
+    .dcards.col3, .dcards.col2 { grid-template-columns: 1fr; gap: 16px; }
+    .works-group { margin-top: 40px; }
+    .works-group-head { gap: 4px 14px; margin-bottom: 22px; padding-bottom: 16px; }
+    .works-group-title { font-size: 19px; }
+    .works-group-desc { font-size: 13.5px; line-height: 1.85; }
+    .dcard { aspect-ratio: 16 / 10; }
+    .dcard.feature { aspect-ratio: 16 / 10; }
+    .dcard.feature .dcard-info { padding: 22px 22px 20px; }
+    .dcard.feature .dcard-title { font-size: 21px; }
+    .dcard-info { padding: 18px 18px 16px; }
+    .dcard-title { font-size: 19px; }
+    .plan-table th, .plan-table td { padding: 13px 12px; }
+    .pt-tier { font-size: 16px; }
+    .pt-price td { font-size: 21px; }
+    .pt-num td { font-size: 15px; }
+    .price-incl-shared { flex-direction: column; gap: 8px; padding: 18px 20px; }
+    .maint-head { padding: 22px 22px 18px; }
+    .maint-head h4 { font-size: 20px; }
+    .maint-plan { padding: 22px 22px; }
+    .maint-foot { padding: 0 22px 22px; }
+    .mp-price .amount { font-size: 30px; }
     .profile-card { padding: 24px 20px; }
     .profile-top { margin-bottom: 24px; gap: 20px; }
     .profile-name-block { margin-bottom: 14px; gap: 14px; }
@@ -1759,109 +1741,117 @@
     <div class="section-header">
       <p class="section-label">WORKS</p>
       <h2 class="section-title">デモサイト</h2>
-      <p class="section-desc">業種・用途ごとにデモサイトをご覧いただけます。</p>
+      <p class="section-desc">目的・情報量・更新方法に合わせて、3つの構成からお選びいただけます。気になるデモサイトはそのまま開いてご確認いただけます。</p>
     </div>
 
-    <div class="works-grid">
-
-      <!-- 美容サロン・LP制作 -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="assets/hair-salon/model.webp" alt="美容サロン・LP制作 デモサイト" loading="lazy" decoding="async" width="600" height="200">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">美容サロン・LP制作</span>
-          <div class="work-btns">
-            <a href="https://leciel-webdesign.com/demo-sites/_archive/lumina-hair-aoyama.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="https://leciel-webdesign.com/demo-sites/canon-shimokitazawa.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="https://leciel-webdesign.com/demo-sites/hair-atelier-souffle.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
-          </div>
-        </div>
+    <!-- 01 LP型 -->
+    <div class="works-group">
+      <div class="works-group-head">
+        <span class="works-group-num">01</span>
+        <h3 class="works-group-title">1ページ構成 ／ LP型</h3>
+        <p class="works-group-desc">サービスの世界観・強み・お問い合わせまでを、1ページにまとめて見せる構成です。表示が速く制作費も抑えやすいため、まず1枚でしっかり魅せたい店舗・サービスに多く選ばれています。</p>
       </div>
-
-      <!-- 水道修理・エアコン修理・害虫駆除 -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="./assets/plumbing/hero.webp" alt="水道修理・エアコン修理・害虫駆除 デモサイト" loading="lazy" decoding="async" width="600" height="200">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">水道修理・エアコン修理・害虫駆除</span>
-          <div class="work-btns">
-            <a href="demo-sites/plumbing-rescue.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="demo-sites/aircon-repair.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="demo-sites/pest-control.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+      <div class="dcards col3">
+        <a class="dcard" href="https://leciel-webdesign.com/demo-sites/_archive/pilates-lino.html" target="_blank" rel="noopener">
+          <span class="dcard-tag">1ページ ／ LP</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="demo-sites/_archive/assets-pilates/reformer-studio-hero-v2.webp" alt="LINO PILATES デモサイト" loading="lazy" decoding="async" width="600" height="412">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">ピラティススタジオ</span>
+              <h3 class="dcard-title">LINO PILATES</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
           </div>
-        </div>
-      </div>
+        </a>
 
-      <!-- 建設・製造・会計事務所 -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="/assets/works/construction.webp" alt="建設・製造・会計事務所 デモサイト" loading="lazy" decoding="async" width="600" height="300">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">建設・製造・会計事務所</span>
-          <div class="work-btns">
-            <a href="demo-sites/construction/" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="https://leciel-webdesign.com/mock-sites/azusa/" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="demo-sites/tax-office.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+        <a class="dcard" href="https://leciel-webdesign.com/demo-sites/canon-shimokitazawa.html" target="_blank" rel="noopener">
+          <span class="dcard-tag">1ページ ／ LP</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="demo-sites/assets/canon/hero.webp" alt="CANON 下北沢 デモサイト" loading="lazy" decoding="async" width="600" height="412">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">ヘアサロン</span>
+              <h3 class="dcard-title">CANON</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
           </div>
-        </div>
-      </div>
+        </a>
 
-      <!-- レストラン -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="assets/restaurant/sushi-so-hero.webp" alt="レストラン デモサイト" loading="lazy" decoding="async" width="600" height="200">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">レストラン</span>
-          <div class="work-btns">
-            <a href="https://restaurant.leciel-webdesign.com/sushi-so.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="https://restaurant.leciel-webdesign.com/cielo.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="https://restaurant.leciel-webdesign.com/kuramoto.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
+        <a class="dcard" href="https://leciel-webdesign.com/demo-sites/_archive/lumina-hair-aoyama.html" target="_blank" rel="noopener">
+          <span class="dcard-tag">1ページ ／ LP</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="assets/hair-salon/model-800.webp" alt="LUMINA HAIR 青山 デモサイト" loading="lazy" decoding="async" width="600" height="412">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">ヘアサロン</span>
+              <h3 class="dcard-title">LUMINA HAIR</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
           </div>
-        </div>
+        </a>
       </div>
-
-      <!-- 整体・フィットネス -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="assets/yoga/hero.webp" alt="整体・フィットネス デモサイト" loading="lazy" decoding="async" width="600" height="200">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">整体・フィットネス</span>
-          <div class="work-btns">
-            <a href="https://leciel-webdesign.com/demo-sites/_archive/pilates-lino.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="https://leciel-webdesign.com/demo-sites/_archive/yoga-sora.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="https://leciel-webdesign.com/demo-sites/_archive/seitai-kokoro.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- 美容皮膚科・眼科・歯医者 -->
-      <div class="work-card">
-        <div class="work-img-wrap">
-          <img src="/assets/works/clinic.webp" alt="美容皮膚科・眼科・歯医者 デモサイト" loading="lazy" decoding="async" width="600" height="300">
-          <span class="work-demo-badge">自主制作デモ</span>
-        </div>
-        <div class="work-body">
-          <span class="work-genre">美容皮膚科・眼科・歯医者</span>
-          <div class="work-btns">
-            <a href="demo-sites/lumiere-skin-clinic.html" class="work-btn" target="_blank" rel="noopener">デモサイト１を見る →</a>
-            <a href="demo-sites/hikari-eye-clinic.html" class="work-btn" target="_blank" rel="noopener">デモサイト２を見る →</a>
-            <a href="demo-sites/aoba-dental-clinic.html" class="work-btn" target="_blank" rel="noopener">デモサイト３を見る →</a>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+    <!-- 02 マルチページ型 -->
+    <div class="works-group">
+      <div class="works-group-head">
+        <span class="works-group-num">02</span>
+        <h3 class="works-group-title">複数ページ構成 ／ マルチページ型</h3>
+        <p class="works-group-desc">トップ・サービス・実績・会社情報・アクセスなどを、ページごとに分けて作り込む構成です。情報量が多い事業や、検索からの集客を強くしたい場合に向いています。<span class="note">※「大樹建設」は実際に全6ページを回遊できる構成で制作しています。各ページを開いてご確認いただけます。</span></p>
+      </div>
+      <div class="dcards col2">
+        <a class="dcard feature" href="demo-sites/construction/" target="_blank" rel="noopener">
+          <span class="dcard-tag">全6ページ ／ 回遊型</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="demo-sites/assets/construction/hero.webp" alt="大樹建設 デモサイト" loading="lazy" decoding="async" width="700" height="438">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">総合建設業</span>
+              <h3 class="dcard-title">大樹建設</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+
+        <a class="dcard feature" href="demo-sites/stage-and-co.html" target="_blank" rel="noopener">
+          <span class="dcard-tag">複数ページ ／ 回遊型</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="demo-sites/assets/home-staging/hero.webp" alt="STAGE&amp;CO. デモサイト" loading="lazy" decoding="async" width="700" height="438">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">ホームステージング・空間デザイン</span>
+              <h3 class="dcard-title">STAGE&amp;CO.</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 03 WordPress型 -->
+    <div class="works-group">
+      <div class="works-group-head">
+        <span class="works-group-num">03</span>
+        <h3 class="works-group-title">WordPress構成 ／ 自分で更新できる型</h3>
+        <p class="works-group-desc">ブログ・お知らせ・実績などを、納品後にご自身で追加・更新できる構成です。更新のたびに制作会社へ依頼する必要がありません。管理画面も使いやすくカスタマイズしてお渡しします。<span class="note">※この構成には、データベースを備えたサーバーのご契約が別途必要です。おすすめのサーバーや費用感も、あわせてご案内します。</span></p>
+      </div>
+      <div class="dcards">
+        <a class="dcard feature" href="https://leciel-webdesign.com/mock-sites/azusa/" target="_blank" rel="noopener">
+          <span class="dcard-tag">WordPress ／ 更新できる</span>
+          <span class="dcard-badge">自主制作デモ</span>
+          <img src="mock-sites/azusa/wp-content/themes/azusa/assets/images/azusa-top-hero.webp" alt="あずさ会計事務所 デモサイト" loading="lazy" decoding="async" width="1024" height="1536" style="object-position:center 80%">
+          <div class="dcard-info">
+            <div>
+              <span class="dcard-cat">会計事務所・税理士</span>
+              <h3 class="dcard-title">あずさ会計事務所</h3>
+            </div>
+            <span class="dcard-arrow" aria-hidden="true">→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1871,117 +1861,110 @@
     <div class="section-header">
       <p class="section-label">PRICING</p>
       <h2 class="section-title">料金プラン</h2>
-      <p class="section-desc">個人店舗から法人様まで、目的とご予算に合わせてお選びいただけます。すべて税込表示です。</p>
+      <p class="section-desc">個人店舗から法人様まで、目的とご予算に合わせてお選びいただけます。すべて税込表示・初回相談無料です。</p>
     </div>
 
-    <div class="plans-grid">
-      <!-- Light -->
-      <div class="plan-card">
-        <div class="plan-head">
-          <p class="plan-tag">ライトプラン</p>
-          <h3 class="plan-name">名刺代わりのサイトがほしい方</h3>
-        </div>
-        <div class="plan-price-block">
-          <div class="plan-price">¥50,000<span style="font-size:18px;font-weight:400;"> 円</span></div>
-          <p class="plan-price-note">（税込）</p>
-        </div>
-        <span class="plan-duration">⏱ 制作期間 約5営業日</span>
-        <p class="plan-desc">名刺代わりのホームページや、サービス内容を1ページで分かりやすく紹介したい方向けのプランです。</p>
-        <ul class="plan-features">
-          <li>1ページ制作</li>
-          <li>スマホ対応</li>
-          <li>問い合わせ導線</li>
-          <li>基本SEO設定</li>
-          <li>商品写真の修正・合成加工（5枚）</li>
-          <li>公開作業サポート</li>
-        </ul>
-        <a href="#contact" class="plan-btn plan-btn-dark">相談する</a>
+    <div class="plan-table-area">
+      <div class="plan-table-wrap">
+        <table class="plan-table">
+          <thead>
+            <tr>
+              <td class="pt-corner"></td>
+              <th scope="col">
+                <span class="pt-tier">ライト</span>
+                <span class="pt-cap">名刺代わりに1ページ</span>
+              </th>
+              <th scope="col" class="pt-feat">
+                <span class="pt-pop">★ おすすめ</span>
+                <span class="pt-tier">スタンダード</span>
+                <span class="pt-cap">定番／しっかり整える</span>
+              </th>
+              <th scope="col">
+                <span class="pt-tier">プレミアム</span>
+                <span class="pt-cap">集客まで本気で</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pt-price">
+              <th scope="row">料金（税込）</th>
+              <td><span class="pt-yen">¥</span>50,000</td>
+              <td class="pt-feat"><span class="pt-yen">¥</span>100,000</td>
+              <td><span class="pt-yen">¥</span>200,000</td>
+            </tr>
+            <tr class="pt-num">
+              <th scope="row">ページ数</th>
+              <td>1ページ</td>
+              <td class="pt-feat">最大 5ページ</td>
+              <td>最大 15ページ</td>
+            </tr>
+            <tr class="pt-num">
+              <th scope="row">写真の修正・加工</th>
+              <td>10枚</td>
+              <td class="pt-feat">20枚</td>
+              <td>30枚</td>
+            </tr>
+            <tr>
+              <th scope="row">公開後1年の保守</th>
+              <td><span class="pt-no">—</span></td>
+              <td class="pt-feat"><span class="pt-no">—</span></td>
+              <td><span class="pt-yes">◯</span></td>
+            </tr>
+            <tr class="pt-num">
+              <th scope="row">制作期間の目安</th>
+              <td>約5営業日</td>
+              <td class="pt-feat">約10営業日</td>
+              <td>約15営業日</td>
+            </tr>
+            <tr class="pt-cta-row">
+              <td class="pt-corner"></td>
+              <td><a href="#contact" class="price-cta">相談する</a></td>
+              <td class="pt-feat"><a href="#contact" class="price-cta">相談する</a></td>
+              <td><a href="#contact" class="price-cta">相談する</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <!-- Standard (featured) -->
-      <div class="plan-card featured" style="position:relative;">
-        <div class="plan-badge">★ おすすめ</div>
-        <div class="plan-head">
-          <p class="plan-tag">スタンダードプラン</p>
-          <h3 class="plan-name" style="color:white;">店舗・サービスをしっかり整えたい方</h3>
-        </div>
-        <div class="plan-price-block">
-          <div class="plan-price" style="color:white;">¥100,000<span style="font-size:18px;font-weight:400;"> 円</span></div>
-          <p class="plan-price-note">（税込）</p>
-        </div>
-        <span class="plan-duration">⏱ 制作期間 約10営業日</span>
-        <p class="plan-desc">店舗や個人サービスの情報をしっかり整理し、信頼感のあるホームページを持ちたい方向けのプランです。</p>
-        <ul class="plan-features">
-          <li>5ページ程度</li>
-          <li>トップ・サービス・料金・アクセス</li>
-          <li>お問い合わせフォーム</li>
-          <li>スマホ対応</li>
-          <li>基本SEO設定</li>
-          <li>商品写真の修正・合成加工（10枚）</li>
-          <li>文章整理</li>
-        </ul>
-        <a href="#contact" class="plan-btn">相談する</a>
-      </div>
-
-      <!-- Premium -->
-      <div class="plan-card">
-        <div class="plan-head">
-          <p class="plan-tag">プレミアムプラン</p>
-          <h3 class="plan-name">集客・問い合わせ導線まで整えたい方</h3>
-        </div>
-        <div class="plan-price-block">
-          <div class="plan-price">¥200,000<span style="font-size:18px;font-weight:400;"> 円</span></div>
-          <p class="plan-price-note">（税込）</p>
-          <div class="plan-badge-green" style="margin-top:10px;margin-bottom:0;">✓ 公開後1年間の保守メンテナンス込み</div>
-        </div>
-        <span class="plan-duration">⏱ 制作期間 約15営業日</span>
-        <p class="plan-desc">ホームページの構成から問い合わせ導線まで、集客を意識して整えたい方向けのプランです。</p>
-        <ul class="plan-features">
-          <li>15ページ程度</li>
-          <li>構成提案</li>
-          <li>文章整理</li>
-          <li>デザイン制作</li>
-          <li>スマホ対応</li>
-          <li>問い合わせフォーム</li>
-          <li>基本SEO設定</li>
-          <li>商品写真の修正・合成加工（20枚）</li>
-          <li>公開後1年間サポート込み</li>
-        </ul>
-        <a href="#contact" class="plan-btn plan-btn-dark">相談する</a>
-      </div>
+      <div class="plan-scroll-hint" aria-hidden="true"><span class="psh-ico">↔</span><span class="psh-txt">横にスワイプして<br>全プランを比較できます</span></div>
     </div>
 
-    <!-- Maintenance -->
-    <div class="maintenance-box">
-      <p class="maintenance-label">MAINTENANCE</p>
-      <div class="maintenance-body">
-        <div class="maintenance-left">
-          <h3 class="maintenance-title">保守メンテナンス</h3>
-          <div class="maintenance-price-wrap">
-            <span class="maintenance-price">¥5,000</span>
-            <span class="maintenance-price-unit"> 税込／月</span>
-          </div>
-          <p class="maintenance-note">月額・オプション</p>
+    <div class="price-incl-shared">
+      <span class="pi-label">全プラン共通</span>
+      <p>スマートフォン完全対応／電話・お問い合わせフォームへの導線設置／Google検索・SNSで見つけてもらうための基本SEO設定（表示速度はGoogle PageSpeed Insightsで全項目100点を目指します）／ページ構成のご提案／公開作業サポート。さらに公開から1年間は独自ドメイン・サーバー代込み（2年目以降は年間¥3,000の維持費が別途必要です）。</p>
+    </div>
+
+    <!-- 保守メンテナンス -->
+    <div class="maint" id="maintenance">
+      <div class="maint-head">
+        <span class="eyebrow-jp">— 月額サポート</span>
+        <h4>保守メンテナンスプラン</h4>
+        <p class="lead">サーバー・ドメインの管理から、日々の更新代行まで。公開後も安心してホームページを運用いただけます。</p>
+      </div>
+
+      <div class="maint-plan">
+        <div>
+          <span class="mp-tag">フルサポート</span>
+          <h5>更新もまるごとおまかせ</h5>
         </div>
-        <div class="maintenance-items">
-          <div class="maintenance-item">サーバー・ドメイン更新管理</div>
-          <div class="maintenance-item">月5ページ分の新規追加</div>
-          <div class="maintenance-item">コンテンツ修正・テキスト更新</div>
-          <div class="maintenance-item">不具合発生時の対応</div>
-          <div class="maintenance-item">セキュリティアップデート対応</div>
-        </div>
-        <div class="maintenance-right">
-          <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" width="110" height="110" aria-hidden="true">
-            <path d="M45 7 L76 19 L76 42 C76 61 62 74 45 81 C28 74 14 61 14 42 L14 19 Z" fill="#d1fae5" stroke="#10b981" stroke-width="2.5"/>
-            <circle cx="45" cy="44" r="16" fill="#a7f3d0"/>
-            <path d="M35 44 L42 51 L56 35" stroke="#10b981" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="62" cy="22" r="5" fill="#6ee7b7" opacity="0.6"/>
-            <circle cx="28" cy="26" r="3.5" fill="#6ee7b7" opacity="0.5"/>
-          </svg>
-          <a href="#contact" class="maintenance-btn">無料相談する →</a>
+        <p class="desc">サーバー・ドメインの更新管理、月5ページまでの新規追加・テキスト更新、不具合発生時の対応、セキュリティアップデートまで月額制で対応します。季節キャンペーンや新メニューの差し替えもおまかせください。<span class="sub">※ プレミアムプランには公開後1年間の保守メンテナンスが含まれます。2年目以降も本プランでご継続いただけます。</span></p>
+        <div class="mp-price">
+          <span class="mp-amount"><span class="amount">¥5,000</span><span class="unit">税込 / 月</span></span>
+          <a href="#contact" class="mp-cta">無料相談する →</a>
         </div>
       </div>
-      <p class="maintenance-footer">※ プレミアムプランには公開後1年間の保守メンテナンスが含まれます。2年目以降は月額¥5,000（月5ページ分）でご継続いただけます。</p>
+
+      <div class="maint-plan" id="maintenance-wp">
+        <div>
+          <span class="mp-tag">WordPress特化</span>
+          <h5>契約・更新の管理だけ</h5>
+        </div>
+        <p class="desc">ページの追加・修正は行わない代わりに、WordPressの稼働に欠かせないサーバー（データベース対応）とドメインの契約・更新を、毎年かかる更新費用まですべて含めてまるごと代行します。サーバー代・ドメイン更新費を別途お支払いいただく必要はありません。面倒な手続きから解放され、本業に専念いただけます。<span class="sub">※ .com以外のドメイン取得をご希望の場合は、月額¥1,500（税込）となりますので、あらかじめご了承ください。</span></p>
+        <div class="mp-price">
+          <span class="badge">いちばん手軽</span>
+          <span class="mp-amount"><span class="amount">¥1,000</span><span class="unit">税込 / 月</span></span>
+          <a href="#contact" class="mp-cta">無料相談する →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2387,6 +2370,27 @@ function toggleFaq(i) {
   });
 })();
 
+</script>
+<script>
+  // 料金比較表：スマホで横にはみ出す時だけ「横スワイプ」ヒントを表示し、スクロールしたら消す
+  (function(){
+    var wrap = document.querySelector('.plan-table-wrap');
+    var hint = document.querySelector('.plan-scroll-hint');
+    if(!wrap || !hint) return;
+    var check = function(){
+      var scrollable = (wrap.scrollWidth - wrap.clientWidth) > 4;
+      hint.classList.toggle('is-on', scrollable);
+      hint.classList.toggle('is-off', !scrollable);
+      if(!scrollable) hint.classList.remove('is-done');
+    };
+    check();
+    window.addEventListener('load', check);
+    window.addEventListener('resize', check);
+    setTimeout(check, 300);
+    wrap.addEventListener('scroll', function(){
+      if(wrap.scrollLeft > 16) hint.classList.add('is-done');
+    }, { passive:true });
+  })();
 </script>
 </body>
 </html>
