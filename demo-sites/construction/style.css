@@ -93,9 +93,6 @@
   .topbar-left { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
   .topbar-left span { display: inline-flex; align-items: center; gap: 8px; }
   .topbar-left span::before { content: '●'; color: var(--accent); font-size: 8px; }
-  .topbar-right { display: flex; gap: 16px; align-items: center; }
-  .topbar-right a { text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
-  .topbar-right a:hover { opacity: 1; }
 
   /* ===== NAV ===== */
   nav.site {
@@ -200,6 +197,7 @@
   .nav-cta.line:hover { background: var(--steel); color: var(--bg) !important; }
   .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
   .nav-toggle span { display: block; width: 26px; height: 2px; background: var(--ink); margin: 6px 0; transition: 0.3s; }
+  .nav-cta-mobile { display: none; }
 
   /* ===== HERO ===== */
   .hero {
@@ -1307,14 +1305,28 @@
     .flow-item p { grid-column: 1 / -1; }
     .flow-item .duration { grid-column: 1 / -1; text-align: left; }
     .topbar-left { font-size: 11px; gap: 14px; }
-    .topbar-right { display: none; }
     .footer-top { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 720px) {
     section.block, #philosophy, #works, #strengths, #flow, #safety, #history, #recruit, #contact { padding: 80px 22px; }
+    .topbar { display: none; }
     .nav-menu { display: none; }
     .nav-toggle { display: block; }
-    .nav-cta-group .nav-cta:not(.line) { display: none; }
+    .nav-cta-group { display: none; }
+    .nav-cta-mobile { display: block; }
+    .nav-cta-mobile a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 15px 20px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .nav-cta-mobile .nav-tel { background: var(--ink); color: var(--bg); }
+    .nav-cta-mobile .nav-contact-cta { background: var(--accent); color: var(--bg); }
     .hero { min-height: 580px; }
     .hero-inner { padding: 80px 22px 200px; }
     .hero-stats { grid-template-columns: 1fr 1fr; }
@@ -1337,7 +1349,20 @@
     .nav-inner { padding: 14px 22px; }
     .nav-brand-text .name { font-size: 15px; }
     .h2 { font-size: 28px; }
-    .hero h1 { font-size: 36px; }
+    .hero-eyebrow { display: none; }
+    .hero-lead { display: none; }
+    .hero h1 { font-size: clamp(26px, 7.5vw, 34px); text-wrap: balance; }
+    .hero h1 br.t-br { display: none; }
+    .hero-buttons .btn-outline { display: none; }
+    .phil-image .badge { top: auto; bottom: 20px; left: 20px; }
+    .pc-only { display: none; }
+    .phil-text .h2 { text-wrap: balance; }
+    .phil-text .h2 br { display: none; }
+    .page-hero h1 { text-wrap: balance; }
+    .page-hero h1 br { display: none; }
+    .phil-text .lead br.pc-br { display: none; }
+    .footer-col:nth-child(2) ul,
+    .footer-col:nth-child(3) ul { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; }
     .hist-list { padding-left: 32px; }
     .hist-item { grid-template-columns: 1fr; gap: 8px; padding-left: 24px; }
     .hist-item::before { left: -24px; }
