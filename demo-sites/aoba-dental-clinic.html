@@ -83,42 +83,14 @@
   .brand {
     display: flex;
     align-items: center;
-    gap: 13px;
     text-decoration: none;
-    min-width: 245px;
+    width: 348px;
+    flex: none;
   }
-  .brand-mark {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--aqua), #8ad7c4);
-    position: relative;
-    box-shadow: 0 14px 28px rgba(27,166,166,0.24);
-  }
-  .brand-mark::before {
-    content: '';
-    position: absolute;
-    width: 18px;
-    height: 24px;
-    border-radius: 48% 48% 42% 42%;
-    background: #fff;
-    left: 13px;
-    top: 10px;
-    box-shadow: inset 0 -7px 0 rgba(227,244,242,0.9);
-  }
-  .brand-name {
+  .brand-logo {
     display: block;
-    font-size: 19px;
-    font-weight: 900;
-    line-height: 1.1;
-  }
-  .brand-sub {
-    display: block;
-    margin-top: 4px;
-    color: var(--muted);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
+    width: 100%;
+    height: auto;
   }
   .nav-links {
     display: flex;
@@ -442,13 +414,30 @@
     border: 1px solid var(--line);
     border-radius: 8px;
     background: #fff;
-    padding: 26px;
-    min-height: 236px;
+    overflow: hidden;
+    min-height: 0;
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .treatment:hover {
     transform: translateY(-3px);
     box-shadow: 0 18px 45px rgba(15,42,54,0.1);
+  }
+  .treatment-image {
+    position: relative;
+    background: var(--mist);
+    overflow: hidden;
+  }
+  .treatment-image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+  .treatment:hover .treatment-image img {
+    transform: scale(1.035);
+  }
+  .treatment-body {
+    padding: 24px 26px 26px;
   }
   .treatment .num {
     color: var(--aqua-deep);
@@ -918,11 +907,7 @@
       height: 68px;
       padding: 0 16px;
     }
-    .brand { min-width: 0; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 12px; }
-    .brand-mark::before { left: 11px; top: 8px; }
-    .brand-name { font-size: 16px; }
-    .brand-sub { font-size: 9px; }
+    .brand { width: min(262px, calc(100vw - 88px)); }
     .nav-actions .btn { display: none; }
     .hero-kicker { display: none; }
     .hero-content {
@@ -952,6 +937,7 @@
       grid-template-columns: 1fr;
     }
     .worry { min-height: auto; }
+    .treatment-body { padding: 22px; }
     .feature-row {
       grid-template-columns: 38px 1fr;
       padding: 16px;
@@ -1036,11 +1022,7 @@
   <nav class="nav">
     <div class="nav-inner">
       <a class="brand" href="#">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>
-          <span class="brand-name">AOBA DENTAL CLINIC</span>
-          <span class="brand-sub">青葉台の予防歯科・精密治療</span>
-        </span>
+        <img class="brand-logo" src="../assets/dental/aoba-dental-logo.svg" alt="AOBA DENTAL CLINIC 青葉台の予防歯科・精密治療" width="520" height="92">
       </a>
       <ul class="nav-links">
         <li><a href="#treatment">診療案内</a></li>
@@ -1117,40 +1099,70 @@
       </div>
       <div class="treatment-grid">
         <article class="treatment">
-          <span class="num en">01</span>
-          <h3>予防歯科・クリーニング</h3>
-          <p>担当衛生士制で、歯石除去、PMTC、ホームケア指導まで継続的にサポート。</p>
-          <div class="tag-list"><span>定期検診</span><span>歯周病予防</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-cleaning.webp" alt="歯科衛生士による予防クリーニング" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">01</span>
+            <h3>予防歯科・クリーニング</h3>
+            <p>担当衛生士制で、歯石除去、PMTC、ホームケア指導まで継続的にサポート。</p>
+            <div class="tag-list"><span>定期検診</span><span>歯周病予防</span></div>
+          </div>
         </article>
         <article class="treatment">
-          <span class="num en">02</span>
-          <h3>むし歯・根管治療</h3>
-          <p>拡大視野で削る量を抑え、神経を残す可能性を丁寧に検討します。</p>
-          <div class="tag-list"><span>精密診断</span><span>痛み配慮</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-root-canal.webp" alt="拡大視野で行う精密なむし歯・根管治療" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">02</span>
+            <h3>むし歯・根管治療</h3>
+            <p>拡大視野で削る量を抑え、神経を残す可能性を丁寧に検討します。</p>
+            <div class="tag-list"><span>精密診断</span><span>痛み配慮</span></div>
+          </div>
         </article>
         <article class="treatment">
-          <span class="num en">03</span>
-          <h3>小児歯科</h3>
-          <p>まずは診療台に慣れるところから。お子さまのペースを大切にします。</p>
-          <div class="tag-list"><span>フッ素</span><span>シーラント</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-pediatric.webp" alt="親子で安心して相談できる小児歯科" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">03</span>
+            <h3>小児歯科</h3>
+            <p>まずは診療台に慣れるところから。お子さまのペースを大切にします。</p>
+            <div class="tag-list"><span>フッ素</span><span>シーラント</span></div>
+          </div>
         </article>
         <article class="treatment">
-          <span class="num en">04</span>
-          <h3>マウスピース矯正</h3>
-          <p>口腔内スキャンを使い、目立ちにくい矯正治療の計画を立案します。</p>
-          <div class="tag-list"><span>無料相談</span><span>シミュレーション</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-aligner.webp" alt="透明なマウスピース矯正装置と口腔内スキャン" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">04</span>
+            <h3>マウスピース矯正</h3>
+            <p>口腔内スキャンを使い、目立ちにくい矯正治療の計画を立案します。</p>
+            <div class="tag-list"><span>無料相談</span><span>シミュレーション</span></div>
+          </div>
         </article>
         <article class="treatment">
-          <span class="num en">05</span>
-          <h3>審美治療・ホワイトニング</h3>
-          <p>白さだけでなく、歯ぐきや噛み合わせとの調和を見ながら提案します。</p>
-          <div class="tag-list"><span>セラミック</span><span>ホームホワイトニング</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-whitening.webp" alt="歯の色味を確認する審美治療・ホワイトニング相談" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">05</span>
+            <h3>審美治療・ホワイトニング</h3>
+            <p>白さだけでなく、歯ぐきや噛み合わせとの調和を見ながら提案します。</p>
+            <div class="tag-list"><span>セラミック</span><span>ホームホワイトニング</span></div>
+          </div>
         </article>
         <article class="treatment">
-          <span class="num en">06</span>
-          <h3>インプラント相談</h3>
-          <p>CT診断をもとに、入れ歯やブリッジも含めた選択肢をご説明します。</p>
-          <div class="tag-list"><span>CT撮影</span><span>セカンドオピニオン</span></div>
+          <div class="treatment-image">
+            <img src="../assets/dental/treatment-implant.webp" alt="CT画像を見ながら進めるインプラント相談" width="900" height="675" loading="lazy" decoding="async">
+          </div>
+          <div class="treatment-body">
+            <span class="num en">06</span>
+            <h3>インプラント相談</h3>
+            <p>CT診断をもとに、入れ歯やブリッジも含めた選択肢をご説明します。</p>
+            <div class="tag-list"><span>CT撮影</span><span>セカンドオピニオン</span></div>
+          </div>
         </article>
       </div>
     </div>
