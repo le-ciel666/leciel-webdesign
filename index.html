@@ -937,6 +937,81 @@
     color: var(--primary);
   }
 
+  /* カスタムオーダー案内（デモ一覧の締め・本体トーンに合わせた明るいアクセント） */
+  .custom-order {
+    margin-top: 76px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 52px 56px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background:
+      radial-gradient(120% 160% at 100% 0%, rgba(139, 92, 246, 0.07), transparent 55%),
+      radial-gradient(120% 160% at 0% 100%, rgba(37, 99, 235, 0.06), transparent 55%),
+      var(--white);
+    box-shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+  }
+  /* 上端のブランドグラデーション・アクセント */
+  .custom-order::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--gradient);
+  }
+  .custom-order-body { flex: 1; min-width: 0; }
+  .custom-order-label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--primary);
+  }
+  .custom-order-title {
+    margin: 0 0 14px;
+    font-size: clamp(21px, 2.4vw, 28px);
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+  }
+  .custom-order-text {
+    max-width: 680px;
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: var(--text-muted);
+  }
+  .custom-order-cta {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 40px;
+    border-radius: 100px;
+    background: var(--gradient);
+    color: var(--white);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    box-shadow: 0 6px 24px rgba(139, 92, 246, 0.30);
+    transition: opacity 0.25s, transform 0.2s, box-shadow 0.25s;
+  }
+  .custom-order-cta .arrow { transition: transform 0.25s ease; }
+  .custom-order-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.40);
+  }
+  .custom-order-cta:hover .arrow { transform: translateX(4px); }
+
   /* グループ内グリッド */
   .dcards { display: grid; gap: 24px; }
   .dcards.col3 { grid-template-columns: repeat(3, 1fr); }
@@ -1414,6 +1489,7 @@
     .mp-price { align-items: flex-start; }
     .dcards.col3 { grid-template-columns: 1fr 1fr; gap: 16px; }
     .works-group { margin-top: 48px; }
+    .custom-order { padding: 44px 40px; gap: 32px; }
     .profile-top { grid-template-columns: 1fr; gap: 32px; }
   }
 
@@ -1478,6 +1554,11 @@
     .works-group-head { gap: 4px 14px; margin-bottom: 22px; padding-bottom: 16px; }
     .works-group-title { font-size: 19px; }
     .works-group-desc { font-size: 13.5px; line-height: 1.85; }
+    .custom-order { margin-top: 44px; flex-direction: column; align-items: flex-start; gap: 22px; padding: 30px 22px; border-radius: 18px; }
+    .custom-order-label { margin-bottom: 10px; font-size: 12px; letter-spacing: 0.18em; }
+    .custom-order-title { font-size: 20px; line-height: 1.5; margin-bottom: 12px; }
+    .custom-order-text { font-size: 14px; line-height: 1.9; }
+    .custom-order-cta { width: 100%; padding: 15px 24px; font-size: 16px; }
     .dcard { aspect-ratio: 16 / 10; }
     .dcard.feature { aspect-ratio: 16 / 10; }
     .dcard.feature.compact { aspect-ratio: 16 / 8; }
@@ -1880,6 +1961,15 @@
           </div>
         </a>
       </div>
+    </div>
+
+    <div class="custom-order">
+      <div class="custom-order-body">
+        <span class="custom-order-label">CUSTOM ORDER</span>
+        <h3 class="custom-order-title">これらは、あくまで一例です。</h3>
+        <p class="custom-order-text">「こんな雰囲気にしたい」という理想や、参考にされたいWebサイトがあれば、お店の雰囲気・目的・ご予算に合わせて、構成から一つひとつ制作します。どの構成が合うか分からない場合も、お気軽にご相談ください。</p>
+      </div>
+      <a class="custom-order-cta" href="#contact">無料で相談する <span class="arrow" aria-hidden="true">→</span></a>
     </div>
 
   </div>
