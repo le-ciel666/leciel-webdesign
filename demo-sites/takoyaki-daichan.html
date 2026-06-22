@@ -54,6 +54,9 @@
     #top{min-height:780px !important;padding-left:18px !important;padding-right:18px !important;}
     #top h1{font-size:clamp(46px,17vw,66px) !important;}
   }
+  .sns-btn{transition:transform .2s ease,box-shadow .2s ease;}
+  .sns-row a:hover .sns-btn{transform:translateY(-6px);box-shadow:0 9px 0 rgba(0,0,0,.45);}
+  .sns-row a:active .sns-btn{transform:translateY(0);box-shadow:0 3px 0 rgba(0,0,0,.45);}
 </style>
 </head>
 <body>
@@ -63,7 +66,7 @@
   <!-- ===== HEADER ===== -->
   <header style="position:fixed;top:0;left:0;right:0;z-index:60;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,5vw,40px);background:rgba(255,247,233,0.92);backdrop-filter:blur(8px);border-bottom:3px solid #e23b2e;box-shadow:0 4px 18px rgba(184,42,28,0.12);">
     <a href="#top" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-      <span style="width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd76b,#e0962f 70%,#a85e16);display:flex;align-items:center;justify-content:center;font-family:'Reggae One';color:#3a1d08;font-size:18px;box-shadow:inset 0 -3px 6px rgba(0,0,0,.2);">蛸</span>
+      <img src="assets/takoyaki-daichan/logo.svg" alt="たこ焼き大ちゃん ロゴ" style="width:42px;height:42px;display:block;flex:0 0 42px;filter:drop-shadow(0 2px 2px rgba(184,42,28,.18));">
       <span style="font-family:'Reggae One';font-size:clamp(17px,4.4vw,21px);color:#e23b2e;letter-spacing:1px;">たこ焼き 大ちゃん</span>
     </a>
     <button onclick="openNav()" aria-label="メニュー" style="display:flex;flex-direction:column;gap:5px;width:46px;height:42px;align-items:center;justify-content:center;background:#e23b2e;border:none;border-radius:12px;cursor:pointer;box-shadow:0 3px 0 #9e2417;">
@@ -327,21 +330,33 @@
     <h2 data-reveal style="font-family:'RocknRoll One';font-size:clamp(22px,6vw,34px);margin:0 0 8px;color:#fff7e9;">SNSで最新情報をチェック</h2>
     <p data-reveal style="font-size:13px;color:#bfa890;margin:0 0 30px;">日々の焼きたて・限定メニュー・イベント出店情報を発信中！</p>
 
-    <div data-reveal style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:46px;">
-      <a href="#" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;" style-hover="transform:translateY(-6px);">
-        <span style="width:60px;height:60px;border-radius:18px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;font-family:'RocknRoll One';color:#fff;font-size:26px;box-shadow:0 5px 0 rgba(0,0,0,.4);">Ig</span>
+    <div data-reveal class="sns-row" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:46px;">
+      <a href="#" aria-label="Instagram" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <span class="sns-btn" style="width:60px;height:60px;border-radius:18px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 rgba(0,0,0,.4);">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </span>
         <span style="font-size:12px;color:#ffe9c2;font-weight:700;">Instagram</span>
       </a>
-      <a href="#" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;" style-hover="transform:translateY(-6px);">
-        <span style="width:60px;height:60px;border-radius:18px;background:#000;border:2px solid #444;display:flex;align-items:center;justify-content:center;font-family:'RocknRoll One';color:#fff;font-size:26px;box-shadow:0 5px 0 rgba(0,0,0,.6);">X</span>
+      <a href="#" aria-label="X (旧Twitter)" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <span class="sns-btn" style="width:60px;height:60px;border-radius:18px;background:#000;border:1px solid #333;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 rgba(0,0,0,.6);">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </span>
         <span style="font-size:12px;color:#ffe9c2;font-weight:700;">X (旧Twitter)</span>
       </a>
-      <a href="#" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;" style-hover="transform:translateY(-6px);">
-        <span style="width:60px;height:60px;border-radius:18px;background:#06c755;display:flex;align-items:center;justify-content:center;font-family:'RocknRoll One';color:#fff;font-size:22px;box-shadow:0 5px 0 rgba(0,0,0,.4);">LINE</span>
+      <a href="#" aria-label="LINE" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <span class="sns-btn" style="width:60px;height:60px;border-radius:18px;background:#06c755;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 rgba(0,0,0,.4);">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="#fff" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63h-1.755v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63h-1.755v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.083.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        </span>
         <span style="font-size:12px;color:#ffe9c2;font-weight:700;">LINE</span>
       </a>
-      <a href="#" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;" style-hover="transform:translateY(-6px);">
-        <span style="width:60px;height:60px;border-radius:18px;background:#111;border:2px solid #25f4ee;display:flex;align-items:center;justify-content:center;font-family:'RocknRoll One';color:#fff;font-size:22px;box-shadow:0 5px 0 rgba(0,0,0,.6);">TT</span>
+      <a href="#" aria-label="TikTok" style="text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <span class="sns-btn" style="width:60px;height:60px;border-radius:18px;background:#000;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 rgba(0,0,0,.6);">
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#FE2C55" transform="translate(1,1)"/>
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#25F4EE" transform="translate(-1,-1)"/>
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#fff"/>
+          </svg>
+        </span>
         <span style="font-size:12px;color:#ffe9c2;font-weight:700;">TikTok</span>
       </a>
     </div>
