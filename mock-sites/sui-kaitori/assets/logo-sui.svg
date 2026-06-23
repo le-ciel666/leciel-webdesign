@@ -1,0 +1,17 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">お酒買取専門店 翠 -SUI- ロゴ</title>
+  <desc id="desc">深緑と金色の円形エンブレムに酒瓶と翠の文字を組み合わせたロゴ</desc>
+  <rect width="160" height="160" rx="28" fill="#0E4B3B"/>
+  <rect x="10" y="10" width="140" height="140" rx="22" stroke="#D9B65F" stroke-width="2"/>
+  <rect x="18" y="18" width="124" height="124" rx="17" stroke="#D9B65F" stroke-opacity=".38" stroke-width="1"/>
+  <path d="M80 25C82.2 25 84 26.8 84 29V38.5C84 40.7 85.2 42.6 87.1 43.7C93.2 47.2 97 53.8 97 61V114C97 122.3 90.3 129 82 129H78C69.7 129 63 122.3 63 114V61C63 53.8 66.8 47.2 72.9 43.7C74.8 42.6 76 40.7 76 38.5V29C76 26.8 77.8 25 80 25Z" fill="#123A2E" stroke="#D9B65F" stroke-width="2.4"/>
+  <path d="M73 33H87" stroke="#E7C877" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M67.5 79H92.5" stroke="#D9B65F" stroke-opacity=".72" stroke-width="1.6"/>
+  <path d="M67.5 105H92.5" stroke="#D9B65F" stroke-opacity=".72" stroke-width="1.6"/>
+  <circle cx="80" cy="92" r="18" fill="#F6F1DF" stroke="#D9B65F" stroke-width="2"/>
+  <text x="80" y="101" text-anchor="middle" font-family="'Shippori Mincho B1','Yu Mincho',serif" font-size="25" font-weight="800" fill="#0E4B3B">翠</text>
+  <path d="M41 48C50 48 55 54 57 62C49 61 43 57 41 48Z" fill="#D9B65F"/>
+  <path d="M119 48C110 48 105 54 103 62C111 61 117 57 119 48Z" fill="#D9B65F"/>
+  <path d="M33 116C43 112 52 115 58 123C47 127 38 124 33 116Z" fill="#D9B65F" fill-opacity=".85"/>
+  <path d="M127 116C117 112 108 115 102 123C113 127 122 124 127 116Z" fill="#D9B65F" fill-opacity=".85"/>
+</svg>
