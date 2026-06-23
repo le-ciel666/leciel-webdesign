@@ -56,18 +56,22 @@ function closeModal() {
 }
 
 document.addEventListener("click", (event) => {
-  const menuButton = event.target.closest(".menu-button");
+  const menuButton = event.target.closest(".menu-button, .mobile-menu-button");
   if (menuButton) {
     const nav = document.querySelector("#site-nav");
     const open = !nav.classList.contains("is-open");
     nav.classList.toggle("is-open", open);
-    menuButton.setAttribute("aria-expanded", String(open));
+    document.querySelectorAll(".menu-button, .mobile-menu-button").forEach((button) => {
+      button.setAttribute("aria-expanded", String(open));
+    });
     return;
   }
 
   if (event.target.closest(".site-nav a")) {
     document.querySelector("#site-nav").classList.remove("is-open");
-    document.querySelector(".menu-button").setAttribute("aria-expanded", "false");
+    document.querySelectorAll(".menu-button, .mobile-menu-button").forEach((button) => {
+      button.setAttribute("aria-expanded", "false");
+    });
   }
 
   const newsButton = event.target.closest("[data-news]");
