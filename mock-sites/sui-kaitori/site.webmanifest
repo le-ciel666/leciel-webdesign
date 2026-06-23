@@ -1,0 +1,17 @@
+{
+  "name": "お酒買取専門店 翠 -SUI-",
+  "short_name": "翠 -SUI-",
+  "description": "ウイスキー・ブランデー・ワインの買取専門店。査定・出張・キャンセル無料、全国対応。",
+  "lang": "ja",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0E4B3B",
+  "theme_color": "#0E4B3B",
+  "icons": [
+    { "src": "./assets/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "./assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "./assets/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "./assets/apple-touch-icon.png", "type": "image/png", "sizes": "180x180", "purpose": "maskable" }
+  ]
+}
