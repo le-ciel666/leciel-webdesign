@@ -939,8 +939,14 @@ textarea:focus {
   }
   .primary-nav { order: 3; width: 100%; margin-left: 0; }
   .header-cta { margin-left: auto; }
-  .hero { padding-top: 140px; }
+  .hero {
+    min-height: auto;
+    align-items: flex-start;
+    padding-top: 108px;
+    padding-bottom: 64px;
+  }
   .hero h1 { font-size: clamp(38px, 14vw, 68px); }
+  .eyebrow { margin-bottom: 20px; }
   .hero-meta { display: none; }
   .product-hero,
   .overview,
