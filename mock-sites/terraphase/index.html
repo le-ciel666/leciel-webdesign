@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TERRAPHASE | Defense & Critical Infrastructure Deep Tech</title>
+  <meta name="description" content="TERRAPHASE is a deep-tech prototype site for defense and critical infrastructure technology products.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="TERRAPHASE home">
+      <span class="brand-mark"></span>
+      <span>TERRAPHASE</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#domains" data-i18n="nav.domains">対応領域</a>
+      <a href="#products" data-i18n="nav.products">製品</a>
+      <a href="#technology" data-i18n="nav.tech">技術</a>
+      <a href="careers.html" data-i18n="nav.careers">採用情報</a>
+      <a href="company.html" data-i18n="nav.company">会社概要</a>
+    </nav>
+    <div class="lang-switch" aria-label="Language">
+      <button type="button" data-lang="ja">JA</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <a class="header-cta" href="#contact" data-i18n="nav.contact">お問い合わせ</a>
+  </header>
+
+  <main>
+    <section id="top" class="hero">
+      <canvas class="hero-canvas" data-hero-canvas aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span></span><b data-i18n="hero.eyebrow">防衛・重要インフラのための先端技術</b></p>
+        <h1 data-i18n="hero.headline">不確実な領域に、<br>確かな判断を。</h1>
+        <p class="hero-copy" data-i18n="hero.sub">防衛と重要インフラの最前線へ。センシング、自律制御、情報統合をひとつの基盤に束ね、現場の意思決定を支えます。大学発のディープテックが、過酷な現実の解像度を引き上げる。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#products" data-i18n="hero.cta1">製品を見る</a>
+          <a class="button secondary" href="#technology" data-i18n="hero.cta2">技術について</a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span>LAT 35.6586 / LON 139.7454</span>
+        <span>SYS / TERRAIN-MESH / ACTIVE</span>
+      </div>
+    </section>
+
+    <section id="domains" class="section">
+      <div class="section-heading">
+        <p class="kicker"><span>01</span><i></i><b data-i18n="domains.label">Domains</b></p>
+        <h2 data-i18n="domains.title">二つの領域、ひとつの基盤。</h2>
+      </div>
+      <div class="domain-grid">
+        <article class="domain-panel">
+          <figure class="domain-image"><img src="assets/images/domain-defense.png" alt=""></figure>
+          <span class="ghost-code">D-01</span>
+          <p class="mono-label" data-i18n="domains.defenseTag">DEFENSE</p>
+          <h3 data-i18n="domains.defenseName">防衛</h3>
+          <p data-i18n="domains.defenseDesc">ISR、自律システム、指揮統制支援。通信や電力が限られる過酷な環境下でも、途切れない認識と判断を提供します。</p>
+          <ul data-list="defenseCaps"></ul>
+        </article>
+        <article class="domain-panel">
+          <figure class="domain-image"><img src="assets/images/domain-infra.png" alt=""></figure>
+          <span class="ghost-code">I-02</span>
+          <p class="mono-label" data-i18n="domains.infraTag">CRITICAL INFRASTRUCTURE</p>
+          <h3 data-i18n="domains.infraName">重要インフラ</h3>
+          <p data-i18n="domains.infraDesc">構造ヘルスモニタリング、予知保全、レジリエンス。橋梁・プラント・通信網など、社会の基盤を止めずに守り抜きます。</p>
+          <ul data-list="infraCaps"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="products" class="section alt">
+      <div class="section-heading">
+        <p class="kicker"><span>02</span><i></i><b data-i18n="products.label">Products</b></p>
+        <h2 data-i18n="products.title">現場で動く、製品群。</h2>
+      </div>
+      <div class="product-grid" data-products></div>
+    </section>
+
+    <section id="technology" class="section">
+      <div class="section-heading">
+        <p class="kicker"><span>03</span><i></i><b data-i18n="tech.label">Technology</b></p>
+        <h2 data-i18n="tech.title">基盤を支える、四つの技術。</h2>
+      </div>
+      <div class="tech-grid" data-tech></div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-inner">
+        <p class="mono-label" data-i18n="cta.label">Get in touch</p>
+        <h2 data-i18n="cta.title">現場の課題から、はじめましょう。</h2>
+        <p data-i18n="cta.sub">省庁・事業者・投資家・技術者の皆さまへ。導入のご相談、共同研究、採用に関するお問い合わせを承っています。</p>
+        <form class="contact-form" data-contact-form>
+          <label><span data-i18n="form.name">お名前</span><input name="name" required data-i18n-placeholder="form.placeholderName"></label>
+          <label><span data-i18n="form.org">組織・ご所属</span><input name="org" data-i18n-placeholder="form.placeholderOrg"></label>
+          <label><span data-i18n="form.email">メールアドレス</span><input type="email" name="email" required data-i18n-placeholder="form.placeholderEmail"></label>
+          <label><span data-i18n="form.category">ご相談の種別</span><select name="category" data-categories></select></label>
+          <label class="full"><span data-i18n="form.message">お問い合わせ内容</span><textarea name="message" rows="5" required data-i18n-placeholder="form.placeholderMessage"></textarea></label>
+          <div class="form-footer">
+            <small data-i18n="form.note">※ これはプロトタイプのフォームです。実際の送信は行われません。</small>
+            <button class="button primary" type="submit" data-i18n="form.submit">送信する</button>
+          </div>
+        </form>
+        <div class="success-message" hidden data-success>
+          <b data-i18n="form.successTitle">送信ありがとうございます。</b>
+          <span data-i18n="form.successBody">内容を確認し、担当者より折り返しご連絡いたします。</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand" href="#top"><span class="brand-mark"></span><span>TERRAPHASE</span></a>
+      <p data-i18n="footer.about">先端技術を手がける大学発のディープテック企業。防衛・重要インフラ分野に向けた製品とソフトウェアを開発しています。</p>
+    </div>
+    <div>
+      <p class="mono-label" data-i18n="footer.siteLabel">Site</p>
+            <a href="#domains" data-i18n="nav.domains">対応領域</a>
+            <a href="#products" data-i18n="nav.products">製品</a>
+            <a href="#technology" data-i18n="nav.tech">技術</a>
+            <a href="careers.html" data-i18n="nav.careers">採用情報</a>
+            <a href="company.html" data-i18n="nav.company">会社概要</a>
+    </div>
+    <div>
+      <p class="mono-label" data-i18n="footer.contactLabel">Contact</p>
+      <a href="mailto:contact@terraphase.example">contact@terraphase.example</a>
+      <span data-i18n="footer.address">東京都 / Tokyo, Japan</span>
+    </div>
+    <small>© 2026 TERRAPHASE Inc. / <span data-i18n="footer.placeholder">社名・情報は仮置きです</span></small>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
