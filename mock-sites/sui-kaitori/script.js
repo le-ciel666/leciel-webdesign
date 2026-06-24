@@ -75,6 +75,13 @@ let currentFilter = "all";
 let heroIndex = 0;
 const heroSlides = data.featured;
 
+// カテゴリカードのEN名 → 相場表フィルタの対応（該当が無いものはコニャック=ブランデー、その他洋酒=すべて）
+const categoryFilterMap = { whisky: "whisky", brandy: "brandy", wine: "wine", champagne: "champagne", cognac: "brandy", shochu: "shochu", sake: "sake", others: "all" };
+// セクションのid → ページ名（#contactはhomeページ内）
+const pageById = { top: "home", first: "first", prices: "prices", column: "column", faq: "faq", stores: "stores", access: "access", contact: "home" };
+// ページ名 → 既定のハッシュ
+const hashByPage = { home: "#top", first: "#first", prices: "#prices", column: "#column", faq: "#faq", stores: "#stores", access: "#access" };
+
 function setPage(page, target) {
   document.querySelectorAll(".page").forEach(el => el.classList.toggle("is-active", el.dataset.page === page));
   document.querySelectorAll("[data-page-link]").forEach(el => el.classList.toggle("is-active", el.dataset.pageLink === page));
@@ -92,16 +99,14 @@ function render() {
   document.getElementById("featuredItems").innerHTML = data.featured.map(([name, sub, price, image]) => `
     <article class="item-card"><img src="${image}" alt="${name}のイメージ"><div><p>${sub}</p><h3>${name}</h3><span>買取上限</span><br><b>${price}</b></div></article>
   `).join("");
-  document.getElementById("categoryGrid").innerHTML = data.categories.map(([name, en]) => `
-    <button class="category" data-page-link="prices"><span>${en.slice(0, 2)}</span><strong>${name}</strong><small>${en}</small></button>
-  `).join("");
+  document.getElementById("categoryGrid").innerHTML = data.categories.map(([name, en]) => {
+    const filter = categoryFilterMap[en.toLowerCase()] || "all";
+    return `<button class="category" data-page-link="prices" data-filter="${filter}"><span>${en.slice(0, 2)}</span><strong>${name}</strong><small>${en}</small></button>`;
+  }).join("");
   document.getElementById("recordGrid").innerHTML = data.records.map(([name, price, method, date, image]) => `
     <article><img src="${image}" alt="${name}の買取実績イメージ"><div><h3>${name}</h3><b>${price}</b><p>${method} / ${date}</p></div></article>
   `).join("");
-  document.getElementById("priceFilters").innerHTML = priceFilters.map(([key, label]) => `
-    <button type="button" data-filter="${key}" class="${key === currentFilter ? "is-active" : ""}">${label}</button>
-  `).join("");
-  renderPrices();
+  applyFilter();
   document.getElementById("faqList").innerHTML = data.faqs.map(([group, items]) => `
     <div class="faq-group"><h2>${group}</h2>${items.map(([q, a], i) => `
       <article class="faq-item ${i === 0 ? "is-open" : ""}"><button type="button"><span>${q}</span><b>${i === 0 ? "−" : "＋"}</b></button><div>${a}</div></article>
@@ -115,6 +120,13 @@ function render() {
   `).join("");
   renderHeroDots();
   updateHeroSlide(0, true);
+}
+
+function applyFilter() {
+  document.getElementById("priceFilters").innerHTML = priceFilters.map(([key, label]) => `
+    <button type="button" data-filter="${key}" class="${key === currentFilter ? "is-active" : ""}">${label}</button>
+  `).join("");
+  renderPrices();
 }
 
 function renderPrices() {
@@ -153,18 +165,54 @@ function updateHeroSlide(index, immediate = false) {
   window.setTimeout(apply, 180);
 }
 
+function buildHash(page, target, filter) {
+  let base = target && target.startsWith("#") ? target : (hashByPage[page] || "#top");
+  if (page === "prices" && filter && filter !== "all") base = "#prices?" + filter;
+  return base;
+}
+
+function parseLocation() {
+  const raw = location.hash.replace(/^#/, "");
+  const [id, filter] = raw.split("?");
+  const page = pageById[id] || "home";
+  return { page, target: id ? "#" + id : null, filter: page === "prices" ? (filter || "all") : "all" };
+}
+
+// 履歴に積みながら遷移する（ページ切替・フィルタ適用・URL更新）
+function navigate(page, { target = null, filter } = {}, push = true) {
+  const filterChanged = filter !== undefined && filter !== currentFilter;
+  if (filter !== undefined) currentFilter = filter;
+  setPage(page, target);
+  if (filterChanged) applyFilter();
+  const state = { page, filter: currentFilter, target };
+  const hash = buildHash(page, target, currentFilter);
+  if (push) history.pushState(state, "", hash);
+  else history.replaceState(state, "", hash);
+}
+
+// 履歴（戻る/進む・直リンク）から状態を反映する（履歴は積まない）
+function applyState(state) {
+  const { page = "home", filter = "all", target = null } = state || {};
+  const filterChanged = filter !== currentFilter;
+  currentFilter = filter;
+  setPage(page, target);
+  if (filterChanged) applyFilter();
+}
+
 document.addEventListener("click", event => {
   const link = event.target.closest("[data-page-link]");
   if (link) {
     event.preventDefault();
-    const target = link.getAttribute("href")?.startsWith("#") ? link.getAttribute("href") : null;
-    setPage(link.dataset.pageLink, target);
+    const href = link.getAttribute("href");
+    const target = href && href.startsWith("#") ? href : null;
+    navigate(link.dataset.pageLink, { target, filter: link.dataset.filter });
     return;
   }
   const filter = event.target.closest("[data-filter]");
   if (filter) {
     currentFilter = filter.dataset.filter;
-    render();
+    applyFilter();
+    history.replaceState({ page: "prices", filter: currentFilter, target: null }, "", buildHash("prices", null, currentFilter));
     return;
   }
   const heroDot = event.target.closest("[data-hero-slide]");
@@ -190,4 +238,13 @@ setInterval(() => {
   updateHeroSlide((heroIndex + 1) % heroSlides.length);
 }, 3600);
 
+window.addEventListener("popstate", event => {
+  applyState(event.state || parseLocation());
+});
+
 render();
+
+// 読み込み時：URLのハッシュ（直リンク・リロード）を反映し、履歴の起点を記録する
+const initial = parseLocation();
+applyState(initial);
+history.replaceState({ page: initial.page, filter: initial.filter, target: initial.target }, "", buildHash(initial.page, initial.target, initial.filter));
