@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) - 計測は維持しつつ初期表示を妨げないよう遅延ロード -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VEMHY2G58C');
+    (function(){
+      function loadGtag(){
+        if (window.__gtagLoaded) return; window.__gtagLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VEMHY2G58C';
+        document.head.appendChild(s);
+      }
+      ['scroll','click','keydown','touchstart','pointerdown'].forEach(function(ev){
+        window.addEventListener(ev, loadGtag, { once:true, passive:true });
+      });
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tomosu | 学校現場の課題に伴走する教育スタートアップ</title>
+  <meta name="description" content="tomosuは、増え続ける先生の業務負担や一人ひとりに届かない学びといった学校現場の課題を、テクノロジーとていねいな伴走で解決する教育スタートアップです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #13251c;
+      --muted: #627266;
+      --accent: #1f7a52;
+      --accent-soft: #dcebe2;
+      --bg: #faf9f5;
+      --bg-soft: #eef4ed;
+      --line: #dbe5dd;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      height: 78px;
+      background: rgba(250, 249, 245, 0.86);
+      border-bottom: 1px solid rgba(219, 229, 221, 0.7);
+      backdrop-filter: blur(14px);
+    }
+
+    .site-header .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .mark {
+      position: relative;
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background: var(--accent);
+      transform: rotate(45deg);
+      flex: 0 0 auto;
+    }
+
+    .mark::after {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 2px;
+      background: var(--white);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      height: 22px;
+      padding: 0 8px;
+      border: 1px solid #aab6ad;
+      border-radius: 4px;
+      color: #5e6f66;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #2c463a;
+    }
+
+    .nav .contact-link {
+      color: var(--white);
+      background: var(--accent);
+      border-radius: 999px;
+      padding: 10px 20px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 720px;
+      overflow: hidden;
+      background: linear-gradient(140deg, #0c3525 0%, #091f17 100%);
+      color: #f3f7f3;
+    }
+
+    #hero-particles {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7, 24, 17, .92) 0%, rgba(7, 24, 17, .58) 48%, rgba(7, 24, 17, .12) 82%),
+        radial-gradient(circle at 72% 44%, rgba(117, 190, 145, .18), transparent 35%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      min-height: 720px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 118px 0 82px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+      color: #7fbf9a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: #6fae8a;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin-bottom: 28px;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(38px, 5vw, 62px);
+      font-weight: 600;
+      line-height: 1.38;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 550px;
+      margin-bottom: 40px;
+      color: #aec0b5;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--accent);
+    }
+
+    .btn-secondary {
+      color: #eef3ef;
+      border: 1px solid rgba(255,255,255,.32);
+    }
+
+    section {
+      scroll-margin-top: 78px;
+    }
+
+    .section-pad {
+      padding: 104px 0;
+    }
+
+    .section-head {
+      max-width: 680px;
+      margin-bottom: 46px;
+    }
+
+    .label {
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 600;
+      line-height: 1.5;
+      text-wrap: balance;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .challenge-visual {
+      overflow: hidden;
+      margin: -6px 0 32px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .challenge-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .card-no {
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .service {
+      background: var(--bg-soft);
+    }
+
+    .service-feature {
+      display: grid;
+      grid-template-columns: 46% 1fr;
+      gap: 0;
+      overflow: hidden;
+      margin-bottom: 40px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .service-feature img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+    }
+
+    .service-feature-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 42px 48px;
+    }
+
+    .service-feature h3 {
+      margin-bottom: 16px;
+      font-size: clamp(22px, 2.8vw, 30px);
+      line-height: 1.55;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .mission {
+      position: relative;
+      overflow: hidden;
+      color: #eaf2ec;
+      background: linear-gradient(165deg, #0c1d15, #103a28);
+    }
+
+    .mission::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 680px;
+      height: 680px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(47,158,106,.16), transparent 65%);
+    }
+
+    .mission .wrap {
+      position: relative;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .mission-quote {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      font-family: "Noto Serif JP", serif;
+      font-size: clamp(32px, 4.5vw, 46px);
+      font-weight: 600;
+      line-height: 1.6;
+      text-wrap: balance;
+    }
+
+    .mission p:last-child {
+      max-width: 650px;
+      margin: 0 auto;
+      color: #bcd2c4;
+      font-size: 16px;
+      line-height: 2.2;
+    }
+
+    .contact {
+      background: var(--bg-soft);
+    }
+
+    .contact .section-head {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .form {
+      display: grid;
+      gap: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 46px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      font-size: 13.5px;
+      font-weight: 700;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfdfb;
+      color: var(--ink);
+      font: inherit;
+      font-size: 15px;
+      outline: none;
+      padding: 14px 16px;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+      background: var(--white);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .required {
+      margin-left: 6px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .agree {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      color: var(--muted);
+      font-size: 13.5px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    .agree input {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--accent);
+      flex: 0 0 auto;
+    }
+
+    .submit {
+      min-height: 56px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--white);
+      background: var(--accent);
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .thanks {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 58px 40px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      text-align: center;
+    }
+
+    .thanks.is-visible {
+      display: block;
+    }
+
+    .form.is-hidden {
+      display: none;
+    }
+
+    .site-footer {
+      background: #0b1711;
+      color: #9fb4a7;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 48px;
+      padding: 64px 0 30px;
+    }
+
+    .footer-grid a {
+      display: block;
+      margin-bottom: 12px;
+      color: #9fb4a7;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 22px 0;
+      border-top: 1px solid rgba(159,180,167,.15);
+      color: #6a8175;
+      font-size: 12px;
+    }
+
+    @media (max-width: 860px) {
+      .site-header {
+        height: auto;
+      }
+
+      .site-header .wrap {
+        min-height: 70px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero,
+      .hero-inner {
+        min-height: 680px;
+      }
+
+      .challenge-grid,
+      .process-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .challenge-visual img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .service-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .service-feature img {
+        min-height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .wrap {
+        width: min(100% - 32px, 1120px);
+      }
+
+      .hero-copy,
+      .lead {
+        font-size: 15px;
+      }
+
+      .actions,
+      .btn {
+        width: 100%;
+      }
+
+      .section-pad {
+        padding: 78px 0;
+      }
+
+      .card,
+      .service-feature-body,
+      .form {
+        padding: 26px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#">
+        <span class="mark" aria-hidden="true"></span>
+        <span>tomosu</span>
+        <span class="badge">仮称</span>
+      </a>
+      <nav class="nav" aria-label="主要ナビゲーション">
+        <a href="#challenges">解決する課題</a>
+        <a href="#service">サービス</a>
+        <a href="#mission">私たちの想い</a>
+        <a class="contact-link" href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <canvas id="hero-particles" aria-hidden="true"></canvas>
+      <div class="hero-inner wrap">
+        <div class="eyebrow">Education × Technology</div>
+        <h1>学校現場の「困った」を、<br>テクノロジーでほどく。</h1>
+        <p class="hero-copy">先生が、もっと子どもと向き合える時間を。私たちは、学校の現場から生まれた課題に、テクノロジーとていねいな伴走で応える教育スタートアップです。</p>
+      </div>
+    </section>
+
+    <section class="section-pad" id="challenges">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Challenges</div>
+          <h2>学校現場に残る課題を、<br>ひとつずつ見えるかたちへ。</h2>
+          <p class="lead">授業、事務、連絡、個別対応。毎日の小さな負荷が積み重なる現場に、私たちはテクノロジーと伴走支援の両方で向き合います。</p>
+        </div>
+        <figure class="challenge-visual">
+          <img src="assets/images/challenges-school-workflow.webp" alt="学校現場で授業準備や情報共有に向き合う先生たちの様子">
+        </figure>
+        <div class="challenge-grid">
+          <article class="card">
+            <div class="card-no">課題 01</div>
+            <h3>増え続ける先生の業務負担</h3>
+            <p>授業準備や事務作業に追われ、子どもと向き合う時間がどんどん削られています。</p>
+          </article>
+          <article class="card">
+            <div class="card-no">課題 02</div>
+            <h3>一人ひとりに届かない学び</h3>
+            <p>クラス一斉の指導では、つまずきや得意を細かく拾いきることが難しい現実があります。</p>
+          </article>
+          <article class="card">
+            <div class="card-no">課題 03</div>
+            <h3>分断された情報とつながり</h3>
+            <p>学校・家庭・地域の間で情報が分かれ、連携や対話が生まれにくくなっています。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="service section-pad" id="service">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Service</div>
+          <h2>現場の声から生まれた、<br>教育課題解決サービス。</h2>
+          <p class="lead">学校ごとに異なる状況をていねいに把握し、最適なかたちで課題解決を支援します。一度きりの導入で終わらせず、運用しながら改善を重ねます。</p>
+        </div>
+        <div class="service-feature">
+          <img src="assets/images/service-education-tech.webp" alt="教育現場でテクノロジーを活用して情報を確認する様子">
+          <div class="service-feature-body">
+            <div class="label">Our Approach</div>
+            <h3>テクノロジーの導入を、現場に根づく仕組みにする。</h3>
+            <p class="lead">導入前の課題整理から、設計、定着、改善まで。先生・子ども・保護者の体験を見ながら、無理なく続く運用へ育てます。</p>
+          </div>
+        </div>
+        <div class="process-grid">
+          <article class="card">
+            <div class="card-no">STEP 01</div>
+            <h3>現状を、ていねいに把握する</h3>
+            <p>現場の声をヒアリングし、学校ごとに異なる課題と背景を可視化します。</p>
+          </article>
+          <article class="card">
+            <div class="card-no">STEP 02</div>
+            <h3>最適なかたちで設計・導入</h3>
+            <p>把握した課題に合わせて仕組みを設計し、無理のない導入を支援します。</p>
+          </article>
+          <article class="card">
+            <div class="card-no">STEP 03</div>
+            <h3>運用しながら改善する</h3>
+            <p>導入後も伴走し、現場に根づくまで一緒に改善を重ね続けます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission" id="mission">
+      <div class="wrap">
+        <div class="label" style="color:#86d6a8;">Mission</div>
+        <p class="mission-quote">「学び」のとなりに、<br>ずっといたい。</p>
+        <p>子ども一人ひとりが、自分らしく学べる環境を。先生が、教えることに集中できる現場を。私たちは、テクノロジーの力と現場へのまなざしを両手に、学校の「これから」に長く寄り添い続けます。</p>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="label">Contact</div>
+          <h2>お問い合わせ</h2>
+          <p class="lead">事業内容の詳細は、秘密保持を前提に個別にご案内しています。下記フォームよりお気軽にお問い合わせください。</p>
+        </div>
+        <div class="thanks" id="thanks">
+          <h3>送信が完了しました</h3>
+          <p class="lead">お問い合わせありがとうございます。担当者より2〜3営業日以内にご連絡いたします。</p>
+        </div>
+        <form class="form" id="contact-form">
+          <label><span class="field-name">お名前<span class="required">必須</span></span>
+            <input type="text" name="name" placeholder="例）山田 太郎" required>
+          </label>
+          <div class="form-row">
+            <label><span class="field-name">ご所属<span class="required">必須</span></span>
+              <input type="text" name="org" placeholder="例）〇〇高等学校 / 株式会社〇〇" required>
+            </label>
+            <label><span class="field-name">お電話番号</span>
+              <input type="tel" name="tel" placeholder="例）03-1234-5678">
+            </label>
+          </div>
+          <label><span class="field-name">メールアドレス<span class="required">必須</span></span>
+            <input type="email" name="email" placeholder="例）info@example.com" required>
+          </label>
+          <label><span class="field-name">お問い合わせ種別<span class="required">必須</span></span>
+            <select name="type" required>
+              <option value="">選択してください</option>
+              <option>サービスについて知りたい</option>
+              <option>導入を相談したい</option>
+              <option>資料がほしい</option>
+              <option>取材・協業のご相談</option>
+              <option>その他</option>
+            </select>
+          </label>
+          <label><span class="field-name">お問い合わせ内容<span class="required">必須</span></span>
+            <textarea name="message" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+          </label>
+          <label class="agree">
+            <input type="checkbox" required>
+            <span>プライバシーポリシーに同意のうえ送信します。</span>
+          </label>
+          <button class="submit" type="submit">送信する</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#" style="color:#eef3ed;margin-bottom:18px;">
+            <span class="mark" aria-hidden="true"></span>
+            <span>tomosu</span>
+          </a>
+          <p>学校現場の課題を、テクノロジーとていねいな伴走で解く教育スタートアップ。</p>
+        </div>
+        <div>
+          <div class="label" style="color:#5f7568;">Site map</div>
+          <a href="#challenges">解決する課題</a>
+          <a href="#service">サービス</a>
+          <a href="#mission">私たちの想い</a>
+          <a href="#contact">お問い合わせ</a>
+        </div>
+        <div>
+          <div class="label" style="color:#5f7568;">Contact</div>
+          <p style="color:#c4d4ca;margin-bottom:6px;">info@tomosu.example</p>
+          <p>受付時間 平日 10:00-18:00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 tomosu（仮称）</span>
+        <span>PROVISIONAL - 構想段階のサンプル構成です</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const canvas = document.getElementById("hero-particles");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let width = 0;
+      let height = 0;
+      let points = [];
+      let raf = 0;
+
+      const fit = () => {
+        const dpr = window.devicePixelRatio || 1;
+        width = canvas.clientWidth || 1200;
+        height = canvas.clientHeight || 720;
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const density = 1 / 26000;
+        const total = Math.max(34, Math.min(80, Math.round(width * height * density)));
+        points = Array.from({ length: total }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.28,
+          vy: (Math.random() - 0.5) * 0.28
+        }));
+      };
+
+      const loop = () => {
+        ctx.clearRect(0, 0, width, height);
+        for (const point of points) {
+          point.x += point.vx;
+          point.y += point.vy;
+          if (point.x < 0 || point.x > width) point.vx *= -1;
+          if (point.y < 0 || point.y > height) point.vy *= -1;
+          point.x = Math.max(0, Math.min(width, point.x));
+          point.y = Math.max(0, Math.min(height, point.y));
+        }
+
+        for (let i = 0; i < points.length; i += 1) {
+          for (let j = i + 1; j < points.length; j += 1) {
+            const a = points[i];
+            const b = points[j];
+            const distance = Math.hypot(a.x - b.x, a.y - b.y);
+            if (distance < 135) {
+              ctx.strokeStyle = `rgba(125,195,155,${0.11 * (1 - distance / 135)})`;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (const point of points) {
+          ctx.fillStyle = "rgba(160,215,180,0.55)";
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 1.7, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        raf = requestAnimationFrame(loop);
+      };
+
+      fit();
+      loop();
+      window.addEventListener("resize", fit);
+      window.addEventListener("beforeunload", () => cancelAnimationFrame(raf));
+    })();
+
+    (() => {
+      const form = document.getElementById("contact-form");
+      const thanks = document.getElementById("thanks");
+      if (!form || !thanks) return;
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+        form.classList.add("is-hidden");
+        thanks.classList.add("is-visible");
+      });
+    })();
+  </script>
+</body>
+</html>
