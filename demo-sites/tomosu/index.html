@@ -144,6 +144,63 @@
       padding: 10px 20px;
     }
 
+    .nav-toggle {
+      display: none;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      margin-right: -8px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .nav-toggle-bars,
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      position: absolute;
+      left: 50%;
+      width: 24px;
+      height: 2px;
+      border-radius: 2px;
+      background: #1f3329;
+      transform: translateX(-50%);
+      transition: transform .25s ease, opacity .2s ease, background .2s ease;
+    }
+
+    .nav-toggle-bars {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    .nav-toggle-bars::before,
+    .nav-toggle-bars::after {
+      content: "";
+    }
+
+    .nav-toggle-bars::before {
+      top: -8px;
+    }
+
+    .nav-toggle-bars::after {
+      top: 8px;
+    }
+
+    .site-header.is-open .nav-toggle-bars {
+      background: transparent;
+    }
+
+    .site-header.is-open .nav-toggle-bars::before {
+      top: 0;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .site-header.is-open .nav-toggle-bars::after {
+      top: 0;
+      transform: translateX(-50%) rotate(-45deg);
+    }
+
     .hero {
       position: relative;
       min-height: 720px;
@@ -568,13 +625,68 @@
         min-height: 70px;
       }
 
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
       .nav {
-        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 6px 0 14px;
+        background: rgba(250, 249, 245, 0.98);
+        border-bottom: 1px solid rgba(219, 229, 221, 0.7);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 22px 34px -22px rgba(11, 23, 17, .4);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: opacity .22s ease, transform .22s ease, visibility .22s;
+      }
+
+      .site-header.is-open .nav {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .nav a {
+        padding: 15px 24px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(219, 229, 221, 0.55);
+      }
+
+      .nav .contact-link {
+        margin: 14px 24px 0;
+        padding: 14px 20px;
+        text-align: center;
+        border-bottom: 0;
       }
 
       .hero,
       .hero-inner {
-        min-height: 680px;
+        min-height: auto;
+      }
+
+      .hero-inner {
+        justify-content: flex-start;
+        padding: 104px 0 64px;
+      }
+
+      .hero h1 {
+        font-size: clamp(27px, 7.2vw, 42px);
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+
+      .hero-copy {
+        margin-bottom: 0;
       }
 
       .challenge-grid,
@@ -606,9 +718,23 @@
         width: min(100% - 32px, 1120px);
       }
 
+      .hero-inner {
+        padding: 96px 0 52px;
+      }
+
+      .eyebrow {
+        margin-bottom: 18px;
+        font-size: 11.5px;
+        letter-spacing: .22em;
+      }
+
       .hero-copy,
       .lead {
         font-size: 15px;
+      }
+
+      .hero-copy {
+        line-height: 1.85;
       }
 
       .actions,
@@ -636,12 +762,15 @@
         <span>tomosu</span>
         <span class="badge">仮称</span>
       </a>
-      <nav class="nav" aria-label="主要ナビゲーション">
+      <nav class="nav" id="primary-nav" aria-label="主要ナビゲーション">
         <a href="#challenges">解決する課題</a>
         <a href="#service">サービス</a>
         <a href="#mission">私たちの想い</a>
         <a class="contact-link" href="#contact">お問い合わせ</a>
       </nav>
+      <button class="nav-toggle" type="button" aria-label="メニューを開く" aria-controls="primary-nav" aria-expanded="false">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
 
@@ -875,6 +1004,35 @@
       loop();
       window.addEventListener("resize", fit);
       window.addEventListener("beforeunload", () => cancelAnimationFrame(raf));
+    })();
+
+    (() => {
+      const header = document.querySelector(".site-header");
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.getElementById("primary-nav");
+      if (!header || !toggle || !nav) return;
+
+      const setOpen = (open) => {
+        header.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+      };
+
+      toggle.addEventListener("click", () => {
+        setOpen(!header.classList.contains("is-open"));
+      });
+
+      nav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setOpen(false);
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setOpen(false);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 860) setOpen(false);
+      });
     })();
 
     (() => {
