@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<header style="position:fixed;top:0;left:0;width:100%;z-index:60;background:transparent;border-bottom:1px solid rgba(255,255,255,.16);--hd:#ffffff;--hdsub:rgba(255,255,255,.74);transition:background .35s ease,border-color .35s ease,color .35s ease;font-family:'Noto Sans JP',sans-serif;{{ headerDyn }}">
+  <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="{{ home }}#top" style="display:flex;align-items:baseline;gap:12px;color:var(--hd,#fff);text-decoration:none">
+      <span style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:20px;letter-spacing:.06em">結ホールディングス</span>
+      <span style="font-size:10px;letter-spacing:.28em;color:var(--hdsub,rgba(255,255,255,.74));font-weight:600">YUI&nbsp;HOLDINGS</span>
+    </a>
+    <nav style="align-items:center;gap:30px;{{ navDesktopStyle }}">
+      <a href="{{ home }}#about" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">グループについて</a>
+      <a href="{{ home }}#business" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">事業紹介</a>
+      <a href="{{ home }}#companies" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">グループ会社</a>
+      <a href="{{ home }}#role" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">ガバナンス</a>
+      <a href="{{ home }}#news" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">ニュース</a>
+      <a href="{{ home }}#info" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em;text-decoration:none">会社概要</a>
+      <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;height:40px;padding:0 22px;border:1px solid var(--hd,#fff);color:var(--hd,#fff);font-size:13px;font-weight:600;letter-spacing:.06em;text-decoration:none">お問い合わせ</a>
+    </nav>
+    <button onClick="{{ toggleMenu }}" aria-label="メニュー" style="width:44px;height:44px;background:transparent;border:1px solid var(--hd,#fff);color:var(--hd,#fff);cursor:pointer;flex-direction:column;gap:5px;{{ navToggleStyle }}">
+      <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+      <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+      <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+    </button>
+  </div>
+  <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:70;background:#0f2742;flex-direction:column;justify-content:center;padding:0 32px;gap:6px;transition:opacity .3s ease;opacity:0;visibility:hidden;pointer-events:none;display:flex;{{ menuStyle }}">
+    <button onClick="{{ closeMenu }}" aria-label="閉じる" style="position:absolute;top:20px;right:24px;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:20px;cursor:pointer">×</button>
+    <a href="{{ home }}#about" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">グループについて</a>
+    <a href="{{ home }}#business" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">事業紹介</a>
+    <a href="{{ home }}#companies" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">グループ会社</a>
+    <a href="{{ home }}#role" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">ガバナンス</a>
+    <a href="{{ home }}#news" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">ニュース</a>
+    <a href="{{ home }}#info" onClick="{{ closeMenu }}" style="color:#fff;font-family:'Noto Serif JP',serif;font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);text-decoration:none">会社概要</a>
+    <a href="お問い合わせ.dc.html" onClick="{{ closeMenu }}" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;height:52px;background:#a6814d;color:#fff;font-weight:600;letter-spacing:.08em;text-decoration:none">お問い合わせ</a>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:74},&quot;home&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled:false, mobile:false, menuOpen:false };
+  componentDidMount(){
+    this._s=()=>{const v=window.scrollY>40; if(v!==this.state.scrolled) this.setState({scrolled:v});};
+    this._r=()=>{const m=window.innerWidth<=960; if(m!==this.state.mobile) this.setState({mobile:m});};
+    window.addEventListener('scroll',this._s,{passive:true});
+    window.addEventListener('resize',this._r);
+    this._s(); this._r();
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll',this._s);
+    window.removeEventListener('resize',this._r);
+  }
+  renderVals(){
+    const home = this.props.home || '';
+    const scrolled = this.state.scrolled, mobile = this.state.mobile;
+    const headerDyn = scrolled
+      ? "background:rgba(246,244,239,.94);backdrop-filter:saturate(1.1) blur(10px);-webkit-backdrop-filter:saturate(1.1) blur(10px);border-bottom:1px solid #ded9cf;--hd:#1b232c;--hdsub:#5a6675;"
+      : "";
+    const menuStyle = this.state.menuOpen ? "opacity:1;visibility:visible;pointer-events:auto;" : "";
+    const navDesktopStyle = mobile ? "display:none;" : "display:flex;";
+    const navToggleStyle = mobile ? "display:inline-flex;" : "display:none;";
+    return {
+      home, headerDyn, menuStyle, navDesktopStyle, navToggleStyle,
+      toggleMenu: ()=> this.setState(s=>({menuOpen:!s.menuOpen})),
+      closeMenu: ()=> this.setState({menuOpen:false})
+    };
+  }
+}
+</script>
+</body>
+</html>

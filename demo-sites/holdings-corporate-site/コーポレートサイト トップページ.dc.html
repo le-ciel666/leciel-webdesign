@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  a{text-decoration:none;color:inherit}
+  [data-nav-toggle]{display:none}
+  @media (max-width:960px){
+    [data-nav-desktop]{display:none !important}
+    [data-nav-toggle]{display:inline-flex !important}
+  }
+</style>
+</helmet>
+<div style="font-family:var(--bf,'Noto Sans JP',sans-serif);color:var(--ink,#1b232c);background:var(--paper,#f6f4ef);line-height:1.85;--navy:#0f2742;--navy2:#0a1b2c;--brass:#a6814d;--paper:#f6f4ef;--ink:#1b232c;--sub:#5a6675;--line:#ded9cf;--hf:'Noto Serif JP',serif;--en:inline-block;-webkit-font-smoothing:antialiased;overflow-x:hidden;{{ varOverride }}">
+
+  <!-- ===== HEADER ===== -->
+  <header style="position:fixed;top:0;left:0;width:100%;z-index:60;background:transparent;border-bottom:1px solid rgba(255,255,255,.16);--hd:#ffffff;--hdsub:rgba(255,255,255,.74);transition:background .35s ease,border-color .35s ease,color .35s ease;{{ headerDyn }}">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:baseline;gap:12px;color:var(--hd,#fff)">
+        <span style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:20px;letter-spacing:.06em">結ホールディングス</span>
+        <span style="display:var(--en,inline-block);font-size:10px;letter-spacing:.28em;color:var(--hdsub,rgba(255,255,255,.74));font-weight:600">YUI&nbsp;HOLDINGS</span>
+      </a>
+      <nav data-nav-desktop style="display:flex;align-items:center;gap:30px">
+        <a href="#about" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">グループについて</a>
+        <a href="#business" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">事業紹介</a>
+        <a href="#companies" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">グループ会社</a>
+        <a href="#role" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">ガバナンス</a>
+        <a href="#news" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">ニュース</a>
+        <a href="#info" style="font-size:13.5px;font-weight:500;color:var(--hd,#fff);letter-spacing:.04em">会社概要</a>
+        <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;height:40px;padding:0 22px;border:1px solid var(--hd,#fff);color:var(--hd,#fff);font-size:13px;font-weight:600;letter-spacing:.06em">お問い合わせ</a>
+      </nav>
+      <button data-nav-toggle onClick="{{ toggleMenu }}" aria-label="メニュー" style="width:44px;height:44px;align-items:center;justify-content:center;background:transparent;border:1px solid var(--hd,#fff);color:var(--hd,#fff);cursor:pointer;flex-direction:column;gap:5px">
+        <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+        <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+        <span style="display:block;width:18px;height:1.5px;background:var(--hd,#fff)"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MOBILE MENU OVERLAY ===== -->
+  <div onClick="{{ closeMenu }}" style="position:fixed;inset:0;z-index:70;background:var(--navy,#0f2742);display:flex;flex-direction:column;justify-content:center;padding:0 32px;gap:6px;transition:opacity .3s ease;opacity:0;visibility:hidden;pointer-events:none;{{ menuStyle }}">
+    <button onClick="{{ closeMenu }}" aria-label="閉じる" style="position:absolute;top:20px;right:24px;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;font-size:20px;cursor:pointer">×</button>
+    <a href="#about" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">グループについて</a>
+    <a href="#business" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">事業紹介</a>
+    <a href="#companies" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">グループ会社</a>
+    <a href="#role" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">ガバナンス</a>
+    <a href="#news" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">ニュース</a>
+    <a href="#info" onClick="{{ closeMenu }}" style="color:#fff;font-family:var(--hf,'Noto Serif JP',serif);font-size:24px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)">会社概要</a>
+    <a href="お問い合わせ.dc.html" onClick="{{ closeMenu }}" style="margin-top:20px;display:inline-flex;align-items:center;justify-content:center;height:52px;background:var(--brass,#a6814d);color:#fff;font-weight:600;letter-spacing:.08em">お問い合わせ</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" style="background:var(--navy,#0f2742);color:#fff;position:relative">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);min-height:clamp(580px,94vh,840px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));align-items:center;gap:clamp(32px,5vw,64px);padding-top:110px;padding-bottom:64px">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:30px">
+          <span style="width:32px;height:1px;background:var(--brass,#a6814d)"></span>
+          <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.28em;font-weight:600;color:var(--brass,#a6814d)">REGIONAL&nbsp;LIFE&nbsp;INFRASTRUCTURE&nbsp;GROUP</span>
+        </div>
+        <h1 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(30px,5vw,58px);line-height:1.5;letter-spacing:.02em;margin:0 0 28px">地域の暮らしを、<br>日常から人生の節目まで支える。</h1>
+        <p style="font-size:clamp(14px,1.4vw,16px);line-height:2;color:rgba(255,255,255,.78);max-width:30em;margin:0 0 40px">コンビニエンスストア、人材、不動産、葬祭。<br>暮らしのあらゆる場面に寄り添う事業を、一つのグループとして束ね、地域社会の継続的な発展に貢献します。</p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px">
+          <a href="#about" style="display:inline-flex;align-items:center;height:54px;padding:0 32px;background:#fff;color:var(--navy,#0f2742);font-weight:600;letter-spacing:.06em;font-size:14px">グループについて</a>
+          <a href="#business" style="display:inline-flex;align-items:center;height:54px;padding:0 32px;border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:600;letter-spacing:.06em;font-size:14px">事業を見る</a>
+        </div>
+      </div>
+      <div style="position:relative;aspect-ratio:4/3;min-height:300px;background:repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 14px,rgba(255,255,255,.09) 14px 28px);border:1px solid rgba(255,255,255,.16);display:flex;align-items:center;justify-content:center;overflow:hidden">
+        <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;letter-spacing:.05em;color:rgba(255,255,255,.55);text-align:center;padding:0 20px">[ メインビジュアル ]<br>街・人・暮らしを象徴する写真</span>
+        <img src="images/top-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT / PHILOSOPHY ===== -->
+  <section id="about" style="scroll-margin-top:84px;padding:clamp(72px,10vw,140px) 0;background:var(--paper,#f6f4ef)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:34px">
+        <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+        <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">グループについて</span>
+        <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">ABOUT&nbsp;US</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+        <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.6;letter-spacing:.02em;margin:0">一つひとつの事業が、<br>地域の暮らしのインフラに。</h2>
+        <div>
+          <p style="font-size:clamp(14px,1.3vw,16px);line-height:2.1;color:var(--ink,#1b232c);margin:0 0 22px">私たちは、コンビニエンスストア運営、人材サービス、不動産、葬祭という複数の事業を営むグループ会社を統括する持株会社です。それぞれの事業は独立していながら、いずれも「地域で暮らす人々の日常と人生を支える」という共通の役割を担っています。</p>
+          <p style="font-size:clamp(14px,1.3vw,16px);line-height:2.1;color:var(--sub,#5a6675);margin:0">持株会社は、各事業会社の自主性を尊重しながら、グループ全体の経営管理・ガバナンス・資源配分を担い、地域に根ざした事業基盤の安定と持続的な成長を実現します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BUSINESS DOMAINS (暮らしの時間軸) ===== -->
+  <section id="business" style="scroll-margin-top:84px;padding:clamp(72px,10vw,140px) 0;background:#fff;border-top:1px solid var(--line,#ded9cf)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+        <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">事業領域</span>
+        <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">BUSINESS&nbsp;DOMAINS</span>
+      </div>
+      <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.55;letter-spacing:.02em;margin:0 0 14px">暮らしの時間軸で、地域を支える。</h2>
+      <p style="font-size:15px;line-height:2;color:var(--sub,#5a6675);max-width:44em;margin:0 0 56px">日々の買い物から、働くこと、住まい、そして人生の節目まで。私たちの事業は、暮らしのあらゆる場面に切れ目なく寄り添います。</p>
+
+      <!-- timeline axis -->
+      <div style="position:relative">
+        <div style="position:absolute;top:14px;left:0;right:0;height:1px;background:var(--line,#ded9cf)"></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:clamp(20px,2.5vw,32px)">
+
+          <a href="事業紹介-コンビニ.dc.html" style="text-decoration:none;color:inherit;display:block">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+              <span style="width:9px;height:9px;border-radius:50%;background:var(--brass,#a6814d);position:relative;z-index:1;box-shadow:0 0 0 5px #fff"></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sub,#5a6675)">日常</span>
+            </div>
+            <div style="position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#ece8df 0 12px,#f3efe7 12px 24px);border:1px solid var(--line,#ded9cf);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#9a9486">[ コンビニ ]</span>
+              <img src="images/cvs-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:8px">01</div>
+            <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:19px;margin:0 0 10px">コンビニエンスストア</h3>
+            <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">地域の生活拠点として、毎日の買い物と利便性を支える店舗運営。</p>
+            <div style="margin-top:18px;font-size:12.5px;font-weight:600;color:var(--navy,#0f2742);display:flex;align-items:center;gap:8px">詳細を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+          </a>
+
+          <a href="事業紹介-人材.dc.html" style="text-decoration:none;color:inherit;display:block">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+              <span style="width:9px;height:9px;border-radius:50%;background:var(--brass,#a6814d);position:relative;z-index:1;box-shadow:0 0 0 5px #fff"></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sub,#5a6675)">働く</span>
+            </div>
+            <div style="position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#ece8df 0 12px,#f3efe7 12px 24px);border:1px solid var(--line,#ded9cf);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#9a9486">[ 人材 ]</span>
+              <img src="images/hr-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:8px">02</div>
+            <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:19px;margin:0 0 10px">人材サービス</h3>
+            <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">人材派遣・人材センター事業を通じ、地域の「働く」と企業の人手をつなぐ。</p>
+            <div style="margin-top:18px;font-size:12.5px;font-weight:600;color:var(--navy,#0f2742);display:flex;align-items:center;gap:8px">詳細を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+          </a>
+
+          <a href="事業紹介-不動産.dc.html" style="text-decoration:none;color:inherit;display:block">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+              <span style="width:9px;height:9px;border-radius:50%;background:var(--brass,#a6814d);position:relative;z-index:1;box-shadow:0 0 0 5px #fff"></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sub,#5a6675)">住まい</span>
+            </div>
+            <div style="position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#ece8df 0 12px,#f3efe7 12px 24px);border:1px solid var(--line,#ded9cf);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#9a9486">[ 不動産 ]</span>
+              <img src="images/re-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:8px">03</div>
+            <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:19px;margin:0 0 10px">不動産</h3>
+            <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">住まいと暮らしの基盤を整え、地域の定住と資産活用を支える。</p>
+            <div style="margin-top:18px;font-size:12.5px;font-weight:600;color:var(--navy,#0f2742);display:flex;align-items:center;gap:8px">詳細を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+          </a>
+
+          <a href="事業紹介-葬祭.dc.html" style="text-decoration:none;color:inherit;display:block">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px">
+              <span style="width:9px;height:9px;border-radius:50%;background:var(--brass,#a6814d);position:relative;z-index:1;box-shadow:0 0 0 5px #fff"></span>
+              <span style="font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--sub,#5a6675)">人生の節目</span>
+            </div>
+            <div style="position:relative;aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#ece8df 0 12px,#f3efe7 12px 24px);border:1px solid var(--line,#ded9cf);display:flex;align-items:center;justify-content:center;margin-bottom:20px;overflow:hidden">
+              <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#9a9486">[ 葬祭 ]</span>
+              <img src="images/funeral-hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:8px">04</div>
+            <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:19px;margin:0 0 10px">葬祭</h3>
+            <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">人生の節目に寄り添い、ご家族の想いを支える儀礼とサポート。</p>
+            <div style="margin-top:18px;font-size:12.5px;font-weight:600;color:var(--navy,#0f2742);display:flex;align-items:center;gap:8px">詳細を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GROUP COMPANIES ===== -->
+  <section id="companies" style="scroll-margin-top:84px;padding:clamp(72px,10vw,140px) 0;background:var(--navy,#0f2742);color:#fff">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+        <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">グループ会社</span>
+        <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:rgba(255,255,255,.55)">GROUP&nbsp;COMPANIES</span>
+      </div>
+      <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.55;letter-spacing:.02em;margin:0 0 14px">グループを構成する事業会社。</h2>
+      <p style="font-size:15px;line-height:2;color:rgba(255,255,255,.72);max-width:44em;margin:0 0 56px">それぞれが地域に根ざした事業を展開し、グループ全体で暮らしを多面的に支えています。</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px">
+
+        <a href="グループ会社-あけぼのスタッフ.dc.html" style="text-decoration:none;color:inherit;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:36px 32px;display:flex;flex-direction:column">
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:18px">COMPANY 01</div>
+          <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:22px;margin:0 0 6px">あけぼのスタッフ株式会社</h3>
+          <p style="font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.5);margin:0 0 22px;display:var(--en,block)">AKEBONO STAFF Inc.</p>
+          <p style="font-size:13.5px;line-height:1.95;color:rgba(255,255,255,.78);margin:0 0 24px">人材派遣を軸に、葬祭・不動産事業を展開。地域で「働く」「住まい」「人生の節目」を横断的に支える中核会社です。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">人材派遣</span>
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">葬祭</span>
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">不動産</span>
+          </div>
+          <div style="margin-top:22px;font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px">会社情報を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+        </a>
+
+        <a href="グループ会社-みなとリテール.dc.html" style="text-decoration:none;color:inherit;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:36px 32px;display:flex;flex-direction:column">
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:18px">COMPANY 02</div>
+          <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:22px;margin:0 0 6px">みなとリテール株式会社</h3>
+          <p style="font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.5);margin:0 0 22px;display:var(--en,block)">MINATO RETAIL Inc.</p>
+          <p style="font-size:13.5px;line-height:1.95;color:rgba(255,255,255,.78);margin:0 0 24px">コンビニエンスストアのフランチャイズ運営を担い、地域の日常的な購買と生活利便を支える生活インフラ会社です。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">コンビニ運営</span>
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">FC事業</span>
+          </div>
+          <div style="margin-top:22px;font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px">会社情報を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+        </a>
+
+        <a href="グループ会社-さくらコミュニティ.dc.html" style="text-decoration:none;color:inherit;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:36px 32px;display:flex;flex-direction:column">
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:13px;letter-spacing:.18em;color:var(--brass,#a6814d);margin-bottom:18px">COMPANY 03</div>
+          <h3 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:22px;margin:0 0 6px">さくらコミュニティ株式会社</h3>
+          <p style="font-size:12px;letter-spacing:.14em;color:rgba(255,255,255,.5);margin:0 0 22px;display:var(--en,block)">SAKURA COMMUNITY Inc.</p>
+          <p style="font-size:13.5px;line-height:1.95;color:rgba(255,255,255,.78);margin:0 0 24px">コンビニ運営に加え、人材センター事業を展開。店舗網と人材を結び、地域の雇用と暮らしを支えます。</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)">
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">コンビニ運営</span>
+            <span style="font-size:11.5px;padding:5px 12px;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.82)">人材センター</span>
+          </div>
+          <div style="margin-top:22px;font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px">会社情報を見る<span style="color:var(--brass,#a6814d)">→</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOLDING ROLE / GOVERNANCE ===== -->
+  <section id="role" style="scroll-margin-top:84px;padding:clamp(72px,10vw,140px) 0;background:var(--paper,#f6f4ef);border-top:1px solid var(--line,#ded9cf)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+        <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">ホールディングスの役割</span>
+        <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">OUR&nbsp;ROLE</span>
+      </div>
+      <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.55;letter-spacing:.02em;margin:0 0 56px">グループ全体の経営を、統括する。</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(40px,5vw,72px);align-items:center">
+        <!-- left: roles -->
+        <div style="display:flex;flex-direction:column;gap:0">
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line,#ded9cf)">
+            <span style="font-family:var(--hf,'Noto Serif JP',serif);font-size:14px;color:var(--brass,#a6814d);letter-spacing:.1em;flex:none;width:28px">01</span>
+            <div>
+              <h3 style="font-size:16px;font-weight:600;margin:0 0 8px">経営管理</h3>
+              <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">グループ経営方針の策定と各事業会社の業績管理を担い、全体最適の視点で意思決定を行います。</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line,#ded9cf)">
+            <span style="font-family:var(--hf,'Noto Serif JP',serif);font-size:14px;color:var(--brass,#a6814d);letter-spacing:.1em;flex:none;width:28px">02</span>
+            <div>
+              <h3 style="font-size:16px;font-weight:600;margin:0 0 8px">ガバナンス・内部統制</h3>
+              <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">コンプライアンス、リスク管理、内部統制の体制を整備し、健全で透明性の高い経営を徹底します。</p>
+            </div>
+          </div>
+          <div style="display:flex;gap:20px;padding:24px 0;border-top:1px solid var(--line,#ded9cf);border-bottom:1px solid var(--line,#ded9cf)">
+            <span style="font-family:var(--hf,'Noto Serif JP',serif);font-size:14px;color:var(--brass,#a6814d);letter-spacing:.1em;flex:none;width:28px">03</span>
+            <div>
+              <h3 style="font-size:16px;font-weight:600;margin:0 0 8px">資金・人材・情報の最適配分</h3>
+              <p style="font-size:13.5px;line-height:1.95;color:var(--sub,#5a6675);margin:0">グループの経営資源を最適に配分し、各事業の安定と持続的な成長を後押しします。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- right: structure diagram -->
+        <div style="background:#fff;border:1px solid var(--line,#ded9cf);padding:clamp(28px,4vw,48px) clamp(20px,3vw,36px)">
+          <div style="display:flex;flex-direction:column;align-items:center">
+            <div style="background:var(--navy,#0f2742);color:#fff;padding:16px 28px;text-align:center;min-width:200px">
+              <div style="font-family:var(--hf,'Noto Serif JP',serif);font-size:16px;font-weight:600;letter-spacing:.04em">結ホールディングス</div>
+              <div style="display:var(--en,block);font-size:9px;letter-spacing:.24em;color:rgba(255,255,255,.6);margin-top:4px">HOLDING COMPANY</div>
+            </div>
+            <div style="width:1px;height:28px;background:var(--brass,#a6814d)"></div>
+            <div style="position:relative;width:100%">
+              <div style="position:absolute;top:0;left:16.6%;right:16.6%;height:1px;background:var(--brass,#a6814d)"></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                <div style="display:flex;flex-direction:column;align-items:center">
+                  <div style="width:1px;height:28px;background:var(--brass,#a6814d)"></div>
+                  <div style="border:1px solid var(--line,#ded9cf);background:var(--paper,#f6f4ef);padding:14px 8px;text-align:center;width:100%;font-size:12px;font-weight:600;line-height:1.5;min-height:64px;display:flex;align-items:center;justify-content:center">あけぼのスタッフ</div>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center">
+                  <div style="width:1px;height:28px;background:var(--brass,#a6814d)"></div>
+                  <div style="border:1px solid var(--line,#ded9cf);background:var(--paper,#f6f4ef);padding:14px 8px;text-align:center;width:100%;font-size:12px;font-weight:600;line-height:1.5;min-height:64px;display:flex;align-items:center;justify-content:center">みなとリテール</div>
+                </div>
+                <div style="display:flex;flex-direction:column;align-items:center">
+                  <div style="width:1px;height:28px;background:var(--brass,#a6814d)"></div>
+                  <div style="border:1px solid var(--line,#ded9cf);background:var(--paper,#f6f4ef);padding:14px 8px;text-align:center;width:100%;font-size:12px;font-weight:600;line-height:1.5;min-height:64px;display:flex;align-items:center;justify-content:center">さくらコミュニティ</div>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:12px;color:var(--sub,#5a6675);text-align:center;margin:28px 0 0;line-height:1.8">持株会社が経営管理・ガバナンスを担い、<br>各事業会社が地域で事業を運営します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NUMBERS ===== -->
+  <section id="numbers" style="scroll-margin-top:84px;padding:clamp(64px,8vw,110px) 0;background:var(--navy2,#0a1b2c);color:#fff">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:48px">
+        <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+        <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">数字で見るグループ</span>
+        <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:rgba(255,255,255,.5)">BY&nbsp;THE&nbsp;NUMBERS</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:1px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.12)">
+        <div style="background:var(--navy2,#0a1b2c);padding:36px 28px">
+          <div style="font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:14px">グループ会社</div>
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(40px,5vw,56px);line-height:1">3<span style="font-size:20px;margin-left:4px;color:var(--brass,#a6814d)">社</span></div>
+        </div>
+        <div style="background:var(--navy2,#0a1b2c);padding:36px 28px">
+          <div style="font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:14px">事業領域</div>
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(40px,5vw,56px);line-height:1">4<span style="font-size:20px;margin-left:4px;color:var(--brass,#a6814d)">分野</span></div>
+        </div>
+        <div style="background:var(--navy2,#0a1b2c);padding:36px 28px">
+          <div style="font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:14px">店舗・拠点数</div>
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(40px,5vw,56px);line-height:1">120<span style="font-size:20px;margin-left:4px;color:var(--brass,#a6814d)">拠点</span></div>
+        </div>
+        <div style="background:var(--navy2,#0a1b2c);padding:36px 28px">
+          <div style="font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.6);margin-bottom:14px">グループ従業員数</div>
+          <div style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(40px,5vw,56px);line-height:1">2,400<span style="font-size:20px;margin-left:4px;color:var(--brass,#a6814d)">名</span></div>
+        </div>
+      </div>
+      <p style="font-size:11.5px;color:rgba(255,255,255,.45);margin:18px 0 0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace">※ 数値はすべて仮置きです。確定値に差し替えてください。</p>
+    </div>
+  </section>
+
+  <!-- ===== TOP MESSAGE ===== -->
+  <section id="message" style="scroll-margin-top:84px;padding:clamp(72px,10vw,140px) 0;background:#fff;border-top:1px solid var(--line,#ded9cf)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,72px);align-items:center">
+        <div style="position:relative;aspect-ratio:4/5;background:repeating-linear-gradient(135deg,#ece8df 0 12px,#f3efe7 12px 24px);border:1px solid var(--line,#ded9cf);display:flex;align-items:center;justify-content:center;max-width:420px;overflow:hidden">
+          <span style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:#9a9486;text-align:center">[ 代表者ポートレート ]</span>
+          <img src="images/news-main.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:26px">
+            <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+            <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">トップメッセージ</span>
+            <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">MESSAGE</span>
+          </div>
+          <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(22px,3vw,34px);line-height:1.6;letter-spacing:.02em;margin:0 0 24px">地域とともに、<br>次の世代へ続く企業グループへ。</h2>
+          <p style="font-size:14.5px;line-height:2.05;color:var(--sub,#5a6675);margin:0 0 28px">私たちは、複数の事業を束ねる持株会社として、それぞれの会社が培ってきた地域との信頼関係を大切にしながら、グループ全体の経営基盤を強化してまいります。変化の時代にあっても、暮らしを支えるという役割は変わりません。地域に必要とされ続ける企業グループであるために、堅実な経営と挑戦を続けてまいります。</p>
+          <div style="display:flex;align-items:baseline;gap:16px">
+            <span style="font-size:13px;color:var(--sub,#5a6675)">代表取締役社長</span>
+            <span style="font-family:var(--hf,'Noto Serif JP',serif);font-size:20px;font-weight:600;letter-spacing:.08em">結城 誠</span>
+          </div>
+          <a href="#" style="display:inline-flex;align-items:center;gap:10px;margin-top:32px;font-size:13.5px;font-weight:600;color:var(--navy,#0f2742);border-bottom:1px solid var(--brass,#a6814d);padding-bottom:6px">メッセージ全文を読む<span style="color:var(--brass,#a6814d)">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWS ===== -->
+  <section id="news" style="scroll-margin-top:84px;padding:clamp(72px,10vw,130px) 0;background:var(--paper,#f6f4ef);border-top:1px solid var(--line,#ded9cf)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:44px">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+            <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+            <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">ニュース</span>
+            <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">NEWS</span>
+          </div>
+          <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.2vw,38px);line-height:1.4;margin:0">お知らせ</h2>
+        </div>
+        <a href="ニュース一覧.dc.html" style="font-size:13.5px;font-weight:600;color:var(--navy,#0f2742);border-bottom:1px solid var(--brass,#a6814d);padding-bottom:6px">ニュース一覧へ →</a>
+      </div>
+
+      <div>
+        <a href="ニュース詳細.dc.html" style="display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,2.5vw,32px);align-items:center;padding:24px 4px;border-top:1px solid var(--line,#ded9cf)">
+          <span style="font-size:13px;color:var(--sub,#5a6675);font-family:ui-monospace,SFMono-Regular,Menlo,monospace">2026.06.01</span>
+          <span style="font-size:14.5px;font-weight:500;line-height:1.6">結ホールディングス株式会社の設立に関するお知らせ</span>
+          <span style="color:var(--brass,#a6814d)">→</span>
+        </a>
+        <a href="ニュース詳細-雇用支援.dc.html" style="display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,2.5vw,32px);align-items:center;padding:24px 4px;border-top:1px solid var(--line,#ded9cf)">
+          <span style="font-size:13px;color:var(--sub,#5a6675);font-family:ui-monospace,SFMono-Regular,Menlo,monospace">2026.05.20</span>
+          <span style="font-size:14.5px;font-weight:500;line-height:1.6">グループ各社の連携による地域雇用支援の取り組みについて</span>
+          <span style="color:var(--brass,#a6814d)">→</span>
+        </a>
+        <a href="ニュース詳細-サイト公開.dc.html" style="display:grid;grid-template-columns:auto 1fr auto;gap:clamp(14px,2.5vw,32px);align-items:center;padding:24px 4px;border-top:1px solid var(--line,#ded9cf);border-bottom:1px solid var(--line,#ded9cf)">
+          <span style="font-size:13px;color:var(--sub,#5a6675);font-family:ui-monospace,SFMono-Regular,Menlo,monospace">2026.04.15</span>
+          <span style="font-size:14.5px;font-weight:500;line-height:1.6">コーポレートサイト公開のお知らせ</span>
+          <span style="color:var(--brass,#a6814d)">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPANY PROFILE ===== -->
+  <section id="info" style="scroll-margin-top:84px;padding:clamp(72px,10vw,130px) 0;background:#fff;border-top:1px solid var(--line,#ded9cf)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(32px,5vw,72px);align-items:start">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px">
+            <span style="width:28px;height:1px;background:var(--brass,#a6814d)"></span>
+            <span style="font-size:12px;letter-spacing:.24em;font-weight:600;color:var(--brass,#a6814d)">会社概要</span>
+            <span style="display:var(--en,inline-block);font-size:11px;letter-spacing:.24em;font-weight:600;color:var(--sub,#5a6675);opacity:.7">PROFILE</span>
+          </div>
+          <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.2vw,36px);line-height:1.5;margin:0 0 24px">会社概要</h2>
+          <p style="font-size:13.5px;line-height:2;color:var(--sub,#5a6675);margin:0 0 28px">沿革・ガバナンス体制・コンプライアンス方針などの詳細は、各ページにてご確認いただけます。</p>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#" style="font-size:13.5px;font-weight:600;color:var(--navy,#0f2742);display:inline-flex;align-items:center;gap:10px">沿革<span style="color:var(--brass,#a6814d)">→</span></a>
+            <a href="#role" style="font-size:13.5px;font-weight:600;color:var(--navy,#0f2742);display:inline-flex;align-items:center;gap:10px">ガバナンス・コンプライアンス<span style="color:var(--brass,#a6814d)">→</span></a>
+          </div>
+        </div>
+        <div>
+          <dl style="margin:0;border-top:1px solid var(--line,#ded9cf)">
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">商号</dt>
+              <dd style="margin:0;font-size:14px">結ホールディングス株式会社（仮称）</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">設立</dt>
+              <dd style="margin:0;font-size:14px">2026年4月（予定）</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">所在地</dt>
+              <dd style="margin:0;font-size:14px">静岡県浜松市中央区元城町1-1-1</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">代表者</dt>
+              <dd style="margin:0;font-size:14px">代表取締役社長　結城 誠</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">資本金</dt>
+              <dd style="margin:0;font-size:14px">100百万円</dd>
+            </div>
+            <div style="display:grid;grid-template-columns:128px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid var(--line,#ded9cf)">
+              <dt style="font-size:13px;font-weight:600;color:var(--sub,#5a6675)">事業内容</dt>
+              <dd style="margin:0;font-size:14px;line-height:1.8">グループ会社の経営管理および附帯する業務</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section id="contact" style="scroll-margin-top:84px;padding:clamp(64px,9vw,120px) 0;background:var(--navy,#0f2742);color:#fff;text-align:center">
+    <div style="max-width:760px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:var(--en,inline-block);font-size:11px;letter-spacing:.28em;font-weight:600;color:var(--brass,#a6814d);margin-bottom:20px">CONTACT</div>
+      <h2 style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:500;font-size:clamp(24px,3.4vw,40px);line-height:1.5;margin:0 0 22px">お問い合わせ</h2>
+      <p style="font-size:14.5px;line-height:2;color:rgba(255,255,255,.74);margin:0 0 40px">グループ事業・取引・採用に関するご相談など、<br>各種お問い合わせを承っております。</p>
+      <a href="お問い合わせ.dc.html" style="display:inline-flex;align-items:center;height:56px;padding:0 44px;background:#fff;color:var(--navy,#0f2742);font-weight:600;letter-spacing:.08em;font-size:14px">お問い合わせフォームへ</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="background:var(--navy2,#0a1b2c);color:#fff;padding:clamp(56px,7vw,90px) 0 0">
+    <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px;padding-bottom:56px">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:18px">
+            <span style="font-family:var(--hf,'Noto Serif JP',serif);font-weight:600;font-size:20px;letter-spacing:.06em">結ホールディングス</span>
+          </div>
+          <p style="display:var(--en,block);font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.5);margin:0 0 18px">YUI HOLDINGS</p>
+          <p style="font-size:12.5px;line-height:1.9;color:rgba(255,255,255,.6);margin:0">地域の暮らしを、日常から<br>人生の節目まで支える企業グループ。</p>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:.14em;color:var(--brass,#a6814d);margin-bottom:18px;font-weight:600">グループについて</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#about" style="font-size:13px;color:rgba(255,255,255,.78)">グループについて</a>
+            <a href="#message" style="font-size:13px;color:rgba(255,255,255,.78)">トップメッセージ</a>
+            <a href="#numbers" style="font-size:13px;color:rgba(255,255,255,.78)">数字で見るグループ</a>
+            <a href="#" style="font-size:13px;color:rgba(255,255,255,.78)">沿革</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:.14em;color:var(--brass,#a6814d);margin-bottom:18px;font-weight:600">事業・会社</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#business" style="font-size:13px;color:rgba(255,255,255,.78)">事業紹介</a>
+            <a href="#companies" style="font-size:13px;color:rgba(255,255,255,.78)">グループ会社紹介</a>
+            <a href="#role" style="font-size:13px;color:rgba(255,255,255,.78)">ガバナンス・コンプライアンス</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:12px;letter-spacing:.14em;color:var(--brass,#a6814d);margin-bottom:18px;font-weight:600">情報・お問い合わせ</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <a href="#news" style="font-size:13px;color:rgba(255,255,255,.78)">ニュース一覧</a>
+            <a href="#info" style="font-size:13px;color:rgba(255,255,255,.78)">会社概要</a>
+            <a href="お問い合わせ.dc.html" style="font-size:13px;color:rgba(255,255,255,.78)">お問い合わせ</a>
+            <a href="#" style="font-size:13px;color:rgba(255,255,255,.78)">個人情報保護方針</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.12);padding:24px 0;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+        <p style="font-size:11.5px;color:rgba(255,255,255,.45);margin:0">© 2026 結ホールディングス株式会社（仮称）</p>
+        <div style="display:flex;flex-wrap:wrap;gap:24px">
+          <a href="#" style="font-size:11.5px;color:rgba(255,255,255,.55)">個人情報保護方針</a>
+          <a href="#" style="font-size:11.5px;color:rgba(255,255,255,.55)">サイトのご利用について</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;navy&quot;,&quot;forest&quot;,&quot;charcoal&quot;],&quot;default&quot;:&quot;navy&quot;,&quot;tsType&quot;:&quot;\&quot;navy\&quot;|\&quot;forest\&quot;|\&quot;charcoal\&quot;&quot;},&quot;headingStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;mincho&quot;,&quot;gothic&quot;],&quot;default&quot;:&quot;mincho&quot;,&quot;tsType&quot;:&quot;\&quot;mincho\&quot;|\&quot;gothic\&quot;&quot;},&quot;showEnLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { scrolled: false, menuOpen: false };
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  renderVals() {
+    const themes = {
+      navy: '',
+      forest: "--navy:#163328;--navy2:#0f2419;--brass:#bf9a5e;--paper:#f4f3ec;--ink:#1d241f;--sub:#5d685f;--line:#dcd9cd;",
+      charcoal: "--navy:#26262b;--navy2:#1a1a1e;--brass:#9a9aa0;--paper:#f4f4f3;--ink:#202024;--sub:#62626a;--line:#dbdbd8;"
+    };
+    const theme = this.props.theme || 'navy';
+    const headingStyle = this.props.headingStyle || 'mincho';
+    const showEn = this.props.showEnLabels !== false;
+
+    let varOverride = themes[theme] || '';
+    if (headingStyle === 'gothic') varOverride += "--hf:'Noto Sans JP',sans-serif;";
+    if (!showEn) varOverride += "--en:none;";
+
+    const scrolled = this.state.scrolled;
+    const headerDyn = scrolled
+      ? "background:rgba(246,244,239,.94);backdrop-filter:saturate(1.1) blur(10px);-webkit-backdrop-filter:saturate(1.1) blur(10px);border-bottom:1px solid var(--line,#ded9cf);--hd:#1b232c;--hdsub:#5a6675;"
+      : "";
+
+    const menuStyle = this.state.menuOpen
+      ? "opacity:1;visibility:visible;pointer-events:auto;"
+      : "";
+
+    return {
+      varOverride,
+      headerDyn,
+      menuStyle,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
