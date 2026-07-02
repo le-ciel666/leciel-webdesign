@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>さくら駅前歯科｜さいたま市桜区・西浦和の歯科医院</title>
+<meta name="description" content="さいたま市桜区・西浦和の歯科医院、さくら駅前歯科のデモサイトです。一般歯科・予防歯科・小児歯科・訪問歯科診療に対応します。">
+<link rel="preload" as="image" href="assets/sakura-ekimae-dental/hero.webp">
+<style>
+  :root {
+    --ink: #3d332e;
+    --soft: #6e635c;
+    --muted: #a1907f;
+    --line: #efe4d5;
+    --paper: #fff;
+    --base: #fbf7f1;
+    --cream: #f6eee3;
+    --pink: #e58ba1;
+    --pink-soft: #fceff2;
+    --brown: #8a6a48;
+    --shadow: 0 24px 54px rgba(120, 80, 60, .14);
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--base);
+    line-height: 1.85;
+    letter-spacing: .012em;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; }
+
+  .topbar {
+    background: #f0e7dc;
+    color: #80705e;
+    font-size: 12.5px;
+  }
+  .topbar-inner,
+  .nav-inner,
+  .container {
+    width: min(1184px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 7px 0;
+  }
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(251, 247, 241, .94);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+  }
+  .nav-inner {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 0;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 240px;
+  }
+  .brand-mark { width: 42px; height: 42px; flex: none; }
+  .brand-name {
+    display: block;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+  .brand-sub {
+    display: block;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 10.5px;
+    letter-spacing: .18em;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #4a3f38;
+  }
+  .nav-links a:hover { background: var(--pink-soft); color: #c75e78; }
+  .tel-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: #fff;
+    border: 1px solid #ebd9c7;
+    border-radius: 16px;
+    box-shadow: 0 10px 22px -16px rgba(120, 80, 40, .45);
+    font-weight: 800;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(42% 42% at 24% 18%, rgba(244,183,201,.56), transparent 72%),
+      radial-gradient(34% 36% at 82% 76%, rgba(247,206,180,.36), transparent 72%),
+      linear-gradient(178deg,#fbebef 0%,#fbefe9 58%,#faf4ea 100%);
+  }
+  .petals {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .petal {
+    position: absolute;
+    top: -42px;
+    left: var(--x);
+    width: var(--s);
+    height: calc(var(--s) * 1.38);
+    border-radius: 76% 18% 72% 28%;
+    background: linear-gradient(145deg, rgba(255,235,241,.92), rgba(229,139,161,.72));
+    opacity: var(--o);
+    transform: rotate(var(--r));
+    animation: petalFall var(--d) linear infinite;
+    animation-delay: var(--delay);
+    filter: drop-shadow(0 8px 12px rgba(199,94,120,.08));
+  }
+  .petal::after {
+    content: "";
+    position: absolute;
+    inset: 16% 44% 18% 44%;
+    border-radius: 999px;
+    background: rgba(255,255,255,.42);
+    transform: rotate(-18deg);
+  }
+  @keyframes petalFall {
+    0% { transform: translate3d(0, -8vh, 0) rotate(var(--r)); }
+    35% { transform: translate3d(var(--drift-a), 34vh, 0) rotate(calc(var(--r) + 118deg)); }
+    70% { transform: translate3d(var(--drift-b), 72vh, 0) rotate(calc(var(--r) + 236deg)); }
+    100% { transform: translate3d(var(--drift-c), 112vh, 0) rotate(calc(var(--r) + 360deg)); }
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 54px;
+    align-items: center;
+    padding: 72px 0 84px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    padding: 7px 15px;
+    background: #fff;
+    border: 1px solid #f0d3db;
+    border-radius: 999px;
+    color: #c75e78;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .08em;
+  }
+  .flower-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #f4c28b 0 24%, transparent 25%),
+      conic-gradient(from 0deg, #e89cb0 0 18%, transparent 18% 22%, #e89cb0 22% 40%, transparent 40% 44%, #e89cb0 44% 62%, transparent 62% 66%, #e89cb0 66% 84%, transparent 84% 88%, #e89cb0 88% 100%);
+    flex: none;
+  }
+  h1, h2, h3 {
+    font-family: var(--serif);
+    color: var(--ink);
+    letter-spacing: .03em;
+  }
+  h1 {
+    margin: 22px 0 0;
+    font-size: clamp(34px, 5vw, 53px);
+    line-height: 1.42;
+  }
+  .lead {
+    max-width: 31em;
+    margin: 22px 0 0;
+    color: var(--soft);
+    font-size: 17px;
+    line-height: 2.08;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 13px 25px;
+    border-radius: 999px;
+    border: 1.5px solid transparent;
+    font-weight: 800;
+  }
+  .btn-primary {
+    color: #fff;
+    background: var(--pink);
+    box-shadow: 0 16px 30px -14px rgba(199, 94, 120, .7);
+  }
+  .btn-secondary {
+    color: #a6764b;
+    background: #fff;
+    border-color: #e6d2bd;
+  }
+  .hero-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 30px;
+  }
+  .badge-card {
+    background: rgba(255,255,255,.72);
+    border: 1px solid #f0e1d2;
+    border-radius: 14px;
+    padding: 13px 16px;
+  }
+  .badge-card small {
+    display: block;
+    color: var(--muted);
+    font-size: 11.5px;
+    letter-spacing: .06em;
+  }
+  .badge-card b {
+    display: block;
+    margin-top: 3px;
+    color: #5c4f46;
+    font-size: 14px;
+  }
+  .hero-photo-wrap { position: relative; }
+  .hero-photo {
+    aspect-ratio: 4 / 4.4;
+    border-radius: 28px;
+    background: #f7efe7 url("assets/sakura-ekimae-dental/hero.webp") center / cover;
+    border: 1px solid #ead3c2;
+    box-shadow: 0 40px 70px -38px rgba(140, 90, 70, .55);
+  }
+  .float-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 13px 17px;
+    box-shadow: 0 22px 40px -22px rgba(120,80,60,.5);
+  }
+  .float-card.left { left: -22px; bottom: 38px; }
+  .float-card.right { right: -16px; top: 30px; }
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    background: var(--pink-soft);
+    color: #c75e78;
+    font-weight: 900;
+  }
+  .float-card small { display: block; color: var(--muted); font-size: 11px; line-height: 1.3; }
+  .float-card b { display: block; color: #5c4f46; font-size: 14px; line-height: 1.35; }
+
+  section { padding: 78px 0; }
+  .section-head {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+  }
+  .section-head .eyebrow {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+  .section-head h2 {
+    margin: 12px 0 0;
+    font-size: clamp(27px, 3.2vw, 36px);
+    line-height: 1.5;
+  }
+  .section-head p {
+    margin: 14px auto 0;
+    color: var(--soft);
+    font-size: 16px;
+  }
+  .cards-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+  }
+  .card h3 {
+    margin: 18px 0 0;
+    font-size: 21px;
+  }
+  .card p {
+    margin: 10px 0 0;
+    color: var(--soft);
+    font-size: 15px;
+  }
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .service {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 16px 34px rgba(120, 80, 60, .08);
+  }
+  .service.highlight {
+    background: var(--pink-soft);
+    border-color: #efc2ce;
+  }
+  .service-media {
+    aspect-ratio: 4 / 2.45;
+    background-color: #f7efe7;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #f0e1d2;
+  }
+  .service-body { padding: 22px 24px 24px; }
+  .service h3 { margin: 0; font-size: 19px; }
+  .service p { margin: 8px 0 0; color: var(--soft); font-size: 14.5px; }
+  .split {
+    display: grid;
+    grid-template-columns: .92fr 1.08fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .band { background: var(--cream); }
+  .photo {
+    min-height: 360px;
+    border-radius: 24px;
+    border: 1px solid #e7d6c3;
+    box-shadow: 0 30px 56px -38px rgba(140,90,70,.5);
+    background-color: #f7efe7;
+    background-size: cover;
+    background-position: center;
+  }
+  .photo.interior { background-image: url("assets/sakura-ekimae-dental/interior.webp"); }
+  .photo.visiting { background-image: url("assets/sakura-ekimae-dental/visiting.webp"); }
+  .split h2 {
+    margin: 12px 0 0;
+    font-size: clamp(27px, 3vw, 33px);
+    line-height: 1.55;
+  }
+  .split p { color: var(--soft); }
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 24px;
+  }
+  .stats b {
+    display: block;
+    color: #c75e78;
+    font-size: 28px;
+    font-family: var(--serif);
+    line-height: 1.1;
+  }
+  .visit-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .visit-list div {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 18px;
+    font-weight: 700;
+    font-size: 14.5px;
+  }
+  .access-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+  .info-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .info-list div {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid #f2e8dc;
+    padding-bottom: 10px;
+  }
+  .info-list b { min-width: 76px; color: #c9a06e; }
+  .map-card {
+    min-height: 320px;
+    border-radius: 20px;
+    border: 1px solid #e7d6c3;
+    background: linear-gradient(145deg, #f6eee3, #fceff2);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 28px;
+  }
+  .map-card h3 { margin: 0; font-size: 23px; }
+  .map-card p { margin: 8px 0 0; color: var(--soft); }
+  .footer {
+    background: #3d332e;
+    color: #fff;
+    padding: 36px 0;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .footer small { color: #d8c8bd; }
+
+  @media (max-width: 920px) {
+    .nav-inner { align-items: flex-start; flex-direction: column; }
+    .nav-links { justify-content: flex-start; }
+    .hero-inner,
+    .split,
+    .access-box {
+      grid-template-columns: 1fr;
+    }
+    .hero-photo-wrap { max-width: 560px; }
+    .cards-3,
+    .service-grid,
+    .visit-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 640px) {
+    .topbar-inner,
+    .nav-inner,
+    .container { width: min(100% - 28px, 1184px); }
+    .topbar-inner { display: block; }
+    .hero-inner { padding: 48px 0 58px; }
+    .hero-badges,
+    .cards-3,
+    .service-grid,
+    .visit-list {
+      grid-template-columns: 1fr;
+    }
+    .float-card {
+      position: static;
+      margin-top: 12px;
+      width: 100%;
+    }
+    .hero-photo { border-radius: 22px; }
+    section { padding: 58px 0; }
+    .card, .service { padding: 22px; }
+    .photo { min-height: 260px; }
+    .tel-chip { width: 100%; justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .petal { animation: none; transform: translate3d(0, 18vh, 0) rotate(var(--r)); }
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span>さいたま市桜区・西浦和の歯科 ／ 訪問歯科診療</span>
+      <span>受付時間 10:00-13:00 ／ 14:30-20:00　｜　土曜は予約制（-17:00）・日曜休診</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="さくら駅前歯科 トップへ">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+          <g fill="#EC9CB1">
+            <path d="M24 24.5C19.6 19 18.7 11 24 6 29.3 11 28.4 19 24 24.5Z"/>
+            <path d="M24 24.5C19.6 19 18.7 11 24 6 29.3 11 28.4 19 24 24.5Z" transform="rotate(72 24 24)"/>
+            <path d="M24 24.5C19.6 19 18.7 11 24 6 29.3 11 28.4 19 24 24.5Z" transform="rotate(144 24 24)"/>
+            <path d="M24 24.5C19.6 19 18.7 11 24 6 29.3 11 28.4 19 24 24.5Z" transform="rotate(216 24 24)"/>
+            <path d="M24 24.5C19.6 19 18.7 11 24 6 29.3 11 28.4 19 24 24.5Z" transform="rotate(288 24 24)"/>
+          </g>
+          <circle cx="24" cy="24" r="3.4" fill="#F6C68C"/>
+        </svg>
+        <span>
+          <span class="brand-name">さくら駅前歯科</span>
+          <span class="brand-sub">SAKURA EKIMAE DENTAL CLINIC</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="主要ナビゲーション">
+        <a href="#clinic">医院紹介</a>
+        <a href="#treatment">診療案内</a>
+        <a href="#visiting">訪問歯科</a>
+        <a href="#access">アクセス</a>
+        <a href="#faq">よくある質問</a>
+        <a class="tel-chip" href="tel:0488721177">048-872-1177</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="petals" aria-hidden="true">
+        <span class="petal" style="--x:6%;--s:11px;--o:.62;--r:18deg;--d:18s;--delay:-6s;--drift-a:42px;--drift-b:-20px;--drift-c:58px"></span>
+        <span class="petal" style="--x:14%;--s:8px;--o:.5;--r:-28deg;--d:22s;--delay:-14s;--drift-a:-34px;--drift-b:18px;--drift-c:-52px"></span>
+        <span class="petal" style="--x:24%;--s:13px;--o:.56;--r:44deg;--d:20s;--delay:-2s;--drift-a:54px;--drift-b:8px;--drift-c:68px"></span>
+        <span class="petal" style="--x:35%;--s:9px;--o:.48;--r:8deg;--d:24s;--delay:-10s;--drift-a:-46px;--drift-b:-12px;--drift-c:-64px"></span>
+        <span class="petal" style="--x:48%;--s:12px;--o:.58;--r:-12deg;--d:19s;--delay:-16s;--drift-a:36px;--drift-b:72px;--drift-c:28px"></span>
+        <span class="petal" style="--x:58%;--s:7px;--o:.42;--r:36deg;--d:23s;--delay:-4s;--drift-a:-28px;--drift-b:20px;--drift-c:-38px"></span>
+        <span class="petal" style="--x:68%;--s:14px;--o:.52;--r:-42deg;--d:21s;--delay:-12s;--drift-a:48px;--drift-b:-26px;--drift-c:64px"></span>
+        <span class="petal" style="--x:78%;--s:10px;--o:.46;--r:22deg;--d:25s;--delay:-18s;--drift-a:-54px;--drift-b:-10px;--drift-c:-70px"></span>
+        <span class="petal" style="--x:88%;--s:12px;--o:.54;--r:-18deg;--d:20s;--delay:-8s;--drift-a:26px;--drift-b:64px;--drift-c:10px"></span>
+        <span class="petal" style="--x:96%;--s:8px;--o:.44;--r:52deg;--d:26s;--delay:-20s;--drift-a:-42px;--drift-b:-76px;--drift-c:-96px"></span>
+      </div>
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow"><span class="flower-dot"></span>訪問歯科診療｜さいたま市桜区・西浦和ほか</p>
+          <h1>通院がむずかしい方の<br>もとへ、歯科医療を。</h1>
+          <p class="lead">ご自宅や施設へ歯科医師がお伺いします。むし歯・入れ歯・口腔ケアまで健康保険で対応。ご家族・ケアマネジャー様のご相談も承ります。</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#visiting">訪問歯科について</a>
+            <a class="btn btn-secondary" href="#access">ご相談・お問い合わせ</a>
+          </div>
+          <div class="hero-badges">
+            <div class="badge-card"><small>対応エリア</small><b>さいたま市全域・西浦和ほか</b></div>
+            <div class="badge-card"><small>費用</small><b>健康保険が適用されます</b></div>
+            <div class="badge-card"><small>ご相談</small><b>無料・お気軽にどうぞ</b></div>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo" role="img" aria-label="さくら駅前歯科の診療室で相談する患者様とスタッフ"></div>
+          <div class="float-card left">
+            <span class="icon-box">保</span>
+            <span><small>費用</small><b>健康保険が使えます</b></span>
+          </div>
+          <div class="float-card right">
+            <span class="icon-box" style="background:#f1e7dc;color:#8a6a48">地</span>
+            <span><small>対応エリア</small><b>さいたま市全域</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span class="flower-dot"></span>VISITING DENTAL CARE</p>
+          <h2>通院がむずかしい方へ、3つの安心</h2>
+          <p>ご自宅や施設にお伺いし、通院と同じように診療します。さいたま市桜区・西浦和を中心に、さいたま市全域へ。</p>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <span class="icon-box">家</span>
+            <h3>ご自宅・施設へ訪問</h3>
+            <p>歯科医師・歯科衛生士がお伺いします。寝たきりや車いすの方も、慣れた環境で診療を受けられます。</p>
+          </article>
+          <article class="card">
+            <span class="icon-box" style="background:#f1e7dc;color:#8a6a48">保</span>
+            <h3>保険診療に対応</h3>
+            <p>医療保険・介護保険が適用されます。交通費・出張費はいただきません。</p>
+          </article>
+          <article class="card">
+            <span class="icon-box" style="background:#e9f0e6;color:#5e7b59">支</span>
+            <h3>ご家族も相談しやすく</h3>
+            <p>ご本人だけでなく、ご家族・ケアマネジャー様・施設ご担当者様からのご相談も歓迎します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="clinic" class="band">
+      <div class="container split">
+        <div class="photo interior" role="img" aria-label="さくら駅前歯科の受付と待合スペース"></div>
+        <div>
+          <p class="eyebrow"><span class="flower-dot"></span>WELCOME</p>
+          <h2>小さなお子様から、ご年配の方まで。<br>やさしく、ていねいに。</h2>
+          <p>白を基調とした清潔な院内で、痛みに配慮した診療を行っています。キッズスペースやバリアフリー設計で、ご家族みんなで安心して通っていただけます。</p>
+          <div class="stats">
+            <span><b>10:00</b>平日診療開始</span>
+            <span><b>20:00</b>平日最終受付</span>
+            <span><b>全域</b>さいたま市訪問対応</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="treatment">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span class="flower-dot"></span>TREATMENT</p>
+          <h2>診療案内</h2>
+          <p>一般歯科から予防、義歯、訪問歯科まで、お一人おひとりのお口の状態に合わせてご提案します。</p>
+        </div>
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-media" role="img" aria-label="むし歯と歯の根の治療説明" style="background-image:url('assets/sakura-ekimae-dental/cavity.webp')"></div>
+            <div class="service-body"><h3>むし歯・根の治療</h3><p>削る範囲を最小限に抑え、できるだけ歯を抜かずに残す方針で治療します。</p></div>
+          </article>
+          <article class="service">
+            <div class="service-media" role="img" aria-label="歯周病治療と歯ぐきのケア説明" style="background-image:url('assets/sakura-ekimae-dental/perio.webp')"></div>
+            <div class="service-body"><h3>歯周病治療</h3><p>自覚なく進行する歯周病。十分なご説明のうえ、じっくり治療します。</p></div>
+          </article>
+          <article class="service">
+            <div class="service-media" role="img" aria-label="予防歯科とPMTCのクリーニング準備" style="background-image:url('assets/sakura-ekimae-dental/preventive.webp')"></div>
+            <div class="service-body"><h3>予防歯科・PMTC</h3><p>「悪くならない」お口へ。クリーニングや定期検診で健康を保ちます。</p></div>
+          </article>
+          <article class="service">
+            <div class="service-media" role="img" aria-label="小児歯科でお子様に歯みがきを説明する様子" style="background-image:url('assets/sakura-ekimae-dental/pediatric.webp')"></div>
+            <div class="service-body"><h3>小児歯科</h3><p>お子様が歯医者を好きになれるよう、やさしく対応します。</p></div>
+          </article>
+          <article class="service">
+            <div class="service-media" role="img" aria-label="義歯と入れ歯の相談風景" style="background-image:url('assets/sakura-ekimae-dental/denture.webp')"></div>
+            <div class="service-body"><h3>義歯・入れ歯</h3><p>お一人おひとりに合った入れ歯をご提案します。</p></div>
+          </article>
+          <article class="service highlight">
+            <div class="service-media" role="img" aria-label="訪問歯科で口腔ケアを案内する様子" style="background-image:url('assets/sakura-ekimae-dental/visiting-card.webp')"></div>
+            <div class="service-body"><h3>訪問歯科</h3><p>通院が難しい方のご自宅・施設へお伺いします。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visiting" class="band">
+      <div class="container split">
+        <div>
+          <p class="eyebrow"><span class="flower-dot"></span>WHAT IS</p>
+          <h2>訪問歯科とは</h2>
+          <p>病気やお身体の不自由などで歯科医院への通院がむずかしい方のために、歯科医師・歯科衛生士がご自宅や介護施設にお伺いし、診療や口腔ケアを行うのが「訪問歯科診療」です。</p>
+          <p>むし歯や歯周病の治療、入れ歯の調整、お口のクリーニングなど、通院されているときと同じ診療を、住み慣れた環境で受けていただけます。</p>
+          <div class="visit-list">
+            <div>寝たきり・車いすをご利用の方</div>
+            <div>入れ歯が合わない方</div>
+            <div>食事中にむせる方</div>
+            <div>介護施設にご入居中の方</div>
+            <div>通院の付き添いが難しいご家庭</div>
+            <div>口腔ケアを続けたい方</div>
+          </div>
+        </div>
+        <div class="photo visiting" role="img" aria-label="訪問歯科で口腔ケアを案内する歯科衛生士"></div>
+      </div>
+    </section>
+
+    <section id="access">
+      <div class="container access-box">
+        <div class="card">
+          <p class="eyebrow"><span class="flower-dot"></span>ACCESS</p>
+          <h2 style="margin:12px 0 0;font-size:31px">医院情報</h2>
+          <div class="info-list">
+            <div><b>医院名</b><span>さくら駅前歯科</span></div>
+            <div><b>所在地</b><span>〒338-0837 さいたま市桜区田島5丁目25-2</span></div>
+            <div><b>電話</b><span>048-872-1177</span></div>
+            <div><b>診療時間</b><span>10:00-13:00 ／ 14:30-20:00</span></div>
+            <div><b>休診日</b><span>日曜</span></div>
+          </div>
+          <p style="color:var(--muted);font-size:13px;margin-top:16px">新患・当日受付は15:30最終／急患は14:00までにお電話を。訪問歯科は上記時間外もご相談ください。</p>
+        </div>
+        <div class="map-card">
+          <div>
+            <h3>西浦和駅周辺</h3>
+            <p>JR武蔵野線 西浦和駅より徒歩圏内</p>
+            <p>訪問歯科は、さいたま市全域・近隣エリアへ対応します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow"><span class="flower-dot"></span>Q &amp; A</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="cards-3">
+          <article class="card"><h3>予約は必要ですか？</h3><p>お待ち時間を少なくするため予約制をおすすめしています。当日のご連絡でも、空きがあればご案内します。</p></article>
+          <article class="card"><h3>訪問歯科の費用は？</h3><p>院内での診療と同様に健康保険が適用され、交通費・出張費はいただきません。</p></article>
+          <article class="card"><h3>家族から相談できますか？</h3><p>はい。ご本人以外の、ご家族・ケアマネジャー様・施設ご担当者様からのご相談も歓迎しております。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>さくら駅前歯科</strong><br>
+        <small>SAKURA EKIMAE DENTAL CLINIC</small>
+      </div>
+      <a class="btn btn-primary" href="tel:0488721177">048-872-1177</a>
+    </div>
+  </footer>
+</body>
+</html>
